@@ -1,0 +1,91 @@
+<!--xml version= "1.0" encoding="utf-8"-->
+<!--IOMapping Version="4.0"-->
+<IOOffsets SIBytes="128" SOBytes="64" NSIBytes="64" NSOBytes="64" ConnectionsValidOffset="4" >
+		<Module Name="SL1.SM1" Hardware="X20SLX410" SafeLogicID="1" SafeModuleID="1" SISize="8" SOSize="2" NSISize="20" NSOSize="20" SIOffset="8" SOOffset="0" NSIOffset="0" NSOOffset="0" ExtendedSourceSL="1" HWTypeCode="31" >
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX8.4" Variable="eStopButtonPendant" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelInput0304" Mapping="SIX8.5" Variable="pendantEnableSwEnabledPos" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelOK0102" Mapping="SIX9.2" Variable="eStopButtonPendantWiringOk" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelOK0304" Mapping="SIX9.3" Variable="pendantEnableSwWiringOk" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="BOOL00001" Mapping="NSQX0.0" Variable="eStopCmdOutToPlc" Address="OmSafeDev:fs_EmoCmd" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00002" Mapping="NSQX0.1" Variable="AllSMOkToPlc" Address="OmSafeDev:fs_AllSMsOk" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00003" Mapping="NSQX0.2" Variable="allowPendantMovesToPlc" Address="owsPendant.pendantAllowMoves" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00006" Mapping="NSQX0.5" Variable="eStopButtonOWSActToPlc" Address="OmSafeDev:fs_EmoOwsActive" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00007" Mapping="NSQX0.6" Variable="eStopButtonOWSOkToPlc" Address="OmSafeDev:fs_EmoOwsOk" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00008" Mapping="NSQX0.7" Variable="eStopButtonPendantActToPlc" Address="owsPendant.emoAcivated" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL00009" Mapping="NSQX1.0" Variable="eStopButtonPendantOkToPlc" Address="owsPendant.emoWiringOk" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00010" Mapping="NSQX1.1" Variable="stopPbOWSActToPlc" Address="OmSafeDev:fs_StopPbActive" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00011" Mapping="NSQX1.2" Variable="stopPbOWSWiringOkToPlc" Address="OmSafeDev:fs_StopPbOk" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00012" Mapping="NSQX1.3" Variable="startPbOWSActToPlc" Address="OmSafeDev:fs_StartPbActive" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00013" Mapping="NSQX1.4" Variable="startPbOWSWiringOkToPlc" Address="OmSafeDev:fs_StartPbOk" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00014" Mapping="NSQX1.5" Variable="keySwitchInRunPLC" Address="OmSafeDev:fs_KeyswitchInRun" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00015" Mapping="NSQX1.6" Variable="keySwitchWiringOkPlc" Address="OmSafeDev:fs_KeyswitchOk" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00016" Mapping="NSQX1.7" Variable="InSafeModeToPlc" Address="OmSafeDev:fs_InSafeMode" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL00017" Mapping="NSQX2.0" Variable="pendantEnableSwEnabledToPlc" Address="owsPendant.enableSwActive" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="BOOL00018" Mapping="NSQX2.1" Variable="pendantEnableSwWiringOkToPlc" Address="owsPendant.enableSwWiringOk" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="BOOL00019" Mapping="NSQX2.2" Variable="cfGateClosedToPlc" Address="OmSafeDev:fs_CfGateClosed" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="BOOL00020" Mapping="NSQX2.3" Variable="cfGateClosedLockedToPlc" Address="OmSafeDev:fs_CfGateClosedLocked" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="BOOL00021" Mapping="NSQX2.4" Variable="cfGateClosedWiringOkToPlc" Address="OmSafeDev:fs_CfGateClosedOk" SODIndex="0x2580" SODSubIndex="0x3" />
+			<Channel Name="UINT0001" Mapping="NSQW4" Variable="axSpindleDiagCode" Address="axes[1].Status.SafeMotionDiagCode" SODIndex="0x2580" SODSubIndex="0x4" />
+			<Channel Name="UINT0002" Mapping="NSQW6" Variable="axOutEDiagCode" Address="axes[2].Status.SafeMotionDiagCode" SODIndex="0x2580" SODSubIndex="0x5" />
+			<Channel Name="UINT0003" Mapping="NSQW8" Variable="axInEDiagCode" Address="axes[3].Status.SafeMotionDiagCode" SODIndex="0x2580" SODSubIndex="0x6" />
+			<Channel Name="UINT0004" Mapping="NSQW10" Variable="axZDiagCode" Address="axes[4].Status.SafeMotionDiagCode" SODIndex="0x2580" SODSubIndex="0x7" />
+			<Channel Name="BOOL10001" Mapping="NSIX0.0" Variable="resetEStop" Address="OmSafeDev:ts_ResetEStop" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10002" Mapping="NSIX0.1" Variable="resetSafeMc" Address="OmSafeDev:ts_ResetSafeMC" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10003" Mapping="NSIX0.2" Variable="InEmoModeFromPlc" Address="OmSafeDev:ts_InEmoMode" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10004" Mapping="NSIX0.3" Variable="InSafeModeFromPlc" Address="OmSafeDev:ts_InSafeMode" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10005" Mapping="NSIX0.4" Variable="InPendantModeFromPlc" Address="OmSafeDev:ts_InPendantMode" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10006" Mapping="NSIX0.5" Variable="InCycleFromPlc" Address="ProdCycle:ts_InCycle" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10007" Mapping="NSIX0.6" Variable="cfLockGateFromPlc" Address="ProdCycle:ts_cfLockGate" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10008" Mapping="NSIX0.7" Variable="axSpindleEnableFromPlc" Address="axes[1].Commands.PlcSafetyEnable" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL10009" Mapping="NSIX1.0" Variable="axOutEEnableFromPlc" Address="axes[2].Commands.PlcSafetyEnable" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10010" Mapping="NSIX1.1" Variable="axInESEnableFromPlc" Address="axes[3].Commands.PlcSafetyEnable" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10011" Mapping="NSIX1.2" Variable="axZEnableFromPlc" Address="axes[4].Commands.PlcSafetyEnable" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10012" Mapping="NSIX1.3" Variable="cfPumpEnableFromPlc" Address="axes[8].Commands.PlcSafetyEnable" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10013" Mapping="NSIX1.4" Variable="axSpindleBrakeRelReqFromPlc" Address="axes[1].Commands.ReleaseBrakeCmd" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10014" Mapping="NSIX1.5" Variable="axOutEBrakeRelReqFromPlc" Address="axes[2].Commands.ReleaseBrakeCmd" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10015" Mapping="NSIX1.6" Variable="axInEBrakeRelReqFromPlc" Address="axes[3].Commands.ReleaseBrakeCmd" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10016" Mapping="NSIX1.7" Variable="axZBrakeRelReqFromPlc" Address="axes[4].Commands.ReleaseBrakeCmd" SODIndex="0x2500" SODSubIndex="0x3" />
+			<Channel Name="BOOL10017" Mapping="NSIX2.0" Variable="InManualModeFromPlc" Address="OmSafeDev:ts_InManualMode" SODIndex="0x2500" SODSubIndex="0x4" />
+			<Channel Name="BOOL10018" Mapping="NSIX2.1" Variable="InProductionModeFromPlc" Address="OmSafeDev:ts_InProductionMode" SODIndex="0x2500" SODSubIndex="0x4" />
+		</Module>
+		<Module Name="SL1.SM2" Hardware="X20SO6300" SafeLogicID="1" SafeModuleID="2" SISize="1" SOSize="1" NSISize="2" NSOSize="1" SIOffset="5" SOOffset="2" NSIOffset="20" NSOOffset="20" ConnectionValidBitNumber="0" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.0" Variable="SafeModule02Ok" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX2.0" Variable="cfPumpEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX2.1" Variable="axSpindleEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX2.2" Variable="axZEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX20.0" Variable="SaveModule02OutputRelease" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+		<Module Name="SL1.SM11" Hardware="8BVSV2SAFE1-1" SafeLogicID="1" SafeModuleID="11" SISize="12" SOSize="4" NSISize="0" NSOSize="0" SIOffset="16" SOOffset="4" ConnectionValidBitNumber="1" IsProfile="true" HWTypeCode="131" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.1" Variable="SafeModule11Ok" />
+			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="0" InstanceName="axOutERef" />
+		</Module>
+		<Module Name="SL1.SM12" Hardware="8BVSV2SAFE1-1" SafeLogicID="1" SafeModuleID="12" SISize="12" SOSize="4" NSISize="0" NSOSize="0" SIOffset="28" SOOffset="8" ConnectionValidBitNumber="2" IsProfile="true" HWTypeCode="131" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.2" Variable="SafeModule12Ok" />
+			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="1" InstanceName="axInERef" />
+		</Module>
+		<Module Name="SL1.SM116" Hardware="X20SI4100" SafeLogicID="1" SafeModuleID="116" SISize="2" SOSize="0" NSISize="0" NSOSize="0" SIOffset="6" ConnectionValidBitNumber="3" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.3" Variable="SafeModule116Ok" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX6.4" Variable="eStopButtonOWS" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelInput0304" Mapping="SIX6.5" Variable="keySwitchInRunPos" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelOK0102" Mapping="SIX7.2" Variable="eStopButtonOWSWiringOk" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelOK0304" Mapping="SIX7.3" Variable="keySwitchWiringOk" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM117" Hardware="X20SI4100" SafeLogicID="1" SafeModuleID="117" SISize="2" SOSize="0" NSISize="0" NSOSize="0" SIOffset="40" ConnectionValidBitNumber="4" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.4" Variable="SafeModule117Ok" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX40.4" Variable="startPbOWS" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelInput0304" Mapping="SIX40.5" Variable="stopPbOWS" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelOK0102" Mapping="SIX41.2" Variable="startPbOWSWiringOk" SODIndex="0x6000" SODSubIndex="0x2" />
+			<Channel Name="SafeTwoChannelOK0304" Mapping="SIX41.3" Variable="stopPbOWSWiringOk" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM212" Hardware="X20SI4100" SafeLogicID="1" SafeModuleID="212" SISize="2" SOSize="0" NSISize="0" NSOSize="0" SIOffset="42" ConnectionValidBitNumber="5" HWTypeCode="27" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.5" Variable="SafeModule212Ok" />
+			<Channel Name="SafeDigitalInput03" Mapping="SIX42.2" Variable="cfGateLockStatus" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelInput0102" Mapping="SIX42.4" Variable="cfGateClosedStatus" SODIndex="0x6000" SODSubIndex="0x1" />
+			<Channel Name="SafeTwoChannelOK0102" Mapping="SIX43.2" Variable="cfGateClosedWiringOk" SODIndex="0x6000" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM213" Hardware="X20SO4120" SafeLogicID="1" SafeModuleID="213" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="44" SOOffset="3" NSIOffset="22" NSOOffset="21" ConnectionValidBitNumber="6" HWTypeCode="43" >
+			<Channel Name="SafeModuleOK" Mapping="SIX4.6" Variable="SafeModule213Ok" />
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX3.0" Variable="cfGateLockCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput" Mapping="NSQX21.0" Variable="SafeModule213OutputRelease" SODIndex="0x6200" SODSubIndex="0x3" />
+		</Module>
+</IOOffsets>

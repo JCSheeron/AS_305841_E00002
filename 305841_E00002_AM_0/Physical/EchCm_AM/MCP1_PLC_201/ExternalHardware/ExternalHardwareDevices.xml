@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExternalHardware>
+  <Modules>
+    <Module ModuleID="FBD.IOLink.GenericDeviceDTM.DTMCore.PS51x-100-LI2UPN8 IODD1.1" Version="2.9" OrderNumber="PS51x-100-LI2UPN8 IODD1.1">
+      <SourceFile OriginalFile="Turck-PS51x-100-LI2UPN8-20190227-IODD1.1.xml" TranslationFile="TOMTL587.ext" />
+    </Module>
+  </Modules>
+</ExternalHardware>

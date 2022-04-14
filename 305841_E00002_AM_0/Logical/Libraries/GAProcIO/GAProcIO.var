@@ -1,0 +1,24 @@
+(********************************************************************
+ * COPYRIGHT -- General Atomics
+ ********************************************************************
+ * Library: GAScale
+ * File: GAScale.var
+ * Author: Administrator
+ * Created: September 11, 2015
+ ********************************************************************
+ * Constants of library GAScale
+ ********************************************************************)
+
+VAR CONSTANT
+  (* Use constants rather than enum so this isn't a DINT *)
+  (* and is the same UDINT type as the alm registers. *)
+  GAPIO_ALARM_NONE : UDINT      := 16#0000;
+  GAPIO_ALARM_RANGELO : UDINT   := 16#0001; (* b0 *)
+  GAPIO_ALARM_RANGEHI : UDINT   := 16#0002; (* b1 *)
+  GAPIO_ALARM_LOLO : UDINT      := 16#0004; (* b2 *)
+	GAPIO_ALARM_LO : UDINT        := 16#0008; (* b3 *)
+	GAPIO_ALARM_HI : UDINT        := 16#0010; (* b4 *)
+	GAPIO_ALARM_HIHI : UDINT      := 16#0020; (* b5 *)
+	GAPIO_ALARM_CHANNEL : UDINT   := 16#80000000; (* b31 *)
+
+END_VAR

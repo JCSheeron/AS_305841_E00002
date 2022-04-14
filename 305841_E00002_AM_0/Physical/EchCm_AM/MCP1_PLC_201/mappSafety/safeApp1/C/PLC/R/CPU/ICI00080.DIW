@@ -1,0 +1,9 @@
+(*
+QWS: 00006
+*)
+00001	00014	POE\Main\Variables.vbb
+00002	00000	POE\Main\IOModules.gb
+00003	00006	POE\Main\EMO_PBs.gb
+00004	00004	POE\Main\CFGateStatus.gb
+00005	00003	POE\Main\SafeMode.gb
+00006	00001	POE\Main\AxisEnable.gb

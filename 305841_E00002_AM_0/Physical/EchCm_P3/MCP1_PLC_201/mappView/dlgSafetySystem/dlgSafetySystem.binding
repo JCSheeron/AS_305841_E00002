@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="dlgSafetySystem_bindings" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+
+    <!-- TEMPLATE -->
+    <!-- Text Snippet binding: dynamic text strings based on values -->
+    <!-- Template to bind an Indexed Text snippet to the UI -->
+    <!-- The first one updates the snippet, the second one updates the UI -->
+    <!--
+    <Binding mode="oneWay">
+    <Source xsi:type="opcUa" refId="::MyProgram:MyStatus" attribute="value"/>
+    <Target xsi:type="snippet" refId="MySnippetId" attribute="value"/>
+    </Binding>
+
+    <Binding mode="oneWay">
+    <Source xsi:type="snippet" refId="MySnippetId" attribute="value"/>
+    <Target xsi:type="brease" widgetRefId="MyTextOutputWidget" contentRefId="MyContent" attribute="value"/>
+    </Binding>
+    -->
+    
+    <!-- For these status, load the PLC value into a varialbe since it will get used twice:
+    Once to determine the text from a snippet, and once to determine the style -->
+    
+    <!-- OWS EMO -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoOwsOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsEmoOwsOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEmoOwsOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEmoOwsOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoOwsOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoOws" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEmoOwsOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoOws" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoOwsActive" attribute="value" />
+      <Target xsi:type="session" refId="svIsEmoOwsActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEmoOwsActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEmoOwsActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoOwsActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoOws" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEmoOwsActive" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoOws" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+
+    <!-- Pendant EMO -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.emoWiringOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsEmoPendantOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEmoPendantOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEmoPendantOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoPendantOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoPendant" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEmoPendantOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoPendant" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.emoAcivated" attribute="value" />
+      <Target xsi:type="session" refId="svIsEmoPendantActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEmoPendantActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEmoPendantActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoPendantActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoPendant" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEmoPendantActive" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatEmoPendant" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+
+    <!-- Pendant Enable -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.enableSwWiringOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsEnablePendantOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEnablePendantOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEnablePendantOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEnablePendantOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatPendantEnable" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEnablePendantOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatPendantEnable" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.enableSwActive" attribute="value" />
+      <Target xsi:type="session" refId="svIsEnablePendantActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsEnablePendantActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsEnablePendantActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEnablePendantActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatPendantEnable" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsEnablePendantActive" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatPendantEnable" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+    
+    <!-- Keyswitch In Run -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_KeyswitchOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsKeyswitchOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsKeyswitchOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsKeyswitchOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsKeyswitchOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatKeyswitchRun" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsKeyswitchOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatKeyswitchRun" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_KeyswitchInRun" attribute="value" />
+      <Target xsi:type="session" refId="svIsKeyswitchInRun" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsKeyswitchInRun" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsKeyswitchInRun" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsKeyswitchInRun" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatKeyswitchRun" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsKeyswitchInRun" attribute="value" />
+				<List refId="TextStyleHiGoodLoGood1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatKeyswitchRun" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+
+    <!-- Stop PB -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StopPbOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsStopPbOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsStopPbOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsStopPbOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStopPbOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatStopPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svIsStopPbOk" attribute="value" />
+        <List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatStopPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StopPbActive" attribute="value" />
+      <Target xsi:type="session" refId="svIsStopPbActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsStopPbActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsStopPbActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStopPbActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatStopPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svIsStopPbActive" attribute="value" />
+        <List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatStopPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+        
+    <!-- Start PB -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StartPbOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsStartPbOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsStartPbOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsStartPbOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStartPbOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatStartPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsStartPbOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatStartPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StartPbActive" attribute="value" />
+      <Target xsi:type="session" refId="svIsStartPbActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsStartPbActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsStartPbActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStartPbActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatStartPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsStartPbActive" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatStartPb" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+
+    <!-- CF Gate Closed -->
+    <!-- Wiring Ok -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosedOk" attribute="value" />
+      <Target xsi:type="session" refId="svIsCfGateOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsCfGateOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsCfGateOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatCfGate" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsCfGateOk" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatCfGate" contentRefId="dlgSafetySystemTop_content" attribute="StatusOkStyle" />
+    </Binding>
+
+    <!-- Active (Closed OK/High)-->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosed" attribute="value" />
+      <Target xsi:type="session" refId="svIsCfGateClosed" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsCfGateClosed" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsCfGateClosed" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateClosed" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="safeDevStatCfGate" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveString" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsCfGateClosed" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="safeDevStatCfGate" contentRefId="dlgSafetySystemTop_content" attribute="StatusActiveStyle" />
+    </Binding>
+
+    <!-- CF Gate Locked -->
+    <!-- No wiring okay point (only using a single contact -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosedLocked" attribute="value" />
+      <Target xsi:type="session" refId="svIsCfGateLockedStatus" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsCfGateLockedStatus" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsCfGateLockedStatus" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateLockedStatus" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutCfGateLocked" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svIsCfGateLockedStatus" attribute="value" />
+        <List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutCfGateLocked" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+
+    <!-- All Safety Modules Okay -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_AllSMsOk" attribute="value" />
+      <Target xsi:type="session" refId="svAllSafeModulesOk" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAllSafeModulesOk" attribute="value" />
+      <Target xsi:type="snippet" refId="snAllSafeModulesOk" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snAllSafeModulesOk" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutSafeModulesOk" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAllSafeModulesOk" attribute="value" />
+        <List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutSafeModulesOk" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+    
+    <!-- Axis safety system diagnostic codes -->       
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[1].Status.SafeMotionDiagCode" attribute="value" />
+      <Target xsi:type="brease" contentRefId="dlgSafetySystemTop_content" widgetRefId="numOutSpindleCode" attribute="value" />
+    </Binding>
+    
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[2].Status.SafeMotionDiagCode" attribute="value" />
+      <Target xsi:type="brease" contentRefId="dlgSafetySystemTop_content" widgetRefId="numOutOuterEccCode" attribute="value" />
+    </Binding>
+    
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[3].Status.SafeMotionDiagCode" attribute="value" />
+      <Target xsi:type="brease" contentRefId="dlgSafetySystemTop_content" widgetRefId="numOutInnerEccCode" attribute="value" />
+    </Binding>
+    
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[4].Status.SafeMotionDiagCode" attribute="value" />
+      <Target xsi:type="brease" contentRefId="dlgSafetySystemTop_content" widgetRefId="numOutZCode" attribute="value" />
+    </Binding>
+   
+    <!-- EMO Reset Related -->
+    <!-- EMO Mode Mode -->
+    <!-- Use expression result from the operating mode, set in contentStdTop -->
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svOperatingMode" attribute="value" />
+      <Target xsi:type="expression" refId="isModeEmoSafety" attribute="ModeSelected" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svOM_EMO_MODE" attribute="value" />
+      <Target xsi:type="expression" refId="isModeEmoSafety" attribute="ParentMode" />
+    </Binding>
+
+    <Binding mode="oneWay">
+      <Source xsi:type="expression" refId="isModeEmoSafety" attribute="result" />
+      <Target xsi:type="snippet" refId="snEmoMode" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snEmoMode" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutEmoMode" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isModeEmoSafety" attribute="result" />
+        <List refId="TextStyleLoGoodHiBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutEmoMode" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+
+    <!-- EMO Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoCmd" attribute="value" />
+      <Target xsi:type="session" refId="svEmoActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svEmoActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snEmoActive" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snEmoActive" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutEmoActive" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svEmoActive" attribute="value" />
+        <List refId="TextStyleHiGoodLoBad1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutEmoActive" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+
+    <!-- EMO Reset Status -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:ts_ResetEStop" attribute="value" />
+      <Target xsi:type="session" refId="svResetEmoStatus" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svResetEmoStatus" attribute="value" />
+      <Target xsi:type="snippet" refId="snResetEmoStatus" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snResetEmoStatus" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutEmoResetStatus" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svResetEmoStatus" attribute="value" />
+        <List refId="TextStyleLoGoodHiWarn1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutEmoResetStatus" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+    
+    <!-- Drives Reset Status -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:ts_ResetSafeMC" attribute="value" />
+      <Target xsi:type="session" refId="svResetDrivesStatus" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svResetDrivesStatus" attribute="value" />
+      <Target xsi:type="snippet" refId="snResetDrivesStatus" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snResetDrivesStatus" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="txtOutDrivesResetStatus" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svResetDrivesStatus" attribute="value" />
+        <List refId="TextStyleLoGoodHiWarn1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="txtOutDrivesResetStatus" contentRefId="dlgSafetySystemTop_content" attribute="style" />
+    </Binding>
+     
+    <!-- EMO Reset Allowed Seconds Remain -->
+    <!-- This could be bound to the object directly, but use a session variable so the value can be used to enable/disable the reset PB -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:eStopResetAllowSecRemain" attribute="value" />
+      <Target xsi:type="session" refId="svEmoResetSecRemain" attribute="value" />
+    </Binding>
+    <!-- Update the widget property with the variable value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svEmoResetSecRemain" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="numOutResetSecRemain" contentRefId="dlgSafetySystemTop_content" attribute="value" />
+    </Binding>
+    <!-- Use an expression to enable/disable the reset button based on the time remaining and a check condition. -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svEmoResetSecRemain" attribute="value" />
+      <Target xsi:type="expression" refId="isEmoResetAllowed" attribute="Time" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svTRUE" attribute="value" />
+      <Target xsi:type="expression" refId="isEmoResetAllowed" attribute="InA" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="expression" refId="isEmoResetAllowed" attribute="result" />
+      <Target xsi:type="brease" widgetRefId="pbResetEmo" contentRefId="dlgSafetySystemTop_content" attribute="enable" />
+    </Binding>
+  </Bindings>
+</BindingsSet>

@@ -1,0 +1,26 @@
+[Project]
+NumOfDownloadFiles=9
+Crc=30600CA7
+LastChangeDate=1649460576
+LastChangeDateHumanReadable=04/08/2022    04:29:36 PM
+LastChangeUser=winVmUser1
+[Download]
+1=DLFiles\dlfile01.sos
+2=DLFiles\dlfile02.sos
+3=DLFiles\dlfile03.sos
+4=DLFiles\dlfile04.sos
+5=DLFiles\dlfile05.sos
+6=DLFiles\dlfile06.sos
+7=DLFiles\dlfile07.sos
+8=DLFiles\dlfile08.sos
+9=DLFiles\dlfile09.sos
+[Filenames]
+1=CFooLibs.dll
+2=impldiag.zip
+3=sdevpara.saf
+4=Bootfile.pr1
+5=ProjCRC.img
+6=SwapList.pr2
+7=Bootfile.pr2
+8=BusNvCRC.img
+9=SysFlags.dat

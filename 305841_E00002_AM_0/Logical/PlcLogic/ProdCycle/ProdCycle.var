@@ -1,0 +1,29 @@
+VAR CONSTANT
+  
+END_VAR
+
+VAR RETAIN
+  partMotion : sPartMotion; (* calculated values for processing part. Retain to preserve dynamic values *)
+
+END_VAR
+  
+VAR
+  calcReal1 : REAL;  (* temporary value *)
+  calcLReal1 : LREAL; (* temporary value *)
+  calcDint1 : DINT;  (* temporary value *)
+  tmrStepMin : TON; (* hold step for min time *)
+  tmrStepTO : TON; (* step timeout timer *)
+  tmrCfShutoff : TON; (* shutoff cooling pump after a delay *)
+  fbCalcMoveTimes : fbCalcTrapMoveTime; (* function block to calculate trapazoidal move times *)
+  
+  (* info to safety controller *)  
+  ts_InCycle : BOOL; (* tell the safe controller we are in cycle *)
+  ts_cfLockGate : BOOL; (* lock the cutting fluid gate *)
+
+  (* production cycle step information *)
+  (* indexes correspond to ePROD_CYCLE_STEP values *)
+  stepETs  : ARRAY[0..40] OF TIME; (* step elapsed times *)
+  stepTOs  : ARRAY[0..40] OF TIME; (* step Timeout values *)
+  stepIsTO : ARRAY[0..40] OF BOOL; (* set if the step has a TO *)
+END_VAR
+

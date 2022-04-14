@@ -1,0 +1,424 @@
+(*
+T: RESOURCE CPU
+FW: NO
+CI#: 0
+QSL: 69
+QVE: 69
+QVPC: 69
+QPar: 0
+QFBI: 0
+*)
+@V 1 2 0
+AllSMOkToPlc	1	VAR_GLOBAL	@TYP:1
+%NSQX 0.1		     
+
+;
+
+@V 1 3 0
+SafeModule02Ok	2	VAR_GLOBAL	@TYP:43
+%SIX 4.0		     
+
+;
+
+@V 1 4 0
+SafeModule11Ok	3	VAR_GLOBAL	@TYP:43
+%SIX 4.1		     
+
+;
+
+@V 1 5 0
+SafeModule12Ok	4	VAR_GLOBAL	@TYP:43
+%SIX 4.2		     
+
+;
+
+@V 1 6 0
+SafeModule116Ok	5	VAR_GLOBAL	@TYP:43
+%SIX 4.3		     
+
+;
+
+@V 1 7 0
+SafeModule117Ok	6	VAR_GLOBAL	@TYP:43
+%SIX 4.4		     
+
+;
+
+@V 1 8 0
+SafeModule212Ok	7	VAR_GLOBAL	@TYP:43
+%SIX 4.5		     
+
+;
+
+@V 1 9 0
+SafeModule213Ok	8	VAR_GLOBAL	@TYP:43
+%SIX 4.6		     
+
+;
+
+@V 1 10 0
+SaveModule02OutputRelease	9	VAR_GLOBAL	@TYP:1
+%NSQX 20.0		     
+
+;
+
+@V 1 11 0
+SafeModule213OutputRelease	10	VAR_GLOBAL	@TYP:1
+%NSQX 21.0		     
+
+;
+
+@V 1 13 0
+keySwitchInRunPLC	11	VAR_GLOBAL	@TYP:1
+%NSQX 1.5		     
+
+;
+
+@V 1 14 0
+keySwitchWiringOkPlc	12	VAR_GLOBAL	@TYP:1
+%NSQX 1.6		     
+
+;
+
+@V 1 15 0
+keySwitchInRunPos	13	VAR_GLOBAL	@TYP:43
+%SIX 6.5		     
+
+;
+
+@V 1 16 0
+keySwitchWiringOk	14	VAR_GLOBAL	@TYP:43
+%SIX 7.3		     
+
+;
+
+@V 1 17 0
+InSafeModeToPlc	15	VAR_GLOBAL	@TYP:1
+%NSQX 1.7		     
+
+;
+
+@V 1 18 0
+InEmoModeFromPlc	16	VAR_GLOBAL	@TYP:1
+%NSIX 0.2		     
+
+;
+
+@V 1 19 0
+InSafeModeFromPlc	17	VAR_GLOBAL	@TYP:1
+%NSIX 0.3		     
+
+;
+
+@V 1 20 0
+InCycleFromPlc	18	VAR_GLOBAL	@TYP:1
+%NSIX 0.5		     
+
+;
+
+@V 1 21 0
+InManualModeFromPlc	19	VAR_GLOBAL	@TYP:1
+%NSIX 2.0		     
+
+;
+
+@V 1 22 0
+InProductionModeFromPlc	20	VAR_GLOBAL	@TYP:1
+%NSIX 2.1		     
+
+;
+
+@V 1 24 0
+eStopCmdOutToPlc	21	VAR_GLOBAL	@TYP:1
+%NSQX 0.0		     
+
+;
+
+@V 1 25 0
+resetEStop	22	VAR_GLOBAL	@TYP:1
+%NSIX 0.0		     
+
+;
+
+@V 1 26 0
+eStopButtonOWS	23	VAR_GLOBAL	@TYP:43
+%SIX 6.4		     
+
+;
+
+@V 1 27 0
+eStopButtonPendant	24	VAR_GLOBAL	@TYP:43
+%SIX 8.4		     
+
+;
+
+@V 1 28 0
+eStopButtonOWSWiringOk	25	VAR_GLOBAL	@TYP:43
+%SIX 7.2		     
+
+;
+
+@V 1 29 0
+eStopButtonPendantWiringOk	26	VAR_GLOBAL	@TYP:43
+%SIX 9.2		     
+
+;
+
+@V 1 30 0
+eStopButtonOWSActToPlc	27	VAR_GLOBAL	@TYP:1
+%NSQX 0.5		     
+
+;
+
+@V 1 31 0
+eStopButtonOWSOkToPlc	28	VAR_GLOBAL	@TYP:1
+%NSQX 0.6		     
+
+;
+
+@V 1 32 0
+eStopButtonPendantActToPlc	29	VAR_GLOBAL	@TYP:1
+%NSQX 0.7		     
+
+;
+
+@V 1 33 0
+eStopButtonPendantOkToPlc	30	VAR_GLOBAL	@TYP:1
+%NSQX 1.0		     
+
+;
+
+@V 1 35 0
+stopPbOWS	31	VAR_GLOBAL	@TYP:43
+%SIX 40.5		     
+
+;
+
+@V 1 36 0
+stopPbOWSWiringOk	32	VAR_GLOBAL	@TYP:43
+%SIX 41.3		     
+
+;
+
+@V 1 37 0
+stopPbOWSActToPlc	33	VAR_GLOBAL	@TYP:1
+%NSQX 1.1		     
+
+;
+
+@V 1 38 0
+stopPbOWSWiringOkToPlc	34	VAR_GLOBAL	@TYP:1
+%NSQX 1.2		     
+
+;
+
+@V 1 39 0
+startPbOWS	35	VAR_GLOBAL	@TYP:43
+%SIX 40.4		     
+
+;
+
+@V 1 40 0
+startPbOWSWiringOk	36	VAR_GLOBAL	@TYP:43
+%SIX 41.2		     
+
+;
+
+@V 1 41 0
+startPbOWSActToPlc	37	VAR_GLOBAL	@TYP:1
+%NSQX 1.3		     
+
+;
+
+@V 1 42 0
+startPbOWSWiringOkToPlc	38	VAR_GLOBAL	@TYP:1
+%NSQX 1.4		     
+
+;
+
+@V 1 44 0
+InPendantModeFromPlc	39	VAR_GLOBAL	@TYP:1
+%NSIX 0.4		     
+
+;
+
+@V 1 45 0
+allowPendantMovesToPlc	40	VAR_GLOBAL	@TYP:1
+%NSQX 0.2		     
+
+;
+
+@V 1 46 0
+pendantEnableSwEnabledPos	41	VAR_GLOBAL	@TYP:43
+%SIX 8.5		     
+
+;
+
+@V 1 47 0
+pendantEnableSwEnabledToPlc	42	VAR_GLOBAL	@TYP:1
+%NSQX 2.0		     
+
+;
+
+@V 1 48 0
+pendantEnableSwWiringOk	43	VAR_GLOBAL	@TYP:43
+%SIX 9.3		     
+
+;
+
+@V 1 49 0
+pendantEnableSwWiringOkToPlc	44	VAR_GLOBAL	@TYP:1
+%NSQX 2.1		     
+
+;
+
+@V 1 51 0
+axSpindleEnableFromPlc	45	VAR_GLOBAL	@TYP:1
+%NSIX 0.7		     
+
+;
+
+@V 1 52 0
+axSpindleBrakeRelReqFromPlc	46	VAR_GLOBAL	@TYP:1
+%NSIX 1.4		     
+
+;
+
+@V 1 53 0
+axOutEEnableFromPlc	47	VAR_GLOBAL	@TYP:1
+%NSIX 1.0		     
+
+;
+
+@V 1 54 0
+axOutEBrakeRelReqFromPlc	48	VAR_GLOBAL	@TYP:1
+%NSIX 1.5		     
+
+;
+
+@V 1 55 0
+axInESEnableFromPlc	49	VAR_GLOBAL	@TYP:1
+%NSIX 1.1		     
+
+;
+
+@V 1 56 0
+axInEBrakeRelReqFromPlc	50	VAR_GLOBAL	@TYP:1
+%NSIX 1.6		     
+
+;
+
+@V 1 57 0
+axZEnableFromPlc	51	VAR_GLOBAL	@TYP:1
+%NSIX 1.2		     
+
+;
+
+@V 1 58 0
+axZBrakeRelReqFromPlc	52	VAR_GLOBAL	@TYP:1
+%NSIX 1.7		     
+
+;
+
+@V 1 60 0
+resetSafeMc	53	VAR_GLOBAL	@TYP:1
+%NSIX 0.1		     
+
+;
+
+@V 1 61 0
+axSpindleDiagCode	54	VAR_GLOBAL	@TYP:18
+%NSQW 4		     
+
+;
+
+@V 1 62 0
+axSpindleEnableCmd	55	VAR_GLOBAL	@TYP:43
+%SQX 2.1		     
+
+;
+
+@V 1 63 0
+axOutEDiagCode	56	VAR_GLOBAL	@TYP:18
+%NSQW 6		     
+
+;
+
+@V 1 64 0
+axInEDiagCode	57	VAR_GLOBAL	@TYP:18
+%NSQW 8		     
+
+;
+
+@V 1 65 0
+axZDiagCode	58	VAR_GLOBAL	@TYP:18
+%NSQW 10		     
+
+;
+
+@V 1 66 0
+axZEnableCmd	59	VAR_GLOBAL	@TYP:43
+%SQX 2.2		     
+
+;
+
+@V 1 70 0
+cfPumpEnableCmd	60	VAR_GLOBAL	@TYP:43
+%SQX 2.0		     
+
+;
+
+@V 1 71 0
+cfPumpEnableFromPlc	61	VAR_GLOBAL	@TYP:1
+%NSIX 1.3		     
+
+;
+
+@V 1 72 0
+cfGateClosedStatus	62	VAR_GLOBAL	@TYP:43
+%SIX 42.4		     
+
+;
+
+@V 1 73 0
+cfGateClosedToPlc	63	VAR_GLOBAL	@TYP:1
+%NSQX 2.2		     
+
+;
+
+@V 1 74 0
+cfGateClosedLockedToPlc	64	VAR_GLOBAL	@TYP:1
+%NSQX 2.3		     
+
+;
+
+@V 1 75 0
+cfGateClosedWiringOk	65	VAR_GLOBAL	@TYP:43
+%SIX 43.2		     
+
+;
+
+@V 1 76 0
+cfGateClosedWiringOkToPlc	66	VAR_GLOBAL	@TYP:1
+%NSQX 2.4		     
+
+;
+
+@V 1 77 0
+cfGateLockCmd	67	VAR_GLOBAL	@TYP:43
+%SQX 3.0		     
+
+;
+
+@V 1 78 0
+cfGateLockStatus	68	VAR_GLOBAL	@TYP:43
+%SIX 42.2		     
+
+;
+
+@V 1 79 0
+cfLockGateFromPlc	69	VAR_GLOBAL	@TYP:1
+%NSIX 0.6		     
+
+;
+

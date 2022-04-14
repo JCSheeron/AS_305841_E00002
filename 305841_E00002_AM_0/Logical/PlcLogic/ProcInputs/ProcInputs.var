@@ -1,0 +1,27 @@
+VAR RETAIN
+
+END_VAR
+
+VAR CONSTANT
+
+END_VAR
+  
+VAR
+  (* set default values -- not normally needed due to global
+  permanent retained status of parameters, but use for special
+  cases like first startup after major change, etc. *)
+  reqSetDefaultValues : BOOL := FALSE; 
+  
+  (* analog scale and alarm fbs *)
+  fbAI_FT_CFFlow : fbSclAlmAI;
+  fbAI_LT_CFTankLevel : fbSclAlmAI;
+  fbAI_PT_CFPumpOutlet : fbSclAlmAI;
+  fbAI_PT_CFFilterOutlet : fbSclAlmAI; 
+  fbAI_DP_CFFilter : fbSclAlmAI; (* virtual input derrived from 2 PTs *)
+  
+  (* digital inputs *)
+  fbDI_LSL_CFTank : fbProcDI;
+  fbDI_ZS_CFTankLocator : fbProcDI;
+  fbDI_JI_480VACOk : fbProcDI;
+    
+END_VAR
