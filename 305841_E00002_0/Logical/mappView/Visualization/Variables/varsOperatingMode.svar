@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariablesSet id="varsOperatingMode" xmlns="http://www.br-automation.com/iat2015/session/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Variables>
+    <!--
+    <Variable name="Variable1" xsi:type="ANY_REAL" value="0" />
+    <Variable name="Variable2" xsi:type="ANY_INT" value="0" />
+    <Variable name="Variable3" xsi:type="ANY_STRING" value="0" />
+    <Variable name="Variable4" xsi:type="DATE_AND_TIME" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable4.1" xsi:type="DT" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable5" xsi:type="BOOL" value="true" />    
+    -->
+    <!-- Axis Designations -->
+    <!-- Values are set to match PLC enum or const dfns -->
+    <!-- Values correspond to single bits in a word, and are ususally worked with in hex -->
+    <Variable name="svOM_UNKNOWN" xsi:type="ANY_INT" value="0" />
+    <Variable name="svOM_INITIAL" xsi:type="ANY_INT" value="1" />
+    <Variable name="svOM_SAFE_MODE" xsi:type="ANY_INT" value="2" />
+    <Variable name="svOM_EMO_MODE" xsi:type="ANY_INT" value="4" />
+    <Variable name="svOM_CHECK_MODE" xsi:type="ANY_INT" value="8" />
+    <Variable name="svOM_MANUAL_MODE" xsi:type="ANY_INT" value="16" />
+    <Variable name="svOM_PENDANT_MODE" xsi:type="ANY_INT" value="32" />
+    <Variable name="svOM_PRODUCTION_MODE" xsi:type="ANY_INT" value="64" />
+    <Variable name="svOM_PROD_SM_SINGLE" xsi:type="ANY_INT" value="65" />
+    <Variable name="svOM_PROD_SM_STEPPED" xsi:type="ANY_INT" value="66" />
+    <Variable name="svOM_PROD_SM_CONTINUOUS" xsi:type="ANY_INT" value="64" />
+    
+    <Variable name="svOperatingMode" xsi:type="ANY_INT" value="0" />
+    <Variable name="svReqOperatingMode" xsi:type="ANY_INT" value="0" />
+    
+    <Variable name="svSL_UNKNOWN" xsi:type="ANY_INT" value="0" />
+    <Variable name="svSL_GUEST" xsi:type="ANY_INT" value="1" />
+    <Variable name="svSL_OPERATOR" xsi:type="ANY_INT" value="2" />
+    <Variable name="svSL_SUPERVISOR" xsi:type="ANY_INT" value="4" />
+    <Variable name="svSL_ENGINEER" xsi:type="ANY_INT" value="8" />
+    <Variable name="svSL_SUPERUSER" xsi:type="ANY_INT" value="16" />
+
+    <Variable name="svSecurityLevel" xsi:type="ANY_INT" value="0" />
+    
+
+  </Variables>
+</VariablesSet>

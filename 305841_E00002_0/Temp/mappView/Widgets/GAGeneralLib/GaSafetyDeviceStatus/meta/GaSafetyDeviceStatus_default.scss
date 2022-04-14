@@ -1,0 +1,11 @@
+@import "mixins.scss";
+@mixin widgets_GAGeneralLib_GaSafetyDeviceStatus_base {
+	@include elemWidth(270);
+	@include elemHeight(20);
+	margin: 0px;
+
+}
+
+.widgets_GAGeneralLib_GaSafetyDeviceStatus_style_default {
+@include widgets_GAGeneralLib_GaSafetyDeviceStatus_base 
+}

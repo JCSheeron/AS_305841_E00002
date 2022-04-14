@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">axisDetailLt.binding</Object>
+    <Object Type="File">axisDetailLt.eventbinding</Object>
+    <Object Type="File">axisDetail.bindinglist</Object>
+    <Object Type="File">axisDetail.binding</Object>
+    <Object Type="File">axisDetail.eventbinding</Object>
+  </Objects>
+</Package>

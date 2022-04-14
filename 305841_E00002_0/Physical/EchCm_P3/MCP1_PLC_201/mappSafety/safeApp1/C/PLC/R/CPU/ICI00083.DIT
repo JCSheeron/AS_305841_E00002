@@ -1,0 +1,165 @@
+(*
+T: FUNCTION_BLOCK SF_oS_PROFILE_BasicStatCtrl
+FW: YES	NO_VARIANT SF_oS_PROFILE_BasicStatCtrl SKIP_NOTHING	
+CI#: 83
+QSL: 0
+QVE: 25
+QVPC: 25
+QPar: 24
+QFBI: 0
+CIFNUM: 191
+CIFID: 533
+CIFMAJ: 1
+CIFMIN: 0
+CIFSTACK: 500
+*)
+
+Activate	1	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+S_ProfileID	2	VAR_INPUT	@TYP:45
+		     
+
+;
+
+
+S_InstanceID	3	VAR_INPUT	@TYP:48
+		     
+@TYP:48# 00#ffff
+;
+
+
+S_ControlID	4	VAR_INPUT	@TYP:45
+		     
+
+;
+
+
+S_StatusID	5	VAR_INPUT	@TYP:45
+		     
+
+;
+
+
+S_Control_Bit0	6	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit1	7	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit2	8	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit3	9	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit4	10	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit5	11	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit6	12	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+S_Control_Bit7	13	VAR_INPUT	@TYP:43
+		     
+
+;
+
+
+Ready	14	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+S_Status_Bit0	15	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit1	16	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit2	17	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit3	18	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit4	19	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit5	20	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit6	21	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+S_Status_Bit7	22	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+
+Error	23	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+DiagCode	24	VAR_OUTPUT	@TYP:18
+		     
+
+;
+
+
+FirstCall	25	VAR	@TYP:4
+		     
+
+;
+

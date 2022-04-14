@@ -1,0 +1,65 @@
+
+VAR CONSTANT
+
+END_VAR
+
+VAR
+ 
+  (* info from safety controller *)
+  fs_AllSMsOk : BOOL;
+  fs_EmoCmd : BOOL; (* H:Ok, L:EMO *)
+  fs_EmoOwsActive : BOOL; (* H:Ok, L: EMO *)
+  fs_EmoOwsOk : BOOL; (* H:Wiring Ok, L:Error *)
+  fs_InSafeMode : BOOL; (* H:InSafeMode, L: Not in safe mode *)
+  fs_KeyswitchInRun : BOOL; (* H:Run Pos, L: Not in run pos *)
+  fs_KeyswitchOk : BOOL; (* H:Wiring Ok, L:Error *)
+  fs_StartPbActive : BOOL; (* H:Start Req, L: Not pressed *)
+  fs_StartPbOk : BOOL; (* H:Wiring Ok, L:Error *)
+  fs_StopPbActive : BOOL; (* H: Allow Run, L: Stop *)
+  fs_StopPbOk : BOOL; (* H:Wiring Ok, L:Error *)
+  fs_CfGateClosed : BOOL; (* H:Closed, L: Open *)
+  fs_CfGateClosedLocked : BOOL; (* H:Closed and locked(Ok), L: Open and/or unlocked *)
+  fs_CfGateClosedOk : BOOL; (* H:Wiring Ok, L: Error *)
+  
+  (* info to safety controller *)
+  ts_ResetEStop : BOOL;
+  ts_ResetSafeMC : BOOL;
+  ts_InEmoMode : BOOL;
+  ts_InSafeMode : BOOL;
+  ts_InPendantMode : BOOL;
+  
+  (* cycle start/stop req *)
+  tmrReqStartPulse : TP;
+  tmrReqStopPulse : TP;
+
+  (* EMO Reset *)
+  timeEStopResetAllow : TIME;
+  eStopResetAllowSecRemain : DINT;
+  tmrEStopResetAllow : TON;
+  timeResetPulse : TIME;
+  tmrResetPulse : TP;
+  
+  (* HMI process specific, machine specific, and axis requests *)
+  hmiProcessReqs : sHmiProcessReqs; (* process specific reqs *)
+  hmiMachineAxisReqs : ARRAY[0..AXIS_COUNT] OF sHmiAxisReqs; (* machine specific requests that get turned into library reqs *)
+  hmiLibraryAxisReqs : ARRAY[0..AXIS_COUNT] OF sMot_HmiAxisReqs; (* standard/basic requests handled by the library *)
+ 
+  (* pointers used for memcpy/memset *) 
+  pSrc :  UDINT;
+  pDest :  UDINT;
+  byteCount :  UDINT;
+  nxtAddr :  UDINT;
+  
+  (* axis index *)
+  axisNo : DINT;
+  
+  (* fb to process Reqs *)
+  procHmiProcessReqs : fbHandleHmiProcessReqs;
+  procManualAxisReqsSpindle : fbHandleHmiAxisReq;
+  procManualAxisReqsOutE : fbHandleHmiAxisReq;
+  procManualAxisReqsInE : fbHandleHmiAxisReq;
+  procManualAxisReqsZ : fbHandleHmiAxisReq;
+  procManualAxisReqsHw : fbHandleHmiAxisReq;
+  procManualAxisReqsCfVfd : fbHandleHmiAxisReq;
+END_VAR
+

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="dlgSetPosLimits" layoutRefId="layoutDialog_Medium">
+  <Assignments>
+    <Assignment type="Content" baseContentRefId="dlgSetPosLimitsTop_content" areaRefId="areaMain" />
+    <Assignment type="Content" baseContentRefId="dlgSetPosLimitsBottom_content" areaRefId="areaBottom" />
+  </Assignments>
+</ddef:Dialog>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExpressionsSet id="expAxisStatus" xmlns="http://www.br-automation.com/iat2015/expression/engineering/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Expressions>
+    <!-- Mode Selection -->
+    <Expression id="isModeEmoModeSel" xsi:type="content" contentRefId="contentStdTop" type="isModeParentSelected" />    
+    <Expression id="isModeEmoSafety" xsi:type="content" contentRefId="dlgSafetySystemTop_content" type="isModeParentSelected" />    
+    <Expression id="isModeSafe" xsi:type="content" contentRefId="contentStdTop" type="isModeParentSelected" />    
+    <Expression id="isModeManual" xsi:type="content" contentRefId="contentStdTop" type="isModeParentSelected" />    
+    <Expression id="isModePendant" xsi:type="content" contentRefId="contentStdTop" type="isModeParentSelected" />    
+    <Expression id="isModeProduction" xsi:type="content" contentRefId="contentStdTop" type="isModeParentSelected" />    
+    <!-- Axis detail content -->
+    <Expression id="isAxSpindle" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <Expression id="isAxOutEcc" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <Expression id="isAxInEcc" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <Expression id="isAxZ" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <Expression id="isAxHandwheel" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <Expression id="isAxCfVfd" xsi:type="content" contentRefId="leftContentAxisDetail" type="isAxisSelected" />
+    <!-- Safety system related -->
+    <Expression id="isEmoResetAllowed" xsi:type="content" contentRefId="dlgSafetySystemTop_content" type="IntIsZero" />
+    <!-- Work Setup -->
+    <Expression id="passSelect_exp" xsi:type="content" contentRefId="mainContentWorkSetup" type="IntPlusOne" />
+
+  </Expressions>
+</ExpressionsSet>

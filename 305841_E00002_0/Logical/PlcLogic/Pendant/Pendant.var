@@ -1,0 +1,20 @@
+VAR RETAIN
+
+END_VAR
+
+VAR CONSTANT
+
+END_VAR
+  
+VAR
+
+  setZeroReq : BOOL := FALSE;
+  homeSeqOS : BOOL := FALSE;
+(*  enableInitDone : BOOL := FALSE; *)
+  axisSelection : eAXIS_DESIGNATION;
+(*  fbPendantInit : fbEnablePendantInit; *)
+  enabledAxisFb : fbEnabledAxis;
+(*  HomeAxisFb : fbHomeAbsSeq; *)
+
+END_VAR
+

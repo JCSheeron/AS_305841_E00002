@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+	<Schema href="GaMotAxisDetail/meta/GaMotAxisDetail_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="GaMotAxisHome/meta/GaMotAxisHome_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="GaMotAxisSetPosLimits/meta/GaMotAxisSetPosLimits_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="GaMotAxisStatus/meta/GaMotAxisStatus_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="GAMotTestWidget/meta/GAMotTestWidget_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+</SchemaCatalog>

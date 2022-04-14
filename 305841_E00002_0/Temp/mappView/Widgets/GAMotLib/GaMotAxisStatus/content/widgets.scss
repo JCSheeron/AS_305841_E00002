@@ -1,0 +1,502 @@
+@import "mixins.scss";
+#GaMotAxisStatus_grpBoxAxisStatus {
+	@include elemTop(5);
+}
+#GaMotAxisStatus_grpBoxAxisStatus {
+	@include elemLeft(5);
+}
+#GaMotAxisStatus_grpBoxAxisStatus {
+	@include elemWidth(370);
+}
+#GaMotAxisStatus_grpBoxAxisStatus {
+	@include elemHeight(290);
+}
+#GaMotAxisStatus_grpBoxAxisStatus {
+		z-index: 0;
+}
+#GaMotAxisStatus_lblRdyForPower {
+	@include elemTop(8);
+}
+#GaMotAxisStatus_lblRdyForPower {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblRdyForPower {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblRdyForPower {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblRdyForPower {
+		z-index: 0;
+}
+#GaMotAxisStatus_lblRdyForPower {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblIsHomed {
+	@include elemTop(30);
+}
+#GaMotAxisStatus_lblIsHomed {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsHomed {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsHomed {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsHomed {
+		z-index: 1;
+}
+#GaMotAxisStatus_lblIsHomed {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblIsAtPos {
+	@include elemTop(119);
+}
+#GaMotAxisStatus_lblIsAtPos {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsAtPos {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsAtPos {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsAtPos {
+		z-index: 2;
+}
+#GaMotAxisStatus_lblIsAtPos {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblIsMoveActive {
+	@include elemTop(97);
+}
+#GaMotAxisStatus_lblIsMoveActive {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsMoveActive {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsMoveActive {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsMoveActive {
+		z-index: 3;
+}
+#GaMotAxisStatus_lblIsMoveActive {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblIsMoveDone {
+	@include elemTop(141);
+}
+#GaMotAxisStatus_lblIsMoveDone {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsMoveDone {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsMoveDone {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsMoveDone {
+		z-index: 4;
+}
+#GaMotAxisStatus_lblIsMoveDone {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblIsStopped {
+	@include elemTop(163);
+}
+#GaMotAxisStatus_lblIsStopped {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsStopped {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsStopped {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsStopped {
+		z-index: 5;
+}
+#GaMotAxisStatus_lblIsStopped {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblStatus {
+	@include elemTop(193);
+}
+#GaMotAxisStatus_lblStatus {
+	@include elemLeft(238);
+}
+#GaMotAxisStatus_lblStatus {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisStatus_lblStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblStatus {
+		z-index: 6;
+}
+#GaMotAxisStatus_lblStatus {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_lblState {
+	@include elemTop(218);
+}
+#GaMotAxisStatus_lblState {
+	@include elemLeft(238);
+}
+#GaMotAxisStatus_lblState {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisStatus_lblState {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblState {
+		z-index: 7;
+}
+#GaMotAxisStatus_lblState {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_txtOutStatus {
+	@include elemTop(193);
+}
+#GaMotAxisStatus_txtOutStatus {
+	@include elemLeft(9);
+}
+#GaMotAxisStatus_txtOutStatus {
+	@include elemAutoWidth(228);
+}
+#GaMotAxisStatus_txtOutStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_txtOutStatus {
+		z-index: 8;
+}
+#GaMotAxisStatus_txtOutStatus {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutStatus {
+	@include text-alignment-all('right');
+}
+#GaMotAxisStatus_txtOutState {
+	@include elemTop(218);
+}
+#GaMotAxisStatus_txtOutState {
+	@include elemLeft(9);
+}
+#GaMotAxisStatus_txtOutState {
+	@include elemAutoWidth(228);
+}
+#GaMotAxisStatus_txtOutState {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_txtOutState {
+		z-index: 9;
+}
+#GaMotAxisStatus_txtOutState {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutState {
+	@include text-alignment-all('right');
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+	@include elemTop(5);
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+		z-index: 10;
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutRdyForPwr {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_txtOutIsHomed {
+	@include elemTop(28);
+}
+#GaMotAxisStatus_txtOutIsHomed {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsHomed {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsHomed {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsHomed {
+		z-index: 11;
+}
+#GaMotAxisStatus_txtOutIsHomed {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsHomed {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+	@include elemTop(95);
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+		z-index: 12;
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsMoveActive {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+	@include elemTop(118);
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+		z-index: 13;
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsAtPos {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+	@include elemTop(140);
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+		z-index: 14;
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsMoveDone {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_txtOutIsStopped {
+	@include elemTop(163);
+}
+#GaMotAxisStatus_txtOutIsStopped {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsStopped {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsStopped {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsStopped {
+		z-index: 15;
+}
+#GaMotAxisStatus_txtOutIsStopped {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsStopped {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_numOutPosAct {
+	@include elemTop(93);
+}
+#GaMotAxisStatus_numOutPosAct {
+	@include elemLeft(14);
+}
+#GaMotAxisStatus_numOutPosAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisStatus_numOutPosAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_numOutPosAct {
+		z-index: 16;
+}
+#GaMotAxisStatus_numOutPosAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisStatus_numOutVelAct {
+	@include elemTop(148);
+}
+#GaMotAxisStatus_numOutVelAct {
+	@include elemLeft(14);
+}
+#GaMotAxisStatus_numOutVelAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisStatus_numOutVelAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_numOutVelAct {
+		z-index: 17;
+}
+#GaMotAxisStatus_numOutVelAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisStatus_lblPosAct {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisStatus_lblPosAct {
+	@include elemTop(68);
+}
+#GaMotAxisStatus_lblPosAct {
+	@include elemLeft(34);
+}
+#GaMotAxisStatus_lblPosAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblPosAct {
+		z-index: 18;
+}
+#GaMotAxisStatus_lblPosAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_lblVelAct {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisStatus_lblVelAct {
+	@include elemTop(123);
+}
+#GaMotAxisStatus_lblVelAct {
+	@include elemLeft(34);
+}
+#GaMotAxisStatus_lblVelAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblVelAct {
+		z-index: 19;
+}
+#GaMotAxisStatus_lblVelAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+	@include elemTop(52);
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+		z-index: 20;
+}
+#GaMotAxisStatus_lblIsPoweredOn {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+	@include elemTop(50);
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+		z-index: 21;
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsPoweredOn {
+	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+	@include elemTop(74);
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+	@include elemLeft(184);
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+	@include elemAutoWidth(151);
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+		z-index: 22;
+}
+#GaMotAxisStatus_lblIsBrakeManRel {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+	@include elemTop(73);
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+	@include elemLeft(139);
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+		z-index: 23;
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisStatus_txtOutIsBrakeManRel {
+	@include text-alignment-all('center');
+}

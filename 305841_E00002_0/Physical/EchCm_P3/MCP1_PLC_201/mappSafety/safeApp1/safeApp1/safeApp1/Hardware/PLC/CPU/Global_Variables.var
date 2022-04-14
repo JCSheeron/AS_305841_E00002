@@ -1,0 +1,168 @@
+﻿{GroupDefinition(0,'Safe Modules Ok')}
+{GroupDefinition(11,'Safe Mode')}
+{GroupDefinition(20,'EStop Buttons and Status Diag')}
+{GroupDefinition(31,'Start Stop PBs')}
+{GroupDefinition(40,'Pendant')}
+{GroupDefinition(47,'PLC Stop and Brake Reqs')}
+{GroupDefinition(56,'Axes')}
+{GroupDefinition(66,'CuttingFluid')}
+
+VAR_GLOBAL {Group(0)}
+    {LINE(1)}
+    AllSMOkToPlc AT %QX0.1 : BOOL {Custom('SL1.SM1.BOOL00002')}; (*To PLC H:OK, L:Error*)
+    {LINE(2)}
+    SafeModule02Ok AT %IX4.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(3)}
+    SafeModule11Ok AT %IX4.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM11.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(4)}
+    SafeModule12Ok AT %IX4.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM12.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(5)}
+    SafeModule116Ok AT %IX4.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM116.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(6)}
+    SafeModule117Ok AT %IX4.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM117.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(7)}
+    SafeModule212Ok AT %IX4.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM212.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(8)}
+    SafeModule213Ok AT %IX4.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM213.SafeModuleOK')}; (*From Module H:OK, L:Error*)
+    {LINE(9)}
+    SaveModule02OutputRelease AT %QX20.0 : BOOL {Custom('SL1.SM2.ReleaseOutput')}; (*H: Release Outputs*)
+    {LINE(10)}
+    SafeModule213OutputRelease AT %QX21.0 : BOOL {Custom('SL1.SM213.ReleaseOutput')}; (*H: Release Outputs*)
+END_VAR
+
+VAR_GLOBAL {Group(11)}
+    {LINE(12)}
+    keySwitchInRunPLC AT %QX1.5 : BOOL {Custom('SL1.SM1.BOOL00014')}; (*To PLC H:Run L:Safe*)
+    {LINE(13)}
+    keySwitchWiringOkPlc AT %QX1.6 : BOOL {Custom('SL1.SM1.BOOL00015')}; (*To PLC H:Ok L:Error*)
+    {LINE(14)}
+    keySwitchInRunPos AT %IX6.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM116.SafeTwoChannelInput0304')}; (*From Module H:Run L:Safe*)
+    {LINE(15)}
+    keySwitchWiringOk AT %IX7.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM116.SafeTwoChannelOK0304')}; (*From Module H:OK, L:Error*)
+    {LINE(16)}
+    InSafeModeToPlc AT %QX1.7 : BOOL {Custom('SL1.SM1.BOOL00016')}; (*To PLC H:In Safe Mode*)
+    {LINE(17)}
+    InEmoModeFromPlc AT %IX0.2 : BOOL {Custom('SL1.SM1.BOOL10003')}; (*From PLC H: InEmoMode*)
+    {LINE(18)}
+    InSafeModeFromPlc AT %IX0.3 : BOOL {Custom('SL1.SM1.BOOL10004')}; (*From PLC H: InSafeMode*)
+    {LINE(19)}
+    InCycleFromPlc AT %IX0.5 : BOOL {Custom('SL1.SM1.BOOL10006')}; (*From PLC H: InCycle*)
+END_VAR
+
+VAR_GLOBAL {Group(20)}
+    {LINE(21)}
+    eStopCmdOutToPlc AT %QX0.0 : BOOL {Custom('SL1.SM1.BOOL00001')}; (*To PLC H:Ok L:EStop*)
+    {LINE(22)}
+    resetEStop AT %IX0.0 : BOOL {Custom('SL1.SM1.BOOL10001')}; (*H: Reset Req*)
+    {LINE(23)}
+    eStopButtonOWS AT %IX6.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM116.SafeTwoChannelInput0102')}; (*From Module*)
+    {LINE(24)}
+    eStopButtonPendant AT %IX8.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeTwoChannelInput0102')}; (*From Module*)
+    {LINE(25)}
+    eStopButtonOWSWiringOk AT %IX7.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM116.SafeTwoChannelOK0102')}; (*From Module H:OK, L:Error*)
+    {LINE(26)}
+    eStopButtonPendantWiringOk AT %IX9.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeTwoChannelOK0102')}; (*From Module H:OK, L:Error*)
+    {LINE(27)}
+    eStopButtonOWSActToPlc AT %QX0.5 : BOOL {Custom('SL1.SM1.BOOL00006')}; (*To PLC H:Ok L:EStop*)
+    {LINE(28)}
+    eStopButtonOWSOkToPlc AT %QX0.6 : BOOL {Custom('SL1.SM1.BOOL00007')}; (*To PLC H:Ok L:Error*)
+    {LINE(29)}
+    eStopButtonPendantActToPlc AT %QX0.7 : BOOL {Custom('SL1.SM1.BOOL00008')}; (*To PLC H:Ok L:EStop*)
+    {LINE(30)}
+    eStopButtonPendantOkToPlc AT %QX1.0 : BOOL {Custom('SL1.SM1.BOOL00009')}; (*To PLC H:Ok L:Error*)
+END_VAR
+
+VAR_GLOBAL {Group(31)}
+    {LINE(32)}
+    stopPbOWS AT %IX64.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM117.SafeTwoChannelInput0304')}; (*From Module H:Pressed (Stop), L: Not Pressed*)
+    {LINE(33)}
+    stopPbOWSWiringOk AT %IX65.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM117.SafeTwoChannelOK0304')}; (*From Module H:OK, L:Error*)
+    {LINE(34)}
+    stopPbOWSActToPlc AT %QX1.1 : BOOL {Custom('SL1.SM1.BOOL00010')}; (*To PLC H:Allow Run, L: Stop*)
+    {LINE(35)}
+    stopPbOWSWiringOkToPlc AT %QX1.2 : BOOL {Custom('SL1.SM1.BOOL00011')}; (*To PLC H:Ok L:Error*)
+    {LINE(36)}
+    startPbOWS AT %IX64.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM117.SafeTwoChannelInput0102')}; (*From Module H:Pressed (Run), L: Not Pressed*)
+    {LINE(37)}
+    startPbOWSWiringOk AT %IX65.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM117.SafeTwoChannelOK0102')}; (*From Module H:OK, L:Error*)
+    {LINE(38)}
+    startPbOWSActToPlc AT %QX1.3 : BOOL {Custom('SL1.SM1.BOOL00012')}; (*To PLC H: Pressed (Run), L: Not Pressed*)
+    {LINE(39)}
+    startPbOWSWiringOkToPlc AT %QX1.4 : BOOL {Custom('SL1.SM1.BOOL00013')}; (*To PLC H:Ok L:Error*)
+END_VAR
+
+VAR_GLOBAL {Group(40)}
+    {LINE(41)}
+    InPendantModeFromPlc AT %IX0.4 : BOOL {Custom('SL1.SM1.BOOL10005')}; (*H: PendantModeActive*)
+    {LINE(42)}
+    allowPendantMovesToPlc AT %QX0.2 : BOOL {Custom('SL1.SM1.BOOL00003')}; (*H:Allow Pendant Moves*)
+    {LINE(43)}
+    pendantEnableSwEnabledPos AT %IX8.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeTwoChannelInput0304')}; (*From Module H:Enabled*)
+    {LINE(44)}
+    pendantEnableSwEnabledToPlc AT %QX2.0 : BOOL {Custom('SL1.SM1.BOOL00017')}; (*H:Enabled*)
+    {LINE(45)}
+    pendantEnableSwWiringOk AT %IX9.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeTwoChannelOK0304')}; (*From Module H:OK, L:Error*)
+    {LINE(46)}
+    pendantEnableSwWiringOkToPlc AT %QX2.1 : BOOL {Custom('SL1.SM1.BOOL00018')}; (*H:Ok, L:Error*)
+END_VAR
+
+VAR_GLOBAL {Group(47)}
+    {LINE(48)}
+    axSpindleEnableFromPlc AT %IX0.7 : BOOL {Custom('SL1.SM1.BOOL10008')}; (*From PLC. H:AllowMotion, L:Stop*)
+    {LINE(49)}
+    axSpindleBrakeRelReqFromPlc AT %IX1.4 : BOOL {Custom('SL1.SM1.BOOL10013')}; (*From PLC L:Brake Release Req*)
+    {LINE(50)}
+    axOutEEnableFromPlc AT %IX1.0 : BOOL {Custom('SL1.SM1.BOOL10009')}; (*From PLC. H:AllowMotion, L:Stop*)
+    {LINE(51)}
+    axOutEBrakeRelReqFromPlc AT %IX1.5 : BOOL {Custom('SL1.SM1.BOOL10014')}; (*From PLC L:Brake Release Req*)
+    {LINE(52)}
+    axInESEnableFromPlc AT %IX1.1 : BOOL {Custom('SL1.SM1.BOOL10010')}; (*From PLC. H:AllowMotion, L:Stop*)
+    {LINE(53)}
+    axInEBrakeRelReqFromPlc AT %IX1.6 : BOOL {Custom('SL1.SM1.BOOL10015')}; (*From PLC L:Brake Release Req*)
+    {LINE(54)}
+    axZEnableFromPlc AT %IX1.2 : BOOL {Custom('SL1.SM1.BOOL10011')}; (*From PLC. H:AllowMotion, L:Stop*)
+    {LINE(55)}
+    axZBrakeRelReqFromPlc AT %IX1.7 : BOOL {Custom('SL1.SM1.BOOL10016')}; (*From PLC L:Brake Release Req*)
+END_VAR
+
+VAR_GLOBAL {Group(56)}
+    {LINE(57)}
+    resetSafeMc AT %IX0.1 : BOOL {Custom('SL1.SM1.BOOL10002')}; (*H:Reset req*)
+    {LINE(58)}
+    axSpindleDiagCode AT %QW4 : WORD {Custom('SL1.SM1.UINT0001')};
+    {LINE(59)}
+    axOutEDiagCode AT %QW6 : WORD {Custom('SL1.SM1.UINT0002')};
+    {LINE(60)}
+    axInEDiagCode AT %QW8 : WORD {Custom('SL1.SM1.UINT0003')};
+    {LINE(61)}
+    axZDiagCode AT %QW10 : WORD {Custom('SL1.SM1.UINT0004')};
+    {LINE(62)}
+    axSpindleRef AT %SAFEINT#0 : SAFEINT := SAFEINT#0 {Custom('SL1.SM11.Axis01#SAFEINT.0')}; (*axis reference*)
+    {LINE(63)}
+    axOutERef AT %SAFEINT#1 : SAFEINT := SAFEINT#1 {Custom('SL1.SM11.Axis02#SAFEINT.1')}; (*axis reference*)
+    {LINE(64)}
+    axInERef AT %SAFEINT#2 : SAFEINT := SAFEINT#2 {Custom('SL1.SM11.Axis03#SAFEINT.2')}; (*axis reference*)
+    {LINE(65)}
+    axZRef AT %SAFEINT#3 : SAFEINT := SAFEINT#3 {Custom('SL1.SM12.Axis01#SAFEINT.3')}; (*axis reference*)
+END_VAR
+
+VAR_GLOBAL {Group(66)}
+    {LINE(67)}
+    cfPumpEnableCmd AT %QX2.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput01')}; (*H: Allow Pumping*)
+    {LINE(68)}
+    cfGateClosedStatus AT %IX66.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM212.SafeTwoChannelInput0102')}; (*From Module H: Closed, L:Open*)
+    {LINE(69)}
+    cfGateClosedToPlc AT %QX2.2 : BOOL {Custom('SL1.SM1.BOOL00019')}; (*H: Closed, L:Open*)
+    {LINE(70)}
+    cfGateClosedLockedToPlc AT %QX2.3 : BOOL {Custom('SL1.SM1.BOOL00020')}; (*H: Closed and locked, L:Open or unlocked*)
+    {LINE(71)}
+    cfGateClosedWiringOk AT %IX67.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM212.SafeTwoChannelOK0102')}; (*From Module H:Ok, L:Error*)
+    {LINE(72)}
+    cfGateClosedWiringOkToPlc AT %QX2.4 : BOOL {Custom('SL1.SM1.BOOL00021')}; (*H:Ok, L:Error*)
+    {LINE(73)}
+    cfGateLockCmd AT %QX3.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM213.SafeDigitalOutput01')}; (*To Module H: Lock, L: Unlock*)
+    {LINE(74)}
+    cfGateLockStatus AT %IX66.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM212.SafeDigitalInput03')}; (*From Module H: Locked, L: Unlocked*)
+    {LINE(75)}
+    cfLockGateFromPlc AT %IX0.6 : BOOL {Custom('SL1.SM1.BOOL10007')}; (*From PLC: Lock Gate Cmd*)
+END_VAR

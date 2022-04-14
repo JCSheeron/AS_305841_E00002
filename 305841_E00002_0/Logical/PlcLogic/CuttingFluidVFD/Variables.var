@@ -1,0 +1,7 @@
+VAR
+  
+  almMask : UDINT;
+  tmrCfFlowOk : TON; (* flow established timer *)
+  timeCfFlowOk : TIME;
+
+END_VAR

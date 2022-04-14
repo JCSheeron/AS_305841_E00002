@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="B4.91">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Everyone" Access="0x005F" />
+        <ACE RoleName="Operators" Access="0x005F" />
+        <ACE RoleName="Engineers" Access="0x005F" />
+        <ACE RoleName="Administrators" Access="0x017F" />
+      </ACL>
+      <ACL Id="2">
+        <ACE RoleName="Everyone" Access="0x01FF" />
+        <ACE RoleName="Operators" Access="0x01FF" />
+        <ACE RoleName="Engineers" Access="0x01FF" />
+        <ACE RoleName="Administrators" Access="0x01FF" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases>
+      <EURangeViolation Id="1" Mode="2" />
+    </EURangeViolationAliases>
+    <EURangesAliases>
+      <EURanges Id="2">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">100</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="3">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">4000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="6">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">900</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="7">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">90</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="9">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">3</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="11">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">360</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="12">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">1000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="13">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">2</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="14">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">1.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="15">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">2000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="18">
+        <EURange>
+          <Low ValueProvider="Const">0.1</Low>
+          <High ValueProvider="Const">12000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="19">
+        <EURange>
+          <Low ValueProvider="Const">0.1</Low>
+          <High ValueProvider="Const">24000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="20">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">24000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="21">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">360.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="24">
+        <EURange>
+          <Low ValueProvider="Const">0.1</Low>
+          <High ValueProvider="Const">5760.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="25">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">23040.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="26">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">1440.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="28">
+        <EURange>
+          <Low ValueProvider="Const">-4000.0</Low>
+          <High ValueProvider="Const">4000.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="29">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">4000.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="30">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">120.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="31">
+        <EURange>
+          <Low ValueProvider="Const">0.1</Low>
+          <High ValueProvider="Const">480.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="32">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">1920.0</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="5394509" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolutions per minute" Symbol="rpm" />
+      <EngineeringUnit Id="2" UnitId="5066068" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre" Symbol="mm" />
+      <EngineeringUnit Id="3" UnitId="4403510" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second" Symbol="mm/s" />
+      <EngineeringUnit Id="4" UnitId="17476" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree [unit of angle]" Symbol="°" />
+      <EngineeringUnit Id="6" UnitId="20529" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="percent" Symbol="%" />
+      <EngineeringUnit Id="7" UnitId="5059633" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second squared" Symbol="mm/s²" />
+      <EngineeringUnit Id="8" UnitId="4669745" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per minute per second" Symbol="rpm/s" />
+      <EngineeringUnit Id="9" UnitId="5059637" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree [unit of angle] per second squared" Symbol="°/s²" />
+      <EngineeringUnit Id="10" UnitId="4536630" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree per second" Symbol="°/s" />
+      <EngineeringUnit Id="11" UnitId="5059636" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolution" Symbol="rev" />
+      <EngineeringUnit Id="12" UnitId="5394515" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolutions per second" Symbol="rev/s" />
+      <EngineeringUnit Id="13" UnitId="4669746" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per minute per second²" Symbol="rpm/s²" />
+      <EngineeringUnit Id="14" UnitId="4669744" NameSpaceUri="http://www.br-automation.com/units" Name="degrees per second³" Symbol="°/s³" />
+      <EngineeringUnit Id="15" UnitId="4669749" NameSpaceUri="http://www.br-automation.com/units" Name="millimeters per second³" Symbol="mm/s³" />
+    </EngineeringUnitAliases>
+  </Aliases>
+  <DefaultView AclId="2">
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="axes" EnableArrayElements="True">
+          <Variable Name="axes[0]">
+            <Variable Name="Status">
+              <Variable Name="CoordActualOffsetShift" />
+              <Variable Name="CoordActualPhaseShift" />
+              <Variable Name="CoordRecoveryPosition" />
+              <Variable Name="Position" />
+              <Variable Name="Velocity" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[1]">
+            <Variable Name="Status">
+              <Variable Name="Position" EngineeringUnitId="11" />
+              <Variable Name="Velocity" EngineeringUnitId="12" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="11" />
+            </Variable>
+            <Variable Name="MoveParameters">
+              <Variable Name="Position" />
+              <Variable Name="Distance" />
+              <Variable Name="Velocity" />
+              <Variable Name="Acceleration" />
+              <Variable Name="Deceleration" />
+              <Variable Name="MaxJerk" />
+            </Variable>
+            <Variable Name="StatusSlave">
+              <Variable Name="Position" EngineeringUnitId="12" />
+              <Variable Name="Velocity" EngineeringUnitId="1" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="1" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="1" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="1" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[2]">
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+              <Variable Name="CoordActualOffsetShift" EngineeringUnitId="4" />
+              <Variable Name="CoordActualPhaseShift" EngineeringUnitId="4" />
+              <Variable Name="CoordRecoveryPosition" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="StatusSlave">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[3]">
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+              <Variable Name="CoordActualOffsetShift" EngineeringUnitId="4" />
+              <Variable Name="CoordActualPhaseShift" EngineeringUnitId="4" />
+              <Variable Name="CoordRecoveryPosition" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="StatusSlave">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[4]">
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="3" />
+              <Variable Name="Position" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="2" />
+            </Variable>
+            <Variable Name="StatusSlave">
+              <Variable Name="Velocity" EngineeringUnitId="3" />
+              <Variable Name="Position" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="2" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[5]">
+            <Variable Name="Status">
+              <Variable Name="Position" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="2" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="2" />
+              <Variable Name="Velocity" EngineeringUnitId="3" />
+            </Variable>
+            <Variable Name="StatusSlave">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[7]">
+            <Variable Name="StatusSlave">
+              <Variable Name="Position" EngineeringUnitId="11" />
+              <Variable Name="Velocity" EngineeringUnitId="12" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="11" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+            </Variable>
+          </Variable>
+          <Variable Name="axes[6]">
+            <Variable Name="StatusSlave">
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="9" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="gr_CfgCurrent" AutomaticEnable="True">
+          <Variable Name="spindle">
+            <Variable Name="nomRpm" EURangeViolationId="1" EURangesId="6" EngineeringUnitId="1" />
+            <Variable Name="decel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="8" />
+            <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="8" />
+          </Variable>
+          <Variable Name="cuttingHead">
+            <Variable Name="totalDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
+            <Variable Name="finishingPassDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
+            <Variable Name="feedRate" EURangeViolationId="1" EURangesId="11" EngineeringUnitId="3" />
+            <Variable Name="setZeroOffset" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="2" />
+            <Variable Name="depthMod" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
+            <Variable Name="depthAdjAngle" EURangeViolationId="1" EURangesId="7" EngineeringUnitId="4" />
+            <Variable Name="cutOverrunAngle" EURangeViolationId="1" EURangesId="7" EngineeringUnitId="4" />
+            <Variable Name="decel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="9" />
+            <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="9" />
+            <Variable Name="retractRate" EURangeViolationId="1" EURangesId="11" EngineeringUnitId="10" />
+            <Variable Name="passCount" EURangeViolationId="1" EURangesId="9" />
+          </Variable>
+          <Variable Name="zAxis">
+            <Variable Name="indexSpeed" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="3" />
+            <Variable Name="indexDist" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="2" />
+            <Variable Name="setZeroOffset" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="2" />
+            <Variable Name="zMod" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="2" />
+            <Variable Name="startOfCutPos" EURangeViolationId="1" EURangesId="3" EngineeringUnitId="2" />
+            <Variable Name="loadUnloadPos" EURangeViolationId="1" EURangesId="3" EngineeringUnitId="2" />
+            <Variable Name="decel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="7" />
+            <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="7" />
+          </Variable>
+          <Variable Name="cfVfd">
+            <Variable Name="speedPct" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="6" />
+          </Variable>
+        </Variable>
+        <Variable Name="gr_PartCurrent" AutomaticEnable="True">
+          <Variable Name="partDfn">
+            <Variable Name="nomId" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="2" />
+            <Variable Name="nomCutLength" EURangeViolationId="1" EURangesId="3" EngineeringUnitId="2" />
+          </Variable>
+        </Variable>
+        <Variable Name="operatingMode">
+          <Variable Name="ReqEmoReset" />
+          <Variable Name="ReqAxisReset" />
+          <Variable Name="HmiReqCycleStart" />
+          <Variable Name="HmiReqCycleStop" />
+          <Variable Name="isInCycle" />
+          <Variable Name="isStopping" />
+          <Variable Name="ShutOffCfBeforeUnload" />
+          <Variable Name="SingleCycleInclZIndex" />
+          <Variable Name="ModeReqBits" />
+          <Variable Name="SecurityLevel" />
+          <Variable Name="OperatingMode" />
+          <Variable Name="SubMode" />
+          <Variable Name="SeqStep" />
+        </Variable>
+        <Variable Name="gr_AxisPositionLimits" EnableArrayElements="True">
+          <Variable Name="gr_AxisPositionLimits[0]">
+            <Variable Name="PositionLimitPos" />
+            <Variable Name="PositionLimitNeg" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[1]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="11" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="11" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[2]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="4" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[3]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="4" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[4]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="2" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="2" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[5]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="2" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="2" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[7]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="4" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
+          </Variable>
+          <Variable Name="gr_AxisPositionLimits[8]">
+            <Variable Name="PositionLimitPos" EngineeringUnitId="11" />
+            <Variable Name="PositionLimitNeg" EngineeringUnitId="11" />
+          </Variable>
+        </Variable>
+        <Variable Name="owsPendant" AutomaticEnable="True">
+          <Variable Name="Position" EngineeringUnitId="4" />
+          <Variable Name="PositionSnapshot" EngineeringUnitId="4" />
+        </Variable>
+      </GlobalVariables>
+      <Task Name="OmSafeDev">
+        <Variable Name="fs_AllSMsOk" />
+        <Variable Name="fs_EmoOwsActive" />
+        <Variable Name="fs_EmoOwsOk" />
+        <Variable Name="fs_KeyswitchInRun" />
+        <Variable Name="fs_KeyswitchOk" />
+        <Variable Name="fs_StartPbActive" />
+        <Variable Name="fs_StartPbOk" />
+        <Variable Name="fs_StopPbActive" />
+        <Variable Name="fs_StopPbOk" />
+        <Variable Name="fs_EmoCmd" />
+        <Variable Name="fs_CfGateClosedOk" />
+        <Variable Name="eStopResetAllowSecRemain" />
+        <Variable Name="ts_ResetEStop" />
+        <Variable Name="ts_ResetSafeMC" />
+        <Variable Name="hmiLibraryAxisReqs" EnableArrayElements="True">
+          <Variable Name="hmiLibraryAxisReqs[1]">
+            <Variable Name="homePosition" EURangesId="14" EngineeringUnitId="11" />
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EURangesId="14" EngineeringUnitId="11" />
+              <Variable Name="PositionLimitNeg" EURangesId="14" EngineeringUnitId="11" />
+            </Variable>
+            <Variable Name="Position" EURangesId="14" EngineeringUnitId="11" />
+            <Variable Name="Distance" EngineeringUnitId="11" />
+            <Variable Name="Velocity" EURangesId="15" EngineeringUnitId="1" />
+            <Variable Name="Acceleration" EURangesId="18" EngineeringUnitId="8" />
+            <Variable Name="Deceleration" EURangesId="19" EngineeringUnitId="8" />
+            <Variable Name="MaxJerk" EURangesId="20" EngineeringUnitId="13" />
+            <Variable Name="shiftProfileDistance" EngineeringUnitId="11" />
+            <Variable Name="shiftDistance" EngineeringUnitId="11" />
+          </Variable>
+          <Variable Name="hmiLibraryAxisReqs[2]">
+            <Variable Name="homePosition" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EURangesId="21" EngineeringUnitId="4" />
+              <Variable Name="PositionLimitNeg" EURangesId="21" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="Position" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="Distance" EngineeringUnitId="4" />
+            <Variable Name="Velocity" EURangesId="26" EngineeringUnitId="10" />
+            <Variable Name="Acceleration" EURangesId="24" EngineeringUnitId="9" />
+            <Variable Name="Deceleration" EURangesId="24" EngineeringUnitId="9" />
+            <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
+            <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
+            <Variable Name="shiftDistance" EngineeringUnitId="4" />
+          </Variable>
+          <Variable Name="hmiLibraryAxisReqs[3]">
+            <Variable Name="homePosition" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EURangesId="21" EngineeringUnitId="4" />
+              <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="Position" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="Distance" EngineeringUnitId="4" />
+            <Variable Name="Velocity" EURangesId="26" EngineeringUnitId="10" />
+            <Variable Name="Acceleration" EURangesId="24" EngineeringUnitId="9" />
+            <Variable Name="Deceleration" EURangesId="24" EngineeringUnitId="9" />
+            <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
+            <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
+            <Variable Name="shiftDistance" EngineeringUnitId="4" />
+          </Variable>
+          <Variable Name="hmiLibraryAxisReqs[4]">
+            <Variable Name="homePosition" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+              <Variable Name="PositionLimitNeg" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+            </Variable>
+            <Variable Name="Position" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+            <Variable Name="Distance" EURangeViolationId="1" EURangesId="29" EngineeringUnitId="2" />
+            <Variable Name="Velocity" EURangeViolationId="1" EURangesId="30" EngineeringUnitId="3" />
+            <Variable Name="Acceleration" EURangeViolationId="1" EURangesId="31" EngineeringUnitId="7" />
+            <Variable Name="Deceleration" EURangeViolationId="1" EURangesId="31" EngineeringUnitId="7" />
+            <Variable Name="MaxJerk" EURangeViolationId="1" EURangesId="32" EngineeringUnitId="15" />
+            <Variable Name="shiftProfileDistance" EngineeringUnitId="2" />
+            <Variable Name="shiftDistance" EngineeringUnitId="2" />
+          </Variable>
+          <Variable Name="hmiLibraryAxisReqs[7]">
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EngineeringUnitId="4" />
+              <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
+            </Variable>
+            <Variable Name="Distance" EngineeringUnitId="4" />
+            <Variable Name="Position" EngineeringUnitId="4" />
+            <Variable Name="Velocity" EngineeringUnitId="10" />
+            <Variable Name="Acceleration" EngineeringUnitId="9" />
+            <Variable Name="Deceleration" EngineeringUnitId="9" />
+            <Variable Name="MaxJerk" EngineeringUnitId="14" />
+          </Variable>
+        </Variable>
+        <Variable Name="hmiMachineAxisReqs" EnableArrayElements="True" />
+        <Variable Name="fs_InSafeMode" />
+        <Variable Name="fs_CfGateClosedLocked" />
+        <Variable Name="fs_CfGateClosed" />
+      </Task>
+      <Task Name="ProdCycle">
+        <Variable Name="partMotion" AutomaticEnable="True">
+          <Variable Name="passDepth" EngineeringUnitId="2" />
+          <Variable Name="depthAdjAngle" EngineeringUnitId="4" />
+          <Variable Name="depthAdjAngleMin" EngineeringUnitId="4" />
+          <Variable Name="passOffsetAngle" EngineeringUnitId="4" />
+          <Variable Name="finishPassOffsetAngle" EngineeringUnitId="4" />
+          <Variable Name="startOfPassPosition" EngineeringUnitId="4" />
+          <Variable Name="endOfPassPosition" EngineeringUnitId="4" />
+          <Variable Name="calcNextAdjPosition" EngineeringUnitId="4" />
+          <Variable Name="calcNextAdjDistance" EngineeringUnitId="4" />
+          <Variable Name="passDistanceTraveled" EngineeringUnitId="4" />
+        </Variable>
+      </Task>
+      <Task Name="Pendant" />
+    </Module>
+  </DefaultView>
+</OpcUaSource>

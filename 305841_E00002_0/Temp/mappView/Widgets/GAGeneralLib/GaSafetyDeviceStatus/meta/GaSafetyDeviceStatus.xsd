@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.GAGeneralLib.GaSafetyDeviceStatusRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="20" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="270" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.GAGeneralLib.GaSafetyDeviceStatus">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.GAGeneralLib.GaSafetyDeviceStatusRestrict">
+			<xs:attribute name="DeviceLabel" use="optional" type="types:String" default="EMO" />
+			<xs:attribute name="StatusOkString" use="optional" type="types:String" default="Good" />
+			<xs:attribute name="StatusOkStyle" use="optional" type="types:String" default="Good" />
+			<xs:attribute name="StatusActiveString" use="optional" type="types:String" default="Good" />
+			<xs:attribute name="StatusActiveStyle" use="optional" type="types:String" default="Good" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

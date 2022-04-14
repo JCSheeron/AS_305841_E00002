@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompoundWidget id="GaMotAxisStatus" width="80" height="60"
+  xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxStatus" top="20" left="30" width="370" height="290" zIndex="0" text="Axis Status">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="lblRdyForPower" top="21" left="184" width="125" height="15" zIndex="0" text="Is Rdy For Power" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsPoweredOn" top="48" left="184" width="125" height="15" zIndex="1" text="Is Enabled" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsAtPos" top="106" left="184" width="125" height="15" zIndex="2" text="Is At Position" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsMoveActive" top="76" left="184" width="125" height="15" zIndex="3" text="Is Move Active" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsMoveDone" top="138" left="184" width="125" height="15" zIndex="4" text="Is Move Done" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsStopped" top="166" left="184" width="125" height="15" zIndex="5" text="Is Stopped" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStatus" top="193" left="184" width="125" height="15" zIndex="6" text="Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblState" top="218" left="184" width="125" height="15" zIndex="7" text="State" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatus" top="193" left="34" width="150" height="15" zIndex="8" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutState" top="218" left="34" width="150" height="15" zIndex="9" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutRdyForPwr" top="18" left="139" width="30" height="20" zIndex="10" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsPoweredOn" top="46" left="139" width="30" height="20" zIndex="11" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsMoveActive" top="73" left="139" width="30" height="20" zIndex="12" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsAtPos" top="103" left="139" width="30" height="20" zIndex="13" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsMoveDone" top="136" left="139" width="30" height="20" zIndex="14" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsStopped" top="163" left="139" width="30" height="20" zIndex="15" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosAct" top="48" left="19" width="101" height="15" zIndex="16" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelAct" top="103" left="19" width="101" height="15" zIndex="17" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPosAct" top="23" left="29" height="15" zIndex="18" text="Position" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelAct" top="78" left="29" height="15" zIndex="19" text="Velocity" textAlign="center" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxCoord" top="330" left="30" width="370" height="240" zIndex="1" text="Slave Axis">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordSlaveRdy" top="26" left="184" width="160" height="15" zIndex="0" text="Is Coord. Slave Rdy" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordMstrRdy" top="56" left="184" width="160" height="15" zIndex="1" text="Is Coord. Master Rdy" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblCoordComp" top="86" left="184" width="160" height="15" zIndex="2" text="Is Coord. In Comp." padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblCoordSync" top="116" left="184" width="160" height="15" zIndex="3" text="Is Coord. In Sync" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordSlaveRdy" top="23" left="139" width="30" height="20" zIndex="4" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordMasterRdy" top="53" left="139" width="30" height="20" zIndex="5" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInComp" top="83" left="139" width="30" height="20" zIndex="6" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInSync" top="113" left="139" width="30" height="20" zIndex="7" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosActSlave" top="58" left="9" width="101" height="15" zIndex="8" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelActSlave" top="113" left="9" height="15" zIndex="9" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPosActSlave" top="33" left="19" height="15" zIndex="10" text="Position" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelActSlave" top="88" left="19" height="15" zIndex="11" text="Velocity" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStatusSlave" top="148" left="184" width="125" height="15" zIndex="12" text="Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStateSlave" top="173" left="184" width="125" height="15" zIndex="13" text="State" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatusSlave" top="148" left="34" width="150" height="15" zIndex="14" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStateSlave" top="173" left="34" width="150" height="15" zIndex="15" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxMoveCmd" top="20" left="415" width="585" height="450" zIndex="2" text="Move Command">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.RadioButtonGroup" id="rdoBtnGrpMoveType" top="23" left="24" width="145" height="145" zIndex="0">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnMoveAbs" top="15" left="10" width="115" zIndex="0" text="Abs Move" bold="true" />
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnMoveRel" top="58" left="10" width="115" zIndex="1" text="Rel Move" bold="true" />
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnMoveVel" top="100" left="10" width="118" zIndex="2" text="Vel Move" bold="true" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.RadioButtonGroup" id="rdoBtnGrpMoveDir" top="23" left="174" width="175" height="145" zIndex="1">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnDirNeg" top="58" left="10" width="115" zIndex="0" text="NegDir" bold="true" />
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnDirPos" top="15" left="10" width="115" zIndex="1" text="PosDir" bold="true" />
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnDirShortest" top="100" left="10" width="145" zIndex="2" text="Shortest Path" bold="true" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInDistMoveParam" top="78" left="374" zIndex="2" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInVelMoveParam" top="223" left="34" zIndex="3" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelMoveParam" top="193" left="44" zIndex="4" text="Vel" />
+        <Widget xsi:type="widgets.brease.Label" id="lblDistMoveParam" top="78" left="484" zIndex="5" text="Dist" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInAccelMoveParam" top="223" left="154" zIndex="6" />
+        <Widget xsi:type="widgets.brease.Label" id="lblAccelMoveParam" top="193" left="164" zIndex="7" text="Accel" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInDecelMoveParam" top="223" left="274" zIndex="8" />
+        <Widget xsi:type="widgets.brease.Label" id="lblDecelMoveParam" top="193" left="284" zIndex="9" text="Decel" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInPosMoveParam" top="33" left="374" zIndex="10" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPosMoveParam" top="33" left="484" zIndex="11" text="Pos" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInJerkMoveParam" top="223" left="394" zIndex="12" />
+        <Widget xsi:type="widgets.brease.Label" id="lblJerkMoveParam" top="193" left="404" zIndex="13" text="Jerk" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStart" top="313" left="89" zIndex="14" text="GO!" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStop" top="313" left="294" zIndex="15" text="STOP" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+  <Properties>
+    <!-- Non-Bindable properties -->
+    <!-- 
+    Simple non bindable property:
+    Property Attributes
+    xsi:type: NonBindableProperty
+    name: name of the property (not allowed: width, height, top, left, id, enable, visible, zindex, margin, premissionview, permissionoperate, description)
+    <Property xsi:type="NonBindableProperty" name="" type="" defaultValue="" required="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" property=""/>
+        <Mapping widget="" property=""/>
+      </Mappings>
+    </Property>
+
+    Required are xsi:type, name, type, and default value
+
+    -->
+
+    <!-- Bindable properties -->
+    <!--
+    Simple bindable property:
+    <Property xsi:type="BindableProperty" name="" type="" defaultValue="" readOnly="" category="" localizable="" typeRefId="" nodeRefId="">
+    <Description>Description will be shown in property grid.</Description>
+    <Mappings>
+    <Mapping widget="" property="" mode=""/>
+    <Mapping widget="" property="" mode=""/>
+      </Mappings>
+    </Property>
+    
+    Required are xsi:type, name, type, and default value
+    -->
+
+    <!-- Make coord axis info visibility dependent on HasSlaveAxis property -->
+    <Property xsi:type="BindableProperty" name="HasSlaveAxis" type="Boolean" defaultValue="false" readOnly="false" category="Axis">
+      <Description>Show coord. axis info if true</Description>
+      <Mappings>
+        <Mapping widget="grpBoxCoord" property="visible" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <!-- Set units for move params -->
+    <Property xsi:type="BindableProperty" name="PositionUnits" type="String" defaultValue="" readOnly="false" category="Units">
+      <Description>Set the unit string for position and distance units.</Description>
+      <Mappings>
+        <Mapping widget="numInPosMoveParam" property="unit" mode="oneWay"/>
+        <Mapping widget="numInDistMoveParam" property="unit" mode="oneWay"/>
+        <Mapping widget="numOutPosAct" property="unit" mode="oneWay"/>
+      </Mappings>
+    </Property>
+     
+    <Property xsi:type="BindableProperty" name="VelocityUnits" type="String" defaultValue="" readOnly="false" category="Units">
+      <Description>Set the unit string for velocity units.</Description>
+      <Mappings>
+        <Mapping widget="numInVelMoveParam" property="unit" mode="oneWay"/>
+        <Mapping widget="numOutVelAct" property="unit" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <Property xsi:type="BindableProperty" name="AccelDecelUnits" type="String" defaultValue="" readOnly="false" category="Units">
+      <Description>Set the unit string for accel and decel units.</Description>
+      <Mappings>
+        <Mapping widget="numInAccelMoveParam" property="unit" mode="oneWay"/>
+        <Mapping widget="numInDecelMoveParam" property="unit" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <Property xsi:type="BindableProperty" name="JerkUnits" type="String" defaultValue="" readOnly="false" category="Units">
+      <Description>Set the unit string for accel and decel units.</Description>
+      <Mappings>
+        <Mapping widget="numInJerkMoveParam" property="unit" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <!-- Send in text strings as properties use in place of bool values; show the boolean status value as human readable text strings. -->
+    <Property xsi:type="BindableProperty" name="IsReadyForPowerText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutRdyForPwr" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsPoweredOnText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsPoweredOn" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsMoveActiveText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsMoveActive" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsAtPositionText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsAtPos" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsMoveDoneText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsMoveDone" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsStoppedText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsStopped" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <!-- Display strings in place of status and state ints/enums -->
+    <Property xsi:type="BindableProperty" name="StatusText" type="String" defaultValue="Unknown" readOnly="false" category="Axis">
+      <Description>Text display for integer status values.</Description>
+      <Mappings>
+        <Mapping widget="txtOutStatus" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="StateText" type="String" defaultValue="Unknown" readOnly="false" category="Axis">
+      <Description>Text display for integer state values.s</Description>
+      <Mappings>
+        <Mapping widget="txtOutState" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <!-- Add properties to hold style names; change the text color based on value -->
+    <Property xsi:type="BindableProperty" name="IsReadyForPowerStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutRdyForPwr" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsPoweredOnStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsPoweredOn" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsMoveActiveStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsMoveActive" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsAtPositionStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsAtPos" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsMoveDoneStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsMoveDone" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsStoppedStyle" type="String" defaultValue="No" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsStopped" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <!-- Display strings in place of status and state ints/enums -->
+    <Property xsi:type="BindableProperty" name="StatusStyle" type="String" defaultValue="Unknown" readOnly="false" category="Appearance">
+      <Description>Text style for integer status values.</Description>
+      <Mappings>
+        <Mapping widget="txtOutStatus" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <Property xsi:type="BindableProperty" name="StateStyle" type="String" defaultValue="Unknown" readOnly="false" category="Appearance">
+      <Description>Text style for integer state values</Description>
+      <Mappings>
+        <Mapping widget="txtOutState" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <!-- Coord axis status -->
+    <Property xsi:type="BindableProperty" name="IsCoordSlaveRdyText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsCoordSlaveRdy" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+     
+    <Property xsi:type="BindableProperty" name="IsCoordMasterRdyText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsCoordMasterRdy" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="IsCoordInCompText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsCoordInComp" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="IsCoordInSyncText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsCoordInSync" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <!-- Move direction strings are axis dependent -->
+    <Property xsi:type="BindableProperty" name="DirMovePosText" type="String" defaultValue="PosDir" readOnly="false" category="Axis">
+      <Description>Positive Move Direction String</Description>
+      <Mappings>
+        <Mapping widget="rdoBtnDirPos" property="text" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+    <Property xsi:type="BindableProperty" name="DirMoveNegText" type="String" defaultValue="NegDir" readOnly="false" category="Axis">
+      <Description>Negative Move Direction String</Description>
+      <Mappings>
+        <Mapping widget="rdoBtnDirNeg" property="text" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+
+    
+    <!-- Structure properties -->
+    <!--
+    Structure bindable property:
+    <Property xsi:type="StructureBindableProperty" name="" type="" readOnly="" >
+    <Description>Description will be shown in property grid.</Description>
+    <Mappings>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+			</Mappings>
+		</Property>
+    -->
+    <!-- Manual Move Request Structure -->
+    <Property xsi:type="StructureBindableProperty" name="MoveReqStruct" type="sMot_HmiMoveReq" category="Axis" readOnly="false" required="false" >
+      <Description>Structure binding</Description>
+      <Mappings>
+        <Mapping widget="pbStart" property="value" type="Boolean" mode="oneWayToSource" memberPath="moveReq" mapToNode="false" />
+        <Mapping widget="pbStop" property="value" type="Boolean" mode="oneWayToSource" memberPath="haltReq" mapToNode="false" />
+        <Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true" />
+        <Mapping widget="numInDistMoveParam" property="node" type="Number" mode="twoWay" memberPath="Distance" mapToNode="true" />
+        <Mapping widget="numInVelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true" />
+        <Mapping widget="numInAccelMoveParam" property="value" type="Number" mode="twoWay" memberPath="Acceleration" mapToNode="false" />
+        <Mapping widget="numInDecelMoveParam" property="value" type="Number" mode="twoWay" memberPath="Deceleration" mapToNode="false" />
+        <Mapping widget="numInJerkMoveParam" property="value" type="Number" mode="twoWay" memberPath="MaxJerk" mapToNode="false" />
+    </Mappings>
+    </Property>
+
+    <!-- Axis status structure -->
+    <Property xsi:type="StructureBindableProperty" name="StatusStruct" type="sMot_AxisStatus" category="Axis" readOnly="false" required="false" >
+      <Description>Structure binding</Description>
+      <Mappings>
+        <!-- The bools use list binding and widget properties to display text rather than a bool -->
+        <!-- 
+        <Mapping widget="txtOutRdyForPwr" property="value" type="String" mode="twoWay" memberPath="IsReadyToPowerOn" mapToNode="true" />
+        <Mapping widget="txtOutEnabled" property="value" type="String" mode="twoWay" memberPath="IsPoweredOn" mapToNode="true" />
+        <Mapping widget="txtOutIsMoveActive" property="value" type="String" mode="twoWay" memberPath="IsMoveActive" mapToNode="true" />
+        <Mapping widget="txtOutIsAtPos" property="value" type="String" mode="twoWay" memberPath="IsInPosition" mapToNode="true" />
+        <Mapping widget="txtOutIsMoveDone" property="value" type="String" mode="twoWay" memberPath="IsMoveDone" mapToNode="true" />
+        <Mapping widget="txtOutIsStopped" property="value" type="String" mode="twoWay" memberPath="IsStopped" mapToNode="true" />
+        <Mapping widget="txtOutStatus" property="value" type="String" mode="twoWay" memberPath="PlcOpenState" mapToNode="true" />
+        -->
+        <Mapping widget="numOutPosAct" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true" />
+        <Mapping widget="numOutVelAct" property="value" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="false" />
+      </Mappings>
+    </Property>
+    
+  </Properties>
+
+  <Events>
+    <!--
+    <Event name="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" event="" />
+      </Mappings>
+    </Event>
+    -->
+  </Events>
+
+  <Actions>
+    <!--
+    <Action name="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" action="" />
+      </Mappings>
+    </Action>
+    -->
+  </Actions>
+
+  <EventBindings>
+    <!-- source and target can only be widgets within the compound widget.
+    <EventBinding id="">
+      <Source xsi:type="widget.Event" widgetRefId="" event="" />
+      <EventHandler condition="">
+        <Action>
+          <Target xsi:type="widget.Action" widgetRefId="">
+            <Method name="" value="" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    -->
+  </EventBindings>
+
+</CompoundWidget>
