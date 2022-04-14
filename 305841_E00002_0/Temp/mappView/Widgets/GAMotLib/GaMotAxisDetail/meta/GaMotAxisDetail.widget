@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.GAMotLib.GaMotAxisDetail">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>undefined</LicenseInfo>
+			<IsCompound>true</IsCompound>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+			</Files>
+			<Widgets>
+				<Widget>widgets/GAMotLib/GaMotAxisDetail/GaMotAxisDetail.js</Widget>
+				<Widget>widgets/GAGeneralLib/TitleLabelBindable/TitleLabelBindable.js</Widget>
+				<Widget>widgets/brease/GroupBox/GroupBox.js</Widget>
+				<Widget>widgets/brease/Label/Label.js</Widget>
+				<Widget>widgets/brease/NumericInput/NumericInput.js</Widget>
+				<Widget>widgets/brease/NumericOutput/NumericOutput.js</Widget>
+				<Widget>widgets/brease/PushButton/PushButton.js</Widget>
+				<Widget>widgets/brease/RadioButton/RadioButton.js</Widget>
+				<Widget>widgets/brease/RadioButtonGroup/RadioButtonGroup.js</Widget>
+				<Widget>widgets/brease/TextOutput/TextOutput.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Compound</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">CompoundWidget</Description>
+			<Description name="de">CompoundWidget</Description>
+			<Description name="en">CompoundWidget</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.GAMotLib.GaMotAxisDetail</Class>
+			<Class level="1">system.widgets.CompoundWidget</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="HomeDialogClick">
+				<Description>Event fired when Home Dialog button is clicked</Description>
+				<Mappings>
+					<Mapping widget="pbHomeDlg" event="Click"/>
+				</Mappings>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="SetLimitsDialogClick">
+				<Description>Event fired when Set Limits button is clicked</Description>
+				<Mappings>
+					<Mapping widget="pbSetPosLimitsDlg" event="Click"/>
+				</Mappings>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0"/>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+			<Property name="StatusStruct" type="sMot_AxisStatus" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Axis" isStruct="true" hide="true">
+				<Description>Axis Status Structure Binding to sMot_AxisStatus structure</Description>
+				<Mappings>
+					<Mapping widget="numOutPosAct" property="node" type="Number" mode="oneWay" memberPath="Position" mapToNode="true"/>
+					<Mapping widget="numOutVelAct" property="node" type="Number" mode="oneWay" memberPath="Velocity" mapToNode="true"/>
+					<Mapping widget="numOutPhaseShiftAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true"/>
+					<Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualPhaseShift" mapToNode="true"/>
+				</Mappings>
+			</Property>
+			<Property name="MoveLimitsStruct" type="sMot_PositionLimits" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Axis" isStruct="true" hide="true">
+				<Description>Structure binding</Description>
+				<Mappings>
+					<Mapping widget="numOutPosLimitPos" property="node" type="Boolean" mode="oneWay" memberPath="PositionLimitPos" mapToNode="true"/>
+					<Mapping widget="numOutPosLimitNeg" property="node" type="Boolean" mode="oneWay" memberPath="PositionLimitNeg" mapToNode="true"/>
+				</Mappings>
+			</Property>
+			<Property name="LibraryAxisReqStruct" type="sMot_HmiAxisReqs" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Axis" isStruct="true" hide="true">
+				<Description>Structure binding</Description>
+				<Mappings>
+					<Mapping widget="pbStart" property="value" type="Boolean" mode="oneWayToSource" memberPath="moveReq" mapToNode="false"/>
+					<Mapping widget="pbHalt" property="value" type="Boolean" mode="oneWayToSource" memberPath="haltReq" mapToNode="false"/>
+					<Mapping widget="pbStop" property="value" type="Boolean" mode="oneWayToSource" memberPath="stopReq" mapToNode="false"/>
+					<Mapping widget="pbEnable" property="value" type="Boolean" mode="oneWayToSource" memberPath="enableReq" mapToNode="false"/>
+					<Mapping widget="pbDisable" property="value" type="Boolean" mode="oneWayToSource" memberPath="disableReq" mapToNode="false"/>
+					<Mapping widget="pbManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="manBrakeRelReq" mapToNode="false"/>
+					<Mapping widget="pbClearManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="clearManBrakeRelReq" mapToNode="false"/>
+					<Mapping widget="pbEngageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="engageSlaveReq" mapToNode="false"/>
+					<Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false"/>
+					<Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftRelReq" mapToNode="false"/>
+					<Mapping widget="pbStopReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="stopResetReq" mapToNode="false"/>
+					<Mapping widget="pbErrorReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="errorResetReq" mapToNode="false"/>
+					<Mapping widget="pbDriveReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="driveResetReq" mapToNode="false"/>
+					<Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true"/>
+					<Mapping widget="numInDistMoveParam" property="node" type="Number" mode="twoWay" memberPath="Distance" mapToNode="true"/>
+					<Mapping widget="numInVelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true"/>
+					<Mapping widget="numInAccelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Acceleration" mapToNode="true"/>
+					<Mapping widget="numInDecelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Deceleration" mapToNode="true"/>
+					<Mapping widget="numInJerkMoveParam" property="node" type="Number" mode="twoWay" memberPath="MaxJerk" mapToNode="true"/>
+					<Mapping widget="numInRatioNumerator" property="value" type="Number" mode="twoWay" memberPath="GearRatioNumerator" mapToNode="false"/>
+					<Mapping widget="numInRatioDenominator" property="value" type="Number" mode="twoWay" memberPath="GearRatioDenominator" mapToNode="false"/>
+					<Mapping widget="numInSlaveOffsetAmt" property="node" type="Number" mode="twoWay" memberPath="shiftDistance" mapToNode="true"/>
+					<Mapping widget="numInMasterDistance" property="node" type="Number" mode="twoWay" memberPath="shiftProfileDistance" mapToNode="true"/>
+				</Mappings>
+			</Property>
+			<Property name="AxisName" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="">
+				<Description>Axis can have a slave associated with it</Description>
+				<Mappings>
+					<Mapping widget="lblAxisStatus1" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="HasSlaveAxis" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="false">
+				<Description>Axis can have a slave associated with it</Description>
+				<Mappings>
+					<Mapping widget="grpBoxSlaveStatus" property="visible" mode="oneWay"/>
+					<Mapping widget="grpBoxSlaveControl" property="visible" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="SlaveAxisName" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="">
+				<Description>Axis can have a slave associated with it</Description>
+				<Mappings>
+					<Mapping widget="lblSlaveAxisStatus1" property="value" mode="oneWay"/>
+					<Mapping widget="lblSlaveAxisStatus2" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="PositionUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for position and distance units.</Description>
+				<Mappings>
+					<Mapping widget="numInPosMoveParam" property="unit" mode="oneWay"/>
+					<Mapping widget="numInDistMoveParam" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutPosAct" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutPosLimitPos" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutPosLimitNeg" property="unit" mode="oneWay"/>
+					<Mapping widget="numInSlaveOffsetAmt" property="unit" mode="oneWay"/>
+					<Mapping widget="numInMasterDistance" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="PositionUnitsSlave" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for position and distance units.</Description>
+				<Mappings>
+					<Mapping widget="numOutPosActSlave" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutOffsetAct" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutPhaseShiftAct" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="VelocityUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for velocity units.</Description>
+				<Mappings>
+					<Mapping widget="numInVelMoveParam" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutVelAct" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="VelocityUnitsSlave" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for velocity units.</Description>
+				<Mappings>
+					<Mapping widget="numOutVelActSlave" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="AccelDecelUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for accel and decel units.</Description>
+				<Mappings>
+					<Mapping widget="numInAccelMoveParam" property="unit" mode="oneWay"/>
+					<Mapping widget="numInDecelMoveParam" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="JerkUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
+				<Description>Set the unit string for accel and decel units.</Description>
+				<Mappings>
+					<Mapping widget="numInJerkMoveParam" property="unit" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsReadyForPowerText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutRdyForPwr" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsReadyForPowerStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutRdyForPwr" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsHomedText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsHomed" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsHomedStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsHomed" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsPoweredOnText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsPoweredOn" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsPoweredOnStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsPoweredOn" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsBrakeManRelText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsBrakeManRel" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsBrakeManRelStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsBrakeManRel" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsMoveActiveText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsMoveActive" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsMoveActiveStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsMoveActive" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsAtPositionText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsAtPos" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsAtPositionStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsAtPos" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsMoveDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsMoveDone" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsMoveDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsMoveDone" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsStoppedText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsStopped" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsStoppedStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsStopped" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="StatusText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
+				<Description>Text display for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutStatus" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="StatusStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutStatus" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="StateText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
+				<Description>Text display for integer state values.s</Description>
+				<Mappings>
+					<Mapping widget="txtOutState" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="StateStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for integer state values</Description>
+				<Mappings>
+					<Mapping widget="txtOutState" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="CoordSlavePosition" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="0.0">
+				<Description>Coordinated Axis Position</Description>
+				<Mappings>
+					<Mapping widget="numOutPosActSlave" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="CoordSlaveVelocity" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="0.0">
+				<Description>Coordinated Axis Velocity</Description>
+				<Mappings>
+					<Mapping widget="numOutVelActSlave" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordSlaveRdyText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordSlaveRdy" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordSlaveRdyStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordSlaveRdy" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordMasterRdyText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordMasterRdy" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordMasterRdyStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordMasterRdy" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordInCompText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordInComp" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordInCompStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordInComp" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordInSyncText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordInSync" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordInSyncStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordInSync" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordOffsetDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordOffsetDone" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordOffsetDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordOffsetDone" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordPhasingDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+				<Description>Text display for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordPhasingDone" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsCoordPhasingDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for boolean status</Description>
+				<Mappings>
+					<Mapping widget="txtOutIsCoordPhasingDone" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="SlaveStatusText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
+				<Description>Text display for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutStatusSlave" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="SlaveStatusStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutStatusSlave" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="SlaveStateText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
+				<Description>Text display for integer state values.s</Description>
+				<Mappings>
+					<Mapping widget="txtOutStateSlave" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="SlaveStateStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for integer state values</Description>
+				<Mappings>
+					<Mapping widget="txtOutStateSlave" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="DirMovePosText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="PosDir">
+				<Description>Positive Move Direction String</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnDirPos" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="DirMoveNegText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="NegDir">
+				<Description>Negative Move Direction String</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnDirNeg" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="MoveReqEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Positive Move Direction selection is enabled</Description>
+				<Mappings>
+					<Mapping widget="pbStart" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="BrakeRelEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Positive Move Direction selection is enabled</Description>
+				<Mappings>
+					<Mapping widget="pbManBrakeRel" property="enable" mode="oneWay"/>
+					<Mapping widget="pbClearManBrakeRel" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="MoveTypeSelection" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="-1">
+				<Description>Axis Move Type Selection</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnGrpMoveType" property="selectedIndex" mode="twoWay"/>
+				</Mappings>
+			</Property>
+			<Property name="MoveDirectionSelection" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="-1">
+				<Description>Axis Move Type Selection</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnGrpMoveDir" property="selectedIndex" mode="twoWay"/>
+				</Mappings>
+			</Property>
+			<Property name="PosDirectionEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Positive Move Direction selection is enabled</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnDirPos" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="NegDirectionEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Negative Move Direction selection is enabled</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnDirNeg" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="ShortestDirectionEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Shortest Path Move Direction selection is enabled</Description>
+				<Mappings>
+					<Mapping widget="rdoBtnDirShortest" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="DistanceEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Distance parameter input is enabled</Description>
+				<Mappings>
+					<Mapping widget="numInDistMoveParam" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="PositionEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Position parameter input is enabled</Description>
+				<Mappings>
+					<Mapping widget="numInPosMoveParam" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="ShiftEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
+				<Description>Slave Shift Parameters are enabled</Description>
+				<Mappings>
+					<Mapping widget="numInSlaveOffsetAmt" property="enable" mode="oneWay"/>
+					<Mapping widget="numInMasterDistance" property="enable" mode="oneWay"/>
+					<Mapping widget="pbOffsetSlave" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+		</Properties>
+	<PropertyGroups>
+  <PropertyGroup name="Size" type="String" category="Layout">
+    <Description>outer height and width of widget</Description>
+  </PropertyGroup>
+  <PropertyGroup name="Position" type="String" category="Layout">
+    <Description>top and left of widget</Description>
+  </PropertyGroup>
+</PropertyGroups>
+<StyleProperties>
+  <StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.GAMotLib.GaMotAxisDetail" category="Layout" groupRefId="Size" groupOrder="1" default="1000">
+    <StyleElement attribute="@include elemWidth($value)"/>
+    <Description>outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.GAMotLib.GaMotAxisDetail" category="Layout" groupRefId="Size" groupOrder="2" default="680">
+    <StyleElement attribute="@include elemHeight($value)"/>
+    <Description>outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+    <StyleElement attribute="@include elemTop($value)"/>
+    <Description>absolute position measured from top boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+    <StyleElement attribute="@include elemLeft($value)"/>
+    <Description>absolute position measured from left boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+    <StyleElement attribute="z-index"/>
+    <Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;&#xD;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;&#xD;
+        The zIndex must be unique within a content.&lt;br/&gt;</Description>
+  </StyleProperty>
+  <StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+    <StyleElement attribute="margin"/>
+    <Description>Margin of the Widget</Description>
+  </StyleProperty>
+</StyleProperties>
+</Widget>
+</WidgetLibrary>

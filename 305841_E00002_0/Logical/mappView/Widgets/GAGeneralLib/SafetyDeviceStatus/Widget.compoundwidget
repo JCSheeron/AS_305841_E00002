@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CompoundWidget id="GaSafetyDeviceStatus" width="270" height="20" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Label" id="lblDevice" top="5" left="85" width="135" height="15" zIndex="0" text="label" textAlign="center" style="Caption" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="txtOutActive" top="5" left="0" width="95" height="15" zIndex="1" value="active" textAlign="center" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatus" top="5" left="225" width="60" height="15" zIndex="2" value="status" textAlign="center" />
+  </Widgets>
+  <Properties>
+    <!-- 
+    Simple non bindable property:
+    Property Attributes
+    xsi:type: NonBindableProperty
+    name: name of the property (not allowed: width, height, top, left, id, enable, visible, zindex, margin, premissionview, permissionoperate, description)
+    <Property xsi:type="NonBindableProperty" name="" type="" defaultValue="" required="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" property=""/>
+        <Mapping widget="" property=""/>
+      </Mappings>
+    </Property>
+    
+    Simple bindable property:
+    <Property xsi:type="BindableProperty" name="" type="" defaultValue="" readOnly="" category="" localizable="" typeRefId="" nodeRefId="">
+    <Description>Description will be shown in property grid.</Description>
+    <Mappings>
+    <Mapping widget="" property="" mode=""/>
+    <Mapping widget="" property="" mode=""/>
+    </Mappings>
+    </Property>
+
+    Structure bindable property:
+		<Property xsi:type="StructureBindableProperty" name="" type="" readOnly="" >
+			<Description>Description will be shown in property grid.</Description>
+			<Mappings>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+				<Mapping widget="" type="" property="" mode="" memberPath="" mapToNode=""/>
+			</Mappings>
+		</Property>
+    -->
+    
+    <!-- Non-Bindable Properties -->
+    <Property xsi:type="NonBindableProperty" name="DeviceLabel" type="String" defaultValue="EMO" required="false" category="Device">
+      <Description>Device Label</Description>
+      <Mappings>
+        <Mapping widget="lblDevice" property="text"/>
+      </Mappings>
+    </Property>
+    
+    <!-- Bindable Properties -->
+    <Property xsi:type="BindableProperty" name="StatusOkString" type="String" defaultValue="Good" readOnly="false" category="Device">
+      <Description>String to show for Device Ok/Not Ok Status</Description>
+      <Mappings>
+        <Mapping widget="txtOutStatus" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="StatusOkStyle" type="String" defaultValue="Good" readOnly="false" category="Appearance">
+    <Description>Style to use for Device Ok/Not Ok Status</Description>
+    <Mappings>
+      <Mapping widget="txtOutStatus" property="style" mode="oneWay"/>
+    </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="StatusActiveString" type="String" defaultValue="Good" readOnly="false" category="Device">
+      <Description>String to show for Device Active/Not Active Status</Description>
+      <Mappings>
+        <Mapping widget="txtOutActive" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="StatusActiveStyle" type="String" defaultValue="Good" readOnly="false" category="Appearance">
+      <Description>Style to use for Device Active/Not Active Status</Description>
+      <Mappings>
+        <Mapping widget="txtOutActive" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    
+</Properties>
+  <Events>
+    <!--
+    <Event name="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" event="" />
+      </Mappings>
+    </Event>
+    -->
+  </Events>
+
+  <Actions>
+    <!--
+    <Action name="">
+      <Description>Description will be shown in property grid.</Description>
+      <Mappings>
+        <Mapping widget="" action="" />
+      </Mappings>
+    </Action>
+    -->
+  </Actions>
+
+  <EventBindings>
+    <!-- source and target can only be widgets within the compound widget.
+    <EventBinding id="">
+      <Source xsi:type="widget.Event" widgetRefId="" event="" />
+      <EventHandler condition="">
+        <Action>
+          <Target xsi:type="widget.Action" widgetRefId="">
+            <Method name="" value="" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    -->
+  </EventBindings>
+
+</CompoundWidget>

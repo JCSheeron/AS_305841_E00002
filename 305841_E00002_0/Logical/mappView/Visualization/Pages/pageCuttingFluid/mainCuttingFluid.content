@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="mainContentCuttingFluid" height="600" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="75" left="660" width="180" zIndex="0" text="Content Cutting Fluid" />
+    <Widget xsi:type="widgets.brease.Button" id="Button1" top="65" left="150" height="55" zIndex="1" text="Button1" style="ModButtonSelectedBlue" />
+    <Widget xsi:type="widgets.brease.Button" id="Button2" top="65" left="325" height="55" zIndex="2" text="Button2" enable="false" style="ModButtonSelectedBlue" />
+    <Widget xsi:type="widgets.brease.Button" id="Button3" top="150" left="155" height="55" zIndex="3" text="Button3" style="ModButtonSelectedGreen" />
+    <Widget xsi:type="widgets.brease.Button" id="Button4" top="150" left="330" height="55" zIndex="4" text="Button4" enable="false" style="ModButtonSelectedGreen" />
+    <Widget xsi:type="widgets.brease.Button" id="Button5" top="240" left="155" height="55" zIndex="5" text="Button5" style="ModButtonSelectedOrange" />
+    <Widget xsi:type="widgets.brease.Button" id="Button6" top="240" left="330" height="55" zIndex="6" text="Button6" enable="false" style="ModButtonSelectedOrange" />
+    <Widget xsi:type="widgets.brease.Button" id="Button7" top="335" left="155" height="55" zIndex="7" text="Button7" style="ModButtonSelectedYellow" />
+    <Widget xsi:type="widgets.brease.Button" id="Button8" top="335" left="330" height="55" zIndex="8" text="Button8" enable="false" style="ModButtonSelectedYellow" />
+    <Widget xsi:type="widgets.brease.Button" id="Button9" top="425" left="160" height="55" zIndex="9" text="Button9" style="ModButtonSelectedRed" />
+    <Widget xsi:type="widgets.brease.Button" id="Button10" top="425" left="335" height="55" zIndex="10" text="Button10" enable="false" style="ModButtonSelectedRed" />
+    <Widget xsi:type="widgets.brease.Button" id="Button11" top="65" left="20" height="55" zIndex="11" text="Button11" style="ModButtonNotSelected1" />
+  </Widgets>
+</Content>

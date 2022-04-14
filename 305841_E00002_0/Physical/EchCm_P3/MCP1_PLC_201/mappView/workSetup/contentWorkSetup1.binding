@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="contentWorkSetup_bindings" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <!--
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Workpiece:partsSaved.name" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="TableItem2" attribute="stringValue" />
+      </Binding>
+      <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Workpiece:partsSaved.nomLength" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="TableItem3" attribute="value" />
+      </Binding>
+      <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Workpiece:partsSaved.number" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="TableItem1" attribute="stringValue" />
+      </Binding>
+      <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Workpiece:partCurrent.serialNumber" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="TextInput2" attribute="value" />
+      </Binding>
+      <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Workpiece:partCurrent.partDfn.nomLength" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="NumericInput8" attribute="value" />
+      </Binding>
+    -->
+
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.nomRpm" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInSpindleRpm" attribute="node" />
+    </Binding>
+
+    <!-- Pass Count -->
+    <!-- Use an expression to get the pass count selected index (0-2) and add one to it to set pass count. -->
+    <Binding mode="oneWay">
+      <Source xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="rdoBrnGrpPasses" attribute="selectedIndex" />
+      <Target xsi:type="session" refId="svPassCountSel" attribute="value" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svPassCountSel" attribute="value" />
+      <Target xsi:type="expression" refId="passSelect_exp" attribute="InA" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="expression" refId="passSelect_exp" attribute="result" />
+      <Target xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.passCount" attribute="value" />
+    </Binding>
+
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.totalDepth" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInTotalDepth" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPass" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="chkBoxFinishingPass" attribute="value" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPassDepth" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInFinishingPass" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.depthAdjAngle" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInDepthAdjArc" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.cutOverrunAngle" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInCutOverrunArc" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.feedRate" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInFeedRate" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.decel" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInSpindleDecel" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.accel" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInSpindleAccel" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.decel" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInZDecel" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.accel" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInZAccel" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexSpeed" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInZSpeed" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexDist" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInZIndexDist" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+    <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomCutLength" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInPartLen" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomId" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInPartInnerDia" attribute="node" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.speedPct" attribute="node" />
+    <Target xsi:type="brease" contentRefId="mainContentWorkSetup" widgetRefId="numInCuttingFluidPctCmd" attribute="node" />
+    </Binding>
+  </Bindings>
+</BindingsSet>

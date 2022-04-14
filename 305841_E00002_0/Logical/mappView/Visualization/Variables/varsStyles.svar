@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariablesSet id="varsStyles" xmlns="http://www.br-automation.com/iat2015/session/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Variables>
+    <!--
+    <Variable name="Variable1" xsi:type="ANY_REAL" value="0" />
+    <Variable name="Variable2" xsi:type="ANY_INT" value="0" />
+    <Variable name="Variable3" xsi:type="ANY_STRING" value="0" />
+    <Variable name="Variable4" xsi:type="DATE_AND_TIME" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable4.1" xsi:type="DT" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable5" xsi:type="BOOL" value="true" />    
+    -->
+    
+    <!-- Style names: value is a style name from a .styles file -->
+    <!-- This allows styles to be chosen from a list and then probably applied to a widget -->
+    <!-- Value is a style name -->
+    
+    <!-- Text styles -->
+    <Variable name="svTextOutputGood" xsi:type="ANY_STRING" value="GaTextOutputGood" />
+    <Variable name="svTextOutputBad" xsi:type="ANY_STRING" value="GaTextOutputBad" />
+    <Variable name="svTextOutputWarn" xsi:type="ANY_STRING" value="GaTextOutputWarn" />
+    
+    <!-- Button styles -->
+    <Variable name="svButtonSelected1" xsi:type="ANY_STRING" value="ModButtonSelected1" />
+    <Variable name="svButtonNotSelected1" xsi:type="ANY_STRING" value="ModButtonNotSelected1" />
+    <Variable name="svButtonNotSelectedIndicator" xsi:type="ANY_STRING" value="ModButtonNotSelectedIndicator" />
+    <Variable name="svButtonSelectedBlue" xsi:type="ANY_STRING" value="ModButtonSelectedBlue" />
+    <Variable name="svButtonSelectedBlueIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedBlueIndicator" />
+    <Variable name="svButtonSelectedGreen" xsi:type="ANY_STRING" value="ModButtonSelectedGreen" />
+    <Variable name="svButtonSelectedGreenIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedGreenIndicator" />
+    <Variable name="svButtonSelectedYellow" xsi:type="ANY_STRING" value="ModButtonSelectedYellow" />
+    <Variable name="svButtonSelectedYellowIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedYellowIndicator" />
+    <Variable name="svButtonSelectedOrange" xsi:type="ANY_STRING" value="ModButtonSelectedOrange" />
+    <Variable name="svButtonSelectedOrangeIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedOrangeIndicator" />
+    <Variable name="svButtonSelectedRed" xsi:type="ANY_STRING" value="ModButtonSelectedRed" />
+    <Variable name="svButtonSelectedRedIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedRedIndicator" />
+
+  </Variables>
+</VariablesSet>

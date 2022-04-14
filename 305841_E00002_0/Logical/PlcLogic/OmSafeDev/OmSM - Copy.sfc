@@ -1,0 +1,323 @@
+PROGRAM _CYCLIC
+<?AutomationStudio FileVersion="4.9"?>
+INITIAL_STEP Step_Init:
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_INITIAL;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+TRANSITION EMO Cmd FROM Step_Init TO Step_EMOMode:=
+(* @LANGUAGE := 'st' *)
+// EStop command from safety plc H:Ok, L:EMO
+NOT fs_EmoCmd
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_EMOMode' *)
+TRANSITION keyswich in safe, not ok or bad SL FROM Step_Init TO Step_SafeMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in safe, or not in run or not okay, or not adequate security level
+fs_KeyswitchInSafe OR
+NOT fs_KeyswitchInRun OR
+NOT fs_KeyswitchOk OR
+operatingMode.SecurityLevel = SL_UNKNOWN OR
+operatingMode.SecurityLevel = SL_GUEST
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_SafeMode' *)
+TRANSITION keyswitch in run and SL FROM Step_Init TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR
+
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_CheckModeReq' *)
+STEP Step_CheckModeReq:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+TRANSITION EMO Cmd FROM Step_CheckModeReq TO Step_EMOMode:=
+(* @LANGUAGE := 'st' *)
+// EStop command from safety plc H:Ok, L:EMO
+NOT fs_EmoCmd
+END_TRANSITION
+(* @SFCISJUMP := 'Step_EMOMode' *)
+TRANSITION key not in run or bad SL FROM Step_CheckModeReq TO Step_SafeMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in safe, or not in run or not okay, or not adequate security level
+fs_KeyswitchInSafe OR
+NOT fs_KeyswitchInRun OR
+NOT fs_KeyswitchOk OR
+operatingMode.SecurityLevel = SL_UNKNOWN OR
+operatingMode.SecurityLevel = SL_GUEST
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_SafeMode' *)
+TRANSITION req manual mode FROM Step_CheckModeReq TO Step_ManualMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req Manual Mode
+(operatingMode.ModeReqBits AND OM_MANUAL_MODE) <> 0
+
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ManualMode' *)
+STEP Step_ManualMode:
+(* @LANGUAGE := 'st' *)
+// Block mode request for current mode
+// This prevents it from being seen as a request
+operatingMode.ModeReqBits := operatingMode.ModeReqBits XOR OM_MANUAL_MODE; (* bit 4 clear *)
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_MANUAL_MODE;
+END_ACTION
+TRANSITION EMO Cmd FROM Step_ManualMode TO Step_EMOMode:=
+(* @LANGUAGE := 'st' *)
+// EStop command from safety plc H:Ok, L:EMO
+NOT fs_EmoCmd
+END_TRANSITION
+(* @SFCISJUMP := 'Step_EMOMode' *)
+TRANSITION key not in run or bad SL FROM Step_ManualMode TO Step_SafeMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in safe, or not in run or not okay, or not adequate security level
+fs_KeyswitchInSafe OR
+NOT fs_KeyswitchInRun OR
+NOT fs_KeyswitchOk OR
+operatingMode.SecurityLevel = SL_UNKNOWN OR
+operatingMode.SecurityLevel = SL_GUEST
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_SafeMode' *)
+TRANSITION req mode change FROM Step_ManualMode TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req mode change (req other than current mode)
+operatingMode.ModeReqBits <> 0 AND
+(operatingMode.ModeReqBits AND OM_MANUAL_MODE) = 0
+
+END_TRANSITION
+(* @SFCISJUMP := 'Step_CheckModeReq' *)
+TRANSITION req pendnat mode FROM Step_CheckModeReq TO Step_PendantMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req Pendant Mode
+(operatingMode.ModeReqBits AND OM_PENDANT_MODE) <> 0
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_PendantMode' *)
+STEP Step_PendantMode:
+(* @LANGUAGE := 'st' *)
+// Block mode request for current mode
+// This prevents it from being seen as a request
+operatingMode.ModeReqBits := operatingMode.ModeReqBits XOR OM_PENDANT_MODE; (* bit 5 clear *)
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_PENDANT_MODE;
+END_ACTION
+TRANSITION EMO Cmd FROM Step_PendantMode TO Step_EMOMode:=
+(* @LANGUAGE := 'st' *)
+// EStop command from safety plc H:Ok, L:EMO
+NOT fs_EmoCmd
+END_TRANSITION
+(* @SFCISJUMP := 'Step_EMOMode' *)
+TRANSITION key not in run or bad SL FROM Step_PendantMode TO Step_SafeMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in safe, or not in run or not okay, or not adequate security level
+fs_KeyswitchInSafe OR
+NOT fs_KeyswitchInRun OR
+NOT fs_KeyswitchOk OR
+operatingMode.SecurityLevel = SL_UNKNOWN OR
+operatingMode.SecurityLevel = SL_GUEST
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_SafeMode' *)
+TRANSITION req mode change FROM Step_PendantMode TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req mode change (req other than current mode)
+operatingMode.ModeReqBits <> 0 AND
+(operatingMode.ModeReqBits AND OM_PENDANT_MODE) = 0
+END_TRANSITION
+(* @SFCISJUMP := 'Step_CheckModeReq' *)
+TRANSITION req production mode FROM Step_CheckModeReq TO Step_ProductionMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req Production Mode
+(operatingMode.ModeReqBits AND OM_PRODUCTION_MODE) <> 0
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ProductionMode' *)
+STEP Step_ProductionMode:
+(* @LANGUAGE := 'st' *)
+// Block mode request for current mode
+// This prevents it from being seen as a request
+operatingMode.ModeReqBits := operatingMode.ModeReqBits XOR OM_PRODUCTION_MODE; (* bit 6 clear *)
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_PRODUCTION_MODE;
+END_ACTION
+TRANSITION EMO Cmd FROM Step_ProductionMode TO Step_EMOMode:=
+(* @LANGUAGE := 'st' *)
+// EStop command from safety plc H:Ok, L:EMO
+NOT fs_EmoCmd
+END_TRANSITION
+(* @SFCISJUMP := 'Step_EMOMode' *)
+TRANSITION key not in run or bad SL FROM Step_ProductionMode TO Step_SafeMode:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in safe, or not in run or not okay, or not adequate security level
+fs_KeyswitchInSafe OR
+NOT fs_KeyswitchInRun OR
+NOT fs_KeyswitchOk OR
+operatingMode.SecurityLevel = SL_UNKNOWN OR
+operatingMode.SecurityLevel = SL_GUEST
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_SafeMode' *)
+TRANSITION req mode change FROM Step_ProductionMode TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR AND
+// Req mode change (req other than current mode)
+operatingMode.ModeReqBits <> 0 AND
+(operatingMode.ModeReqBits AND OM_PRODUCTION_MODE) = 0
+
+END_TRANSITION
+(* @SFCISJUMP := 'Step_CheckModeReq' *)
+STEP Step_SafeMode:
+(* @LANGUAGE := 'st' *)
+// clear mode requests while in safe
+operatingMode.ModeReqBits := 16#0;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_SAFE_MODE;
+END_ACTION
+TRANSITION keyswitch in run and SL FROM Step_SafeMode TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Keyswitch in run and adequate security level
+fs_KeyswitchInRun AND
+fs_KeyswitchOk AND
+operatingMode.SecurityLevel >= SL_OPERATOR
+
+END_TRANSITION
+(* @SFCISJUMP := 'Step_CheckModeReq' *)
+STEP Step_EMOMode:
+(* @LANGUAGE := 'st' *)
+// clear mode requests while in EMO
+operatingMode.ModeReqBits := 16#0;
+
+// Run emo allow timer
+// Only allow resets to emo if this timer is expired.
+// If an e-stop removes power from the drives, it is bad for the drive power supplies to be
+// energized less than 2 minutes after being deenergized -- capacitor discharge/recharge issue
+tmrEStopResetAllow(IN:= TRUE, PT := timeEStopResetAllow);
+
+// Clear the reset bits if within this time
+IF NOT tmrEStopResetAllow.Q THEN
+  operatingMode.ReqEmoReset := FALSE;
+  operatingMode.ReqAxisReset := FALSE;
+END_IF;
+
+// Calc how many seconds remain before a reset is allowed
+eStopResetAllowSecRemain := TIME_TO_DINT(timeEStopResetAllow - tmrEStopResetAllow.ET) / 1000;
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set Operating State
+operatingMode.OperatingMode := OM_EMO_MODE;
+
+// Reset emo allow timer
+tmrEStopResetAllow(IN:= FALSE, PT := timeEStopResetAllow);
+
+END_ACTION
+TRANSITION no emo, allow time done and reset req FROM Step_EMOMode TO Step_ResetEmo:=
+(* @LANGUAGE := 'st' *)
+// No more EMO, reset allow timer has expired, and a reset is requested
+fs_EmoCmd AND
+tmrEStopResetAllow.Q AND
+operatingMode.ReqEmoReset
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ResetEmo' *)
+STEP Step_ResetEmo:
+(* @LANGUAGE := 'st' *)
+// Clear mode requests while in EMO
+operatingMode.ModeReqBits := 16#0;
+
+// Run the reset pulse and send the reset req
+tmrResetPulse(IN:= TRUE, PT:= timeResetPulse);
+ts_ResetEStop := tmrResetPulse.Q;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Reset pulse timer
+tmrResetPulse(IN:= FALSE, PT:= timeResetPulse);
+END_ACTION
+TRANSITION emo reset pulse done FROM Step_ResetEmo TO Step_ResetAxes:=
+(* @LANGUAGE := 'st' *)
+// Emo Reset pulse complete
+tmrResetPulse.ET = tmrResetPulse.PT AND NOT ts_ResetEStop
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ResetAxes' *)
+STEP Step_ResetAxes:
+(* @LANGUAGE := 'st' *)
+// Clear mode requests while in EMO
+operatingMode.ModeReqBits := 16#0;
+
+// Run the reset pulse and send the reset req
+tmrResetPulse(IN:= TRUE, PT:= timeResetPulse);
+ts_ResetSafeMC := tmrResetPulse.Q;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Reset pulse timer
+tmrResetPulse(IN:= FALSE, PT:= timeResetPulse);
+END_ACTION
+TRANSITION axis reset pulse done FROM Step_ResetAxes TO Step_CheckModeReq:=
+(* @LANGUAGE := 'st' *)
+// Emo Reset pulse complete
+tmrResetPulse.ET = tmrResetPulse.PT AND NOT ts_ResetSafeMC
+END_TRANSITION
+(* @SFCISJUMP := 'Step_CheckModeReq' *)
+END_PROGRAM

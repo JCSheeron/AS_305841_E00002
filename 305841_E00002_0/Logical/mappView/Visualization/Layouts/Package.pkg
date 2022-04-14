@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="Layouts" PackageType="Layouts" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">layoutStd_BarsTR.layout</Object>
+    <Object Type="File">layoutDialog_Medium.layout</Object>
+    <Object Type="File">layoutDialog_MediumWide.layout</Object>
+    <Object Type="File">layoutDialog_MediumLarge.layout</Object>
+    <Object Type="File">layoutDialog_Large.layout</Object>
+    <Object Type="File">layoutStd_BarsTL.layout</Object>
+    <Object Type="File">layoutStd_BarsTLR.layout</Object>
+  </Objects>
+</Package>

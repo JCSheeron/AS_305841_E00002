@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin widgets_GAMotLib_GaMotAxisDetail_base {
+	@include elemWidth(1000);
+	@include elemHeight(680);
+	margin: 0px;
+
+}
+

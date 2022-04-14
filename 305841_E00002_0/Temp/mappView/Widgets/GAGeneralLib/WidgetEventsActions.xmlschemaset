@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+	<Schema href="GaSafetyDeviceStatus/meta/GaSafetyDeviceStatus_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="TitleLabel/meta/TitleLabel_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="TitleLabelBindable/meta/TitleLabelBindable_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+</SchemaCatalog>

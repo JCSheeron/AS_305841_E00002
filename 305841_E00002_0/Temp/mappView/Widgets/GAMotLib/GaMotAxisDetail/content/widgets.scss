@@ -1,0 +1,1844 @@
+@import "mixins.scss";
+#GaMotAxisDetail_grpBoxAxisStatus {
+	@include elemTop(15);
+}
+#GaMotAxisDetail_grpBoxAxisStatus {
+	@include elemLeft(30);
+}
+#GaMotAxisDetail_grpBoxAxisStatus {
+	@include elemWidth(370);
+}
+#GaMotAxisDetail_grpBoxAxisStatus {
+	@include elemHeight(290);
+}
+#GaMotAxisDetail_grpBoxAxisStatus {
+		z-index: 0;
+}
+#GaMotAxisDetail_lblRdyForPower {
+	@include elemTop(44);
+}
+#GaMotAxisDetail_lblRdyForPower {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblRdyForPower {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblRdyForPower {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblRdyForPower {
+		z-index: 0;
+}
+#GaMotAxisDetail_lblRdyForPower {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsHomed {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_lblIsHomed {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsHomed {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsHomed {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsHomed {
+		z-index: 1;
+}
+#GaMotAxisDetail_lblIsHomed {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsAtPos {
+	@include elemTop(154);
+}
+#GaMotAxisDetail_lblIsAtPos {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsAtPos {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsAtPos {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsAtPos {
+		z-index: 2;
+}
+#GaMotAxisDetail_lblIsAtPos {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsMoveActive {
+	@include elemTop(129);
+}
+#GaMotAxisDetail_lblIsMoveActive {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsMoveActive {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsMoveActive {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsMoveActive {
+		z-index: 3;
+}
+#GaMotAxisDetail_lblIsMoveActive {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsMoveDone {
+	@include elemTop(174);
+}
+#GaMotAxisDetail_lblIsMoveDone {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsMoveDone {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsMoveDone {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsMoveDone {
+		z-index: 4;
+}
+#GaMotAxisDetail_lblIsMoveDone {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsStopped {
+	@include elemTop(199);
+}
+#GaMotAxisDetail_lblIsStopped {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsStopped {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsStopped {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsStopped {
+		z-index: 5;
+}
+#GaMotAxisDetail_lblIsStopped {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblStatus {
+	@include elemTop(229);
+}
+#GaMotAxisDetail_lblStatus {
+	@include elemLeft(289);
+}
+#GaMotAxisDetail_lblStatus {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisDetail_lblStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblStatus {
+		z-index: 6;
+}
+#GaMotAxisDetail_lblStatus {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblState {
+	@include elemTop(254);
+}
+#GaMotAxisDetail_lblState {
+	@include elemLeft(289);
+}
+#GaMotAxisDetail_lblState {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisDetail_lblState {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblState {
+		z-index: 7;
+}
+#GaMotAxisDetail_lblState {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutStatus {
+	@include elemTop(229);
+}
+#GaMotAxisDetail_txtOutStatus {
+	@include elemLeft(80);
+}
+#GaMotAxisDetail_txtOutStatus {
+	@include elemAutoWidth(207);
+}
+#GaMotAxisDetail_txtOutStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_txtOutStatus {
+		z-index: 8;
+}
+#GaMotAxisDetail_txtOutStatus {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutStatus {
+	@include text-alignment-all('right');
+}
+#GaMotAxisDetail_txtOutState {
+	@include elemTop(254);
+}
+#GaMotAxisDetail_txtOutState {
+	@include elemLeft(80);
+}
+#GaMotAxisDetail_txtOutState {
+	@include elemAutoWidth(207);
+}
+#GaMotAxisDetail_txtOutState {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_txtOutState {
+		z-index: 9;
+}
+#GaMotAxisDetail_txtOutState {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutState {
+	@include text-alignment-all('right');
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+	@include elemTop(39);
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+		z-index: 10;
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutRdyForPwr {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsHomed {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_txtOutIsHomed {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsHomed {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsHomed {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsHomed {
+		z-index: 11;
+}
+#GaMotAxisDetail_txtOutIsHomed {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsHomed {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+	@include elemTop(129);
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+		z-index: 12;
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsMoveActive {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+	@include elemTop(154);
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+		z-index: 13;
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsAtPos {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+	@include elemTop(174);
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+		z-index: 14;
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsMoveDone {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsStopped {
+	@include elemTop(199);
+}
+#GaMotAxisDetail_txtOutIsStopped {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsStopped {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsStopped {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsStopped {
+		z-index: 15;
+}
+#GaMotAxisDetail_txtOutIsStopped {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsStopped {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutPosAct {
+	@include elemTop(59);
+}
+#GaMotAxisDetail_numOutPosAct {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_numOutPosAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutPosAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutPosAct {
+		z-index: 16;
+}
+#GaMotAxisDetail_numOutPosAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_numOutVelAct {
+	@include elemTop(104);
+}
+#GaMotAxisDetail_numOutVelAct {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_numOutVelAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutVelAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutVelAct {
+		z-index: 17;
+}
+#GaMotAxisDetail_numOutVelAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblPosAct {
+	@include elemTop(44);
+}
+#GaMotAxisDetail_lblPosAct {
+	@include elemLeft(4);
+}
+#GaMotAxisDetail_lblPosAct {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisDetail_lblPosAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblPosAct {
+		z-index: 18;
+}
+#GaMotAxisDetail_lblPosAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblVelAct {
+	@include elemTop(84);
+}
+#GaMotAxisDetail_lblVelAct {
+	@include elemLeft(4);
+}
+#GaMotAxisDetail_lblVelAct {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisDetail_lblVelAct {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisDetail_lblVelAct {
+		z-index: 19;
+}
+#GaMotAxisDetail_lblVelAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+	@include elemTop(84);
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+	@include elemAutoWidth(125);
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+		z-index: 20;
+}
+#GaMotAxisDetail_lblIsPoweredOn {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+	@include elemTop(84);
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+		z-index: 21;
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsPoweredOn {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+	@include elemLeft(184);
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+	@include elemAutoWidth(151);
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+		z-index: 22;
+}
+#GaMotAxisDetail_lblIsBrakeManRel {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+		z-index: 23;
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsBrakeManRel {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+	@include elemTop(154);
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+		z-index: 24;
+}
+#GaMotAxisDetail_numOutPosLimitPos {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblPosLimitPos {
+	@include elemTop(134);
+}
+#GaMotAxisDetail_lblPosLimitPos {
+	@include elemLeft(4);
+}
+#GaMotAxisDetail_lblPosLimitPos {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisDetail_lblPosLimitPos {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisDetail_lblPosLimitPos {
+		z-index: 25;
+}
+#GaMotAxisDetail_lblPosLimitPos {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+	@include elemTop(204);
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+		z-index: 26;
+}
+#GaMotAxisDetail_numOutPosLimitNeg {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+	@include elemTop(184);
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+	@include elemLeft(4);
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+		z-index: 27;
+}
+#GaMotAxisDetail_lblPosLimitNeg {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblAxisStatus1 {
+	@include elemTop(-1);
+}
+#GaMotAxisDetail_lblAxisStatus1 {
+	@include elemLeft(-1);
+}
+#GaMotAxisDetail_lblAxisStatus1 {
+	@include elemAutoWidth(371);
+}
+#GaMotAxisDetail_lblAxisStatus1 {
+	@include elemAutoHeight(36);
+}
+#GaMotAxisDetail_lblAxisStatus1 {
+		z-index: 28;
+}
+#GaMotAxisDetail_grpBoxMoveCmd {
+	@include elemTop(15);
+}
+#GaMotAxisDetail_grpBoxMoveCmd {
+	@include elemLeft(415);
+}
+#GaMotAxisDetail_grpBoxMoveCmd {
+	@include elemWidth(585);
+}
+#GaMotAxisDetail_grpBoxMoveCmd {
+	@include elemHeight(485);
+}
+#GaMotAxisDetail_grpBoxMoveCmd {
+		z-index: 1;
+}
+#GaMotAxisDetail_rdoBtnGrpMoveType {
+	@include elemTop(3);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveType {
+	@include elemLeft(24);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveType {
+	@include elemWidth(145);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveType {
+	@include elemHeight(142);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveType {
+		z-index: 0;
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+	@include elemTop(5);
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+		z-index: 0;
+}
+#GaMotAxisDetail_rdoBtnMoveAbs {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+	@include elemTop(53);
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+		z-index: 1;
+}
+#GaMotAxisDetail_rdoBtnMoveRel {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+	@include elemTop(100);
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+	@include elemAutoWidth(118);
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+		z-index: 2;
+}
+#GaMotAxisDetail_rdoBtnMoveVel {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_rdoBtnGrpMoveDir {
+	@include elemTop(3);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveDir {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveDir {
+	@include elemWidth(175);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveDir {
+	@include elemHeight(142);
+}
+#GaMotAxisDetail_rdoBtnGrpMoveDir {
+		z-index: 1;
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+	@include elemTop(5);
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+		z-index: 0;
+}
+#GaMotAxisDetail_rdoBtnDirPos {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+	@include elemTop(53);
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+		z-index: 1;
+}
+#GaMotAxisDetail_rdoBtnDirNeg {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+	@include elemTop(100);
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+	@include elemLeft(10);
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+	@include elemAutoWidth(145);
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+		z-index: 2;
+}
+#GaMotAxisDetail_rdoBtnDirShortest {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#GaMotAxisDetail_numInDistMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInDistMoveParam {
+	@include elemTop(53);
+}
+#GaMotAxisDetail_numInDistMoveParam {
+	@include elemLeft(364);
+}
+#GaMotAxisDetail_numInDistMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInDistMoveParam {
+		z-index: 2;
+}
+#GaMotAxisDetail_numInVelMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInVelMoveParam {
+	@include elemTop(188);
+}
+#GaMotAxisDetail_numInVelMoveParam {
+	@include elemLeft(29);
+}
+#GaMotAxisDetail_numInVelMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInVelMoveParam {
+		z-index: 3;
+}
+#GaMotAxisDetail_lblVelMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblVelMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblVelMoveParam {
+	@include elemTop(163);
+}
+#GaMotAxisDetail_lblVelMoveParam {
+	@include elemLeft(24);
+}
+#GaMotAxisDetail_lblVelMoveParam {
+		z-index: 4;
+}
+#GaMotAxisDetail_lblDistMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblDistMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblDistMoveParam {
+	@include elemTop(53);
+}
+#GaMotAxisDetail_lblDistMoveParam {
+	@include elemLeft(489);
+}
+#GaMotAxisDetail_lblDistMoveParam {
+		z-index: 5;
+}
+#GaMotAxisDetail_numInAccelMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInAccelMoveParam {
+	@include elemTop(188);
+}
+#GaMotAxisDetail_numInAccelMoveParam {
+	@include elemLeft(164);
+}
+#GaMotAxisDetail_numInAccelMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInAccelMoveParam {
+		z-index: 6;
+}
+#GaMotAxisDetail_lblAccelMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblAccelMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblAccelMoveParam {
+	@include elemTop(163);
+}
+#GaMotAxisDetail_lblAccelMoveParam {
+	@include elemLeft(159);
+}
+#GaMotAxisDetail_lblAccelMoveParam {
+		z-index: 7;
+}
+#GaMotAxisDetail_numInDecelMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInDecelMoveParam {
+	@include elemTop(188);
+}
+#GaMotAxisDetail_numInDecelMoveParam {
+	@include elemLeft(304);
+}
+#GaMotAxisDetail_numInDecelMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInDecelMoveParam {
+		z-index: 8;
+}
+#GaMotAxisDetail_lblDecelMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblDecelMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblDecelMoveParam {
+	@include elemTop(163);
+}
+#GaMotAxisDetail_lblDecelMoveParam {
+	@include elemLeft(299);
+}
+#GaMotAxisDetail_lblDecelMoveParam {
+		z-index: 9;
+}
+#GaMotAxisDetail_numInPosMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInPosMoveParam {
+	@include elemTop(8);
+}
+#GaMotAxisDetail_numInPosMoveParam {
+	@include elemLeft(364);
+}
+#GaMotAxisDetail_numInPosMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInPosMoveParam {
+		z-index: 10;
+}
+#GaMotAxisDetail_lblPosMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblPosMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblPosMoveParam {
+	@include elemTop(8);
+}
+#GaMotAxisDetail_lblPosMoveParam {
+	@include elemLeft(489);
+}
+#GaMotAxisDetail_lblPosMoveParam {
+		z-index: 11;
+}
+#GaMotAxisDetail_numInJerkMoveParam {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInJerkMoveParam {
+	@include elemTop(188);
+}
+#GaMotAxisDetail_numInJerkMoveParam {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_numInJerkMoveParam {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInJerkMoveParam {
+		z-index: 12;
+}
+#GaMotAxisDetail_lblJerkMoveParam {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblJerkMoveParam {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblJerkMoveParam {
+	@include elemTop(163);
+}
+#GaMotAxisDetail_lblJerkMoveParam {
+	@include elemLeft(439);
+}
+#GaMotAxisDetail_lblJerkMoveParam {
+		z-index: 13;
+}
+#GaMotAxisDetail_pbStart {
+	@include elemTop(253);
+}
+#GaMotAxisDetail_pbStart {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_pbStart {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbStart {
+	@include elemAutoHeight(45);
+}
+#GaMotAxisDetail_pbStart {
+		z-index: 14;
+}
+#GaMotAxisDetail_pbStop {
+	@include elemTop(253);
+}
+#GaMotAxisDetail_pbStop {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_pbStop {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_pbStop {
+	@include elemAutoHeight(45);
+}
+#GaMotAxisDetail_pbStop {
+		z-index: 15;
+}
+#GaMotAxisDetail_pbStopReset {
+	@include elemTop(323);
+}
+#GaMotAxisDetail_pbStopReset {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_pbStopReset {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbStopReset {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbStopReset {
+		z-index: 16;
+}
+#GaMotAxisDetail_pbErrorReset {
+	@include elemTop(323);
+}
+#GaMotAxisDetail_pbErrorReset {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_pbErrorReset {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbErrorReset {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbErrorReset {
+		z-index: 17;
+}
+#GaMotAxisDetail_pbDriveReset {
+	@include elemTop(388);
+}
+#GaMotAxisDetail_pbDriveReset {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_pbDriveReset {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbDriveReset {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbDriveReset {
+		z-index: 18;
+}
+#GaMotAxisDetail_pbHomeDlg {
+	@include elemTop(388);
+}
+#GaMotAxisDetail_pbHomeDlg {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_pbHomeDlg {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbHomeDlg {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbHomeDlg {
+		z-index: 19;
+}
+#GaMotAxisDetail_pbEnable {
+	@include elemTop(323);
+}
+#GaMotAxisDetail_pbEnable {
+	@include elemLeft(159);
+}
+#GaMotAxisDetail_pbEnable {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbEnable {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbEnable {
+		z-index: 20;
+}
+#GaMotAxisDetail_pbDisable {
+	@include elemTop(388);
+}
+#GaMotAxisDetail_pbDisable {
+	@include elemLeft(159);
+}
+#GaMotAxisDetail_pbDisable {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbDisable {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbDisable {
+		z-index: 21;
+}
+#GaMotAxisDetail_pbHalt {
+	@include elemTop(253);
+}
+#GaMotAxisDetail_pbHalt {
+	@include elemLeft(230);
+}
+#GaMotAxisDetail_pbHalt {
+	@include elemAutoWidth(115);
+}
+#GaMotAxisDetail_pbHalt {
+	@include elemAutoHeight(45);
+}
+#GaMotAxisDetail_pbHalt {
+		z-index: 22;
+}
+#GaMotAxisDetail_pbManBrakeRel {
+	@include elemTop(323);
+}
+#GaMotAxisDetail_pbManBrakeRel {
+	@include elemLeft(304);
+}
+#GaMotAxisDetail_pbManBrakeRel {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbManBrakeRel {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbManBrakeRel {
+		z-index: 23;
+}
+#GaMotAxisDetail_pbClearManBrakeRel {
+	@include elemTop(388);
+}
+#GaMotAxisDetail_pbClearManBrakeRel {
+	@include elemLeft(304);
+}
+#GaMotAxisDetail_pbClearManBrakeRel {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbClearManBrakeRel {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbClearManBrakeRel {
+		z-index: 24;
+}
+#GaMotAxisDetail_pbSetPosLimitsDlg {
+	@include elemTop(98);
+}
+#GaMotAxisDetail_pbSetPosLimitsDlg {
+	@include elemLeft(369);
+}
+#GaMotAxisDetail_pbSetPosLimitsDlg {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbSetPosLimitsDlg {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbSetPosLimitsDlg {
+		z-index: 25;
+}
+#GaMotAxisDetail_grpBoxSlaveStatus {
+	@include elemTop(315);
+}
+#GaMotAxisDetail_grpBoxSlaveStatus {
+	@include elemLeft(30);
+}
+#GaMotAxisDetail_grpBoxSlaveStatus {
+	@include elemWidth(370);
+}
+#GaMotAxisDetail_grpBoxSlaveStatus {
+	@include elemHeight(365);
+}
+#GaMotAxisDetail_grpBoxSlaveStatus {
+		z-index: 2;
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+	@include elemTop(49);
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+		z-index: 0;
+}
+#GaMotAxisDetail_lblIsCoordSlaveRdy {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+	@include elemTop(79);
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+		z-index: 1;
+}
+#GaMotAxisDetail_lblIsCoordMstrRdy {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+		z-index: 2;
+}
+#GaMotAxisDetail_lblIsCoordInComp {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+	@include elemTop(139);
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+		z-index: 3;
+}
+#GaMotAxisDetail_lblIsCoordInSync {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+	@include elemTop(49);
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+		z-index: 4;
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+	@include elemTop(79);
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+		z-index: 5;
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordMasterRdy {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+		z-index: 6;
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordInComp {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+	@include elemTop(139);
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+		z-index: 7;
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordInSync {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutPosActSlave {
+	@include elemTop(79);
+}
+#GaMotAxisDetail_numOutPosActSlave {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_numOutPosActSlave {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutPosActSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutPosActSlave {
+		z-index: 8;
+}
+#GaMotAxisDetail_numOutPosActSlave {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_numOutVelActSlave {
+	@include elemTop(134);
+}
+#GaMotAxisDetail_numOutVelActSlave {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_numOutVelActSlave {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutVelActSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutVelActSlave {
+		z-index: 9;
+}
+#GaMotAxisDetail_numOutVelActSlave {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblPosActSlave {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblPosActSlave {
+	@include elemTop(54);
+}
+#GaMotAxisDetail_lblPosActSlave {
+	@include elemLeft(24);
+}
+#GaMotAxisDetail_lblPosActSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblPosActSlave {
+		z-index: 10;
+}
+#GaMotAxisDetail_lblPosActSlave {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblVelActSlave {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblVelActSlave {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_lblVelActSlave {
+	@include elemLeft(24);
+}
+#GaMotAxisDetail_lblVelActSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblVelActSlave {
+		z-index: 11;
+}
+#GaMotAxisDetail_lblVelActSlave {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+	@include elemTop(169);
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+		z-index: 12;
+}
+#GaMotAxisDetail_lblIsCoordOffsetDone {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+	@include elemTop(169);
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+		z-index: 13;
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+	@include elemTop(199);
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+	@include elemLeft(174);
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+		z-index: 14;
+}
+#GaMotAxisDetail_lblIsCoordPhasingDone {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+	@include elemTop(199);
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+		z-index: 15;
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutOffsetAct {
+	@include elemTop(189);
+}
+#GaMotAxisDetail_numOutOffsetAct {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_numOutOffsetAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutOffsetAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutOffsetAct {
+		z-index: 16;
+}
+#GaMotAxisDetail_numOutOffsetAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblOffsetAct {
+	@include elemAutoWidth(80);
+}
+#GaMotAxisDetail_lblOffsetAct {
+	@include elemTop(164);
+}
+#GaMotAxisDetail_lblOffsetAct {
+	@include elemLeft(24);
+}
+#GaMotAxisDetail_lblOffsetAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblOffsetAct {
+		z-index: 17;
+}
+#GaMotAxisDetail_lblOffsetAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+	@include elemTop(249);
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+		z-index: 18;
+}
+#GaMotAxisDetail_numOutPhaseShiftAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+	@include elemTop(224);
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+	@include elemLeft(19);
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+	@include elemAutoWidth(91);
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+		z-index: 19;
+}
+#GaMotAxisDetail_lblPhaseShiftAct {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemTop(253);
+}
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemLeft(289);
+}
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblStatusSlave {
+		z-index: 20;
+}
+#GaMotAxisDetail_lblStatusSlave {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblStateSlave {
+	@include elemTop(278);
+}
+#GaMotAxisDetail_lblStateSlave {
+	@include elemLeft(289);
+}
+#GaMotAxisDetail_lblStateSlave {
+	@include elemAutoWidth(60);
+}
+#GaMotAxisDetail_lblStateSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblStateSlave {
+		z-index: 21;
+}
+#GaMotAxisDetail_lblStateSlave {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+	@include elemTop(253);
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+	@include elemLeft(100);
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+	@include elemAutoWidth(187);
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+		z-index: 22;
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutStatusSlave {
+	@include text-alignment-all('right');
+}
+#GaMotAxisDetail_txtOutStateSlave {
+	@include elemTop(278);
+}
+#GaMotAxisDetail_txtOutStateSlave {
+	@include elemLeft(90);
+}
+#GaMotAxisDetail_txtOutStateSlave {
+	@include elemAutoWidth(197);
+}
+#GaMotAxisDetail_txtOutStateSlave {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_txtOutStateSlave {
+		z-index: 23;
+}
+#GaMotAxisDetail_txtOutStateSlave {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutStateSlave {
+	@include text-alignment-all('right');
+}
+#GaMotAxisDetail_lblSlaveAxisStatus1 {
+	@include elemTop(-1);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus1 {
+	@include elemLeft(-1);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus1 {
+	@include elemAutoWidth(370);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus1 {
+	@include elemAutoHeight(40);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus1 {
+		z-index: 24;
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+	@include elemTop(510);
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+	@include elemLeft(415);
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+	@include elemWidth(585);
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+	@include elemHeight(165);
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+		z-index: 3;
+}
+#GaMotAxisDetail_grpBoxSlaveControl {
+		background-color: rgba(255, 255, 255, 1);
+}
+#GaMotAxisDetail_numInRatioDenominator {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInRatioDenominator {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_numInRatioDenominator {
+	@include elemLeft(149);
+}
+#GaMotAxisDetail_numInRatioDenominator {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInRatioDenominator {
+		z-index: 0;
+}
+#GaMotAxisDetail_numInRatioNumerator {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInRatioNumerator {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_numInRatioNumerator {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_numInRatioNumerator {
+	@include elemWidth(120);
+}
+#GaMotAxisDetail_numInRatioNumerator {
+		z-index: 1;
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include elemTop(34);
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include elemLeft(54);
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include elemAutoWidth(216);
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include elemAutoHeight(32);
+}
+#GaMotAxisDetail_lblMasterToSlave {
+		z-index: 2;
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include text-alignment-all('center top');
+}
+#GaMotAxisDetail_lblMasterToSlave {
+	@include font-weight-bold(true);
+}
+#GaMotAxisDetail_pbEngageSlave {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_pbEngageSlave {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_pbEngageSlave {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbEngageSlave {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbEngageSlave {
+		z-index: 3;
+}
+#GaMotAxisDetail_pbDisengageSlave {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_pbDisengageSlave {
+	@include elemLeft(149);
+}
+#GaMotAxisDetail_pbDisengageSlave {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbDisengageSlave {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbDisengageSlave {
+		z-index: 4;
+}
+#GaMotAxisDetail_lblColon {
+	@include elemTop(68);
+}
+#GaMotAxisDetail_lblColon {
+	@include elemLeft(129);
+}
+#GaMotAxisDetail_lblColon {
+	@include elemAutoWidth(21);
+}
+#GaMotAxisDetail_lblColon {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisDetail_lblColon {
+		z-index: 5;
+}
+#GaMotAxisDetail_lblColon {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblColon {
+		font-size: 24px;
+}
+#GaMotAxisDetail_lblColon {
+	@include font-weight-bold(true);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus2 {
+	@include elemTop(-1);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus2 {
+	@include elemLeft(-6);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus2 {
+	@include elemAutoWidth(590);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus2 {
+		z-index: 6;
+}
+#GaMotAxisDetail_numInSlaveOffsetAmt {
+	@include elemWidth(100);
+}
+#GaMotAxisDetail_numInSlaveOffsetAmt {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInSlaveOffsetAmt {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_numInSlaveOffsetAmt {
+	@include elemLeft(309);
+}
+#GaMotAxisDetail_numInSlaveOffsetAmt {
+		z-index: 7;
+}
+#GaMotAxisDetail_numInMasterDistance {
+	@include elemWidth(100);
+}
+#GaMotAxisDetail_numInMasterDistance {
+	@include elemHeight(30);
+}
+#GaMotAxisDetail_numInMasterDistance {
+	@include elemTop(64);
+}
+#GaMotAxisDetail_numInMasterDistance {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_numInMasterDistance {
+		z-index: 8;
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+	@include elemTop(34);
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+	@include elemLeft(304);
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+	@include elemAutoWidth(106);
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+		z-index: 9;
+}
+#GaMotAxisDetail_lblSlaveOffsetAmt {
+	@include font-weight-bold(true);
+}
+#GaMotAxisDetail_lblMasterDistance {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblMasterDistance {
+	@include elemTop(34);
+}
+#GaMotAxisDetail_lblMasterDistance {
+	@include elemLeft(444);
+}
+#GaMotAxisDetail_lblMasterDistance {
+	@include elemAutoWidth(106);
+}
+#GaMotAxisDetail_lblMasterDistance {
+		z-index: 10;
+}
+#GaMotAxisDetail_lblMasterDistance {
+	@include font-weight-bold(true);
+}
+#GaMotAxisDetail_pbOffsetSlave {
+	@include elemTop(109);
+}
+#GaMotAxisDetail_pbOffsetSlave {
+	@include elemLeft(369);
+}
+#GaMotAxisDetail_pbOffsetSlave {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbOffsetSlave {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbOffsetSlave {
+		z-index: 11;
+}

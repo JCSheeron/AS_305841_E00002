@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+	<Schema href="GaMotAxisDetail/meta/GaMotAxisDetail_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="GaMotAxisHome/meta/GaMotAxisHome_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="GaMotAxisSetPosLimits/meta/GaMotAxisSetPosLimits_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="GaMotAxisStatus/meta/GaMotAxisStatus_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="GAMotTestWidget/meta/GAMotTestWidget_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+</SchemaCatalog>
