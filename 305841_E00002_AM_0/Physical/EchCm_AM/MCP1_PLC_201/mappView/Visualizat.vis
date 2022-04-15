@@ -4,6 +4,7 @@
   <Pages>
     <Page refId="pageWorkSummary"/>
     <Page refId="pageWorkSetup"/>
+    <Page refId="pageProduction"/>
     <Page refId="pageZAxis"/>
     <Page refId="pageCuttingHead"/>
     <Page refId="pageSpindle"/>

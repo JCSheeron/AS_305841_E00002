@@ -124,49 +124,44 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   // Requests get cleared at the end either way
   IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
     IF _I_ProcessReqs.zReqMoveUpLimit THEN
-      hmiLibraryAxisReqs[AD_Z].Position := rAxisPositionLimits.PositionLimitPos;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_ABSOLUTE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Position := rAxisPositionLimits.PositionLimitPos;
+      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveDownLimit THEN
-      hmiLibraryAxisReqs[AD_Z].Position := rAxisPositionLimits.PositionLimitNeg;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_ABSOLUTE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Position := rAxisPositionLimits.PositionLimitNeg;
+      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveLUnL AND _I_WpCfg.zAxis.loadUnloadPos > 0.0 THEN
-      hmiLibraryAxisReqs[AD_Z].Position := _I_WpCfg.zAxis.loadUnloadPos;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_ABSOLUTE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Position := _I_WpCfg.zAxis.loadUnloadPos;
+      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveSoc AND _I_WpCfg.zAxis.startOfCutPos > 0.0 THEN
-      hmiLibraryAxisReqs[AD_Z].Position := _I_WpCfg.zAxis.startOfCutPos;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_ABSOLUTE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Position := _I_WpCfg.zAxis.startOfCutPos;
+      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.moveReq := TRUE;
     END_IF;    
     
     IF _I_ProcessReqs.zReqMoveIndexUp AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
-      hmiLibraryAxisReqs[AD_Z].Distance := _I_WpCfg.zAxis.indexDist;
-      hmiLibraryAxisReqs[AD_Z].Direction := mcDIR_POSITIVE;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_RELATIVE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
+      rLibReqs.Direction := mcDIR_POSITIVE;
+      rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
+      rLibReqs.moveReq := TRUE;
     END_IF;    
   
     IF _I_ProcessReqs.zReqMoveIndexDown AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
-      hmiLibraryAxisReqs[AD_Z].Distance := _I_WpCfg.zAxis.indexDist;
-      hmiLibraryAxisReqs[AD_Z].Direction := mcDIR_NEGATIVE;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_RELATIVE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+      rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
+      rLibReqs.Direction := mcDIR_NEGATIVE;
+      rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
+      rLibReqs.moveReq := TRUE;
     END_IF;
         
   END_IF;
-  // Clear the process requests
-  pSrc := ADR(hmiProcessReqs.zReqMoveUpLimit);
-  pDest := ADR(hmiProcessReqs.cuttingHeadMoveReqRetract);
-  byteCount := pDest - pSrc + SIZEOF(BOOL);
-  nxtAddr := brsmemset(pSrc, 0, byteCount);
     
   // Call the motion library fb to process the library requests
   procLibraryReq(_I_HmiAxisReq := ADR(rLibReqs), _I_Axis := ADR(rAxis) , _I_SlaveAxis := ADR(rSlaveAxis), _I_AxisPositionLimits := ADR(rAxisPositionLimits));
@@ -188,25 +183,21 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
       IF rAxis.Status.IsCoordInSync OR rAxis.Status.IsCoordInCompensation THEN
         // Axis is coordinated. Modify the offset using the master
         ;
-      ELSE rAxis.
-        ;
-    
-    IF _I_ProcessReqs.cuttingHeadMoveReqRetract THEN
-      hmiLibraryAxisReqs[AD_Z].Position := rAxisPositionLimits.PositionLimitPos;
-      hmiLibraryAxisReqs[AD_Z].moveDesignation := GAMOT_MD_ABSOLUTE;
-      hmiLibraryAxisReqs[AD_Z].moveReq := TRUE;
+        // TODO: Add cases for both inner and outer stopped
+        // TODO: Either or both running but not coord not supported
+      END_IF;
     END_IF;
   END_IF;
+  
   // Clear the process requests
-  pSrc := ADR(hmiProcessReqs.zReqMoveUpLimit);
-  pDest := ADR(hmiProcessReqs.cuttingHeadMoveReqRetract);
+  pSrc := ADR(_I_ProcessReqs.zReqMoveUpLimit);
+  pDest := ADR(_I_ProcessReqs.cuttingHeadMoveReqRetract);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
-  nxtAddr := brsmemset(pSrc, 0, byteCount);
+  nextAddr := brsmemset(pSrc, 0, byteCount);
     
   // Call the motion library fb to process the library requests
   procLibraryReq(_I_HmiAxisReq := ADR(rLibReqs), _I_Axis := ADR(rAxis) , _I_SlaveAxis := ADR(rSlaveAxis), _I_AxisPositionLimits := ADR(rAxisPositionLimits));
-  
-  
+    
 END_FUNCTION_BLOCK
 
 // The HMI can easily set values like 0, 1, 2 from radio buttons for example, but it is harder to set specific move type values
