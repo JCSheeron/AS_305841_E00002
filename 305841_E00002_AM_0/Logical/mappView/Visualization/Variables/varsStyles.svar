@@ -19,6 +19,10 @@
     <Variable name="svTextOutputBad" xsi:type="ANY_STRING" value="GaTextOutputBad" />
     <Variable name="svTextOutputWarn" xsi:type="ANY_STRING" value="GaTextOutputWarn" />
     
+    <!-- Label styles -->
+    <Variable name="svLabelInactive" xsi:type="ANY_STRING" value="GaInfoInactive" />
+    <Variable name="svLabelActive" xsi:type="ANY_STRING" value="GaInfoActive" />
+    
     <!-- Button styles -->
     <Variable name="svButtonSelected1" xsi:type="ANY_STRING" value="ModButtonSelected1" />
     <Variable name="svButtonNotSelected1" xsi:type="ANY_STRING" value="ModButtonNotSelected1" />

@@ -13,6 +13,7 @@
       <bt:Element index="4" refId="::iatClient:clientSlots[4].IpAddress"/>
     </List>
     -->
+    <!--
     <List xsi:type="opcUa" id="cmpwid_IsReadyToPowerOn_list2" attribute="value">
       <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn"/>
       <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsReadyToPowerOn"/>
@@ -24,7 +25,7 @@
       <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsReadyToPowerOn"/>
       <bt:Default refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn"/>
     </List>
-
+    -->
   </BindingLists>
 
 </BindingListsSet>

@@ -82,7 +82,13 @@
       <bt:Element index="false" refId="svTextOutputWarn"/>
       <bt:Element index="true" refId="svTextOutputWarn"/>
     </List>
-
+  
+    <!-- Label styles -->
+    <List xsi:type="session" id="LabelSytleActiveStyle1" attribute="value">
+      <bt:Element index="false" refId="svLabelInactive"/>
+      <bt:Element index="true" refId="svLabelActive"/>
+    </List>
+    
     <!-- Button Styles -->
     <List xsi:type="session" id="ButtonSelectionStyle1" attribute="value">
       <bt:Element index="false" refId="svButtonNotSelected1"/>

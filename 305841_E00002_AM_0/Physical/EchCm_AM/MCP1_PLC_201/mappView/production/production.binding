@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="production_bindings"
+  xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2"
+  xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2"
+  xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <!-- Control group -->
+    <!-- Cycle start/stop req PBs -->
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStart" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="pbCycleStart" attribute="value" />
+    </Binding>
+
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStop" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="pbCycleStop" attribute="value" />
+    </Binding>
+
+    <!-- Cycle modes -->
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStart" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="pbCycleStart" attribute="value" />
+    </Binding>
+
+  </Bindings>
+</BindingsSet>

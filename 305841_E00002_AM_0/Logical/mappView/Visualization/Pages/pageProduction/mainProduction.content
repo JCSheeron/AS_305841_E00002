@@ -1,6 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="mainContentProduction" height="600" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="205" left="255" zIndex="0" text="Label1" style="GaInfoInactive" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxCycle" top="30" left="145" width="555" height="475" zIndex="0" text="Production Cycle">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxStatus" top="8" left="379" width="156" height="202" zIndex="0" text="Status">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusIdle" top="8" left="19" width="115" zIndex="0" text="Idle" style="GaInfoInactive" />
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusInCycle" top="48" left="19" width="115" zIndex="1" text="Is In Cycle" style="GaInfoInactive" />
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusStopping" top="88" left="19" width="115" zIndex="2" text="Is Stopping" style="GaInfoInactive" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxControl" top="8" left="14" width="346" height="202" zIndex="1" text="Control">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.PushButton" id="pbCycleStart" top="13" left="19" height="52" zIndex="0" multiLine="true" text="Cycle\nStart" style="ModPushButtonSelectedGreen" />
+            <Widget xsi:type="widgets.brease.PushButton" id="pbCycleStop" top="88" left="19" height="52" zIndex="1" multiLine="true" text="Cycle\nStop" style="ModPushButtonSelectedRed" />
+            <Widget xsi:type="widgets.brease.RadioButtonGroup" id="RadioButtonGroup1" top="18" left="149" width="180" height="125" zIndex="2">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnContinuous" top="0" left="15" width="140" height="35" zIndex="0" text="Continuous" tabIndex="-1" />
+                <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnSingleCycle" top="48" left="15" zIndex="1" text="Single Cycle" tabIndex="-1" />
+                <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnStepped" top="90" left="15" zIndex="2" text="Stepped" tabIndex="-1" />
+              </Widgets>
+            </Widget>
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxOptions" top="223" left="19" width="341" height="192" zIndex="2" text="Options">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxCfOff" top="13" left="39" width="211" zIndex="0" text="CF Off Before Unload" />
+            <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxSingleCycleInclZ" top="53" left="39" width="211" zIndex="1" text="Single Cycle Z Index" />
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
   </Widgets>
 </Content>

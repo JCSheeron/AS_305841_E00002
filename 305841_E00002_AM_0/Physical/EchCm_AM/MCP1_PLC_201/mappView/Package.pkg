@@ -11,6 +11,7 @@
     <Object Type="Package">dlgHome</Object>
     <Object Type="Package">dlgSetPosLimits</Object>
     <Object Type="Package">workSetup</Object>
+    <Object Type="Package">production</Object>
     <Object Type="Package">zAxis</Object>
     <Object Type="Package">axisDetail</Object>
   </Objects>
