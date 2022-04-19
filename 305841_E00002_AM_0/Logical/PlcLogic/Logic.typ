@@ -59,6 +59,7 @@ TYPE
     (* cycle cfg *)
     ShutOffCfBeforeUnload : BOOL; (* turn off cutting fluid before going to unload pos *)
     SingleCycleInclZIndex : BOOL; (* include Z index at end of single cycle cut *)
+    HmiSubMode : SINT; (* hmi selections of submode *)
     (* mode request are in a word to allow masking and easy clearing *)
     ModeReqBits : WORD := 16#0; (* see OM_xxx constants for bit *)
     SecurityLevel : WORD := SL_UNKNOWN;

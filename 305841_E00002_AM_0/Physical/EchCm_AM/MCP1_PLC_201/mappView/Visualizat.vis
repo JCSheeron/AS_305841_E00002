@@ -21,9 +21,10 @@
     <BindingsSet refId="dlgSetPosLimits_bindings" />
     <BindingsSet refId="contentStdTop_bindings" />
     <BindingsSet refId="contentWorkSetup_bindings" />
+    <BindingsSet refId="production_bindings" />
+    <BindingsSet refId="zAxis_bindings" />
     <BindingsSet refId="axisDetailLt_bindings" />
     <BindingsSet refId="axisDetail_bindings" />
-    <BindingsSet refId="zAxis_bindings" />
     
   </BindingsSets>
   <EventBindingsSets>

@@ -18,10 +18,61 @@
     </Binding>
 
     <!-- Cycle modes -->
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStart" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="pbCycleStart" attribute="value" />
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiSubMode" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="rdoBtnGrpCycleControl" attribute="selectedIndex" />
     </Binding>
+
+    <!-- Cycle status -->
+    <!-- Update the widget style based on the value -->
+    <!-- In Cycle -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycle" attribute="value" />
+        <List refId="LabelSytleActiveStyle1" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="lblStatusInCycle" attribute="style" />
+    </Binding>
+        
+    <!-- Cycle stopping -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isStopping" attribute="value" />
+        <List refId="LabelSytleActiveStyle1" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="lblStatusStopping" attribute="style" />
+    </Binding>
+    
+    <!-- Cycle idle: not in cycle and not stopping -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycle" attribute="value" />
+      <Target xsi:type="expression" refId="isCycleIdle" attribute="InA" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isStopping" attribute="value" />
+      <Target xsi:type="expression" refId="isCycleIdle" attribute="InB" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isCycleIdle" attribute="result" />
+        <List refId="LabelSytleActiveStyle1" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="lblStatusIdle" attribute="style" />
+    </Binding>
+    
+     <!-- Options -->
+     <!-- turn cf off before unload -->
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.ShutOffCfBeforeUnload" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="chkBoxCfOff" attribute="value" />
+    </Binding>
+
+     <!-- Single cycle incl Z index -->
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.SingleCycleInclZIndex" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="chkBoxSingleCycleInclZ" attribute="value" />
+    </Binding>
+
 
   </Bindings>
 </BindingsSet>

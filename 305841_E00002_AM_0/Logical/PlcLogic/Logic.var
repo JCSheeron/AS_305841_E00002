@@ -58,9 +58,9 @@ VAR CONSTANT
   OM_PENDANT_MODE : WORD        := 16#20;  (* bit 5 *)
   OM_PRODUCTION_MODE : WORD     := 16#40;  (* bit 6 *)
   (* sub modes *)
+  OM_PROD_SM_CONTINUOUS : WORD  := 16#40; (* bit 6. Run a continuous (normal) cycle *)
   OM_PROD_SM_SINGLE : WORD      := 16#41; (* bits 6, 0. Run a single cycle *)
   OM_PROD_SM_STEPPED : WORD     := 16#42; (* bits 6, 1. Run a stepped cycle *)
-  OM_PROD_SM_CONTINUOUS : WORD  := 16#40; (* bit 6. Run a continuous (normal) cycle *)
   
   (* Security Level *)
   (* values should be in increasing levels of permsision *)

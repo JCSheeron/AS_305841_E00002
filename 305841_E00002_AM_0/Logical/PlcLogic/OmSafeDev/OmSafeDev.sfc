@@ -343,6 +343,9 @@ operatingMode.ModeReqBits := operatingMode.ModeReqBits AND NOT OM_PRODUCTION_MOD
 ProductionModeAxisPermits;
 ModeIndependentPermissions;
 
+// Decode HMI Submode
+operatingMode.SubMode := fctDecodeHmiSubMode(operatingMode.HmiSubMode);
+
 // In production mode, cycle start/stop on PB or HMI Req, or on cycle permissives not allowed to run
 // Cycle Stop
 // Stop PB held in or not okay keeps req stop high - blocking the start

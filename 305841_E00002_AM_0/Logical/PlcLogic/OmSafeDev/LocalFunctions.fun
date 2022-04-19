@@ -58,6 +58,14 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
 END_FUNCTION_BLOCK
 
 (* The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific move type values *)
+(* This function is intended to take an HMI selection and return a direction usable by the McAxis library *)
+FUNCTION fctDecodeHmiDirection : McDirectionEnum (* Take in an HMI move type and return a corresponding enum move designation *)
+  VAR_INPUT
+    _I_DirectionReq : DINT;
+  END_VAR
+END_FUNCTION
+
+(* The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific move type values *)
 (* This function is intended to take an HMI selection and return a move type usable by the GaMpMotion library *)
 FUNCTION fctDecodeHmiMoveType : eGAMOT_MOVE_DESIGNATION (* Take in an HMI move type and return a corresponding enum move designation *)
   VAR_INPUT
@@ -67,10 +75,11 @@ FUNCTION fctDecodeHmiMoveType : eGAMOT_MOVE_DESIGNATION (* Take in an HMI move t
   END_VAR
 END_FUNCTION
 
-(* The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific move type values *)
-(* This function is intended to take an HMI selection and return a direction usable by the McAxis library *)
-FUNCTION fctDecodeHmiDirection : McDirectionEnum (* Take in an HMI move type and return a corresponding enum move designation *)
+(* The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific sub mode values. *)
+(* This function is intended to take an HMI selection and return a sub mode usable by the PLC logic. *)
+FUNCTION fctDecodeHmiSubMode : WORD (* Take in an HMI sub mode selection and return a corresponding sub mode *)
   VAR_INPUT
-    _I_DirectionReq : DINT;
+    _I_SubModeReq : SINT;
   END_VAR
 END_FUNCTION
+

@@ -10,7 +10,7 @@
         <Widget xsi:type="widgets.brease.NavigationButton" id="btnSpindle" top="360" left="10" width="110" height="50" zIndex="4" pageId="pageSpindle" text="Spindle" />
         <Widget xsi:type="widgets.brease.NavigationButton" id="btnCuttingFluid" top="430" left="10" width="110" height="50" zIndex="5" breakWord="true" multiLine="true" pageId="pageCuttingFluid" text="Cutting Fluid" />
         <Widget xsi:type="widgets.brease.NavigationButton" id="brnAxisDetails" top="500" left="10" width="110" height="50" zIndex="6" pageId="pageAxisDetail" text="Axis Details" />
-        <Widget xsi:type="widgets.brease.NavigationButton" id="brnWorkSetup1" top="150" left="10" width="110" height="50" zIndex="7" breakWord="true" multiLine="true" pageId="pageWorkSetup" text="Production" />
+        <Widget xsi:type="widgets.brease.NavigationButton" id="brnProduction" top="150" left="10" width="110" height="50" zIndex="7" breakWord="true" multiLine="true" pageId="pageProduction" text="Production" />
       </Widgets>
     </Widget>
   </Widgets>

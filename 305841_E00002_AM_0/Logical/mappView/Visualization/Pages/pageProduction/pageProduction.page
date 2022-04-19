@@ -3,5 +3,6 @@
   <Assignments>
     <Assignment type="Content" baseContentRefId="contentStdTop" areaRefId="areaTop" />
     <Assignment type="Content" baseContentRefId="mainContentProduction" areaRefId="areaMain" />
+    <Assignment type="Content" baseContentRefId="contentStdRight" areaRefId="areaRight" />
   </Assignments>
 </pdef:Page>

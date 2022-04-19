@@ -363,6 +363,7 @@
           <Variable Name="OperatingMode" />
           <Variable Name="SubMode" />
           <Variable Name="SeqStep" />
+          <Variable Name="HmiSubMode" />
         </Variable>
         <Variable Name="gr_AxisPositionLimits" EnableArrayElements="True">
           <Variable Name="gr_AxisPositionLimits[0]">

@@ -120,6 +120,22 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   rSlaveAxis ACCESS _I_pAxis + (slaveNum * szAxis);
   rAxisPositionLimits ACCESS _I_pAxisPositionLimits + (AD_Z * szAxisPosLimits);
   
+  // Set position requests. Axis needs to be homed if current position is needed.
+  // Requests get cleared at the end either way
+  IF _I_ProcessReqs.zReqPosSocUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
+    gr_CfgCurrent.zAxis.startOfCutPos := rAxis.Status.Position;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosSocUseSpecified THEN // position specified, homing isn't needed
+    gr_CfgCurrent.zAxis.startOfCutPos := zReqPosSoc;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosLUnLUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
+    gr_CfgCurrent.zAxis.loadUnloadPos := rAxis.Status.Position;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosLUnLUseSpecified THEN // position specified, homing isn't needed
+    gr_CfgCurrent.zAxis.loadUnloadPos := zReqPosLUnL;
+  END_IF;
+  
+  
   // If the axis is enabled and homed, issue moves. Otherwise do nothing. 
   // Requests get cleared at the end either way
   IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
@@ -251,3 +267,19 @@ FUNCTION fctDecodeHmiDirection
   END_IF;  
 END_FUNCTION
 
+// The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific sub mode values.
+// This function is intended to take an HMI selection and return a sub mode usable by the PLC logic.
+FUNCTION fctDecodeHmiSubMode
+  // Continuous:   HMI Value 0, PLC Value OM_PROD_SM_CONTINUOUS (16#40)
+  // Single Cycle: HMI Value 1, PLC Value OM_PROD_SM_SINGLE (16#41)
+  // Single Step:  HMI Value 2, PLC Value OM_PROD_SM_STEPPED (16#42)
+  IF _I_SubModeReq = 0 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_CONTINUOUS;
+  ELSIF _I_SubModeReq = 1 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_SINGLE;    
+  ELSIF _I_SubModeReq = 2 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_STEPPED;
+  ELSE 
+    fctDecodeHmiSubMode := OM_UNKNOWN;
+  END_IF;  
+END_FUNCTION

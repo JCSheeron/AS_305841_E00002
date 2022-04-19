@@ -1,0 +1,20 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=8 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                           operatingMode                           sOperatingMode    0 "                                                               *"    0   24    1    0    0    1         
+                             ReqEmoReset                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            ReqAxisReset                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                        HmiReqCycleStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                         HmiReqCycleStop                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           ReqCycleStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            ReqCycleStop                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                               isInCycle                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                              isStopping                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                   ShutOffCfBeforeUnload                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                   SingleCycleInclZIndex                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                              HmiSubMode                                     SINT    0 "                                                               2"    1    2    1   10    0    0         
+                             ModeReqBits                                     WORD    0 "                                                               0"    1   18    1   10    0    0        b
+                           SecurityLevel                                     WORD    0 "                                                               2"    1   18    1   10    0    0        b
+                           OperatingMode                                     WORD    0 "                                                              64"    1   18    1   10    0    0        b
+                                 SubMode                                     WORD    0 "                                                              66"    1   18    1   10    0    0        b
+                                 SeqStep                                     DINT    0 "                                                               0"    1    4    1   10    0    0         

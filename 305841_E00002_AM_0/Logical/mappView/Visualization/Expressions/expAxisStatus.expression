@@ -19,6 +19,9 @@
     <Expression id="isEmoResetAllowed" xsi:type="content" contentRefId="dlgSafetySystemTop_content" type="IntIsZero" />
     <!-- Work Setup -->
     <Expression id="passSelect_exp" xsi:type="content" contentRefId="mainContentWorkSetup" type="IntPlusOne" />
+    <!-- Production -->
+    <Expression id="isCycleIdle" xsi:type="content" contentRefId="mainContentProduction" type="InA_AND_InB_False" />
+    
 
   </Expressions>
 </ExpressionsSet>
