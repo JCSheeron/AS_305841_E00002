@@ -67,7 +67,6 @@
         <Widget xsi:type="widgets.brease.PushButton" id="pbStart" top="253" left="14" width="116" height="45" zIndex="14" text="GO!" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbStop" top="253" left="444" width="115" height="45" zIndex="15" multiLine="true" text="STOP (latched)" wordWrap="true" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbStopReset" top="323" left="444" width="116" height="42" zIndex="16" text="Stop Reset" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbErrorReset" top="323" left="14" width="116" height="42" zIndex="17" text="Error Reset" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbDriveReset" top="388" left="14" width="116" height="42" zIndex="18" text="Drive Reset" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbHomeDlg" top="388" left="444" width="116" height="42" zIndex="19" text="Home ... " style="Command1" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbEnable" top="323" left="159" width="116" height="42" zIndex="20" multiLine="true" text="Enable (Power On)" wordWrap="true" />
@@ -190,7 +189,6 @@
         <Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false" />
         <Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftRelReq" mapToNode="false" />
         <Mapping widget="pbStopReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="stopResetReq" mapToNode="false" />
-        <Mapping widget="pbErrorReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="errorResetReq" mapToNode="false" />
         <Mapping widget="pbDriveReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="driveResetReq" mapToNode="false" />
         <Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true" />
         <Mapping widget="numInDistMoveParam" property="node" type="Number" mode="twoWay" memberPath="Distance" mapToNode="true" />

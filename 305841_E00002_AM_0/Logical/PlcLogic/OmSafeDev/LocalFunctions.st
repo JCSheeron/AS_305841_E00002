@@ -224,8 +224,8 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   END_IF;
   
   // Clear the process requests
-  pSrc := ADR(_I_ProcessReqs.zReqMoveUpLimit);
-  pDest := ADR(_I_ProcessReqs.cuttingHeadMoveReqRetract);
+  pSrc := ADR(_I_ProcessReqs.StartOfClearedRequests);
+  pDest := ADR(_I_ProcessReqs.EndOfClearedRequests);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
   nextAddr := brsmemset(pSrc, 0, byteCount);
     

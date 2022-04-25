@@ -2,8 +2,8 @@ ACTION ClearMotionReqs :
   // Clear Process Reqs, and then the machine specific axis Reqs
   // Process Reqs
   // Bool reqs
-  pSrc := ADR(hmiProcessReqs.zReqMoveUpLimit);
-  pDest := ADR(hmiProcessReqs.cuttingHeadMoveReqRetract);
+  pSrc := ADR(hmiProcessReqs.StartOfClearedRequests);
+  pDest := ADR(hmiProcessReqs.EndOfClearedRequests);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
   nxtAddr := brsmemset(pSrc, 0, byteCount);
   // Numerical reqs
@@ -59,7 +59,6 @@ ACTION ClearCycleReqs :
   operatingMode.HmiReqCycleStart := FALSE;
   operatingMode.HmiReqCycleStop:= FALSE;
   operatingMode.ReqEmoReset := FALSE;
-  operatingMode.ReqAxisReset := FALSE;
 END_ACTION
 
 ACTION ManualModeAxisPermits : 

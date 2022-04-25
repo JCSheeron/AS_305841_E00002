@@ -359,9 +359,8 @@ tmrReqStartPulse(IN:= ((operatingMode.HmiReqCycleStart OR (fs_StartPbOk AND fs_S
 operatingMode.ReqCycleStart := NOT operatingMode.ReqCycleStop AND tmrReqStartPulse.Q; 
 operatingMode.HmiReqCycleStart :=FALSE;
 
-// Clear other reqs
+// Clear EMO reqs
 operatingMode.ReqEmoReset := FALSE;
-operatingMode.ReqAxisReset := FALSE;
 
 // process the process requests
 procHmiProcessReqs();
@@ -497,10 +496,9 @@ operatingMode.HmiReqCycleStop := FALSE;
 // energized less than 2 minutes after being deenergized -- capacitor discharge/recharge issue
 tmrEStopResetAllow(IN:= TRUE);
 
-// Clear the reset bits if within this time
+// Clear the EMO reset bit if within this time
 IF NOT tmrEStopResetAllow.Q THEN
   operatingMode.ReqEmoReset := FALSE;
-  operatingMode.ReqAxisReset := FALSE;
 END_IF;
 
 // Calc how many seconds remain before a reset is allowed

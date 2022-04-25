@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="mainContentProduction" height="600" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxCycle" top="30" left="145" width="560" height="475" zIndex="0" text="Production Cycle">
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxCycle" top="30" left="40" width="560" height="475" zIndex="0" text="Production Cycle">
       <Widgets>
         <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxStatus" top="8" left="384" width="156" height="202" zIndex="0" text="Status">
           <Widgets>
@@ -29,7 +29,11 @@
             <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxSingleCycleInclZ" top="53" left="39" width="211" zIndex="1" text="Single Cycle Z Index" />
           </Widgets>
         </Widget>
+        <Widget xsi:type="widgets.brease.PushButton" id="pbResetAxes" top="263" left="414" height="42" zIndex="3" multiLine="true" text="Reset\nAxes" />
       </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="gprBoxPermits" top="30" left="660" width="250" height="310" zIndex="1" text="Permits">
+      <Widgets />
     </Widget>
   </Widgets>
 </Content>

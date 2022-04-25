@@ -19,6 +19,7 @@ PROGRAM _CYCLIC
     axes[AD_CF_VFD].Status.IsHomed AND
     cfVfd.isLocated AND 
     NOT cfVfd.isAlmLoLvlSw AND NOT cfVfd.isAlmLoFluid;
+    
 
   cfVfd.isAllowedToRun := 
     (operatingMode.OperatingMode = OM_MANUAL_MODE OR
@@ -37,7 +38,13 @@ PROGRAM _CYCLIC
   // Determine when good flow is established -- time delay no flow problems
   tmrCfFlowOk(IN:= cfVfd.isRunning AND NOT cfVfd.isAlmLoFlow, PT:= timeCfFlowOk);
   cfVfd.isFlowEstablished := tmrCfFlowOk.Q;
-  
+
+  // TESTING: Bypass CfVfd permits
+  cfVfd.isAllowedToStart := TRUE;
+  cfVfd.isAllowedToRun := TRUE;
+  cfVfd.isFlowEstablished := TRUE;
+  cfVfd.isRunning := TRUE;
+    
 END_PROGRAM
 
 PROGRAM _EXIT

@@ -70,6 +70,129 @@ TRANSITION Not in prod mode FROM Stp_ProdWaitForStart TO Stp_ModeCheck:=
 operatingMode.OperatingMode <> OM_PRODUCTION_MODE
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_ModeCheck' *)
+TRANSITION Req Reset FROM Stp_ProdWaitForStart TO Stp_DecoupleAxes:=
+(* @LANGUAGE := 'st' *)
+// In production mode and a reset axis request is made
+operatingMode.OperatingMode = OM_PRODUCTION_MODE AND
+hmiProcessReqs.reqAxesReset
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_DecoupleAxes' *)
+STEP Stp_DecoupleAxes:
+(* @LANGUAGE := 'st' *)
+// Run step hold and timeout timers (PT set in step entry)
+tmrStepMin(IN:= TRUE);
+tmrStepTO(IN:= TRUE);
+
+
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Update step 
+partMotion.prodCycleStepCurrent := PCS_DECOUPLE_ECC;
+
+// machine is in cycle
+operatingMode.isInCycle := FALSE;
+operatingMode.isStopping := FALSE;
+
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= T#100ms);
+tmrStepTO(IN:= FALSE, PT:= T#1s);
+
+// Decouple the inner eccentric from the outer eccentric to start with. This is so
+// the inner eccentric can be easily moved back to zero depth position if this is needed.
+// It will already be decoupled if the axis was disabled. It could have been
+// enabled and coupled while waiting for a cycle start -- in which case it could still be 
+// coupled.
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.OffsetShiftCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.PhaseShiftCmd:= FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// The current step holds an ePROD_CYCLE_STEP enum which also 
+// acts as the array index.
+
+// Record the ET
+stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
+// If this is a timeout, record that also
+stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+END_ACTION
+TRANSITION Step TO FROM Stp_DecoupleAxes TO Stp_ProdWaitForStart:=
+(* @LANGUAGE := 'st' *)
+// Step timeout
+tmrStepTO.Q
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
+TRANSITION min time and inner ecc not coupled FROM Stp_DecoupleAxes TO Stp_ResetAxes:=
+(* @LANGUAGE := 'st' *)
+// minimum time and inner eccentric is not coupled
+tmrStepMin.Q AND
+axes[AD_INNER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_ResetAxes' *)
+STEP Stp_ResetAxes:
+(* @LANGUAGE := 'st' *)
+// Run step hold and timeout timers (PT set in step entry)
+tmrStepMin(IN:= TRUE);
+tmrStepTO(IN:= TRUE);
+
+
+
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Update step 
+partMotion.prodCycleStepCurrent := PCS_RESET_AXES;
+
+// machine is in cycle
+operatingMode.isInCycle := FALSE;
+operatingMode.isStopping := FALSE;
+
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= T#100ms);
+tmrStepTO(IN:= FALSE, PT:= T#5s);
+
+// Reset the axes
+axes[AD_SPINDLE].Commands.DriveResetReq := TRUE;
+axes[AD_OUTER_ECCENTRIC].Commands.DriveResetReq := TRUE;
+axes[AD_INNER_ECCENTRIC].Commands.DriveResetReq := TRUE;
+axes[AD_Z].Commands.DriveResetReq := TRUE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// The current step holds an ePROD_CYCLE_STEP enum which also 
+// acts as the array index.
+
+// Record the ET
+stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
+// If this is a timeout, record that also
+stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+END_ACTION
+TRANSITION Step TO FROM Stp_ResetAxes TO Stp_ProdWaitForStart:=
+(* @LANGUAGE := 'st' *)
+// Step timeout
+tmrStepTO.Q
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
+TRANSITION min time and inner ecc not coupled FROM Stp_ResetAxes TO Stp_ProdWaitForStart:=
+(* @LANGUAGE := 'st' *)
+// minimum time and each axis is disabled or in standstill
+tmrStepMin.Q AND
+(axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_DISABLED OR axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_STANDSTILL) AND
+(axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED OR axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL) AND
+(axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED OR axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL) AND
+(axes[AD_Z].Status.PlcOpenState = mcAXIS_DISABLED OR axes[AD_Z].Status.PlcOpenState = mcAXIS_STANDSTILL)
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
 TRANSITION Req cycle start FROM Stp_ProdWaitForStart TO Stp_EnableAxes:=
 (* @LANGUAGE := 'st' *)
 // In production mode and a cycle start is made
@@ -188,6 +311,7 @@ calcLReal1 := 0.1; // 100 msec minimum
 calcLReal1 := MAX(calcLReal1, (ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) / gr_CfgCurrent.cuttingHead.retractRate)); // deg / deg/sec = sec 
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
 tmrStepTO.PT := DINT_TO_TIME(calcDint1);
+// tmrStepTO.PT := T#30s;
 tmrStepTO(IN:= FALSE); 
 
 // Run inner eccentric back to zero depth. The "zero" depth spot moves with the outer eccentric,

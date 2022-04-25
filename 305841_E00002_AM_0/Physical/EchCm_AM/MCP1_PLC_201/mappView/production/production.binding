@@ -73,6 +73,12 @@
       <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="chkBoxSingleCycleInclZ" attribute="value" />
     </Binding>
 
+    <!-- Reset Axes PB -->
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.reqAxesReset" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="pbResetAxes" attribute="value" />
+    </Binding>
+
 
   </Bindings>
 </BindingsSet>

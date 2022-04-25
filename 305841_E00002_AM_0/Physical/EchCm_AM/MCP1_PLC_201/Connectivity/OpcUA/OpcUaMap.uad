@@ -352,7 +352,6 @@
         </Variable>
         <Variable Name="operatingMode">
           <Variable Name="ReqEmoReset" />
-          <Variable Name="ReqAxisReset" />
           <Variable Name="HmiReqCycleStart" />
           <Variable Name="HmiReqCycleStop" />
           <Variable Name="isInCycle" />
@@ -403,6 +402,27 @@
         <Variable Name="owsPendant" AutomaticEnable="True">
           <Variable Name="Position" EngineeringUnitId="4" />
           <Variable Name="PositionSnapshot" EngineeringUnitId="4" />
+        </Variable>
+        <Variable Name="hmiProcessReqs">
+          <Variable Name="reqAxesReset" />
+          <Variable Name="zReqMoveUpLimit" />
+          <Variable Name="zReqMoveDownLimit" />
+          <Variable Name="zReqMoveLUnL" />
+          <Variable Name="zReqMoveSoc" />
+          <Variable Name="zReqMoveIndexUp" />
+          <Variable Name="zReqMoveIndexDown" />
+          <Variable Name="zReqPosSocUseCurrent" />
+          <Variable Name="zReqPosSocUseSpecified" />
+          <Variable Name="zReqPosLUnLUseCurrent" />
+          <Variable Name="zReqPosLUnLUseSpecified" />
+          <Variable Name="cuttingHeadMoveReqRetract" />
+          <Variable Name="zMoveUpReqEnable" />
+          <Variable Name="zMoveDownReqEnable" />
+          <Variable Name="zMoveToSocReqEnable" />
+          <Variable Name="zMoveToLUnLReqEnable" />
+          <Variable Name="cuttingHeadReqDepth" EngineeringUnitId="2" />
+          <Variable Name="zReqPosSoc" EngineeringUnitId="2" />
+          <Variable Name="zReqPosLUnL" EngineeringUnitId="2" />
         </Variable>
       </GlobalVariables>
       <Task Name="OmSafeDev">
@@ -498,26 +518,6 @@
         <Variable Name="fs_InSafeMode" />
         <Variable Name="fs_CfGateClosedLocked" />
         <Variable Name="fs_CfGateClosed" />
-        <Variable Name="hmiProcessReqs">
-          <Variable Name="zReqMoveUpLimit" />
-          <Variable Name="zReqMoveDownLimit" />
-          <Variable Name="zReqMoveSoc" />
-          <Variable Name="cuttingHeadMoveReqRetract" />
-          <Variable Name="cuttingHeadReqDepth" EngineeringUnitId="2" />
-          <Variable Name="zReqPosSoc" EngineeringUnitId="2" />
-          <Variable Name="zReqPosLUnL" EngineeringUnitId="2" />
-          <Variable Name="zReqPosSocUseCurrent" />
-          <Variable Name="zReqPosSocUseSpecified" />
-          <Variable Name="zReqPosLUnLUseCurrent" />
-          <Variable Name="zReqPosLUnLUseSpecified" />
-          <Variable Name="zReqMoveLUnL" />
-          <Variable Name="zReqMoveIndexUp" />
-          <Variable Name="zReqMoveIndexDown" />
-          <Variable Name="zMoveUpReqEnable" />
-          <Variable Name="zMoveDownReqEnable" />
-          <Variable Name="zMoveToSocReqEnable" />
-          <Variable Name="zMoveToLUnLReqEnable" />
-        </Variable>
       </Task>
       <Task Name="ProdCycle">
         <Variable Name="partMotion" AutomaticEnable="True">

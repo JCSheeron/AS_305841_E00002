@@ -309,32 +309,32 @@
 
     <!-- SOC and Load/Unload Position setting  related -->
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosSocUseCurrent" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseCurrent" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbSocUseCurrent" attribute="value" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosSocUseSpecified" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseSpecified" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbSocUseSpecified" attribute="value" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosLUnLUseCurrent" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseCurrent" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbLUnLUseCurrent" attribute="value" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosLUnLUseSpecified" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseSpecified" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbLUnLUseSpecified" attribute="value" />
     </Binding>
 
     <Binding mode="twoWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosSoc" attribute="node" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSoc" attribute="node" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numInSocSpecifiedPos" attribute="node" />
     </Binding>
 
     <Binding mode="twoWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqPosLUnL" attribute="node" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnL" attribute="node" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numInLUnLSpecifiedPos" attribute="node" />
     </Binding>
 
