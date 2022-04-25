@@ -102,23 +102,40 @@ ax.SMState:= GAMOT_ASMS_CHK_RESTORE_POS;
 END_ACTION
 TRANSITION is virtual axis FROM Step_CheckRestorePos TO Step_Disabled:=
 (* @LANGUAGE := 'st' *)
+// Axis restore position does not apply to virtual axes
 ax.isAxisVirtual
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disabled' *)
-TRANSITION restore pos done and error or invalid FROM Step_CheckRestorePos TO Step_Disabled:=
+TRANSITION restore pos done and error or invalid FROM Step_CheckRestorePos TO Step_ForceSetRef:=
 (* @LANGUAGE := 'st' *)
 // Check restore position is done without error
-// and data is valid
+// and data is valid. Not applicable for virtual axes.
+NOT ax.isAxisVirtual AND
 NOT ax.fbCheckRestorePos.Busy AND
 (ax.fbCheckRestorePos.Error OR
 (ax.fbCheckRestorePos.Done AND
 NOT ax.fbCheckRestorePos.DataValid))
 END_TRANSITION
+(* @SFCNOJUMP := 'Step_ForceSetRef' *)
+STEP Step_ForceSetRef:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Force reference to be set
+ax.ForceSetRef := TRUE;
+END_ACTION
+TRANSITION FROM Step_ForceSetRef TO Step_Disabled:=
+TRUE
+END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disabled' *)
 TRANSITION restore pos done and valid FROM Step_CheckRestorePos TO Step_RestorePos:=
 (* @LANGUAGE := 'st' *)
 // Check restore position is done without error
-// and data is valid
+// and data is valid. Not applicable for virtual axes.
+NOT ax.isAxisVirtual AND
 NOT ax.fbCheckRestorePos.Busy AND
 ax.fbCheckRestorePos.Done AND
 NOT ax.fbCheckRestorePos.Error AND
@@ -133,6 +150,9 @@ ax.MoveParameters.HomeParams.Mode := mcHOMING_DEFAULT;
 ax.Commands.HomeCmd := TRUE;
 fctClearMotionCommands(_I_CmdMask := MACM_HOME_MASK, _IO_Commands := ax.Commands);
 fctClearMotionRequests(_I_ReqMask := MACM_NOMASK, _IO_Commands := ax.Commands);
+
+// Assume the homing worked
+ax.ForceSetRef := FALSE;
 
 // Call motion command to get status, and issue the home command, and possibly the enable command.
 ActionCallMotionFunctions;
@@ -200,8 +220,8 @@ fctClearMotionRequests(_I_ReqMask := reqMask, _IO_Commands := ax.Commands);
 tmrModeMismatch(IN:= FALSE);
 
 // TEST
-tmrHomeMinimum(IN:= NOT tmrHomeMinimum.Q, PT:= T#500ms);
-ax.fbCheckRestorePos(Execute := tmrHomeMinimum.Q);
+// tmrHomeMinimum(IN:= NOT tmrHomeMinimum.Q, PT:= T#500ms);
+// ax.fbCheckRestorePos(Execute := tmrHomeMinimum.Q);
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)

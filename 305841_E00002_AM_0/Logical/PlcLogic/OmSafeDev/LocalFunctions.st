@@ -123,16 +123,16 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   // Set position requests. Axis needs to be homed if current position is needed.
   // Requests get cleared at the end either way
   IF _I_ProcessReqs.zReqPosSocUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
-    gr_CfgCurrent.zAxis.startOfCutPos := rAxis.Status.Position;
+    _I_WpCfg.zAxis.startOfCutPos := rAxis.Status.Position;
   END_IF;
   IF _I_ProcessReqs.zReqPosSocUseSpecified THEN // position specified, homing isn't needed
-    gr_CfgCurrent.zAxis.startOfCutPos := zReqPosSoc;
+    _I_WpCfg.zAxis.startOfCutPos := _I_ProcessReqs.zReqPosSoc;
   END_IF;
   IF _I_ProcessReqs.zReqPosLUnLUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
-    gr_CfgCurrent.zAxis.loadUnloadPos := rAxis.Status.Position;
+    _I_WpCfg.zAxis.loadUnloadPos := rAxis.Status.Position;
   END_IF;
   IF _I_ProcessReqs.zReqPosLUnLUseSpecified THEN // position specified, homing isn't needed
-    gr_CfgCurrent.zAxis.loadUnloadPos := zReqPosLUnL;
+    _I_WpCfg.zAxis.loadUnloadPos := _I_ProcessReqs.zReqPosLUnL;
   END_IF;
   
   
@@ -142,24 +142,36 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
     IF _I_ProcessReqs.zReqMoveUpLimit THEN
       rLibReqs.Position := rAxisPositionLimits.PositionLimitPos;
       rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveDownLimit THEN
       rLibReqs.Position := rAxisPositionLimits.PositionLimitNeg;
       rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveLUnL AND _I_WpCfg.zAxis.loadUnloadPos > 0.0 THEN
       rLibReqs.Position := _I_WpCfg.zAxis.loadUnloadPos;
       rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveSoc AND _I_WpCfg.zAxis.startOfCutPos > 0.0 THEN
       rLibReqs.Position := _I_WpCfg.zAxis.startOfCutPos;
       rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;    
     
@@ -167,6 +179,9 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
       rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
       rLibReqs.Direction := mcDIR_POSITIVE;
       rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;    
   
@@ -174,6 +189,9 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
       rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
       rLibReqs.Direction := mcDIR_NEGATIVE;
       rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
+      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
+      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
       rLibReqs.moveReq := TRUE;
     END_IF;
         

@@ -31,9 +31,7 @@ VAR CONSTANT
   AXIS_INE_MAX_ACCEL : REAL := AXIS_INE_MAX_VELOCITY / 1.0; (* get to max in 1 sec *)
   AXIS_INE_MAX_DECEL : REAL := AXIS_INE_MAX_ACCEL * 4.0; (* allow faster stops *)
   AXIS_INE_MEAS_RESOLUTION : REAL := 0.001; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
-  
-  AXIS_INE_ZERO_DEPTH_DEG_TOL : LREAL := 0.5; (* degrees relative to outer eccentric beyond which, the depth is not considered zero *)
-  
+ 
   AXIS_Z_MAX_VELOCITY : REAL := 50.0; (* := (3000.0 / 60.0) * 5.0;*) (* 3000 rpm motor, 5:1 lead, mm/sec *)
   AXIS_Z_MAX_ACCEL : REAL := 100.0; (* AXIS_Z_MAX_VELOCITY / 2.0; *) (* get to max in 2 sec *)
   AXIS_Z_MAX_DECEL : REAL := 200.0; (* AXIS_Z_MAX_VELOCITY / 0.25; *) (* allow faster stops *)
@@ -75,8 +73,8 @@ VAR CONSTANT
   SL_SUPERUSER : WORD      := 16#10; (* bit 4 *)
   
   (* process tolerances *)
-  TOL_DEPTH_ZERO_DEG : LREAL := 0.01; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions *)
-  TOL_ZINDEX  : REAL := 1.0/50.0; (* Somewhat arbitrarily of about 1 mm if index is 50 mm TODO: determine proper value *)
+  TOL_DEPTH_ZERO_DEG : LREAL := 0.05; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
+  TOL_ZINDEX  : LREAL := 0.1; (* Somewhat arbitrarily of 0.1mm TODO: determine proper value *)
   
 END_VAR
 

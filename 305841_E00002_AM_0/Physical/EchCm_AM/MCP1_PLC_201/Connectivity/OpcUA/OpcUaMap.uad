@@ -165,9 +165,10 @@
       <EngineeringUnit Id="10" UnitId="4536630" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree per second" Symbol="°/s" />
       <EngineeringUnit Id="11" UnitId="5059636" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolution" Symbol="rev" />
       <EngineeringUnit Id="12" UnitId="5394515" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolutions per second" Symbol="rev/s" />
-      <EngineeringUnit Id="13" UnitId="4669746" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per minute per second²" Symbol="rpm/s²" />
       <EngineeringUnit Id="14" UnitId="4669744" NameSpaceUri="http://www.br-automation.com/units" Name="degrees per second³" Symbol="°/s³" />
       <EngineeringUnit Id="15" UnitId="4669749" NameSpaceUri="http://www.br-automation.com/units" Name="millimeters per second³" Symbol="mm/s³" />
+      <EngineeringUnit Id="16" UnitId="4669747" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second²" Symbol="rev/s²" />
+      <EngineeringUnit Id="17" UnitId="4669748" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second³" Symbol="rev/s³" />
     </EngineeringUnitAliases>
   </Aliases>
   <DefaultView AclId="2">
@@ -428,10 +429,10 @@
             </Variable>
             <Variable Name="Position" EURangesId="14" EngineeringUnitId="11" />
             <Variable Name="Distance" EngineeringUnitId="11" />
-            <Variable Name="Velocity" EURangesId="15" EngineeringUnitId="1" />
-            <Variable Name="Acceleration" EURangesId="18" EngineeringUnitId="8" />
-            <Variable Name="Deceleration" EURangesId="19" EngineeringUnitId="8" />
-            <Variable Name="MaxJerk" EURangesId="20" EngineeringUnitId="13" />
+            <Variable Name="Velocity" EURangesId="15" EngineeringUnitId="12" />
+            <Variable Name="Acceleration" EURangesId="18" EngineeringUnitId="16" />
+            <Variable Name="Deceleration" EURangesId="19" EngineeringUnitId="16" />
+            <Variable Name="MaxJerk" EURangesId="20" EngineeringUnitId="17" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="11" />
             <Variable Name="shiftDistance" EngineeringUnitId="11" />
           </Variable>

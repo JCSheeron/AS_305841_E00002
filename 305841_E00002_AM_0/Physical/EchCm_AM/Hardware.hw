@@ -274,7 +274,6 @@
     <Parameter ID="ConfigurationID" Value="305841_E00002_Rev0_PLC_Main" />
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
-    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="PermanentPvSize" Value="9216" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
     <Parameter ID="Cyclic1Duration" Value="2000" />
@@ -503,9 +502,10 @@
     <Connection Connector="MT" TargetModule="AM1_PLK11" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
-  <Module Name="ServoMotor_Spindle" Type="8LSA33.D1030D200-0" Version="1.0.7.35">
+  <Module Name="ServoMotor_Spindle" Type="8LSA46.DB030S200-3" Version="2.2.0.1">
     <Connection Connector="EC" TargetModule="AM2Enc1_Spindle" TargetConnector="EC" />
     <Connection Connector="MT" TargetModule="AM2_PLK12" TargetConnector="MT1" />
+    <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
   <Module Name="ServoMotor_Z" Type="8LSA45.D1030D200-0" Version="1.0.5.35">
     <Connection Connector="EC" TargetModule="AM2Enc2_Z" TargetConnector="EC" />

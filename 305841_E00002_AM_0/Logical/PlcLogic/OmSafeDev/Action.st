@@ -157,16 +157,16 @@ ACTION ProductionModeAxisPermits :
   axes[AD_Z].MoveParameters.PosMovePermissive := 
     axes[AD_Z].Status.IsHomed AND axes[AD_Z].Status.IsPoweredOn AND
     axes[AD_INNER_ECCENTRIC].Status.IsHomed AND axes[AD_OUTER_ECCENTRIC].Status.IsHomed AND
-    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < AXIS_INE_ZERO_DEPTH_DEG_TOL AND
+    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < TOL_DEPTH_ZERO_DEG AND
     // position must be less than limit
-    axes[AD_Z].Status.Position < gr_AxisPositionLimits[AD_Z].PositionLimitPos;
+    axes[AD_Z].Status.Position <= gr_AxisPositionLimits[AD_Z].PositionLimitPos;
     
   axes[AD_Z].MoveParameters.NegMovePermissive := 
     axes[AD_Z].Status.IsHomed AND axes[AD_Z].Status.IsPoweredOn AND
     axes[AD_INNER_ECCENTRIC].Status.IsHomed AND axes[AD_OUTER_ECCENTRIC].Status.IsHomed AND
-    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < AXIS_INE_ZERO_DEPTH_DEG_TOL AND
+    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < TOL_DEPTH_ZERO_DEG AND
     // position must be less than limit
-    axes[AD_Z].Status.Position > gr_AxisPositionLimits[AD_Z].PositionLimitNeg;
+    axes[AD_Z].Status.Position >= gr_AxisPositionLimits[AD_Z].PositionLimitNeg;
     
   // Set process related enable/disables
   hmiProcessReqs.zMoveDownReqEnable := axes[AD_Z].MoveParameters.NegMovePermissive;

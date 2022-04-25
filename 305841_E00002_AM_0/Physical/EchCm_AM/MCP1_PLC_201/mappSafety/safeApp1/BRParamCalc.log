@@ -1,4 +1,4 @@
-LOGStart created on Friday 2022/04/08  UTC 23:29:36:412
+LOGStart created on Wednesday 2022/04/20  UTC 18:11:19:991
 
 Reading "OSDD Data"...
 Reading Content "Start"
@@ -171,9 +171,9 @@ Content "name1" successfully read from "name2"
 
 
 
-LOGAppend on Friday 2022/04/08  UTC 23:29:36:412
+LOGAppend on Wednesday 2022/04/20  UTC 18:11:19:991
 
-Reading "C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_AM\MCP1_PLC_201\mappSafety\safeApp1\BusNavigator.iom"...
+Reading "C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Physical\EchCm_AM\MCP1_PLC_201\mappSafety\safeApp1\BusNavigator.iom"...
 Reading Content "IOOffsets"
 IO reservations (MAX number of bytes): SI=128  SO=64  NSI=64  NSO=64   ConValid = 4  BITEMOsOffset=0  BITEMOsSize=0
 Reading properties for module "SL1.SM1". Beginning at line 3
@@ -261,4 +261,4 @@ Reading properties for channel "SafeModuleOK". Beginning at line 86
 Reading properties for channel "SafeDigitalOutput01". Beginning at line 87
 Reading properties for channel "ReleaseOutput". Beginning at line 88
 Module "SL1.SM213.SL1.SM213" has 3 items.
-Content "IOOffsets" successfully read from "C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_AM\MCP1_PLC_201\mappSafety\safeApp1\BusNavigator.iom"
+Content "IOOffsets" successfully read from "C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Physical\EchCm_AM\MCP1_PLC_201\mappSafety\safeApp1\BusNavigator.iom"

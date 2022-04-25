@@ -52,11 +52,12 @@ ENTRY_ACTION
 partMotion.prodCycleStepCurrent := PCS_WAIT_FOR_START;
 
 // Disable axes while waiting to start
+(*
 axes[AD_SPINDLE].Commands.DisableReq := TRUE;
 axes[AD_OUTER_ECCENTRIC].Commands.DisableReq := TRUE;
 axes[AD_INNER_ECCENTRIC].Commands.DisableReq := TRUE;
 axes[AD_Z].Commands.DisableReq := TRUE;
-
+*)
 // Clear in cycle bit to safety PLC
 ts_InCycle := FALSE;
 

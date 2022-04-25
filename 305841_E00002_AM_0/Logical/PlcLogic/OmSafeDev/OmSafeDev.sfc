@@ -118,7 +118,6 @@ ClearCycleReqs;
 // Inputs set in init. This fb looks for a rising edge on the HMI move request, and 
 // one-shots the axis move requests. It is inteneded to be run on every scan,
 // at least while in manual mode.
-procHmiProcessReqs();
 procManualAxisReqsSpindle(); 
 procManualAxisReqsOutE(); 
 procManualAxisReqsInE(); 
@@ -231,7 +230,6 @@ hmiLibraryAxisReqs[AD_HANDWHEEL].GearRatioDenominator := owsPendant.GearRatioDen
 // Inputs set in init. This fb looks for a rising edge on the HMI move request, and 
 // one-shots the axis move requests. It is inteneded to be run on every scan,
 // at least while in manual mode.
-procHmiProcessReqs();
 procManualAxisReqsSpindle(); 
 procManualAxisReqsOutE(); 
 procManualAxisReqsInE(); 

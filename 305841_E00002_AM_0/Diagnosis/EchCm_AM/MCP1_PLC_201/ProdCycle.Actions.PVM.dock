@@ -1,0 +1,36 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=ProdCycle 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=17 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                          gr_PartCurrent                                 sWp_Part    0 "                                                               *"    0   24    1    0    0    1         
+                           isZCalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                              isZIndexed                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                        isOutECalibrated                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                         isInECalibrated                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            cutPassCount                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
+                             zIndexCount                                    USINT    0 "                                                               2"    1    5    1   10    0    0         
+                      zIndexCountSuccess                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
+                           zIndexLRCount                                    LREAL    0 "                                                             2.0"    1   14    1   10    0    0         
+                            serialNumber                               STRING[25]    0 "                                                              ''"    1    9   26    1    0    0         
+                                 partDfn                              sWp_PartDfn    0 "                                                               *"    1   24    1    0    0    1         
+                                  number                               STRING[15]    0 "                                                              ''"    2    9   16    1    0    0         
+                                    name                               STRING[40]    0 "                                                              ''"    2    9   41    1    0    0         
+                                   nomId                                     REAL    0 "                                                            50.0"    2    8    1   10    0    0         
+                            nomCutLength                                    LREAL    0 "                                                            75.0"    2   14    1   10    0    0         
+                              partMotion                              sPartMotion    0 "                                                               *"    0   24    1    0    1    1         
+                    warnAdjAngleTooSmall                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            totalIndexes                                    USINT    0 "                                                               8"    1    5    1   10    0    0         
+                    prodCycleStepCurrent                                     DINT    0 "                                                               4"    1    4    1   10    0    0 e,0,PCS_
+
+                               passDepth                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+                             cutVelocity                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+                        depthAdjVelocity                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
+                           depthAdjAngle                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                        depthAdjAngleMin                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                         passOffsetAngle                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                   finishPassOffsetAngle                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                            passDistance                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                     startOfPassPosition                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                       endOfPassPosition                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                     calcNextAdjPosition                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                     calcNextAdjDistance                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                    passDistanceTraveled                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
