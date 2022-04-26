@@ -185,7 +185,7 @@
         <Classification Type="Motion" />
         <Classification Type="VendorSpecific">Safe</Classification>
         <Classification Type="VendorSpecific">IO</Classification>
-        <Info Name="Interface" Value="IF3.ST11.SS1" />
+        <Info Name="Interface" Value="IF3.ST12.SS1" />
         <Info Name="HWC_Revision" Value="2.2.0.0" />
         <Info Name="HWC_LastEdit" Value="3/11/2021 4:18:42 AM" />
         <Info Name="AS_Name" Value="AM1Enc_OutE_SM11" />
@@ -207,7 +207,7 @@
         <Classification Type="Motion" />
         <Classification Type="VendorSpecific">Safe</Classification>
         <Classification Type="VendorSpecific">IO</Classification>
-        <Info Name="Interface" Value="IF3.ST11.SS2" />
+        <Info Name="Interface" Value="IF3.ST12.SS2" />
         <Info Name="HWC_Revision" Value="2.2.0.0" />
         <Info Name="HWC_LastEdit" Value="3/11/2021 4:18:42 AM" />
         <Info Name="AS_Name" Value="AM1Enc_InE_SM12" />

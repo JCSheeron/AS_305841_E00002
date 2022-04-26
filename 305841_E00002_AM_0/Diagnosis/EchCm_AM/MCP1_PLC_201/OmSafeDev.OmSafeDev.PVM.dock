@@ -3,40 +3,40 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                     name                                     type force                                                            value level type len format place expand specs
                       hmiMachineAxisReqs                       sHmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    1         
                    hmiMachineAxisReqs[0]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
-                           absMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           relMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           velMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      directionPosEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      directionNegEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                 directionShortestEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      moveDistanceEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      movePositionEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                             shiftEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                         moveDesignation                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                               direction                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                                  axisNo                                    USINT    0 "                                                               0"    2    5    1   10    0    0         
-                         axisDesignation                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,AD_U
+                           absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           velMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionPosEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionNegEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 directionShortestEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      moveDistanceEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      movePositionEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             shiftEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                               direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                         axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
                    hmiMachineAxisReqs[1]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
-                           absMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           relMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           velMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      directionPosEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      directionNegEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                 directionShortestEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      moveDistanceEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      movePositionEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             shiftEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                         moveDesignation                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                               direction                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                                  axisNo                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
-                         axisDesignation                                     DINT    0 "                                                               1"    2    4    1   10    0    0 e,0,AD_U
+                           absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           velMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionPosEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionNegEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 directionShortestEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      moveDistanceEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      movePositionEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             shiftEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                               direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                         axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
                    hmiMachineAxisReqs[2]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
-                           absMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           relMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           velMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      directionPosEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           velMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionPosEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                       directionNegEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                  directionShortestEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                       moveDistanceEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -70,9 +70,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                       directionNegEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                  directionShortestEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                       moveDistanceEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      movePositionEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                      movePositionEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                              shiftEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                         moveDesignation                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
                                direction                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
                                   axisNo                                    USINT    0 "                                                               4"    2    5    1   10    0    0         
                          axisDesignation                                     DINT    0 "                                                               4"    2    4    1   10    0    0 e,0,AD_U
@@ -300,39 +300,39 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                  stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                           homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                         homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                       offsetShiftRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                        phaseShiftRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             endShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          engageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                  axisNo                                    USINT    0 "                                                               4"    2    5    1   10    0    0         
-                      GearRatioNumerator                                     DINT    0 "                                                             100"    2    4    1   10    0    0         
-                    GearRatioDenominator                                     DINT    0 "                                                             100"    2    4    1   10    0    0         
-                            homePosition                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
-                           shiftDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
-                    shiftProfileDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       offsetShiftRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        phaseShiftRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             endShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          engageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                      GearRatioNumerator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                    GearRatioDenominator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                           positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
                         PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                         PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
-                         moveDesignation                                     DINT    0 "                                                              64"    2    4    1   10    0    0 e,-1,GAM
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
 
-                               Direction                                     DINT    0 "                                                               9"    2    4    1   10    0    0 e,0,mcDI
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
 
-                                Distance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
-                                Position                                    LREAL    0 "                                                            40.0"    2   14    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                            Acceleration                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                            Deceleration                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                                 MaxJerk                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                    hmiLibraryAxisReqs[5]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                                  moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -3510,13 +3510,13 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                  axes[4]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               4"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               4"    2    4    1   10    0    0 e,0,GAMO
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -3533,39 +3533,39 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              Internal[1]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                    seqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                   Status                          sMot_AxisStatus    0 "                                                               *"    2   24    1    0    0    0         
-                     IsCommuncationReady                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsReadyToPowerOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsAtHomingSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        IsTrigger1Active                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsTrigger2Active                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                     IsDriveEnableActive                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                          IsInSimulation                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                             IsPoweredOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                      IsTorqueLimitReady                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsBrakeManuallyReleased                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                 IsHomed                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                               IsJogging                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsAtJogLimit                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         IsAtTorqueLimit                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsInVelocity                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsInPosition                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsMoveActive                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              IsMoveDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                               IsStopped                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                          IsAutoTuneDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         AutoTuneQuality                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                      SafeMotionDiagCode                                     UINT    1 "                                                               0"    3    6    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                Position                                    LREAL    0 "                                                            35.0"    3   14    1   10    0    0         
-                     CalculatedPosition1                                    LREAL    0 "                                                            35.0"    3   14    1   10    0    0         
-                     CalculatedPosition2                                    LREAL    0 "                                                            35.0"    3   14    1   10    0    0         
-                     CalculatedPosition3                                    LREAL    0 "                                                            35.0"    3   14    1   10    0    0         
-                            StartupCount                                    UDINT    0 "                                                               1"    3    7    1   10    0    0         
-                            PlcOpenState                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcAX
+                     IsCommuncationReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsReadyToPowerOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsAtHomingSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger1Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger2Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                     IsDriveEnableActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                          IsInSimulation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                             IsPoweredOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      IsTorqueLimitReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 IsHomed                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               IsJogging                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsAtJogLimit                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         IsAtTorqueLimit                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsInVelocity                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsInPosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsMoveActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              IsMoveDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               IsStopped                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                          IsAutoTuneDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         AutoTuneQuality                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                      SafeMotionDiagCode                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                     CalculatedPosition1                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                     CalculatedPosition2                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                     CalculatedPosition3                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                            StartupCount                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
+                            PlcOpenState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
-                        networkCommState                                     DINT    0 "                                                             600"    3    4    1   10    0    0 e,0,mcCO
+                        networkCommState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCO
 
                          AxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    3   24    1    0    0    0         
                                 StatusID                       MpAxisStatusIDType    0 "                                                               *"    4   24    1    0    0    0         
@@ -3585,16 +3585,16 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
                                     Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
-                       IsCoordSlaveReady                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      IsCoordMasterReady                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                   IsCoordInCompensation                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                           IsCoordInSync                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                       IsCoordOffsetDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      IsCoordPhasingDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                     IsCoordRecoveryDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                  CoordActualOffsetShift                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
-                   CoordActualPhaseShift                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
-                   CoordRecoveryPosition                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                       IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                           IsCoordInSync                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                       IsCoordOffsetDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      IsCoordPhasingDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                     IsCoordRecoveryDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                  CoordActualOffsetShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                   CoordActualPhaseShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                   CoordRecoveryPosition                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                     CoordAxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    3   24    1    0    0    0         
                                 StatusID                       MpAxisStatusIDType    0 "                                                               *"    4   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
@@ -3953,30 +3953,30 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          ShiftZonePeriod                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                                ShiftJerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                 Commands                        sMot_AxisCommands    0 "                                                               *"    2   24    1    0    0    0         
-                          MoveNotAllowed                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         PlcSafetyEnable                                     BOOL    3 "                                                            TRUE"    3    1    1    2    0    0         
-                        UpdateMoveParams                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    UpdateCouplingParams                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                               EnableReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              DisableReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                               EnableCmd                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                         ReleaseBrakeReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    ClearReleaseBrakeReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         ReleaseBrakeCmd                                     BOOL    3 "                                                           FALSE"    3    1    1    2    0    0         
-                                 HomeReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                 HomeCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              MoveJogReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              MoveJogCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      MoveJogPositiveReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      MoveJogPositiveCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      MoveJogNegativeReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                      MoveJogNegativeCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveVelocityReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveVelocityCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveRelativeReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveRelativeCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveAbsoluteReq                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         MoveAbsoluteCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                          MoveNotAllowed                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         PlcSafetyEnable                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        UpdateMoveParams                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    UpdateCouplingParams                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               EnableReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              DisableReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               EnableCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         ReleaseBrakeReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    ClearReleaseBrakeReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         ReleaseBrakeCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 HomeReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 HomeCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              MoveJogReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              MoveJogCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      MoveJogPositiveReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      MoveJogPositiveCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      MoveJogNegativeReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      MoveJogNegativeCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveVelocityReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveVelocityCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveRelativeReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveRelativeCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveAbsoluteReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         MoveAbsoluteCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                  StopReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                  StopCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                             StopResetReq                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

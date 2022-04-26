@@ -15,7 +15,7 @@
       <Group ID="Position">
         <Property ID="LowerLimitMin" Value="-1.79769313486231E308" />
         <Property ID="UpperLimitMax" Value="1.79769313486231E308" />
-        <Property ID="LowerLimit" Value="20" />
+        <Property ID="LowerLimit" Value="17" />
         <Property ID="UpperLimit" Value="3400" />
       </Group>
       <Property ID="VelocityIsReadOnly" Value="0" />

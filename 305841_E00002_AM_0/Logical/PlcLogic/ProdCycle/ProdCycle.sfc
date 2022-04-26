@@ -271,7 +271,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_EnableAxes TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+// tmrStepTO.Q OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleStop' *)
@@ -310,8 +310,8 @@ partMotion.prodCycleStepCurrent := PCS_ZERO_DEPTH;
 calcLReal1 := 0.1; // 100 msec minimum
 calcLReal1 := MAX(calcLReal1, (ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) / gr_CfgCurrent.cuttingHead.retractRate)); // deg / deg/sec = sec 
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
-tmrStepTO.PT := DINT_TO_TIME(calcDint1);
-// tmrStepTO.PT := T#30s;
+// tmrStepTO.PT := DINT_TO_TIME(calcDint1);
+ tmrStepTO.PT := T#30s;
 tmrStepTO(IN:= FALSE); 
 
 // Run inner eccentric back to zero depth. The "zero" depth spot moves with the outer eccentric,
@@ -339,7 +339,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_ZeroDepth TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+// tmrStepTO.Q OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
