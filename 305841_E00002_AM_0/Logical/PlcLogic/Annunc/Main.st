@@ -27,6 +27,9 @@ PROGRAM _CYCLIC
   // Light the 480 VAC Okay lamp on the OWS if the power monitor in the MCP is okay.
   DO_PL_OWSAmber :=  DI_JI_480VACOk.Value;
   
+  // Light the green ready light if in production mode and 
+  DO_PL_OWSGreen := operatingMode.OperatingMode = OM_PRODUCTION_MODE AND cyclePermissives.allowCycleStart;
+  
 END_PROGRAM
 
 PROGRAM _EXIT

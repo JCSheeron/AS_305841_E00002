@@ -25,5 +25,7 @@ VAR
   stepETs  : ARRAY[0..40] OF TIME; (* step elapsed times *)
   stepTOs  : ARRAY[0..40] OF TIME; (* step Timeout values *)
   stepIsTO : ARRAY[0..40] OF BOOL; (* set if the step has a TO *)
+  
+  prodCycleStep : ePROD_CYCLE_STEP;
 END_VAR
 

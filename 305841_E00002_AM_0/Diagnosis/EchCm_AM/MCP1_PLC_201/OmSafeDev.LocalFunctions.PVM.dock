@@ -2,7 +2,7 @@ WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev
 Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=61 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                            gr_CfgCurrent                        sWp_Configuration    0 "                                                               *"    0   24    1    0    0    0         
-                                    name                               STRING[40]    0 "                                                              ''"    1    9   41    1    0    0         
+                                    name                               STRING[40]    0 "                                                               *"    1    9   41    1    0    0         
                              cuttingHead                          sWp_CuttingHead    0 "                                                               *"    1   24    1    0    0    0         
                            finishingPass                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                passCount                                    USINT    0 "                                                               *"    2    5    1   10    0    0         

@@ -544,7 +544,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_GearInEcc TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+// tmrStepTO.Q OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1759,7 +1759,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_ZToSOC TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+// tmrStepTO.Q OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -2030,7 +2030,7 @@ EXIT_ACTION
 (* @LANGUAGE := 'st' *)
 // The current step holds an ePROD_CYCLE_STEP enum which also 
 // acts as the array index.
-
+prodCycleStep := partMotion.prodCycleStepCurrent;
 // Record the ET
 stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 // If this is a timeout, record that also

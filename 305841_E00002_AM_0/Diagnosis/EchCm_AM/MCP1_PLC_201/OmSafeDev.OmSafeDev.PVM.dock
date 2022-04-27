@@ -63,19 +63,19 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
                    hmiMachineAxisReqs[4]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    1         
-                           absMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           relMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           velMoveEnable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                      directionPosEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      directionNegEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                 directionShortestEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      moveDistanceEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                      movePositionEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             shiftEnable                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                         moveDesignation                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                               direction                                     DINT    0 "                                                              -1"    2    4    1   10    0    0         
-                                  axisNo                                    USINT    0 "                                                               4"    2    5    1   10    0    0         
-                         axisDesignation                                     DINT    0 "                                                               4"    2    4    1   10    0    0 e,0,AD_U
+                           absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           velMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionPosEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      directionNegEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 directionShortestEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      moveDistanceEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      movePositionEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             shiftEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                               direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                         axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
                    hmiMachineAxisReqs[5]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                            absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -295,11 +295,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                             Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                    hmiLibraryAxisReqs[4]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    1         
-                                 moveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 haltReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                               disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -3331,7 +3331,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -3339,53 +3339,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -3584,7 +3584,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -3663,7 +3663,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -4053,7 +4053,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -4061,53 +4061,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -4306,7 +4306,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -4385,7 +4385,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -4775,7 +4775,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -4783,53 +4783,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -5028,7 +5028,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -5107,7 +5107,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -5497,7 +5497,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -5505,53 +5505,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -5750,7 +5750,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -5829,7 +5829,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -6219,7 +6219,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -6227,53 +6227,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -6472,7 +6472,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -6551,7 +6551,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -6941,7 +6941,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    4   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    5    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -6949,53 +6949,53 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                          AutoTuneQuality                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    4   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    5   24    1    0    0    0         
-                                AxisName                               STRING[32]    0 "                                                               *"    6    9   33    1    0    0         
-                   ConfigElementLocation                              STRING[250]    0 "                                                               *"    6    9  251    1    0    0         
+                                AxisName                                 STRING[]    0 "                                                               *"    6    9   33    1    0    0         
+                   ConfigElementLocation                                 STRING[]    0 "                                                               *"    6    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                    Drive                        McHwInfoDriveType    0 "                                                               *"    5   24    1    0    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                ModuleID                               STRING[11]    0 "                                                               *"    6    9   12    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                         FirmwareVersion                                STRING[7]    0 "                                                               *"    6    9    8    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                ModuleID                                 STRING[]    0 "                                                               *"    6    9   12    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    6    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    6    9    4    1    0    0         
+                         FirmwareVersion                                 STRING[]    0 "                                                               *"    6    9    8    1    0    0         
                                     Card                   McHwInfoCardType[0..3]    0 "                                                               *"    5   24    4    0    0    0         
                                  Card[0]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[1]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[2]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                  Card[3]                         McHwInfoCardType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                    Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    5   24    3    0    0    0         
                                 Motor[0]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[1]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Motor[2]                        McHwInfoMotorType    0 "                                                               *"    6   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    7    1    1    2    0    0         
-                             ModelNumber                               STRING[35]    0 "                                                               *"    7    9   36    1    0    0         
-                            SerialNumber                               STRING[19]    0 "                                                               *"    7    9   20    1    0    0         
-                                Revision                                STRING[3]    0 "                                                               *"    7    9    4    1    0    0         
+                             ModelNumber                                 STRING[]    0 "                                                               *"    7    9   36    1    0    0         
+                            SerialNumber                                 STRING[]    0 "                                                               *"    7    9   20    1    0    0         
+                                Revision                                 STRING[]    0 "                                                               *"    7    9    4    1    0    0         
                                 Internal                    MpComInternalDataType    0 "                                                               *"    3   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
