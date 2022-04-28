@@ -140,66 +140,55 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   // Requests get cleared at the end either way
   IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
     IF _I_ProcessReqs.zReqMoveUpLimit THEN
-      rLibReqs.Position := rAxisPositionLimits.PositionLimitPos;
-      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Position := rAxisPositionLimits.PositionLimitPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveDownLimit THEN
-      rLibReqs.Position := rAxisPositionLimits.PositionLimitNeg;
-      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Position := rAxisPositionLimits.PositionLimitNeg;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveLUnL AND _I_WpCfg.zAxis.loadUnloadPos > 0.0 THEN
-      rLibReqs.Position := _I_WpCfg.zAxis.loadUnloadPos;
-      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Position := _I_WpCfg.zAxis.loadUnloadPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.zReqMoveSoc AND _I_WpCfg.zAxis.startOfCutPos > 0.0 THEN
-      rLibReqs.Position := _I_WpCfg.zAxis.startOfCutPos;
-      rLibReqs.moveDesignation := GAMOT_MD_ABSOLUTE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Position := _I_WpCfg.zAxis.startOfCutPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
     END_IF;    
     
     IF _I_ProcessReqs.zReqMoveIndexUp AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
-      rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
-      rLibReqs.Direction := mcDIR_POSITIVE;
-      rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Distance := ABS(_I_WpCfg.zAxis.indexDist); // make sure distance is positive
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveRelativeReq := TRUE;
     END_IF;    
   
     IF _I_ProcessReqs.zReqMoveIndexDown AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
-      rLibReqs.Distance := _I_WpCfg.zAxis.indexDist;
-      rLibReqs.Direction := mcDIR_NEGATIVE;
-      rLibReqs.moveDesignation := GAMOT_MD_RELATIVE;
-      rLibReqs.Velocity := _I_WpCfg.zAxis.indexSpeed;
-      rLibReqs.Acceleration := _I_WpCfg.zAxis.accel;
-      rLibReqs.Deceleration := _I_WpCfg.zAxis.decel;
-      rLibReqs.moveReq := TRUE;
+      rAxis.MoveParameters.Distance := -1.0 * ABS(_I_WpCfg.zAxis.indexDist); // make sure distance is negative
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveRelativeReq := TRUE;
     END_IF;
         
   END_IF;
     
-  // Call the motion library fb to process the library requests
-  procLibraryReq(_I_HmiAxisReq := ADR(rLibReqs), _I_Axis := ADR(rAxis) , _I_SlaveAxis := ADR(rSlaveAxis), _I_AxisPositionLimits := ADR(rAxisPositionLimits));
-
   // Process Cutting Head Requests
   // First get the Inner Eccentric structures by address arithmetic
   rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_INNER_ECCENTRIC * szLibReq);
@@ -228,10 +217,7 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   pDest := ADR(_I_ProcessReqs.EndOfClearedRequests);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
   nextAddr := brsmemset(pSrc, 0, byteCount);
-    
-  // Call the motion library fb to process the library requests
-  procLibraryReq(_I_HmiAxisReq := ADR(rLibReqs), _I_Axis := ADR(rAxis) , _I_SlaveAxis := ADR(rSlaveAxis), _I_AxisPositionLimits := ADR(rAxisPositionLimits));
-    
+   
 END_FUNCTION_BLOCK
 
 // The HMI can easily set values like 0, 1, 2 from radio buttons for example, but it is harder to set specific move type values

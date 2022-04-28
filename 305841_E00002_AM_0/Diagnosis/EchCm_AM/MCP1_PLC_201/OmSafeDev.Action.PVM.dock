@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=85 Type=0 Scope=0 Force=0 Index=6326 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=85 Type=0 Scope=0 Force=0 Index=6283 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                     axes                          sMot_Axis[0..8]    0 "                                                               *"    0   24    9    0    0    0         
                                  axes[0]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
@@ -6988,25 +6988,28 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=85 Type=0 Scope=0 Force=0 Index=
                                   axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
                          axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
-                          hmiProcessReqs                          sHmiProcessReqs    0 "                                                               *"    0   24    1    0    1    0         
-                         zReqMoveUpLimit                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                       zReqMoveDownLimit                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                            zReqMoveLUnL                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             zReqMoveSoc                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                         zReqMoveIndexUp                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                       zReqMoveIndexDown                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                    zReqPosSocUseCurrent                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                  zReqPosSocUseSpecified                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                   zReqPosLUnLUseCurrent                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                 zReqPosLUnLUseSpecified                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-               cuttingHeadMoveReqRetract                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                        zMoveUpReqEnable                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                      zMoveDownReqEnable                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                     zMoveToSocReqEnable                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                    zMoveToLUnLReqEnable                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                     cuttingHeadReqDepth                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
-                              zReqPosSoc                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
-                             zReqPosLUnL                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                          hmiProcessReqs                          sHmiProcessReqs    0 "                                                               *"    0   24    1    0    0    1         
+                  StartOfClearedRequests                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            reqAxesReset                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                         zReqMoveUpLimit                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                       zReqMoveDownLimit                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            zReqMoveLUnL                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                             zReqMoveSoc                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                         zReqMoveIndexUp                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                       zReqMoveIndexDown                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                    zReqPosSocUseCurrent                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                  zReqPosSocUseSpecified                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                   zReqPosLUnLUseCurrent                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                 zReqPosLUnLUseSpecified                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+               cuttingHeadMoveReqRetract                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                    EndOfClearedRequests                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                        zMoveUpReqEnable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                      zMoveDownReqEnable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                     zMoveToSocReqEnable                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                    zMoveToLUnLReqEnable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                     cuttingHeadReqDepth                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
+                              zReqPosSoc                                    LREAL    0 "                                                            25.0"    1   14    1   10    0    0         
+                             zReqPosLUnL                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
                                    cfVfd                         sCuttingFluidVfd    0 "                                                               *"    0   24    1    0    0    0         
                         isAllowedToStart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                           isAllowedToRun                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
@@ -7026,24 +7029,24 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=85 Type=0 Scope=0 Force=0 Index=
                         isWarnHiFilterDp                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                             isAlmSummary                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                            isWarnSummary                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                        cyclePermissives                        sCyclePermissives    0 "                                                               *"    0   24    1    0    0    1         
-                                  isOmOk                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                                 isCfRdy                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                     isCfFlowEstablished                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                         allowCycleStart                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                           allowCycleRun                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                        cyclePermissives                        sCyclePermissives    0 "                                                               *"    0   24    1    0    0    0         
+                                  isOmOk                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                 isCfRdy                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                     isCfFlowEstablished                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                         allowCycleStart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                           allowCycleRun                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                           gr_PartCurrent                                 sWp_Part    0 "                                                               *"    0   24    1    0    0    1         
                            isZCalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                              isZIndexed                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                              isZIndexed                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                         isOutECalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                          isInECalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                             cutPassCount                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
-                             zIndexCount                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
+                             zIndexCount                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
                       zIndexCountSuccess                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
-                           zIndexLRCount                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
-                            serialNumber                               STRING[25]    0 "                                                              ''"    1    9   26    1    0    0         
+                           zIndexLRCount                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                            serialNumber                               STRING[25]    0 "                                                               *"    1    9   26    1    0    0         
                                  partDfn                              sWp_PartDfn    0 "                                                               *"    1   24    1    0    0    1         
-                                  number                               STRING[15]    0 "                                                              ''"    2    9   16    1    0    0         
-                                    name                               STRING[40]    0 "                                                              ''"    2    9   41    1    0    0         
-                                   nomId                                     REAL    0 "                                                            50.0"    2    8    1   10    0    0         
-                            nomCutLength                                    LREAL    0 "                                                            75.0"    2   14    1   10    0    0         
+                                  number                               STRING[15]    0 "                                                               *"    2    9   16    1    0    0         
+                                    name                               STRING[40]    0 "                                                               *"    2    9   41    1    0    0         
+                                   nomId                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            nomCutLength                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         

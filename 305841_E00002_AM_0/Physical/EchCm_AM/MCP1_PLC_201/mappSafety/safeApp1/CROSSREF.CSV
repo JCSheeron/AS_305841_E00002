@@ -10,12 +10,12 @@ axOutEEnableFromPlc,POE\Main\AxisEnable.GB,2,IN,3,67,Read,,BOOL,NSIX1.0,,VAR_GLO
 axOutERef,POE\Main\AxisEnable.GB,3,IN,5,53,Read,,SAFEINT,SAFEINT#0,,VAR_GLOBAL,GLOBAL,,axis reference
 axSpindleBrakeRelReqFromPlc,C\PLC\R\CPU\global_variables.vbb,0,,52,0,,,BOOL,NSIX1.4,,VAR_GLOBAL,NOT USED,,From PLC L:Brake Release Req
 axSpindleDiagCode,C\PLC\R\CPU\global_variables.vbb,0,,61,0,,,WORD,NSQW4,,VAR_GLOBAL,NOT USED,,H: Enable Axis
-axSpindleEnableCmd,POE\Main\AxisEnable.GB,7,OUT,134,12,Write,,SAFEBOOL,SQX2.1,,VAR_GLOBAL,GLOBAL,,
-axSpindleEnableFromPlc,POE\Main\AxisEnable.GB,6,IN,137,63,Read,,BOOL,NSIX0.7,,VAR_GLOBAL,GLOBAL,,From PLC. H:AllowMotion, L:Stop
+axSpindleEnableCmd,POE\Main\AxisEnable.GB,7,OUT,133,12,Write,,SAFEBOOL,SQX2.1,,VAR_GLOBAL,GLOBAL,,
+axSpindleEnableFromPlc,POE\Main\AxisEnable.GB,6,IN,136,63,Read,,BOOL,NSIX0.7,,VAR_GLOBAL,GLOBAL,,From PLC. H:AllowMotion, L:Stop
 axZBrakeRelReqFromPlc,C\PLC\R\CPU\global_variables.vbb,0,,58,0,,,BOOL,NSIX1.7,,VAR_GLOBAL,NOT USED,,From PLC L:Brake Release Req
 axZDiagCode,C\PLC\R\CPU\global_variables.vbb,0,,65,0,,,WORD,NSQW10,,VAR_GLOBAL,NOT USED,,
-axZEnableCmd,POE\Main\AxisEnable.GB,7,OUT,153,18,Write,,SAFEBOOL,SQX2.2,,VAR_GLOBAL,GLOBAL,,H: Enable Axis
-axZEnableFromPlc,POE\Main\AxisEnable.GB,6,IN,156,69,Read,,BOOL,NSIX1.2,,VAR_GLOBAL,GLOBAL,,From PLC. H:AllowMotion, L:Stop
+axZEnableCmd,POE\Main\AxisEnable.GB,7,OUT,152,18,Write,,SAFEBOOL,SQX2.2,,VAR_GLOBAL,GLOBAL,,H: Enable Axis
+axZEnableFromPlc,POE\Main\AxisEnable.GB,6,IN,155,69,Read,,BOOL,NSIX1.2,,VAR_GLOBAL,GLOBAL,,From PLC. H:AllowMotion, L:Stop
 cfGateClosedLockedToPlc,POE\Main\CFGateStatus.GB,3,OUT,52,63,Write,,BOOL,NSQX2.3,,VAR_GLOBAL,GLOBAL,,H: Closed and locked, L:Open or unlocked
 cfGateClosedStatus,POE\Main\CFGateStatus.GB,2,IN,3,0,Read,,SAFEBOOL,SIX42.4,,VAR_GLOBAL,GLOBAL,,From Module H: Closed, L:Open
 cfGateClosedToPlc,POE\Main\CFGateStatus.GB,3,OUT,65,65,Write,,BOOL,NSQX2.2,,VAR_GLOBAL,GLOBAL,,H: Closed, L:Open
@@ -24,8 +24,8 @@ cfGateClosedWiringOkToPlc,POE\Main\CFGateStatus.GB,2,OUT,67,26,Write,,BOOL,NSQX2
 cfGateLockCmd,POE\Main\SafeMode.GB,4,OUT,87,5,Write,,SAFEBOOL,SQX3.0,,VAR_GLOBAL,GLOBAL,,To Module H: Lock, L: Unlock
 cfGateLockStatus,POE\Main\CFGateStatus.GB,1,IN,2,48,Read,,SAFEBOOL,SIX42.2,,VAR_GLOBAL,GLOBAL,,From Module H: Locked, L: Unlocked
 cfLockGateFromPlc,POE\Main\SafeMode.GB,4,IN,78,0,Read,,BOOL,NSIX0.6,,VAR_GLOBAL,GLOBAL,,From PLC: Lock Gate Cmd
-cfPumpEnableCmd,POE\Main\AxisEnable.GB,11,OUT,109,15,Write,,SAFEBOOL,SQX2.0,,VAR_GLOBAL,GLOBAL,,H: Allow Pumping
-cfPumpEnableFromPlc,POE\Main\AxisEnable.GB,10,IN,120,65,Read,,BOOL,NSIX1.3,,VAR_GLOBAL,GLOBAL,,H: Allow Pumping
+cfPumpEnableCmd,POE\Main\AxisEnable.GB,11,OUT,109,0,Write,,SAFEBOOL,SQX2.0,,VAR_GLOBAL,GLOBAL,,H: Allow Pumping
+cfPumpEnableFromPlc,POE\Main\AxisEnable.GB,10,IN,119,65,Read,,BOOL,NSIX1.3,,VAR_GLOBAL,GLOBAL,,H: Allow Pumping
 eStopButtonOWS,POE\Main\EMO_PBs.GB,1,IN,15,25,Read,,SAFEBOOL,SIX6.4,,VAR_GLOBAL,GLOBAL,,From Module
 eStopButtonOWSActToPlc,POE\Main\EMO_PBs.GB,2,OUT,31,69,Write,,BOOL,NSQX0.5,,VAR_GLOBAL,GLOBAL,,To PLC H:Ok L:EStop
 eStopButtonOWSOkToPlc,POE\Main\EMO_PBs.GB,2,OUT,30,0,Write,,BOOL,NSQX0.6,,VAR_GLOBAL,GLOBAL,,To PLC H:Ok L:Error
@@ -37,10 +37,10 @@ eStopButtonPendantWiringOk,POE\Main\EMO_PBs.GB,2,IN,57,39,Read,,SAFEBOOL,SIX9.2,
 eStopCmdOutToPlc,POE\Main\EMO_PBs.GB,3,OUT,100,1,Write,,BOOL,NSQX0.0,,VAR_GLOBAL,GLOBAL,,To PLC H:Ok L:EStop
 InCycleFromPlc,C\PLC\R\CPU\global_variables.vbb,0,,20,0,,,BOOL,NSIX0.5,,VAR_GLOBAL,NOT USED,,From PLC H: In Cycle
 InEmoModeFromPlc,POE\Main\SafeMode.GB,3,IN,97,5,Read,,BOOL,NSIX0.2,,VAR_GLOBAL,GLOBAL,,From PLC H: InEmo Mode
-InManualModeFromPlc,POE\Main\AxisEnable.GB,1,IN,188,10,Read,,BOOL,NSIX2.0,,VAR_GLOBAL,GLOBAL,,From PLC H: In Manual Mode
-InPendantModeFromPlc,POE\Main\AxisEnable.GB,1,IN,189,8,Read,,BOOL,NSIX0.4,,VAR_GLOBAL,GLOBAL,,H: PendantModeActive
+InManualModeFromPlc,POE\Main\AxisEnable.GB,1,IN,187,10,Read,,BOOL,NSIX2.0,,VAR_GLOBAL,GLOBAL,,From PLC H: In Manual Mode
+InPendantModeFromPlc,POE\Main\AxisEnable.GB,1,IN,188,8,Read,,BOOL,NSIX0.4,,VAR_GLOBAL,GLOBAL,,H: PendantModeActive
 InPendantModeFromPlc,POE\Main\EMO_PBs.GB,7,IN,145,15,Read,,BOOL,NSIX0.4,,VAR_GLOBAL,GLOBAL,,H: PendantModeActive
-InProductionModeFromPlc,POE\Main\AxisEnable.GB,1,IN,170,8,Read,,BOOL,NSIX2.1,,VAR_GLOBAL,GLOBAL,,From PLC H: In Production Mode
+InProductionModeFromPlc,POE\Main\AxisEnable.GB,1,IN,169,8,Read,,BOOL,NSIX2.1,,VAR_GLOBAL,GLOBAL,,From PLC H: In Production Mode
 InSafeModeFromPLC,POE\Main\SafeMode.GB,1,IN,32,3,Read,,BOOL,NSIX0.3,,VAR_GLOBAL,GLOBAL,,From PLC H: InSafe Mode
 InSafeModeFromPLC,POE\Main\SafeMode.GB,3,IN,52,15,Read,,BOOL,NSIX0.3,,VAR_GLOBAL,GLOBAL,,From PLC H: InSafe Mode
 InSafeModeToPLC,POE\Main\SafeMode.GB,2,OUT,31,9,Write,,BOOL,NSQX1.7,,VAR_GLOBAL,GLOBAL,,To PLC H:In Safe Mode
@@ -59,8 +59,8 @@ resetEStop,POE\Main\IOModules.GB,3,IN,63,7,Read,,BOOL,NSIX0.0,,VAR_GLOBAL,GLOBAL
 resetSafeMc,POE\Main\AxisEnable.GB,3,IN,81,1,Read,,BOOL,NSIX0.1,,VAR_GLOBAL,GLOBAL,,H:Reset req
 resetSafeMc,POE\Main\AxisEnable.GB,3,IN,95,0,Read,,BOOL,NSIX0.1,,VAR_GLOBAL,GLOBAL,,H:Reset req
 resetSafeMc,POE\Main\IOModules.GB,3,IN,64,7,Read,,BOOL,NSIX0.1,,VAR_GLOBAL,GLOBAL,,H:Reset req
-SafeModule02Ok,POE\Main\AxisEnable.GB,7,IN,136,11,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
-SafeModule02Ok,POE\Main\AxisEnable.GB,11,IN,155,11,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
+SafeModule02Ok,POE\Main\AxisEnable.GB,7,IN,135,11,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
+SafeModule02Ok,POE\Main\AxisEnable.GB,11,IN,154,11,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
 SafeModule02Ok,POE\Main\AxisEnable.GB,11,IN,117,11,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
 SafeModule02Ok,POE\Main\IOModules.GB,1,IN,0,17,Read,,SAFEBOOL,SIX4.0,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error
 SafeModule116Ok,POE\Main\EMO_PBs.GB,2,IN,29,50,Read,,SAFEBOOL,SIX4.3,,VAR_GLOBAL,GLOBAL,,From Module H:OK, L:Error

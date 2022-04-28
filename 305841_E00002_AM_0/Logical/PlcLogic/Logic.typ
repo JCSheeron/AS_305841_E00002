@@ -109,6 +109,7 @@ TYPE
     ReqCycleStart : BOOL := FALSE; (* pb or hmi *)
     ReqCycleStop : BOOL := FALSE; (* pb or hmi *)
     isInCycle : BOOL := FALSE; (* cycle has started and is running *)
+    isInCycleHold : BOOL := FALSE; (* in cycle, but stopped at a hold point *)
     isStopping : BOOL := FALSE; (* cycle has started, but is being stopped *)
     (* cycle cfg *)
     ShutOffCfBeforeUnload : BOOL; (* turn off cutting fluid before going to unload pos *)

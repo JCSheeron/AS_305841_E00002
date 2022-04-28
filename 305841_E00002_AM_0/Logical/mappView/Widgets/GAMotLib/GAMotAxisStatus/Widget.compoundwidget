@@ -65,7 +65,6 @@
         <Mapping widget="numOutVelAct" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true" />
       </Mappings>
     </Property>
-
     <!-- Non-Bindable properties -->
     <!-- 
     Simple non bindable property:

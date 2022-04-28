@@ -6,8 +6,9 @@
         <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxStatus" top="8" left="384" width="156" height="202" zIndex="0" text="Status">
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="lblStatusIdle" top="8" left="19" width="115" zIndex="0" text="Idle" style="GaInfoInactive" />
-            <Widget xsi:type="widgets.brease.Label" id="lblStatusInCycle" top="48" left="19" width="115" zIndex="1" text="Is In Cycle" style="GaInfoInactive" />
-            <Widget xsi:type="widgets.brease.Label" id="lblStatusStopping" top="88" left="19" width="115" zIndex="2" text="Is Stopping" style="GaInfoInactive" />
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusInCycle" top="46" left="19" width="115" zIndex="1" text="In Cycle" style="GaInfoInactive" />
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusStopping" top="123" left="19" width="115" zIndex="2" text="Stopping" style="GaInfoInactive" />
+            <Widget xsi:type="widgets.brease.Label" id="lblStatusInCycleHold" top="85" left="19" width="126" zIndex="3" text="In Cycle Hold" style="GaInfoInactive" />
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxControl" top="8" left="19" width="346" height="202" zIndex="1" text="Control">

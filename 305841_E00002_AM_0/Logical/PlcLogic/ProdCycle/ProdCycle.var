@@ -8,6 +8,10 @@ VAR RETAIN
 END_VAR
   
 VAR
+  disableStepTO : BOOL := FALSE;
+  startCycleOS : BOOL := FALSE;
+  idx : SINT;
+  
   calcReal1 : REAL;  (* temporary value *)
   calcLReal1 : LREAL; (* temporary value *)
   calcDint1 : DINT;  (* temporary value *)

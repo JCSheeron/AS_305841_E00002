@@ -512,11 +512,12 @@
     <Connection Connector="MT" TargetModule="AM1_PLK11" TargetConnector="MT2" />
   </Module>
   <Module Name="VFD1_PLK13" Type="8I66xxxxxxx.0P-xxx" Version="2.3.2.0">
-    <Connection Connector="PLK1" TargetModule="AM1_PLK11" TargetConnector="PLK2">
+    <Connection Connector="PLK1" TargetModule="AM1_PLK11" TargetConnector="PLK2" NodeNumber="13">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
     <Parameter ID="FunctionModel" Value="MotionConfig" />
     <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="PlkDiagnosisAdd" Value="on" />
     <Parameter ID="McTypeID" Value="McAcoposInverterP66P" />
     <Parameter ID="AxisReference" Value="gAxCfPmp" />
     <Parameter ID="InputIsReadOnly" Value="0" />

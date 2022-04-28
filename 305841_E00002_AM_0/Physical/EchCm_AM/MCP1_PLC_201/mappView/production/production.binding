@@ -33,6 +33,15 @@
       </Source>
       <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="lblStatusInCycle" attribute="style" />
     </Binding>
+
+    <!-- In Cycle Hold -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycleHold" attribute="value" />
+        <List refId="LabelSytleActiveStyle1" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentProduction" widgetRefId="lblStatusInCycleHold" attribute="style" />
+    </Binding>
         
     <!-- Cycle stopping -->
     <Binding mode="oneWay">

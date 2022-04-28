@@ -363,7 +363,7 @@ operatingMode.HmiReqCycleStart :=FALSE;
 operatingMode.ReqEmoReset := FALSE;
 
 // process the process requests
-// procHmiProcessReqs();
+procHmiProcessReqs();
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)

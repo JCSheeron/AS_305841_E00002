@@ -4,6 +4,10 @@ INITIAL_STEP Stp_Init:
 (* @LANGUAGE := 'st' *)
 // Update step 
 partMotion.prodCycleStepCurrent := PCS_INIT;
+
+// Init disable timeout to false.
+// This is for troubleshooting
+disableStepTO := FALSE;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
@@ -63,6 +67,14 @@ ts_InCycle := FALSE;
 
 // Unlock the cutting fluid gate when not in cycle
 ts_cfLockGate := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// clear elapsed times and TO records from last run
+FOR idx := 0 TO 40 DO
+  stepETs[idx] := T#0ms;
+  stepIsTO[idx] := FALSE;
+END_FOR;
 END_ACTION
 TRANSITION Not in prod mode FROM Stp_ProdWaitForStart TO Stp_ModeCheck:=
 (* @LANGUAGE := 'st' *)
@@ -124,8 +136,8 @@ stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO FROM Stp_DecoupleAxes TO Stp_ProdWaitForStart:=
 (* @LANGUAGE := 'st' *)
-// Step timeout
-tmrStepTO.Q
+// Step timeout unless disabled
+tmrStepTO.Q AND NOT disableStepTO
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
 TRANSITION min time and inner ecc not coupled FROM Stp_DecoupleAxes TO Stp_ResetAxes:=
@@ -179,8 +191,8 @@ stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO FROM Stp_ResetAxes TO Stp_ProdWaitForStart:=
 (* @LANGUAGE := 'st' *)
-// Step timeout
-tmrStepTO.Q
+// Step timeout unless disabled
+tmrStepTO.Q AND NOT disableStepTO
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
 TRANSITION min time and inner ecc not coupled FROM Stp_ResetAxes TO Stp_ProdWaitForStart:=
@@ -206,15 +218,6 @@ STEP Stp_EnableAxes:
 // Run step hold and timeout timers (PT set in step entry)
 tmrStepMin(IN:= TRUE);
 tmrStepTO(IN:= TRUE);
-
-// Set in cycle signal to safe PLC
-ts_InCycle := TRUE;
-
-// Lock the cutting fluid gate in cycle
-ts_cfLockGate := TRUE;
-
-
-
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
@@ -227,6 +230,11 @@ partMotion.prodCycleStepCurrent := PCS_ENABLE_AXES;
 // machine is in cycle
 operatingMode.isInCycle := TRUE;
 operatingMode.isStopping := FALSE;
+// Set in cycle signal to safe PLC
+ts_InCycle := TRUE;
+
+// Lock the cutting fluid gate in cycle
+ts_cfLockGate := TRUE;
 
 // Init pass count to the first pass
 gr_PartCurrent.cutPassCount := 1;
@@ -271,7 +279,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_EnableAxes TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-// tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleStop' *)
@@ -339,7 +347,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_ZeroDepth TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-// tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -354,10 +362,28 @@ gr_PartCurrent.isZIndexed AND gr_PartCurrent.zIndexCount >= 1
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold1' *)
 STEP Stp_CycleHold1:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold1 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -368,10 +394,10 @@ TRANSITION continue FROM Stp_CycleHold1 TO Stp_NextCycle:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_NextCycle' *)
 STEP Stp_NextCycle:
@@ -438,7 +464,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_StartSpindle TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -452,10 +478,28 @@ axes[AD_OUTER_ECCENTRIC].Status.IsCoordMasterReady
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold4' *)
 STEP Stp_CycleHold4:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold4 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -466,10 +510,10 @@ TRANSITION continue FROM Stp_CycleHold4 TO Stp_GearInEcc:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_GearInEcc' *)
 STEP Stp_GearInEcc:
@@ -544,7 +588,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_GearInEcc TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-// tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -631,7 +675,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_StartPass TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -692,7 +736,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_Synching1 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -747,7 +791,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_AxesSynched TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -835,7 +879,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_SetRetract TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -890,7 +934,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_Synching2 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -932,10 +976,28 @@ TRUE
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold5' *)
 STEP Stp_CycleHold5:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold5 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -946,10 +1008,10 @@ TRANSITION continue FROM Stp_CycleHold5 TO Stp_StopSpindle:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_StopSpindle' *)
 STEP Stp_StopSpindle:
@@ -995,7 +1057,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_StopSpindle TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1070,10 +1132,28 @@ tmrStepMin.Q //AND
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold6' *)
 STEP Stp_CycleHold6:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold6 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -1089,11 +1169,11 @@ TRANSITION continue FROM Stp_CycleHold6 TO Stp_ZToUnload:=
 
 // Operating mode is continuous OR
 // single cycle AND (incl index OR (dont' include index AND get a start press))
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 (operatingMode.SubMode = OM_PROD_SM_SINGLE AND // one cycle at a time
   (operatingMode.SingleCycleInclZIndex OR (NOT operatingMode.SingleCycleInclZIndex AND operatingMode.ReqCycleStart))) OR // incl Z index, or initially don't but then get start req
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_ZToUnload' *)
 STEP Stp_ZToUnload:
@@ -1153,7 +1233,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_ZToUnload TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1310,7 +1390,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_IndexZ TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1363,7 +1443,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_EOCWait TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1402,10 +1482,28 @@ tmrStepMin.Q
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold7' *)
 STEP Stp_CycleHold7:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold7 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -1420,14 +1518,14 @@ TRANSITION continue FROM Stp_CycleHold7 TO Stp_StartCf2:=
 
 // Operating mode is continuous OR
 // (single cycle AND incl index AND get a start press) OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
   
 (operatingMode.SubMode = OM_PROD_SM_SINGLE AND // one cycle at a time
 operatingMode.SingleCycleInclZIndex AND // and include Z index
 operatingMode.ReqCycleStart) OR // and start req
   
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // single step and start req
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_StartCf2' *)
 STEP Stp_StartCf2:
@@ -1541,7 +1639,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_SetFinishPass TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1649,7 +1747,7 @@ END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_SetNextPass TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
-tmrStepTO.Q OR
+(tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
@@ -1676,10 +1774,28 @@ ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < TOL_DEPTH_ZERO_DEG AN
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold2' *)
 STEP Stp_CycleHold2:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold2 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -1690,10 +1806,10 @@ TRANSITION continue FROM Stp_CycleHold2 TO Stp_ZToSOC:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_ZToSOC' *)
 STEP Stp_ZToSOC:
@@ -1781,10 +1897,28 @@ cfVfd.isFlowEstablished
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold3' *)
 STEP Stp_CycleHold3:
+(* @LANGUAGE := 'st' *)
+// Verify the previous start (or continue) request has gone low.
+// To leave here in single step, the OS bit must be high, and another request must come in.
+IF NOT operatingMode.ReqCycleStart THEN
+  startCycleOS := TRUE;
+END_IF;
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
 (* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+//  Set in cycle hold bit
+operatingMode.isInCycleHold := TRUE;
+// Clear start OS bit so we can be sure it is high when the previous start cycle request is confirmed low
+startCycleOS := FALSE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Clear the in cycle hold bit
+operatingMode.isInCycleHold := FALSE;
+END_ACTION
 TRANSITION Stop Req FROM Stp_CycleHold3 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Stop Req
@@ -1795,10 +1929,10 @@ TRANSITION continue FROM Stp_CycleHold3 TO Stp_NextCycle:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
-// single step AND start req
+// single step AND new start req
 operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or error
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
-(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart) // One step at a time
+(operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_NextCycle' *)
 STEP Stp_CycleStop:
@@ -1846,9 +1980,9 @@ tmrStepTO(IN:= FALSE);
 // Halt Z
 axes[AD_Z].Commands.HaltReq := TRUE;
 // Halt the eccentrics and decouple inner (which halt will also do), but make sure the coupling cmd is false.
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd := FALSE;
 axes[AD_OUTER_ECCENTRIC].Commands.HaltReq := TRUE;
 axes[AD_INNER_ECCENTRIC].Commands.HaltReq := TRUE;
-axes[AD_INNER_ECCENTRIC].CouplingParameters.GearInCmd := FALSE;
 
 END_ACTION
 EXIT_ACTION
@@ -1880,7 +2014,7 @@ axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_CONTINUOUS_MOTION) AND //
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_DISCRETE_MOTION AND // cover the abs and rel moves
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_CONTINUOUS_MOTION AND // cover the vel moves
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION)) OR // cover coord moves
-tmrStepTO.Q
+(tmrStepTO.Q AND NOT disableStepTO)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CS_ZeroDepth' *)
 STEP Stp_CS_ZeroDepth:
@@ -1939,7 +2073,7 @@ TRANSITION InE stopped or TO FROM Stp_CS_ZeroDepth TO Stp_CS_StopSpindle:=
 (NOT axes[AD_INNER_ECCENTRIC].Commands.MoveRelativeReq AND 
 axes[AD_INNER_ECCENTRIC].Status.IsStopped AND
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState <> mcAXIS_DISCRETE_MOTION) OR // discrete move was used
-tmrStepTO.Q
+(tmrStepTO.Q AND NOT disableStepTO)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CS_StopSpindle' *)
 STEP Stp_CS_StopSpindle:
@@ -1984,7 +2118,7 @@ TRANSITION Spindle stopped or TO FROM Stp_CS_StopSpindle TO Stp_DisableAxes:=
 (NOT axes[AD_SPINDLE].Commands.HaltReq AND
 axes[AD_SPINDLE].Status.IsStopped AND
 axes[AD_SPINDLE].Status.PlcOpenState <> mcAXIS_CONTINUOUS_MOTION) OR // spindle uses vel move 
-tmrStepTO.Q
+(tmrStepTO.Q AND NOT disableStepTO)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_DisableAxes' *)
 STEP Stp_DisableAxes:
@@ -2046,7 +2180,7 @@ TRANSITION vfd stopped or TO FROM Stp_CS_StopCF TO Stp_ProdWaitForStart:=
 // or the step times out
 // TODO
 // (NOT cfVfd.ReqAutoStop AND cfVfd.isRunning) OR
-tmrStepTO.Q
+(tmrStepTO.Q AND NOT disableStepTO)
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
 STEP Stp_WaitForProd:

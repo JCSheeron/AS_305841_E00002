@@ -1,7 +1,7 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=277 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=473 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                      hmiMachineAxisReqs                       sHmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    1         
+                      hmiMachineAxisReqs                       sHmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    0         
                    hmiMachineAxisReqs[0]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                            absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -62,7 +62,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                   axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
                          axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
-                   hmiMachineAxisReqs[4]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    1         
+                   hmiMachineAxisReqs[4]                             sHmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                            absMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            relMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            velMoveEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -137,7 +137,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                   axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
                          axisDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,AD_U
 
-                      hmiLibraryAxisReqs                   sMot_HmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    1         
+                      hmiLibraryAxisReqs                   sMot_HmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    0         
                    hmiLibraryAxisReqs[0]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                                  moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -294,7 +294,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                             Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                   hmiLibraryAxisReqs[4]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    1         
+                   hmiLibraryAxisReqs[4]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    0         
                                  moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -489,7 +489,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                             Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                          hmiProcessReqs                          sHmiProcessReqs    0 "                                                               *"    0   24    1    0    1    0         
+                          hmiProcessReqs                          sHmiProcessReqs    0 "                                                               *"    0   24    1    0    1    1         
                          zReqMoveUpLimit                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                        zReqMoveDownLimit                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                             zReqMoveLUnL                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
@@ -2862,7 +2862,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -2941,7 +2941,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
-                                    Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
+                                    Name                                 STRING[]    0 "                                                               *"    4    9   33    1    0    0         
                        IsCoordSlaveReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsCoordMasterReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                    IsCoordInCompensation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         

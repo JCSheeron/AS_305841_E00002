@@ -13,15 +13,15 @@ keySwitchInRun,POE\Main\SafeMode.GB,1,OUT,88,0,Write,,SAFEBOOL,,,VAR,LOCAL,,H: K
 keySwitchInRun,POE\Main\SafeMode.GB,3,IN,51,26,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Keyswitch confirmed in run pos
 SafeDriveEnable,POE\Main\AxisEnable.GB,2,IN,4,78,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
 SafeDriveEnable,POE\Main\AxisEnable.GB,6,IN,46,76,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,133,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,152,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,132,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,151,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
 SafeDriveEnable,POE\Main\AxisEnable.GB,11,IN,108,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
 SafeDriveEnable,POE\Main\SafeMode.GB,4,OUT,56,31,Write,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
 sffbAxInE_Enable,POE\Main\AxisEnable.GB,0,,77,68,,,,,,VAR,FB,,SF FB
 sffbAxOutE_Enable,POE\Main\AxisEnable.GB,0,,35,68,,,,,,VAR,FB,,SF FB
 sffbEStopOws,POE\Main\EMO_PBs.GB,0,,9,47,,,,,,VAR,FB,,SF FB
 sffbEStopPendant,POE\Main\EMO_PBs.GB,0,,76,49,,,,,,VAR,FB,,SF FB
-tmrModeSwitch,POE\Main\AxisEnable.GB,0,,201,31,,,,,,VAR,FB,,Allow mode transitions without dropout
+tmrModeSwitch,POE\Main\AxisEnable.GB,0,,200,31,,,,,,VAR,FB,,Allow mode transitions without dropout
 tmrModuleRelease,POE\Main\IOModules.GB,2,,77,63,,,,,,VAR,FB,,
 tmrStartPbPulse,POE\Main\EMO_PBs.GB,3,,164,9,,,,,,VAR,FB,,Pulse cmd to PLC when pressed
 tmrStopPbPulse,POE\Main\EMO_PBs.GB,3,,171,57,,,,,,VAR,FB,,Pulse cmd to PLC when pressed

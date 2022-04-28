@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariablesSet id="varsCuttingHead" xmlns="http://www.br-automation.com/iat2015/session/engineering/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Variables>
+    <!--
+    <Variable name="Variable1" xsi:type="ANY_REAL" value="0" />
+    <Variable name="Variable2" xsi:type="ANY_INT" value="0" />
+    <Variable name="Variable3" xsi:type="ANY_STRING" value="0" />
+    <Variable name="Variable4" xsi:type="DATE_AND_TIME" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable4.1" xsi:type="DT" value="2002-05-30T09:30:10Z" />
+    <Variable name="Variable5" xsi:type="BOOL" value="true" />    
+    -->
+    <!-- Use for turning axis status related values into strings -->
+    <!-- Outer Eccentric -->
+    <Variable name="svOutEIsReadyToPowerOn" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsHomed" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsPoweredOn" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsBrakeManRel" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsMoveActive" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsAtPosition" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsMoveDone" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEIsStopped" xsi:type="BOOL" value="false" />
+    <Variable name="svOutEStatusInt" xsi:type="ANY_INT" value="0" />
+    <Variable name="svOutEStateInt" xsi:type="ANY_INT" value="0" />
+   
+    <!-- Inner Eccentric -->
+    <Variable name="svInEIsReadyToPowerOn" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsHomed" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsPoweredOn" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsBrakeManRel" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsMoveActive" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsAtPosition" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsMoveDone" xsi:type="BOOL" value="false" />
+    <Variable name="svInEIsStopped" xsi:type="BOOL" value="false" />
+    <Variable name="svInEStatusInt" xsi:type="ANY_INT" value="0" />
+    <Variable name="svInEStateInt" xsi:type="ANY_INT" value="0" />
+  </Variables>
+</VariablesSet>

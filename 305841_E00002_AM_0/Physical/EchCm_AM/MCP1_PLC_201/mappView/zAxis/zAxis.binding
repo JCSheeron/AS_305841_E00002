@@ -75,7 +75,17 @@
       <Target xsi:type="brease" widgetRefId="axisStatus" contentRefId="mainContentZAxisStatus" attribute="style" />
     </Binding>
     -->
-    
+
+    <!-- Compound Widget Structure Binding; Axis Status -->
+    <!-- Axis Status Structure -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+				<List refId="cmpwid_axesStatus_list" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentAxisDetail" widgetRefId="GaMotAxisDetail1" attribute="StatusStruct" />
+    </Binding>
+
     <!-- Axis Status -->
     <!-- In theory, these status values could come from the complex structure binding above, but we want to
     show boolen values as text, and color the text, so they are mapped discretely to the value and style
@@ -306,6 +316,63 @@
       </Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsStoppedStyle" />
     </Binding>
+    
+    <!-- Axis Status PLC Open State -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <List refId="cmpwid_PlcOpenState_list" />
+      </Source>
+      <Target xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
+				<List refId="ServoStatusGoodBadText" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusStyle" />
+    </Binding>
+   
+    <!-- Axis State Machine State -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <List refId="cmpwid_axesSMState_list" />
+      </Source>
+      <Target xsi:type="session" refId="svZAxisStateInt" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svZAxisStateInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snZAxisStateInt" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisStateInt" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svZAxisStateInt" attribute="value" />
+				<List refId="ServoSmStateGoodBadText" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateStyle" />
+    </Binding>
+     
 
     <!-- SOC and Load/Unload Position setting  related -->
     <Binding mode="oneWayToSource">
@@ -351,62 +418,62 @@
     <!-- Move request PBs -->
     <!-- Note the use of zMoveUpReqEnable and zMoveDownReqEnable in hmiProcessReqs to control PB enables -->
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveUpLimit" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveUpLimit" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullUp" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullUp" attribute="enable" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveIndexUp" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexUp" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexUp" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexUp" attribute="enable" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveIndexDown" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexDown" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexDown" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexDown" attribute="enable" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveDownLimit" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveDownLimit" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullDown" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullDown" attribute="enable" />
     </Binding>
     
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveLUnL" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveLUnL" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqLUnL" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveToLUnLReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToLUnLReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqLUnL" attribute="enable" />
     </Binding>
 
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zReqMoveSoc" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveSoc" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqSoc" attribute="value" />
     </Binding>
 
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::OmSafeDev:hmiProcessReqs.zMoveToSocReqEnable" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToSocReqEnable" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqSoc" attribute="enable" />
     </Binding>
 
