@@ -554,13 +554,14 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.SyncMode := mcSYNC_MODE_POSITIVE;
 
 // Master position from which the slave moves synchronously is the current master position
 // plus the depth adj angle
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].Status.Position + partMotion.depthAdjAngle, 360.0);
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].Status.Position + partMotion.depthAdjAngle, 360.0);
 
 // Slave position from which the slave moves synchronously is the master sync position, plus the pass offset angle
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.SlaveSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition + partMotion.passOffsetAngle, 360.0);
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.SlaveSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition + partMotion.passOffsetAngle, 360.0);
 
 // Master start distance during which the slave synchronizes. Use the depth adj dist.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := partMotion.depthAdjAngle;
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := partMotion.depthAdjAngle;
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := 5.0;
 
 // For velocity, allow the configured maximum
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftVelocityMax := axes[AD_INNER_ECCENTRIC].MoveParameters.VelocityMax; 
@@ -594,6 +595,7 @@ END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
 TRANSITION Inner Ecc Coupled FROM Stp_GearInEcc TO Stp_StartPass:=
 (* @LANGUAGE := 'st' *)
+// Inner axis is synbchronized
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_StartPass' *)
@@ -788,14 +790,23 @@ stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 // If this is a timeout, record that also
 stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
-TRANSITION Step TO or Stop Req FROM Stp_AxesSynched TO Stp_CycleStop:=
+TRANSITION FROM Stp_AxesSynched TO Step1:=
+NOT disableStepTO
+END_TRANSITION
+(* @SFCNOJUMP := 'Step1' *)
+STEP Step1:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+TRANSITION Step TO or Stop Req FROM Step1 TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
 (tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION last pass FROM Stp_AxesSynched TO Stp_SetRetract:=
+TRANSITION last pass FROM Step1 TO Stp_SetRetract:=
 (* @LANGUAGE := 'st' *)
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
@@ -1559,7 +1570,7 @@ tmrStepMin.Q // AND
 // NOT cfVfd.ReqAutoStart
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_NextCycle' *)
-TRANSITION finishing pass FROM Stp_AxesSynched TO Stp_SetFinishPass:=
+TRANSITION finishing pass FROM Step1 TO Stp_SetFinishPass:=
 (* @LANGUAGE := 'st' *)
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
@@ -1680,7 +1691,7 @@ TRANSITION FROM Stp_IncrPassCount TO Stp_Synching1:=
 TRUE
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_Synching1' *)
-TRANSITION addl pass FROM Stp_AxesSynched TO Stp_SetNextPass:=
+TRANSITION addl pass FROM Step1 TO Stp_SetNextPass:=
 (* @LANGUAGE := 'st' *)
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
@@ -1980,7 +1991,8 @@ tmrStepTO(IN:= FALSE);
 // Halt Z
 axes[AD_Z].Commands.HaltReq := TRUE;
 // Halt the eccentrics and decouple inner (which halt will also do), but make sure the coupling cmd is false.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd := FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd:= FALSE;
 axes[AD_OUTER_ECCENTRIC].Commands.HaltReq := TRUE;
 axes[AD_INNER_ECCENTRIC].Commands.HaltReq := TRUE;
 

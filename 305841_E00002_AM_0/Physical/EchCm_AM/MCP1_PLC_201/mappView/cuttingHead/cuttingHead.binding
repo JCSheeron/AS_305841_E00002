@@ -75,7 +75,56 @@
       <Target xsi:type="brease" widgetRefId="axisStatus" contentRefId="mainContentCuttingHeadStatus" attribute="style" />
     </Binding>
     -->
+    
+    <!-- Pass info -->
+    <!-- Pass Depth -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDepth" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutPassDepth" attribute="node" />
+    </Binding>
 
+    <!-- Pass Offset Angle -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passOffsetAngle" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutPassOffsetAngle" attribute="node" />
+    </Binding>
+
+    <!-- Actual Offset Angle -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutActualOffset" attribute="node" />
+    </Binding>
+
+    <!-- Depth Adj Angle -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.depthAdjAngle" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutDepthAdjAngle" attribute="node" />
+    </Binding>
+    
+    <!-- Start of pass pos -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.startOfPassPosition" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutStartOfPassPos" attribute="node" />
+    </Binding>
+
+    <!-- End of pass pos -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.endOfPassPosition" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutEndOfPassPos" attribute="node" />
+    </Binding>
+
+    <!-- Pass Distance -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistance" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutPassDistance" attribute="node" />
+    </Binding>
+
+    <!-- Pass Distance Traveled -->
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistanceTraveled" attribute="node" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="numOutPassDistanceTraveled" attribute="node" />
+    </Binding>
+    
     <!-- Outer Eccentric Axis -->
     <!-- Compound Widget Structure Binding; Axis Status -->
     <!-- Axis Status Structure -->
@@ -119,7 +168,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsReadyToPowerOn" attribute="value" />
 				<List refId="TextStyleHiGoodLoBad1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsReadyForPowerStyle" />
     </Binding>
     
@@ -146,7 +195,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsHomed" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsHomedStyle" />
     </Binding>
 
@@ -174,7 +223,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsPoweredOn" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsPoweredOnStyle" />
     </Binding>
 
@@ -202,7 +251,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsBrakeManRel" attribute="value" />
 				<List refId="TextStyleLoGoodHiWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsBrakeManRelStyle" />
     </Binding>
 
@@ -230,7 +279,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsMoveActive" attribute="value" />
 				<List refId="TextStyleLoGoodHiWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveActiveStyle" />
     </Binding>
     
@@ -258,7 +307,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsAtPosition" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsAtPositionStyle" />
     </Binding>
 
@@ -286,7 +335,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsMoveDone" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveDoneStyle" />
     </Binding>
    
@@ -314,7 +363,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svOutEIsStopped" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsStoppedStyle" />
     </Binding>
     
@@ -335,7 +384,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snOutEStatusInt" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StatusText" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="StatusText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -343,7 +392,7 @@
 				<Selector xsi:type="session" refId="svOutEStatusInt" attribute="value" />
 				<List refId="ServoStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StatusStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="StatusStyle" />
     </Binding>
    
     <!-- Axis State Machine State -->
@@ -363,7 +412,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snOutEStateInt" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StateText" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="StateText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -371,7 +420,7 @@
 				<Selector xsi:type="session" refId="svOutEStateInt" attribute="value" />
 				<List refId="ServoSmStateGoodBadText" />
       </Source>
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StateStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="StateStyle" />
     </Binding>
      
     <!-- Inner Eccentric Axis -->
@@ -417,7 +466,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsReadyToPowerOn" attribute="value" />
 				<List refId="TextStyleHiGoodLoBad1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsReadyForPowerStyle" />
     </Binding>
     
@@ -444,7 +493,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsHomed" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsHomedStyle" />
     </Binding>
 
@@ -472,7 +521,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsPoweredOn" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsPoweredOnStyle" />
     </Binding>
 
@@ -500,7 +549,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsBrakeManRel" attribute="value" />
 				<List refId="TextStyleLoGoodHiWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsBrakeManRelStyle" />
     </Binding>
 
@@ -528,7 +577,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsMoveActive" attribute="value" />
 				<List refId="TextStyleLoGoodHiWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveActiveStyle" />
     </Binding>
     
@@ -556,7 +605,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsAtPosition" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsAtPositionStyle" />
     </Binding>
 
@@ -584,7 +633,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsMoveDone" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveDoneStyle" />
     </Binding>
    
@@ -612,7 +661,7 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svInEIsStopped" attribute="value" />
 				<List refId="TextStyleHiGoodLoWarn1" />
-</Source>
+      </Source>
       <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsStoppedStyle" />
     </Binding>
     
@@ -633,7 +682,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snInEStatusInt" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StatusText" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="StatusText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -641,7 +690,7 @@
 				<Selector xsi:type="session" refId="svInEStatusInt" attribute="value" />
 				<List refId="ServoStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StatusStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="StatusStyle" />
     </Binding>
    
     <!-- Axis State Machine State -->
@@ -661,7 +710,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snInEStateInt" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StateText" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="StateText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -669,8 +718,8 @@
 				<Selector xsi:type="session" refId="svInEStateInt" attribute="value" />
 				<List refId="ServoSmStateGoodBadText" />
       </Source>
-      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StateStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="StateStyle" />
     </Binding>
     
-  </Bindings>
+</Bindings>
   </BindingsSet>

@@ -532,6 +532,9 @@
           <Variable Name="calcNextAdjPosition" EngineeringUnitId="4" />
           <Variable Name="calcNextAdjDistance" EngineeringUnitId="4" />
           <Variable Name="passDistanceTraveled" EngineeringUnitId="4" />
+          <Variable Name="cutVelocity" EngineeringUnitId="10" />
+          <Variable Name="depthAdjVelocity" EngineeringUnitId="10" />
+          <Variable Name="passDistance" EngineeringUnitId="4" />
         </Variable>
       </Task>
       <Task Name="Pendant" />

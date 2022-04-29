@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=ProdCycle 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index=77 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=92 Type=0 Scope=0 Force=0 Index=0 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                            disableStepTO                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                            operatingMode                           sOperatingMode    0 "                                                               *"    0   24    1    0    0    0         
@@ -25,23 +25,23 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                      isCfFlowEstablished                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                          allowCycleStart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                            allowCycleRun                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                           gr_CfgCurrent                        sWp_Configuration    0 "                                                               *"    0   24    1    0    0    1         
-                                    name                               STRING[40]    0 "                                                              ''"    1    9   41    1    0    0         
-                             cuttingHead                          sWp_CuttingHead    0 "                                                               *"    1   24    1    0    0    1         
-                           finishingPass                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                               passCount                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
-                              totalDepth                                     REAL    0 "                                                             1.0"    2    8    1   10    0    0         
-                      finishingPassDepth                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                feedRate                                     REAL    0 "                                                             2.0"    2    8    1   10    0    0         
-                             retractRate                                     REAL    0 "                                                            10.0"    2    8    1   10    0    0         
-                                   accel                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                                   decel                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                           setZeroOffset                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                depthMod                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                           depthAdjAngle                                    LREAL    0 "                                                            10.0"    2   14    1   10    0    0         
-                         cutOverrunAngle                                    LREAL    0 "                                                            10.0"    2   14    1   10    0    0         
-                     offsetLimitPositive                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
-                     offsetLimitNegative                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                           gr_CfgCurrent                        sWp_Configuration    0 "                                                               *"    0   24    1    0    0    0         
+                                    name                               STRING[40]    0 "                                                               *"    1    9   41    1    0    0         
+                             cuttingHead                          sWp_CuttingHead    0 "                                                               *"    1   24    1    0    0    0         
+                           finishingPass                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               passCount                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                              totalDepth                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                      finishingPassDepth                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                feedRate                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                             retractRate                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   accel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   decel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           setZeroOffset                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                depthMod                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           depthAdjAngle                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                         cutOverrunAngle                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     offsetLimitPositive                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     offsetLimitNegative                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                                  spindle                              sWp_Spindle    0 "                                                               *"    1   24    1    0    0    0         
                                   nomRpm                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                    accel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -59,15 +59,15 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                                 speedPct                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        eocCutoutWaitTime                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
                           gr_PartCurrent                                 sWp_Part    0 "                                                               *"    0   24    1    0    0    0         
-                           isZCalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                              isZIndexed                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                        isOutECalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                         isInECalibrated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                            cutPassCount                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
-                             zIndexCount                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
-                      zIndexCountSuccess                                    USINT    0 "                                                               0"    1    5    1   10    0    0         
-                           zIndexLRCount                                    LREAL    0 "                                                             1.0"    1   14    1   10    0    0         
-                            serialNumber                               STRING[25]    0 "                                                              ''"    1    9   26    1    0    0         
+                           isZCalibrated                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                              isZIndexed                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                        isOutECalibrated                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                         isInECalibrated                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            cutPassCount                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
+                             zIndexCount                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
+                      zIndexCountSuccess                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
+                           zIndexLRCount                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                            serialNumber                               STRING[25]    0 "                                                               *"    1    9   26    1    0    0         
                                  partDfn                              sWp_PartDfn    0 "                                                               *"    1   24    1    0    0    0         
                                   number                               STRING[15]    0 "                                                               *"    2    9   16    1    0    0         
                                     name                               STRING[40]    0 "                                                               *"    2    9   41    1    0    0         
@@ -75,24 +75,24 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                             nomCutLength                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                            prodCycleStep                                     DINT    0 "                                                               4"    0    4    1   10    1    0 e,0,PCS_
 
-                              partMotion                              sPartMotion    0 "                                                               *"    0   24    1    0    1    1         
-                    warnAdjAngleTooSmall                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                            totalIndexes                                    USINT    0 "                                                               8"    1    5    1   10    0    0         
-                    prodCycleStepCurrent                                     DINT    0 "                                                               3"    1    4    1   10    0    0 e,0,PCS_
+                              partMotion                              sPartMotion    0 "                                                               *"    0   24    1    0    1    0         
+                    warnAdjAngleTooSmall                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            totalIndexes                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
+                    prodCycleStepCurrent                                     DINT    0 "                                                               *"    1    4    1   10    0    0 e,0,PCS_
 
-                               passDepth                                     REAL    0 "                                                     0.333333343"    1    8    1   10    0    0         
-                             cutVelocity                                     REAL    0 "                                                        4.583666"    1    8    1   10    0    0         
-                        depthAdjVelocity                                     REAL    0 "                                                        5.500399"    1    8    1   10    0    0         
-                           depthAdjAngle                                    LREAL    0 "                                                            10.0"    1   14    1   10    0    0         
-                        depthAdjAngleMin                                    LREAL    0 "                                              3.3171386063831134"    1   14    1   10    0    0         
-                         passOffsetAngle                                    LREAL    0 "                                              12.000000357627869"    1   14    1   10    0    0         
-                   finishPassOffsetAngle                                    LREAL    0 "                                                             0.0"    1   14    1   10    0    0         
-                            passDistance                                    LREAL    0 "                                                           380.0"    1   14    1   10    0    0         
-                     startOfPassPosition                                    LREAL    0 "                                                          14.906"    1   14    1   10    0    0         
-                       endOfPassPosition                                    LREAL    0 "                                              44.905999999999977"    1   14    1   10    0    0         
-                     calcNextAdjPosition                                    LREAL    0 "                                              44.905999999999977"    1   14    1   10    0    0         
-                     calcNextAdjDistance                                    LREAL    0 "                                                            30.0"    1   14    1   10    0    0         
-                    passDistanceTraveled                                    LREAL    0 "                                              30.008000000000003"    1   14    1   10    0    0         
+                               passDepth                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                             cutVelocity                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                        depthAdjVelocity                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                           depthAdjAngle                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                        depthAdjAngleMin                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                         passOffsetAngle                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                   finishPassOffsetAngle                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                            passDistance                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                     startOfPassPosition                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                       endOfPassPosition                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                     calcNextAdjPosition                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                     calcNextAdjDistance                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                    passDistanceTraveled                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
                                  stepETs                              TIME[0..40]    0 "                                                               *"    0   12   41    0    1    0         
                               stepETs[0]                                     TIME    0 "                                                               *"    1   12    1    1    1    0         
                               stepETs[1]                                     TIME    0 "                                                               *"    1   12    1    1    1    0         
@@ -1663,14 +1663,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                                    Flags                                    USINT    0 "                                                               *"    4    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
-                                 axes[2]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
-                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
+                                 axes[2]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    1         
+                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               2"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               3"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -2046,13 +2046,13 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
 
                   SpeedTuneFilterTmeMode                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAC
 
-                      CouplingParameters                  sMot_CouplingParameters    0 "                                                               *"    2   24    1    0    0    0         
-                      CouplingPermissive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                               GearInCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                            GearInPosCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                          OffsetShiftCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                           PhaseShiftCmd                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                             SlaveAxisNo                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
+                      CouplingParameters                  sMot_CouplingParameters    0 "                                                               *"    2   24    1    0    0    1         
+                      CouplingPermissive                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                               GearInCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                            GearInPosCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                          OffsetShiftCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                           PhaseShiftCmd                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                             SlaveAxisNo                                    USINT    0 "                                                               3"    3    5    1   10    0    0         
                           RatioNumerator                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                         RatioDenominator                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                     MasterPositionSource                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcVA
@@ -2275,7 +2275,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                              pParamsPrev                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                     size                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                  nxtAddr                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                        fbMpAxisCoupling                           MpAxisCoupling    0 "                                                               *"    2   24    1    0    0    0         
+                        fbMpAxisCoupling                           MpAxisCoupling    0 "                                                               *"    2   24    1    0    0    1         
                                   MpLink                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                   Enable                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                               ErrorReset                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -2303,7 +2303,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                             RecoveryDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       GetCamPositionDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                           CamPrepareDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                    Info                   MpAxisCouplingInfoType    0 "                                                               *"    3   24    1    0    0    0         
+                                    Info                   MpAxisCouplingInfoType    0 "                                                               *"    3   24    1    0    0    1         
                               SlaveReady                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                              MasterReady                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                                      Cam                        MpAxisCamInfoType    0 "                                                               *"    4   24    1    0    0    0         
@@ -2320,14 +2320,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                            SlavePosition                                    LREAL    0 "                                                               *"    5   14    1   10    0    0         
                                 Recovery                   MpAxisRecoveryInfoType    0 "                                                               *"    4   24    1    0    0    0         
                          RestartPosition                                    LREAL    0 "                                                               *"    5   14    1   10    0    0         
-                                    Diag                        MpAxisDiagExtType    0 "                                                               *"    4   24    1    0    0    0         
+                                    Diag                        MpAxisDiagExtType    0 "                                                               *"    4   24    1    0    0    1         
                                 StatusID                       MpAxisStatusIDType    0 "                                                               *"    5   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mcAX
 
                                 Severity                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mpCO
 
                                     Code                                     UINT    0 "                                                               *"    6    6    1   10    0    0         
-                                Internal                       MpAxisInternalType    0 "                                                               *"    5   24    1    0    0    0         
+                                Internal                       MpAxisInternalType    0 "                                                               *"    5   24    1    0    0    1         
                                       ID                                     DINT    0 "                                                               *"    6    4    1   10    0    0         
                                 Severity                                     DINT    0 "                                                               *"    6    4    1   10    0    0 e,0,mpCO
 
@@ -2385,14 +2385,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                                    Flags                                    USINT    0 "                                                               *"    4    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
-                                 axes[3]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    1         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               3"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               3"    2    4    1   10    0    0 e,0,GAMO
+                                 axes[3]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -2408,16 +2408,16 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=113 Type=0 Scope=0 Force=0 Index
                              Internal[0]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                              Internal[1]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                    seqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                                  Status                          sMot_AxisStatus    0 "                                                               *"    2   24    1    0    0    1         
-                     IsCommuncationReady                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsReadyToPowerOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsAtHomingSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        IsTrigger1Active                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        IsTrigger2Active                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                     IsDriveEnableActive                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                          IsInSimulation                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                  Status                          sMot_AxisStatus    0 "                                                               *"    2   24    1    0    0    0         
+                     IsCommuncationReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsReadyToPowerOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsAtHomingSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger1Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger2Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                     IsDriveEnableActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                          IsInSimulation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                              IsPoweredOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                       IsTorqueLimitReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                  IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
