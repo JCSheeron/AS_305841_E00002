@@ -82,8 +82,8 @@
       <Source xsi:type="listElement">
 				<Selector xsi:type="session" refId="svAD_Z" attribute="value" />
 				<List refId="cmpwid_axesStatus_list" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentAxisDetail" widgetRefId="GaMotAxisDetail1" attribute="StatusStruct" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="StatusStruct" />
     </Binding>
 
     <!-- Axis Status -->
@@ -116,9 +116,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsReadyToPowerOn" attribute="value" />
-        <List refId="TextStyleHiGoodLoBad1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsReadyToPowerOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsReadyForPowerStyle" />
     </Binding>
     
@@ -143,9 +143,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsHomed" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsHomed" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsHomedStyle" />
     </Binding>
 
@@ -171,9 +171,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsPoweredOn" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsPoweredOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsPoweredOnStyle" />
     </Binding>
 
@@ -199,9 +199,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsBrakeManRel" attribute="value" />
-        <List refId="TextStyleLoGoodHiWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsBrakeManRel" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsBrakeManRelStyle" />
     </Binding>
 
@@ -227,9 +227,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsMoveActive" attribute="value" />
-        <List refId="TextStyleLoGoodHiWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsMoveActive" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveActiveStyle" />
     </Binding>
     
@@ -255,9 +255,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsAtPosition" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsAtPosition" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsAtPositionStyle" />
     </Binding>
 
@@ -283,9 +283,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsMoveDone" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsMoveDone" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveDoneStyle" />
     </Binding>
    
@@ -311,9 +311,9 @@
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsStopped" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
+				<Selector xsi:type="session" refId="svZAxisIsStopped" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
       <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsStoppedStyle" />
     </Binding>
     
@@ -334,7 +334,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" />
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusText" />
+      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus"  attribute="StatusText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -342,7 +342,7 @@
 				<Selector xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
 				<List refId="ServoStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus"  attribute="StatusStyle" />
     </Binding>
    
     <!-- Axis State Machine State -->
@@ -362,7 +362,7 @@
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
       <Source xsi:type="snippet" refId="snZAxisStateInt" attribute="value" />
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateText" />
+      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus"  attribute="StateText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
@@ -370,7 +370,7 @@
 				<Selector xsi:type="session" refId="svZAxisStateInt" attribute="value" />
 				<List refId="ServoSmStateGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus"  attribute="StateStyle" />
     </Binding>
      
 

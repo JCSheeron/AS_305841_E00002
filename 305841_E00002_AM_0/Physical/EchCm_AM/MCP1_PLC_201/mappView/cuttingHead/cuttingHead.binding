@@ -72,18 +72,19 @@
         <Selector xsi:type="opcUa" refId="::AsGlobalPV:axes[0].Status.PlcOpenState" attribute="value" />
         <List refId="ServoStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="axisStatus" contentRefId="mainContentZAxisStatus" attribute="style" />
+      <Target xsi:type="brease" widgetRefId="axisStatus" contentRefId="mainContentCuttingHeadStatus" attribute="style" />
     </Binding>
     -->
 
+    <!-- Outer Eccentric Axis -->
     <!-- Compound Widget Structure Binding; Axis Status -->
     <!-- Axis Status Structure -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-				<Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+				<Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
 				<List refId="cmpwid_axesStatus_list" />
       </Source>
-      <Target xsi:type="brease" contentRefId="mainContentAxisDetail" widgetRefId="GaMotAxisDetail1" attribute="StatusStruct" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="StatusStruct" />
     </Binding>
 
     <!-- Axis Status -->
@@ -98,384 +99,578 @@
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsReadyToPowerOn_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsReadyToPowerOn" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsReadyToPowerOn" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsReadyToPowerOn" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsReadyToPowerOn" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsReadyToPowerOn" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsReadyToPowerOn" attribute="value" />
     </Binding>
     <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsReadyToPowerOn" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsReadyForPowerText" />
+      <Source xsi:type="snippet" refId="snOutEIsReadyToPowerOn" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsReadyForPowerText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsReadyToPowerOn" attribute="value" />
-        <List refId="TextStyleHiGoodLoBad1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsReadyForPowerStyle" />
+				<Selector xsi:type="session" refId="svOutEIsReadyToPowerOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsReadyForPowerStyle" />
     </Binding>
     
     <!-- Is Homed -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsHomed_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsHomed" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsHomed" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsHomed" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsHomed" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsHomed" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsHomed" attribute="value" />
     </Binding>
     <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsHomed" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsHomedText" />
+      <Source xsi:type="snippet" refId="snOutEIsHomed" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsHomedText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsHomed" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsHomedStyle" />
+				<Selector xsi:type="session" refId="svOutEIsHomed" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsHomedStyle" />
     </Binding>
 
     <!-- Is Powered On (Enabled) -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsPoweredOn_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsPoweredOn" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsPoweredOn" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsPoweredOn" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsPoweredOn" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsPoweredOn" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsPoweredOn" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsPoweredOn" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsPoweredOnText" />
+      <Source xsi:type="snippet" refId="snOutEIsPoweredOn" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsPoweredOnText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsPoweredOn" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsPoweredOnStyle" />
+				<Selector xsi:type="session" refId="svOutEIsPoweredOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsPoweredOnStyle" />
     </Binding>
 
     <!-- Is Brake Manually Released -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsBrakeManRel_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsBrakeManRel" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsBrakeManRel" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsBrakeManRel" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsBrakeManRel" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsBrakeManRel" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsBrakeManRel" attribute="value" />
     </Binding>
     <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsBrakeManRel" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsBrakeManRelText" />
+      <Source xsi:type="snippet" refId="snOutEIsBrakeManRel" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsBrakeManRelText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsBrakeManRel" attribute="value" />
-        <List refId="TextStyleLoGoodHiWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsBrakeManRelStyle" />
+				<Selector xsi:type="session" refId="svOutEIsBrakeManRel" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsBrakeManRelStyle" />
     </Binding>
 
     <!-- Is Move Active -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsMoveActive_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsMoveActive" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsMoveActive" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsMoveActive" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsMoveActive" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsMoveActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsMoveActive" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsMoveActive" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveActiveText" />
+      <Source xsi:type="snippet" refId="snOutEIsMoveActive" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveActiveText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsMoveActive" attribute="value" />
-        <List refId="TextStyleLoGoodHiWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveActiveStyle" />
+				<Selector xsi:type="session" refId="svOutEIsMoveActive" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveActiveStyle" />
     </Binding>
     
     <!-- Is At Position -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsInPosition_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsAtPosition" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsAtPosition" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsAtPosition" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsAtPosition" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsAtPosition" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsAtPosition" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsAtPosition" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsAtPositionText" />
+      <Source xsi:type="snippet" refId="snOutEIsAtPosition" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsAtPositionText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsAtPosition" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsAtPositionStyle" />
+				<Selector xsi:type="session" refId="svOutEIsAtPosition" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsAtPositionStyle" />
     </Binding>
 
     <!-- Is Move Done -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsMoveDone_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsMoveDone" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsMoveDone" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsMoveDone" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsMoveDone" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsMoveDone" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsMoveDone" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsMoveDone" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveDoneText" />
+      <Source xsi:type="snippet" refId="snOutEIsMoveDone" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveDoneText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsMoveDone" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsMoveDoneStyle" />
+				<Selector xsi:type="session" refId="svOutEIsMoveDone" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsMoveDoneStyle" />
     </Binding>
    
     <!-- Is Stopped -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_IsStopped_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisIsStopped" attribute="value" />
+      <Target xsi:type="session" refId="svOutEIsStopped" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisIsStopped" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisIsStopped" attribute="value" />
+      <Source xsi:type="session" refId="svOutEIsStopped" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEIsStopped" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisIsStopped" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsStoppedText" />
+      <Source xsi:type="snippet" refId="snOutEIsStopped" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsStoppedText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svZAxisIsStopped" attribute="value" />
-        <List refId="TextStyleHiGoodLoWarn1" />
-      </Source>
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="ZAxisStatus" attribute="IsStoppedStyle" />
+				<Selector xsi:type="session" refId="svOutEIsStopped" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus" attribute="IsStoppedStyle" />
     </Binding>
     
-        <!-- Axis Status PLC Open State -->
+    <!-- Axis Status PLC Open State -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_PlcOpenState_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
+      <Target xsi:type="session" refId="svOutEStatusInt" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" />
+      <Source xsi:type="session" refId="svOutEStatusInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEStatusInt" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" />
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusText" />
+      <Source xsi:type="snippet" refId="snOutEStatusInt" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StatusText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-				<Selector xsi:type="session" refId="svZAxisStatusInt" attribute="value" />
+				<Selector xsi:type="session" refId="svOutEStatusInt" attribute="value" />
 				<List refId="ServoStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StatusStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StatusStyle" />
     </Binding>
    
     <!-- Axis State Machine State -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svAD_Z" attribute="value" />
+        <Selector xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
         <List refId="cmpwid_axesSMState_list" />
       </Source>
-      <Target xsi:type="session" refId="svZAxisStateInt" attribute="value" />
+      <Target xsi:type="session" refId="svOutEStateInt" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svZAxisStateInt" attribute="value" />
-      <Target xsi:type="snippet" refId="snZAxisStateInt" attribute="value" />
+      <Source xsi:type="session" refId="svOutEStateInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snOutEStateInt" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snZAxisStateInt" attribute="value" />
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateText" />
+      <Source xsi:type="snippet" refId="snOutEStateInt" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StateText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-				<Selector xsi:type="session" refId="svZAxisStateInt" attribute="value" />
+				<Selector xsi:type="session" refId="svOutEStateInt" attribute="value" />
 				<List refId="ServoSmStateGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="mainContentZAxis" contentRefId="ZAxisStatus" attribute="StateStyle" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="OutEAxisStatus"  attribute="StateStyle" />
     </Binding>
      
-
-    <!-- SOC and Load/Unload Position setting  related -->
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseCurrent" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbSocUseCurrent" attribute="value" />
-    </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseSpecified" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbSocUseSpecified" attribute="value" />
-    </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseCurrent" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbLUnLUseCurrent" attribute="value" />
-    </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseSpecified" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbLUnLUseSpecified" attribute="value" />
-    </Binding>
-
-    <Binding mode="twoWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSoc" attribute="node" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numInSocSpecifiedPos" attribute="node" />
-    </Binding>
-
-    <Binding mode="twoWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnL" attribute="node" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numInLUnLSpecifiedPos" attribute="node" />
-    </Binding>
-
+    <!-- Inner Eccentric Axis -->
+    <!-- Compound Widget Structure Binding; Axis Status -->
+    <!-- Axis Status Structure -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.startOfCutPos" attribute="node" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numOutSocPos" attribute="node" />
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+				<List refId="cmpwid_axesStatus_list" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="StatusStruct" />
     </Binding>
 
+    <!-- Axis Status -->
+    <!-- In theory, these status values could come from the complex structure binding above, but we want to
+    show boolen values as text, and color the text, so they are mapped discretely to the value and style
+    can be manipulated. -->
+
+    <!-- For these status, load the PLC value into a varialbe since it will get used twice:
+    Once to determine the text from a snippet, and once to determine the style -->
+    
+    <!-- Is Ready To Power On -->
+    <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.loadUnloadPos" attribute="node" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="numOutLUnLPos" attribute="node" />
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsReadyToPowerOn_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsReadyToPowerOn" attribute="value" />
     </Binding>
-
-    <!-- Move request PBs -->
-    <!-- Note the use of zMoveUpReqEnable and zMoveDownReqEnable in hmiProcessReqs to control PB enables -->
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveUpLimit" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullUp" attribute="value" />
-    </Binding>
-
+    <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullUp" attribute="enable" />
+      <Source xsi:type="session" refId="svInEIsReadyToPowerOn" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsReadyToPowerOn" attribute="value" />
     </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexUp" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexUp" attribute="value" />
-    </Binding>
-
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexUp" attribute="enable" />
+      <Source xsi:type="snippet" refId="snInEIsReadyToPowerOn" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsReadyForPowerText" />
     </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexDown" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexDown" attribute="value" />
-    </Binding>
-
+    <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqIndexDown" attribute="enable" />
-    </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveDownLimit" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullDown" attribute="value" />
-    </Binding>
-
-    <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqFullDown" attribute="enable" />
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsReadyToPowerOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoBad1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsReadyForPowerStyle" />
     </Binding>
     
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveLUnL" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqLUnL" attribute="value" />
-    </Binding>
-
+    <!-- Is Homed -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToLUnLReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqLUnL" attribute="enable" />
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsHomed_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsHomed" attribute="value" />
     </Binding>
-
-    <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveSoc" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqSoc" attribute="value" />
-    </Binding>
-
+    <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToSocReqEnable" attribute="value" />
-      <Target xsi:type="brease" contentRefId="mainContentZAxis" widgetRefId="pbReqSoc" attribute="enable" />
+      <Source xsi:type="session" refId="svInEIsHomed" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsHomed" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsHomed" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsHomedText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsHomed" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsHomedStyle" />
     </Binding>
 
+    <!-- Is Powered On (Enabled) -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsPoweredOn_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsPoweredOn" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsPoweredOn" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsPoweredOn" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsPoweredOn" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsPoweredOnText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsPoweredOn" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsPoweredOnStyle" />
+    </Binding>
+
+    <!-- Is Brake Manually Released -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsBrakeManRel_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsBrakeManRel" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsBrakeManRel" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsBrakeManRel" attribute="value" />
+    </Binding>
+    <!-- Update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsBrakeManRel" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsBrakeManRelText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsBrakeManRel" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsBrakeManRelStyle" />
+    </Binding>
+
+    <!-- Is Move Active -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsMoveActive_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsMoveActive" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsMoveActive" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsMoveActive" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsMoveActive" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveActiveText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsMoveActive" attribute="value" />
+				<List refId="TextStyleLoGoodHiWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveActiveStyle" />
+    </Binding>
+    
+    <!-- Is At Position -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsInPosition_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsAtPosition" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsAtPosition" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsAtPosition" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsAtPosition" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsAtPositionText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsAtPosition" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsAtPositionStyle" />
+    </Binding>
+
+    <!-- Is Move Done -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsMoveDone_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsMoveDone" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsMoveDone" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsMoveDone" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsMoveDone" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveDoneText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsMoveDone" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsMoveDoneStyle" />
+    </Binding>
+   
+    <!-- Is Stopped -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_IsStopped_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEIsStopped" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEIsStopped" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEIsStopped" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsStopped" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsStoppedText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEIsStopped" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+</Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus" attribute="IsStoppedStyle" />
+    </Binding>
+    
+    <!-- Axis Status PLC Open State -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_PlcOpenState_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEStatusInt" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEStatusInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEStatusInt" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEStatusInt" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StatusText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEStatusInt" attribute="value" />
+				<List refId="ServoStatusGoodBadText" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StatusStyle" />
+    </Binding>
+   
+    <!-- Axis State Machine State -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+        <List refId="cmpwid_axesSMState_list" />
+      </Source>
+      <Target xsi:type="session" refId="svInEStateInt" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svInEStateInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snInEStateInt" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEStateInt" attribute="value" />
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StateText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svInEStateInt" attribute="value" />
+				<List refId="ServoSmStateGoodBadText" />
+      </Source>
+      <Target xsi:type="brease" contentRefId="mainContentCuttingHead" widgetRefId="InEAxisStatus"  attribute="StateStyle" />
+    </Binding>
+    
   </Bindings>
-</BindingsSet>
+  </BindingsSet>

@@ -29,6 +29,6 @@
         <Widget xsi:type="widgets.brease.PushButton" id="pbLUnLUseSpecified" top="79" left="154" width="131" height="46" zIndex="4" multiLine="true" text="Use Specified\nPosition" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.GAMotLib.GaMotAxisStatus" id="ZAxisStatus" top="235" left="555" zIndex="3" />
+    <Widget xsi:type="widgets.GAMotLib.GaMotAxisStatus" id="ZAxisStatus" top="240" left="570" zIndex="3" AxisName="Z Axis Status" />
   </Widgets>
 </Content>
