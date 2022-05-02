@@ -217,6 +217,7 @@
     <Parameter ID="Input" Location="DriveConfiguration/Channel[2]/RealAxis/DigitalInputs/Quickstop" Value="NotUsed" />
     <Parameter ID="SimulationModeOnPLC" Location="DriveConfiguration/Channel[2]/RealAxis/Simulation" Value="SetValueGeneration" />
     <Parameter ID="SimulationModeOnACOPOS" Location="DriveConfiguration/Channel[2]/RealAxis/Simulation" Value="NotUsed" />
+    <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[2]/RealAxis/AxisFeatures" Value="Feature_CamList" />
     <Parameter ID="ExternalEncoderAxis" Location="DriveConfiguration/Channel[2]" Value="NotUsed" />
   </Module>
   <Module Name="AM_PS_PLK10" Type="8B0P0440HC00.000-1" Version="2.3.0.1">

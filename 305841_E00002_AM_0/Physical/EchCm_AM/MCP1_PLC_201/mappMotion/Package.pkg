@@ -4,9 +4,8 @@
   <Objects>
     <Object Type="File">mappConfig.mappmotioncfg</Object>
     <Object Type="File">axCfgSpin.axis</Object>
-    <Object Type="File">axCfgOutE.axis</Object>
-    <Object Type="File">axCfgInE.axis</Object>
     <Object Type="File">axCfgZ.axis</Object>
+    <Object Type="Package">Eccentrics</Object>
     <Object Type="Package">Handwheel</Object>
     <Object Type="File">axCfgCfPmp.axis</Object>
   </Objects>
