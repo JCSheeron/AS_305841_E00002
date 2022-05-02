@@ -175,9 +175,8 @@ TYPE
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
-    IsCoordSlaveReady : BOOL := FALSE; (* slave axis rdy -- is powered, is homed *)
-    IsCoordMasterReady : BOOL := FALSE; (* master axis rdy for operation -- comm rdy *)
-    IsCoordInCompensation : BOOL := FALSE; (* axis is performing a compensating movement *)
+    IsCoordShiftStarted : BOOL := FALSE; (* phase or offset shift started *)
+    IsCoordShiftAttained : BOOL := FALSE; (* phase or offset shift attained *)
     IsCoordInSync : BOOL := FALSE; (* slave is in sync with the master *)
     IsCoordOffsetDone : BOOL := FALSE; (* shift in slave position successful *)
     IsCoordPhasingDone : BOOL := FALSE; (* shift in master position successful *)
@@ -231,13 +230,12 @@ TYPE
   sMot_CouplingParameters : 	STRUCT  (* coupling parameter structure*)
     CouplingPermissive : BOOL := FALSE; (* axis allowing itself to be coupled as a slave *)
     GearInCmd : BOOL := FALSE; (* set to engage coupling *)
-    GearInPosCmd : BOOL := FALSE;(* bring slave into coupling at defined master pos *)    
     OffsetShiftCmd : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
     PhaseShiftCmd : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
     SlaveAxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to 0 so setting a value can be detected *)
-    RatioNumerator : DINT := 100; (* Gear factor of the slave / Measurement resolution of the slave *)
-    RatioDenominator : DINT:= 100; (* Gear factor of the master / Measurement resolution of the master *)
-    MasterPositionSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
+    RatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
+    RatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
+    MasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
     MasterSyncPosition : LREAL; (*  master position from which the axes move synchronously *)
     SlaveSyncPosition : LREAL; (* slave position from which the axes move synchronously *)
     SyncMode : McSyncModeEnum; (* type of synchronization *)
@@ -342,8 +340,15 @@ TYPE
     Commands : sMot_AxisCommands; (*command structure for single and master axes*)
     fbMpAxisBasic : MpAxisBasic;
     fbUpdateBFbParams : fbUpdateBasicParams;
-    fbMpAxisCoupling : MpAxisCoupling;
-    fbUpdateCFbParams : fbUpdateCouplingParams;
+    fbGearIn : MC_GearIn;
+    fbGearOut : MC_GearOut;
+    fbOffsetShift : MC_BR_Offset;
+    fbPhaseShift : MC_BR_Phasing;
+    fbCalcCam : MC_BR_CalcCamFromSections;
+    fbCalcPoints : MC_BR_CalcPointsFromCam;
+    fbCamPrepare : MC_BR_CamPrepare;
+    fbCamIn : MC_CamIn;
+    fbCamOut : MC_CamOut;
     fbCheckRestorePos : MC_BR_CheckRestorePositionData;
   END_STRUCT;
   

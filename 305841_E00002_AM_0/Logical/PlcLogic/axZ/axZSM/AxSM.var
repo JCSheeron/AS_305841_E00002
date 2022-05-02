@@ -35,8 +35,12 @@ VAR CONSTANT
   axIdx : DINT; (* axis index *)
   inSyncSlave : BOOL := FALSE;
   axDummySlave : McAxisType;
-	axisBasicParams : MpAxisBasicParType; (* local version -- used to make address referencing easier *)
+	(* local versions of motion structures -- used to make address referencing easier *)
+  axisBasicParams : MpAxisBasicParType; 
 	axisCouplingParams : MpAxisCouplingParType;
+  axisGearInAdvParams : McAdvGearInParType;
+  axisOffsetAdvParams : McAdvOffsetParType;
+  axisPhaseAdvParams : McAdvPhasingParType;
   tmrStepTO : TON; (* Step TO timer *)
   reqMask : DINT := MACM_NOMASK; (* request mask *)
   cmdMask : DINT := MACM_NOMASK; (* command mask *)

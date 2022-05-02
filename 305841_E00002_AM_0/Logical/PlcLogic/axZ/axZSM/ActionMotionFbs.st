@@ -136,6 +136,57 @@ ACTION ActionMpAxisBasic:
 
 END_ACTION
 
+ACTION ActionGearIn:
+  // 1) Packs the sMot_CouplingParameters into a local axisCouplingParamsStructure
+  // 2) Detects parameter changes and manages the Update and UpdateDone bits
+  // 3) Sets the fb command bits based on the axis sMot_AxisCommands structure
+  // 4) Runs the fbMpAxisCoupling funciton block
+  // 5) Updates the axis structure with the status and axis info coming back from the fb
+
+  // The execution behavior is determined by the inputs set elsewhere 
+  // in particular the sMot_AxisCommands Engage/Disengage Slave bits, 
+  // and the values in sMot_CouplingParameters struture.
+
+  // Axis references set in init routine 
+
+  // Only execute the gear in fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored,
+  // and it is requested.
+  IF NOT ax.Ignore AND ax.AxisNo <> AD_UNKNOWN AND
+     ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND
+     NOT axes[ax.CouplingParameters.SlaveAxisNo].Ignore AND
+     ax.CouplingParameters.GearInCmd THEN
+   // Time to run the fb. Load the params, then set the execute input
+   ax.fbGearIn.RatioNumerator := ax.CouplingParameters.RatioNumerator;
+   ax.fbGearIn.RatioDenominator := ax.CouplingParameters.RatioDenominator;
+   ax.fbGearIn.MasterValueSource := ax.CouplingParameters.MasterValueSource;
+   ax.fbGearIn.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+   ax.fbGearIn.Deceleration := ax.CouplingParameters.ShiftDecelerationMax;
+   ax.fbGearIn.Jerk := 0.0; // only non-zero if using McProfGen
+   ax.fbGearIn.BufferMode := mcABORTING; // onlly mcAborting currently supported
+   axisGearInAdvParams.MasterMaxVelocity := 0.0; // use axis max vel
+   ax.fbGearIn.AdvancedParameters := axisGearInAdvParams;
+   ax.fbGearIn.Execute := TRUE; // fb looks for a rising edge
+   ax.CouplingParameters.GearInCmd := FALSE; // oneshot the cmd
+  ELSE
+    // no cmd or not able to execute -- axes ignored or not set
+    // keep the execute low and clear the cmd
+    ax.fbGearIn.Execute := FALSE;
+    ax.CouplingParameters.GearInCmd := FALSE; 
+  END_IF;
+  
+  // Call the fb
+  ax.fbGearIn();
+
+  // Update the axis status structure
+  // If the gear in instruction is busy or active, update the InSync based on 
+  // the fb InGear oupput
+  IF ax.fbGearIn.Busy OR ax.fbGearIn.Active THEN
+    ax.Status.IsCoordInSync := ax.fbGearIn.InGear;
+  END_IF;
+
+END_ACTION
+
 ACTION ActionMpAxisCoupling:
   // 1) Packs the sMot_CouplingParameters into a local axisCouplingParamsStructure
   // 2) Detects parameter changes and manages the Update and UpdateDone bits
