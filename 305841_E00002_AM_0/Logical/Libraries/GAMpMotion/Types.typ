@@ -175,15 +175,13 @@ TYPE
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
-    IsCoordShiftStarted : BOOL := FALSE; (* phase or offset shift started *)
-    IsCoordShiftAttained : BOOL := FALSE; (* phase or offset shift attained *)
     IsCoordInSync : BOOL := FALSE; (* slave is in sync with the master *)
-    IsCoordOffsetDone : BOOL := FALSE; (* shift in slave position successful *)
-    IsCoordPhasingDone : BOOL := FALSE; (* shift in master position successful *)
-    IsCoordRecoveryDone : BOOL := FALSE; (* slave in in sync with the master *)
+    IsCoordOffsetShiftStarted : BOOL := FALSE; 
+    IsCoordOffsetShiftAttained : BOOL := FALSE;
+    IsCoordPhaseShiftStarted : BOOL := FALSE;
+    IsCoordPhaseShiftAttained : BOOL := FALSE;
     CoordActualOffsetShift : LREAL := 0.0; (* current shift of the slave *)
     CoordActualPhaseShift : LREAL := 0.0; (* current shift of the master axis *)
-    CoordRecoveryPosition : LREAL := 0.0; (* calculated recovery restart position *)
     CoordAxisDiagnostics : MpAxisDiagExtType;
   END_STRUCT;
 
@@ -229,9 +227,10 @@ TYPE
 
   sMot_CouplingParameters : 	STRUCT  (* coupling parameter structure*)
     CouplingPermissive : BOOL := FALSE; (* axis allowing itself to be coupled as a slave *)
-    GearInCmd : BOOL := FALSE; (* set to engage coupling *)
-    OffsetShiftCmd : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
-    PhaseShiftCmd : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
+    GearInReq : BOOL := FALSE; (* Set to request coupling *)
+    GearOutReq : BOOL := FALSE; (* Set to request decoupling *)
+    OffsetShiftReq : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
+    PhaseShiftReq : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
     SlaveAxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to 0 so setting a value can be detected *)
     RatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
     RatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
@@ -259,7 +258,6 @@ TYPE
     MoveNotAllowed : BOOL:= TRUE; (* set if a requested move is not allowed, clear upon good request *)
     PlcSafetyEnable : BOOL := FALSE; (* PLC logic enable of SafeMC, via safety controller *)
     UpdateMoveParams : BOOL := FALSE; (* used to control the update bit to McAxisBasic when move params change *)
-    UpdateCouplingParams : BOOL := FALSE; (* used to control the update bit to McAxisCoupling when move params change *)
     EnableReq : BOOL:= FALSE; (* request enabling (powering on) the controller. *)
     DisableReq : BOOL:= FALSE; (* request disabeling (powering off) the controller *)
     EnableCmd : BOOL:= FALSE; (* enable (power on) the controller. Power off on false *)
