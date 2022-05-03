@@ -267,7 +267,7 @@ ACTION ActionGearInOut:
       
   // Update the axis status structure
   IF (ax.fbGearIn.Busy OR ax.fbGearIn.Active) AND NOT ax.fbGearIn.Error THEN
-    ax.Status.IsGearInSync := ax.fbCamIn.InSync;
+    ax.Status.IsGearInSync := ax.fbGearIn.InGear;
   ELSE
     ax.Status.IsGearInSync := FALSE;
   END_IF;
