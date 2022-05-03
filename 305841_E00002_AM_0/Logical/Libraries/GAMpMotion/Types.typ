@@ -87,9 +87,10 @@ TYPE
     clearManBrakeRelReq : BOOL := FALSE;
     offsetShiftRelReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
     phaseShiftRelReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
-    endShiftReq : BOOL := FALSE; (* shift reqs are level sensitive. This clear them *)
-    engageSlaveReq : BOOL := FALSE; (* level sensitive *)
-    disengageSlaveReq : BOOL := FALSE; (* gear in cmds are level sensitive. This clears them *)
+    endShiftReq : BOOL := FALSE; (* zero out phase and offset shift  *)    
+    gearInReq : BOOL := FALSE;
+    camInReq : BOOL := FALSE;
+    disengageSlaveReq : BOOL := FALSE; (* Disengate cam and gear *)
     (* NOTE: Do not add bool reqs after disengageSlaveReq that should be cleared in safe/emo modes.  HMI and memcopy/memset ramifications. *)
     (* Other requests *)
     (* NOTE: Do not add bool reqs before setPositionLimitsReq that should be cleared while in emo mode. *)
@@ -175,14 +176,16 @@ TYPE
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
-    IsCoordInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsCamInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsGearInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsCamEndOfProfile : BOOL := FALSE; (* Pulsed output indicating cyclic end of cam *)
     IsCoordOffsetShiftStarted : BOOL := FALSE; 
     IsCoordOffsetShiftAttained : BOOL := FALSE;
     IsCoordPhaseShiftStarted : BOOL := FALSE;
     IsCoordPhaseShiftAttained : BOOL := FALSE;
+    CamStatus : McCamInStatusEnum;
     CoordActualOffsetShift : LREAL := 0.0; (* current shift of the slave *)
     CoordActualPhaseShift : LREAL := 0.0; (* current shift of the master axis *)
-    CoordAxisDiagnostics : MpAxisDiagExtType;
   END_STRUCT;
 
   sMot_MoveParameters : 	STRUCT  (*parameter structure*)
@@ -227,18 +230,24 @@ TYPE
 
   sMot_CouplingParameters : 	STRUCT  (* coupling parameter structure*)
     CouplingPermissive : BOOL := FALSE; (* axis allowing itself to be coupled as a slave *)
-    GearInReq : BOOL := FALSE; (* Set to request coupling *)
-    GearOutReq : BOOL := FALSE; (* Set to request decoupling *)
+    GearInReq : BOOL := FALSE; (* Set to request gear coupling *)
+    GearOutReq : BOOL := FALSE; (* Set to request gear decoupling *)
+    CamInReq : BOOL := FALSE; (* Set to request cam coupling *)
+    CamOutReq : BOOL := FALSE; (* Set to request cam decoupling *)
+    CamIsPeriodic : BOOL := TRUE; (* H: cam is performed periodically, L: cam is performed once *)
     OffsetShiftReq : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
     PhaseShiftReq : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
     SlaveAxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to 0 so setting a value can be detected *)
+    CamId : UINT; (* cam id used with CamIn *)
+    CamScalingMaster : DINT := 1000; (* Cam scaling factor for master *)
+    CamScalingSlave : DINT := 1000; (* Cam scaling factor for scaling *)
     RatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
     RatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
     MasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
-    MasterSyncPosition : LREAL; (*  master position from which the axes move synchronously *)
-    SlaveSyncPosition : LREAL; (* slave position from which the axes move synchronously *)
-    SyncMode : McSyncModeEnum; (* type of synchronization *)
-    MasterStartDistance : LREAL;(* Master distance during which the slave synchronizes *)
+    CamStartMode : McCamStartModeEnum;
+    CamBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    CamMasterOffset : LREAL := 0.0;  
+    CamSlaveOffset : LREAL := 0.0;  
     Shift : LREAL; (* shift distance *)
     ShiftVelocityMax : REAL;
     ShiftAccelerationMax : REAL;
@@ -324,7 +333,8 @@ TYPE
     ForceSetRef : BOOL := TRUE; (* force the operator to have to re-reference the axis *)
     StartupHomeOk : BOOL := FALSE; (* axis can home itself after startup *)
     isAxisVirtual : BOOL := FALSE; (* axis is virtual if true and motion commands are not allowed *)
-    isAxisEndless : BOOL := FALSE; (* Axis has no physical limits *)
+    isAxisEndless : BOOL := FALSE; (* axis has no physical limits *)
+    isAxisInverter : BOOL := FALSE; (* axis is an inverter in motion control mode *)
     AxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to initial so setting a value can be detected *)
     SMState : eGAMOT_AXIS_STATE_MACHINE_STATE := 0; (* enumeration managed by the state machine *)
     AxisObj : McAxisType ; (* reference to global axis object (i.e. the drive) *)

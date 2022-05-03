@@ -179,7 +179,6 @@
             <Variable Name="Status">
               <Variable Name="CoordActualOffsetShift" />
               <Variable Name="CoordActualPhaseShift" />
-              <Variable Name="CoordRecoveryPosition" />
               <Variable Name="Position" />
               <Variable Name="Velocity" />
             </Variable>
@@ -217,7 +216,6 @@
               <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
               <Variable Name="CoordActualOffsetShift" EngineeringUnitId="4" />
               <Variable Name="CoordActualPhaseShift" EngineeringUnitId="4" />
-              <Variable Name="CoordRecoveryPosition" EngineeringUnitId="4" />
             </Variable>
             <Variable Name="StatusSlave">
               <Variable Name="Velocity" EngineeringUnitId="10" />
@@ -236,7 +234,6 @@
               <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
               <Variable Name="CoordActualOffsetShift" EngineeringUnitId="4" />
               <Variable Name="CoordActualPhaseShift" EngineeringUnitId="4" />
-              <Variable Name="CoordRecoveryPosition" EngineeringUnitId="4" />
             </Variable>
             <Variable Name="StatusSlave">
               <Variable Name="Velocity" EngineeringUnitId="10" />

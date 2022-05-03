@@ -136,13 +136,13 @@ ENTRY_ACTION
 currentStep := STP_DECOUPLE;
 
 // Clear the gear in command, and halt the slave axis
-_I_AxisHandwheel.CouplingParameters.GearInCmd := FALSE;
+_I_AxisHandwheel.CouplingParameters.GearOutReq := TRUE;
 axisSelected.Commands.HaltReq := TRUE;
 END_ACTION
 TRANSITION decouple and halt req FROM Stp_Decouple TO Stp_EnableWait:=
 (* @LANGUAGE := 'st' *)
 // Make sure gear in command and halt req are clear, showing they've been at least seen
-NOT _I_AxisHandwheel.CouplingParameters.GearInCmd AND
+NOT _I_AxisHandwheel.CouplingParameters.GearOutReq AND
 NOT axisSelected.Commands.HaltReq
 
 END_TRANSITION
@@ -183,7 +183,7 @@ _I_Pendant.GearRatioNumerator := CalcGearRatioFb._O_RatioNumerator;
 _I_Pendant.GearRatioDenominator := CalcGearRatioFb._O_RatioDenominator;
 
 // Gear in the slave axis as long as the permissive is met
-_I_AxisHandwheel.CouplingParameters.GearInCmd := axisSelected.CouplingParameters.CouplingPermissive;
+_I_AxisHandwheel.CouplingParameters.GearInReq := axisSelected.CouplingParameters.CouplingPermissive;
 END_ACTION
 TRANSITION new axis is selected FROM Stp_EngageSelAxis TO Stp_Decouple:=
 (* @LANGUAGE := 'st' *)

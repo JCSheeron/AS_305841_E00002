@@ -14,6 +14,7 @@ PROGRAM _INIT
   ax.Ignore := FALSE;
   ax.isAxisEndless := FALSE;
   ax.isAxisVirtual := FALSE;
+  ax.isAxisInverter := FALSE;
   
   // Point to the mappMotion axis, and a slave if there is one
   ax.AxisObj := gAxZ; // mappMotion axis -- see mappMotion in cfg view
@@ -44,16 +45,12 @@ PROGRAM _INIT
   ax.fbCamIn.Slave := ADR(ax.SlaveAxisObj);
   ax.fbCamOut.Slave := ADR(ax.SlaveAxisObj);
   ax.fbUpdateBFbParams._I_Axis := ADR(ax);
-  ax.fbUpdateCFbParams._I_Axis := ADR(ax);
 
   // Set fb reference to local variables
   ax.fbMpAxisBasic.Parameters := ADR(axisBasicParams);
-  ax.fbMpAxisCoupling.Parameters := ADR(axisCouplingParams);
   
-  
-  // Set previous values for motion and coupling parameters so changes can be detected
+  // Set previous values for motion parameters so changes can be detected
   ax.MoveParametersPrev := ax.MoveParameters;
-  ax.CouplingParametersPrev := ax.CouplingParameters;
     
   // Clear commands and requests
   fctClearMotionCommands(_I_CmdMask := MACM_NOMASK, _IO_Commands := ax.Commands);

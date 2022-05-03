@@ -55,21 +55,6 @@ FUNCTION_BLOCK fbUpdateBasicParams
   END_VAR
 END_FUNCTION_BLOCK
 
-FUNCTION_BLOCK fbUpdateCouplingParams
-  VAR_INPUT
-    _I_Axis : REFERENCE TO sMot_Axis;
-  END_VAR
-  VAR
-    updateOS :  BOOL;
-    result :  DINT;
-    pParamsStart :  UDINT := 0;
-    pParamsEnd :  UDINT := 0;
-    pParamsPrev :  UDINT := 0;
-    size :  UDINT := 0;
-    nxtAddr :  UDINT;
-  END_VAR
-END_FUNCTION_BLOCK
-
 FUNCTION fctCalcAbsHomeOffset : LREAL (* Return encoder offset for absolute home mode *)
   VAR_INPUT
     _I_CurrentPos : LREAL;
@@ -142,15 +127,6 @@ FUNCTION fctGetMpAxisInfo : BOOL (*Pack values stored in a MpAxisBasicInfoType s
   END_VAR
 END_FUNCTION
 
-FUNCTION fctGetMpCouplingInfo : BOOL (*Pack values stored in a MpAxisCouplingInfoType structure into a sMot_AxisStatus structure*)
-  VAR_INPUT
-    _I_MpInfo : REFERENCE TO MpAxisCouplingInfoType; (* packed Mapp Motion structure *)
-  END_VAR
-  VAR_IN_OUT
-    _IO_UdtStatus : sMot_AxisStatus; (* input move params in a udt *)
-  END_VAR
-END_FUNCTION
-
 FUNCTION fctPackMpAxisBasicParams : BOOL (*Pack values stored in a sMot_MoveParameter structure into a MpAxisBasicParType structure *)
   VAR_INPUT
     _I_UdtParams : REFERENCE TO sMot_MoveParameters; (* input move params in a udt *)
@@ -159,13 +135,3 @@ FUNCTION fctPackMpAxisBasicParams : BOOL (*Pack values stored in a sMot_MovePara
     _IO_MpParams : MpAxisBasicParType; (* packed Mapp Motion structure *)
   END_VAR
 END_FUNCTION
-
-FUNCTION fctPackMpAxisCouplingParams : BOOL (*Pack values stored in a sMot_MoveParameter structure into a MpAxisCouplingParType structure *)
-  VAR_INPUT
-    _I_UdtParams : REFERENCE TO sMot_CouplingParameters; (* input move params in a udt *)
-  END_VAR
-  VAR_IN_OUT
-		_IO_MpParams : MpAxisCouplingParType; (* packed Mapp Motion structure *)
-	END_VAR
-END_FUNCTION
-

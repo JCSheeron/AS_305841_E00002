@@ -119,10 +119,8 @@ tmrStepTO(IN:= FALSE, PT:= T#1s);
 // It will already be decoupled if the axis was disabled. It could have been
 // enabled and coupled while waiting for a cycle start -- in which case it could still be 
 // coupled.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.OffsetShiftCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.PhaseShiftCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearOutReq:= TRUE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -261,10 +259,8 @@ axes[AD_Z].Commands.EnableReq := (axes[AD_Z].Status.PlcOpenState = mcAXIS_DISABL
 // It will already be decoupled if the axis was disabled. It could have been
 // enabled and coupled while waiting for a cycle start -- in which case it could still be 
 // coupled.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.OffsetShiftCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.PhaseShiftCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearOutReq:= TRUE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -473,8 +469,8 @@ TRANSITION min time spindle at speed and coupling rdy FROM Stp_StartSpindle TO S
 // Minimum time expired, and spindle velocity is reached, and master and slave are ready for coordination
 tmrStepMin.Q AND
 axes[AD_SPINDLE].Status.IsInVelocity AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordSlaveReady AND 
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordMasterReady
+axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND 
+axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleHold4' *)
 STEP Stp_CycleHold4:
@@ -506,7 +502,7 @@ TRANSITION Stop Req FROM Stp_CycleHold4 TO Stp_CycleStop:=
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION continue FROM Stp_CycleHold4 TO Stp_GearInEcc:=
+TRANSITION continue FROM Stp_CycleHold4 TO Stp_CoupleEccs:=
 (* @LANGUAGE := 'st' *)
 // Operating mode is continuous OR
 // single cycle OR
@@ -515,8 +511,8 @@ operatingMode.SubMode = OM_PROD_SM_CONTINUOUS OR // run cycles until done or err
 operatingMode.SubMode = OM_PROD_SM_SINGLE OR // one cycle at a time
 (operatingMode.SubMode = OM_PROD_SM_STEPPED AND operatingMode.ReqCycleStart AND startCycleOS) // One step at a time
 END_TRANSITION
-(* @SFCNOJUMP := 'Stp_GearInEcc' *)
-STEP Stp_GearInEcc:
+(* @SFCNOJUMP := 'Stp_CoupleEccs' *)
+STEP Stp_CoupleEccs:
 (* @LANGUAGE := 'st' *)
 // Run step TO timer (PT set in step entry)
 tmrStepTO(IN:= TRUE);
@@ -528,7 +524,7 @@ END_STEP
 ENTRY_ACTION
 (* @LANGUAGE := 'st' *)
 // Update step 
-partMotion.prodCycleStepCurrent := PCS_GEAR_IN_ECC;
+partMotion.prodCycleStepCurrent := PCS_COUPLE_ECC;
 
 // Reset step minimum timer
 tmrStepMin(IN:= FALSE, PT:= T#100ms);
@@ -536,21 +532,30 @@ tmrStepMin(IN:= FALSE, PT:= T#100ms);
 // No move, so just use a value so we don't get hung up here
 tmrStepTO(IN:= FALSE, PT:= T#1s);
 
-// Set the gear in of the inner eccentric to the outer eccentric.
-// Use Gear In Position to create the initial offset.
+// Cam couple the inner eccentric to the outer eccentric
 
-// Ratio Reference
-// RatioNumerator = Gear factor of the slave / Measurement resolution of the slave
-// RatioDenominator = Gear factor of the master / Measurement resolution of the master
+// Use Cam ID 1
+// This value comes from the .camlist file in the config view,
+// which in turn specifies a cam file (logical view) for the
+// slave to follow, in this case in Logical View >> axInE (the slave axis)
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamId := 1;
+
+// The cam is in units of degrees but the scaling needs to take into account
+// the axis resolution so the physical motion in also in units of degrees.
 // We generally want 1:1, and both axes have a resolution of .001 => 1 / .001 = 1000
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.RatioNumerator := 1000;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.RatioDenominator := 1000;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamScalingMaster := 1000;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamScalingSlave := 1000;
 
 // Use pos. sp for master pos source. Good when master has closed loop pos ctrl.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterPositionSource := mcVALUE_SET; 
-
-// Sync mode, go fwd
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.SyncMode := mcSYNC_MODE_POSITIVE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterValueSource := mcVALUE_SET; 
+// Cam start mode
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamStartMode := mcCAM_START_ABSOLUTE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamIsPeriodic := TRUE;
+// Cam buffer mode
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamBufferMode := mcABORTING; // aborting is the only buffer mode supported
+// Use master and slave offsets of zero
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamMasterOffset := 0.0;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamSlaveOffset := 0.0;
 
 // Master position from which the slave moves synchronously is the current master position
 // plus the depth adj angle
@@ -564,17 +569,14 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.SyncMode := mcSYNC_MODE_POSITIVE;
 // axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := 5.0;
 
 // For velocity, allow the configured maximum
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftVelocityMax := axes[AD_INNER_ECCENTRIC].MoveParameters.VelocityMax; 
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftAccelerationMax := 0.0; // use slave axis limit
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftDecelerationMax := 0.0; // use slave axis limit
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftJerk := 0.0; // Jerk not supported
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftVelocityMax := axes[AD_INNER_ECCENTRIC].MoveParameters.VelocityMax; 
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftAccelerationMax := 0.0; // use slave axis limit
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftDecelerationMax := 0.0; // use slave axis limit
+// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftJerk := 0.0; // Jerk not supported
 
 // Execute the gear in position command once the update parmeters req has at least been seen.
 // Update should not be needed since the axes are not geared yet.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd := TRUE;
-
-
-
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamInReq := TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -586,17 +588,18 @@ stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 // If this is a timeout, record that also
 stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
-TRANSITION Step TO or Stop Req FROM Stp_GearInEcc TO Stp_CycleStop:=
+TRANSITION Step TO or Stop Req FROM Stp_CoupleEccs TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
 (tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION Inner Ecc Coupled FROM Stp_GearInEcc TO Stp_StartPass:=
+TRANSITION Inner Ecc Coupled FROM Stp_CoupleEccs TO Stp_StartPass:=
 (* @LANGUAGE := 'st' *)
 // Inner axis is synbchronized
-axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION
+axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
+axes[AD_INNER_ECCENTRIC].Status.IsCamInSync
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_StartPass' *)
 STEP Stp_StartPass:
@@ -626,6 +629,9 @@ calcLReal1 := MAX(calcLReal1, (partMotion.depthAdjAngle / partMotion.cutVelocity
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
 tmrStepTO.PT := DINT_TO_TIME(calcDint1);
 tmrStepTO(IN:= FALSE); 
+
+// INITIALLY HARD CODE cut overrun angle (due to hardcoaded cam path)
+gr_CfgCurrent.cuttingHead.cutOverrunAngle := 5.0;
 
 // The pass or cut distance is a full revolution, plus the depth adj angle, plus the cut overrun angle.
 // The adjustment zone to either retract the cutters or go to a new depth for an additional pass is part of the next path. 
@@ -657,11 +663,10 @@ axes[AD_OUTER_ECCENTRIC].MoveParameters.Velocity := partMotion.cutVelocity;
 axes[AD_OUTER_ECCENTRIC].MoveParameters.Acceleration := gr_CfgCurrent.cuttingHead.accel;
 axes[AD_OUTER_ECCENTRIC].MoveParameters.Deceleration := gr_CfgCurrent.cuttingHead.decel;
 axes[AD_OUTER_ECCENTRIC].MoveParameters.Direction := mcDIR_POSITIVE;
+axes[AD_OUTER_ECCENTRIC].MoveParameters.Distance := partMotion.passDistance;
 
-// Start a velocity move of the outer eccentric. The inner should follow after establishing an offset due to GearInPos.
-// A velocity move is used so the heads will keep moving while depth is adjusted for the different passes. On the last
-// pass, the move will be changed to an absolute move to the final position.
-axes[AD_OUTER_ECCENTRIC].Commands.MoveVelocityReq := TRUE;
+// Start a relative move of the outer eccentric. The inner should follow based on being cammed in.
+axes[AD_OUTER_ECCENTRIC].Commands.MoveRelativeReq := TRUE;
 
 END_ACTION
 EXIT_ACTION
@@ -685,9 +690,10 @@ TRANSITION synching FROM Stp_StartPass TO Stp_Synching1:=
 (* @LANGUAGE := 'st' *)
 // Minimum time elapsed -- allow time for move to start and make sure status is accurate
 tmrStepMin.Q AND
-// outer eccentric master is moving and inner eccentric slave is synching up to the cut depth
+// outer eccentric master is moving and inner eccentric slave is coordinated
 axes[AD_OUTER_ECCENTRIC].Status.IsMoveActive AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
+axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
+axes[AD_OUTER_ECCENTRIC].Status.IsCamInSync
 
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_Synching1' *)
@@ -747,7 +753,7 @@ TRANSITION moving and synched FROM Stp_Synching1 TO Stp_AxesSynched:=
 // outer eccentric master is at speed and inner is synched
 axes[AD_OUTER_ECCENTRIC].Status.IsMoveActive AND
 axes[AD_OUTER_ECCENTRIC].Status.IsInVelocity AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordInSync
+axes[AD_OUTER_ECCENTRIC].Status.IsCamInSync
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_AxesSynched' *)
 STEP Stp_AxesSynched:
@@ -806,22 +812,30 @@ TRANSITION Step TO or Stop Req FROM Step1 TO Stp_CycleStop:=
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION last pass FROM Step1 TO Stp_SetRetract:=
+TRANSITION last pass done FROM Step1 TO Stp_LastPassComplete:=
 (* @LANGUAGE := 'st' *)
+// INITIAL TESTING -- force only one pass
+// Outer Eccentric (Master) completes the move
+NOT axes[AD_OUTER_ECCENTRIC].Status.IsMoveActive AND axes[AD_OUTER_ECCENTRIC].Status.IsInPosition
+
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
 // The next step is to calculate the next adjustment that will need to start at T1 and end after an adjustment angle.
 // We will do this while running the cut, but we have to past the azimuth of the next adjustment point so the heads are
 // forced to go all the way around before reaching this point again.
 // The required distance was calculated earlier and stored in partMotion.calcNextAdjDistance
-partMotion.passDistanceTraveled > partMotion.calcNextAdjDistance AND
-// This is the last pass, and there is no finishig pass, or there is a finishing pass, and it is finishing up -- time to set the inner eccentric to the retracted position
+//partMotion.passDistanceTraveled > partMotion.calcNextAdjDistance AND
+// This is the last pass, and there is no finishig pass, or there is a finishing pass,
+// and it is finishing up -- time to set the inner eccentric to the retracted position
+// TRUE
+(* INITIAL TESTING -- force only one pass
 (gr_PartCurrent.cutPassCount = gr_CfgCurrent.cuttingHead.passCount AND
 NOT gr_CfgCurrent.cuttingHead.finishingPass) OR
 gr_PartCurrent.cutPassCount > gr_CfgCurrent.cuttingHead.passCount
+*)
 END_TRANSITION
-(* @SFCNOJUMP := 'Stp_SetRetract' *)
-STEP Stp_SetRetract:
+(* @SFCNOJUMP := 'Stp_LastPassComplete' *)
+STEP Stp_LastPassComplete:
 (* @LANGUAGE := 'st' *)
 // Run step TO timer (PT set in step entry)
 tmrStepTO(IN:= TRUE);
@@ -854,6 +868,8 @@ tmrStepTO(IN:= FALSE);
 // Some of the parameters were already set when the offset was established.
 // Only set the changes here.
 
+// TEST CHANGE: Cam profile ends with head retracted
+(*
 // Master position from which the slave moves synchronously is the pass target position plus the adj angle
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(partMotion.endOfPassPosition + partMotion.depthAdjAngle, 360.0);
 
@@ -875,7 +891,7 @@ axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams := TRUE;
 axes[AD_OUTER_ECCENTRIC].MoveParameters.Position := partMotion.endOfPassPosition;
 axes[AD_OUTER_ECCENTRIC].Commands.MoveAbsoluteReq := TRUE;
 axes[AD_OUTER_ECCENTRIC].Commands.MoveVelocityReq := FALSE; // Turn off the vel req
-
+*)
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -887,83 +903,23 @@ stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 // If this is a timeout, record that also
 stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
-TRANSITION Step TO or Stop Req FROM Stp_SetRetract TO Stp_CycleStop:=
+TRANSITION Step TO or Stop Req FROM Stp_LastPassComplete TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
-// Step timeout or cycle stop
-(tmrStepTO.Q AND NOT disableStepTO) OR
+// Cycle stop
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION synching FROM Stp_SetRetract TO Stp_Synching2:=
+TRANSITION cutting done depth wrong FROM Stp_LastPassComplete TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
-// Make sure the update has been processed, and the
-// inner axis is compensating -- being brought into sync at the specified positions.
-// This is the start of retracting the cutting heads.
-NOT axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
-END_TRANSITION
-(* @SFCNOJUMP := 'Stp_Synching2' *)
-STEP Stp_Synching2:
-(* @LANGUAGE := 'st' *)
-// Run step hold and timeout timers (PT set in step entry)
-tmrStepMin(IN:= TRUE);
-tmrStepTO(IN:= TRUE);
-END_STEP
-(* @SFCMAXTIME := '' *)
-(* @SFCMINTIME := '' *)
-(* @SFCCOMMENT := '' *)
-ENTRY_ACTION
-(* @LANGUAGE := 'st' *)
-// Update step 
-partMotion.prodCycleStepCurrent := PCS_SYNCHING2;
-
-// Reset step min hold tmr
-tmrStepMin(IN:= FALSE);
-// Reset TO tmr
-// This portion of the move is over the last adjustment angle, where the heads are retracting.
-// Approximate the time by assuming deceleration to zero starts at the beginning of the adjustment arc.
-// In this case, the average velocity would be V/2.
-// Set TO time to longer than is necessary to travel the adj angle.
-// Calc PT time based on velocity and travel distance -- which will be a bit low since it doesn't take accel into account
-// Enforce a minimum time to rule out values <= 0
-calcLReal1 := 0.1; // 100 msec minimum
-calcLReal1 := MAX(calcLReal1, (partMotion.depthAdjAngle / (partMotion.cutVelocity / 2.0))); // deg / deg/sec = sec
-calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
-tmrStepTO.PT := DINT_TO_TIME(calcDint1);
-tmrStepTO(IN:= FALSE); 
-END_ACTION
-EXIT_ACTION
-(* @LANGUAGE := 'st' *)
-// The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
-
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
-END_ACTION
-TRANSITION Step TO or Stop Req FROM Stp_Synching2 TO Stp_CycleStop:=
-(* @LANGUAGE := 'st' *)
-// Step timeout or cycle stop
-(tmrStepTO.Q AND NOT disableStepTO) OR
-operatingMode.ReqCycleStop
-END_TRANSITION
-(* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION cutting done depth wrong FROM Stp_Synching2 TO Stp_CycleStop:=
-(* @LANGUAGE := 'st' *)
-// Min step time done
-tmrStepMin.Q AND
 // Once the move completes, the cutting passes are done
 axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 // Make sure depth is zero
 // Calculated pos 1 is the relative position of Inner and Outer Axes
 ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) > TOL_DEPTH_ZERO_DEG
 END_TRANSITION
-(* @SFCNOJUMP := 'Stp_CycleStop' *)
-TRANSITION min time and cutting done depth zero FROM Stp_Synching2 TO Stp_RecordIndex:=
+(* @SFCISJUMP := 'Stp_CycleStop' *)
+TRANSITION min time and cutting done depth zero FROM Stp_LastPassComplete TO Stp_RecordIndex:=
 (* @LANGUAGE := 'st' *)
-// Min step time done
-tmrStepMin.Q AND
 // Once the move completes, the cutting passes are done
 axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 // Make sure depth is zero
@@ -1572,6 +1528,9 @@ END_TRANSITION
 (* @SFCISJUMP := 'Stp_NextCycle' *)
 TRANSITION finishing pass FROM Step1 TO Stp_SetFinishPass:=
 (* @LANGUAGE := 'st' *)
+FALSE
+(* INITIAL TESTING -- only allow one pass
+
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
 // The next step is to calculate the next adjustment that will need to start at T1 and end after an adjustment angle.
@@ -1582,6 +1541,8 @@ partMotion.passDistanceTraveled > partMotion.calcNextAdjDistance AND
   // This is the last pass, and there is no finishig pass, or there is a finishing pass, and it is finishing up -- time to set the inner eccentric to the retracted position
 (gr_PartCurrent.cutPassCount = gr_CfgCurrent.cuttingHead.passCount AND
 gr_CfgCurrent.cuttingHead.finishingPass)
+
+*)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_SetFinishPass' *)
 STEP Stp_SetFinishPass:
@@ -1614,6 +1575,9 @@ tmrStepTO(IN:= FALSE);
 // Some of the parameters were already set when the offset was established.
 // Only set the changes here.
 
+// TEST CHANGE: Cam profile will be used for finishing pass
+(*
+
 // Master position from which the slave moves synchronously at the new depth is the pass target position plus the adj angle
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(partMotion.endOfPassPosition + partMotion.depthAdjAngle, 360.0);
 
@@ -1636,6 +1600,7 @@ partMotion.endOfPassPosition := fctLRMod(partMotion.endOfPassPosition + partMoti
 // The outer eccentric has to get past this point before a new adjustment is set up, so the heads are forced to go all
 // the way around before reaching this point again.
 partMotion.calcNextAdjPosition :=  fctLRMod(partMotion.endOfPassPosition + partMotion.depthAdjAngle, 360.0);
+*)
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -1656,11 +1621,15 @@ END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
 TRANSITION synching FROM Stp_SetFinishPass TO Stp_Synching3:=
 (* @LANGUAGE := 'st' *)
+// INITIAL CODE
+// Finishing pass done
+TRUE
+
 // Make sure the update has been processed, and the
 // inner axis is compensating -- being brought into sync at the specified positions.
 // This is the start of bringing the cutting heads to finish pass depth.
-NOT axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
+// NOT axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams AND
+// axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_Synching3' *)
 STEP Stp_Synching3:
@@ -1693,6 +1662,9 @@ END_TRANSITION
 (* @SFCISJUMP := 'Stp_Synching1' *)
 TRANSITION addl pass FROM Step1 TO Stp_SetNextPass:=
 (* @LANGUAGE := 'st' *)
+FALSE
+(* INITIAL TESTING -- only allow one pass
+
 // Cutting heads are synched and this is the last pass and there is no finising pass, or this is the finishing pass
 // From the starting point, they will go a full revolution, plus an adjustment zone plus the cut overrun distance. Call this point T1.
 // The next step is to calculate the next adjustment that will need to start at T1 and end after an adjustment angle.
@@ -1702,6 +1674,7 @@ TRANSITION addl pass FROM Step1 TO Stp_SetNextPass:=
 partMotion.passDistanceTraveled > partMotion.calcNextAdjDistance AND
 // This is at least one more pass -- time to set the inner eccentric to the next pass depth position
 gr_PartCurrent.cutPassCount  < gr_CfgCurrent.cuttingHead.passCount
+*)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_SetNextPass' *)
 STEP Stp_SetNextPass:
@@ -1720,6 +1693,9 @@ partMotion.prodCycleStepCurrent := PCS_SET_NEXT_PASS;
 // for the next pass.
 // Some of the parameters were already set when the offset was established.
 // Only set the changes here.
+
+// TEST CHANGE: Cam profile will be used for next pass
+(*
 
 // Master position from which the slave moves synchronously at the new depth is the pass target position plus the adj angle
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(partMotion.endOfPassPosition + partMotion.depthAdjAngle, 360.0);
@@ -1744,6 +1720,7 @@ partMotion.endOfPassPosition := fctLRMod(partMotion.endOfPassPosition + partMoti
 // The outer eccentric has to get past this point before a new adjustment is set up, so the heads are forced to go all
 // the way around before reaching this point again.
 partMotion.calcNextAdjPosition :=  fctLRMod(partMotion.endOfPassPosition + partMotion.depthAdjAngle, 360.0);
+ *)
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -1764,11 +1741,14 @@ END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
 TRANSITION synching FROM Stp_SetNextPass TO Stp_Synching3:=
 (* @LANGUAGE := 'st' *)
+// INITIAL CODE
+// Add'l pass done
+TRUE
 // Make sure the update has been processed, and the
 // inner axis is compensating -- being brought into sync at the specified positions.
 // This is the start of bringing the cutting heads to the next depth.
-NOT axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams AND
-axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
+// NOT axes[AD_OUTER_ECCENTRIC].Commands.UpdateCouplingParams AND
+// axes[AD_OUTER_ECCENTRIC].Status.IsCoordInCompensation
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_Synching3' *)
 TRANSITION min time zero depth need SOC FROM Stp_ZeroDepth TO Stp_CycleHold2:=
@@ -1991,8 +1971,8 @@ tmrStepTO(IN:= FALSE);
 // Halt Z
 axes[AD_Z].Commands.HaltReq := TRUE;
 // Halt the eccentrics and decouple inner (which halt will also do), but make sure the coupling cmd is false.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInCmd:= FALSE;
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearInPosCmd:= FALSE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearOutReq:= TRUE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
 axes[AD_OUTER_ECCENTRIC].Commands.HaltReq := TRUE;
 axes[AD_INNER_ECCENTRIC].Commands.HaltReq := TRUE;
 

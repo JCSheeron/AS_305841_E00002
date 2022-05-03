@@ -75,13 +75,114 @@ ax.Commands.DriveResetReq
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Error_DriveReset' *)
-TRANSITION Valid and no errors FROM Step_AxisValid_Check TO Step_Disabled:=
+TRANSITION Valid and no errors FROM Step_AxisValid_Check TO Step_CheckRestorePos:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), and no errors
 (ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
 ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
 ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 NOT ax.fbMpAxisBasic.Error
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_CheckRestorePos' *)
+STEP Step_CheckRestorePos:
+(* @LANGUAGE := 'st' *)
+// If this axis is not virtual and not an inverter, check the restore position
+IF NOT ax.isAxisVirtual AND NOT ax.isAxisInverter THEN
+  ax.fbCheckRestorePos(Execute := TRUE);
+END_IF;
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set the state
+ax.SMState:= GAMOT_ASMS_CHK_RESTORE_POS;
+END_ACTION
+TRANSITION is virtual axis FROM Step_CheckRestorePos TO Step_Disabled:=
+(* @LANGUAGE := 'st' *)
+// Axis restore position does not apply to virtual or inverter axes
+ax.isAxisVirtual OR ax.isAxisInverter
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_Disabled' *)
+TRANSITION restore pos done and error or invalid FROM Step_CheckRestorePos TO Step_ForceSetRef:=
+(* @LANGUAGE := 'st' *)
+// Check restore position is done without error
+// and data is valid. Not applicable for virtual or inverter axes.
+NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
+NOT ax.fbCheckRestorePos.Busy AND
+(ax.fbCheckRestorePos.Error OR
+(ax.fbCheckRestorePos.Done AND
+NOT ax.fbCheckRestorePos.DataValid))
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ForceSetRef' *)
+STEP Step_ForceSetRef:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Force reference to be set
+ax.ForceSetRef := TRUE;
+END_ACTION
+TRANSITION FROM Step_ForceSetRef TO Step_Disabled:=
+TRUE
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_Disabled' *)
+TRANSITION restore pos done and valid FROM Step_CheckRestorePos TO Step_RestorePos:=
+(* @LANGUAGE := 'st' *)
+// Check restore position is done without error
+// and data is valid. Not applicable for virtual or inverter axes.
+NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
+NOT ax.fbCheckRestorePos.Busy AND
+ax.fbCheckRestorePos.Done AND
+NOT ax.fbCheckRestorePos.Error AND
+ax.fbCheckRestorePos.DataValid
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_RestorePos' *)
+STEP Step_RestorePos:
+(* @LANGUAGE := 'st' *)
+// From here, use the default homing mode, which is set to use restore position.  It will either have an error or become homed.
+// Turn off the other commands and requests
+ax.MoveParameters.HomeParams.Mode := mcHOMING_DEFAULT;
+ax.Commands.HomeCmd := TRUE;
+fctClearMotionCommands(_I_CmdMask := MACM_HOME_MASK, _IO_Commands := ax.Commands);
+fctClearMotionRequests(_I_ReqMask := MACM_NOMASK, _IO_Commands := ax.Commands);
+
+// Assume the homing worked
+ax.ForceSetRef := FALSE;
+
+// Call motion command to get status, and issue the home command, and possibly the enable command.
+ActionCallMotionFunctions;
+
+// Run the timer which holds here for a bit
+tmrHomeMinimum(IN:= TRUE);
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set the state
+ax.SMState:= GAMOT_ASMS_RESTORE_POS;
+// reset the timer
+tmrHomeMinimum(IN:= FALSE, PT:= T#100ms);
+
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Make sure command is off on exit
+ax.Commands.HomeCmd:= FALSE;
+END_ACTION
+TRANSITION Home cmd done FROM Step_RestorePos TO Step_Disabled:=
+(* @LANGUAGE := 'st' *)
+// Instruction done. Response is the same whether or not the homing worked.
+tmrHomeMinimum.Q AND
+ax.fbMpAxisBasic.Info.Diag.ExecutingCommand <> mcAXIS_CMD_HOMING
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disabled' *)
 STEP Step_Disabled:

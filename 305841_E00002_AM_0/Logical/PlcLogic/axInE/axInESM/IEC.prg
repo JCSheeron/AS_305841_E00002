@@ -8,5 +8,6 @@
     <File Description="Exit code">AxSMExit.st</File>
     <File>ActionChkPermissives.st</File>
     <File>ActionMotionFbs.st</File>
+    <File>ActionAxisSpecific.st</File>
   </Files>
 </Program>

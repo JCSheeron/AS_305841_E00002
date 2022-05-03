@@ -77,13 +77,13 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI machine specific requests, an
   END_IF;
 
   // Coordinated shift commands cannot be enabled unless:
-  // 1) The slave is coordinated and InSync
+  // 1) The slave is gear coordinated and InSync
   // 2) The master is moving  
   // 3) A phase shift or offset shift is not underway
-  _I_MachineAxisReqs.shiftEnable := _I_Axis.Status.IsCoordInSync AND
+  _I_MachineAxisReqs.shiftEnable := _I_Axis.Status.IsGearInSync AND
     _I_Axis.Status.IsMoveActive AND
-    NOT _I_Axis.CouplingParameters.OffsetShiftCmd AND
-    NOT _I_Axis.CouplingParameters.PhaseShiftCmd;
+    NOT _I_Axis.fbOffsetShift.Busy AND NOT _I_Axis.fbOffsetShift.ShiftStarted AND
+    NOT _I_Axis.fbPhaseShift.Busy AND NOT _I_Axis.fbPhaseShift.ShiftStarted;
   
   // Now the direction options should be qualified, set the direction that the GAMpMotion library will see
   _I_LibraryAxisReqs.Direction := fctDecodeHmiDirection(_I_DirectionReq := _I_MachineAxisReqs.direction);
@@ -203,7 +203,7 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
     IF _I_ProcessReqs.cuttingHeadMoveReqRetract THEN
       // Retract cutting head req
-      IF rAxis.Status.IsCoordInSync OR rAxis.Status.IsCoordInCompensation THEN
+      IF rAxis.Status.IsGearInSync OR rAxis.Status.IsCamInSync THEN
         // Axis is coordinated. Modify the offset using the master
         ;
         // TODO: Add cases for both inner and outer stopped

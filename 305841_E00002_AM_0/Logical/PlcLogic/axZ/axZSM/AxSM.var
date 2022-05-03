@@ -35,9 +35,9 @@ VAR CONSTANT
   axIdx : DINT; (* axis index *)
   inSyncSlave : BOOL := FALSE;
   axDummySlave : McAxisType;
-	(* local versions of motion structures -- used to make address referencing easier *)
+	(* local versions of motion param structures -- used to make setting advanced params easier *)
   axisBasicParams : MpAxisBasicParType; 
-	axisCouplingParams : MpAxisCouplingParType;
+  axisCamInAdvParams : McAdvCamInParType;
   axisGearInAdvParams : McAdvGearInParType;
   axisOffsetAdvParams : McAdvOffsetParType;
   axisPhaseAdvParams : McAdvPhasingParType;

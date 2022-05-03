@@ -14,7 +14,7 @@ TYPE
     PCS_Z_TO_SOC        := 9,
     PCS_NEXT_CYCLE      := 10,
     PCS_START_SPINDLE   := 11,
-    PCS_GEAR_IN_ECC     := 12,
+    PCS_COUPLE_ECC      := 12,
     PCS_START_PASS      := 13,
     PCS_SYNCHING1       := 14,
     PCS_SYNCHING2       := 15,

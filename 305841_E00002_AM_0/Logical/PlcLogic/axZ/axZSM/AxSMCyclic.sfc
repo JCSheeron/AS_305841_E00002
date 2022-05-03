@@ -86,8 +86,8 @@ END_TRANSITION
 (* @SFCNOJUMP := 'Step_CheckRestorePos' *)
 STEP Step_CheckRestorePos:
 (* @LANGUAGE := 'st' *)
-// If this is a real axis, check the restore position
-IF NOT ax.isAxisVirtual THEN
+// If this axis is not virtual and not an inverter, check the restore position
+IF NOT ax.isAxisVirtual AND NOT ax.isAxisInverter THEN
   ax.fbCheckRestorePos(Execute := TRUE);
 END_IF;
 
@@ -102,15 +102,16 @@ ax.SMState:= GAMOT_ASMS_CHK_RESTORE_POS;
 END_ACTION
 TRANSITION is virtual axis FROM Step_CheckRestorePos TO Step_Disabled:=
 (* @LANGUAGE := 'st' *)
-// Axis restore position does not apply to virtual axes
-ax.isAxisVirtual
+// Axis restore position does not apply to virtual or inverter axes
+ax.isAxisVirtual OR ax.isAxisInverter
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disabled' *)
 TRANSITION restore pos done and error or invalid FROM Step_CheckRestorePos TO Step_ForceSetRef:=
 (* @LANGUAGE := 'st' *)
 // Check restore position is done without error
-// and data is valid. Not applicable for virtual axes.
+// and data is valid. Not applicable for virtual or inverter axes.
 NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
 NOT ax.fbCheckRestorePos.Busy AND
 (ax.fbCheckRestorePos.Error OR
 (ax.fbCheckRestorePos.Done AND
@@ -134,8 +135,9 @@ END_TRANSITION
 TRANSITION restore pos done and valid FROM Step_CheckRestorePos TO Step_RestorePos:=
 (* @LANGUAGE := 'st' *)
 // Check restore position is done without error
-// and data is valid. Not applicable for virtual axes.
+// and data is valid. Not applicable for virtual or inverter axes.
 NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
 NOT ax.fbCheckRestorePos.Busy AND
 ax.fbCheckRestorePos.Done AND
 NOT ax.fbCheckRestorePos.Error AND
@@ -218,10 +220,6 @@ fctClearMotionRequests(_I_ReqMask := reqMask, _IO_Commands := ax.Commands);
 // Run the mode mismatch timer if the mode is not ok.
 // Assume mode is okay - no modes on this system
 tmrModeMismatch(IN:= FALSE);
-
-// TEST
-// tmrHomeMinimum(IN:= NOT tmrHomeMinimum.Q, PT:= T#500ms);
-// ax.fbCheckRestorePos(Execute := tmrHomeMinimum.Q);
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)

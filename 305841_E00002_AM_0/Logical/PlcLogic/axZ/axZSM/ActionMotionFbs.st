@@ -11,7 +11,10 @@
 
 ACTION ActionCallMotionFunctions: 
   ActionMpAxisBasic;
-  ActionMpAxisCoupling;
+  ActionCamInOut;
+  ActionGearInOut;
+  ActionOffsetShift;
+  ActionPhaseShift;
 END_ACTION
 
 ACTION ActionMpAxisBasic: 
@@ -136,6 +139,78 @@ ACTION ActionMpAxisBasic:
 
 END_ACTION
 
+ACTION ActionCamInOut:
+  // Execute the cam in or cam out fbs based on the CamIn/Out requests
+  // The fbs are edge triggered, and the requests are cleared once serviced.
+  // If the caming params change, another request must be made.
+  // TODO: Is cam out and another cam in needed if params change?
+
+  // Only execute the cam in fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored,
+  // and it is requested.
+  IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
+       ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored
+    // keep the requests and executes low
+    ax.CouplingParameters.CamInReq := FALSE;
+    ax.CouplingParameters.CamOutReq := FALSE;
+    ax.fbCamIn.Execute := FALSE;
+    ax.fbCamOut.Execute := FALSE;
+  ELSIF ax.CouplingParameters.CamInReq THEN
+    // CamIn request is made.
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.CamInReq := FALSE;
+    // Make sure the CamOut req and execute is clear
+    ax.CouplingParameters.CamOutReq := FALSE;
+    ax.fbCamOut.Execute := FALSE;
+    // Load the cam in params, then set the execute input (edge triggered fb)
+    ax.fbCamIn.MasterOffset := ax.CouplingParameters.CamMasterOffset;
+    ax.fbCamIn.SlaveOffset := ax.CouplingParameters.CamSlaveOffset;
+    ax.fbCamIn.MasterScaling := ax.CouplingParameters.CamScalingMaster;
+    ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
+    ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
+    ax.fbCamIn.MasterValueSource := ax.CouplingParameters.MasterValueSource;
+    ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
+    ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
+    axisCamInAdvParams.Periodic := ax.CouplingParameters.CamIsPeriodic;
+    axisCamInAdvParams.Velocity := 0.0; // disable, use (slave?) axis max vel
+    axisCamInAdvParams.Acceleration := 0.0; // disable, use (slave?) axis max accel
+    axisCamInAdvParams.Deceleration := 0.0; // disable, use (slave?) axis max decel
+    axisCamInAdvParams.Jerk := 0.0; // only non-zero if using McProfGen
+    ax.fbCamIn.AdvancedParameters := axisCamInAdvParams;
+    ax.fbCamIn.Execute := TRUE; // fb looks for a rising edge
+  ELSIF ax.CouplingParameters.CamOutReq THEN
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.CamOutReq := FALSE;
+    // Make sure the GearIn req and execute is clear
+    ax.CouplingParameters.CamInReq := FALSE;
+    ax.fbCamIn.Execute := FALSE;
+    // Load the cam out params, then set the execute input (edge triggered fb)
+    ax.fbCamOut.Jerk := 0.0; // only non-zero if using McProfGen
+    ax.fbCamOut.Execute := TRUE;
+  END_IF;
+  
+  // Call the cam in and cam out fbs.
+  ax.fbCamIn();
+  ax.fbCamOut();
+  // Clear the exuecute bits. The fbs are edge triggerd, and would have been seen by the above call.
+  ax.fbCamIn.Execute := FALSE;
+  ax.fbCamOut.Execute := FALSE;
+    
+  // Update the axis status structure
+  IF (ax.fbCamIn.Busy OR ax.fbCamIn.Active) AND NOT ax.fbCamIn.Error THEN
+    ax.Status.IsCamInSync := ax.fbCamIn.InSync;
+    ax.Status.IsCamEndOfProfile := ax.fbCamIn.EndOfProfile;
+    ax.Status.CamStatus := ax.fbCamIn.Status;
+  ELSE
+    ax.Status.IsCamInSync := FALSE;
+    ax.Status.IsCamEndOfProfile := FALSE;
+    ax.Status.CamStatus := mcCAM_STATUS_PREPARING_MOVE; // 0 value, but don't have a good choice for "not active 
+  END_IF;
+
+END_ACTION
+
 ACTION ActionGearInOut:
   // Execute the gear in or gear out fbs based on the GearIn/Out requests
   // The fbs are edge triggered, and the requests are cleared once serviced.
@@ -189,23 +264,23 @@ ACTION ActionGearInOut:
   // Clear the exuecute bits. The fbs are edge triggerd, and would have been seen by the above call.
   ax.fbGearIn.Execute := FALSE;
   ax.fbGearOut.Execute := FALSE;
-    
+      
   // Update the axis status structure
-  // Set the In sync based on the fbGearIn status, if the GearIn is active.
-  // This distinction is made bacause caming can also cause axes to be in sync.
   IF (ax.fbGearIn.Busy OR ax.fbGearIn.Active) AND NOT ax.fbGearIn.Error THEN
-    ax.Status.IsCoordInSync := ax.fbGearIn.InGear;
+    ax.Status.IsGearInSync := ax.fbCamIn.InSync;
+  ELSE
+    ax.Status.IsGearInSync := FALSE;
   END_IF;
 
 END_ACTION
 
 ACTION ActionOffsetShift:
-  // Execute the gear in or gear out fbs based on the GearIn/Out requests
-  // The fbs are edge triggered, and the requests are cleared once serviced.
-  // If the gearing params change, another request must be made.
-  // TODO: Is gear out and another gear in needed if params change?
+  // Execute the offset shift fb based on the offset shift request.
+  // The fb is edge triggered, and the request is cleared once serviced.
+  // If the offset params change, another request must be made.
+  // TODO: Verify operation/behavior when changing params
 
-  // Only execute the gear in fb if the axis number has been set, 
+  // Only execute the offset shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
   // and it is requested.
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
@@ -233,7 +308,7 @@ ACTION ActionOffsetShift:
     axisOffsetAdvParams.ShiftMode := ax.CouplingParameters.ShiftMode;
     axisOffsetAdvParams.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
     axisOffsetAdvParams.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
-    axisOffsetAdvParams.DistanceParameters := ax.CouplingParameters.ShiftProfileDistance;
+    axisOffsetAdvParams.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
     axisOffsetAdvParams.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
     axisOffsetAdvParams.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
     axisOffsetAdvParams.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
@@ -242,7 +317,7 @@ ACTION ActionOffsetShift:
     ax.fbOffsetShift.StartShift := TRUE; // fb looks for a rising edge
   END_IF;
   
-  // Call the gear in and gear out fbs.
+  // Call the offset shift fb.
   ax.fbOffsetShift();
   // Clear the start shift bit. The fb is edge triggerd, and it would have been seen by the above call.
   ax.fbOffsetShift.StartShift := FALSE; // fb looks for a rising edge
@@ -262,12 +337,12 @@ ACTION ActionOffsetShift:
 END_ACTION
 
 ACTION ActionPhaseShift:
-  // Execute the gear in or gear out fbs based on the GearIn/Out requests
-  // The fbs are edge triggered, and the requests are cleared once serviced.
-  // If the gearing params change, another request must be made.
-  // TODO: Is gear out and another gear in needed if params change?
+  // Execute the phase shift fb based on the phase shift request.
+  // The fb is edge triggered, and the request is cleared once serviced.
+  // If the phase params change, another request must be made.
+  // TODO: Verify operation/behavior when changing params
 
-  // Only execute the gear in fb if the axis number has been set, 
+  // Only execute the phase shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
   // and it is requested.
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
@@ -295,7 +370,7 @@ ACTION ActionPhaseShift:
     axisPhaseAdvParams.ShiftMode := ax.CouplingParameters.ShiftMode;
     axisPhaseAdvParams.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
     axisPhaseAdvParams.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
-    axisPhaseAdvParams.DistanceParameters := ax.CouplingParameters.ShiftProfileDistance;
+    axisPhaseAdvParams.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
     axisPhaseAdvParams.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
     axisPhaseAdvParams.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
     axisPhaseAdvParams.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
@@ -304,7 +379,7 @@ ACTION ActionPhaseShift:
     ax.fbPhaseShift.StartShift := TRUE; // fb looks for a rising edge
   END_IF;
   
-  // Call the gear in and gear out fbs.
+  // Call the phase shift fb.
   ax.fbPhaseShift();
   // Clear the start shift bit. The fb is edge triggerd, and it would have been seen by the above call.
   ax.fbPhaseShift.StartShift := FALSE; // fb looks for a rising edge
@@ -321,14 +396,6 @@ ACTION ActionPhaseShift:
     ax.Status.CoordActualPhaseShift := 0.0;
   END_IF;
 
-END_ACTION
-
-ACTION CalcSpecialPositions :
-  // If there is an algorithm needed for calculating a different position, it can be done here
-  // If not, just use the axis position.
-  ax.Status.CalculatedPosition1 :=  ax.Status.Position;
-  ax.Status.CalculatedPosition2 :=  ax.Status.Position;
-  ax.Status.CalculatedPosition3 :=  ax.Status.Position;
 END_ACTION
 
 ACTION CopySlaveStatusToMaster :
