@@ -266,8 +266,8 @@ ACTION ActionGearInOut:
   // Derrive InCompensation -- Active but not in sync
   IF ax.fbGearIn.Active AND NOT ax.fbGearIn.Error THEN
     // If gear in is active, it is either in sync or in compensation
-    ax.Status.IsGearInSync := ax.fbCamIn.InSync;
-    ax.Status.IsGearInCompensation := NOT ax.fbCamIn.InSync;
+    ax.Status.IsGearInSync := ax.fbGearIn.InGear;
+    ax.Status.IsGearInCompensation := NOT ax.fbGearIn.InGear;
   ELSE
     ax.Status.IsGearInSync := FALSE;
     ax.Status.IsGearInCompensation := FALSE;
@@ -282,10 +282,11 @@ ACTION ActionOffsetShift:
 
   // Only execute the offset shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested.
+  // and it is requested, and the master axis is powered (so enable can be easily toggled)
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
        ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
+       NOT ax.Status.IsPoweredOn THEN
     // slave or master should be ignored
     // keep the request and enable low
     ax.CouplingParameters.OffsetShiftReq := FALSE;
@@ -343,10 +344,11 @@ ACTION ActionPhaseShift:
 
   // Only execute the phase shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested.
+  // and it is requested, and the master axis is powered (so enable can be easily toggled)
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
        ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
+       NOT ax.Status.IsPoweredOn THEN
     // slave or master should be ignored
     // keep the request and enable low
     ax.CouplingParameters.PhaseShiftReq := FALSE;

@@ -266,8 +266,8 @@ ACTION ActionGearInOut:
   // Derrive InCompensation -- Active but not in sync
   IF ax.fbGearIn.Active AND NOT ax.fbGearIn.Error THEN
     // If gear in is active, it is either in sync or in compensation
-    ax.Status.IsGearInSync := ax.fbCamIn.InSync;
-    ax.Status.IsGearInCompensation := NOT ax.fbCamIn.InSync;
+    ax.Status.IsGearInSync := ax.fbGearIn.InGear;
+    ax.Status.IsGearInCompensation := NOT ax.fbGearIn.InGear;
   ELSE
     ax.Status.IsGearInSync := FALSE;
     ax.Status.IsGearInCompensation := FALSE;

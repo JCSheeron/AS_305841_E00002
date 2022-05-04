@@ -253,6 +253,7 @@ ACTION ActionGearInOut:
     // Load the gear out params, then set the execute input (edge triggered fb)
     ax.fbGearOut.Jerk := 0.0; // only non-zero if using McProfGen
     ax.fbGearOut.Execute := TRUE;
+    
   END_IF;
   
   // Call the gear in and gear out fbs.
@@ -266,8 +267,8 @@ ACTION ActionGearInOut:
   // Derrive InCompensation -- Active but not in sync
   IF ax.fbGearIn.Active AND NOT ax.fbGearIn.Error THEN
     // If gear in is active, it is either in sync or in compensation
-    ax.Status.IsGearInSync := ax.fbCamIn.InSync;
-    ax.Status.IsGearInCompensation := NOT ax.fbCamIn.InSync;
+    ax.Status.IsGearInSync := ax.fbGearIn.InGear;
+    ax.Status.IsGearInCompensation := NOT ax.fbGearIn.InGear;
   ELSE
     ax.Status.IsGearInSync := FALSE;
     ax.Status.IsGearInCompensation := FALSE;

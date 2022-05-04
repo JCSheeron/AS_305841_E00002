@@ -287,7 +287,7 @@ ACTION ActionChkPermissiveCoupling:
   // In compensation is true when slave is slowing down or speeding up to get into sync, like after a gear ratio change.
   IF inSyncSlave AND ax.Status.IsMoveActive AND
       (NOT ax.Status.IsGearInSync AND NOT ax.Status.IsGearInCompensation AND NOT ax.Status.IsCamInSync) THEN
-    ; // TEMP TESTING ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+    ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
   END_IF;
   
   // TODO: Are there other checks??
@@ -307,10 +307,9 @@ ACTION ActionChkPermissiveCoupling:
   // Or if it is already coupled
   ax.CouplingParameters.CouplingPermissive :=
     ax.Status.IsHomed AND 
-    ((ax.Status.PlcOpenState = mcAXIS_STANDSTILL OR
+    (ax.Status.PlcOpenState = mcAXIS_STANDSTILL OR
      ax.Status.PlcOpenState = mcAXIS_DISCRETE_MOTION OR
-     ax.Status.PlcOpenState = mcAXIS_CONTINUOUS_MOTION) 
-     OR
+     ax.Status.PlcOpenState = mcAXIS_CONTINUOUS_MOTION OR 
      ax.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION);
 
 END_ACTION

@@ -174,9 +174,12 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     
     // *** Shift & offset related values
     // accel, decel, jerk and base max vel set above
-    _I_Axis.CouplingParameters.Shift := _I_HmiAxisReq.shiftDistance;
+    _I_Axis.CouplingParameters.Shift := _I_HmiAxisReq.shiftDistance; // slave shift distance
     _I_Axis.CouplingParameters.ShiftVelocityMax := _I_SlaveAxis.MoveParameters.VelocityMax; // Use slave max velocity
+    _I_Axis.CouplingParameters.ShiftProfileBase := _I_HmiAxisReq.shiftProfileBase; // profile base option
+    // use shift profile distance with mcPROFBASE_MASTER_DISTANCE profile base
     _I_Axis.CouplingParameters.ShiftProfileDistance :=  _I_HmiAxisReq.shiftProfileDistance; // master distance over which to perform the shift
+
   END_IF;
   
   IF _I_HmiAxisReq.moveReq THEN
@@ -236,7 +239,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_HmiAxisReq.camInReq := FALSE;
   // Slave must be designated to get past this, so no need to keep checking
   ELSIF _I_SlaveAxis.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
-        (_I_HmiAxisReq.disengageSlaveReq OR _I_SlaveAxis.CouplingParameters.CouplingPermissive) THEN
+        (_I_HmiAxisReq.disengageSlaveReq OR NOT _I_SlaveAxis.CouplingParameters.CouplingPermissive) THEN
     // Slave is coupled, but disengage slave request or coupling not allowed. 
     // Turn off gearing, caming, block the engage reqs, and clear the disengage req
     _I_Axis.CouplingParameters.GearOutReq := TRUE;
@@ -262,75 +265,79 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
   
   // Handle a offset or phase shift request
   // Only one at a time, so both handled by this conditional
-  // Contrary to the documentation, the shift cmds EDGE sensitive, NOT level sensitive.
-  // Even though the cmd could be pulsed, I am keeping the command while active, however,
-  // because there is no "shift in progress bit". The maintianed cmd allows this to be
-  // derrived between the command and shift complete.
-  // Cancel the reqs and cmds if requested, or if the master isn't moving, or if the slave is not coordinated,
-  // or if the shift amount is zero, or the profile (master) distance is zero,
-  // or if offset or phasing is done.
+  // Cancel the reqs if the master isn't moving, or if the slave is not coordinated,
+  // or if the shift amount is zero, or the profile (master) distance is being used but is set to zero,
+  // or a phase or offset shift is in progress
   
-  (* TODO Figure out what done looks like. The requests are edge triggered, and shifts can't be stopped
-  so .endShiftReq and this IF might go away
-  IF  _I_HmiAxisReq.endShiftReq OR
-      // master not moving or slave not coordinated
+  IF // master not moving or slave not coordinated
       NOT _I_Axis.Status.IsMoveActive OR
-      NOT _I_Axis.Status.IsCoordInSync OR
-      // Zero shift distances
+      NOT _I_Axis.Status.IsGearInSync OR
+      // Zero shift distance
       _I_HmiAxisReq.shiftDistance = 0.0 OR
-      _I_HmiAxisReq.shiftProfileDistance = 0.0 OR
-      // Offset done
-        (_I_Axis.CouplingParameters.OffsetShiftCmd AND
-         _I_Axis.fbMpAxisCoupling.Info.Diag.ExecutingCommand = mcAXIS_CMD_OFFSET_SHIFT AND
-         _I_Axis.fbMpAxisCoupling.OffsetDone) OR
-      // Phase shift done
-        (_I_Axis.CouplingParameters.PhaseShiftCmd AND
-         _I_Axis.fbMpAxisCoupling.Info.Diag.ExecutingCommand = mcAXIS_CMD_PHASE_SHIFT AND
-         _I_Axis.fbMpAxisCoupling.PhasingDone)
-  THEN
+      // master distance profile base and zero profile distance
+      (_I_HmiAxisReq.shiftProfileBase = mcPROFBASE_MASTER_DISTANCE AND
+       _I_HmiAxisReq.shiftProfileDistance = 0.0) OR
+       // a shift is active
+       _I_Axis.fbOffsetShift.ShiftStarted OR
+       _I_Axis.fbPhaseShift.ShiftStarted THEN
     // Turn off shifting, block the shift reqs, and clear the end req
-    _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
     _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
     _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_HmiAxisReq.endShiftReq := FALSE;
-  ELSIF _I_HmiAxisReq.offsetShiftRelReq AND NOT _I_Axis.CouplingParameters.OffsetShiftCmd THEN
-    // New request
+    _I_HmiAxisReq.offsetShiftAbsReq := FALSE;
+    _I_HmiAxisReq.phaseShiftAbsReq := FALSE;
+  ELSIF _I_HmiAxisReq.offsetShiftRelReq THEN
+    // New offset relative request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
     // We want to offset the slave relative to the master, so set the mode to relative
     _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
-    // We want to perform the shift based on the master moving a distance
-    _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
-    // All params should be set. Set the command and clear the request
-    _I_Axis.CouplingParameters.OffsetShiftCmd := TRUE;
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.OffsetShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
     _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    // Don't allow a phase shift if an offset shift is requested.
     _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
-  ELSIF _I_HmiAxisReq.offsetShiftRelReq AND _I_Axis.CouplingParameters.OffsetShiftCmd THEN
-    // Must not allow a request while a shift is active.
-    // Clear the command and request.
+    _I_HmiAxisReq.offsetShiftAbsReq := FALSE;
+    _I_HmiAxisReq.phaseShiftAbsReq := FALSE;
+  ELSIF _I_HmiAxisReq.offsetShiftAbsReq THEN
+    // New offset absolute request
+    // The non request specific params in the coupling structure were set above.
+    // Here we need to handle request specific stuff
+    // We want to offset the slave to an absolute position to the master, so set the mode to absolute
+    _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_ABSOLUTE_NO_RESET;
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.OffsetShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
     _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-     _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
-    // Don't allow a phase shift if an offset shift is requested.
     _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
+    _I_HmiAxisReq.offsetShiftAbsReq := FALSE;
+    _I_HmiAxisReq.phaseShiftAbsReq := FALSE;
   ELSIF _I_HmiAxisReq.phaseShiftRelReq THEN
+    // New phase shift relative request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
-    // We want to offset the slave relative to the master, so set the mode to relative
+    // We want to phase shift the slave relative to the master, so set the mode to relative
     _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
-    // We want to perform the shift based on the master moving a distance
-    _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
-    // All params should be set. Set the command and clear the request
-    _I_Axis.CouplingParameters.PhaseShiftCmd := TRUE;
-    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    // Don't allow an offset shift if a phase shift is requested.
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.PhaseShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
     _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
+    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
+    _I_HmiAxisReq.offsetShiftAbsReq := FALSE;
+    _I_HmiAxisReq.phaseShiftAbsReq := FALSE;
+  ELSIF _I_HmiAxisReq.phaseShiftAbsReq THEN
+    // New phase shift absolute request
+    // The non request specific params in the coupling structure were set above.
+    // Here we need to handle request specific stuff
+    // We want to phase shift the slave an absolute amount from master, so set the mode to absolute
+    _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_ABSOLUTE_NO_RESET;
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.PhaseShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
+    _I_HmiAxisReq.offsetShiftRelReq := FALSE;
+    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
+    _I_HmiAxisReq.offsetShiftAbsReq := FALSE;
+    _I_HmiAxisReq.phaseShiftAbsReq := FALSE;
   END_IF;
-  *)
   
   // Handle home requests
   IF _I_HmiAxisReq.homeSetZeroReq THEN

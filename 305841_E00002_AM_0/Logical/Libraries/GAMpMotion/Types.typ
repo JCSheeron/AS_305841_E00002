@@ -87,10 +87,11 @@ TYPE
     clearManBrakeRelReq : BOOL := FALSE;
     offsetShiftRelReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
     phaseShiftRelReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
-    endShiftReq : BOOL := FALSE; (* zero out phase and offset shift  *)    
+    offsetShiftAbsReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
+    phaseShiftAbsReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
     gearInReq : BOOL := FALSE;
     camInReq : BOOL := FALSE;
-    disengageSlaveReq : BOOL := FALSE; (* Disengate cam and gear *)
+    disengageSlaveReq : BOOL := FALSE; (* Disengage cam and gear *)
     (* NOTE: Do not add bool reqs after disengageSlaveReq that should be cleared in safe/emo modes.  HMI and memcopy/memset ramifications. *)
     (* Other requests *)
     (* NOTE: Do not add bool reqs before setPositionLimitsReq that should be cleared while in emo mode. *)
@@ -101,15 +102,19 @@ TYPE
     errorResetReq : BOOL := FALSE;
     driveResetReq : BOOL := FALSE;
     (* NOTE: Do not add bool reqs after driveResetReq that should be cleared in emo mode.  HMI and memcopy/memset ramifications. *)
-    axisNo : USINT := 0;
+    axisNo : USINT := 0; (* convenience axis number this structure corresponds to *)
+    (* gear in related *)
     GearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
     GearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
-    CamId : UINT;
-    homePosition : LREAL := 0.0;
+    (* shift related *)
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
+    shiftProfileBase : McProfileBaseEnum := mcPROFBASE_MASTER_POSITION;
+    (* cam related *)
+    CamId : UINT;
     CamMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
     CamSlaveOffset : LREAL := 0.0; (* gear factor of the master / measurment resolution of the master *)
+    homePosition : LREAL := 0.0;
     positionLimits : sMot_PositionLimits;
     moveDesignation : eGAMOT_MOVE_DESIGNATION := GAMOT_MD_NO_MOVE_COMMANDED;
     (* HMI move req *)
