@@ -300,9 +300,15 @@ ACTION ActionChkPermissiveCoupling:
     ax.Commands.MoveNotAllowed:= TRUE;
   END_IF;
   
-  // The slave allows itself to be coupled by setting the coupling permissive.
-  // TODO. For now, set it to facilitate testing
-  ax.CouplingParameters.CouplingPermissive := TRUE;
-  
+  // The slave allows itself to be coupled by setting the coupling permissive in its own axis structure.
+  // Allow coupling if homed, and in standstill (powered), discrete or continuous motion,
+  // Or if it is already coupled
+  ax.CouplingParameters.CouplingPermissive :=
+    ax.Status.IsHomed AND 
+    ((ax.Status.PlcOpenState = mcAXIS_STANDSTILL OR
+     ax.Status.PlcOpenState = mcAXIS_DISCRETE_MOTION OR
+     ax.Status.PlcOpenState = mcAXIS_CONTINUOUS_MOTION) 
+     OR
+     ax.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION);
 
 END_ACTION

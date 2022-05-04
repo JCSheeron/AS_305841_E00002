@@ -102,8 +102,9 @@ TYPE
     driveResetReq : BOOL := FALSE;
     (* NOTE: Do not add bool reqs after driveResetReq that should be cleared in emo mode.  HMI and memcopy/memset ramifications. *)
     axisNo : USINT := 0;
-    GearRatioNumerator : DINT := 100; (* gear factor of the slave / measurment resolution of the slave *)
-    GearRatioDenominator : DINT := 100; (* gear factor of the master / measurment resolution of the master *)
+    GearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
+    GearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
+    CamId : UINT;
     homePosition : LREAL := 0.0;
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
@@ -205,6 +206,7 @@ TYPE
     AccelMax : REAL := 100.0; (* bytes 44-47 *)
     DecelMin : REAL := 0.001; (* bytes 48-51 min and max allowed deceleration *)
     DecelMax : REAL := 100.0; (* bytes 52-55 *)
+    _beginHmiSection : BOOL := FALSE;
     (* HMI move req related *)
     (* BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk 
     (* and between Direction to the end of the structure.*)
@@ -221,6 +223,7 @@ TYPE
     MaxJerk : REAL := 0.0; (* bytes 88-91 *)
     (* NOTE: BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk *)
     (* End Hmi Move Req *)
+    _endHmiSection : BOOL := FALSE;
     HomeParams : MpAxisHomingType; (* parameters for referencing the axis*)
     JogParams : MpAxisJogType; (* parameters for jog command *)
     StopParams : MpAxisStopType; (* parameters for stop command *)
@@ -234,33 +237,50 @@ TYPE
     GearOutReq : BOOL := FALSE; (* Set to request gear decoupling *)
     CamInReq : BOOL := FALSE; (* Set to request cam coupling *)
     CamOutReq : BOOL := FALSE; (* Set to request cam decoupling *)
-    CamIsPeriodic : BOOL := TRUE; (* H: cam is performed periodically, L: cam is performed once *)
     OffsetShiftReq : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
     PhaseShiftReq : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
-    SlaveAxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to 0 so setting a value can be detected *)
-    CamId : UINT; (* cam id used with CamIn *)
-    CamScalingMaster : DINT := 1000; (* Cam scaling factor for master *)
-    CamScalingSlave : DINT := 1000; (* Cam scaling factor for scaling *)
-    RatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
-    RatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
-    MasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
-    CamStartMode : McCamStartModeEnum;
-    CamBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is thye only mode currently supported *)
-    CamMasterOffset : LREAL := 0.0;  
-    CamSlaveOffset : LREAL := 0.0;  
-    Shift : LREAL; (* shift distance *)
-    ShiftVelocityMax : REAL;
-    ShiftAccelerationMax : REAL;
-    ShiftDecelerationMax : REAL;
-    ShiftProfileDistance : LREAL;
+    SlaveAxisNo : USINT := 0; (* default to 0 so setting a value can be detected *)
+    (* CAUTION
+    mem compare and mem copy are used for these values when dealing with run time value changes.
+    Be very careful about where you add values. For example, changes to values in the gearin section will 
+    cause a gearin update *)
+    (* Gear In params *)
+    _beginGearInSection : BOOL := FALSE;
+    GearInRatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
+    GearInRatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
+    GearInMasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
+    GearInBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is the only mode currently supported *)
+    _endGearInSection : BOOL := FALSE;
+    (* Offset / Phase shift params *)
+    (* The values in the common section are common to gear in, cam, and shift *)
+    _beginShiftCommonSection : BOOL := FALSE;
+    ShiftAccelerationMax : REAL; (* if 0 limit for slave axis is used *)
+    ShiftDecelerationMax : REAL; (* if 0 limit for slave axis is used *)
+    ShiftJerk : REAL := 0.0; (* non zero only supported with McProfGen *)
+    ShiftProfileBaseMaxVelocity : REAL := 0.0; (* also use for cam adv paramm vel. 0.0: use max velocity master axis *)
+    _endShiftCommonSection : BOOL := FALSE;
+    _beginShiftSection : BOOL := FALSE;
     ShiftMode : McShiftModeEnum;
     ShiftProfileBase : McProfileBaseEnum;
-    ShiftProfileBaseMaxVelocity :REAL := 0.0; (* max velocity of profile base during offset. 0.0: use velocity of the profile base axis *)
+    Shift : LREAL; (* shift distance *)
+    ShiftVelocityMax : REAL;
+    ShiftProfileDistance : LREAL;
     (* Zone params used with profile base mcXxx_ZONE *)
     ShiftZoneStartPosition : LREAL;
     ShiftZoneEndPosition : LREAL;
     ShiftZonePeriod : LREAL := 0.0; (* 0: period defined for the profile base is used *)
-    ShiftJerk : REAL := 0.0;
+    _endShiftSection : BOOL := FALSE;
+    _beginCamInSection : BOOL := FALSE;
+    CamIsPeriodic : BOOL := TRUE; (* H: cam is performed periodically, L: cam is performed once *)
+    CamId : UINT; (* cam id used with CamIn *)
+    CamMasterOffset : LREAL := 0.0;  
+    CamSlaveOffset : LREAL := 0.0;  
+    CamScalingMaster : DINT := 1000; (* Cam scaling factor for master *)
+    CamScalingSlave : DINT := 1000; (* Cam scaling factor for scaling *)
+    CamStartMode : McCamStartModeEnum;
+    CamMasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
+    CamBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    _endCamInSection : BOOL := FALSE;
   END_STRUCT;
 
   sMot_AxisCommands : 	STRUCT  (*command structure for single and master axes*)

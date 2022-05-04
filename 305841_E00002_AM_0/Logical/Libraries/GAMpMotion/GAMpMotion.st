@@ -130,11 +130,17 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
   // Update coupling params if a slave axis is designated for this axis. 
   // The slave need not be engaged. The engage/disengage, gear, and shfit requests are handled later.
   IF _I_Axis.CouplingParameters.SlaveAxisNo <> GAMOT_ASMS_INITIAL THEN
-    _I_Axis.CouplingParameters.RatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
-    _I_Axis.CouplingParameters.RatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
+    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
+    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
+    _I_Axis.CouplingParameters.GearInMasterValueSource := ???;
+    _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
+    _I_Axis.CouplingParameters.ShiftAccelerationMax := ???;
+    _I_Axis.CouplingParameters.ShiftDecelerationMax := ???;
+    _I_Axis.CouplingParameters.ShiftJerk := 0.0;
+    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0;
     // For cam scaling, use the gear ratio. Slave uses numerator and master uses denominator.
-    _I_Axis.CouplingParameters.CamScalingMaster := _I_HmiAxisReq.GearRatioDenominator;
-    _I_Axis.CouplingParameters.CamScalingSlave := _I_HmiAxisReq.GearRatioNumerator;
+    _I_Axis.CouplingParameters.CamScalingMaster := _I_HmiAxisReq.CamScalingMaster;
+    _I_Axis.CouplingParameters.CamScalingSlave := _I_HmiAxisReq.CamScalingSlave;
     // Gear, Gear In Pos, Offset Shift and Phase shift all use the slave accel/decel values,
     // so make sure the values are set in the coupling params structure
     // Set to 0.0 to use slave max
@@ -200,31 +206,70 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
   END_IF;
   
   // Handle a coupling or decoupling (gear in or cam in) request.
-  // Only allow coupling if the slave allows it
-  IF _I_HmiAxisReq.disengageSlaveReq THEN
-    // turn off gearing, caming, block the engage reqs, and clear the disengage req
+  // Only allow coupling if a slave is designated and the slave allows it
+  // Decouple on request as long as there is a slave designated.
+  IF _I_Axis.CouplingParameters.SlaveAxisNo = 0 THEN
+    // No slave designated
+    // Clear the request
+    _I_HmiAxisReq.gearInReq := FALSE;
+    _I_HmiAxisReq.camInReq := FALSE;
+  // Slave must be designated to get past this, so no need to keep checking
+  ELSIF _I_SlaveAxis.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
+        (_I_HmiAxisReq.disengageSlaveReq OR _I_SlaveAxis.CouplingParameters.CouplingPermissive) THEN
+    // Slave is coupled, but disengage slave request or coupling not allowed. 
+    // Turn off gearing, caming, block the engage reqs, and clear the disengage req
     _I_Axis.CouplingParameters.GearOutReq := TRUE;
     _I_Axis.CouplingParameters.CamOutReq := TRUE;
     _I_HmiAxisReq.gearInReq := FALSE;
     _I_HmiAxisReq.camInReq := FALSE;
     _I_HmiAxisReq.disengageSlaveReq := FALSE;
   ELSIF _I_HmiAxisReq.gearInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
-    // turn on gearing and clear the requst
+    // Gear in requested and allowed.
+    // Load the params. Use values from the HMI structure when available
+    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
+    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
+    _I_Axis.CouplingParameters.GearInMasterValueSource := mcVALUE_SET;
+    _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
+    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.Acceleration; // slave accel
+    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.Deceleration; // slave decel
+    _I_Axis.CouplingParameters.ShiftJerk := 0.0; // non-zero only supported with McProfGen
+    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // Allow master max velocity
+    // Turn on gearing and clear the requst
     _I_Axis.CouplingParameters.GearInReq := TRUE;
     _I_HmiAxisReq.gearInReq := FALSE;
     // make sure the cam req is cleared
     _I_Axis.CouplingParameters.CamInReq := FALSE;
   ELSIF _I_HmiAxisReq.camInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
-    // turn on caming and clear the requst
+    // Cam in requested and allowed
+    // Load the params. Use values from the HMI structure when available
+    _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
+    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.CamId;
+    
+    // Allow different cams to have different scaling
+    IF _I_Axis.CouplingParameters.CamId = 1 THEN
+      // Cam table in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    ELSE
+      // Assume Cam table is in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    END_IF;
+    
+    // mcCAM_START_DIRECT: Start the cam using the current position of the master and slave.
+    // Use the master offset to set how far into the cam until starting takes place
+    // Slave offset is not used
+    _I_Axis.CouplingParameters.CamStartMode := mcCAM_START_DIRECT;
+    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.CamMasterOffset;
+    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.CamSlaveOffset;
+    // TODO: Actual or set point??
+    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
+    _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    // Turn on caming and clear the requst
     _I_Axis.CouplingParameters.CamInReq := TRUE;
     _I_HmiAxisReq.camInReq := FALSE;
     // make sure the gear in req is cleared
     _I_Axis.CouplingParameters.GearInReq := FALSE;
-  ELSIF (_I_HmiAxisReq.gearInReq OR _I_HmiAxisReq.camInReq) AND NOT _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
-    // Request made, but not allowed by slave.
-    // Clear the request
-    _I_HmiAxisReq.gearInReq := FALSE;
-    _I_HmiAxisReq.camInReq := FALSE;
   END_IF;    
   
   // Handle a offset or phase shift request
@@ -414,21 +459,74 @@ FUNCTION fctCalcAbsHomeOffset
   fctCalcAbsHomeOffset := _I_DesiredPos - _I_CurrentPos + _I_SetZeroOffset;
 END_FUNCTION
 
-// Check two coupling param structures for equality and return a boolean
-FUNCTION fctCheckEqCouplingParams
-  // Use the minimum size -- should be the becuase the two inputs are the same type
-  // Check for safety just in case the types change in the future
-  size := MIN(SIZEOF(_I_ParamsA),SIZEOF(_I_ParamsB));
-  // brsmemcmp returns 0 on equal and < or > 0 when not equal.
-  result := brsmemcmp(ADR(_I_ParamsA), ADR(_I_ParamsB), size);
-  // Return true on equal, false otherwise
-  IF result = 0 THEN
-    fctCheckEqCouplingParams := TRUE;
-  ELSE
-    fctCheckEqCouplingParams := FALSE;
-  END_IF;
+// Check CamIn params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqCamInParams
+    // This will test the cam in section for equality against the previous values.
+    
+    // First check the cam in section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginCamInSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endCamInSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginCamInSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+
+    // If parameter change has been detected, return false.
+    fctCheckEqCamInParams := (result = 0);
+
 END_FUNCTION
 
+
+// Check GearIn params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqGearInParams
+    // This will test the gear in section and the shift common section for equality
+    // against the previous values.
+    
+    // First check the gear in section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginGearInSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endGearInSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginGearInSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    // If parameter change has been detected, return  false, and no need to go any further.
+    // Otherwise check the shift common section
+    IF result <> 0 THEN
+      fctCheckEqGearInParams := FALSE;
+      RETURN
+    ELSE
+      // If we get here, the first check was equal.
+      // Get the start of the shift common params where we want to consider for updates
+       pParamsStart := ADR(_I_ParamsA._beginShiftCommonSection);
+      // end is where the next thing in memory would start, in this case the end of the section boundary
+      pParamsEnd := ADR(_I_ParamsA._endShiftCommonSection);
+      // size is the difference between start and end
+      size:= pParamsEnd - pParamsStart;
+      // previous values should start at the same element as the current values. The previous values are the 
+      // same structure type, so the name of the starting element and the length are reused
+      pParamsPrev := ADR(_I_ParamsB._beginShiftCommonSection);
+      
+      // See if the member structures are the same. Result will be 0 if they are the same.
+      result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    END_IF;
+
+    // The first check was equal, and this section checks the second section. If the result is zero,
+    // no change is detected, and the params are equal.
+    fctCheckEqCamInParams := (result = 0);
+
+END_FUNCTION
 
 // Check two move param structures for equality and return a boolean
 FUNCTION fctCheckEqMoveParams
@@ -438,12 +536,54 @@ FUNCTION fctCheckEqMoveParams
   // brsmemcmp returns 0 on equal and < or > 0 when not equal.
   result := brsmemcmp(ADR(_I_ParamsA), ADR(_I_ParamsB), size);
   // Return true on equal, false otherwise
-  IF result = 0 THEN
-    fctCheckEqMoveParams := TRUE;
-  ELSE
-    fctCheckEqMoveParams := FALSE;
-  END_IF;
+  fctCheckEqMoveParams := (result = 0);
 END_FUNCTION
+
+// Check Shift params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqShiftParams
+    // This will test the shift and the shift common sections for equality
+    // against the previous values.
+    
+    // First check the shift section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginShiftSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endShiftSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginShiftSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    // If parameter change has been detected, return  false, and no need to go any further.
+    // Otherwise check the shift common section
+    IF result <> 0 THEN
+      fctCheckEqShiftParams := FALSE;
+      RETURN
+    ELSE
+      // If we get here, the first check was equal.
+      // Get the start of the shift common params where we want to consider for updates
+       pParamsStart := ADR(_I_ParamsA._beginShiftCommonSection);
+      // end is where the next thing in memory would start, in this case the end of the section boundary
+      pParamsEnd := ADR(_I_ParamsA._endShiftCommonSection);
+      // size is the difference between start and end
+      size:= pParamsEnd - pParamsStart;
+      // previous values should start at the same element as the current values. The previous values are the 
+      // same structure type, so the name of the starting element and the length are reused
+      pParamsPrev := ADR(_I_ParamsB._beginShiftCommonSection);
+      
+      // See if the member structures are the same. Result will be 0 if they are the same.
+      result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    END_IF;
+
+    // The first check was equal, and this section checks the second section. If the result is zero,
+    // no change is detected, and the params are equal.
+    fctCheckEqCamInParams := (result = 0);
+
+END_FUNCTION
+
 
 // Clear command bits in the _IO_sMot_Command parameter if the bit in the eMOT_AXIS_CMD_MASK input mask is clear
 FUNCTION fctClearMotionCommands

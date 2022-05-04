@@ -63,14 +63,31 @@ FUNCTION fctCalcAbsHomeOffset : LREAL (* Return encoder offset for absolute home
   END_VAR
 END_FUNCTION
 
-FUNCTION fctCheckEqCouplingParams : BOOL (*Return true if the two structures are equal*)
+FUNCTION fctCheckEqCamInParams : BOOL (*Return true if the two structures are equal*)
 	VAR_INPUT
 		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
 		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
 	END_VAR
 	VAR
-		size : UDINT;
-		result : DINT;
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION fctCheckEqGearInParams : BOOL (*Return true if the two structures are equal*)
+	VAR_INPUT
+		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
+		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
+	END_VAR
+	VAR
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
 	END_VAR
 END_FUNCTION
 
@@ -82,6 +99,20 @@ FUNCTION fctCheckEqMoveParams : BOOL (*Return true if the two structures are equ
 	VAR
 		size : UDINT;
 		result : DINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION fctCheckEqShiftParams : BOOL (*Return true if the two structures are equal*)
+	VAR_INPUT
+		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
+		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
+	END_VAR
+	VAR
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
 	END_VAR
 END_FUNCTION
 
