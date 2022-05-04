@@ -273,19 +273,21 @@ ACTION ActionChkPermissiveCoupling:
   ax.MoveParameters.PermissiveCheck.CheckFailed:= FALSE;
 
   // Make sure to stop the master if the slave goes out of sync w/o being commanded to
-  IF (ax.fbGearIn.Active AND ax.Status.IsGearInSync) OR (ax.fbCamIn.Active AND ax.Status.IsCamInSync) THEN
-    // Slave is geared and in sync. Set the flag so loss of sync can be acted on
+  IF ((ax.fbGearIn.Active AND (ax.Status.IsGearInSync OR ax.Status.IsGearInCompensation)) OR 
+        (ax.fbCamIn.Active AND ax.Status.IsCamInSync)) THEN
+    // Slave is geared or cammed and in sync or in compensation. Set the flag so loss of sync can be acted on
     inSyncSlave := TRUE;
   ELSIF NOT ax.fbGearIn.Active AND NOT ax.fbCamIn.Active THEN
-    // Slave is not geared. Clear the flag
+    // Slave is not geared or cammed. Clear the flag
     inSyncSlave := FALSE;
   END_IF;
   
-  // If slave was synched, and is still supposed to be synched, and the master is moving, then stop the axis if the slave is not in sync or not in compensation
+  // If slave was synched or in compensation, and is still supposed to be synched (but isnt'), and the master is moving, then
+  // stop the master.
   // In compensation is true when slave is slowing down or speeding up to get into sync, like after a gear ratio change.
-  // TODO!! Needs testing: Need to figure out what takes the place of inCompnesation with discrete commands
-  IF inSyncSlave AND ax.Status.IsMoveActive AND (NOT ax.Status.IsGearInSync AND NOT ax.Status.IsCamInSync) THEN
-    ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+  IF inSyncSlave AND ax.Status.IsMoveActive AND
+      (NOT ax.Status.IsGearInSync AND NOT ax.Status.IsGearInCompensation AND NOT ax.Status.IsCamInSync) THEN
+    ; // TEMP TESTING ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
   END_IF;
   
   // TODO: Are there other checks??

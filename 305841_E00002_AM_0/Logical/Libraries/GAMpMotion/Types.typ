@@ -108,6 +108,8 @@ TYPE
     homePosition : LREAL := 0.0;
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
+    CamMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
+    CamSlaveOffset : LREAL := 0.0; (* gear factor of the master / measurment resolution of the master *)
     positionLimits : sMot_PositionLimits;
     moveDesignation : eGAMOT_MOVE_DESIGNATION := GAMOT_MD_NO_MOVE_COMMANDED;
     (* HMI move req *)
@@ -177,8 +179,9 @@ TYPE
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
-    IsCamInSync : BOOL := FALSE; (* slave is in sync with the master *)
     IsGearInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsGearInCompensation : BOOL := FALSE; (* slave is in compensation with the master *)
+    IsCamInSync : BOOL := FALSE; (* slave is in sync with the master *)
     IsCamEndOfProfile : BOOL := FALSE; (* Pulsed output indicating cyclic end of cam *)
     IsCoordOffsetShiftStarted : BOOL := FALSE; 
     IsCoordOffsetShiftAttained : BOOL := FALSE;

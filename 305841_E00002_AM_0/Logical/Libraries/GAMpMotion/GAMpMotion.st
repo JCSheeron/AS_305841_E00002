@@ -129,33 +129,54 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
   
   // Update coupling params if a slave axis is designated for this axis. 
   // The slave need not be engaged. The engage/disengage, gear, and shfit requests are handled later.
-  IF _I_Axis.CouplingParameters.SlaveAxisNo <> GAMOT_ASMS_INITIAL THEN
+  // These parameters are loaded from the HMI values here, ahead of the request, such that
+  // an HMI change can be detected and acted on below (gear change for example).
+  IF _I_Axis.CouplingParameters.SlaveAxisNo <> 0 THEN
+    // Load the params. Use values from the HMI structure when available
+    
+    // *** Gear In Params
     _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
     _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
-    _I_Axis.CouplingParameters.GearInMasterValueSource := ???;
+    _I_Axis.CouplingParameters.GearInMasterValueSource := mcVALUE_SET;
     _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
-    _I_Axis.CouplingParameters.ShiftAccelerationMax := ???;
-    _I_Axis.CouplingParameters.ShiftDecelerationMax := ???;
-    _I_Axis.CouplingParameters.ShiftJerk := 0.0;
-    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0;
-    // For cam scaling, use the gear ratio. Slave uses numerator and master uses denominator.
-    _I_Axis.CouplingParameters.CamScalingMaster := _I_HmiAxisReq.CamScalingMaster;
-    _I_Axis.CouplingParameters.CamScalingSlave := _I_HmiAxisReq.CamScalingSlave;
-    // Gear, Gear In Pos, Offset Shift and Phase shift all use the slave accel/decel values,
+    // Gear In,Offset Shift and Phase shift all use the slave accel/decel values,
     // so make sure the values are set in the coupling params structure
-    // Set to 0.0 to use slave max
-    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.Acceleration; // Use slave axis accel/decel
-    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.Deceleration;
-    // Set shift & offset related values
+    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.Acceleration; // slave accel. Set to 0.0 to use slave max
+    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.Deceleration; // slave decel. Set to 0.0 to use slave max
+    _I_Axis.CouplingParameters.ShiftJerk := 0.0; // non-zero only supported with McProfGen
+    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // Allow master max velocity
+    
+    // *** Cam params
+    _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
+    // Force ID of 1 for now
+    _I_HmiAxisReq.CamId := 1;
+    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.CamId;
+    // Allow different cams to have different scaling
+    // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example
+    IF _I_Axis.CouplingParameters.CamId = 1 THEN
+      // Cam table in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    ELSE
+      // Assume Cam table is in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    END_IF;
+    // mcCAM_START_DIRECT: Start the cam using the current position of the master and slave.
+    // Use the master offset to set how far into the cam until starting takes place
+    // Slave offset is not used
+    _I_Axis.CouplingParameters.CamStartMode := mcCAM_START_DIRECT;
+    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.CamMasterOffset;
+    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.CamSlaveOffset;
+    // TODO: Actual or set point??
+    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
+    _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    
+    // *** Shift & offset related values
+    // accel, decel, jerk and base max vel set above
     _I_Axis.CouplingParameters.Shift := _I_HmiAxisReq.shiftDistance;
     _I_Axis.CouplingParameters.ShiftVelocityMax := _I_SlaveAxis.MoveParameters.VelocityMax; // Use slave max velocity
-    // accel set above
-    // cmd independent activation is set false in fctPackMpAxisCouplingParams
-    // shift mode will be set by below base on which request is made
-    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // Use master axis max velocity
     _I_Axis.CouplingParameters.ShiftProfileDistance :=  _I_HmiAxisReq.shiftProfileDistance; // master distance over which to perform the shift
-    // non-zero jerk not supported for this -- set to zero in fctPackMpAxisCouplingParams
-    // no alternate values used. -- set to not used in fctPackMpAxisCouplingParams
   END_IF;
   
   IF _I_HmiAxisReq.moveReq THEN
@@ -225,15 +246,6 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_HmiAxisReq.disengageSlaveReq := FALSE;
   ELSIF _I_HmiAxisReq.gearInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
     // Gear in requested and allowed.
-    // Load the params. Use values from the HMI structure when available
-    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
-    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
-    _I_Axis.CouplingParameters.GearInMasterValueSource := mcVALUE_SET;
-    _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
-    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.Acceleration; // slave accel
-    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.Deceleration; // slave decel
-    _I_Axis.CouplingParameters.ShiftJerk := 0.0; // non-zero only supported with McProfGen
-    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // Allow master max velocity
     // Turn on gearing and clear the requst
     _I_Axis.CouplingParameters.GearInReq := TRUE;
     _I_HmiAxisReq.gearInReq := FALSE;
@@ -241,30 +253,6 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_Axis.CouplingParameters.CamInReq := FALSE;
   ELSIF _I_HmiAxisReq.camInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
     // Cam in requested and allowed
-    // Load the params. Use values from the HMI structure when available
-    _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
-    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.CamId;
-    
-    // Allow different cams to have different scaling
-    IF _I_Axis.CouplingParameters.CamId = 1 THEN
-      // Cam table in units of degrees, and resolution is 0.001 for both axes
-      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
-      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
-    ELSE
-      // Assume Cam table is in units of degrees, and resolution is 0.001 for both axes
-      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
-      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
-    END_IF;
-    
-    // mcCAM_START_DIRECT: Start the cam using the current position of the master and slave.
-    // Use the master offset to set how far into the cam until starting takes place
-    // Slave offset is not used
-    _I_Axis.CouplingParameters.CamStartMode := mcCAM_START_DIRECT;
-    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.CamMasterOffset;
-    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.CamSlaveOffset;
-    // TODO: Actual or set point??
-    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
-    _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)
     // Turn on caming and clear the requst
     _I_Axis.CouplingParameters.CamInReq := TRUE;
     _I_HmiAxisReq.camInReq := FALSE;
@@ -505,7 +493,7 @@ FUNCTION fctCheckEqGearInParams
     // Otherwise check the shift common section
     IF result <> 0 THEN
       fctCheckEqGearInParams := FALSE;
-      RETURN
+      RETURN;
     ELSE
       // If we get here, the first check was equal.
       // Get the start of the shift common params where we want to consider for updates
@@ -524,7 +512,8 @@ FUNCTION fctCheckEqGearInParams
 
     // The first check was equal, and this section checks the second section. If the result is zero,
     // no change is detected, and the params are equal.
-    fctCheckEqCamInParams := (result = 0);
+    fctCheckEqGearInParams := (result = 0);
+      
 
 END_FUNCTION
 
@@ -561,7 +550,7 @@ FUNCTION fctCheckEqShiftParams
     // Otherwise check the shift common section
     IF result <> 0 THEN
       fctCheckEqShiftParams := FALSE;
-      RETURN
+      RETURN;
     ELSE
       // If we get here, the first check was equal.
       // Get the start of the shift common params where we want to consider for updates
@@ -580,7 +569,7 @@ FUNCTION fctCheckEqShiftParams
 
     // The first check was equal, and this section checks the second section. If the result is zero,
     // no change is detected, and the params are equal.
-    fctCheckEqCamInParams := (result = 0);
+    fctCheckEqShiftParams := (result = 0);
 
 END_FUNCTION
 

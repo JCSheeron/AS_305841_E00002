@@ -547,7 +547,7 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamScalingMaster := 1000;
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamScalingSlave := 1000;
 
 // Use pos. sp for master pos source. Good when master has closed loop pos ctrl.
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterValueSource := mcVALUE_SET; 
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamMasterValueSource := mcVALUE_SET; 
 // Cam start mode
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamStartMode := mcCAM_START_ABSOLUTE;
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamIsPeriodic := TRUE;

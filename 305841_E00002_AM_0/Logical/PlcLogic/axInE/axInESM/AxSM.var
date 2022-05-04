@@ -37,10 +37,6 @@ VAR CONSTANT
   axDummySlave : McAxisType;
 	(* local versions of motion param structures -- used to make setting advanced params easier *)
   axisBasicParams : MpAxisBasicParType; 
-  axisCamInAdvParams : McAdvCamInParType;
-  axisGearInAdvParams : McAdvGearInParType;
-  axisOffsetAdvParams : McAdvOffsetParType;
-  axisPhaseAdvParams : McAdvPhasingParType;
   tmrStepTO : TON; (* Step TO timer *)
   reqMask : DINT := MACM_NOMASK; (* request mask *)
   cmdMask : DINT := MACM_NOMASK; (* command mask *)

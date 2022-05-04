@@ -170,15 +170,14 @@ ACTION ActionCamInOut:
     ax.fbCamIn.MasterScaling := ax.CouplingParameters.CamScalingMaster;
     ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
     ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
-    ax.fbCamIn.MasterValueSource := ax.CouplingParameters.MasterValueSource;
+    ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
     ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
     ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
-    axisCamInAdvParams.Periodic := ax.CouplingParameters.CamIsPeriodic;
-    axisCamInAdvParams.Velocity := 0.0; // disable, use (slave?) axis max vel
-    axisCamInAdvParams.Acceleration := 0.0; // disable, use (slave?) axis max accel
-    axisCamInAdvParams.Deceleration := 0.0; // disable, use (slave?) axis max decel
-    axisCamInAdvParams.Jerk := 0.0; // only non-zero if using McProfGen
-    ax.fbCamIn.AdvancedParameters := axisCamInAdvParams;
+    ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;
+    ax.fbCamIn.AdvancedParameters.Velocity := 0.0; // disable, use (slave?) axis max vel
+    ax.fbCamIn.AdvancedParameters.Acceleration := 0.0; // disable, use (slave?) axis max accel
+    ax.fbCamIn.AdvancedParameters.Deceleration := 0.0; // disable, use (slave?) axis max decel
+    ax.fbCamIn.AdvancedParameters.Jerk := 0.0; // only non-zero if using McProfGen
     ax.fbCamIn.Execute := TRUE; // fb looks for a rising edge
   ELSIF ax.CouplingParameters.CamOutReq THEN
     // Clear the req so a future rising edge can be seen
@@ -199,7 +198,7 @@ ACTION ActionCamInOut:
   ax.fbCamOut.Execute := FALSE;
     
   // Update the axis status structure
-  IF (ax.fbCamIn.Busy OR ax.fbCamIn.Active) AND NOT ax.fbCamIn.Error THEN
+  IF ax.fbCamIn.Active AND NOT ax.fbCamIn.Error THEN
     ax.Status.IsCamInSync := ax.fbCamIn.InSync;
     ax.Status.IsCamEndOfProfile := ax.fbCamIn.EndOfProfile;
     ax.Status.CamStatus := ax.fbCamIn.Status;
@@ -215,7 +214,6 @@ ACTION ActionGearInOut:
   // Execute the gear in or gear out fbs based on the GearIn/Out requests
   // The fbs are edge triggered, and the requests are cleared once serviced.
   // If the gearing params change, another request must be made.
-  // TODO: Is gear out and another gear in needed if params change?
 
   // Only execute the gear in fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
@@ -237,15 +235,14 @@ ACTION ActionGearInOut:
     ax.CouplingParameters.GearOutReq := FALSE;
     ax.fbGearOut.Execute := FALSE;
     // Load the gear in params, then set the execute input (edge triggered fb)
-    ax.fbGearIn.RatioNumerator := ax.CouplingParameters.RatioNumerator;
-    ax.fbGearIn.RatioDenominator := ax.CouplingParameters.RatioDenominator;
-    ax.fbGearIn.MasterValueSource := ax.CouplingParameters.MasterValueSource;
+    ax.fbGearIn.RatioNumerator := ax.CouplingParameters.GearInRatioNumerator;
+    ax.fbGearIn.RatioDenominator := ax.CouplingParameters.GearInRatioDenominator;
+    ax.fbGearIn.MasterValueSource := ax.CouplingParameters.GearInMasterValueSource;
     ax.fbGearIn.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
     ax.fbGearIn.Deceleration := ax.CouplingParameters.ShiftDecelerationMax;
-    ax.fbGearIn.Jerk := 0.0; // only non-zero if using McProfGen
-    ax.fbGearIn.BufferMode := mcABORTING; // onlly mcAborting currently supported
-    axisGearInAdvParams.MasterMaxVelocity := 0.0; // use axis max vel
-    ax.fbGearIn.AdvancedParameters := axisGearInAdvParams;
+    ax.fbGearIn.Jerk := ax.CouplingParameters.ShiftJerk; // only non-zero if using McProfGen
+    ax.fbGearIn.BufferMode := ax.CouplingParameters.GearInBufferMode; // onlly mcAborting currently supported
+    ax.fbGearIn.AdvancedParameters.MasterMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
     ax.fbGearIn.Execute := TRUE; // fb looks for a rising edge
   ELSIF ax.CouplingParameters.GearOutReq THEN
     // Clear the req so a future rising edge can be seen
@@ -265,11 +262,15 @@ ACTION ActionGearInOut:
   ax.fbGearIn.Execute := FALSE;
   ax.fbGearOut.Execute := FALSE;
       
-  // Update the axis status structure
-  IF (ax.fbGearIn.Busy OR ax.fbGearIn.Active) AND NOT ax.fbGearIn.Error THEN
+  // Update the axis status structure.
+  // Derrive InCompensation -- Active but not in sync
+  IF ax.fbGearIn.Active AND NOT ax.fbGearIn.Error THEN
+    // If gear in is active, it is either in sync or in compensation
     ax.Status.IsGearInSync := ax.fbCamIn.InSync;
+    ax.Status.IsGearInCompensation := NOT ax.fbCamIn.InSync;
   ELSE
     ax.Status.IsGearInSync := FALSE;
+    ax.Status.IsGearInCompensation := FALSE;
   END_IF;
 
 END_ACTION
@@ -278,7 +279,6 @@ ACTION ActionOffsetShift:
   // Execute the offset shift fb based on the offset shift request.
   // The fb is edge triggered, and the request is cleared once serviced.
   // If the offset params change, another request must be made.
-  // TODO: Verify operation/behavior when changing params
 
   // Only execute the offset shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
@@ -305,15 +305,14 @@ ACTION ActionOffsetShift:
     ax.fbOffsetShift.OffsetShift := ax.CouplingParameters.Shift;
     ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
     ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
-    axisOffsetAdvParams.ShiftMode := ax.CouplingParameters.ShiftMode;
-    axisOffsetAdvParams.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
-    axisOffsetAdvParams.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
-    axisOffsetAdvParams.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
-    axisOffsetAdvParams.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
-    axisOffsetAdvParams.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
-    axisOffsetAdvParams.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
-    axisOffsetAdvParams.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
-    ax.fbOffsetShift.AdvancedParameters := axisOffsetAdvParams;
+    ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
+    ax.fbOffsetShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
     ax.fbOffsetShift.StartShift := TRUE; // fb looks for a rising edge
   END_IF;
   
@@ -367,15 +366,14 @@ ACTION ActionPhaseShift:
     ax.fbPhaseShift.PhaseShift := ax.CouplingParameters.Shift;
     ax.fbPhaseShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
     ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
-    axisPhaseAdvParams.ShiftMode := ax.CouplingParameters.ShiftMode;
-    axisPhaseAdvParams.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
-    axisPhaseAdvParams.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
-    axisPhaseAdvParams.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
-    axisPhaseAdvParams.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
-    axisPhaseAdvParams.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
-    axisPhaseAdvParams.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
-    axisPhaseAdvParams.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
-    ax.fbPhaseShift.AdvancedParameters := axisPhaseAdvParams;
+    ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
+    ax.fbOffsetShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
     ax.fbPhaseShift.StartShift := TRUE; // fb looks for a rising edge
   END_IF;
   
