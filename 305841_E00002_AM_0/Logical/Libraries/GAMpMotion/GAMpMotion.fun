@@ -25,6 +25,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq   (* Process axis requests from HMI and popul
     _I_Axis : REFERENCE TO sMot_Axis;
     _I_SlaveAxis : REFERENCE TO sMot_Axis;
     _I_AxisPositionLimits : REFERENCE TO sMot_PositionLimits;
+    _I_ToleranceZeroDepth : LREAL := 0.001;
   END_VAR
 	
   VAR

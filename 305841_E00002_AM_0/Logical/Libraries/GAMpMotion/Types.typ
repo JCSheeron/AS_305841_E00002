@@ -75,6 +75,7 @@ TYPE
     (* NOTE: BE CAREFUL about changes and reordering -- HMI and memcopy/memset ramifications *)
     (* Boolean reqs are cleared with memset so adding/removing/moving may be problematic *)
     (* NOTE: Do not add bool reqs before moveReq that should be cleared while in safe/emo modes. *)
+    _beginResetSection : BOOL := FALSE;
     moveReq : BOOL := FALSE;
     haltReq : BOOL := FALSE;
     stopReq : BOOL := FALSE;
@@ -85,13 +86,13 @@ TYPE
     disableReq : BOOL := FALSE;
     manBrakeRelReq : BOOL := FALSE;
     clearManBrakeRelReq : BOOL := FALSE;
-    offsetShiftRelReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
-    phaseShiftRelReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
-    offsetShiftAbsReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
-    phaseShiftAbsReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
+    offsetShiftReq : BOOL := FALSE; (* shift slave pos on the slave axis, shift value in slave units *)
+    phaseShiftReq : BOOL := FALSE; (* shift master pos on the slave axis, shift value in master units *)
+    phaseShiftToMasterPosReq : BOOL := FALSE; (* shift master pos on the slave axis, shift value by axis offset in master units *)
     gearInReq : BOOL := FALSE;
     camInReq : BOOL := FALSE;
     disengageSlaveReq : BOOL := FALSE; (* Disengage cam and gear *)
+    _endResetSection : BOOL := FALSE;
     (* NOTE: Do not add bool reqs after disengageSlaveReq that should be cleared in safe/emo modes.  HMI and memcopy/memset ramifications. *)
     (* Other requests *)
     (* NOTE: Do not add bool reqs before setPositionLimitsReq that should be cleared while in emo mode. *)
@@ -101,15 +102,15 @@ TYPE
     stopResetReq : BOOL := FALSE;
     errorResetReq : BOOL := FALSE;
     driveResetReq : BOOL := FALSE;
-    (* NOTE: Do not add bool reqs after driveResetReq that should be cleared in emo mode.  HMI and memcopy/memset ramifications. *)
     axisNo : USINT := 0; (* convenience axis number this structure corresponds to *)
     (* gear in related *)
     GearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
     GearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
     (* shift related *)
+    shiftOverMasterDistance : BOOL := FALSE; (* H: Perofrm shift over specified master distance Use mcPROFBASE_MASTER_DISTANCE and shiftProfileDistance *)
+    shiftType : SINT := 0; (* based on HMI radio buttons. 0: Relative, 1: Abs *)
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
-    shiftProfileBase : McProfileBaseEnum := mcPROFBASE_MASTER_POSITION;
     (* cam related *)
     CamId : UINT;
     CamMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
@@ -121,6 +122,7 @@ TYPE
     (* BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk *)
     (* MAY NEED TO ADJUST fgProcessHmiMoveReq instruction in GaMpMotion library *)
     (* These move params are copied to/from the HMI move req structure using memcpy *)
+    _startParamCopy : BOOL := FALSE;
     Direction : McDirectionEnum := mcDIR_UNDEFINED; (* direction for commanded movements*)
     Distance : LREAL := 0.0; (* distance for move Commands *)
     Position : LREAL := 0.0; (* target position for home or the motion *)
@@ -128,6 +130,7 @@ TYPE
     Acceleration : REAL := 1.0; (* acceleration for commanded movements *)
     Deceleration : REAL := 1.0; (* deceleration for commanded movements *)
     MaxJerk : REAL := 0.0; (* deceleration for commanded movements *)
+    _endParamCopy : BOOL := FALSE;
     (* NOTE: BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between direction and MaxJerk *)
   END_STRUCT;
   

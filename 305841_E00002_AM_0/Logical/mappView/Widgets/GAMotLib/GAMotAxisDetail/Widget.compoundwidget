@@ -36,7 +36,7 @@
         <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblAxisStatus1" top="-1" left="-1" width="371" height="36" zIndex="28" value="axis name" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxMoveCmd" top="15" left="415" width="585" height="485" zIndex="1" text="Move Command">
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxMoveCmd" top="15" left="415" width="585" height="435" zIndex="1" text="Move Command">
       <Widgets>
         <Widget xsi:type="widgets.brease.RadioButtonGroup" id="rdoBtnGrpMoveType" top="3" left="24" width="145" height="142" zIndex="0">
           <Widgets>
@@ -53,27 +53,27 @@
           </Widgets>
         </Widget>
         <Widget xsi:type="widgets.brease.NumericInput" id="numInDistMoveParam" top="53" left="364" width="120" zIndex="2" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInVelMoveParam" top="188" left="29" width="120" zIndex="3" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" />
-        <Widget xsi:type="widgets.brease.Label" id="lblVelMoveParam" top="163" left="24" zIndex="4" text="Vel" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInVelMoveParam" top="173" left="29" width="120" zIndex="3" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelMoveParam" top="148" left="24" zIndex="4" text="Vel" />
         <Widget xsi:type="widgets.brease.Label" id="lblDistMoveParam" top="53" left="489" zIndex="5" text="Distance" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInAccelMoveParam" top="188" left="164" width="120" zIndex="6" />
-        <Widget xsi:type="widgets.brease.Label" id="lblAccelMoveParam" top="163" left="159" zIndex="7" text="Accel" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInDecelMoveParam" top="188" left="304" width="120" zIndex="8" />
-        <Widget xsi:type="widgets.brease.Label" id="lblDecelMoveParam" top="163" left="299" zIndex="9" text="Decel" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInAccelMoveParam" top="173" left="164" width="120" zIndex="6" />
+        <Widget xsi:type="widgets.brease.Label" id="lblAccelMoveParam" top="148" left="159" zIndex="7" text="Accel" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInDecelMoveParam" top="173" left="304" width="120" zIndex="8" />
+        <Widget xsi:type="widgets.brease.Label" id="lblDecelMoveParam" top="148" left="299" zIndex="9" text="Decel" />
         <Widget xsi:type="widgets.brease.NumericInput" id="numInPosMoveParam" top="8" left="364" width="120" zIndex="10" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" />
         <Widget xsi:type="widgets.brease.Label" id="lblPosMoveParam" top="8" left="489" zIndex="11" text="Position" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInJerkMoveParam" top="188" left="444" width="120" zIndex="12" />
-        <Widget xsi:type="widgets.brease.Label" id="lblJerkMoveParam" top="163" left="439" zIndex="13" text="Jerk" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbStart" top="253" left="14" width="116" height="45" zIndex="14" text="GO!" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbStop" top="253" left="444" width="115" height="45" zIndex="15" multiLine="true" text="STOP (latched)" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbStopReset" top="323" left="444" width="116" height="42" zIndex="16" text="Stop Reset" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbDriveReset" top="388" left="14" width="116" height="42" zIndex="18" text="Drive Reset" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbHomeDlg" top="388" left="444" width="116" height="42" zIndex="19" text="Home ... " style="Command1" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbEnable" top="323" left="159" width="116" height="42" zIndex="20" multiLine="true" text="Enable (Power On)" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbDisable" top="388" left="159" width="116" height="42" zIndex="21" text="Disable" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbHalt" top="253" left="230" width="115" height="45" zIndex="22" text="HALT" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbManBrakeRel" top="323" left="304" width="116" height="42" zIndex="23" multiLine="true" text="Manual\nBrake Rel" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbClearManBrakeRel" top="388" left="304" width="116" height="42" zIndex="24" multiLine="true" text="Clear Man.\nBrake Rel" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInJerkMoveParam" top="173" left="444" width="120" zIndex="12" />
+        <Widget xsi:type="widgets.brease.Label" id="lblJerkMoveParam" top="148" left="439" zIndex="13" text="Jerk" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStart" top="213" left="14" width="116" height="45" zIndex="14" text="GO!" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStop" top="213" left="444" width="115" height="45" zIndex="15" multiLine="true" text="STOP (latched)" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStopReset" top="273" left="444" width="116" height="42" zIndex="16" text="Stop Reset" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbDriveReset" top="338" left="14" width="116" height="42" zIndex="18" text="Drive Reset" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbHomeDlg" top="338" left="444" width="116" height="42" zIndex="19" text="Home ... " style="Command1" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbEnable" top="273" left="159" width="116" height="42" zIndex="20" multiLine="true" text="Enable (Power On)" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbDisable" top="338" left="159" width="116" height="42" zIndex="21" text="Disable" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbHalt" top="213" left="230" width="115" height="45" zIndex="22" text="HALT" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbManBrakeRel" top="273" left="304" width="116" height="42" zIndex="23" multiLine="true" text="Manual\nBrake Rel" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbClearManBrakeRel" top="338" left="304" width="116" height="42" zIndex="24" multiLine="true" text="Clear Man.\nBrake Rel" wordWrap="true" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbSetPosLimitsDlg" top="98" left="369" width="116" height="42" zIndex="25" text="Set Limits ..." style="Command1" />
       </Widgets>
     </Widget>
@@ -106,7 +106,7 @@
         <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="24" value="slave axis name" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="510" left="415" width="585" height="165" zIndex="3" backColor="rgba(255, 255, 255, 1)">
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="465" left="415" width="585" height="215" zIndex="3" backColor="rgba(255, 255, 255, 1)">
       <Widgets>
         <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioDenominator" top="64" left="149" width="120" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
         <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioNumerator" top="64" left="9" width="120" zIndex="1" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
@@ -115,11 +115,19 @@
         <Widget xsi:type="widgets.brease.PushButton" id="pbDisengageSlave" top="109" left="149" width="116" height="42" zIndex="4" multiLine="true" text="Disengage Inner Ecc" wordWrap="true" />
         <Widget xsi:type="widgets.brease.Label" id="lblColon" top="68" left="129" width="21" height="22" zIndex="5" text=":" textAlign="center" fontSize="24px" bold="true" />
         <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus2" top="-1" left="-6" width="590" zIndex="6" value="slave axis" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInSlaveOffsetAmt" top="64" left="309" zIndex="7" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInMasterDistance" top="64" left="444" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
-        <Widget xsi:type="widgets.brease.Label" id="lblSlaveOffsetAmt" top="34" left="304" width="106" zIndex="9" text="Slave Offset" bold="true" />
-        <Widget xsi:type="widgets.brease.Label" id="lblMasterDistance" top="34" left="444" width="106" zIndex="10" text="Master Dist." bold="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbOffsetSlave" top="109" left="369" width="116" height="42" zIndex="11" multiLine="true" text="Offset Slave" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInSlaveOffsetAmt" top="54" left="304" zIndex="7" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInMasterDistance" top="124" left="304" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
+        <Widget xsi:type="widgets.brease.Label" id="lblSlaveOffsetAmt" top="29" left="304" width="106" zIndex="9" text="Slave Offset" bold="true" />
+        <Widget xsi:type="widgets.brease.Label" id="lblMasterDistance" top="94" left="304" width="106" zIndex="10" text="Master Dist." bold="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbOffsetSlave" top="164" left="299" width="116" height="42" zIndex="11" multiLine="true" text="Offset Slave" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.RadioButtonGroup" id="rdoBtnGrpShiftType" top="34" left="414" width="121" height="66" zIndex="12">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnOffsetRel" top="5" left="5" width="105" height="25" zIndex="0" text="Relative" />
+            <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnOffsetAbs" top="35" left="5" width="105" height="25" zIndex="1" text="Absolute" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxOverMasterDist" top="119" left="419" width="166" zIndex="13" text="Over Master Dist." />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbToMasterPos" top="164" left="454" width="116" height="42" zIndex="14" multiLine="true" text="To Outter\nEcc. Pos." wordWrap="true" />
       </Widgets>
     </Widget>
   </Widgets>
@@ -154,8 +162,8 @@
         -->
         <Mapping widget="numOutPosAct" property="node" type="Number" mode="oneWay" memberPath="Position" mapToNode="true" />
         <Mapping widget="numOutVelAct" property="node" type="Number" mode="oneWay" memberPath="Velocity" mapToNode="true" />
-        <Mapping widget="numOutPhaseShiftAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true" />
-        <Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualPhaseShift" mapToNode="true" />
+        <Mapping widget="numOutPhaseShiftAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualPhaseShift" mapToNode="true" />
+        <Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true" />
       </Mappings>
     </Property>
     
@@ -185,11 +193,14 @@
         <Mapping widget="pbDisable" property="value" type="Boolean" mode="oneWayToSource" memberPath="disableReq" mapToNode="false" />
         <Mapping widget="pbManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="manBrakeRelReq" mapToNode="false" />
         <Mapping widget="pbClearManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="clearManBrakeRelReq" mapToNode="false" />
-        <Mapping widget="pbEngageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="engageSlaveReq" mapToNode="false" />
-        <Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false" />
-        <Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftRelReq" mapToNode="false" />
         <Mapping widget="pbStopReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="stopResetReq" mapToNode="false" />
         <Mapping widget="pbDriveReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="driveResetReq" mapToNode="false" />
+        <Mapping widget="pbEngageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="gearInReq" mapToNode="false" />
+        <Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false" />
+        <Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftReq" mapToNode="false" />
+        <Mapping widget="pbToMasterPos" property="value" type="Boolean" mode="oneWayToSource" memberPath="phaseShiftToMasterPosReq" mapToNode="false" />
+        <Mapping widget="chkBoxOverMasterDist" property="value" type="Boolean" mode="oneWayToSource" memberPath="shiftOverMasterDistance" mapToNode="false" />
+        <Mapping widget="rdoBtnGrpShiftType" property="selectedIndex" type="Number" mode="oneWayToSource" memberPath="shiftType" mapToNode="false" />
         <Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true" />
         <Mapping widget="numInDistMoveParam" property="node" type="Number" mode="twoWay" memberPath="Distance" mapToNode="true" />
         <Mapping widget="numInVelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true" />
@@ -690,6 +701,7 @@
         <Mapping widget="numInSlaveOffsetAmt" property="enable" mode="oneWay"/>
         <Mapping widget="numInMasterDistance" property="enable" mode="oneWay"/>
         <Mapping widget="pbOffsetSlave" property="enable" mode="oneWay"/>
+        <Mapping widget="pbToMasterPos" property="enable" mode="oneWay"/>
       </Mappings>
     </Property>
 

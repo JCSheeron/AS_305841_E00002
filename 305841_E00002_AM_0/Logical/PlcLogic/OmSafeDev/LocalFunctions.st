@@ -79,11 +79,11 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI machine specific requests, an
   // Coordinated shift commands cannot be enabled unless:
   // 1) The slave is gear coordinated and InSync
   // 2) The master is moving  
-  // 3) A phase shift or offset shift is not underway
+  // 3) Phase shift and offset shift are busy (enabled) but not in progress
   _I_MachineAxisReqs.shiftEnable := _I_Axis.Status.IsGearInSync AND
     _I_Axis.Status.IsMoveActive AND
-    NOT _I_Axis.fbOffsetShift.Busy AND NOT _I_Axis.fbOffsetShift.ShiftStarted AND
-    NOT _I_Axis.fbPhaseShift.Busy AND NOT _I_Axis.fbPhaseShift.ShiftStarted;
+    _I_Axis.fbOffsetShift.Busy AND NOT _I_Axis.fbOffsetShift.ShiftStarted AND
+    _I_Axis.fbPhaseShift.Busy AND NOT _I_Axis.fbPhaseShift.ShiftStarted;
   
   // Now the direction options should be qualified, set the direction that the GAMpMotion library will see
   _I_LibraryAxisReqs.Direction := fctDecodeHmiDirection(_I_DirectionReq := _I_MachineAxisReqs.direction);
@@ -96,7 +96,11 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI machine specific requests, an
   );
   
   // The move type and direction have now been pre-processed. Call the library function to process the requests.
-  procLibraryReq(_I_HmiAxisReq := ADR(_I_LibraryAxisReqs), _I_Axis := ADR(_I_Axis), _I_SlaveAxis := ADR(_I_SlaveAxis), _I_AxisPositionLimits := ADR(_I_AxisPositionLimits));
+  procLibraryReq(_I_HmiAxisReq := ADR(_I_LibraryAxisReqs),
+                 _I_Axis := ADR(_I_Axis),
+                 _I_SlaveAxis := ADR(_I_SlaveAxis),
+                 _I_AxisPositionLimits := ADR(_I_AxisPositionLimits),
+                 _I_ToleranceZeroDepth := TOL_DEPTH_ZERO_DEG);
 
 END_FUNCTION_BLOCK
 
