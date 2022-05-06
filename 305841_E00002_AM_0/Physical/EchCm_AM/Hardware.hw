@@ -275,6 +275,7 @@
     <Parameter ID="ConfigurationID" Value="305841_E00002_Rev0_PLC_Main" />
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
+    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="PermanentPvSize" Value="9216" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
     <Parameter ID="Cyclic1Duration" Value="2000" />

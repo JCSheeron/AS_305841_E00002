@@ -223,8 +223,8 @@ ClearCycleReqs;
 
 // Use the gear ratio coming from the pendant for the hmi request strucure. 
 // It is the hmi request structure values that will get sent to the axis.
-hmiLibraryAxisReqs[AD_HANDWHEEL].GearRatioNumerator := owsPendant.GearRatioNumerator;
-hmiLibraryAxisReqs[AD_HANDWHEEL].GearRatioDenominator := owsPendant.GearRatioDenominator;
+hmiLibraryAxisReqs[AD_HANDWHEEL].gearRatioNumerator := owsPendant.GearRatioNumerator;
+hmiLibraryAxisReqs[AD_HANDWHEEL].gearRatioDenominator := owsPendant.GearRatioDenominator;
 
 // Process manual requests -- Allow these in pendant mode.
 // Inputs set in init. This fb looks for a rising edge on the HMI move request, and 

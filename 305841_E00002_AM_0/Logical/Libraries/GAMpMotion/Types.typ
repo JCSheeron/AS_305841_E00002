@@ -104,17 +104,17 @@ TYPE
     driveResetReq : BOOL := FALSE;
     axisNo : USINT := 0; (* convenience axis number this structure corresponds to *)
     (* gear in related *)
-    GearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
-    GearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
+    gearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
+    gearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
     (* shift related *)
     shiftOverMasterDistance : BOOL := FALSE; (* H: Perofrm shift over specified master distance Use mcPROFBASE_MASTER_DISTANCE and shiftProfileDistance *)
     shiftType : SINT := 0; (* based on HMI radio buttons. 0: Relative, 1: Abs *)
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
     (* cam related *)
-    CamId : UINT;
-    CamMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
-    CamSlaveOffset : LREAL := 0.0; (* gear factor of the master / measurment resolution of the master *)
+    camId : UINT;
+    camMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
+    camSlaveOffset : LREAL := 0.0; (* gear factor of the master / measurment resolution of the master *)
     homePosition : LREAL := 0.0;
     positionLimits : sMot_PositionLimits;
     moveDesignation : eGAMOT_MOVE_DESIGNATION := GAMOT_MD_NO_MOVE_COMMANDED;

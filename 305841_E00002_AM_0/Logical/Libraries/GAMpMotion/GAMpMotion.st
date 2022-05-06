@@ -135,8 +135,8 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     // Load the params. Use values from the HMI structure when available
     
     // *** Gear In Params
-    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
-    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
+    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.gearRatioNumerator;
+    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.gearRatioDenominator;
     _I_Axis.CouplingParameters.GearInMasterValueSource := mcVALUE_SET;
     _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
     // Gear In,Offset Shift and Phase shift all use the slave accel/decel values,
@@ -149,8 +149,8 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     // *** Cam params
     _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
     // Force ID of 1 for now
-    _I_HmiAxisReq.CamId := 1;
-    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.CamId;
+    _I_HmiAxisReq.camId := 1;
+    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.camId;
     // Allow different cams to have different scaling
     // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example
     IF _I_Axis.CouplingParameters.CamId = 1 THEN
@@ -166,8 +166,8 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     // Use the master offset to set how far into the cam until starting takes place
     // Slave offset is not used
     _I_Axis.CouplingParameters.CamStartMode := mcCAM_START_DIRECT;
-    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.CamMasterOffset;
-    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.CamSlaveOffset;
+    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.camMasterOffset;
+    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.camSlaveOffset;
     // TODO: Actual or set point??
     _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
     _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)

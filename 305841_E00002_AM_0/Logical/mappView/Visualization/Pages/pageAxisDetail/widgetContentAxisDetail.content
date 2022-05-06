@@ -75,7 +75,7 @@
         <Widget xsi:type="widgets.brease.PushButton" id="pbSetPosLimitsDlg" top="98" left="369" width="116" height="42" zIndex="25" text="Set Limits ..." style="Command1" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveStatus" top="315" left="30" width="370" height="365" zIndex="2">
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveStatus" top="315" left="30" width="370" height="375" zIndex="2">
       <Widgets>
         <Widget xsi:type="widgets.brease.Label" id="lblIsCoordSlaveRdy" top="49" left="174" width="175" height="15" zIndex="0" text="Is Coord. Slave Rdy" padding="0px" />
         <Widget xsi:type="widgets.brease.Label" id="lblIsCoordMstrRdy" top="79" left="174" width="175" height="15" zIndex="1" text="Is Coord. Master Rdy" padding="0px" />
@@ -104,19 +104,19 @@
         <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="24" value="slave axis name" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="465" left="415" width="585" height="215" zIndex="3" backColor="rgba(255, 255, 255, 1)">
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="460" left="415" width="585" height="230" zIndex="3" backColor="rgba(255, 255, 255, 1)">
       <Widgets>
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioDenominator" top="64" left="149" width="120" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioNumerator" top="64" left="9" width="120" zIndex="1" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
-        <Widget xsi:type="widgets.brease.Label" id="lblMasterToSlave" top="34" left="54" width="216" height="32" zIndex="2" text="Slave  :  Master Ratio" textAlign="center top" bold="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbEngageSlave" top="109" left="9" width="116" height="42" zIndex="3" multiLine="true" text="Engage Inner Ecc" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.PushButton" id="pbDisengageSlave" top="109" left="149" width="116" height="42" zIndex="4" multiLine="true" text="Disengage Inner Ecc" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.Label" id="lblColon" top="68" left="129" width="21" height="22" zIndex="5" text=":" textAlign="center" fontSize="24px" bold="true" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioDenominator" top="54" left="149" width="120" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInRatioNumerator" top="54" left="9" width="120" zIndex="1" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
+        <Widget xsi:type="widgets.brease.Label" id="lblMasterToSlave" top="24" left="54" width="216" height="32" zIndex="2" text="Slave  :  Master Ratio" textAlign="center top" bold="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbGearInSlave" top="89" left="14" width="116" height="42" zIndex="3" multiLine="true" text="Gear In Inner Ecc" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbDisengageSlave" top="119" left="154" width="116" height="42" zIndex="4" multiLine="true" text="Disengage Inner Ecc" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.Label" id="lblColon" top="59" left="129" width="21" height="22" zIndex="5" text=":" textAlign="center" fontSize="24px" bold="true" />
         <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus2" top="-1" left="-6" width="590" zIndex="6" value="slave axis" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInSlaveOffsetAmt" top="54" left="304" zIndex="7" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInMasterDistance" top="124" left="304" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInSlaveOffsetAmt" top="54" left="300" width="104" zIndex="7" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInMasterDistance" top="119" left="304" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" />
         <Widget xsi:type="widgets.brease.Label" id="lblSlaveOffsetAmt" top="29" left="304" width="106" zIndex="9" text="Slave Offset" bold="true" />
-        <Widget xsi:type="widgets.brease.Label" id="lblMasterDistance" top="94" left="304" width="106" zIndex="10" text="Master Dist." bold="true" />
+        <Widget xsi:type="widgets.brease.Label" id="lblMasterDistance" top="89" left="304" width="106" zIndex="10" text="Master Dist." bold="true" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbOffsetSlave" top="164" left="299" width="116" height="42" zIndex="11" multiLine="true" text="Offset Slave" wordWrap="true" />
         <Widget xsi:type="widgets.brease.RadioButtonGroup" id="rdoBtnGrpShiftType" top="34" left="414" width="121" height="66" zIndex="12">
           <Widgets>
@@ -124,8 +124,11 @@
             <Widget xsi:type="widgets.brease.RadioButton" id="rdoBtnOffsetAbs" top="35" left="5" width="105" height="25" zIndex="1" text="Absolute" />
           </Widgets>
         </Widget>
-        <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxOverMasterDist" top="119" left="419" width="166" zIndex="13" text="Over Master Dist." />
+        <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxOverMasterDist" top="114" left="419" width="166" zIndex="13" text="Over Master Dist." />
         <Widget xsi:type="widgets.brease.PushButton" id="pbToMasterPos" top="164" left="454" width="116" height="42" zIndex="14" multiLine="true" text="To Outter\nEcc. Pos." wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbCamInSlave" top="174" left="14" width="116" height="42" zIndex="15" multiLine="true" text="Cam In Inner Ecc" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInCamId" top="184" left="209" width="56" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
+        <Widget xsi:type="widgets.brease.Label" id="lblCamId" top="184" left="139" width="66" zIndex="17" text="Cam ID" bold="true" />
       </Widgets>
     </Widget>
   </Widgets>
