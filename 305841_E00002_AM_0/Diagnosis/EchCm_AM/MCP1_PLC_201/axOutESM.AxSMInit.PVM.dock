@@ -1,0 +1,23 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=axOutESM 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=0 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                     gr_AxOutERestorePos                    McAcpAxRestorePosType    0 "                                                               *"    0   24    1    0    0    1         
+                                    Data                              DINT[0..17]    0 "                                                               *"    1    4   18    0    0    1         
+                                 Data[0]                                     DINT    0 "                                                         6488294"    2    4    1   10    0    0         
+                                 Data[1]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                 Data[2]                                     DINT    0 "                                                         5994171"    2    4    1   10    0    0         
+                                 Data[3]                                     DINT    0 "                                                         6480000"    2    4    1   10    0    0         
+                                 Data[4]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                 Data[5]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                 Data[6]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                 Data[7]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                 Data[8]                                     DINT    0 "                                                      2123414409"    2    4    1   10    0    0         
+                                 Data[9]                                     DINT    0 "                                                         6488294"    2    4    1   10    0    0         
+                                Data[10]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                Data[11]                                     DINT    0 "                                                         5994171"    2    4    1   10    0    0         
+                                Data[12]                                     DINT    0 "                                                         6480000"    2    4    1   10    0    0         
+                                Data[13]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                Data[14]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                Data[15]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                Data[16]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                                Data[17]                                     DINT    0 "                                                      2123414409"    2    4    1   10    0    0         

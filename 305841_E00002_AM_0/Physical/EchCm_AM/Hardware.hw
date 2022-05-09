@@ -130,11 +130,11 @@
     </Connection>
     <Connection Connector="MT2" TargetModule="ServoMotor_InE" TargetConnector="MT" />
     <Parameter ID="McAcoposTypeID" Location="DriveConfiguration/Module" Value="AcoposMultiDConfig" />
-    <Parameter ID="ActivateACOPOSSimulationOnPLC" Location="DriveConfiguration/Module" Value="1" />
+    <Parameter ID="ActivateACOPOSSimulationOnPLC" Location="DriveConfiguration/Module" Value="0" />
     <Parameter ID="PowerSupplyModuleReference" Location="DriveConfiguration/Module/PowerSupply" Value="AM_PS" />
     <Parameter ID="AxisReference" Location="DriveConfiguration/Channel[1]/RealAxis" Value="gAxOutE" />
     <Parameter ID="InputIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="0" />
-    <Parameter ID="Input" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="5" />
+    <Parameter ID="Input" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="OutputIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="0" />
     <Parameter ID="Output" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="ReferenceDistanceIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="0" />
@@ -177,7 +177,7 @@
     <Parameter ID="ExternalEncoderAxis" Location="DriveConfiguration/Channel[1]" Value="NotUsed" />
     <Parameter ID="AxisReference" Location="DriveConfiguration/Channel[2]/RealAxis" Value="gAxInE" />
     <Parameter ID="InputIsReadOnly" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/Gearbox" Value="0" />
-    <Parameter ID="Input" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/Gearbox" Value="5" />
+    <Parameter ID="Input" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="OutputIsReadOnly" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/Gearbox" Value="0" />
     <Parameter ID="Output" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="ReferenceDistanceIsReadOnly" Location="DriveConfiguration/Channel[2]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="0" />
@@ -275,7 +275,6 @@
     <Parameter ID="ConfigurationID" Value="305841_E00002_Rev0_PLC_Main" />
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
-    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="PermanentPvSize" Value="9216" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
     <Parameter ID="Cyclic1Duration" Value="2000" />
@@ -504,7 +503,7 @@
     <Connection Connector="MT" TargetModule="AM2_PLK12" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
-  <Module Name="ServoMotor_Spindle" Type="8LSA46.DB030S200-3" Version="2.2.0.1">
+  <Module Name="ServoMotor_Spindle" Type="8LSA26.D9060S200-3" Version="2.2.0.1">
     <Connection Connector="EC" TargetModule="AM2Enc1_Spindle" TargetConnector="EC" />
     <Connection Connector="MT" TargetModule="AM1_PLK11" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />

@@ -171,6 +171,8 @@ ACTION ActionCamInOut:
     ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
     ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
     ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
+    // force cam id 1 for now.
+    ax.CouplingParameters.CamId := 1;
     ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
     ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
     ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;
@@ -253,7 +255,6 @@ ACTION ActionGearInOut:
     // Load the gear out params, then set the execute input (edge triggered fb)
     ax.fbGearOut.Jerk := 0.0; // only non-zero if using McProfGen
     ax.fbGearOut.Execute := TRUE;
-    
   END_IF;
   
   // Call the gear in and gear out fbs.
@@ -283,10 +284,11 @@ ACTION ActionOffsetShift:
 
   // Only execute the offset shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested.
+  // and it is requested, and the master axis is powered (so enable can be easily toggled)
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
        ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
+       NOT ax.Status.IsPoweredOn THEN
     // slave or master should be ignored
     // keep the request and enable low
     ax.CouplingParameters.OffsetShiftReq := FALSE;
@@ -344,10 +346,11 @@ ACTION ActionPhaseShift:
 
   // Only execute the phase shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested.
+  // and it is requested, and the master axis is powered (so enable can be easily toggled)
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
        ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
+       NOT ax.Status.IsPoweredOn THEN
     // slave or master should be ignored
     // keep the request and enable low
     ax.CouplingParameters.PhaseShiftReq := FALSE;
@@ -366,15 +369,15 @@ ACTION ActionPhaseShift:
     // Load the phase shift params, then set the start shift input (edge sensitive input)
     ax.fbPhaseShift.PhaseShift := ax.CouplingParameters.Shift;
     ax.fbPhaseShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
-    ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
-    ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
-    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
-    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
-    ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
-    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
-    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
-    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
-    ax.fbOffsetShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
+    ax.fbPhaseShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    ax.fbPhaseShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
+    ax.fbPhaseShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbPhaseShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbPhaseShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
+    ax.fbPhaseShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
     ax.fbPhaseShift.StartShift := TRUE; // fb looks for a rising edge
   END_IF;
   

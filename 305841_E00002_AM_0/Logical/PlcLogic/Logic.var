@@ -73,7 +73,7 @@ VAR CONSTANT
   SL_SUPERUSER : WORD      := 16#10; (* bit 4 *)
   
   (* process tolerances *)
-  TOL_DEPTH_ZERO_DEG : LREAL := 0.05; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
+  TOL_DEPTH_ZERO_DEG : LREAL := 0.002; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
   TOL_ZINDEX  : LREAL := 0.1; (* Somewhat arbitrarily of 0.1mm TODO: determine proper value *)
   
 END_VAR

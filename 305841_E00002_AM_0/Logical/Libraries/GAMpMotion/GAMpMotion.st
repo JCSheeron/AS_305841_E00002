@@ -149,7 +149,6 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     // *** Cam params
     _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
     // Force ID of 1 for now
-    _I_HmiAxisReq.camId := 1;
     _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.camId;
     // Allow different cams to have different scaling
     // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example

@@ -171,6 +171,8 @@ ACTION ActionCamInOut:
     ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
     ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
     ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
+    // force cam id 1 for now.
+    ax.CouplingParameters.CamId := 1;
     ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
     ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
     ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;
@@ -369,7 +371,7 @@ ACTION ActionPhaseShift:
     ax.fbPhaseShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
     ax.fbPhaseShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
     ax.fbPhaseShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
-    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbPhaseShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
     ax.fbPhaseShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
     ax.fbPhaseShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
     ax.fbPhaseShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
