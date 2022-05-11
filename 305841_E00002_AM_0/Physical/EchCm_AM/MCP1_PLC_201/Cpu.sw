@@ -27,9 +27,12 @@
     <DataObject Name="McAcpSys" Source="" Memory="UserROM" Language="Binary" />
   </DataObjects>
   <NcDataObjects>
+    <NcDataObject Name="axSpindleP" Source="PlcLogic.axSpindle.axSpindleParamTable.dob" Memory="UserROM" Language="Apt" />
+    <NcDataObject Name="axOutEPara" Source="PlcLogic.axOutE.axOutEParamTable.dob" Memory="UserROM" Language="Apt" />
+    <NcDataObject Name="axInEParam" Source="PlcLogic.axInE.axInEParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="axZParamTa" Source="PlcLogic.axZ.axZParamTable.dob" Memory="UserROM" Language="Apt" />
-    <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
     <NcDataObject Name="Cam1P" Source="PlcLogic.axInE.Cam1P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />

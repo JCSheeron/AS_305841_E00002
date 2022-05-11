@@ -74,6 +74,9 @@
   <Operation Download="McAxis.br" Memory="UserROM"/>
   <Operation Download="McAcpAx.br" Memory="UserROM"/>
   <Operation Download="McAcpSys.br" Memory="UserROM"/>
+  <Operation Download="axSpindleP.br" Memory="UserROM"/>
+  <Operation Download="axOutEPara.br" Memory="UserROM"/>
+  <Operation Download="axInEParam.br" Memory="UserROM"/>
   <Operation Download="axZParamTa.br" Memory="UserROM"/>
   <Operation Restart="warm"/>
   <Operation Download="arssl.br" Memory="UserROM"/>

@@ -135,19 +135,19 @@ VAR_GLOBAL {Group(58)}
     {LINE(60)}
     axSpindleDiagCode AT %QW4 : WORD {Custom('SL1.SM1.UINT0001')}; (*H: Enable Axis*)
     {LINE(61)}
-    axSpindleEnableCmd AT %QX2.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput02')};
-    {LINE(62)}
     axOutEDiagCode AT %QW6 : WORD {Custom('SL1.SM1.UINT0002')};
-    {LINE(63)}
+    {LINE(62)}
     axInEDiagCode AT %QW8 : WORD {Custom('SL1.SM1.UINT0003')};
-    {LINE(64)}
+    {LINE(63)}
     axZDiagCode AT %QW10 : WORD {Custom('SL1.SM1.UINT0004')};
+    {LINE(64)}
+    axSpinRef AT %SAFEINT#0 : SAFEINT := SAFEINT#0 {Custom('SL1.SM11.Axis01#SAFEINT.0')}; (*axis reference*)
     {LINE(65)}
-    axZEnableCmd AT %QX2.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput03')}; (*H: Enable Axis*)
+    axZRef AT %SAFEINT#1 : SAFEINT := SAFEINT#1 {Custom('SL1.SM12.Axis01#SAFEINT.1')}; (*axis reference*)
     {LINE(66)}
-    axOutERef AT %SAFEINT#0 : SAFEINT := SAFEINT#0 {Custom('SL1.SM11.Axis01#SAFEINT.0')}; (*axis reference*)
+    axOutEEnableCmd AT %QX2.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput02')};
     {LINE(67)}
-    axInERef AT %SAFEINT#1 : SAFEINT := SAFEINT#1 {Custom('SL1.SM12.Axis01#SAFEINT.1')}; (*axis reference*)
+    axInEEnableCmd AT %QX2.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput03')};
 END_VAR
 
 VAR_GLOBAL {Group(68)}

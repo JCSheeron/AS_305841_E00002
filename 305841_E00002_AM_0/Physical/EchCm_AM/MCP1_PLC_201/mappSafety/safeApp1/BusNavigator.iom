@@ -51,17 +51,17 @@
 		<Module Name="SL1.SM2" Hardware="X20SO6300" SafeLogicID="1" SafeModuleID="2" SISize="1" SOSize="1" NSISize="2" NSOSize="1" SIOffset="5" SOOffset="2" NSIOffset="20" NSOOffset="20" ConnectionValidBitNumber="0" HWTypeCode="43" >
 			<Channel Name="SafeModuleOK" Mapping="SIX4.0" Variable="SafeModule02Ok" />
 			<Channel Name="SafeDigitalOutput01" Mapping="SQX2.0" Variable="cfPumpEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
-			<Channel Name="SafeDigitalOutput02" Mapping="SQX2.1" Variable="axSpindleEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
-			<Channel Name="SafeDigitalOutput03" Mapping="SQX2.2" Variable="axZEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX2.1" Variable="axOutEEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput03" Mapping="SQX2.2" Variable="axInEEnableCmd" SODIndex="0x6200" SODSubIndex="0x1" />
 			<Channel Name="ReleaseOutput" Mapping="NSQX20.0" Variable="SaveModule02OutputRelease" SODIndex="0x6200" SODSubIndex="0x3" />
 		</Module>
 		<Module Name="SL1.SM11" Hardware="8BVSV2SAFE1-1" SafeLogicID="1" SafeModuleID="11" SISize="12" SOSize="4" NSISize="0" NSOSize="0" SIOffset="16" SOOffset="4" ConnectionValidBitNumber="1" IsProfile="true" HWTypeCode="131" >
 			<Channel Name="SafeModuleOK" Mapping="SIX4.1" Variable="SafeModule11Ok" />
-			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="0" InstanceName="axOutERef" />
+			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="0" InstanceName="axSpinRef" />
 		</Module>
 		<Module Name="SL1.SM12" Hardware="8BVSV2SAFE1-1" SafeLogicID="1" SafeModuleID="12" SISize="12" SOSize="4" NSISize="0" NSOSize="0" SIOffset="28" SOOffset="8" ConnectionValidBitNumber="2" IsProfile="true" HWTypeCode="131" >
 			<Channel Name="SafeModuleOK" Mapping="SIX4.2" Variable="SafeModule12Ok" />
-			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="1" InstanceName="axInERef" />
+			<Profile profileType="SafeMotion" oSP_FunctionGroupId="Axis01" oSP_FunctionGroupNumeric="1" InstanceName="axZRef" />
 		</Module>
 		<Module Name="SL1.SM116" Hardware="X20SI4100" SafeLogicID="1" SafeModuleID="116" SISize="2" SOSize="0" NSISize="0" NSOSize="0" SIOffset="6" ConnectionValidBitNumber="3" HWTypeCode="27" >
 			<Channel Name="SafeModuleOK" Mapping="SIX4.3" Variable="SafeModule116Ok" />

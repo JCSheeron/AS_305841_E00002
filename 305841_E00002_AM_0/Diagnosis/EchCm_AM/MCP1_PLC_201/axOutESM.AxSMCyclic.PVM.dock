@@ -1,15 +1,15 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=axOutESM 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=1 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=827 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                       ax                                sMot_Axis    0 "                                                               *"    0   24    1    0    2    1         
-                                  Ignore                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                  Ignore                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                              ForceSetRef                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                            StartupHomeOk                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                            isAxisVirtual                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                            isAxisEndless                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                           isAxisInverter                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                   AxisNo                                    USINT    0 "                                                               2"    1    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               1"    1    4    1   10    0    0 e,0,GAMO
+                                 SMState                                     DINT    0 "                                                               4"    1    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
@@ -710,19 +710,19 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                            fbOffsetShift                             MC_BR_Offset    0 "                                                               *"    1   24    1    0    0    0         
-                                   Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                  Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             OffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   Slave                                    UDINT    0 "                                                       126733908"    2    7    1   10    0    0         
+                                  Enable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                             OffsetShift                                    LREAL    0 "                                                           -20.0"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                          7200.0"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                          7200.0"    2    8    1   10    0    0         
                       AdvancedParameters                       McAdvOffsetParType    0 "                                                               *"    2   24    1    0    0    0         
-                               ShiftMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcSH
+                               ShiftMode                                     DINT    0 "                                                               3"    3    4    1   10    0    0 e,0,mcSH
 
-                             ProfileBase                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcPR
+                             ProfileBase                                     DINT    0 "                                                               2"    3    4    1   10    0    0 e,0,mcPR
 
-                  ProfileBaseMaxVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                  ProfileBaseMaxVelocity                                     REAL    0 "                                                            10.0"    3    8    1   10    0    0         
                       DistanceParameters                McAdvShiftDistanceParType    0 "                                                               *"    3   24    1    0    0    0         
-                         ProfileDistance                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
+                         ProfileDistance                                    LREAL    0 "                                                          4000.0"    4   14    1   10    0    0         
                           ZoneParameters                    McAdvShiftZoneParType    0 "                                                               *"    3   24    1    0    0    0         
                            StartPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                              EndPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
@@ -895,35 +895,35 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                    Flags                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                                 fbCamIn                                 MC_CamIn    0 "                                                               *"    1   24    1    0    0    0         
-                                  Master                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                   Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                 Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            MasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                             SlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                           MasterScaling                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                            SlaveScaling                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                               StartMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
+                                 fbCamIn                                 MC_CamIn    0 "                                                               *"    1   24    1    0    0    1         
+                                  Master                                    UDINT    0 "                                                       126733892"    2    7    1   10    0    0         
+                                   Slave                                    UDINT    0 "                                                       126733908"    2    7    1   10    0    0         
+                                 Execute                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            MasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                             SlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                           MasterScaling                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                            SlaveScaling                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                               StartMode                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcCA
 
-                       MasterValueSource                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcVA
+                       MasterValueSource                                     DINT    0 "                                                               1"    2    4    1   10    0    0 e,0,mcVA
 
-                                   CamID                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
-                              BufferMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAB
+                                   CamID                                     UINT    0 "                                                               1"    2    6    1   10    0    0         
+                              BufferMode                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcAB
 
-                      AdvancedParameters                        McAdvCamInParType    0 "                                                               *"    2   24    1    0    0    0         
-                                Periodic                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                            Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                            Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                  InSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                    Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          CommandAborted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                            EndOfProfile                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  Status                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
+                      AdvancedParameters                        McAdvCamInParType    0 "                                                               *"    2   24    1    0    0    1         
+                                Periodic                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                                Velocity                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Jerk                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                  InSync                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                    Busy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Active                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          CommandAborted                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 ErrorID                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                            EndOfProfile                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Status                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcCA
 
                                 Internal                     McInternalTwoRefType    0 "                                                               *"    2   24    1    0    0    0         
                                 Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    0         

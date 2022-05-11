@@ -1,96 +1,31 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=axInESM 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=1 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=815 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                       ax                                sMot_Axis    0 "                                                               *"    0   24    1    0    2    1         
-                                  Ignore                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                   Pointer to incorrect address."    1    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                   Pointer to incorrect address."    1    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                   Pointer to incorrect address."    1    4    1   10    0    0 e,0,GAMO
+                                  Ignore                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               3"    1    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                              11"    1    4    1   10    0    0 e,0,GAMO
 
-                                 AxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    1         
-                               controlif                                    UDINT    0 "                                   Pointer to incorrect address."    2    7    1   10    0    0         
-                        mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    1         
-                                Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    1         
-                             Internal[0]                                    UDINT    0 "                                   Pointer to incorrect address."    4    7    1   10    0    0         
-                             Internal[1]                                    UDINT    0 "                                   Pointer to incorrect address."    4    7    1   10    0    0         
-                                   seqNo                                     DINT    0 "                                   Pointer to incorrect address."    2    4    1   10    0    0         
-                            SlaveAxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    1         
-                               controlif                                    UDINT    0 "                                   Pointer to incorrect address."    2    7    1   10    0    0         
-                        mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    1         
-                                Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    1         
-                             Internal[0]                                    UDINT    0 "                                   Pointer to incorrect address."    4    7    1   10    0    0         
-                             Internal[1]                                    UDINT    0 "                                   Pointer to incorrect address."    4    7    1   10    0    0         
-                                   seqNo                                     DINT    0 "                                   Pointer to incorrect address."    2    4    1   10    0    0         
-                                  Status                          sMot_AxisStatus    0 "                                                               *"    1   24    1    0    0    1         
-                     IsCommuncationReady                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                        IsReadyToPowerOn                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                        IsAtHomingSwitch                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                        IsTrigger1Active                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                        IsTrigger2Active                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                     IsDriveEnableActive                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                          IsInSimulation                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                             IsPoweredOn                                     BOOL    0 "                                   Pointer to incorrect address."    2    1    1    2    0    0         
-                      IsTorqueLimitReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                 IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 IsHomed                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                               IsJogging                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            IsAtJogLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                         IsAtTorqueLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            IsInVelocity                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            IsInPosition                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            IsMoveActive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              IsMoveDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                               IsStopped                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          IsAutoTuneDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                         AutoTuneQuality                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                      SafeMotionDiagCode                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                     CalculatedPosition1                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                     CalculatedPosition2                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                     CalculatedPosition3                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                            StartupCount                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                            PlcOpenState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAX
-
-                        networkCommState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCO
-
-                         AxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    2   24    1    0    0    1         
-                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    3   24    1    0    0    1         
-                                      ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
-
-                                Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
-
-                                    Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
-                                Internal                       MpAxisInternalType    0 "                                                               *"    3   24    1    0    0    1         
-                                      ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
-                                Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
-
-                                Facility                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,-1,mpC
-
-                                    Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
-                        ExecutingCommand                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
-
-                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    2   24    1    0    0    1         
-                                    Name                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
-                            IsGearInSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                    IsGearInCompensation                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             IsCamInSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                       IsCamEndOfProfile                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-               IsCoordOffsetShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-              IsCoordOffsetShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                IsCoordPhaseShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-               IsCoordPhaseShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                               CamStatus                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
-
-                  CoordActualOffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                   CoordActualPhaseShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                             StatusSlave                          sMot_AxisStatus    0 "                                                               *"    1   24    1    0    0    1         
+                                 AxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    0         
+                               controlif                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                        mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    0         
+                                Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    0         
+                             Internal[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
+                             Internal[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
+                                   seqNo                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                            SlaveAxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    0         
+                               controlif                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                        mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    0         
+                                Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    0         
+                             Internal[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
+                             Internal[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
+                                   seqNo                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                                  Status                          sMot_AxisStatus    0 "                                                               *"    1   24    1    0    0    0         
                      IsCommuncationReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                         IsReadyToPowerOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                         IsAtHomingSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -125,14 +60,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
 
                         networkCommState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCO
 
-                         AxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    2   24    1    0    0    1         
-                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    3   24    1    0    0    1         
+                         AxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    2   24    1    0    0    0         
+                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    3   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
                                 Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
 
                                     Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
-                                Internal                       MpAxisInternalType    0 "                                                               *"    3   24    1    0    0    1         
+                                Internal                       MpAxisInternalType    0 "                                                               *"    3   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                 Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
 
@@ -141,7 +76,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
                         ExecutingCommand                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
-                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    2   24    1    0    0    1         
+                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    2   24    1    0    0    0         
                                     Name                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
                             IsGearInSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                     IsGearInCompensation                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -155,23 +90,88 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
 
                   CoordActualOffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                    CoordActualPhaseShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                          MoveParameters                      sMot_MoveParameters    0 "                                                               *"    1   24    1    0    0    1         
+                             StatusSlave                          sMot_AxisStatus    0 "                                                               *"    1   24    1    0    0    0         
+                     IsCommuncationReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        IsReadyToPowerOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        IsAtHomingSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        IsTrigger1Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        IsTrigger2Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     IsDriveEnableActive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          IsInSimulation                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             IsPoweredOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                      IsTorqueLimitReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                 IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 IsHomed                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               IsJogging                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            IsAtJogLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         IsAtTorqueLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            IsInVelocity                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            IsInPosition                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            IsMoveActive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              IsMoveDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               IsStopped                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          IsAutoTuneDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                         AutoTuneQuality                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                      SafeMotionDiagCode                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     CalculatedPosition1                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     CalculatedPosition2                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     CalculatedPosition3                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                            StartupCount                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                            PlcOpenState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAX
+
+                        networkCommState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCO
+
+                         AxisDiagnostics                        MpAxisDiagExtType    0 "                                                               *"    2   24    1    0    0    0         
+                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    3   24    1    0    0    0         
+                                      ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
+
+                                Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
+
+                                    Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
+                                Internal                       MpAxisInternalType    0 "                                                               *"    3   24    1    0    0    0         
+                                      ID                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
+                                Severity                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mpCO
+
+                                Facility                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,-1,mpC
+
+                                    Code                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
+                        ExecutingCommand                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
+
+                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    2   24    1    0    0    0         
+                                    Name                               STRING[32]    0 "                                                               *"    3    9   33    1    0    0         
+                            IsGearInSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    IsGearInCompensation                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             IsCamInSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       IsCamEndOfProfile                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               IsCoordOffsetShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+              IsCoordOffsetShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                IsCoordPhaseShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               IsCoordPhaseShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               CamStatus                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
+
+                  CoordActualOffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                   CoordActualPhaseShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          MoveParameters                      sMot_MoveParameters    0 "                                                               *"    1   24    1    0    0    0         
                        PosMovePermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                        NegMovePermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                        EnableTorqueLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                    EnableTorqueLimitPrev                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                     HaltOnSlaveDisengage                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           spareBytes5_7                               BYTE[0..2]    0 "                                                               *"    2   17    3    0    0    1        b
+                           spareBytes5_7                               BYTE[0..2]    0 "                                                               *"    2   17    3    0    0    0        b
                         spareBytes5_7[0]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
                         spareBytes5_7[1]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
                         spareBytes5_7[2]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
-                         PermissiveCheck                     sMot_PermissiveCheck    0 "                                                               *"    2   24    1    0    0    1         
+                         PermissiveCheck                     sMot_PermissiveCheck    0 "                                                               *"    2   24    1    0    0    0         
                        PermissiveHaltNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                        PermissiveHaltPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                              CheckFailed                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            RangeLimitNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            RangeLimitPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              spareBytes                               BYTE[0..2]    0 "                                                               *"    3   17    3    0    0    1        b
+                              spareBytes                               BYTE[0..2]    0 "                                                               *"    3   17    3    0    0    0        b
                            spareBytes[0]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
                            spareBytes[1]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
                            spareBytes[2]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
@@ -193,11 +193,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                             Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                           _endHmiSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              HomeParams                         MpAxisHomingType    0 "                                                               *"    2   24    1    0    0    1         
+                              HomeParams                         MpAxisHomingType    0 "                                                               *"    2   24    1    0    0    0         
                                     Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcHO
 
                                 Position                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
-                                 Options                  MpAxisHomingOptionsType    0 "                                                               *"    3   24    1    0    0    1         
+                                 Options                  MpAxisHomingOptionsType    0 "                                                               *"    3   24    1    0    0    0         
                            StartVelocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                           HomingVelocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
@@ -222,26 +222,26 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                             SensorOffset                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                    SensorOffsetDirection                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcDI
 
-                               JogParams                            MpAxisJogType    0 "                                                               *"    2   24    1    0    0    1         
+                               JogParams                            MpAxisJogType    0 "                                                               *"    2   24    1    0    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                           LimitPosition               MpAxisJogLimitPositionType    0 "                                                               *"    3   24    1    0    0    1         
+                           LimitPosition               MpAxisJogLimitPositionType    0 "                                                               *"    3   24    1    0    0    0         
                            FirstPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                             LastPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              StopParams                           MpAxisStopType    0 "                                                               *"    2   24    1    0    0    1         
+                              StopParams                           MpAxisStopType    0 "                                                               *"    2   24    1    0    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                          StopAtPosition                 MpAxisStopAtPositionType    0 "                                                               *"    3   24    1    0    0    1         
+                          StopAtPosition                 MpAxisStopAtPositionType    0 "                                                               *"    3   24    1    0    0    0         
                                 Activate                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Position                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
-                       TorqueLimitParams                      MpAxisLimitLoadType    0 "                                                               *"    2   24    1    0    0    1         
+                       TorqueLimitParams                      MpAxisLimitLoadType    0 "                                                               *"    2   24    1    0    0    0         
                                     Load                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                Direction                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcDI
 
-                          AutoTuneParams                       MpAxisAutoTuneType    0 "                                                               *"    2   24    1    0    0    1         
+                          AutoTuneParams                       MpAxisAutoTuneType    0 "                                                               *"    2   24    1    0    0    0         
                                     Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
                              Orientation                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAC
@@ -252,29 +252,29 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                   SaveControllerSettings                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                           LoopFilterMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
-                                 Options                MpAxisAutoTuneOptionsType    0 "                                                               *"    3   24    1    0    0    1         
+                                 Options                MpAxisAutoTuneOptionsType    0 "                                                               *"    3   24    1    0    0    0         
                      MaxProportionalGain                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                 SpeedTuneLoopFilter1Mode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAC
 
                   SpeedTuneFilterTmeMode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAC
 
-                      MoveParametersPrev                      sMot_MoveParameters    0 "                                                               *"    1   24    1    0    0    1         
+                      MoveParametersPrev                      sMot_MoveParameters    0 "                                                               *"    1   24    1    0    0    0         
                        PosMovePermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                        NegMovePermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                        EnableTorqueLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                    EnableTorqueLimitPrev                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                     HaltOnSlaveDisengage                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           spareBytes5_7                               BYTE[0..2]    0 "                                                               *"    2   17    3    0    0    1        b
+                           spareBytes5_7                               BYTE[0..2]    0 "                                                               *"    2   17    3    0    0    0        b
                         spareBytes5_7[0]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
                         spareBytes5_7[1]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
                         spareBytes5_7[2]                                     BYTE    0 "                                                               *"    3   17    1   10    0    0        b
-                         PermissiveCheck                     sMot_PermissiveCheck    0 "                                                               *"    2   24    1    0    0    1         
+                         PermissiveCheck                     sMot_PermissiveCheck    0 "                                                               *"    2   24    1    0    0    0         
                        PermissiveHaltNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                        PermissiveHaltPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                              CheckFailed                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            RangeLimitNeg                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            RangeLimitPos                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              spareBytes                               BYTE[0..2]    0 "                                                               *"    3   17    3    0    0    1        b
+                              spareBytes                               BYTE[0..2]    0 "                                                               *"    3   17    3    0    0    0        b
                            spareBytes[0]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
                            spareBytes[1]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
                            spareBytes[2]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
@@ -296,11 +296,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                             Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                           _endHmiSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              HomeParams                         MpAxisHomingType    0 "                                                               *"    2   24    1    0    0    1         
+                              HomeParams                         MpAxisHomingType    0 "                                                               *"    2   24    1    0    0    0         
                                     Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcHO
 
                                 Position                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
-                                 Options                  MpAxisHomingOptionsType    0 "                                                               *"    3   24    1    0    0    1         
+                                 Options                  MpAxisHomingOptionsType    0 "                                                               *"    3   24    1    0    0    0         
                            StartVelocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                           HomingVelocity                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
@@ -325,26 +325,26 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                             SensorOffset                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                    SensorOffsetDirection                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcDI
 
-                               JogParams                            MpAxisJogType    0 "                                                               *"    2   24    1    0    0    1         
+                               JogParams                            MpAxisJogType    0 "                                                               *"    2   24    1    0    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                           LimitPosition               MpAxisJogLimitPositionType    0 "                                                               *"    3   24    1    0    0    1         
+                           LimitPosition               MpAxisJogLimitPositionType    0 "                                                               *"    3   24    1    0    0    0         
                            FirstPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                             LastPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              StopParams                           MpAxisStopType    0 "                                                               *"    2   24    1    0    0    1         
+                              StopParams                           MpAxisStopType    0 "                                                               *"    2   24    1    0    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                          StopAtPosition                 MpAxisStopAtPositionType    0 "                                                               *"    3   24    1    0    0    1         
+                          StopAtPosition                 MpAxisStopAtPositionType    0 "                                                               *"    3   24    1    0    0    0         
                                 Activate                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                                 Position                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
-                       TorqueLimitParams                      MpAxisLimitLoadType    0 "                                                               *"    2   24    1    0    0    1         
+                       TorqueLimitParams                      MpAxisLimitLoadType    0 "                                                               *"    2   24    1    0    0    0         
                                     Load                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                Direction                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcDI
 
-                          AutoTuneParams                       MpAxisAutoTuneType    0 "                                                               *"    2   24    1    0    0    1         
+                          AutoTuneParams                       MpAxisAutoTuneType    0 "                                                               *"    2   24    1    0    0    0         
                                     Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
                              Orientation                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAC
@@ -355,13 +355,13 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                   SaveControllerSettings                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                           LoopFilterMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
-                                 Options                MpAxisAutoTuneOptionsType    0 "                                                               *"    3   24    1    0    0    1         
+                                 Options                MpAxisAutoTuneOptionsType    0 "                                                               *"    3   24    1    0    0    0         
                      MaxProportionalGain                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
                 SpeedTuneLoopFilter1Mode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAC
 
                   SpeedTuneFilterTmeMode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAC
 
-                      CouplingParameters                  sMot_CouplingParameters    0 "                                                               *"    1   24    1    0    0    1         
+                      CouplingParameters                  sMot_CouplingParameters    0 "                                                               *"    1   24    1    0    0    0         
                       CouplingPermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                GearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                               GearOutReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -410,7 +410,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                            CamBufferMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAB
 
                         _endCamInSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                  CouplingParametersPrev                  sMot_CouplingParameters    0 "                                                               *"    1   24    1    0    0    1         
+                  CouplingParametersPrev                  sMot_CouplingParameters    0 "                                                               *"    1   24    1    0    0    0         
                       CouplingPermissive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                GearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                               GearOutReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -459,7 +459,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                            CamBufferMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAB
 
                         _endCamInSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                Commands                        sMot_AxisCommands    0 "                                                               *"    1   24    1    0    0    1         
+                                Commands                        sMot_AxisCommands    0 "                                                               *"    1   24    1    0    0    0         
                           MoveNotAllowed                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                          PlcSafetyEnable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                         UpdateMoveParams                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -491,7 +491,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                            DriveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            DriveResetCmd                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            ErrorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           fbMpAxisBasic                              MpAxisBasic    0 "                                                               *"    1   24    1    0    0    1         
+                           fbMpAxisBasic                              MpAxisBasic    0 "                                                               *"    1   24    1    0    0    0         
                                   MpLink                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                   Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                               ErrorReset                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -526,7 +526,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                  Stopped                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                           LimitLoadReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            BrakeReleased                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                    Info                      MpAxisBasicInfoType    0 "                                                               *"    2   24    1    0    0    1         
+                                    Info                      MpAxisBasicInfoType    0 "                                                               *"    2   24    1    0    0    0         
                       CommunicationReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                           ReadyToPowerOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                               Simulation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
@@ -535,21 +535,21 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                          LimitLoadActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                             PLCopenState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
 
-                     DigitalInputsStatus                 McDigitalInputStatusType    0 "                                                               *"    3   24    1    0    0    1         
+                     DigitalInputsStatus                 McDigitalInputStatusType    0 "                                                               *"    3   24    1    0    0    0         
                             HomingSwitch                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                      PositiveLimitSwitch                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                      NegativeLimitSwitch                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                                 Trigger1                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                                 Trigger2                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
                              DriveEnable                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
-                                    Diag                        MpAxisDiagExtType    0 "                                                               *"    3   24    1    0    0    1         
-                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    4   24    1    0    0    1         
+                                    Diag                        MpAxisDiagExtType    0 "                                                               *"    3   24    1    0    0    0         
+                                StatusID                       MpAxisStatusIDType    0 "                                                               *"    4   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
                                 Severity                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mpCO
 
                                     Code                                     UINT    0 "                                                               *"    5    6    1   10    0    0         
-                                Internal                       MpAxisInternalType    0 "                                                               *"    4   24    1    0    0    1         
+                                Internal                       MpAxisInternalType    0 "                                                               *"    4   24    1    0    0    0         
                                       ID                                     DINT    0 "                                                               *"    5    4    1   10    0    0         
                                 Severity                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mpCO
 
@@ -558,66 +558,66 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Code                                     UINT    0 "                                                               *"    5    6    1   10    0    0         
                         ExecutingCommand                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAX
 
-                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    1         
+                             LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
                                     Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
                       CommunicationState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCO
 
                             StartupCount                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                             AutoTuneDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                          AutoTuneQuality                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                            HardwareInfo                       McHardwareInfoType    0 "                                                               *"    3   24    1    0    0    1         
-                                    Axis                         McHwInfoAxisType    0 "                                                               *"    4   24    1    0    0    1         
+                            HardwareInfo                       McHardwareInfoType    0 "                                                               *"    3   24    1    0    0    0         
+                                    Axis                         McHwInfoAxisType    0 "                                                               *"    4   24    1    0    0    0         
                                 AxisName                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
                    ConfigElementLocation                              STRING[250]    0 "                                                               *"    5    9  251    1    0    0         
                                 AxisType                                     DINT    0 "                                                               *"    5    4    1   10    0    0 e,0,mcAX
 
-                                   Drive                        McHwInfoDriveType    0 "                                                               *"    4   24    1    0    0    1         
+                                   Drive                        McHwInfoDriveType    0 "                                                               *"    4   24    1    0    0    0         
                              ModelNumber                               STRING[19]    0 "                                                               *"    5    9   20    1    0    0         
                                 ModuleID                               STRING[11]    0 "                                                               *"    5    9   12    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    5    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    5    9    4    1    0    0         
                          FirmwareVersion                                STRING[7]    0 "                                                               *"    5    9    8    1    0    0         
-                                    Card                   McHwInfoCardType[0..3]    0 "                                                               *"    4   24    4    0    0    1         
-                                 Card[0]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    1         
+                                    Card                   McHwInfoCardType[0..3]    0 "                                                               *"    4   24    4    0    0    0         
+                                 Card[0]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                 Card[1]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    1         
+                                 Card[1]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                 Card[2]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    1         
+                                 Card[2]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                 Card[3]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    1         
+                                 Card[3]                         McHwInfoCardType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                   Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    4   24    3    0    0    1         
-                                Motor[0]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    1         
+                                   Motor                  McHwInfoMotorType[0..2]    0 "                                                               *"    4   24    3    0    0    0         
+                                Motor[0]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[35]    0 "                                                               *"    6    9   36    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                Motor[1]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    1         
+                                Motor[1]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[35]    0 "                                                               *"    6    9   36    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                Motor[2]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    1         
+                                Motor[2]                        McHwInfoMotorType    0 "                                                               *"    5   24    1    0    0    0         
                            InfoAvailable                                     BOOL    0 "                                                               *"    6    1    1    2    0    0         
                              ModelNumber                               STRING[35]    0 "                                                               *"    6    9   36    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                                Internal                    MpComInternalDataType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                    MpComInternalDataType    0 "                                                               *"    2   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                       fbUpdateBFbParams                      fbUpdateBasicParams    0 "                                                               *"    1   24    1    0    0    1         
+                       fbUpdateBFbParams                      fbUpdateBasicParams    0 "                                                               *"    1   24    1    0    0    0         
                                  _I_Axis                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                             _IO_MpParams                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                 updateOS                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -627,7 +627,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                              pParamsPrev                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                     size                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  nxtAddr                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                fbGearIn                                MC_GearIn    0 "                                                               *"    1   24    1    0    0    1         
+                                fbGearIn                                MC_GearIn    0 "                                                               *"    1   24    1    0    0    0         
                                   Master                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                    Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -640,7 +640,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Jerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                               BufferMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAB
 
-                      AdvancedParameters                       McAdvGearInParType    0 "                                                               *"    2   24    1    0    0    1         
+                      AdvancedParameters                       McAdvGearInParType    0 "                                                               *"    2   24    1    0    0    0         
                        MasterMaxVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                   InGear                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                     Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -648,15 +648,15 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                           CommandAborted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                                Internal                     McInternalTwoRefType    0 "                                                               *"    2   24    1    0    0    1         
-                                Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    1         
+                                Internal                     McInternalTwoRefType    0 "                                                               *"    2   24    1    0    0    0         
+                                Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    4   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    4    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    4    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
@@ -676,7 +676,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                              MaControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                  MaSeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                               fbGearOut                               MC_GearOut    0 "                                                               *"    1   24    1    0    0    1         
+                               fbGearOut                               MC_GearOut    0 "                                                               *"    1   24    1    0    0    0         
                                    Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -684,14 +684,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -709,21 +709,21 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    Flags                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                           fbOffsetShift                             MC_BR_Offset    0 "                                                               *"    1   24    1    0    0    1         
+                           fbOffsetShift                             MC_BR_Offset    0 "                                                               *"    1   24    1    0    0    0         
                                    Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                   Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                              OffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                      AdvancedParameters                       McAdvOffsetParType    0 "                                                               *"    2   24    1    0    0    1         
+                      AdvancedParameters                       McAdvOffsetParType    0 "                                                               *"    2   24    1    0    0    0         
                                ShiftMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcSH
 
                              ProfileBase                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcPR
 
                   ProfileBaseMaxVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                      DistanceParameters                McAdvShiftDistanceParType    0 "                                                               *"    3   24    1    0    0    1         
+                      DistanceParameters                McAdvShiftDistanceParType    0 "                                                               *"    3   24    1    0    0    0         
                          ProfileDistance                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
-                          ZoneParameters                    McAdvShiftZoneParType    0 "                                                               *"    3   24    1    0    0    1         
+                          ZoneParameters                    McAdvShiftZoneParType    0 "                                                               *"    3   24    1    0    0    0         
                            StartPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                              EndPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                                   Period                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
@@ -738,14 +738,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                            ShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                             ShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                        ActualOffsetShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -763,21 +763,21 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    Flags                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                            fbPhaseShift                            MC_BR_Phasing    0 "                                                               *"    1   24    1    0    0    1         
+                            fbPhaseShift                            MC_BR_Phasing    0 "                                                               *"    1   24    1    0    0    0         
                                    Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                   Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                               PhaseShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                      AdvancedParameters                      McAdvPhasingParType    0 "                                                               *"    2   24    1    0    0    1         
+                      AdvancedParameters                      McAdvPhasingParType    0 "                                                               *"    2   24    1    0    0    0         
                                ShiftMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcSH
 
                              ProfileBase                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcPR
 
                   ProfileBaseMaxVelocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                      DistanceParameters                McAdvShiftDistanceParType    0 "                                                               *"    3   24    1    0    0    1         
+                      DistanceParameters                McAdvShiftDistanceParType    0 "                                                               *"    3   24    1    0    0    0         
                          ProfileDistance                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
-                          ZoneParameters                    McAdvShiftZoneParType    0 "                                                               *"    3   24    1    0    0    1         
+                          ZoneParameters                    McAdvShiftZoneParType    0 "                                                               *"    3   24    1    0    0    0         
                            StartPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                              EndPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                                   Period                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
@@ -792,14 +792,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                            ShiftAttained                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                             ShiftStarted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                         ActualPhaseShift                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -817,7 +817,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    Flags                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                               fbCalcCam                MC_BR_CalcCamFromSections    0 "                                                               *"    1   24    1    0    0    1         
+                               fbCalcCam                MC_BR_CalcCamFromSections    0 "                                                               *"    1   24    1    0    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                       CamSectionsAddress                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                           CamDataAddress                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
@@ -826,14 +826,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
                           ErrorInSection                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
-                                Internal                      McExec1InternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                      McExec1InternalType    0 "                                                               *"    2   24    1    0    0    0         
                                  i_serno                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                  i_state                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                   Result                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                    pInfo                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                            fbCalcPoints                  MC_BR_CalcPointsFromCam    0 "                                                               *"    1   24    1    0    0    1         
+                            fbCalcPoints                  MC_BR_CalcPointsFromCam    0 "                                                               *"    1   24    1    0    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                     Cam                          McCamDefineType    0 "                                                               *"    2   24    1    0    0    1         
+                                     Cam                          McCamDefineType    0 "                                                               *"    2   24    1    0    0    0         
                           DataObjectName                               STRING[12]    0 "                                                               *"    3    9   13    1    0    0         
                               DataAdress                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                      MasterPointsAddress                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
@@ -843,7 +843,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                          AdditionalInfo            McAdvCalcCamFromPointsParType    0 "                                                               *"    2   24    1    0    0    1         
+                          AdditionalInfo            McAdvCalcCamFromPointsParType    0 "                                                               *"    2   24    1    0    0    0         
                        InterpolationMode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
 
                                     Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
@@ -854,15 +854,15 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                           StartCurvature                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                                 EndSlope                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                             EndCurvature                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
-                                Internal                      McExec1InternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                      McExec1InternalType    0 "                                                               *"    2   24    1    0    0    0         
                                  i_serno                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                  i_state                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                   Result                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                    pInfo                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                            fbCamPrepare                         MC_BR_CamPrepare    0 "                                                               *"    1   24    1    0    0    1         
+                            fbCamPrepare                         MC_BR_CamPrepare    0 "                                                               *"    1   24    1    0    0    0         
                                     Axis                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                     Cam                          McCamDefineType    0 "                                                               *"    2   24    1    0    0    1         
+                                     Cam                          McCamDefineType    0 "                                                               *"    2   24    1    0    0    0         
                           DataObjectName                               STRING[12]    0 "                                                               *"    3    9   13    1    0    0         
                               DataAdress                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    CamID                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
@@ -870,14 +870,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -896,44 +896,44 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                  fbCamIn                                 MC_CamIn    0 "                                                               *"    1   24    1    0    0    1         
-                                  Master                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                   Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                 Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            MasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                             SlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                           MasterScaling                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                            SlaveScaling                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                               StartMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
+                                  Master                                    UDINT    0 "                                                       126978708"    2    7    1   10    0    0         
+                                   Slave                                    UDINT    0 "                                                       126978724"    2    7    1   10    0    0         
+                                 Execute                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            MasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                             SlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                           MasterScaling                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                            SlaveScaling                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                               StartMode                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcCA
 
-                       MasterValueSource                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcVA
+                       MasterValueSource                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcVA
 
-                                   CamID                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
-                              BufferMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcAB
+                                   CamID                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                              BufferMode                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcAB
 
-                      AdvancedParameters                        McAdvCamInParType    0 "                                                               *"    2   24    1    0    0    1         
+                      AdvancedParameters                        McAdvCamInParType    0 "                                                               *"    2   24    1    0    0    0         
                                 Periodic                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                             Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                  InSync                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                    Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          CommandAborted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                            EndOfProfile                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  Status                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
+                                  InSync                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                    Busy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Active                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          CommandAborted                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 ErrorID                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                            EndOfProfile                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Status                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcCA
 
-                                Internal                     McInternalTwoRefType    0 "                                                               *"    2   24    1    0    0    1         
-                                Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    1         
+                                Internal                     McInternalTwoRefType    0 "                                                               *"    2   24    1    0    0    0         
+                                Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    4   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    4    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    4    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    4    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
@@ -953,7 +953,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                              MaControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                  MaSeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                                fbCamOut                                MC_CamOut    0 "                                                               *"    1   24    1    0    0    1         
+                                fbCamOut                                MC_CamOut    0 "                                                               *"    1   24    1    0    0    0         
                                    Slave                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                     Jerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -961,14 +961,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                     Busy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -986,7 +986,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                    Flags                                    USINT    0 "                                                               *"    3    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
-                       fbCheckRestorePos           MC_BR_CheckRestorePositionData    0 "                                                               *"    1   24    1    0    0    1         
+                       fbCheckRestorePos           MC_BR_CheckRestorePositionData    0 "                                                               *"    1   24    1    0    0    0         
                                     Axis                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                  Execute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                              DataAddress                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
@@ -996,14 +996,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=81 Type=0 Scope=0 Force=0 Index=
                                  ErrorID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
                                DataInUse                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                DataValid                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    1         
+                                Internal                           McInternalType    0 "                                                               *"    2   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                ParamHash                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
                                    State                                     WORD    0 "                                                               *"    3   18    1   10    0    0        b
                                    Error                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Treating                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    1         
+                                  Memory                             UDINT[0..13]    0 "                                                               *"    3    7   14    0    0    0         
                                Memory[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                Memory[2]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         

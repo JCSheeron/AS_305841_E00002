@@ -253,11 +253,11 @@ F
 	
 70
 3 3 0 0
-@V2 5 SF_oS_MOTION_Basic_BR sffbAxOutE_Enable 2 82 1
+@V2 5 SF_oS_MOTION_Basic_BR sffbAxSpin_Enable 2 82 1
 	
 70
 4 3 0 0
-@V2 5 SF_oS_MOTION_Basic_BR sffbAxInE_Enable 3 82 2
+@V2 5 SF_oS_MOTION_Basic_BR sffbAxZ_Enable 3 82 2
 	
 70
 5 3 0 0

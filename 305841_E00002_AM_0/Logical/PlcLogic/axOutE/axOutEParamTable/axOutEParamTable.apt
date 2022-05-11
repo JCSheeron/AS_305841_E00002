@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.3?>
-<AcoposParameterTable xmlns="http://br-automation.co.at/AS/XmlGrid">
-	<Root Name="Parameters" Description="" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<AcoposParameterTable>
+  <Root Name="Parameters">
+    <Parameter Name="AXLIM_DS_STOP" ID="98" Value="0.5" Unit="Units" Description="Limit values: Lag error for stop of a movement" />
+    <Parameter Name="STOP_ERR_DECEL_RAMP" ID="197" Value="ncA_LIMIT" Description="Movement stop: Deceleration ramp after drive error" />
+  </Root>
 </AcoposParameterTable>

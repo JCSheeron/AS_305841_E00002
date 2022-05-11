@@ -333,31 +333,31 @@ axSpindleDiagCode	54	VAR_GLOBAL	@TYP:18
 ;
 
 @V 1 62 0
-axSpindleEnableCmd	55	VAR_GLOBAL	@TYP:43
-%SQX 2.1		     
-
-;
-
-@V 1 63 0
-axOutEDiagCode	56	VAR_GLOBAL	@TYP:18
+axOutEDiagCode	55	VAR_GLOBAL	@TYP:18
 %NSQW 6		     
 
 ;
 
-@V 1 64 0
-axInEDiagCode	57	VAR_GLOBAL	@TYP:18
+@V 1 63 0
+axInEDiagCode	56	VAR_GLOBAL	@TYP:18
 %NSQW 8		     
 
 ;
 
-@V 1 65 0
-axZDiagCode	58	VAR_GLOBAL	@TYP:18
+@V 1 64 0
+axZDiagCode	57	VAR_GLOBAL	@TYP:18
 %NSQW 10		     
 
 ;
 
-@V 1 66 0
-axZEnableCmd	59	VAR_GLOBAL	@TYP:43
+@V 1 67 0
+axOutEEnableCmd	58	VAR_GLOBAL	@TYP:43
+%SQX 2.1		     
+
+;
+
+@V 1 68 0
+axInEEnableCmd	59	VAR_GLOBAL	@TYP:43
 %SQX 2.2		     
 
 ;
