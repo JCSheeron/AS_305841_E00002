@@ -1023,14 +1023,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=63 Type=0 Scope=0 Force=0 Index=
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                  axes[1]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               3"    2    4    1   10    0    0 e,0,GAMO
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -2043,14 +2043,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=63 Type=0 Scope=0 Force=0 Index=
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                  axes[2]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               2"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               3"    2    4    1   10    0    0 e,0,GAMO
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -3070,7 +3070,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=63 Type=0 Scope=0 Force=0 Index=
                            isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
                           isAxisInverter                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                   AxisNo                                    USINT    0 "                                                               3"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                              11"    2    4    1   10    0    0 e,0,GAMO
+                                 SMState                                     DINT    0 "                                                              71"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -9282,26 +9282,26 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=63 Type=0 Scope=0 Force=0 Index=
                                  MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                            _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                    hmiLibraryAxisReqs[2]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    1    1         
-                      _beginResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 moveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 haltReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                 stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                          offsetShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                phaseShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                phaseShiftToMasterPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         

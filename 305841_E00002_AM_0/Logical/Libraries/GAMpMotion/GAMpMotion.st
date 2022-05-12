@@ -144,7 +144,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.AccelMax; // slave accel. Set to 0.0 to use slave max
     _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.DecelMax; // slave decel. Set to 0.0 to use slave max
     _I_Axis.CouplingParameters.ShiftJerk := 0.0; // non-zero only supported with McProfGen
-    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := _I_Axis.MoveParameters.VelocityMax; // Allow master max velocity
+    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // _I_Axis.MoveParameters.VelocityMax; // Allow master max velocity
     
     // *** Cam params
     _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic

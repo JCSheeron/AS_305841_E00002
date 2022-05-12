@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio Version=3.0?>
 <Transfer xmlns="http://br-automation.co.at/AS/Transfer">
-  <OperatingSystem Version="B4.91"/>
+  <OperatingSystem Version="B4.92"/>
   <Hardware Target="SG4"/>
   <Operation Delete="OmSafeDev.br"/>
   <Operation Delete="CuttingFlu.br"/>

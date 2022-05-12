@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McAxis 5.16.2 */
+/* McAxis 5.17.1 */
 
 #ifndef _MCAXIS_
 #define _MCAXIS_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McAxis_VERSION
-#define _McAxis_VERSION 5.16.2
+#define _McAxis_VERSION 5.17.1
 #endif
 
 #include <bur/plctypes.h>
@@ -312,6 +312,31 @@ typedef enum McAxisTypeEnum
 	mcAX_TYPE_DS402_INV
 } McAxisTypeEnum;
 
+typedef enum McAcpAxAutoTuneFeedFwdModeEnum
+{	mcACPAX_TUNE_FF_MODE_STANDARD = 0,
+	mcACPAX_TUNE_FF_MODE_PASSIVE = 1
+} McAcpAxAutoTuneFeedFwdModeEnum;
+
+typedef enum McAcpAxAutoTuneFeedFwdCmdEnum
+{	mcACPAX_TUNE_FF_CMD_START = 0,
+	mcACPAX_TUNE_FF_CMD_FINISH = 1,
+	mcACPAX_TUNE_FF_CMD_ABORT = 2
+} McAcpAxAutoTuneFeedFwdCmdEnum;
+
+typedef enum McAutoTuneStateEnum
+{	mcAT_NOT_ACTIVE = 0,
+	mcAT_SPEED_CONTROLLER = 1,
+	mcAT_POSTION_CONTROLLER = 2,
+	mcAT_LOAD_MODEL = 3,
+	mcAT_LOOP_FILTERS = 4,
+	mcAT_FEED_FORWARD_STANDARD = 5,
+	mcAT_FEED_FORWARD_PASSIVE = 6,
+	mcAT_TEST = 7,
+	mcAT_MOTOR_PHASING = 8,
+	mcAT_INDUCTION_MOTOR = 9,
+	mcAT_SYNCHRON_MOTOR = 10
+} McAutoTuneStateEnum;
+
 typedef enum McCamAutPrepRestartModeEnum
 {	mcPREP_RESTART_POSITIVE,
 	mcPREP_RESTART_NEGATIVE,
@@ -473,13 +498,93 @@ typedef enum McAFDCSACOPOSP3DigOutEnum
 	mcAFDCSACOPOSP3DO_SS1X41E10 = 9
 } McAFDCSACOPOSP3DigOutEnum;
 
+typedef enum McAFDOTypEnum
+{	mcAFDOT_ACP = 0,
+	mcAFDOT_STP = 1
+} McAFDOTypEnum;
+
+typedef enum McAFDOTypAcpOutEnum
+{	mcAFDOTAO_ACP_HW = 0
+} McAFDOTypAcpOutEnum;
+
+typedef enum McAFDOTypAcpOutAcpHwProdFamEnum
+{	mcAFDOTAOAHPF_ACP = 0,
+	mcAFDOTAOAHPF_ACPM = 1,
+	mcAFDOTAOAHPF_ACP_P3 = 2
+} McAFDOTypAcpOutAcpHwProdFamEnum;
+
+typedef enum McAFDOACOPOSDigOutEnum
+{	mcAFDOACOPOSDO_SS2X111 = 0,
+	mcAFDOACOPOSDO_SS2X112 = 1,
+	mcAFDOACOPOSDO_SS2X113 = 2,
+	mcAFDOACOPOSDO_SS2X114 = 3,
+	mcAFDOACOPOSDO_SS2X115 = 4,
+	mcAFDOACOPOSDO_SS2X116 = 5,
+	mcAFDOACOPOSDO_SS2X117 = 6,
+	mcAFDOACOPOSDO_SS2X118 = 7,
+	mcAFDOACOPOSDO_SS2X119 = 8,
+	mcAFDOACOPOSDO_SS2X1110 = 9,
+	mcAFDOACOPOSDO_SS3X111 = 10,
+	mcAFDOACOPOSDO_SS3X112 = 11,
+	mcAFDOACOPOSDO_SS3X113 = 12,
+	mcAFDOACOPOSDO_SS3X114 = 13,
+	mcAFDOACOPOSDO_SS3X115 = 14,
+	mcAFDOACOPOSDO_SS3X116 = 15,
+	mcAFDOACOPOSDO_SS3X117 = 16,
+	mcAFDOACOPOSDO_SS3X118 = 17,
+	mcAFDOACOPOSDO_SS3X119 = 18,
+	mcAFDOACOPOSDO_SS3X1110 = 19,
+	mcAFDOACOPOSDO_SS4X111 = 20,
+	mcAFDOACOPOSDO_SS4X112 = 21,
+	mcAFDOACOPOSDO_SS4X113 = 22,
+	mcAFDOACOPOSDO_SS4X114 = 23,
+	mcAFDOACOPOSDO_SS4X115 = 24,
+	mcAFDOACOPOSDO_SS4X116 = 25,
+	mcAFDOACOPOSDO_SS4X117 = 26,
+	mcAFDOACOPOSDO_SS4X118 = 27,
+	mcAFDOACOPOSDO_SS4X119 = 28,
+	mcAFDOACOPOSDO_SS4X1110 = 29
+} McAFDOACOPOSDigOutEnum;
+
+typedef enum McAFDOACOPOSmultiDigOutEnum
+{	mcAFDOACOPOSMULTIDO_SS1X111 = 0,
+	mcAFDOACOPOSMULTIDO_SS1X113 = 1,
+	mcAFDOACOPOSMULTIDO_SS1X115 = 2,
+	mcAFDOACOPOSMULTIDO_SS1X116 = 3
+} McAFDOACOPOSmultiDigOutEnum;
+
+typedef enum McAFDOACOPOSP3DigOutEnum
+{	mcAFDOACOPOSP3DO_SS1X41E1 = 0,
+	mcAFDOACOPOSP3DO_SS1X41E2 = 1,
+	mcAFDOACOPOSP3DO_SS1X41E3 = 2,
+	mcAFDOACOPOSP3DO_SS1X41E4 = 3,
+	mcAFDOACOPOSP3DO_SS1X41E5 = 4,
+	mcAFDOACOPOSP3DO_SS1X41E6 = 5,
+	mcAFDOACOPOSP3DO_SS1X41E7 = 6,
+	mcAFDOACOPOSP3DO_SS1X41E8 = 7,
+	mcAFDOACOPOSP3DO_SS1X41E9 = 8,
+	mcAFDOACOPOSP3DO_SS1X41E10 = 9
+} McAFDOACOPOSP3DigOutEnum;
+
+typedef enum McAFDOTypStpOutEnum
+{	mcAFDOTSO_STP_HW = 0
+} McAFDOTypStpOutEnum;
+
+typedef enum McAFDOTypStpOutStpHwProdFamEnum
+{	mcAFDOTSOSHPF_ACOPOSMICRO = 0
+} McAFDOTypStpOutStpHwProdFamEnum;
+
+typedef enum McAFDOAMDigOutEnum
+{	mcAFDOAMDO_X224 = 0
+} McAFDOAMDigOutEnum;
+
 typedef enum McAFAVSValSrcEnum
 {	mcAFAVSVS_ACP_PARID = 0
 } McAFAVSValSrcEnum;
 
-typedef enum McAFBProdFamEnum
-{	mcAFBPF_ACP = 0
-} McAFBProdFamEnum;
+typedef enum McAFBBrkCtrlTypEnum
+{	mcAFBBCT_ACP = 0
+} McAFBBrkCtrlTypEnum;
 
 typedef enum McAFBACPCtrlModEnum
 {	mcAFBACPCM_AUT = 0,
@@ -583,6 +688,7 @@ typedef struct McAddInfoType
 	enum McAxisPLCopenStateEnum PLCopenState;
 	plcbit InMotion;
 	enum McMechDevCompStateEnum MechDeviationCompState;
+	enum McAutoTuneStateEnum AutoTuneState;
 } McAddInfoType;
 
 typedef struct McAdvVelCtrlParType
@@ -901,6 +1007,8 @@ typedef struct McAdvBrCamTransLeadInOutParType
 typedef struct McAdvBrCamDwellParType
 {	struct McAdvBrCamTransLeadInOutParType LeadIn;
 	struct McAdvBrCamTransLeadInOutParType LeadOut;
+	enum McAltValueSrcEnum LeadInAlternativeValueSource;
+	enum McAltValueSrcEnum LeadOutAlternativeValueSource;
 	enum McValueSrcEnum MasterValueSource;
 	float MasterMaxVelocity;
 	float Jerk;
@@ -910,6 +1018,8 @@ typedef struct McAdvBrCamDwellParType
 typedef struct McAdvBrAutoCamDwellParType
 {	struct McAdvBrCamTransLeadInOutParType LeadIn;
 	struct McAdvBrCamTransLeadInOutParType LeadOut;
+	enum McAltValueSrcEnum LeadInAlternativeValueSource;
+	enum McAltValueSrcEnum LeadOutAlternativeValueSource;
 	enum McValueSrcEnum MasterValueSource;
 	float MasterMaxVelocity;
 	float Jerk;
@@ -919,6 +1029,8 @@ typedef struct McAdvBrAutoCamDwellParType
 typedef struct McAdvBrCamTransitionParType
 {	struct McAdvBrCamTransLeadInOutParType LeadIn;
 	struct McAdvBrCamTransLeadInOutParType LeadOut;
+	enum McAltValueSrcEnum LeadInAlternativeValueSource;
+	enum McAltValueSrcEnum LeadOutAlternativeValueSource;
 	enum McValueSrcEnum MasterValueSource;
 	float MasterMaxVelocity;
 	float CamTime;
@@ -957,6 +1069,8 @@ typedef struct McAdvBrTorqueControlParType
 	plcbit CorrectVelocityLimits;
 	plcbit UseTimeLimit;
 	float TimeLimit;
+	enum McAltValueSrcEnum TorqueAlternativeValueSource;
+	enum McAltValueSrcEnum StartAlternativeValueSource;
 } McAdvBrTorqueControlParType;
 
 typedef struct McAdvBrLimitLoadCamParType
@@ -1015,6 +1129,10 @@ typedef struct McHardwareInfoType
 	struct McHwInfoCardType Card[4];
 	struct McHwInfoMotorType Motor[3];
 } McHardwareInfoType;
+
+typedef struct McDigitalOutputType
+{	plcstring FeatureName[251];
+} McDigitalOutputType;
 
 typedef struct McABTLinBdType
 {	enum McCfgLocLenUnitEnum MeasurementUnit;
@@ -1209,6 +1327,86 @@ typedef struct McCfgAxFeatDigCamSwType
 {	struct McAFDCSTypType DigitalCamSwitchType;
 } McCfgAxFeatDigCamSwType;
 
+typedef struct McAFDOACOPOSDigOutType
+{	enum McAFDOACOPOSDigOutEnum Type;
+} McAFDOACOPOSDigOutType;
+
+typedef struct McAFDOACOPOSType
+{	struct McAFDOACOPOSDigOutType DigitalOutput;
+} McAFDOACOPOSType;
+
+typedef struct McAFDOACOPOSmultiDigOutType
+{	enum McAFDOACOPOSmultiDigOutEnum Type;
+} McAFDOACOPOSmultiDigOutType;
+
+typedef struct McAFDOACOPOSmultiType
+{	struct McAFDOACOPOSmultiDigOutType DigitalOutput;
+} McAFDOACOPOSmultiType;
+
+typedef struct McAFDOACOPOSP3DigOutType
+{	enum McAFDOACOPOSP3DigOutEnum Type;
+} McAFDOACOPOSP3DigOutType;
+
+typedef struct McAFDOACOPOSP3Type
+{	struct McAFDOACOPOSP3DigOutType DigitalOutput;
+} McAFDOACOPOSP3Type;
+
+typedef struct McAFDOTypAcpOutAcpHwProdFamType
+{	enum McAFDOTypAcpOutAcpHwProdFamEnum Type;
+	struct McAFDOACOPOSType ACOPOS;
+	struct McAFDOACOPOSmultiType ACOPOSmulti;
+	struct McAFDOACOPOSP3Type ACOPOSP3;
+} McAFDOTypAcpOutAcpHwProdFamType;
+
+typedef struct McAFDOTypAcpOutAcpHwType
+{	struct McAFDOTypAcpOutAcpHwProdFamType ProductFamily;
+} McAFDOTypAcpOutAcpHwType;
+
+typedef struct McAFDOTypAcpOutType
+{	enum McAFDOTypAcpOutEnum Type;
+	struct McAFDOTypAcpOutAcpHwType ACOPOSHardware;
+} McAFDOTypAcpOutType;
+
+typedef struct McAFDOTypAcpType
+{	struct McAFDOTypAcpOutType Output;
+} McAFDOTypAcpType;
+
+typedef struct McAFDOAMDigOutType
+{	enum McAFDOAMDigOutEnum Type;
+} McAFDOAMDigOutType;
+
+typedef struct McAFDOAMType
+{	struct McAFDOAMDigOutType DigitalOutput;
+} McAFDOAMType;
+
+typedef struct McAFDOTypStpOutStpHwProdFamType
+{	enum McAFDOTypStpOutStpHwProdFamEnum Type;
+	struct McAFDOAMType ACOPOSmicro;
+} McAFDOTypStpOutStpHwProdFamType;
+
+typedef struct McAFDOTypStpOutStpHwType
+{	struct McAFDOTypStpOutStpHwProdFamType ProductFamily;
+} McAFDOTypStpOutStpHwType;
+
+typedef struct McAFDOTypStpOutType
+{	enum McAFDOTypStpOutEnum Type;
+	struct McAFDOTypStpOutStpHwType StepperHardware;
+} McAFDOTypStpOutType;
+
+typedef struct McAFDOTypStpType
+{	struct McAFDOTypStpOutType Output;
+} McAFDOTypStpType;
+
+typedef struct McAFDOTypType
+{	enum McAFDOTypEnum Type;
+	struct McAFDOTypAcpType ACOPOS;
+	struct McAFDOTypStpType Stepper;
+} McAFDOTypType;
+
+typedef struct McCfgAxFeatDigOutType
+{	struct McAFDOTypType DigitalOutputType;
+} McCfgAxFeatDigOutType;
+
 typedef struct McAFAVSValSrcAcpParIDType
 {	unsigned short ParID;
 } McAFAVSValSrcAcpParIDType;
@@ -1277,13 +1475,13 @@ typedef struct McAFBACPType
 	struct McAFBACPMoveMonType MovementMonitoring;
 } McAFBACPType;
 
-typedef struct McAFBProdFamType
-{	enum McAFBProdFamEnum Type;
+typedef struct McAFBBrkCtrlTypType
+{	enum McAFBBrkCtrlTypEnum Type;
 	struct McAFBACPType ACOPOS;
-} McAFBProdFamType;
+} McAFBBrkCtrlTypType;
 
 typedef struct McCfgAxFeatBrkType
-{	struct McAFBProdFamType ProductFamily;
+{	struct McAFBBrkCtrlTypType BrakeControlType;
 } McCfgAxFeatBrkType;
 
 typedef struct McMDCDirDepConstBcklType
@@ -2958,6 +3156,24 @@ typedef struct MC_BR_GetHardwareInfo
 	plcbit Error;
 } MC_BR_GetHardwareInfo_typ;
 
+typedef struct MC_WriteDigitalOutput
+{
+	/* VAR_INPUT (analog) */
+	struct McAxisType* Axis;
+	struct McDigitalOutputType Output;
+	/* VAR_OUTPUT (analog) */
+	signed long ErrorID;
+	/* VAR (analog) */
+	struct McInternalType Internal;
+	/* VAR_INPUT (digital) */
+	plcbit Execute;
+	plcbit Value;
+	/* VAR_OUTPUT (digital) */
+	plcbit Done;
+	plcbit Busy;
+	plcbit Error;
+} MC_WriteDigitalOutput_typ;
+
 
 
 /* Prototyping of functions and function blocks */
@@ -3032,6 +3248,7 @@ _BUR_PUBLIC void MC_WriteParameter(struct MC_WriteParameter* inst);
 _BUR_PUBLIC void MC_BR_LimitLoadCam(struct MC_BR_LimitLoadCam* inst);
 _BUR_PUBLIC void MC_BR_MechDeviationComp(struct MC_BR_MechDeviationComp* inst);
 _BUR_PUBLIC void MC_BR_GetHardwareInfo(struct MC_BR_GetHardwareInfo* inst);
+_BUR_PUBLIC void MC_WriteDigitalOutput(struct MC_WriteDigitalOutput* inst);
 
 
 #ifdef __cplusplus

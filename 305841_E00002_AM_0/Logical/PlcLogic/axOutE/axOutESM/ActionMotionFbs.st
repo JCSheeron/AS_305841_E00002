@@ -306,11 +306,11 @@ ACTION ActionOffsetShift:
     ax.CouplingParameters.OffsetShiftReq := FALSE;
     // Load the offset shift params, then set the start shift input (edge sensitive input)
     ax.fbOffsetShift.OffsetShift := ax.CouplingParameters.Shift;
-    ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
-    ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    // ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
+    // ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
     ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
-    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
-    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    // ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    // ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
     ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
     ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
     ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;

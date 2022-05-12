@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McPureVAx 5.16.2 */
+/* McPureVAx 5.17.1 */
 
 #ifndef _MCPUREVAX_
 #define _MCPUREVAX_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McPureVAx_VERSION
-#define _McPureVAx_VERSION 5.16.2
+#define _McPureVAx_VERSION 5.17.1
 #endif
 
 #include <bur/plctypes.h>

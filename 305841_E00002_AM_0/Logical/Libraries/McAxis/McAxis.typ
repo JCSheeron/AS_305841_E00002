@@ -154,6 +154,7 @@ TYPE
 		PLCopenState :  McAxisPLCopenStateEnum; (*Extended PLCopen state*)
 		InMotion : BOOL; (*Controlled movement on the axis*)
 		MechDeviationCompState : McMechDevCompStateEnum; (*State of mechanical deviation compensation*)
+		AutoTuneState : McAutoTuneStateEnum; (* Status of the auto tune activity on the drive*)
 	END_STRUCT;
 
 	McAdvVelCtrlParType : STRUCT
@@ -390,6 +391,34 @@ TYPE
 	 	mcAX_TYPE_PURE_VIRT_GPAI,	(*Purely virtual axis with activated general purpose axis interface*)
 	 	mcAX_TYPE_DS402_SERVO,	(*DS402 conform servo drive axis*)
 	 	mcAX_TYPE_DS402_INV	(*DS402 conform inverter axis*)
+	);
+
+	McAcpAxAutoTuneFeedFwdModeEnum:
+	(
+		mcACPAX_TUNE_FF_MODE_STANDARD := 0, (*Standard (active) tuning mode*)
+		mcACPAX_TUNE_FF_MODE_PASSIVE := 1 (*Passive tuning mode*)
+	);
+
+	McAcpAxAutoTuneFeedFwdCmdEnum:
+	(
+		mcACPAX_TUNE_FF_CMD_START := 0, (*Start (standard or passive) tuning process*)
+		mcACPAX_TUNE_FF_CMD_FINISH := 1, (*Finish (passive) tuning process*)
+		mcACPAX_TUNE_FF_CMD_ABORT := 2 (*Abort (stop) (passive) tuning process*)
+	);
+
+	McAutoTuneStateEnum:
+	(
+		mcAT_NOT_ACTIVE := 0, (*Currently no auto tune is active on the axis*)
+		mcAT_SPEED_CONTROLLER := 1, (*Auto tuning for the speed controller is active*)
+		mcAT_POSTION_CONTROLLER := 2, (* Auto tuning for the position controller is active*)
+		mcAT_LOAD_MODEL := 3, (* Auto tuning for the load model is active*)
+		mcAT_LOOP_FILTERS := 4, (* Auto tuning for the loop filters is active*)
+		mcAT_FEED_FORWARD_STANDARD := 5, (* Standard auto tuning for feedforward is active*)
+		mcAT_FEED_FORWARD_PASSIVE := 6, (* Passive auto tuning for feedforward is active*)
+		mcAT_TEST := 7, (* Auto tuning test is active*)
+		mcAT_MOTOR_PHASING := 8, (* Auto tuning for motor phasing is active*)
+		mcAT_INDUCTION_MOTOR := 9, (* Auto tuning for induction motor is active*)
+		mcAT_SYNCHRON_MOTOR := 10 (* Auto tuning for synchronous motor is active*)
 	);
 
 	McCamDefineType : STRUCT
@@ -666,6 +695,8 @@ TYPE
 	McAdvBrCamDwellParType : STRUCT
 		LeadIn : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-in movement*)
 		LeadOut : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-out movement*)
+		LeadInAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadIn command triggered when ParID value changes from zero to non-zero value*)
+		LeadOutAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadOut command triggered when ParID value changes from zero to non-zero value*)
 		MasterValueSource : McValueSrcEnum; (*Defines the source of the master axis position to be used*)
 		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [Measurement units of master/s]*)
 		Jerk : REAL; (*Maximum jerk of the slave axis [Measurement units of slave/s�]*)
@@ -675,6 +706,8 @@ TYPE
 	McAdvBrAutoCamDwellParType : STRUCT
 		LeadIn : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-in movement*)
 		LeadOut : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-out movement*)
+		LeadInAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadIn command triggered when ParID value changes from zero to non-zero value*)
+		LeadOutAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadOut command triggered when ParID value changes from zero to non-zero value*)
 		MasterValueSource : McValueSrcEnum; (*Defines the source of the master axis position to be used*)
 		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [Measurement units of master/s]*)
 		Jerk : REAL; (*Maximum jerk of the slave axis [Measurement units of slave/s�]*)
@@ -702,6 +735,8 @@ TYPE
 	McAdvBrCamTransitionParType : STRUCT
 		LeadIn : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-in movement*)
 		LeadOut : McAdvBrCamTransLeadInOutParType; (*Parameters for lead-out movement*)
+		LeadInAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadIn command triggered when ParID value changes from zero to non-zero value*)
+		LeadOutAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of LeadOut command triggered when ParID value changes from zero to non-zero value*)
 		MasterValueSource : McValueSrcEnum; (*Defines the source of the master axis position to be used*)
 		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [Measurement units of master/s]*)
 		CamTime : REAL; (*Time for the synchronous curve [s]*)
@@ -722,7 +757,7 @@ TYPE
 
 	McAdvEventMoveParType : STRUCT
 		Mode : McEventMoveModeEnum; (*Operation mode*)
-		AlternativeValueSource : McAltValueSrcEnum; (* If used, defines the alternative source of: position for MC_BR_EventMoveAbsolute, distance for MC_BR_EventMoveAdditive, velocity for MC_BR_EventMoveVelocity from which target value is read (Axis Units)*)
+		AlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of: position for MC_BR_EventMoveAbsolute, distance for MC_BR_EventMoveAdditive, velocity for MC_BR_EventMoveVelocity from which target value is read (Axis Units)*)
 	END_STRUCT;
 
 	McDigitalInputsPvIfType : STRUCT
@@ -740,6 +775,8 @@ TYPE
 		CorrectVelocityLimits : BOOL; (*Automatically correct velocity limits.*)
 		UseTimeLimit : BOOL; (*Automatic cutoff after time if no load or load too low.*)
 		TimeLimit : REAL; (*Time limit for how long the axis can move at the speed or acceleration limit before it is stopped automatically [s].*)
+		TorqueAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of torque setpoint and uses it instead of "Torque" input [Nm]*)
+		StartAlternativeValueSource : McAltValueSrcEnum; (*If used, defines the alternative source of Start command triggered when ParID value changes from zero to non-zero value*)
 	END_STRUCT;
 
 	McLimitLoadModeEnum :
@@ -832,4 +869,7 @@ TYPE
         Motor : ARRAY[0..2] OF McHwInfoMotorType; (*Detailed motor information*)
     END_STRUCT;
 
+	McDigitalOutputType : STRUCT
+		FeatureName : STRING[250]; (*Name of the "Digital output" feature in which the output which should be written. The feature must be assigned to the axis as well inside the hardware configuration*)
+	END_STRUCT;
 END_TYPE

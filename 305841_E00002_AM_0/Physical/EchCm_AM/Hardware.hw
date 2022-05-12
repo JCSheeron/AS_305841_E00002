@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.10.3.60 FileVersion="4.9"?>
+<?AutomationStudio Version=4.11.2.75 FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="AM1Enc1_OutE" Type="8BAC0120.001-2" Version="2.2.0.0">
     <Connection Connector="SS" TargetModule="AM1_PLK11" TargetConnector="SS1" />
@@ -543,67 +543,67 @@
   <Module Name="X20BM01a" Type="X20BM01" Version="2.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11v" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="MCP1_PLC_201" TargetConnector="IF6" />
   </Module>
-  <Module Name="X20BM11b" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11b" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11d" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11c" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11c" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11l" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11d" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11d" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM01" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11e" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11e" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11x" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11f" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11f" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11b" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11g" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11g" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11w" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11h" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11h" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20cBM11a" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11l" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11l" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="RIO_OWS1_PLK1" TargetConnector="IF1" />
   </Module>
-  <Module Name="X20BM11m" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11m" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11n" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11n" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11n" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11h" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11o" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11o" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11f" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11p" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11p" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="RIO_JB1_PLK2" TargetConnector="IF1" />
   </Module>
-  <Module Name="X20BM11q" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11q" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11p" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11r" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11r" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11q" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11s" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11s" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11u" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11t" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11t" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11g" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11u" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11u" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM01a" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11v" Type="X20BM11" Version="1.0.0.1" Disabled="true">
+  <Module Name="X20BM11v" Type="X20BM11" Version="1.1.0.0" Disabled="true">
     <Connection Connector="X2X1" TargetModule="X20BM11t" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11w" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11w" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11r" TargetConnector="X2X2" />
   </Module>
-  <Module Name="X20BM11x" Type="X20BM11" Version="1.0.0.1">
+  <Module Name="X20BM11x" Type="X20BM11" Version="1.1.0.0">
     <Connection Connector="X2X1" TargetModule="X20BM11c" TargetConnector="X2X2" />
   </Module>
   <Module Name="X20BM33" Type="X20BM33" Version="1.0.0.6">
