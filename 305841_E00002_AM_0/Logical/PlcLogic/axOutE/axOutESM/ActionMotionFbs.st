@@ -279,62 +279,81 @@ END_ACTION
 
 ACTION ActionOffsetShift:
   // Execute the offset shift fb based on the offset shift request.
-  // The fb is edge triggered, and the request is cleared once serviced.
+  // The fb is edge triggered based on the StartShift input, however
+  // either by design or because of a bug, the AdvancedParameters.ProfileBase
+  // seems to be evaluated based on Enable going high, and chagese made after,
+  // but before StartShift input going high are ignored.
   // If the offset params change, another request must be made.
+
+  // Since triggering an offset while another offset is in progress triggers an error,
+  // the request, enable, and start shift are only cleared once the shift is finished,
+  // or the fb is invalid or in error
 
   // Only execute the offset shift fb if the axis number has been set, 
   // the slave axis number has been set, and neither is set to be ignored,
   // and it is requested, and the master axis is powered (so enable can be easily toggled)
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
-       ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
-       NOT ax.Status.IsPoweredOn THEN
-    // slave or master should be ignored
-    // keep the request and enable low
+    ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+    axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
+    NOT ax.Status.IsPoweredOn THEN
+    // slave or master should be ignored, or slave is not set, or 
+    // master is not powered.  Keep the request, enable, and startshift low
     ax.CouplingParameters.OffsetShiftReq := FALSE;
     ax.fbOffsetShift.Enable := FALSE;
     ax.fbOffsetShift.StartShift := FALSE;
-  ELSE
-    ax.fbOffsetShift.Enable := TRUE;
-  END_IF;
-    
-  // Enable input and ignore considered above. If req is high,
-  // it can be acted upon.
-  IF ax.CouplingParameters.OffsetShiftReq THEN
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND NOT ax.fbOffsetShift.Enable THEN 
     // Offset Shift request is made.
-    // Clear the req so a future rising edge can be seen
-    ax.CouplingParameters.OffsetShiftReq := FALSE;
-    // Load the offset shift params, then set the start shift input (edge sensitive input)
+    // Set the fb params so a start shift can act on them. Set them
+    // before bringing enable high because the profile base param(s) seem to 
+    // need to be set before the StartShift input is raised.
     ax.fbOffsetShift.OffsetShift := ax.CouplingParameters.Shift;
-    // ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
-    // ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
+    ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
     ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
-    // ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
-    // ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
     ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
     ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
     ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
     ax.fbOffsetShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
     ax.fbOffsetShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
-    ax.fbOffsetShift.StartShift := TRUE; // fb looks for a rising edge
+    // Enable the fb so we can look for a valid before starting the shift.
+    ax.fbOffsetShift.Enable := TRUE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND
+    NOT ax.fbOffsetShift.StartShift AND ax.fbOffsetShift.Valid AND NOT ax.fbOffsetShift.Error THEN
+    // fb is enabled and valid and not in error, but not started yet.
+    // Start the shift on the edge triggered StartShift input.
+    ax.fbOffsetShift.StartShift := TRUE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND
+    (NOT ax.fbOffsetShift.Valid AND ax.fbOffsetShift.Error) THEN 
+    // fb is enabled but not valid or in error. Clear the request, enable, and make sure the start shift stays low
+    ax.CouplingParameters.OffsetShiftReq := FALSE;
+    ax.fbOffsetShift.Enable := FALSE;
+    ax.fbOffsetShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Valid AND ax.fbOffsetShift.StartShift AND
+    NOT ax.fbOffsetShift.ShiftAttained THEN
+    // Shift was triggered, but isn't done yet.
+    // Update the axis status structure
+    ax.Status.IsCoordOffsetShiftAttained := FALSE;
+    ax.Status.IsCoordOffsetShiftStarted := ax.fbOffsetShift.ShiftStarted;
+    ax.Status.CoordActualOffsetShift := ax.fbOffsetShift.ActualOffsetShift;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Valid AND ax.fbOffsetShift.StartShift AND
+    ax.fbOffsetShift.ShiftAttained THEN
+    // Shift was triggered, and is now done.
+    // Update the axis status structure
+    ax.Status.IsCoordOffsetShiftAttained := ax.fbOffsetShift.ShiftAttained;
+    ax.Status.IsCoordOffsetShiftStarted := FALSE;
+    ax.Status.CoordActualOffsetShift := ax.fbOffsetShift.ActualOffsetShift;
+    // Clear the request, enable, and start shift.
+    // Clearing the original request at the end prevents another request from triggering a shift while
+    // a shift is in progress, but also allows another request to be triggered once done.
+    ax.CouplingParameters.OffsetShiftReq := FALSE;
+    ax.fbOffsetShift.Enable := FALSE;
+    ax.fbOffsetShift.StartShift := FALSE;
   END_IF;
   
   // Call the offset shift fb.
   ax.fbOffsetShift();
-  // Clear the start shift bit. The fb is edge triggerd, and it would have been seen by the above call.
-  ax.fbOffsetShift.StartShift := FALSE; // fb looks for a rising edge
-    
-  // Update the axis status structure as long as status is valid and there is no error.
-  // Otherwise, clear the values
-  IF ax.fbOffsetShift.Valid AND NOT ax.fbOffsetShift.Error THEN
-    ax.Status.IsCoordOffsetShiftAttained := ax.fbOffsetShift.ShiftAttained;
-    ax.Status.IsCoordOffsetShiftStarted := ax.fbOffsetShift.ShiftStarted;
-    ax.Status.CoordActualOffsetShift := ax.fbOffsetShift.ActualOffsetShift;
-  ELSE
-    ax.Status.IsCoordOffsetShiftAttained := FALSE;
-    ax.Status.IsCoordOffsetShiftStarted := FALSE;
-    ax.Status.CoordActualOffsetShift := 0.0;
-  END_IF;
 
 END_ACTION
 
