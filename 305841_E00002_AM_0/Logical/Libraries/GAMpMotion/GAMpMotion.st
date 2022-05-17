@@ -273,7 +273,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
       // Zero relative shift distance requested
       ((_I_HmiAxisReq.offsetShiftReq OR _I_HmiAxisReq.phaseShiftReq) AND _I_HmiAxisReq.shiftType = 0 AND _I_HmiAxisReq.shiftDistance = 0.0) OR
       // zero out position offset to master, but position offset is zero
-      (_I_HmiAxisReq.phaseShiftToMasterPosReq AND ABS(_I_SlaveAxis.Status.CalculatedPosition1) < _I_ToleranceZeroDepth) OR
+      (_I_HmiAxisReq.offsetShiftToMasterPosReq AND ABS(_I_SlaveAxis.Status.CalculatedPosition1) < _I_ToleranceZeroDepth) OR
       // master distance profile base and zero profile distance
       (_I_HmiAxisReq.shiftOverMasterDistance AND
        _I_HmiAxisReq.shiftProfileDistance = 0.0) OR
@@ -282,15 +282,15 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
        _I_Axis.fbPhaseShift.ShiftStarted THEN
     // Turn off shifting, block the shift reqs, and clear the end req
     _I_HmiAxisReq.offsetShiftReq := FALSE;
+    _I_HmiAxisReq.offsetShiftToMasterPosReq := FALSE;
     _I_HmiAxisReq.phaseShiftReq := FALSE;
-    _I_HmiAxisReq.phaseShiftToMasterPosReq := FALSE;
-  ELSIF _I_HmiAxisReq.offsetShiftReq THEN
+  ELSIF _I_HmiAxisReq.offsetShiftReq OR _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
     // New offset request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
     
     // Look at the shift type to determine absolute or relative
-    IF _I_HmiAxisReq.shiftType = 0 THEN
+    IF _I_HmiAxisReq.shiftType = 0 OR _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
       // relative
       _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
     ELSIF _I_HmiAxisReq.shiftType = 1 THEN
@@ -308,21 +308,28 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
       // We want to perform the shift based on the master speed and position at the time the shift was triggered
       _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_POSITION;
     END_IF;
-    
+
+    // If requesting to shift back to master position, then overwrite the shift amount
+    // by the opposite of the axis offset.
+    IF _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
+      _I_HmiAxisReq.shiftDistance := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
+      _I_Axis.CouplingParameters.Shift := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
+    END_IF;
+
     // All params should be set. Set the request in the coupling structure and clear the hmi reqs
     _I_Axis.CouplingParameters.OffsetShiftReq := TRUE;
     // turn off the offset and phase shift hmi requests
     _I_HmiAxisReq.offsetShiftReq := FALSE;
+    _I_HmiAxisReq.offsetShiftToMasterPosReq := FALSE;
     _I_HmiAxisReq.phaseShiftReq := FALSE;
-    _I_HmiAxisReq.phaseShiftToMasterPosReq := FALSE;
-  ELSIF _I_HmiAxisReq.phaseShiftReq OR _I_HmiAxisReq.phaseShiftToMasterPosReq THEN
+  ELSIF _I_HmiAxisReq.phaseShiftReq THEN
     // New phase shift request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
     
     // Look at the shift type to determine absolute or relative
     // If the request is to shoft to the master position, then use relative
-    IF _I_HmiAxisReq.shiftType = 0 OR _I_HmiAxisReq.phaseShiftToMasterPosReq THEN
+    IF _I_HmiAxisReq.shiftType = 0 THEN
       // relative
       _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
     ELSIF _I_HmiAxisReq.shiftType = 1 THEN
@@ -341,19 +348,12 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
       _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_POSITION;
     END_IF;
 
-    // If requesting to shift back to master position, then overwrite the shift amount
-    // by the opposite of the axis offset.
-    IF _I_HmiAxisReq.phaseShiftToMasterPosReq THEN
-      _I_HmiAxisReq.shiftDistance := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
-      _I_Axis.CouplingParameters.Shift := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
-    END_IF;
     
     // All params should be set. Set the request in the coupling structure and clear the hmi reqs
     _I_Axis.CouplingParameters.PhaseShiftReq := TRUE;
     // turn off the offset and phase shift hmi requests
     _I_HmiAxisReq.offsetShiftReq := FALSE;
     _I_HmiAxisReq.phaseShiftReq := FALSE;
-    _I_HmiAxisReq.phaseShiftToMasterPosReq := FALSE;
   END_IF;
   
   // Handle home requests

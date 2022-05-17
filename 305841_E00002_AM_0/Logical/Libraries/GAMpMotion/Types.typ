@@ -87,8 +87,8 @@ TYPE
     manBrakeRelReq : BOOL := FALSE;
     clearManBrakeRelReq : BOOL := FALSE;
     offsetShiftReq : BOOL := FALSE; (* shift slave pos on the slave axis, shift value in slave units *)
+    offsetShiftToMasterPosReq : BOOL := FALSE; (* shift slave position by axis offset in slave units *)
     phaseShiftReq : BOOL := FALSE; (* shift master pos on the slave axis, shift value in master units *)
-    phaseShiftToMasterPosReq : BOOL := FALSE; (* shift master pos on the slave axis, shift value by axis offset in master units *)
     gearInReq : BOOL := FALSE;
     camInReq : BOOL := FALSE;
     disengageSlaveReq : BOOL := FALSE; (* Disengage cam and gear *)
@@ -187,6 +187,7 @@ TYPE
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
+    HasCoordinatedSlave : BOOL := FALSE;
     IsGearInSync : BOOL := FALSE; (* slave is in sync with the master *)
     IsGearInCompensation : BOOL := FALSE; (* slave is in compensation with the master *)
     IsCamInSync : BOOL := FALSE; (* slave is in sync with the master *)
@@ -283,7 +284,7 @@ TYPE
     _endShiftSection : BOOL := FALSE;
     _beginCamInSection : BOOL := FALSE;
     CamIsPeriodic : BOOL := TRUE; (* H: cam is performed periodically, L: cam is performed once *)
-    CamId : UINT; (* cam id used with CamIn *)
+    CamId : UINT := 1; (* cam id used with CamIn *)
     CamMasterOffset : LREAL := 0.0;  
     CamSlaveOffset : LREAL := 0.0;  
     CamScalingMaster : DINT := 1000; (* Cam scaling factor for master *)

@@ -77,31 +77,33 @@
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveStatus" top="315" left="30" width="370" height="375" zIndex="2">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordSlaveRdy" top="49" left="174" width="175" height="15" zIndex="0" text="Is Coord. Slave Rdy" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordMstrRdy" top="79" left="174" width="175" height="15" zIndex="1" text="Is Coord. Master Rdy" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInComp" top="109" left="174" width="175" height="15" zIndex="2" text="Is Coord. In Comp." padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInSync" top="139" left="174" width="175" height="15" zIndex="3" text="Is Coord. In Sync" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordSlaveRdy" top="49" left="139" width="30" height="20" zIndex="4" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordMasterRdy" top="79" left="139" width="30" height="20" zIndex="5" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInComp" top="109" left="139" width="30" height="20" zIndex="6" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInSync" top="139" left="139" width="30" height="20" zIndex="7" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosActSlave" top="79" left="9" width="120" height="15" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelActSlave" top="134" left="9" width="120" height="15" zIndex="9" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblPosActSlave" top="54" left="24" height="15" zIndex="10" text="Position" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblVelActSlave" top="109" left="24" height="15" zIndex="11" text="Velocity" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordOffsetDone" top="169" left="174" width="175" height="15" zIndex="12" text="Is Coord. Offset Done" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordOffsetDone" top="169" left="139" width="30" height="20" zIndex="13" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordPhasingDone" top="199" left="174" width="175" height="22" zIndex="14" text="Is Coord. Phasing Done" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordPhasingDone" top="199" left="139" width="30" height="20" zIndex="15" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetAct" top="189" left="9" width="120" height="15" zIndex="16" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblOffsetAct" top="164" left="24" height="15" zIndex="17" text="Offset Shift" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPhaseShiftAct" top="249" left="9" width="120" height="15" zIndex="18" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblPhaseShiftAct" top="224" left="19" width="91" height="15" zIndex="19" text="Phase Shift" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblStatusSlave" top="253" left="289" width="60" height="15" zIndex="20" text="Status" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblStateSlave" top="278" left="289" width="60" height="15" zIndex="21" text="State" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatusSlave" top="253" left="100" width="187" height="15" zIndex="22" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStateSlave" top="278" left="90" width="197" height="15" zIndex="23" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
-        <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="24" value="slave axis name" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInComp" top="169" left="189" width="175" height="15" zIndex="2" text="Is Coord. In Comp." padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInSync" top="189" left="189" width="175" height="15" zIndex="3" text="Is Coord. In Sync" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInComp" top="167" left="154" width="30" height="20" zIndex="6" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInSync" top="190" left="154" width="30" height="20" zIndex="7" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosActSlave" top="119" left="-1" width="120" height="15" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelActSlave" top="119" left="249" width="120" height="15" zIndex="9" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPosActSlave" top="99" left="14" height="15" zIndex="10" text="Position" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelActSlave" top="99" left="264" height="15" zIndex="11" text="Velocity" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordOffsetDone" top="237" left="189" width="175" height="15" zIndex="12" text="Is Coord. Offset Done" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordOffsetDone" top="235" left="154" width="30" height="20" zIndex="13" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordOffsetStarted" top="209" left="189" width="175" height="22" zIndex="14" text="Is Coord. Offset Started" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordOffsetStarted" top="212" left="154" width="30" height="20" zIndex="15" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetAct" top="214" left="9" width="120" height="15" zIndex="16" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblOffsetAct" top="189" left="29" height="15" zIndex="17" text="Offset Shift" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStatusSlave" top="54" left="289" width="60" height="15" zIndex="18" text="Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStateSlave" top="74" left="289" width="60" height="15" zIndex="19" text="State" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatusSlave" top="54" left="99" width="187" height="15" zIndex="20" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStateSlave" top="74" left="89" width="197" height="15" zIndex="21" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="22" value="slave axis name" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetFromMaster" top="119" left="109" width="151" height="15" zIndex="23" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblOffsetFromMaster" top="99" left="104" width="151" height="15" zIndex="24" text="Offset From Master" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCamInSync" top="284" left="189" width="175" height="15" zIndex="25" text="Is Cam In Sync" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCamEndOfProfile" top="307" left="189" width="175" height="15" zIndex="26" text="Is Cam End Of Profile" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCamInSync" top="282" left="154" width="30" height="20" zIndex="27" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCamEndOfProfile" top="305" left="154" width="30" height="20" zIndex="28" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblCamStatus" top="329" left="189" width="91" height="15" zIndex="29" text="Cam Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutCamStatus" top="329" left="9" width="187" height="15" zIndex="30" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="460" left="415" width="585" height="230" zIndex="3" backColor="rgba(255, 255, 255, 1)">

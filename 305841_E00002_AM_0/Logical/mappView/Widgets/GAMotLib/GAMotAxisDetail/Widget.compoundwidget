@@ -79,31 +79,33 @@
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveStatus" top="315" left="30" width="370" height="375" zIndex="2">
       <Widgets>
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordSlaveRdy" top="49" left="174" width="175" height="15" zIndex="0" text="Is Coord. Slave Rdy" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordMstrRdy" top="79" left="174" width="175" height="15" zIndex="1" text="Is Coord. Master Rdy" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInComp" top="109" left="174" width="175" height="15" zIndex="2" text="Is Coord. In Comp." padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordInSync" top="139" left="174" width="175" height="15" zIndex="3" text="Is Coord. In Sync" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordSlaveRdy" top="49" left="139" width="30" height="20" zIndex="4" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordMasterRdy" top="79" left="139" width="30" height="20" zIndex="5" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInComp" top="109" left="139" width="30" height="20" zIndex="6" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordInSync" top="139" left="139" width="30" height="20" zIndex="7" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosActSlave" top="79" left="9" width="120" height="15" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelActSlave" top="134" left="9" width="120" height="15" zIndex="9" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblPosActSlave" top="54" left="24" height="15" zIndex="10" text="Position" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblVelActSlave" top="109" left="24" height="15" zIndex="11" text="Velocity" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordOffsetDone" top="169" left="174" width="175" height="15" zIndex="12" text="Is Coord. Offset Done" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordOffsetDone" top="169" left="139" width="30" height="20" zIndex="13" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblIsCoordPhasingDone" top="199" left="174" width="175" height="22" zIndex="14" text="Is Coord. Phasing Done" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCoordPhasingDone" top="199" left="139" width="30" height="20" zIndex="15" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetAct" top="189" left="9" width="120" height="15" zIndex="16" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblOffsetAct" top="164" left="24" height="15" zIndex="17" text="Offset Shift" textAlign="center" />
-        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPhaseShiftAct" top="249" left="9" width="120" height="15" zIndex="18" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblPhaseShiftAct" top="224" left="19" width="91" height="15" zIndex="19" text="Phase Shift" textAlign="center" />
-        <Widget xsi:type="widgets.brease.Label" id="lblStatusSlave" top="253" left="289" width="60" height="15" zIndex="20" text="Status" padding="0px" />
-        <Widget xsi:type="widgets.brease.Label" id="lblStateSlave" top="278" left="289" width="60" height="15" zIndex="21" text="State" padding="0px" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatusSlave" top="253" left="100" width="187" height="15" zIndex="22" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
-        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStateSlave" top="278" left="90" width="197" height="15" zIndex="23" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
-        <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="24" value="slave axis name" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsGearInComp" top="169" left="189" width="175" height="15" zIndex="2" text="Is Coord. In Comp." padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsGearInSync" top="189" left="189" width="175" height="15" zIndex="3" text="Is Coord. In Sync" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsGearInComp" top="167" left="154" width="30" height="20" zIndex="6" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsGearInSync" top="190" left="154" width="30" height="20" zIndex="7" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosActSlave" top="119" left="-1" width="120" height="15" zIndex="8" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutVelActSlave" top="119" left="249" width="120" height="15" zIndex="9" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPosActSlave" top="99" left="14" height="15" zIndex="10" text="Position" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblVelActSlave" top="99" left="264" height="15" zIndex="11" text="Velocity" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsGearOffsetDone" top="237" left="189" width="175" height="15" zIndex="12" text="Is Coord. Offset Done" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsGearOffsetDone" top="235" left="154" width="30" height="20" zIndex="13" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsGearOffsetStarted" top="209" left="189" width="175" height="22" zIndex="14" text="Is Coord. Offset Started" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsGearOffsetStarted" top="212" left="154" width="30" height="20" zIndex="15" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetAct" top="214" left="9" width="120" height="15" zIndex="16" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':4}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblOffsetAct" top="189" left="29" height="15" zIndex="17" text="Offset Shift" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStatusSlave" top="54" left="289" width="60" height="15" zIndex="18" text="Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStateSlave" top="74" left="289" width="60" height="15" zIndex="19" text="State" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatusSlave" top="54" left="99" width="187" height="15" zIndex="20" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStateSlave" top="74" left="89" width="197" height="15" zIndex="21" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblSlaveAxisStatus1" top="-1" left="-1" width="370" height="40" zIndex="22" value="slave axis name" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutOffsetFromMaster" top="119" left="109" width="151" height="15" zIndex="23" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblOffsetFromMaster" top="99" left="104" width="151" height="15" zIndex="24" text="Offset From Master" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCamInSync" top="284" left="189" width="175" height="15" zIndex="25" text="Is Cam In Sync" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblIsCamEndOfProfile" top="307" left="189" width="175" height="15" zIndex="26" text="Is Cam End Of Profile" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCamInSync" top="282" left="154" width="30" height="20" zIndex="27" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutIsCamEndOfProfile" top="305" left="154" width="30" height="20" zIndex="28" value="Y/N" backColor="rgba(255, 255, 255, 0)" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblCamStatus" top="329" left="189" width="91" height="15" zIndex="29" text="Cam Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutCamStatus" top="329" left="9" width="187" height="15" zIndex="30" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxSlaveControl" top="460" left="415" width="585" height="230" zIndex="3" backColor="rgba(255, 255, 255, 1)">
@@ -133,7 +135,8 @@
         <Widget xsi:type="widgets.brease.Label" id="lblCamId" top="184" left="139" width="66" zIndex="17" text="Cam ID" bold="true" />
       </Widgets>
     </Widget>
-  </Widgets>  <Properties>
+  </Widgets>
+  <Properties>
     
     <!-- Structure properties -->
     <!--
@@ -301,6 +304,7 @@
         <Mapping widget="numOutPosLimitNeg" property="unit" mode="oneWay"/>
         <Mapping widget="numInSlaveOffsetAmt" property="unit" mode="oneWay"/>
         <Mapping widget="numInMasterDistance" property="unit" mode="oneWay"/>
+        <Mapping widget="numOutOffsetFromMaster" property="unit" mode="oneWay"/>
       </Mappings>
     </Property>
      
@@ -496,95 +500,89 @@
       </Mappings>
     </Property>
 
-    <!-- Coord Axis Position -->
+    <!-- Coord Axis Velocity -->
     <Property xsi:type="BindableProperty" name="CoordSlaveVelocity" type="Number" defaultValue="0.0" readOnly="false" category="Axis">
       <Description>Coordinated Axis Velocity</Description>
       <Mappings>
         <Mapping widget="numOutVelActSlave" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
+
+    <!-- Coord Axis Slave Offset to Master Position -->
+    <Property xsi:type="BindableProperty" name="SlaveOffsetToMaster" type="Number" defaultValue="0.0" readOnly="false" category="Axis">
+      <Description>Coordinated Slave Offset To Master</Description>
+      <Mappings>
+        <Mapping widget="numOutOffsetFromMaster" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
     
-    <!-- Is Coord Slave Ready -->
-    <Property xsi:type="BindableProperty" name="IsCoordSlaveRdyText" type="String" defaultValue="No" readOnly="false" category="Axis">
+    <!-- Is Gear In Comp -->
+    <Property xsi:type="BindableProperty" name="IsGearInCompText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordSlaveRdy" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearInComp" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordSlaveRdyStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+    <Property xsi:type="BindableProperty" name="IsGearInCompStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordSlaveRdy" property="style" mode="oneWay"/>
-      </Mappings>
-    </Property>
-     
-    <!-- Is Coord Master Ready -->
-    <Property xsi:type="BindableProperty" name="IsCoordMasterRdyText" type="String" defaultValue="No" readOnly="false" category="Axis">
-      <Description>Text display for boolean status</Description>
-      <Mappings>
-        <Mapping widget="txtOutIsCoordMasterRdy" property="value" mode="oneWay"/>
-      </Mappings>
-    </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordMasterRdyStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
-      <Description>Text style for boolean status</Description>
-      <Mappings>
-        <Mapping widget="txtOutIsCoordMasterRdy" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearInComp" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
-    <!-- Is Coord In Comp -->
-    <Property xsi:type="BindableProperty" name="IsCoordInCompText" type="String" defaultValue="No" readOnly="false" category="Axis">
+    <!-- Is Gear In Sync -->
+    <Property xsi:type="BindableProperty" name="IsGearInSyncText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordInComp" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearInSync" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordInCompStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+    <Property xsi:type="BindableProperty" name="IsGearInSyncStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordInComp" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearInSync" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
-    <!-- Is Coord In Sync -->
-    <Property xsi:type="BindableProperty" name="IsCoordInSyncText" type="String" defaultValue="No" readOnly="false" category="Axis">
+   <!-- Is Gear Offset Done -->
+    <Property xsi:type="BindableProperty" name="IsGearOffsetDoneText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordInSync" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearOffsetDone" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordInSyncStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+    <Property xsi:type="BindableProperty" name="IsGearOffsetDoneStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordInSync" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsGearOffsetDone" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
-   <!-- Is Coord Offset Done -->
-    <Property xsi:type="BindableProperty" name="IsCoordOffsetDoneText" type="String" defaultValue="No" readOnly="false" category="Axis">
+    <!-- Is Cam In Sync -->
+    <Property xsi:type="BindableProperty" name="IsCamInSyncText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordOffsetDone" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsCamInSync" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordOffsetDoneStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+    <Property xsi:type="BindableProperty" name="IsCamInSyncStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordOffsetDone" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsCamInSync" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
-   <!-- Is Coord Phasing Done -->
-    <Property xsi:type="BindableProperty" name="IsCoordPhasingDoneText" type="String" defaultValue="No" readOnly="false" category="Axis">
+    <!-- Is Cam End Of Profile -->
+    <Property xsi:type="BindableProperty" name="IsCamEndOfProfileText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordPhasingDone" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsCamEndOfProfileSync" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
-    <Property xsi:type="BindableProperty" name="IsCoordPhasingDoneStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+    <Property xsi:type="BindableProperty" name="IsCamEndOfProfileStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCoordPhasingDone" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsEndOfProfileSync" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
@@ -599,6 +597,20 @@
       <Description>Text style for integer status values.</Description>
       <Mappings>
         <Mapping widget="txtOutStatusSlave" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <!-- Cam Status -->
+    <Property xsi:type="BindableProperty" name="CamStatusText" type="String" defaultValue="Unknown" readOnly="false" category="Axis">
+      <Description>Text display for integer status values.</Description>
+      <Mappings>
+        <Mapping widget="txtOutCamStatus" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="CamStatusStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+      <Description>Text style for integer status values.</Description>
+      <Mappings>
+        <Mapping widget="txtOutCamStatus" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 
@@ -699,14 +711,37 @@
       </Mappings>
     </Property>
     
-    <!-- Make Properties for axis shift slave offset and master distance enable/disable. Changes will result in error if made during a shift. -->
+    <!-- Make Properties for Gear In, Cam In, and slave offset/phase shifts. -->
+    <Property xsi:type="BindableProperty" name="GearInEnable" type="Boolean" defaultValue="false" readOnly="false" category="Axis">
+      <Description>Gear In is enabled</Description>
+      <Mappings>
+        <Mapping widget="pbGearInSlave" property="enable" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="CamInEnable" type="Boolean" defaultValue="false" readOnly="false" category="Axis">
+      <Description>Cam In is enabled</Description>
+      <Mappings>
+        <Mapping widget="pbCamInSlave" property="enable" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
+    <Property xsi:type="BindableProperty" name="DisengageSlaveEnable" type="Boolean" defaultValue="false" readOnly="false" category="Axis">
+      <Description>Disengage Slave is enabled</Description>
+      <Mappings>
+        <Mapping widget="pbDisengageSlave" property="enable" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
     <Property xsi:type="BindableProperty" name="ShiftEnable" type="Boolean" defaultValue="true" readOnly="false" category="Axis">
-      <Description>Slave Shift Parameters are enabled</Description>
+      <Description>Slave Shift is enabled</Description>
       <Mappings>
         <Mapping widget="numInSlaveOffsetAmt" property="enable" mode="oneWay"/>
         <Mapping widget="numInMasterDistance" property="enable" mode="oneWay"/>
         <Mapping widget="pbOffsetSlave" property="enable" mode="oneWay"/>
         <Mapping widget="pbToMasterPos" property="enable" mode="oneWay"/>
+        <Mapping widget="rdoBtnGrpShiftType" property="enable" mode="oneWay"/>
+        <Mapping widget="chkBoxOverMasterDist" property="enable" mode="oneWay"/>
       </Mappings>
     </Property>
 

@@ -80,6 +80,21 @@
       <bt:Default refId="::AsGlobalPV:axes[0].Status.Velocity"/>
     </List>
 
+    <!-- Special Position 1 (slave offset from master) -->
+    <!-- Use axis 0 (dummy axis) when no slave is expected -->
+    <List xsi:type="opcUa" id="cmpwid_CalculatedPos1_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.CalculatedPosition1"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.CalculatedPosition1"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.CalculatedPosition1"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.CalculatedPosition1"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.CalculatedPosition1"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.CalculatedPosition1"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.CalculatedPosition1"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1"/>
+    </List>
+
     <!-- Axis status stuctures for use in compound widget structure binding -->
     <List xsi:type="opcUaComplexObject" id="cmpwid_axesPositionLimits_list">
       <bt:Element index="0" refId="::AsGlobalPV:gr_AxisPositionLimits[0]"/>
@@ -300,92 +315,63 @@
       <bt:Element index="8" refId="::AsGlobalPV:axes[8].CouplingParameters.SlaveAxisNo"/>
       <bt:Default refId="::AsGlobalPV:axes[0].CouplingParameters.SlaveAxisNo"/>
     </List>
+    
+    <!-- Is Coord Axis Gear In Compensation -->
+    <List xsi:type="opcUa" id="cmpwid_IsGearInComp_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInCompensation"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInCompensation"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInCompensation"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInCompensation"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInCompensation"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInCompensation"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInCompensation"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInCompensation"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation"/>
+    </List>
 
-    <!-- Is Coord Slave Ready -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordSlaveRdy_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordSlaveReady"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordSlaveReady"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordSlaveReady"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordSlaveReady"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordSlaveReady"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordSlaveReady"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordSlaveReady"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordSlaveReady"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordSlaveReady"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordSlaveReady"/>
+    <!-- Is Coord Axis Gear In Sync -->
+    <List xsi:type="opcUa" id="cmpwid_IsGearInSync_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInSync"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInSync"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInSync"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInSync"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInSync"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInSync"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInSync"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInSync"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInSync"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsGearInSync"/>
+    </List>
+
+    <!-- Is Coord Offset Started -->
+    <List xsi:type="opcUa" id="cmpwid_IsCoordOffsetStarted_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftStarted"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted"/>
     </List>
     
-    <!-- Is Coord Master Ready -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordMasterRdy_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordMasterReady"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordMasterReady"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordMasterReady"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordMasterReady"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordMasterReady"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordMasterReady"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordMasterReady"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordMasterReady"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordMasterReady"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordMasterReady"/>
-    </List>
-    
-    <!-- Is Coord Axis In Compensation -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordInComp_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordInCompensation"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordInCompensation"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordInCompensation"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordInCompensation"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordInCompensation"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordInCompensation"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordInCompensation"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordInCompensation"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordInCompensation"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordInCompensation"/>
-    </List>
-
-    <!-- Is Coord Axis In Sync -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordInSync_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordInSync"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordInSync"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordInSync"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordInSync"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordInSync"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordInSync"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordInSync"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordInSync"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordInSync"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordInSync"/>
-    </List>
-
     <!-- Is Coord Offset Done -->
     <List xsi:type="opcUa" id="cmpwid_IsCoordOffsetDone_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetDone"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetDone"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetDone"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetDone"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetDone"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetDone"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetDone"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetDone"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetDone"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetDone"/>
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftAttained"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained"/>
     </List>
 
-    <!-- Is Coord Phassing Done -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordPhasingDone_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordPhasingDone"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordPhasingDone"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordPhasingDone"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordPhasingDone"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordPhasingDone"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordPhasingDone"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordPhasingDone"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordPhasingDone"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordPhasingDone"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCoordPhasingDone"/>
-    </List>
-   
-    
     <!-- Coord Actual Offset Shift -->
     <List xsi:type="opcUa" id="cmpwid_CoordActualOffsetShift_list" attribute="value">
       <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift"/>
@@ -400,18 +386,46 @@
       <bt:Default refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift"/>
     </List>
 
-    <!-- Coord Actual Phase Shift -->
-    <List xsi:type="opcUa" id="cmpwid_CoordActualPhaseShift_list" attribute="value">
-      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualPhaseShift"/>
-      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.CoordActualPhaseShift"/>
-      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.CoordActualPhaseShift"/>
-      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.CoordActualPhaseShift"/>
-      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.CoordActualPhaseShift"/>
-      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.CoordActualPhaseShift"/>
-      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.CoordActualPhaseShift"/>
-      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.CoordActualPhaseShift"/>
-      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.CoordActualPhaseShift"/>
-      <bt:Default refId="::AsGlobalPV:axes[0].Status.CoordActualPhaseShift"/>
+    <!-- Is Coord Axis Cam In Sync -->
+    <List xsi:type="opcUa" id="cmpwid_IsCamInSync_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamInSync"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamInSync"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamInSync"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamInSync"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamInSync"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamInSync"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamInSync"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamInSync"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamInSync"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCamInSync"/>
+    </List>
+
+    <!-- Is Coord Axis Cam End Of Profile -->
+    <List xsi:type="opcUa" id="cmpwid_IsCamEndOfProfile_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamEndOfProfile"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamEndOfProfile"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamEndOfProfile"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamEndOfProfile"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamEndOfProfile"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamEndOfProfile"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamEndOfProfile"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamEndOfProfile"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile"/>
+    </List>
+
+    <!-- Cam Status -->
+    <List xsi:type="opcUa" id="cmpwid_CamStatus_list" attribute="value">
+      <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.CamStatus"/>
+      <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.CamStatus"/>
+      <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.CamStatus"/>
+      <bt:Element index="3" refId="::AsGlobalPV:axes[3].Status.CamStatus"/>
+      <bt:Element index="4" refId="::AsGlobalPV:axes[4].Status.CamStatus"/>
+      <bt:Element index="5" refId="::AsGlobalPV:axes[5].Status.CamStatus"/>
+      <bt:Element index="6" refId="::AsGlobalPV:axes[6].Status.CamStatus"/>
+      <bt:Element index="7" refId="::AsGlobalPV:axes[7].Status.CamStatus"/>
+      <bt:Element index="8" refId="::AsGlobalPV:axes[8].Status.CamStatus"/>
+      <bt:Default refId="::AsGlobalPV:axes[0].Status.CamStatus"/>
     </List>
 
     <!-- List of unit strings to assign to compound widget properties -->
@@ -572,7 +586,21 @@
       <bt:Default refId="::OmSafeDev:hmiMachineAxisReqs[0].movePositionEnable"/>
     </List>
 
-    <!-- Shift parameters Enable-->
+    <!-- Gear In Enable-->
+    <List xsi:type="opcUa" id="cmpwid_manAxisGearInEnable_list" attribute="value">
+      <bt:Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable"/>
+      <bt:Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].gearInEnable"/>
+      <bt:Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].gearInEnable"/>
+      <bt:Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].gearInEnable"/>
+      <bt:Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].gearInEnable"/>
+      <bt:Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].gearInEnable"/>
+      <bt:Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].gearInEnable"/>
+      <bt:Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].gearInEnable"/>
+      <bt:Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].gearInEnable"/>
+      <bt:Default refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable"/>
+    </List>
+ 
+    <!-- Shift Enable-->
     <List xsi:type="opcUa" id="cmpwid_manAxisReqShiftEnable_list" attribute="value">
       <bt:Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable"/>
       <bt:Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].shiftEnable"/>
@@ -585,7 +613,34 @@
       <bt:Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].shiftEnable"/>
       <bt:Default refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable"/>
     </List>
- 
+    
+    <!-- Cam In Enable-->
+    <List xsi:type="opcUa" id="cmpwid_manAxisCamInEnable_list" attribute="value">
+      <bt:Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable"/>
+      <bt:Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].camInEnable"/>
+      <bt:Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].camInEnable"/>
+      <bt:Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].camInEnable"/>
+      <bt:Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].camInEnable"/>
+      <bt:Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].camInEnable"/>
+      <bt:Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].camInEnable"/>
+      <bt:Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].camInEnable"/>
+      <bt:Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].camInEnable"/>
+      <bt:Default refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable"/>
+    </List>
+    
+    <!-- Disengate Enable-->
+    <List xsi:type="opcUa" id="cmpwid_manAxisDisengageEnable_list" attribute="value">
+      <bt:Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable"/>
+      <bt:Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].disengageEnable"/>
+      <bt:Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].disengageEnable"/>
+      <bt:Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].disengageEnable"/>
+      <bt:Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].disengageEnable"/>
+      <bt:Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].disengageEnable"/>
+      <bt:Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].disengageEnable"/>
+      <bt:Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].disengageEnable"/>
+      <bt:Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].disengageEnable"/>
+      <bt:Default refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable"/>
+    </List>
   </BindingLists>
 
 </BindingListsSet>

@@ -31,7 +31,10 @@ TYPE
     directionShortestEnable : BOOL := TRUE;
     moveDistanceEnable : BOOL := TRUE; (* enable params by default *)
     movePositionEnable : BOOL := TRUE;
-    shiftEnable : BOOL := FALSE; (* coordinated axis shift enabled *)
+    gearInEnable : BOOL := FALSE; (* coodinated axis gear in enabled *)
+    shiftEnable : BOOL := FALSE; (* coordinated axis gear offset or phase shift  enabled *)
+    camInEnable : BOOL := FALSE; (* coordinated axis cam in enabled *)
+    disengageEnable : BOOL := FALSE; (* coordinated axis cam in enabled *)
     moveDesignation: DINT := -1; (* per hmi. 0: Abs, 1: Rel, 2:Vel or Jog, -1 is no selection. See fctDecodeHmiMoveType *)
     direction: DINT := -1; (* per hmi. 0: pos, 1: neg, 2: shortest, -1 is no selection. See fctDecodeHmiDirection *)
     (* axis designation. Two different data types for convenience. *)

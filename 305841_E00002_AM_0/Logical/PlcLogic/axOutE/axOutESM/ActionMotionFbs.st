@@ -171,8 +171,6 @@ ACTION ActionCamInOut:
     ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
     ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
     ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
-    // force cam id 1 for now.
-    ax.CouplingParameters.CamId := 1;
     ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
     ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
     ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;
@@ -279,23 +277,23 @@ END_ACTION
 
 ACTION ActionOffsetShift:
   // Execute the offset shift fb based on the offset shift request.
-  // The fb is edge triggered based on the StartShift input, however
-  // either by design or because of a bug, the AdvancedParameters.ProfileBase
-  // seems to be evaluated based on Enable going high, and chagese made after,
-  // but before StartShift input going high are ignored.
-  // If the offset params change, another request must be made.
+  // The fb has a level sensitive enable and an edge triggered StartShift input.
+  // NOTE: Either by design or because of a bug, the AdvancedParameters.ProfileBase
+  // seems to be evaluated based on Enable going high. Changes made to the ProfileBase,
+  // after enable going high but before StartShift input going high are ignored.
+  // If the shift params change, another request must be made.
+  // A shift cannot be stopped once started without halting or some oher means of stopping
+  // the axes outside the scope of the shift fb.
 
-  // Since triggering an offset while another offset is in progress triggers an error,
+  // Since triggering an offset while another shift is in progress triggers an error,
   // the request, enable, and start shift are only cleared once the shift is finished,
   // or the fb is invalid or in error
 
   // Only execute the offset shift fb if the axis number has been set, 
-  // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested, and the master axis is powered (so enable can be easily toggled)
+  // the slave axis number has been set, and neither is set to be ignored
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
     ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-    axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
-    NOT ax.Status.IsPoweredOn THEN
+    axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
     // slave or master should be ignored, or slave is not set, or 
     // master is not powered.  Keep the request, enable, and startshift low
     ax.CouplingParameters.OffsetShiftReq := FALSE;
@@ -324,9 +322,8 @@ ACTION ActionOffsetShift:
     // fb is enabled and valid and not in error, but not started yet.
     // Start the shift on the edge triggered StartShift input.
     ax.fbOffsetShift.StartShift := TRUE;
-  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND
-    (NOT ax.fbOffsetShift.Valid AND ax.fbOffsetShift.Error) THEN 
-    // fb is enabled but not valid or in error. Clear the request, enable, and make sure the start shift stays low
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND ax.fbOffsetShift.Error THEN 
+    // fb is enabled but in error. Clear the request, enable, and make sure the start shift stays low
     ax.CouplingParameters.OffsetShiftReq := FALSE;
     ax.fbOffsetShift.Enable := FALSE;
     ax.fbOffsetShift.StartShift := FALSE;
@@ -359,33 +356,33 @@ END_ACTION
 
 ACTION ActionPhaseShift:
   // Execute the phase shift fb based on the phase shift request.
-  // The fb is edge triggered, and the request is cleared once serviced.
-  // If the phase params change, another request must be made.
-  // TODO: Verify operation/behavior when changing params
+  // The fb has a level sensitive enable and an edge triggered StartShift input.
+  // NOTE: Either by design or because of a bug, the AdvancedParameters.ProfileBase
+  // seems to be evaluated based on Enable going high. Changes made to the ProfileBase,
+  // after enable going high but before StartShift input going high are ignored.
+  // If the shift params change, another request must be made.
+  // A shift cannot be stopped once started without halting or some oher means of stopping
+  // the axes outside the scope of the shift fb.
+
+  // Since triggering phase shift while another shift is in progress triggers an error,
+  // the request, enable, and start shift are only cleared once the shift is finished,
+  // or the fb is invalid or in error
 
   // Only execute the phase shift fb if the axis number has been set, 
-  // the slave axis number has been set, and neither is set to be ignored,
-  // and it is requested, and the master axis is powered (so enable can be easily toggled)
+  // the slave axis number has been set, and neither is set to be ignored
   IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
-       ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
-       axes[ax.CouplingParameters.SlaveAxisNo].Ignore OR
-       NOT ax.Status.IsPoweredOn THEN
-    // slave or master should be ignored
-    // keep the request and enable low
+    ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+    axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored, or slave is not set, or 
+    // master is not powered.  Keep the request, enable, and startshift low
     ax.CouplingParameters.PhaseShiftReq := FALSE;
     ax.fbPhaseShift.Enable := FALSE;
     ax.fbPhaseShift.StartShift := FALSE;
-  ELSE
-    ax.fbPhaseShift.Enable := TRUE;
-  END_IF;
-    
-  // Enable input and ignore considered above. If req is high,
-  // it can be acted upon.
-  IF ax.CouplingParameters.PhaseShiftReq THEN
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND NOT ax.fbPhaseShift.Enable THEN 
     // Phase Shift request is made.
-    // Clear the req so a future rising edge can be seen
-    ax.CouplingParameters.PhaseShiftReq := FALSE;
-    // Load the phase shift params, then set the start shift input (edge sensitive input)
+    // Set the fb params so a start shift can act on them. Set them
+    // before bringing enable high because the profile base param(s) seem to 
+    // need to be set before the StartShift input is raised.
     ax.fbPhaseShift.PhaseShift := ax.CouplingParameters.Shift;
     ax.fbPhaseShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
     ax.fbPhaseShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
@@ -397,25 +394,42 @@ ACTION ActionPhaseShift:
     ax.fbPhaseShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
     ax.fbPhaseShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
     ax.fbPhaseShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
-    ax.fbPhaseShift.StartShift := TRUE; // fb looks for a rising edge
+    // Enable the fb so we can look for a valid before starting the shift.
+    ax.fbPhaseShift.Enable := TRUE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Enable AND
+    NOT ax.fbPhaseShift.StartShift AND ax.fbPhaseShift.Valid AND NOT ax.fbPhaseShift.Error THEN
+    // fb is enabled and valid and not in error, but not started yet.
+    // Start the shift on the edge triggered StartShift input.
+    ax.fbPhaseShift.StartShift := TRUE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Enable AND ax.fbPhaseShift.Error THEN 
+    // fb is enabled but in error. Clear the request, enable, and make sure the start shift stays low
+    ax.CouplingParameters.PhaseShiftReq := FALSE;
+    ax.fbPhaseShift.Enable := FALSE;
+    ax.fbPhaseShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Valid AND ax.fbPhaseShift.StartShift AND
+    NOT ax.fbPhaseShift.ShiftAttained THEN
+    // Shift was triggered, but isn't done yet.
+    // Update the axis status structure
+    ax.Status.IsCoordPhaseShiftAttained := FALSE;
+    ax.Status.IsCoordPhaseShiftStarted := ax.fbPhaseShift.ShiftStarted;
+    ax.Status.CoordActualPhaseShift := ax.fbPhaseShift.ActualPhaseShift;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Valid AND ax.fbPhaseShift.StartShift AND
+    ax.fbPhaseShift.ShiftAttained THEN
+    // Shift was triggered, and is now done.
+    // Update the axis status structure
+    ax.Status.IsCoordPhaseShiftAttained := ax.fbPhaseShift.ShiftAttained;
+    ax.Status.IsCoordPhaseShiftStarted := FALSE;
+    ax.Status.CoordActualPhaseShift := ax.fbPhaseShift.ActualPhaseShift;
+    // Clear the request, enable, and start shift.
+    // Clearing the original request at the end prevents another request from triggering a shift while
+    // a shift is in progress, but also allows another request to be triggered once done.
+    ax.CouplingParameters.PhaseShiftReq := FALSE;
+    ax.fbPhaseShift.Enable := FALSE;
+    ax.fbPhaseShift.StartShift := FALSE;
   END_IF;
   
   // Call the phase shift fb.
   ax.fbPhaseShift();
-  // Clear the start shift bit. The fb is edge triggerd, and it would have been seen by the above call.
-  ax.fbPhaseShift.StartShift := FALSE; // fb looks for a rising edge
-    
-  // Update the axis status structure as long as status is valid and there is no error.
-  // Otherwise, clear the values
-  IF ax.fbPhaseShift.Valid AND NOT ax.fbPhaseShift.Error THEN
-    ax.Status.IsCoordPhaseShiftAttained := ax.fbPhaseShift.ShiftAttained;
-    ax.Status.IsCoordPhaseShiftStarted := ax.fbPhaseShift.ShiftStarted;
-    ax.Status.CoordActualPhaseShift := ax.fbPhaseShift.ActualPhaseShift;
-  ELSE
-    ax.Status.IsCoordPhaseShiftAttained := FALSE;
-    ax.Status.IsCoordPhaseShiftStarted := FALSE;
-    ax.Status.CoordActualPhaseShift := 0.0;
-  END_IF;
 
 END_ACTION
 
@@ -436,4 +450,3 @@ ACTION CopySlaveStatusToMaster :
     END_IF;
   END_FOR;
 END_ACTION
-

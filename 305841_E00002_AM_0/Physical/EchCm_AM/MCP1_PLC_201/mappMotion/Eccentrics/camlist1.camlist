@@ -7,5 +7,10 @@
       <Property ID="CamID" Value="1" />
       <Property ID="Description" />
     </Group>
+    <Group ID="Row[2]">
+      <Property ID="CamName" Value="CamBigP" />
+      <Property ID="CamID" Value="2" />
+      <Property ID="Description" />
+    </Group>
   </Element>
 </Configuration>

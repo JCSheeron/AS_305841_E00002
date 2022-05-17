@@ -137,6 +137,7 @@
   <Operation Download="camlist1.br" Memory="UserROM"/>
   <Operation Download="mappConfig.br" Memory="UserROM"/>
   <Operation Download="Cam1P.br" Memory="UserROM"/>
+  <Operation Download="CamBigP.br" Memory="UserROM"/>
   <Operation Download="ProdCycle.br" Memory="UserROM"/>
   <Operation Download="Annunc.br" Memory="UserROM"/>
   <Operation Download="Pendant.br" Memory="UserROM"/>

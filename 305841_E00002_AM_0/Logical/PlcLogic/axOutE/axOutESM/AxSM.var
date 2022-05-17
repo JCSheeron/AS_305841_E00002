@@ -33,7 +33,6 @@ VAR CONSTANT
   ax : REFERENCE TO sMot_Axis;
   axPositionLimits : REFERENCE TO sMot_PositionLimits;
   axIdx : DINT; (* axis index *)
-  inSyncSlave : BOOL := FALSE;
   axDummySlave : McAxisType;
 	(* local versions of motion param structures -- used to make setting advanced params easier *)
   axisBasicParams : MpAxisBasicParType; 

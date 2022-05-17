@@ -440,5 +440,35 @@
         <seg>CF VFD</seg>
       </tuv>
     </tu>
+    <tu tuid="camStatus.0">
+      <tuv xml:lang="en">
+        <seg>Prep Sl Offset Pos.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.1">
+      <tuv xml:lang="en">
+        <seg>Sl to Offset Pos</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.2">
+      <tuv xml:lang="en">
+        <seg>Preparing Cam Coupling</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.3">
+      <tuv xml:lang="en">
+        <seg>Master To Offset Pos.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.4">
+      <tuv xml:lang="en">
+        <seg>In Cam Motion</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.5">
+      <tuv xml:lang="en">
+        <seg>At End Of Profile</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

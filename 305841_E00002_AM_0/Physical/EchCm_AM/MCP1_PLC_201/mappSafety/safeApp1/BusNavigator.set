@@ -5,17 +5,17 @@ HostName=SL12.xy.org
 Destination=192.168.3.1
 CommunicationMode=1
 [GUI]
-SortOrder=0
 NameWidth=187
+SortOrder=0
 ASVarWidth=100
 ViewMode=0
-SADRWidth=100
 SortColumn=0
+SADRWidth=100
 DescriptionWidth=100
 ChannelWidth=289
-SplitterPosition=689
-SDVarWidth=187
+SplitterPosition=555
 StateWidth=100
+SDVarWidth=187
 [Manual]
 Timeout=1000
 Port=
@@ -34,7 +34,7 @@ Host=
 IPMode=1
 UseDA=0
 Destination=
-Source=2
+Source=1
 Port=50000
 
 [ProjectInfo]

@@ -33,6 +33,7 @@
     <NcDataObject Name="axZParamTa" Source="PlcLogic.axZ.axZParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="Cam1P" Source="PlcLogic.axInE.Cam1P.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
+    <NcDataObject Name="CamBigP" Source="PlcLogic.axInE.CamBigP.dob" Memory="UserROM" Language="Cam" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />

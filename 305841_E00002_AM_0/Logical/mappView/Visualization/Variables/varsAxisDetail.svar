@@ -55,14 +55,15 @@
     <Variable name="svIsStopped" xsi:type="BOOL" value="false" />
     <Variable name="svAxisStatusInt" xsi:type="ANY_INT" value="0" />
     <Variable name="svAxisStateInt" xsi:type="ANY_INT" value="0" />
-    <Variable name="svIsCoordSlaveRdy" xsi:type="BOOL" value="false" />
-    <Variable name="svIsCoordMasterRdy" xsi:type="BOOL" value="false" />
-    <Variable name="svIsCoordInComp" xsi:type="BOOL" value="false" />
-    <Variable name="svIsCoordInSync" xsi:type="BOOL" value="false" />
-    <Variable name="svIsCoordOffsetDone" xsi:type="BOOL" value="false" />
-    <Variable name="svIsCoordPhasingDone" xsi:type="BOOL" value="false" />
+    <Variable name="svIsGearInComp" xsi:type="BOOL" value="false" />
+    <Variable name="svIsGearInSync" xsi:type="BOOL" value="false" />
+    <Variable name="svIsGearOffsetDone" xsi:type="BOOL" value="false" />
+    <Variable name="svIsGearOffsetStarted" xsi:type="BOOL" value="false" />
+    <Variable name="svIsCamInSync" xsi:type="BOOL" value="false" />
+    <Variable name="svIsCamEndOfProfile" xsi:type="BOOL" value="false" />
     <Variable name="svSlaveAxisStatusInt" xsi:type="ANY_INT" value="0" />
     <Variable name="svSlaveAxisStateInt" xsi:type="ANY_INT" value="0" />
+    <Variable name="svCamStatusInt" xsi:type="ANY_INT" value="0" />
    
   </Variables>
 </VariablesSet>

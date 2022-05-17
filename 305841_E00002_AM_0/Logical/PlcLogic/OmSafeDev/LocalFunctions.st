@@ -76,14 +76,38 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI machine specific requests, an
     _I_MachineAxisReqs.direction := -1;
   END_IF;
 
+  // Coordinated axis PB enable related
+  
+  // Gear In and Cam In
+  // There must be a slave axis designated,
+  // the axes must be homed and enabled,
+  // and these two (gear/cam) are mutually exclusive of each other
+  _I_MachineAxisReqs.gearInEnable := 
+    _I_Axis.CouplingParameters.SlaveAxisNo <> 0 AND
+    _I_Axis.Status.IsHomed AND _I_Axis.Status.IsPoweredOn AND
+    _I_SlaveAxis.Status.IsHomed AND _I_SlaveAxis.Status.IsPoweredOn AND
+    NOT _I_Axis.fbCamIn.Active;
+
+  _I_MachineAxisReqs.camInEnable := 
+    _I_Axis.CouplingParameters.SlaveAxisNo <> 0 AND
+    _I_Axis.Status.IsHomed AND _I_Axis.Status.IsPoweredOn AND
+    _I_SlaveAxis.Status.IsHomed AND _I_SlaveAxis.Status.IsPoweredOn AND
+    NOT _I_Axis.fbGearIn.Active;
+
+  // Disengage enabled if gearing or caming is active
+  _I_MachineAxisReqs.disengageEnable := _I_Axis.fbGearIn.Active OR _I_Axis.fbCamIn.Active;
+  
   // Coordinated shift commands cannot be enabled unless:
   // 1) The slave is gear coordinated and InSync
-  // 2) The master is moving  
-  // 3) Phase shift and offset shift are busy (enabled) but not in progress
-  _I_MachineAxisReqs.shiftEnable := _I_Axis.Status.IsGearInSync AND
-    _I_Axis.Status.IsMoveActive AND
-    _I_Axis.fbOffsetShift.Busy AND NOT _I_Axis.fbOffsetShift.ShiftStarted AND
-    _I_Axis.fbPhaseShift.Busy AND NOT _I_Axis.fbPhaseShift.ShiftStarted;
+  // 2) The master is moving ?? TODO: verify
+  // 3) Phase shift and offset shift are not in progress
+  // 4) Cam is not active
+  _I_MachineAxisReqs.shiftEnable :=
+    _I_Axis.Status.IsGearInSync AND
+    //_I_Axis.Status.IsMoveActive AND
+    NOT _I_Axis.fbOffsetShift.ShiftStarted AND
+    NOT _I_Axis.fbPhaseShift.ShiftStarted AND
+    NOT _I_Axis.fbCamIn.Active;
   
   // Now the direction options should be qualified, set the direction that the GAMpMotion library will see
   _I_LibraryAxisReqs.Direction := fctDecodeHmiDirection(_I_DirectionReq := _I_MachineAxisReqs.direction);
