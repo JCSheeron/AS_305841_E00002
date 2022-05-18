@@ -345,7 +345,7 @@
     </List>
 
     <!-- Is Coord Offset Started -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordOffsetStarted_list" attribute="value">
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetStarted_list" attribute="value">
       <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted"/>
       <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftStarted"/>
       <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftStarted"/>
@@ -359,7 +359,7 @@
     </List>
     
     <!-- Is Coord Offset Done -->
-    <List xsi:type="opcUa" id="cmpwid_IsCoordOffsetDone_list" attribute="value">
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetDone_list" attribute="value">
       <bt:Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained"/>
       <bt:Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftAttained"/>
       <bt:Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftAttained"/>

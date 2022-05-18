@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=8551 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=8659 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                     axes                          sMot_Axis[0..8]    0 "                                                               *"    0   24    9    0    0    0         
                                  axes[0]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
@@ -2079,14 +2079,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                  axes[2]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               2"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                              21"    2    4    1   10    0    0 e,0,GAMO
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -2103,28 +2103,28 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                              Internal[1]                                    UDINT    0 "                                                               *"    5    7    1   10    0    0         
                                    seqNo                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                   Status                          sMot_AxisStatus    0 "                                                               *"    2   24    1    0    0    0         
-                     IsCommuncationReady                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsReadyToPowerOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                        IsAtHomingSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        IsTrigger1Active                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                        IsTrigger2Active                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                     IsDriveEnableActive                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                          IsInSimulation                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                             IsPoweredOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                      IsTorqueLimitReady                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                 IsBrakeManuallyReleased                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                 IsHomed                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                               IsJogging                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsAtJogLimit                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                         IsAtTorqueLimit                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsInVelocity                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsInPosition                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            IsMoveActive                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                              IsMoveDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                               IsStopped                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                          IsAutoTuneDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                     IsCommuncationReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsReadyToPowerOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsAtHomingSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger1Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                        IsTrigger2Active                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                     IsDriveEnableActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                          IsInSimulation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                             IsPoweredOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                      IsTorqueLimitReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                 IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 IsHomed                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               IsJogging                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsAtJogLimit                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                         IsAtTorqueLimit                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsInVelocity                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsInPosition                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            IsMoveActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                              IsMoveDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               IsStopped                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                          IsAutoTuneDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                          AutoTuneQuality                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                       SafeMotionDiagCode                                     UINT    0 "                                                               *"    3    6    1   10    0    0         
                                 Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
@@ -2805,11 +2805,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                            fbOffsetShift                             MC_BR_Offset    0 "                                                               *"    2   24    1    0    0    0         
-                                   Slave                                    UDINT    0 "                                                       129152908"    3    7    1   10    0    0         
-                                  Enable                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                             OffsetShift                                    LREAL    0 "                                                            45.0"    3   14    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                          7200.0"    3    8    1   10    0    0         
-                            Acceleration                                     REAL    0 "                                                          7200.0"    3    8    1   10    0    0         
+                                   Slave                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
+                                  Enable                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                             OffsetShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                       AdvancedParameters                       McAdvOffsetParType    0 "                                                               *"    3   24    1    0    0    0         
                                ShiftMode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcSH
 
@@ -2825,14 +2825,14 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                     Jerk                                     REAL    0 "                                                               *"    4    8    1   10    0    0         
              ShiftAlternativeValueSource                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcAL
 
-                              StartShift                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                   Valid                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                    Busy                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                 ErrorID                                     DINT    0 "                                                               0"    3    4    1   10    0    0         
-                           ShiftAttained                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                            ShiftStarted                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                       ActualOffsetShift                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                              StartShift                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                   Valid                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                    Busy                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                 ErrorID                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
+                           ShiftAttained                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                            ShiftStarted                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                       ActualOffsetShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                                 Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    0         
                                       ID                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    Check                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
@@ -3049,11 +3049,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                              MaControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                  MaSeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
                                 fbCamOut                                MC_CamOut    0 "                                                               *"    2   24    1    0    0    0         
-                                   Slave                                    UDINT    0 "                                                       129152908"    3    7    1   10    0    0         
-                                 Execute                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                    Jerk                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                                    Done                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                                    Busy                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                   Slave                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
+                                 Execute                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                    Jerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                    Done                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                                    Busy                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                                  ErrorID                                     DINT    0 "                                                               *"    3    4    1   10    0    0         
                                 Internal                           McInternalType    0 "                                                               *"    3   24    1    0    0    0         
@@ -9344,3 +9344,445 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                    Flags                                    USINT    0 "                                                               *"    4    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
+                      hmiLibraryAxisReqs                   sMot_HmiAxisReqs[0..8]    0 "                                                               *"    0   24    9    0    1    1         
+                   hmiLibraryAxisReqs[0]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               0"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               0"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[1]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               0"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[2]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    1         
+                      _beginResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               2"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               0"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                          -180.0"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                           180.0"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                              16"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                            90.0"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                            90.0"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                            90.0"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[3]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               *"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[4]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               *"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[5]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               *"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[6]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               0"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               0"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               9"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[7]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               7"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                            1000"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               0"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               0"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               0"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               9"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                             1.0"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                             1.0"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                   hmiLibraryAxisReqs[8]                         sMot_HmiAxisReqs    0 "                                                               *"    1   24    1    0    0    0         
+                      _beginResetSection                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 moveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 haltReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                 stopReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          homeSetZeroReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        homeSetOffsetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           homeSetPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               enableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                              disableReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          manBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     clearManBrakeRelReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          offsetShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+               offsetShiftToMasterPosReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           phaseShiftReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               gearInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                camInReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                       disengageSlaveReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                        _endResetSection                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                    setPositionLimitsReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                            stopResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           errorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           driveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  axisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                      gearRatioNumerator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                    gearRatioDenominator                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                 shiftOverMasterDistance                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               shiftType                                     SINT    0 "                                                               *"    2    2    1   10    0    0         
+                           shiftDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                    shiftProfileDistance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                   camId                                     UINT    0 "                                                               *"    2    6    1   10    0    0         
+                         camMasterOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          camSlaveOffset                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                            homePosition                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                          positionLimits                      sMot_PositionLimits    0 "                                                               *"    2   24    1    0    0    0         
+                        PositionLimitPos                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                        PositionLimitNeg                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                         moveDesignation                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,-1,GAM
+
+                         _startParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcDI
+
+                                Distance                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           _endParamCopy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         

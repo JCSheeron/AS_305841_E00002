@@ -12,5 +12,10 @@
       <Property ID="CamID" Value="2" />
       <Property ID="Description" />
     </Group>
+    <Group ID="Row[3]">
+      <Property ID="CamName" Value="Cam1Rev" />
+      <Property ID="CamID" Value="3" />
+      <Property ID="Description" />
+    </Group>
   </Element>
 </Configuration>

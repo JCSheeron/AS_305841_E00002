@@ -34,6 +34,7 @@
     <NcDataObject Name="Cam1P" Source="PlcLogic.axInE.Cam1P.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
     <NcDataObject Name="CamBigP" Source="PlcLogic.axInE.CamBigP.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam1Rev" Source="PlcLogic.axInE.Cam1Rev.dob" Memory="UserROM" Language="Cam" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />

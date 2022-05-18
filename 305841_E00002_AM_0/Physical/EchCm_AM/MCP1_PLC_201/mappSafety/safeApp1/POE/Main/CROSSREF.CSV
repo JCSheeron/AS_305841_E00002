@@ -1,7 +1,7 @@
 allowPendantMoves,POE\Main\EMO_PBs.GB,8,OUT,146,43,Write,,SAFEBOOL,,,VAR,LOCAL,,H:Allow Pendant Moves
 cfGateClosed,POE\Main\CFGateStatus.GB,2,OUT,39,17,Write,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed
-cfGateClosedLocked,POE\Main\AxisEnable.GB,1,IN,101,14,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed and locked
-cfGateClosedLocked,POE\Main\AxisEnable.GB,11,IN,111,6,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed and locked
+cfGateClosedLocked,POE\Main\AxisEnable.GB,1,IN,88,14,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed and locked
+cfGateClosedLocked,POE\Main\AxisEnable.GB,11,IN,98,6,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed and locked
 cfGateClosedLocked,POE\Main\CFGateStatus.GB,2,OUT,47,10,Write,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed closed and locked
 cfGateLocked,POE\Main\CFGateStatus.GB,2,OUT,14,17,Write,,SAFEBOOL,,,VAR,LOCAL,,H: Gate confirmed locked
 eStopCmdOut,POE\Main\EMO_PBs.GB,3,OUT,99,31,Write,,SAFEBOOL,,,VAR,LOCAL,,H:Ok L:EStop
@@ -12,16 +12,16 @@ keySwitchInRun,POE\Main\SafeMode.GB,1,IN,19,7,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Key
 keySwitchInRun,POE\Main\SafeMode.GB,1,OUT,88,0,Write,,SAFEBOOL,,,VAR,LOCAL,,H: Keyswitch confirmed in run pos
 keySwitchInRun,POE\Main\SafeMode.GB,3,IN,51,26,Read,,SAFEBOOL,,,VAR,LOCAL,,H: Keyswitch confirmed in run pos
 SafeDriveEnable,POE\Main\AxisEnable.GB,2,IN,3,78,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,6,IN,43,76,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,127,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,146,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-SafeDriveEnable,POE\Main\AxisEnable.GB,11,IN,103,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,6,IN,38,76,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,114,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,7,IN,133,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
+SafeDriveEnable,POE\Main\AxisEnable.GB,11,IN,90,15,Read,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
 SafeDriveEnable,POE\Main\SafeMode.GB,4,OUT,56,31,Write,,SAFEBOOL,,,VAR,LOCAL,,Allow enable if not safe mode and not estop
-sffbAxSpin_Enable,POE\Main\AxisEnable.GB,0,,32,68,,,,,,VAR,FB,,SF FB
-sffbAxZ_Enable,POE\Main\AxisEnable.GB,0,,72,68,,,,,,VAR,FB,,SF FB
+sffbAxSpin_Enable,POE\Main\AxisEnable.GB,0,,29,98,,,,,,VAR,FB,,SF FB
+sffbAxZ_Enable,POE\Main\AxisEnable.GB,0,,64,68,,,,,,VAR,FB,,SF FB
 sffbEStopOws,POE\Main\EMO_PBs.GB,0,,9,47,,,,,,VAR,FB,,SF FB
 sffbEStopPendant,POE\Main\EMO_PBs.GB,0,,76,49,,,,,,VAR,FB,,SF FB
-tmrModeSwitch,POE\Main\AxisEnable.GB,0,,195,31,,,,,,VAR,FB,,Allow mode transitions without dropout
+tmrModeSwitch,POE\Main\AxisEnable.GB,0,,182,31,,,,,,VAR,FB,,Allow mode transitions without dropout
 tmrModuleRelease,POE\Main\IOModules.GB,2,,77,63,,,,,,VAR,FB,,
 tmrStartPbPulse,POE\Main\EMO_PBs.GB,3,,164,9,,,,,,VAR,FB,,Pulse cmd to PLC when pressed
 tmrStopPbPulse,POE\Main\EMO_PBs.GB,3,,171,57,,,,,,VAR,FB,,Pulse cmd to PLC when pressed

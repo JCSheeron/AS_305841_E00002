@@ -167,7 +167,6 @@
         -->
         <Mapping widget="numOutPosAct" property="node" type="Number" mode="oneWay" memberPath="Position" mapToNode="true" />
         <Mapping widget="numOutVelAct" property="node" type="Number" mode="oneWay" memberPath="Velocity" mapToNode="true" />
-        <Mapping widget="numOutPhaseShiftAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualPhaseShift" mapToNode="true" />
         <Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true" />
       </Mappings>
     </Property>
@@ -204,7 +203,7 @@
         <Mapping widget="pbCamInSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="camInReq" mapToNode="false" />
         <Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false" />
         <Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftReq" mapToNode="false" />
-        <Mapping widget="pbToMasterPos" property="value" type="Boolean" mode="oneWayToSource" memberPath="phaseShiftToMasterPosReq" mapToNode="false" />
+        <Mapping widget="pbToMasterPos" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftToMasterPosReq" mapToNode="false" />
         <Mapping widget="chkBoxOverMasterDist" property="value" type="Boolean" mode="oneWayToSource" memberPath="shiftOverMasterDistance" mapToNode="false" />
         <Mapping widget="rdoBtnGrpShiftType" property="selectedIndex" type="Number" mode="oneWayToSource" memberPath="shiftType" mapToNode="false" />
         <Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true" />
@@ -313,7 +312,6 @@
       <Mappings>
         <Mapping widget="numOutPosActSlave" property="unit" mode="oneWay"/>
         <Mapping widget="numOutOffsetAct" property="unit" mode="oneWay"/>
-        <Mapping widget="numOutPhaseShiftAct" property="unit" mode="oneWay"/>
       </Mappings>
     </Property>
 
@@ -544,6 +542,20 @@
       </Mappings>
     </Property>
 
+   <!-- Is Gear Offset Started -->
+    <Property xsi:type="BindableProperty" name="IsGearOffsetStartedText" type="String" defaultValue="No" readOnly="false" category="Axis">
+      <Description>Text display for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsGearOffsetStarted" property="value" mode="oneWay"/>
+      </Mappings>
+    </Property>
+    <Property xsi:type="BindableProperty" name="IsGearOffsetStartedStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
+      <Description>Text style for boolean status</Description>
+      <Mappings>
+        <Mapping widget="txtOutIsGearOffsetStarted" property="style" mode="oneWay"/>
+      </Mappings>
+    </Property>
+
    <!-- Is Gear Offset Done -->
     <Property xsi:type="BindableProperty" name="IsGearOffsetDoneText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
@@ -576,13 +588,13 @@
     <Property xsi:type="BindableProperty" name="IsCamEndOfProfileText" type="String" defaultValue="No" readOnly="false" category="Axis">
       <Description>Text display for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsCamEndOfProfileSync" property="value" mode="oneWay"/>
+        <Mapping widget="txtOutIsCamEndOfProfile" property="value" mode="oneWay"/>
       </Mappings>
     </Property>
     <Property xsi:type="BindableProperty" name="IsCamEndOfProfileStyle" type="String" defaultValue="" readOnly="false" category="Appearance">
       <Description>Text style for boolean status</Description>
       <Mappings>
-        <Mapping widget="txtOutIsEndOfProfileSync" property="style" mode="oneWay"/>
+        <Mapping widget="txtOutIsCamEndOfProfile" property="style" mode="oneWay"/>
       </Mappings>
     </Property>
 

@@ -279,7 +279,7 @@ ACTION ActionChkPermissiveCoupling:
     // if the master enteres the stopping, homing, disabled, or error stop state.
     ax.Status.HasCoordinatedSlave := TRUE;
   ELSIF (ax.fbGearOut.Done OR ax.fbCamOut.Done) OR
-          ax.Status.PlcOpenState = mcAXIS_STOPPING OR
+          // ax.Status.PlcOpenState = mcAXIS_STOPPING OR
           ax.Status.PlcOpenState = mcAXIS_HOMING OR
           ax.Status.PlcOpenState = mcAXIS_DISABLED OR
           ax.Status.PlcOpenState = mcAXIS_ERRORSTOP THEN
@@ -290,8 +290,8 @@ ACTION ActionChkPermissiveCoupling:
   // If slave was synched or in compensation, and is still supposed to be synched (but isnt'), and the master is moving, then
   // stop the master.
   IF ax.Status.HasCoordinatedSlave AND ax.StatusSlave.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION THEN
-    ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
-    ax.Commands.StopReq := TRUE;
+    // ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+    // ax.Commands.StopReq := TRUE;
     
   END_IF;
   

@@ -48,6 +48,15 @@
       <bt:Element index="72" refId="svTextOutputGood"/>
     </List>
     
+      <List xsi:type="session" id="CamStatusGoodBadText" attribute="value">
+        <bt:Element index="0" refId="svTextOutputGood"/>
+        <bt:Element index="1" refId="svTextOutputGood"/>
+        <bt:Element index="2" refId="svTextOutputGood"/>
+        <bt:Element index="3" refId="svTextOutputGood"/>
+        <bt:Element index="4" refId="svTextOutputGood"/>
+        <bt:Element index="5" refId="svTextOutputGood"/>
+    </List>
+
     <List xsi:type="session" id="TextStyleHiGoodLoBad1" attribute="value">
       <bt:Element index="false" refId="svTextOutputBad"/>
       <bt:Element index="true" refId="svTextOutputGood"/>

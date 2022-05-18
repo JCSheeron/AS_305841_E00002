@@ -603,6 +603,62 @@
       <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="IsGearOffsetDoneStyle" />
     </Binding>
 
+    <!-- Is Coord Axis Cam In Sync -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+        <List refId="cmpwid_IsCamInSync_list" />
+      </Source>
+      <Target xsi:type="session" refId="svIsCamInSync" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsCamInSync" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsCamInSync" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCamInSync" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="IsCamInSyncText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsCamInSync" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="IsCamInSyncStyle" />
+    </Binding>
+
+    <!-- Is Coord Axis Cam End Of Profile -->
+    <!-- Load the selected status into a variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+        <List refId="cmpwid_IsCamEndOfProfile_list" />
+      </Source>
+      <Target xsi:type="session" refId="svIsCamEndOfProfile" attribute="value" />
+    </Binding>
+    <!-- Now update the snipped based on the variable -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svIsCamEndOfProfile" attribute="value" />
+      <Target xsi:type="snippet" refId="snIsCamEndOfProfile" attribute="value" />
+    </Binding>
+    <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCamEndOfProfile" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="IsCamEndOfProfileText" />
+    </Binding>
+    <!-- Now update the widget style based on the value -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svIsCamEndOfProfile" attribute="value" />
+				<List refId="TextStyleHiGoodLoWarn1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="IsCamEndOfProfileStyle" />
+    </Binding>
+
     <!-- Coord Axis Status -->
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
@@ -663,28 +719,28 @@
     <!-- Load the selected status into a variable -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-        <Selector xsi:type="session" refId="svSlaveAxisNumber" attribute="value" />
-        <List refId="cmpwid_axesSMState_list" />
+        <Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+        <List refId="cmpwid_CamStatus_list" />
       </Source>
-      <Target xsi:type="session" refId="svSlaveAxisStateInt" attribute="value" />
+      <Target xsi:type="session" refId="svCamStatusInt" attribute="value" />
     </Binding>
     <!-- Now update the snipped based on the variable -->
     <Binding mode="oneWay">
-      <Source xsi:type="session" refId="svSlaveAxisStateInt" attribute="value" />
-      <Target xsi:type="snippet" refId="snSlaveAxisStateInt" attribute="value" />
+      <Source xsi:type="session" refId="svCamStatusInt" attribute="value" />
+      <Target xsi:type="snippet" refId="snCamStatusInt" attribute="value" />
     </Binding>
     <!-- Finally update the widget or in this case Compound Widget Property with the snipped value -->
     <Binding mode="oneWay">
-      <Source xsi:type="snippet" refId="snSlaveAxisStateInt" attribute="value" />
-      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="SlaveStateText" />
+      <Source xsi:type="snippet" refId="snCamStatusInt" attribute="value" />
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="CamStatusText" />
     </Binding>
     <!-- Now update the widget style based on the value -->
     <Binding mode="oneWay">
       <Source xsi:type="listElement">
-				<Selector xsi:type="session" refId="svSlaveAxisStateInt" attribute="value" />
-				<List refId="ServoSmStateGoodBadText" />
+				<Selector xsi:type="session" refId="svCamStatusInt" attribute="value" />
+				<List refId="CamStatusGoodBadText" />
       </Source>
-      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="SlaveStateStyle" />
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="CamStatusStyle" />
     </Binding>
 
     <!-- Axis control -->

@@ -147,8 +147,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // _I_Axis.MoveParameters.VelocityMax; // Allow master max velocity
     
     // *** Cam params
-    _I_Axis.CouplingParameters.CamIsPeriodic := TRUE; // assume periodic
-    // Force ID of 1 for now
+    // _I_Axis.CouplingParameters.CamIsPeriodic := FALSE; // TODO: Bring to UI
     _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.camId;
     // Allow different cams to have different scaling
     // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example
@@ -168,7 +167,8 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.camMasterOffset;
     _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.camSlaveOffset;
     // TODO: Actual or set point??
-    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
+    // _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
+    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_SET;
     _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)
     
     // *** Shift & offset related values
