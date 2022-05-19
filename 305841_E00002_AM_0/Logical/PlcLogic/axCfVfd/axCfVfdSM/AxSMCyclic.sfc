@@ -388,7 +388,6 @@ ax.Commands.MoveVelocityReq := ax.Commands.MoveVelocityReq OR ax.Commands.MoveJo
 ax.Commands.MoveJogReq := FALSE;
 ax.Commands.MoveJogCmd := FALSE;
 
-
 // Initialize the req mask. This will be used at the bottom to clear the other (unwanted) requests.
 // In between, however, allowed requests may modify the mask.
 // Note that motion realted requests are ignored for vitual axes.

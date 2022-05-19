@@ -25,7 +25,7 @@
       <Property ID="VelocityIsReadOnly" Value="0" />
       <Selector ID="Velocity">
         <Property ID="VelocityMax" Value="3.4E38" />
-        <Property ID="Velocity" Value="40" />
+        <Property ID="Velocity" Value="20" />
       </Selector>
       <Property ID="AccelerationIsReadOnly" Value="0" />
       <Selector ID="Acceleration">
@@ -35,7 +35,7 @@
       <Property ID="DecelerationIsReadOnly" Value="0" />
       <Selector ID="Deceleration">
         <Property ID="DecelerationMax" Value="3.4E38" />
-        <Property ID="Deceleration" Value="140" />
+        <Property ID="Deceleration" Value="60" />
       </Selector>
     </Selector>
     <Selector ID="Alarms" Value="MpAlarmX" />

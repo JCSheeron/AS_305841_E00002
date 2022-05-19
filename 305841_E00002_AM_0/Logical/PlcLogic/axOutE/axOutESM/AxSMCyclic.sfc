@@ -100,7 +100,7 @@ ENTRY_ACTION
 // Set the state
 ax.SMState:= GAMOT_ASMS_CHK_RESTORE_POS;
 END_ACTION
-TRANSITION is virtual axis FROM Step_CheckRestorePos TO Step_Disabled:=
+TRANSITION is virtual or inverter axis FROM Step_CheckRestorePos TO Step_Disabled:=
 (* @LANGUAGE := 'st' *)
 // Axis restore position does not apply to virtual or inverter axes
 ax.isAxisVirtual OR ax.isAxisInverter
@@ -388,13 +388,15 @@ ax.Commands.MoveVelocityReq := ax.Commands.MoveVelocityReq OR ax.Commands.MoveJo
 ax.Commands.MoveJogReq := FALSE;
 ax.Commands.MoveJogCmd := FALSE;
 
-
 // Initialize the req mask. This will be used at the bottom to clear the other (unwanted) requests.
 // In between, however, allowed requests may modify the mask.
-// Note that motion realted requests are ignored for vitual axes.
+// Note that motion realted requests are ignored for vitual axes, and homing isn't allowed for an inverter axis
 IF ax.isAxisVirtual THEN
   // For a vitual axis, set the mask to ignore the motion requests, and don't qualify the move requests.
   reqMask := MACM_DISABLE_MASK + MACM_HOME_MASK;
+ELSIF ax.isAxisInverter THEN
+  // For an inverter axis, there is no encoder, so there is no ability or need to home.
+  reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
 ELSE
   // Non virtual axis ... handle the move requests.
   // Initial mask that may get altered depeding on move request
@@ -408,11 +410,12 @@ ELSE
   // jog, jog limit positive, jog limit negative, velocity, relative, absolute, engage slave, disengage slave
   // The above priority is somewhat arbitrary, but an order was needed, because only one
   // move is allowed, and each move clears the other requests.  There may be a better/more sensical priority, however.
+  // An invert axis does not have position feedback, so being homed isn't a requirement of motion
 
   // Jog Command
   IF ax.Commands.MoveJogReq THEN
     ActionChkPermissiveContinuous; 
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do
@@ -431,7 +434,7 @@ ELSE
   // application position window check.
   IF ax.Commands.MoveJogPositiveReq THEN
     ActionChkPermissiveContinuous; 
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do
@@ -450,7 +453,7 @@ ELSE
   // application position window check.
   IF ax.Commands.MoveJogNegativeReq THEN
     ActionChkPermissiveContinuous; 
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do
@@ -470,7 +473,7 @@ ELSE
     // and while supporting a changealbe move window
     ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
     ActionChkPermissiveRel;
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do
@@ -490,7 +493,7 @@ ELSE
     // and while supporting a changealbe move window
     ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
     ActionChkPermissiveRel;    
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do
@@ -506,7 +509,7 @@ ELSE
   // Move Absolute Request
   IF ax.Commands.MoveAbsoluteReq THEN
     ActionChkPermissiveAbs;    
-    IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef)) THEN
       // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
       // Set the mask to clear the request, preserving disable, halt and stop reqs
       // Mask set above, nothing to do

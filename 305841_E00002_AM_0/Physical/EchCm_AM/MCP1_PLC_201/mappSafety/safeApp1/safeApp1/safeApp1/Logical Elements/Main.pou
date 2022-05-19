@@ -6459,11 +6459,11 @@ END_VAR
       </variable>
     </outputVariables>
   </block>
-  <inVariable localId="197" height="4" width="28">
-    <position x="502" y="456" />
-    <expression>SAFEFALSE</expression>
+  <inVariable localId="197" height="4" width="26">
+    <position x="504" y="456" />
+    <expression>SAFETRUE</expression>
     <connectionPointOut>
-      <relPosition x="28" y="2" />
+      <relPosition x="26" y="2" />
     </connectionPointOut>
   </inVariable>
   <outVariable localId="200" height="4" width="44">
