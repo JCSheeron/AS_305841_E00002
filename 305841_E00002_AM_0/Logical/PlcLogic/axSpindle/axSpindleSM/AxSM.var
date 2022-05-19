@@ -21,6 +21,7 @@ VAR CONSTANT
     AD_Y := 6,
     virual axes
     AD_HANDWHEEL := 7
+    AD_CF_VFD := 8
   *)
   
   (* same info but different data types for convenience *)
@@ -33,7 +34,6 @@ VAR CONSTANT
   ax : REFERENCE TO sMot_Axis;
   axPositionLimits : REFERENCE TO sMot_PositionLimits;
   axIdx : DINT; (* axis index *)
-  inSyncSlave : BOOL := FALSE;
   axDummySlave : McAxisType;
 	(* local versions of motion param structures -- used to make setting advanced params easier *)
   axisBasicParams : MpAxisBasicParType; 

@@ -273,21 +273,26 @@ ACTION ActionChkPermissiveCoupling:
   ax.MoveParameters.PermissiveCheck.CheckFailed:= FALSE;
 
   // Make sure to stop the master if the slave goes out of sync w/o being commanded to
-  IF ((ax.fbGearIn.Active AND (ax.Status.IsGearInSync OR ax.Status.IsGearInCompensation)) OR 
-        (ax.fbCamIn.Active AND ax.Status.IsCamInSync)) THEN
-    // Slave is geared or cammed and in sync or in compensation. Set the flag so loss of sync can be acted on
-    inSyncSlave := TRUE;
-  ELSIF NOT ax.fbGearIn.Active AND NOT ax.fbCamIn.Active THEN
+  IF (ax.fbGearIn.Active OR ax.fbCamIn.Active) AND ax.StatusSlave.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION THEN
+    // Slave is geared or cammed (in synchronized motion) Set the flag so loss of sync can be acted on
+    // This flag gets cleared if GearOut or CamOut go active, or
+    // if the master enteres the stopping, homing, disabled, or error stop state.
+    ax.Status.HasCoordinatedSlave := TRUE;
+  ELSIF (ax.fbGearOut.Done OR ax.fbCamOut.Done) OR
+          // ax.Status.PlcOpenState = mcAXIS_STOPPING OR
+          ax.Status.PlcOpenState = mcAXIS_HOMING OR
+          ax.Status.PlcOpenState = mcAXIS_DISABLED OR
+          ax.Status.PlcOpenState = mcAXIS_ERRORSTOP THEN
     // Slave is not geared or cammed. Clear the flag
-    inSyncSlave := FALSE;
+    ax.Status.HasCoordinatedSlave := FALSE;
   END_IF;
   
   // If slave was synched or in compensation, and is still supposed to be synched (but isnt'), and the master is moving, then
   // stop the master.
-  // In compensation is true when slave is slowing down or speeding up to get into sync, like after a gear ratio change.
-  IF inSyncSlave AND ax.Status.IsMoveActive AND
-      (NOT ax.Status.IsGearInSync AND NOT ax.Status.IsGearInCompensation AND NOT ax.Status.IsCamInSync) THEN
-    ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+  IF ax.Status.HasCoordinatedSlave AND ax.StatusSlave.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION THEN
+    // ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+    ax.Commands.HaltReq := TRUE;
+    
   END_IF;
   
   // TODO: Are there other checks??

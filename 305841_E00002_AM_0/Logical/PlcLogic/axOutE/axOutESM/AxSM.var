@@ -21,6 +21,7 @@ VAR CONSTANT
     AD_Y := 6,
     virual axes
     AD_HANDWHEEL := 7
+    AD_CF_VFD := 8
   *)
   
   (* same info but different data types for convenience *)

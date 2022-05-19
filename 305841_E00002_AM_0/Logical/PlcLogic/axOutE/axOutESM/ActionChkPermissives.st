@@ -291,7 +291,7 @@ ACTION ActionChkPermissiveCoupling:
   // stop the master.
   IF ax.Status.HasCoordinatedSlave AND ax.StatusSlave.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION THEN
     // ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
-    // ax.Commands.StopReq := TRUE;
+    ax.Commands.HaltReq := TRUE;
     
   END_IF;
   

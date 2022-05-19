@@ -171,8 +171,6 @@ ACTION ActionCamInOut:
     ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
     ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
     ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
-    // force cam id 1 for now.
-    ax.CouplingParameters.CamId := 1;
     ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
     ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
     ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;

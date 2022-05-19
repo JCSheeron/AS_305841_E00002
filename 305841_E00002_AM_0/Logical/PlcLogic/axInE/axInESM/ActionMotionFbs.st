@@ -198,14 +198,14 @@ ACTION ActionCamInOut:
   ax.fbCamOut.Execute := FALSE;
     
   // Update the axis status structure
-  IF ax.fbCamIn.Active AND NOT ax.fbCamIn.Error THEN
+  IF NOT ax.fbCamIn.Error THEN
     ax.Status.IsCamInSync := ax.fbCamIn.InSync;
     ax.Status.IsCamEndOfProfile := ax.fbCamIn.EndOfProfile;
     ax.Status.CamStatus := ax.fbCamIn.Status;
   ELSE
     ax.Status.IsCamInSync := FALSE;
     ax.Status.IsCamEndOfProfile := FALSE;
-    ax.Status.CamStatus := mcCAM_STATUS_PREPARING_MOVE; // 0 value, but don't have a good choice for "not active 
+    ax.Status.CamStatus := mcCAM_STATUS_PREPARING_MOVE; // 0 value, but don't have a good choice for "not active"
   END_IF;
 
 END_ACTION

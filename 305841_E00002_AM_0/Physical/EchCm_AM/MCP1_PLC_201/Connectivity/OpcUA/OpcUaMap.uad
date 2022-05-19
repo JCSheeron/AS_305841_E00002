@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
-<OpcUaSource FileVersion="7" ArVersion="B4.91">
+<OpcUaSource FileVersion="8" ArVersion="B4.92">
   <Aliases>
     <ACLAliases>
       <ACL Id="1">
@@ -468,6 +468,8 @@
             <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
             <Variable Name="shiftDistance" EngineeringUnitId="4" />
+            <Variable Name="camMasterOffset" EngineeringUnitId="4" />
+            <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[3]">
             <Variable Name="homePosition" EURangesId="21" EngineeringUnitId="4" />
@@ -483,6 +485,8 @@
             <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
             <Variable Name="shiftDistance" EngineeringUnitId="4" />
+            <Variable Name="camMasterOffset" EngineeringUnitId="4" />
+            <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[4]">
             <Variable Name="homePosition" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
@@ -498,6 +502,8 @@
             <Variable Name="MaxJerk" EURangeViolationId="1" EURangesId="32" EngineeringUnitId="15" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="2" />
             <Variable Name="shiftDistance" EngineeringUnitId="2" />
+            <Variable Name="camMasterOffset" EngineeringUnitId="4" />
+            <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[7]">
             <Variable Name="positionLimits">
@@ -510,6 +516,23 @@
             <Variable Name="Acceleration" EngineeringUnitId="9" />
             <Variable Name="Deceleration" EngineeringUnitId="9" />
             <Variable Name="MaxJerk" EngineeringUnitId="14" />
+          </Variable>
+          <Variable Name="hmiLibraryAxisReqs[8]">
+            <Variable Name="shiftDistance" EngineeringUnitId="11" />
+            <Variable Name="shiftProfileDistance" EngineeringUnitId="11" />
+            <Variable Name="camMasterOffset" EngineeringUnitId="11" />
+            <Variable Name="camSlaveOffset" EngineeringUnitId="11" />
+            <Variable Name="homePosition" EngineeringUnitId="11" />
+            <Variable Name="positionLimits">
+              <Variable Name="PositionLimitPos" EngineeringUnitId="11" />
+              <Variable Name="PositionLimitNeg" EngineeringUnitId="11" />
+            </Variable>
+            <Variable Name="Distance" EngineeringUnitId="11" />
+            <Variable Name="Position" EngineeringUnitId="11" />
+            <Variable Name="Velocity" EngineeringUnitId="12" />
+            <Variable Name="Acceleration" EngineeringUnitId="16" />
+            <Variable Name="Deceleration" EngineeringUnitId="16" />
+            <Variable Name="MaxJerk" EngineeringUnitId="17" />
           </Variable>
         </Variable>
         <Variable Name="hmiMachineAxisReqs" EnableArrayElements="True" />
