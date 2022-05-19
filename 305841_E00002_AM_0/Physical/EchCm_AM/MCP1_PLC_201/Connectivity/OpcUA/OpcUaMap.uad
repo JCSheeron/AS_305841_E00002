@@ -307,6 +307,15 @@
               <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
             </Variable>
           </Variable>
+          <Variable Name="axes[8]">
+            <Variable Name="Status">
+              <Variable Name="Velocity" EngineeringUnitId="12" />
+              <Variable Name="Position" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition1" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition2" EngineeringUnitId="11" />
+              <Variable Name="CalculatedPosition3" EngineeringUnitId="11" />
+            </Variable>
+          </Variable>
         </Variable>
         <Variable Name="gr_CfgCurrent" AutomaticEnable="True">
           <Variable Name="spindle">
