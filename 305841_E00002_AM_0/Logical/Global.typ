@@ -65,7 +65,11 @@ TYPE
   END_STRUCT;
 
   sWp_CfVfd :	STRUCT 
-    speedPct : REAL; (* vfd speed EU *)
+    isInPressureControl : BOOL; (* H: Pressure ctrl, L: Speed Control *)
+    runSpeedManualCtrl : REAL; (* rpm, manual run speed *)
+    pressureSpAutoCtrl : REAL; (* psi, auto pressure setpoint *)
+    accel : REAL;
+    decel : REAL;
     eocCutoutWaitTime : TIME; (* how long to wait while idle at the end of a cycle before shutting off the cutting fluid *)
   END_STRUCT;
 

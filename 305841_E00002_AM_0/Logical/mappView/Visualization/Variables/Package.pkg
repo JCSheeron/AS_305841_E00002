@@ -8,8 +8,9 @@
     <Object Type="File">varsDlgSafetySystem.svar</Object>
     <Object Type="File">varsOperatingMode.svar</Object>
     <Object Type="File">varsWorkSetup.svar</Object>
-    <Object Type="File">varsZAxisStatus.svar</Object>
     <Object Type="File">varsCuttingHead.svar</Object>
+    <Object Type="File">varsCuttingFluid.svar</Object>
+    <Object Type="File">varsZAxisStatus.svar</Object>
     <Object Type="File">varsAxisDetail.svar</Object>
   </Objects>
 </Package>

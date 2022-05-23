@@ -24,6 +24,7 @@
     <BindingsSet refId="production_bindings" />
     <BindingsSet refId="zAxis_bindings" />
     <BindingsSet refId="cuttingHead_bindings" />
+    <BindingsSet refId="cuttingFluid_bindings" />
     <BindingsSet refId="axisDetailLt_bindings" />
     <BindingsSet refId="axisDetail_bindings" />
     
@@ -51,8 +52,9 @@
     <!--<SnippetsSet refId=""/>-->
     <SnippetsSet refId="boolean_snippets" />
     <SnippetsSet refId="dlgSafetySystem_snippets" />
-    <SnippetsSet refId="zAxisStatus_snippets" />
     <SnippetsSet refId="cuttingHead_snippets" />
+    <SnippetsSet refId="cfAxisStatus_snippets" />
+    <SnippetsSet refId="zAxisStatus_snippets" />
     <SnippetsSet refId="axisStatus_snippets" />
   </SnippetsSets>
   <ExpressionsSets>
@@ -67,10 +69,12 @@
     <VariablesSet refId="varsDlgSafetySystem" />
     <VariablesSet refId="varsOperatingMode" />
     <VariablesSet refId="varsWorkSetup" />
-    <VariablesSet refId="varsZAxisStatus" />
     <VariablesSet refId="varsCuttingHead" />
+    <VariablesSet refId="varsCfAxisStatus" />
+    <VariablesSet refId="varsZAxisStatus" />
     <VariablesSet refId="varsAxisDetail" />
   </VariablesSets>
+
   <!-- <StartTheme themeRefId="" /> -->
   <StartTheme themeRefId="GaTheme1" />
   <Themes>

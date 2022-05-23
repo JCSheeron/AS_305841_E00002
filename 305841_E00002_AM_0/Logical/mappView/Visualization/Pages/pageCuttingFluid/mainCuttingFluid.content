@@ -1,17 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="mainContentCuttingFluid" height="600" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="75" left="660" width="180" zIndex="0" text="Content Cutting Fluid" />
-    <Widget xsi:type="widgets.brease.Button" id="Button1" top="65" left="150" height="55" zIndex="1" text="Button1" style="ModButtonSelectedBlue" />
-    <Widget xsi:type="widgets.brease.Button" id="Button2" top="65" left="325" height="55" zIndex="2" text="Button2" enable="false" style="ModButtonSelectedBlue" />
-    <Widget xsi:type="widgets.brease.Button" id="Button3" top="150" left="155" height="55" zIndex="3" text="Button3" style="ModButtonSelectedGreen" />
-    <Widget xsi:type="widgets.brease.Button" id="Button4" top="150" left="330" height="55" zIndex="4" text="Button4" enable="false" style="ModButtonSelectedGreen" />
-    <Widget xsi:type="widgets.brease.Button" id="Button5" top="240" left="155" height="55" zIndex="5" text="Button5" style="ModButtonSelectedOrange" />
-    <Widget xsi:type="widgets.brease.Button" id="Button6" top="240" left="330" height="55" zIndex="6" text="Button6" enable="false" style="ModButtonSelectedOrange" />
-    <Widget xsi:type="widgets.brease.Button" id="Button7" top="335" left="155" height="55" zIndex="7" text="Button7" style="ModButtonSelectedYellow" />
-    <Widget xsi:type="widgets.brease.Button" id="Button8" top="335" left="330" height="55" zIndex="8" text="Button8" enable="false" style="ModButtonSelectedYellow" />
-    <Widget xsi:type="widgets.brease.Button" id="Button9" top="425" left="160" height="55" zIndex="9" text="Button9" style="ModButtonSelectedRed" />
-    <Widget xsi:type="widgets.brease.Button" id="Button10" top="425" left="335" height="55" zIndex="10" text="Button10" enable="false" style="ModButtonSelectedRed" />
-    <Widget xsi:type="widgets.brease.Button" id="Button11" top="65" left="20" height="55" zIndex="11" text="Button11" style="ModButtonNotSelected1" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxPumpCtrl" top="55" left="375" width="410" height="485" zIndex="0" text="Pump Control">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInRpm" top="53" left="39" width="145" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" maxValue="0" unit="{'metric':'RPM','imperial':'RPM','imperial-us':'RPM'}" />
+        <Widget xsi:type="widgets.brease.Label" id="lblRpmCmd" top="23" left="40" width="145" zIndex="1" text="RPM" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInPressure" top="53" left="224" width="145" zIndex="2" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" maxValue="0" unit="{'metric':'http://www.br-automation.com/units|GA7','imperial':'http://www.br-automation.com/units|GA7','imperial-us':'http://www.br-automation.com/units|GA7'}" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPressureCmd" top="23" left="230" width="135" zIndex="3" text="Pressure" textAlign="center" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbStart" top="253" left="39" width="116" height="45" zIndex="4" text="GO!" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbHalt" top="253" left="255" width="115" height="45" zIndex="5" text="HALT" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbDriveReset" top="388" left="39" width="116" height="42" zIndex="6" text="Drive Reset" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbEnable" top="322" left="254" width="116" height="42" zIndex="7" multiLine="true" text="Enable (Power On)" wordWrap="true" />
+        <Widget xsi:type="widgets.brease.PushButton" id="pbDisable" top="388" left="254" width="116" height="42" zIndex="8" text="Disable" />
+        <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxPressureCtrl" top="108" left="224" zIndex="9" text="Pressure Ctrl" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxStatus" top="55" left="20" width="330" height="485" zIndex="1" text="Status">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutRpmAct" top="63" left="39" width="120" height="15" zIndex="0" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unit="{'metric':'RPM','imperial':'RPM','imperial-us':'RPM'}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblRpmAct" top="43" left="29" width="130" height="22" zIndex="1" text="RPM" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblStatus" top="388" left="238" width="60" height="15" zIndex="2" text="Status" padding="0px" />
+        <Widget xsi:type="widgets.brease.Label" id="lblState" top="413" left="238" width="60" height="15" zIndex="3" text="State" padding="0px" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutStatus" top="388" left="29" width="207" height="15" zIndex="4" value="STATUS" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.TextOutput" id="txtOutState" top="413" left="29" width="207" height="15" zIndex="5" value="STATE" backColor="rgba(255, 255, 255, 0)" textAlign="right" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPtPumpOutlet" top="128" left="39" width="120" height="15" zIndex="6" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unit="{'metric':'http://www.br-automation.com/units|GA7','imperial':'http://www.br-automation.com/units|GA7','imperial-us':'http://www.br-automation.com/units|GA7'}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPtPumpOutlet" top="108" left="29" width="130" height="22" zIndex="7" text="PT Pump Outlet" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPtFilterOutlet" top="183" left="39" width="120" height="15" zIndex="8" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unit="{'metric':'GA7','imperial':'GA7','imperial-us':'GA7'}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblPtFilterOutlet" top="163" left="29" width="130" height="22" zIndex="9" text="PT Filter Outlet" textAlign="center" />
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutDpFilter" top="148" left="174" width="120" height="15" zIndex="10" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" unit="{'metric':'GA7','imperial':'GA7','imperial-us':'GA7'}" unitAlign="right" textAlign="center" />
+        <Widget xsi:type="widgets.brease.Label" id="lblDpFilter" top="128" left="164" width="130" height="22" zIndex="11" text="DP Filter" textAlign="center" />
+      </Widgets>
+    </Widget>
   </Widgets>
 </Content>

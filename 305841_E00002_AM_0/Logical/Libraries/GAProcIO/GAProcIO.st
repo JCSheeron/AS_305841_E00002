@@ -380,7 +380,7 @@ FUNCTION_BLOCK fbSclAlmAI
     // scale the input value and apply the EU Offset
     // Scaled value = (((Raw - Raw Min) / Raw Range) * EU Range) + EU Min
     _InInputStruct.InScaled := (((rawAdj - _InParamsStruct.RawMin) / (_InParamsStruct.RawMax - _InParamsStruct.RawMin)) * 
-    (_InParamsStruct.EuMax - _InParamsStruct.EuMin)) + _InParamsStruct.EuOffset;
+                               (_InParamsStruct.EuMax - _InParamsStruct.EuMin)) + _InParamsStruct.EuOffset;
     
     // filter the scaled value if enabled
     IF _InParamsStruct.LpEnable THEN

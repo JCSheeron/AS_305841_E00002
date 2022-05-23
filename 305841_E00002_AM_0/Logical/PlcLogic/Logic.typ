@@ -51,6 +51,9 @@ TYPE
     Bool requests above StartOfClearedRequests won't get auto cleared *)
     StartOfClearedRequests : BOOL := FALSE;
     reqAxesReset : BOOL := FALSE;
+    cfReqRun : BOOL := FALSE;
+    cfReqStop : BOOL := FALSE;
+    cfIsInPressureControl : BOOL := FALSE; (* H: Pressure ctrl, L: Speed Control *)
     zReqMoveUpLimit : BOOL := FALSE;
     zReqMoveDownLimit : BOOL := FALSE;
     zReqMoveLUnL : BOOL := FALSE;
@@ -64,12 +67,15 @@ TYPE
     cuttingHeadMoveReqRetract : BOOL := FALSE;
     EndOfClearedRequests : BOOL := FALSE;
     (* NOTE/CAUTION Bool requests below EndOfClearedRequests won't get auto cleared *)
+    cfRunEnable : BOOL := FALSE; (* enable hmi request PB *)
     zMoveUpReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
     zMoveDownReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
     zMoveToSocReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
     zMoveToLUnLReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
     (* numerical values used with requests *)
     cuttingHeadReqDepth : LREAL := 0.0;
+    cfRpmCmd : REAL;
+    cfPsiCmd : REAL;
     zReqPosSoc : LREAL;
     zReqPosLUnL : LREAL;
   END_STRUCT;

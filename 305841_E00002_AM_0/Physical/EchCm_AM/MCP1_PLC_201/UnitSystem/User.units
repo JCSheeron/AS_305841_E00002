@@ -100,4 +100,17 @@
       </Group>
     </Selector>
   </Element>
+  <Element ID="psi" Type="Units" Description="GA6 psi (lb/in^2), but symbol of psi">
+    <Property ID="Namespace" Value="http://www.br-automation.com/units" />
+    <Property ID="UnitID" Value="4669751" />
+    <Property ID="CommonCode" Value="GA7" />
+    <Property ID="TextSystemNamespace" Value="Localization/Units/User" />
+    <Group ID="Classification[1]" />
+    <Selector ID="AtomicOrCompound">
+      <Group ID="AtomicReference">
+        <Property ID="ReferenceUnitNamespace" Value="http://www.opcfoundation.org/UA/units/un/cefact" />
+        <Property ID="ReferenceUnitID" Value="14384" />
+      </Group>
+    </Selector>
+  </Element>
 </Configuration>

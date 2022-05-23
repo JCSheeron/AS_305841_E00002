@@ -158,7 +158,6 @@
       <EngineeringUnit Id="2" UnitId="5066068" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre" Symbol="mm" />
       <EngineeringUnit Id="3" UnitId="4403510" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second" Symbol="mm/s" />
       <EngineeringUnit Id="4" UnitId="17476" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree [unit of angle]" Symbol="°" />
-      <EngineeringUnit Id="6" UnitId="20529" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="percent" Symbol="%" />
       <EngineeringUnit Id="7" UnitId="5059633" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second squared" Symbol="mm/s²" />
       <EngineeringUnit Id="8" UnitId="4669745" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per minute per second" Symbol="rpm/s" />
       <EngineeringUnit Id="9" UnitId="5059637" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree [unit of angle] per second squared" Symbol="°/s²" />
@@ -169,6 +168,7 @@
       <EngineeringUnit Id="15" UnitId="4669749" NameSpaceUri="http://www.br-automation.com/units" Name="millimeters per second³" Symbol="mm/s³" />
       <EngineeringUnit Id="16" UnitId="4669747" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second²" Symbol="rev/s²" />
       <EngineeringUnit Id="17" UnitId="4669748" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second³" Symbol="rev/s³" />
+      <EngineeringUnit Id="19" UnitId="4669751" NameSpaceUri="http://www.br-automation.com/units" Name="Pounds Per Square Foot" Symbol="psi" />
     </EngineeringUnitAliases>
   </Aliases>
   <DefaultView AclId="2">
@@ -347,7 +347,10 @@
             <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="7" />
           </Variable>
           <Variable Name="cfVfd">
-            <Variable Name="speedPct" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="6" />
+            <Variable Name="runSpeedManualCtrl" EngineeringUnitId="1" />
+            <Variable Name="accel" EngineeringUnitId="8" />
+            <Variable Name="decel" EngineeringUnitId="8" />
+            <Variable Name="pressureSpAutoCtrl" EngineeringUnitId="19" />
           </Variable>
         </Variable>
         <Variable Name="gr_PartCurrent" AutomaticEnable="True">
@@ -430,6 +433,36 @@
           <Variable Name="cuttingHeadReqDepth" EngineeringUnitId="2" />
           <Variable Name="zReqPosSoc" EngineeringUnitId="2" />
           <Variable Name="zReqPosLUnL" EngineeringUnitId="2" />
+          <Variable Name="cfReqRun" />
+          <Variable Name="cfReqStop" />
+          <Variable Name="cfIsInPressureControl" />
+          <Variable Name="cfRunEnable" />
+          <Variable Name="cfRpmCmd" EngineeringUnitId="1" />
+          <Variable Name="cfPsiCmd" EngineeringUnitId="19" />
+        </Variable>
+        <Variable Name="AI_DP_CFFilter">
+          <Variable Name="InScaled" EngineeringUnitId="19" />
+          <Variable Name="InScaledFiltered" EngineeringUnitId="19" />
+          <Variable Name="alms" />
+        </Variable>
+        <Variable Name="AI_PT_CFPumpOutlet">
+          <Variable Name="alms" />
+          <Variable Name="InScaled" EngineeringUnitId="19" />
+          <Variable Name="InScaledFiltered" />
+        </Variable>
+        <Variable Name="AI_PT_CFFilterOutlet">
+          <Variable Name="InScaledFiltered" EngineeringUnitId="19" />
+          <Variable Name="InScaled" EngineeringUnitId="19" />
+        </Variable>
+        <Variable Name="AI_LT_CFTankLevel">
+          <Variable Name="InScaledFiltered" />
+          <Variable Name="InScaled" />
+          <Variable Name="alms" />
+        </Variable>
+        <Variable Name="AI_FT_CFFlow">
+          <Variable Name="InScaledFiltered" />
+          <Variable Name="InScaled" />
+          <Variable Name="alms" />
         </Variable>
       </GlobalVariables>
       <Task Name="OmSafeDev">

@@ -16,19 +16,13 @@ PROGRAM _CYCLIC
     operatingMode.OperatingMode = OM_PENDANT_MODE OR
     operatingMode.OperatingMode = OM_PRODUCTION_MODE) AND
     axes[AD_CF_VFD].Status.IsPoweredOn AND
-    axes[AD_CF_VFD].Status.IsHomed AND
-    cfVfd.isLocated AND 
+    // axes[AD_CF_VFD].Status.IsHomed AND // homing not possible with inverter axis
+    // cfVfd.isLocated AND // bypass for testing
     NOT cfVfd.isAlmLoLvlSw AND NOT cfVfd.isAlmLoFluid;
     
 
   cfVfd.isAllowedToRun := 
-    (operatingMode.OperatingMode = OM_MANUAL_MODE OR
-    operatingMode.OperatingMode = OM_PENDANT_MODE OR
-    operatingMode.OperatingMode = OM_PRODUCTION_MODE) AND
-    axes[AD_CF_VFD].Status.IsPoweredOn AND
-    axes[AD_CF_VFD].Status.IsHomed AND
-    cfVfd.isLocated AND 
-    NOT cfVfd.isAlmLoLvlSw AND NOT cfVfd.isAlmLoFluid AND
+    cfVfd.isAllowedToStart AND
     NOT cfVfd.isAlmLoFlow AND NOT cfVfd.isAlmLoOutletPressure AND
     NOT cfVfd.isAlmHiOutletPressure;
     
@@ -43,7 +37,7 @@ PROGRAM _CYCLIC
   cfVfd.isAllowedToStart := TRUE;
   cfVfd.isAllowedToRun := TRUE;
   cfVfd.isFlowEstablished := TRUE;
-  cfVfd.isRunning := TRUE;
+  // cfVfd.isRunning := TRUE;
     
 END_PROGRAM
 

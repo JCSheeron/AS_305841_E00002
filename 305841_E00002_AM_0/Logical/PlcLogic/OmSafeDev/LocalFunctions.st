@@ -134,12 +134,43 @@ In this way, there is a cascading mechanism to get process specific
 reqeusts processed by standard library functions, even when process specific things 
 are not known by the library functions.*)
 FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaMpMotion library requests. *)
-  // Calc structure sizes becuase they will probably be used several times
+  // Calc structure sizes becuase they will be used several times
   szLibReq := SIZEOF(sMot_HmiAxisReqs);
   szAxis := SIZEOF(sMot_Axis);
   szAxisPosLimits := SIZEOF(sMot_PositionLimits);
   
-  // Process Z axis requests
+  // **** Process Cutting Fluid VFD requests
+
+  // First get the CF structures by address arithmetic
+  rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_CF_VFD * szLibReq);
+  rAxis ACCESS _I_pAxis + (AD_CF_VFD * szAxis);
+
+  // If the axis is enabled issue moves. Otherwise do nothing. 
+  // Requests get cleared at the end either way
+  IF rAxis.Status.IsPoweredOn THEN
+    IF _I_ProcessReqs.cfReqRun THEN
+      // TODO: Incorporate pressure control
+      // FOR NOW: Use RPM regardless
+      IF _I_ProcessReqs.cfIsInPressureControl THEN
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0;// hmi in rpm, but axis is in rps
+      ELSE
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0;// hmi in rpm, but axis is in rps
+      END_IF;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.cfVfd.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel;
+      rAxis.Commands.MoveVelocityCmd := TRUE;
+    END_IF;
+
+    IF _I_ProcessReqs.cfReqStop THEN
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel;
+      rAxis.Commands.HaltReq := TRUE;
+    END_IF;
+    
+  END_IF;
+
+  
+  
+  // **** Process Z axis requests
   // First get the Z structures by address arithmetic
   rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_Z * szLibReq);
   rAxis ACCESS _I_pAxis + (AD_Z * szAxis);
@@ -162,8 +193,7 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
   IF _I_ProcessReqs.zReqPosLUnLUseSpecified THEN // position specified, homing isn't needed
     _I_WpCfg.zAxis.loadUnloadPos := _I_ProcessReqs.zReqPosLUnL;
   END_IF;
-  
-  
+    
   // If the axis is enabled and homed, issue moves. Otherwise do nothing. 
   // Requests get cleared at the end either way
   IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
@@ -217,7 +247,7 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
         
   END_IF;
     
-  // Process Cutting Head Requests
+  // **** Process Cutting Head Requests
   // First get the Inner Eccentric structures by address arithmetic
   rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_INNER_ECCENTRIC * szLibReq);
   rAxis ACCESS _I_pAxis + (AD_INNER_ECCENTRIC * szAxis);

@@ -62,8 +62,15 @@
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="tabCuttingFluid" left="0" width="120" zIndex="2" text="Cutting Fluid">
           <Widgets>
-            <Widget xsi:type="widgets.brease.NumericInput" id="numInCuttingFluidPctCmd" top="55" left="145" width="145" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" maxValue="0" unit="{'metric':'P1','imperial':'P1','imperial-us':'P1'}" />
-            <Widget xsi:type="widgets.brease.Label" id="lblCuttingFluidPctCmd" top="55" left="25" width="66" zIndex="1" text="Percent" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="numInCuttingFluidRpm" top="44" left="9" width="145" zIndex="0" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" maxValue="0" unit="{'metric':'RPM','imperial':'RPM','imperial-us':'RPM'}" />
+            <Widget xsi:type="widgets.brease.Label" id="lblCuttingFluidRpm" top="14" left="10" width="145" zIndex="1" text="RPM" textAlign="center" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="numInCuttingFluidAccel" top="144" left="159" width="145" zIndex="2" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'http://www.br-automation.com/units|GA1','imperial':'GA1','imperial-us':'GA1'}" />
+            <Widget xsi:type="widgets.brease.Label" id="lbCuttingFluidAccel" top="144" left="34" width="150" zIndex="3" text="Accel." />
+            <Widget xsi:type="widgets.brease.NumericInput" id="numInCuttingFluidDecel" top="189" left="157" width="150" zIndex="4" format="{'metric':{'decimalPlaces':3,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':1,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':1,'minimumIntegerDigits':1}}" unit="{'metric':'http://www.br-automation.com/units|GA1','imperial':'GA1','imperial-us':'GA1'}" />
+            <Widget xsi:type="widgets.brease.Label" id="lbCuttingFluidDecel" top="189" left="32" width="150" zIndex="5" text="Decel." />
+            <Widget xsi:type="widgets.brease.NumericInput" id="numInCuttingFluidPressure" top="44" left="194" width="145" zIndex="6" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':3}}" maxValue="0" unit="{'metric':'RPM','imperial':'RPM','imperial-us':'RPM'}" />
+            <Widget xsi:type="widgets.brease.Label" id="lblCuttingFluidPressure" top="14" left="200" width="135" zIndex="7" text="Pressure" textAlign="center" />
+            <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxCuttingFluidPressureCtrl" top="89" left="194" zIndex="8" text="Pressure Ctrl" />
           </Widgets>
         </Widget>
       </Widgets>
