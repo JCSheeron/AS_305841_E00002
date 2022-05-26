@@ -95,15 +95,15 @@ ACTION SetInputParams:
   gr_AI_PT_CFPumpOutlet_Params.RawOffset := 0.0; // +/- counts value added to the raw value before scaling 
   gr_AI_PT_CFPumpOutlet_Params.EuOffset := 0.0; // +/- EU value added to EU after scaling
   // Low Pass (Noise) filter parameters
-  gr_AI_PT_CFPumpOutlet_Params.LpCoeff := 0.95; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
+  gr_AI_PT_CFPumpOutlet_Params.LpCoeff := 0.99; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
   // alarm enables
-  gr_AI_PT_CFPumpOutlet_Params.AlmRangeThreshLo := gr_AI_PT_CFPumpOutlet_Params.EuMin;
+  gr_AI_PT_CFPumpOutlet_Params.AlmRangeThreshLo := -10.0; // allow some negative pressure gr_AI_PT_CFPumpOutlet_Params.EuMin;
   gr_AI_PT_CFPumpOutlet_Params.AlmRangeThreshHi := gr_AI_PT_CFPumpOutlet_Params.EuMax;
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshLoLo := 40.0; // TODO: Figure out the alm thresholds
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshLo := 60.0;
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshLoLo := 25.0; // TODO: Figure out the alm thresholds
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshLo := 30.0;
   // Seal has a 300 PSI limit and there is some other limitation at 150 PSI-- keep 'er under this
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHi := 150.0 * 0.80;
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHiHi := 150.0 * 0.95;
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHi := 75.0;
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHiHi := 80.0;
   // Alarm deadbands in % of range EU range. Use 0.0 to disable
   // Specified here in EU, and converted to a percent
   gr_AI_PT_CFPumpOutlet_Params.AlmDbLoPct := (3.0 / (gr_AI_PT_CFPumpOutlet_Params.EuMax - gr_AI_PT_CFPumpOutlet_Params.EuMin)) * 100.0; // pvs must rise above threshold by the corresponding value in order to be considered clear
@@ -118,7 +118,7 @@ ACTION SetInputParams:
   // Default Filter Outlet Pressure Params
   gr_AI_PT_CFFilterOutlet_Params.LpEnable := TRUE; 
   gr_AI_PT_CFFilterOutlet_Params.LpPreserveUnfiltered := TRUE; // F: unfiltered = filtered, T: keep separate
-  // gr_AI_PT_CFFilterOutlet_Params.AlmEnable := TRUE; // Dynamic, set in CF VFD
+  gr_AI_PT_CFFilterOutlet_Params.AlmEnable := FALSE;
   gr_AI_PT_CFFilterOutlet_Params.AlmLoLoEnable := TRUE;
   gr_AI_PT_CFFilterOutlet_Params.AlmLoEnable := TRUE;
   gr_AI_PT_CFFilterOutlet_Params.AlmHiEnable := TRUE;
@@ -134,15 +134,15 @@ ACTION SetInputParams:
   gr_AI_PT_CFFilterOutlet_Params.RawOffset := 0.0; // +/- counts value added to the raw value before scaling 
   gr_AI_PT_CFFilterOutlet_Params.EuOffset := 0.0; // +/- EU value added to EU after scaling
   // Low Pass (Noise) filter parameters
-  gr_AI_PT_CFFilterOutlet_Params.LpCoeff := 0.95; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
+  gr_AI_PT_CFFilterOutlet_Params.LpCoeff := 0.99; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
   // alarm enables
-  gr_AI_PT_CFFilterOutlet_Params.AlmRangeThreshLo := gr_AI_PT_CFFilterOutlet_Params.EuMin;
+  gr_AI_PT_CFFilterOutlet_Params.AlmRangeThreshLo := -10.0; // allow some negative pressure gr_AI_PT_CFFilterOutlet_Params.EuMin;
   gr_AI_PT_CFFilterOutlet_Params.AlmRangeThreshHi := gr_AI_PT_CFFilterOutlet_Params.EuMax;
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshLoLo := 40.0;
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshLo := 60.0;
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshLoLo := 25.0;
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshLo := 30.0;
   // Seal has a 300 PSI limit and there is some other limitation at 150 PSI-- keep 'er under this
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHi := 150.0 * 0.80;
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHiHi := 150.0 * 0.95;
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHi := 75.0;
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHiHi := 80.0;
   // Alarm deadbands in % of range EU range. Use 0.0 to disable
   // Specified here in EU, and converted to a percent
   gr_AI_PT_CFFilterOutlet_Params.AlmDbLoPct := (3.0 / (gr_AI_PT_CFFilterOutlet_Params.EuMax - gr_AI_PT_CFFilterOutlet_Params.EuMin)) * 100.0; // pvs must rise above threshold by the corresponding value in order to be considered clear
@@ -159,29 +159,29 @@ ACTION SetInputParams:
   gr_AI_DP_CFFilter_Params.LpEnable := TRUE; 
   gr_AI_DP_CFFilter_Params.LpPreserveUnfiltered := TRUE; //F: unfiltered = filtered, T: keep separate
   // gr_AI_DP_CFFilter_Params.AlmEnable := TRUE; // Dynamic, set in CF VFD
-  gr_AI_DP_CFFilter_Params.AlmLoLoEnable := TRUE;
-  gr_AI_DP_CFFilter_Params.AlmLoEnable := TRUE;
+  gr_AI_DP_CFFilter_Params.AlmLoLoEnable := FALSE;
+  gr_AI_DP_CFFilter_Params.AlmLoEnable := FALSE;
   gr_AI_DP_CFFilter_Params.AlmHiEnable := TRUE;
   gr_AI_DP_CFFilter_Params.AlmHiHiEnable := TRUE; // alarm thresholds - compare to EU (scaled) values
-  gr_AI_DP_CFFilter_Params.RawType := GAPIO_RWST_INT;
+  gr_AI_DP_CFFilter_Params.RawType := GAPIO_RWST_REAL;
   // scaling parameters
   // IO-Link is scaled at the device
-  gr_AI_DP_CFFilter_Params.RawMin := 0.0;
+  gr_AI_DP_CFFilter_Params.RawMin := -10.0; // allow for some miscalibration
   gr_AI_DP_CFFilter_Params.RawMax := 1450.38;
-  gr_AI_DP_CFFilter_Params.EuMin := 0.0;
+  gr_AI_DP_CFFilter_Params.EuMin := -10.0;
   gr_AI_DP_CFFilter_Params.EuMax := 1450.38;
   gr_AI_DP_CFFilter_Params.RawOffset := 0.0; // +/- counts value added to the raw value before scaling 
   gr_AI_DP_CFFilter_Params.EuOffset := 0.0; // +/- EU value added to EU after scaling
   // Low Pass (Noise) filter parameters
-  gr_AI_DP_CFFilter_Params.LpCoeff := 0.95; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
+  gr_AI_DP_CFFilter_Params.LpCoeff := 0.99; // >=0 and <1. 0= no filtering. 0.99999= heavy filtering.
   // alarm enables
   // TBD
   gr_AI_DP_CFFilter_Params.AlmRangeThreshLo := gr_AI_DP_CFFilter_Params.EuMin;
   gr_AI_DP_CFFilter_Params.AlmRangeThreshHi := gr_AI_DP_CFFilter_Params.EuMax;
-  gr_AI_DP_CFFilter_Params.AlmThreshLoLo := 0.0;
-  gr_AI_DP_CFFilter_Params.AlmThreshLo := 0.0;
-  gr_AI_DP_CFFilter_Params.AlmThreshHi := 300.0;
-  gr_AI_DP_CFFilter_Params.AlmThreshHiHi := 300.0;
+  gr_AI_DP_CFFilter_Params.AlmThreshLoLo := gr_AI_DP_CFFilter_Params.EuMin;
+  gr_AI_DP_CFFilter_Params.AlmThreshLo := gr_AI_DP_CFFilter_Params.EuMin;
+  gr_AI_DP_CFFilter_Params.AlmThreshHi := 10.0;
+  gr_AI_DP_CFFilter_Params.AlmThreshHiHi := 20.0;
   // Alarm deadbands in % of range EU range. Use 0.0 to disable
   // Specified here in EU, and converted to a percent
   gr_AI_DP_CFFilter_Params.AlmDbLoPct := (1.0 / (gr_AI_DP_CFFilter_Params.EuMax - gr_AI_DP_CFFilter_Params.EuMin)) * 100.0; // pvs must rise above threshold by the corresponding value in order to be considered clear

@@ -51,7 +51,7 @@ VAR CONSTANT
   
   AXIS_HW_MEAS_RESOLUTION : REAL := 0.01; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
   
-  AXIS_CFVFD_MAX_VELOCITY : REAL := 1175.0 / 60.0; (* RPS *)
+  AXIS_CFVFD_MAX_VELOCITY : REAL := 450.0 / 60.0; (* RPS *)
   AXIS_CFVFD_MAX_ACCEL : REAL := AXIS_CFVFD_MAX_VELOCITY; (* to max in 1 sec *)
   AXIS_CFVFD_MAX_DECEL : REAL := AXIS_CFVFD_MAX_VELOCITY; (* from max in 1 sec *)
   

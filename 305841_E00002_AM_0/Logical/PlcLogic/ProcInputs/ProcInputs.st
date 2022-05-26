@@ -102,8 +102,8 @@ PROGRAM _CYCLIC
   AI_PT_CFPumpOutlet.ChannelOk := AI_PT_CFPumpOutlet.ModuleOk; // TODO: Update. Need to figure out what is needed in the IO-Link case.
   // Manually set the raw input, externally calc scaling, and then call the fb.
   // Mfg formula gives pressure in bar, and then convert to psig.
-  AI_PT_CFPumpOutlet.InRawUINT := AI_PT_CFFilterOutletRaw;
-  AI_PT_CFPumpOutlet.InScaled := LREAL_TO_REAL(((UINT_TO_LREAL(AI_PT_CFFilterOutletRaw) * TURCK_PS5XX_100_GRADIENT) + TURCK_PS5XX_100_OFFSET) * 14.50377);
+  AI_PT_CFPumpOutlet.InRawUINT := AI_PT_CFPumpOutletRaw;
+  AI_PT_CFPumpOutlet.InScaled := LREAL_TO_REAL(((UINT_TO_LREAL(AI_PT_CFPumpOutletRaw) * TURCK_PS5XX_100_GRADIENT) + TURCK_PS5XX_100_OFFSET) * 14.50377);
   fbAI_PT_CFPumpOutlet();
 
   AI_PT_CFFilterOutlet.ModuleOk:= ModStat_JB1_PLK2.Slot05ModuleOk;

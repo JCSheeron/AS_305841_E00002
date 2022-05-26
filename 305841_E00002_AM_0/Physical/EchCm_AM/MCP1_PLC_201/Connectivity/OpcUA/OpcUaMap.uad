@@ -152,6 +152,18 @@
           <High ValueProvider="Const">1920.0</High>
         </EURange>
       </EURanges>
+      <EURanges Id="33">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">7.5</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="34">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">450.0</High>
+        </EURange>
+      </EURanges>
     </EURangesAliases>
     <EngineeringUnitAliases>
       <EngineeringUnit Id="1" UnitId="5394509" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolutions per minute" Symbol="rpm" />
@@ -315,6 +327,12 @@
               <Variable Name="CalculatedPosition2" EngineeringUnitId="11" />
               <Variable Name="CalculatedPosition3" EngineeringUnitId="11" />
             </Variable>
+            <Variable Name="MoveParameters">
+              <Variable Name="Velocity" EURangeViolationId="1" EURangesId="33" EngineeringUnitId="12" />
+              <Variable Name="Acceleration" EngineeringUnitId="16" />
+              <Variable Name="Deceleration" EngineeringUnitId="16" />
+              <Variable Name="MaxJerk" EngineeringUnitId="17" />
+            </Variable>
           </Variable>
         </Variable>
         <Variable Name="gr_CfgCurrent" AutomaticEnable="True">
@@ -437,7 +455,7 @@
           <Variable Name="cfReqStop" />
           <Variable Name="cfIsInPressureControl" />
           <Variable Name="cfRunEnable" />
-          <Variable Name="cfRpmCmd" EngineeringUnitId="1" />
+          <Variable Name="cfRpmCmd" EURangeViolationId="1" EURangesId="34" EngineeringUnitId="1" />
           <Variable Name="cfPsiCmd" EngineeringUnitId="19" />
         </Variable>
         <Variable Name="AI_DP_CFFilter">
