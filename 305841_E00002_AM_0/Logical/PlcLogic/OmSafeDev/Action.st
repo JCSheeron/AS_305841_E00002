@@ -1,3 +1,13 @@
+ACTION ClearProcessReqs :
+  // Clear Process Reqs, and then the machine specific axis Reqs
+  // Process Reqs
+  // Bool reqs
+  pSrc := ADR(hmiProcessReqs.StartOfClearedRequests);
+  pDest := ADR(hmiProcessReqs.EndOfClearedRequests);
+  byteCount := pDest - pSrc + SIZEOF(BOOL);
+  nxtAddr := brsmemset(pSrc, 0, byteCount);
+END_ACTION
+
 ACTION ClearMotionReqs :
   // Clear Process Reqs, and then the machine specific axis Reqs
   // Process Reqs
@@ -188,6 +198,7 @@ ACTION ProductionModeAxisPermits :
     
   // cutting fluid pump
   axes[AD_CF_VFD].MoveParameters.PosMovePermissive := cfVfd.isAllowedToRun;
+  hmiProcessReqs.cfRunEnable := axes[AD_CF_VFD].MoveParameters.PosMovePermissive;
 // Allow forward running only
   axes[AD_CF_VFD].MoveParameters.NegMovePermissive := FALSE;
 

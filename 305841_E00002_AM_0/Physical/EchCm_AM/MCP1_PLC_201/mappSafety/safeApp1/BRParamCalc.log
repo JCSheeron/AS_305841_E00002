@@ -1,4 +1,4 @@
-LOGStart created on Friday 2022/05/20  UTC 20:56:54:109
+LOGStart created on Wednesday 2022/05/25  UTC 20:30:42:710
 
 Reading "OSDD Data"...
 Reading Content "Start"
@@ -171,7 +171,7 @@ Content "name1" successfully read from "name2"
 
 
 
-LOGAppend on Friday 2022/05/20  UTC 20:56:54:109
+LOGAppend on Wednesday 2022/05/25  UTC 20:30:42:710
 
 Reading "C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Physical\EchCm_AM\MCP1_PLC_201\mappSafety\safeApp1\BusNavigator.iom"...
 Reading Content "IOOffsets"

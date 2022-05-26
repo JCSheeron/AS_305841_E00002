@@ -111,6 +111,9 @@ operatingMode.ModeReqBits := operatingMode.ModeReqBits AND NOT OM_MANUAL_MODE; (
 ManualModeAxisPermits;
 ModeIndependentPermissions;
 
+// Clear process reqs
+ClearProcessReqs;
+
 // Clear production, error and estop reqs
 ClearCycleReqs;
 
@@ -217,6 +220,9 @@ operatingMode.ModeReqBits := operatingMode.ModeReqBits AND NOT OM_PENDANT_MODE; 
 // Axis permit and other permissives
 PendantModeAxisPermits;
 ModeIndependentPermissions;
+
+// Clear process reqs
+ClearProcessReqs;
 
 // Clear reqs
 ClearCycleReqs;
@@ -374,6 +380,8 @@ ENTRY_ACTION
 operatingMode.OperatingMode := OM_PRODUCTION_MODE;
 // To Safety PLC
 ts_InProductionMode := TRUE;
+// Clear process reqs on entry -- just in case one is spuriously set
+ClearProcessReqs;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)

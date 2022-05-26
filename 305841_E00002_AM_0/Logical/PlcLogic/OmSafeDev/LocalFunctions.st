@@ -152,13 +152,14 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
       // TODO: Incorporate pressure control
       // FOR NOW: Use RPM regardless
       IF _I_ProcessReqs.cfIsInPressureControl THEN
-        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0;// hmi in rpm, but axis is in rps
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0; // hmi in rpm, but axis is in rps
       ELSE
-        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0;// hmi in rpm, but axis is in rps
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0; // hmi in rpm, but axis is in rps
       END_IF;
-      rAxis.MoveParameters.Acceleration := _I_WpCfg.cfVfd.accel;
-      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel;
-      rAxis.Commands.MoveVelocityCmd := TRUE;
+      rAxis.MoveParameters.Direction := mcDIR_POSITIVE;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.cfVfd.accel / 60.0; // hmi in rpm, but axis is in rps
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel / 60.0; // hmi in rpm, but axis is in rps
+      rAxis.Commands.MoveVelocityReq := TRUE;
     END_IF;
 
     IF _I_ProcessReqs.cfReqStop THEN
@@ -167,8 +168,6 @@ FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaM
     END_IF;
     
   END_IF;
-
-  
   
   // **** Process Z axis requests
   // First get the Z structures by address arithmetic

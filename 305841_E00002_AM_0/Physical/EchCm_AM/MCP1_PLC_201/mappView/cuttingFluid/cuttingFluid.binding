@@ -101,7 +101,7 @@
 
     <!-- Start -->
     <Binding mode="oneWayToSource">
-      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[8].Commands.MoveVelocityReq" attribute="value" />
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.cfReqRun" attribute="value" />
       <Target xsi:type="brease" contentRefId="mainContentCuttingFluid" widgetRefId="pbStart" attribute="value" />
     </Binding>
     

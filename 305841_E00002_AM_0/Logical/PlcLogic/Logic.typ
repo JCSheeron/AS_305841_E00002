@@ -52,8 +52,7 @@ TYPE
     StartOfClearedRequests : BOOL := FALSE;
     reqAxesReset : BOOL := FALSE;
     cfReqRun : BOOL := FALSE;
-    cfReqStop : BOOL := FALSE;
-    cfIsInPressureControl : BOOL := FALSE; (* H: Pressure ctrl, L: Speed Control *)
+    cfReqStop : BOOL := FALSE; (* NOTE: Stop triggers SM Halt directly. This allows stopping from the HMI even in the wrong mode *)
     zReqMoveUpLimit : BOOL := FALSE;
     zReqMoveDownLimit : BOOL := FALSE;
     zReqMoveLUnL : BOOL := FALSE;
@@ -67,6 +66,7 @@ TYPE
     cuttingHeadMoveReqRetract : BOOL := FALSE;
     EndOfClearedRequests : BOOL := FALSE;
     (* NOTE/CAUTION Bool requests below EndOfClearedRequests won't get auto cleared *)
+    cfIsInPressureControl : BOOL := FALSE; (* H: Pressure ctrl, L: Speed Control *)
     cfRunEnable : BOOL := FALSE; (* enable hmi request PB *)
     zMoveUpReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
     zMoveDownReqEnable : BOOL := FALSE; (* enable hmi request PBs *)
