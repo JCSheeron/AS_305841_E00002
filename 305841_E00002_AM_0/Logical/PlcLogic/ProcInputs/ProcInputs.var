@@ -3,7 +3,8 @@ VAR RETAIN
 END_VAR
 
 VAR CONSTANT
-
+  TURCK_PS5XX_100_GRADIENT : LREAL := 0.0018084817795460700;
+  TURCK_PS5XX_100_OFFSET : LREAL   := -9.2594267112758800;
 END_VAR
   
 VAR
@@ -18,6 +19,10 @@ VAR
   fbAI_PT_CFPumpOutlet : fbSclAlmAI;
   fbAI_PT_CFFilterOutlet : fbSclAlmAI; 
   fbAI_DP_CFFilter : fbSclAlmAI; (* virtual input derrived from 2 PTs *)
+  
+  (* externally mapped and calculated values for Turck IO-Link pressure sensors *)
+  AI_PT_CFPumpOutletRaw : UINT;
+  AI_PT_CFFilterOutletRaw : UINT;
   
   (* digital inputs *)
   fbDI_LSL_CFTank : fbProcDI;

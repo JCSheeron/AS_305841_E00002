@@ -78,8 +78,8 @@ VAR_CONFIG
 	::DO_PL_OWSBeconGreen AT %QX."PLK1_IOR01SL13".DigitalOutput04;
 	::DO_PL_OWSBeconAmber AT %QX."PLK1_IOR01SL13".DigitalOutput05;
 	::DO_PL_OWSBeconRed AT %QX."PLK1_IOR01SL13".DigitalOutput06;
-	::AI_PT_CFPumpOutlet.InRawUINT AT %IW."PLK2_IOR02SL05".InputData01_1;
-	::AI_PT_CFFilterOutlet.InRawUINT AT %IW."PLK2_IOR02SL05".InputData02_1;
+	::ProcInputs:AI_PT_CFPumpOutletRaw AT %IW."PLK2_IOR02SL05".InputData01_1;
+	::ProcInputs:AI_PT_CFFilterOutletRaw AT %IW."PLK2_IOR02SL05".InputData02_1;
 	::owsPendant.emoWiringOk AT %IX."SafetyController_R01SL06".BOOL00009;
 	::OmSafeDev:fs_StopPbActive AT %IX."SafetyController_R01SL06".BOOL00010;
 	::owsPendant.pendantAllowMoves AT %IX."SafetyController_R01SL06".BOOL00003;

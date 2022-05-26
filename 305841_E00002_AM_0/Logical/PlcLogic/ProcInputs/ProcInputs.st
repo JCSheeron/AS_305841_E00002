@@ -98,19 +98,27 @@ PROGRAM _CYCLIC
   AI_LT_CFTankLevel.ModuleOk:= ModStat_JB1_PLK2.Slot04ModuleOk;
   fbAI_LT_CFTankLevel();
   
-  AI_PT_CFFilterOutlet.ModuleOk:= ModStat_JB1_PLK2.Slot05ModuleOk;
-  AI_PT_CFFilterOutlet.ChannelOk := AI_PT_CFFilterOutlet.ModuleOk; // TODO: Update. Need to figure out what is needed in the IO-Link case.
-  fbAI_PT_CFFilterOutlet();
-  
   AI_PT_CFPumpOutlet.ModuleOk:= ModStat_JB1_PLK2.Slot05ModuleOk;
   AI_PT_CFPumpOutlet.ChannelOk := AI_PT_CFPumpOutlet.ModuleOk; // TODO: Update. Need to figure out what is needed in the IO-Link case.
+  // Manually set the raw input, externally calc scaling, and then call the fb.
+  // Mfg formula gives pressure in bar, and then convert to psig.
+  AI_PT_CFPumpOutlet.InRawUINT := AI_PT_CFFilterOutletRaw;
+  AI_PT_CFPumpOutlet.InScaled := LREAL_TO_REAL(((UINT_TO_LREAL(AI_PT_CFFilterOutletRaw) * TURCK_PS5XX_100_GRADIENT) + TURCK_PS5XX_100_OFFSET) * 14.50377);
   fbAI_PT_CFPumpOutlet();
-  
+
+  AI_PT_CFFilterOutlet.ModuleOk:= ModStat_JB1_PLK2.Slot05ModuleOk;
+  AI_PT_CFFilterOutlet.ChannelOk := AI_PT_CFFilterOutlet.ModuleOk; // TODO: Update. Need to figure out what is needed in the IO-Link case.
+  // Manually set the raw input, externally calc scaling, and then call the fb.
+  // Mfg formula gives pressure in bar, and then convert to psig.
+  AI_PT_CFFilterOutlet.InRawUINT := AI_PT_CFFilterOutletRaw;
+  AI_PT_CFFilterOutlet.InScaled := LREAL_TO_REAL(((UINT_TO_LREAL(AI_PT_CFFilterOutletRaw) * TURCK_PS5XX_100_GRADIENT) + TURCK_PS5XX_100_OFFSET) * 14.50377);
+  fbAI_PT_CFFilterOutlet();
+    
   // The 'virtual' CF Filter DP is derrived from two real PTs across the filter/
   // And the module and channel okays. Subtract the PVs to get the new signal.
   AI_DP_CFFilter.ModuleOk:= AI_PT_CFPumpOutlet.ModuleOk AND AI_PT_CFFilterOutlet.ModuleOk;
   AI_DP_CFFilter.ChannelOk := AI_PT_CFPumpOutlet.ChannelOk AND AI_PT_CFFilterOutlet.ChannelOk;
-  AI_DP_CFFilter.InRawREAL := AI_PT_CFPumpOutlet.InScaled - AI_PT_CFFilterOutlet.InScaled;
+  AI_DP_CFFilter.InRawREAL := AI_PT_CFPumpOutlet.InScaledFiltered - AI_PT_CFFilterOutlet.InScaledFiltered;
   fbAI_DP_CFFilter();
   
   // ** Digital Inputs

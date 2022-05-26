@@ -11,6 +11,7 @@ ACTION SetInputParams:
   gr_AI_FT_CFFlow_Params.RawType := GAPIO_RWST_INT;
   // scaling parameters
   // scaling TBD
+  gr_AI_FT_CFFlow_Params.CalcEUExternally := FALSE;
   gr_AI_FT_CFFlow_Params.RawMin := 0.0;
   gr_AI_FT_CFFlow_Params.RawMax := 32767.0;
   gr_AI_FT_CFFlow_Params.EuMin := 0.0;
@@ -47,6 +48,7 @@ ACTION SetInputParams:
   gr_AI_LT_CFTankLevel_Params.RawType := GAPIO_RWST_INT;
   // scaling parameters
   // scaling TBD
+  gr_AI_LT_CFTankLevel_Params.CalcEUExternally := FALSE;
   gr_AI_LT_CFTankLevel_Params.RawMin := 0.0;
   gr_AI_LT_CFTankLevel_Params.RawMax := 32767.0;
   gr_AI_LT_CFTankLevel_Params.EuMin := 0.0;
@@ -82,10 +84,13 @@ ACTION SetInputParams:
   gr_AI_PT_CFPumpOutlet_Params.AlmHiHiEnable := TRUE; // alarm thresholds - compare to EU (scaled) values
   gr_AI_PT_CFPumpOutlet_Params.RawType := GAPIO_RWST_UINT; // UINT in the IO-Link case
   // scaling parameters
-  // IO-Link is scaled at the device
-  gr_AI_PT_CFPumpOutlet_Params.RawMin := 0.0;
-  gr_AI_PT_CFPumpOutlet_Params.RawMax := 1450.38;
-  gr_AI_PT_CFPumpOutlet_Params.EuMin := 0.0;
+  // IO-Link is scaled at the device, but adheres to a mfg given formula
+  // Pressure in bar = (measured value * Gradient) + Offset
+  // This calc is done and the scaled value is set outside the fb
+  gr_AI_PT_CFPumpOutlet_Params.CalcEUExternally := TRUE; // CALC EU Outside scaling fb!! 
+  gr_AI_PT_CFPumpOutlet_Params.RawMin := 5120.0;
+  gr_AI_PT_CFPumpOutlet_Params.RawMax := 60415.0;
+  gr_AI_PT_CFPumpOutlet_Params.EuMin := 0.0;  // 0-100 BAR in PSI but not used directly with external calc scaling
   gr_AI_PT_CFPumpOutlet_Params.EuMax := 1450.38;
   gr_AI_PT_CFPumpOutlet_Params.RawOffset := 0.0; // +/- counts value added to the raw value before scaling 
   gr_AI_PT_CFPumpOutlet_Params.EuOffset := 0.0; // +/- EU value added to EU after scaling
@@ -96,9 +101,9 @@ ACTION SetInputParams:
   gr_AI_PT_CFPumpOutlet_Params.AlmRangeThreshHi := gr_AI_PT_CFPumpOutlet_Params.EuMax;
   gr_AI_PT_CFPumpOutlet_Params.AlmThreshLoLo := 40.0; // TODO: Figure out the alm thresholds
   gr_AI_PT_CFPumpOutlet_Params.AlmThreshLo := 60.0;
-  // Seal has a 300 PSI limit -- keep 'er under this
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHi := 300.0 * 0.80;
-  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHiHi := 300.0 * 0.95;
+  // Seal has a 300 PSI limit and there is some other limitation at 150 PSI-- keep 'er under this
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHi := 150.0 * 0.80;
+  gr_AI_PT_CFPumpOutlet_Params.AlmThreshHiHi := 150.0 * 0.95;
   // Alarm deadbands in % of range EU range. Use 0.0 to disable
   // Specified here in EU, and converted to a percent
   gr_AI_PT_CFPumpOutlet_Params.AlmDbLoPct := (3.0 / (gr_AI_PT_CFPumpOutlet_Params.EuMax - gr_AI_PT_CFPumpOutlet_Params.EuMin)) * 100.0; // pvs must rise above threshold by the corresponding value in order to be considered clear
@@ -121,9 +126,10 @@ ACTION SetInputParams:
   gr_AI_PT_CFFilterOutlet_Params.RawType := GAPIO_RWST_UINT; // UINT in the IO-Link case
   // scaling parameters
   // IO-Link is scaled at the device
-  gr_AI_PT_CFFilterOutlet_Params.RawMin := 0.0;
-  gr_AI_PT_CFFilterOutlet_Params.RawMax := 1450.38;
-  gr_AI_PT_CFFilterOutlet_Params.EuMin := 0.0;
+  gr_AI_PT_CFFilterOutlet_Params.CalcEUExternally := TRUE; // CALC EU Outside scaling fb!! 
+  gr_AI_PT_CFFilterOutlet_Params.RawMin := 5120.0;
+  gr_AI_PT_CFFilterOutlet_Params.RawMax := 60415.0;
+  gr_AI_PT_CFFilterOutlet_Params.EuMin := 0.0;  // 0-100 BAR in PSI but not used directly with external calc scaling
   gr_AI_PT_CFFilterOutlet_Params.EuMax := 1450.38;
   gr_AI_PT_CFFilterOutlet_Params.RawOffset := 0.0; // +/- counts value added to the raw value before scaling 
   gr_AI_PT_CFFilterOutlet_Params.EuOffset := 0.0; // +/- EU value added to EU after scaling
@@ -134,9 +140,9 @@ ACTION SetInputParams:
   gr_AI_PT_CFFilterOutlet_Params.AlmRangeThreshHi := gr_AI_PT_CFFilterOutlet_Params.EuMax;
   gr_AI_PT_CFFilterOutlet_Params.AlmThreshLoLo := 40.0;
   gr_AI_PT_CFFilterOutlet_Params.AlmThreshLo := 60.0;
-  // Seal has a 300 PSI limit -- keep 'er under this
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHi := 300.0 * 0.80;
-  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHiHi := 300.0 * 0.95;
+  // Seal has a 300 PSI limit and there is some other limitation at 150 PSI-- keep 'er under this
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHi := 150.0 * 0.80;
+  gr_AI_PT_CFFilterOutlet_Params.AlmThreshHiHi := 150.0 * 0.95;
   // Alarm deadbands in % of range EU range. Use 0.0 to disable
   // Specified here in EU, and converted to a percent
   gr_AI_PT_CFFilterOutlet_Params.AlmDbLoPct := (3.0 / (gr_AI_PT_CFFilterOutlet_Params.EuMax - gr_AI_PT_CFFilterOutlet_Params.EuMin)) * 100.0; // pvs must rise above threshold by the corresponding value in order to be considered clear
