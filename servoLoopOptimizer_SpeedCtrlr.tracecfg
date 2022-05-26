@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="NewTraceConfig" Type="tracecfg">
+    <Property ID="mappCockpitTypeID" Value="TraceCfg"/>
+    <Group ID="TrcDataPointList">
+      <Property ID="TrcDataPoint[1]" Value="*ACP:IF3.ST12_Axis1:1343"/>
+      <Property ID="TrcDataPoint[2]" Value="*ACP:IF3.ST12_Axis1:1344"/>
+    </Group>
+    <Group ID="TrcTimingSettings">
+      <Property ID="TrcTotalRecordingTime" Value="0.40939998626708984"/>
+      <Property ID="TrcTriggerOffsetTime" Value="0"/>
+      <Selector ID="TrcPVTaskClass" Value="TrcCyclic_1">
+        <Property ID="TrcPLCSampleTime" Value="0"/>
+      </Selector>
+      <Property ID="TrcACOPOSSampleTime" Value="0.00019999999494757503"/>
+    </Group>
+    <Group ID="TrcTriggerSettings">
+      <Group ID="TrcTriggerCondition[1]">
+        <Property ID="TrcTriggerDataPoint" Value="*ACP:IF3.ST12_Axis1:1343"/>
+        <Selector ID="TrcTriggerConditionSelection" Value="coTRACE_LEAVE_WINDOW_EVENT">
+          <Property ID="TrcThreshold" Value="0"/>
+          <Property ID="TrcWindow" Value="0"/>
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>
