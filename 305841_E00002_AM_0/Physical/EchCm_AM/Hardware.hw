@@ -567,6 +567,9 @@
     <Parameter ID="ReferenceDistanceIsReadOnly" Value="0" />
     <Parameter ID="ReferenceDistance" Value="1" />
     <Parameter ID="UnitOfSetpoint" Value="Rpm" />
+    <Parameter ID="IOM_AIDP1" Value="HMIS" />
+    <Parameter ID="IOM_AIDP2" Value="LFT" />
+    <Parameter ID="IOM_AIDP3" Value="ETAD_u" />
     <Parameter ID="Mode_LI3" Value="Safety" />
     <Parameter ID="Sel_NameplateMask" Value="8Ix6T401100_IEC" />
     <Parameter ID="Cfg_NSP" Value="1175" />

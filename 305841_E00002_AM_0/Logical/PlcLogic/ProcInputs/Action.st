@@ -222,19 +222,19 @@ ACTION SetInputParams:
   gr_DI_ZS_CFTankLocator_Params.AlmHiOffDlyTime := T#1s;
 
   // 480 VAC Monitor
-  gr_DI_ZS_CFTankLocator_Params.Enable := TRUE; // H: process, L: Ignore.
+  gr_DI_JI_480VACOk_Params.Enable := TRUE; // H: process, L: Ignore.
   // Indication only, no alarming needed.
-  gr_DI_ZS_CFTankLocator_Params.AlmEnable := FALSE;
+  gr_DI_JI_480VACOk_Params.AlmEnable := FALSE;
   // Sensor should be fail safe, so low signal is an alarm
-  gr_DI_ZS_CFTankLocator_Params.AlmLoEnable := FALSE; // set to enable alarm if value is low 
-  gr_DI_ZS_CFTankLocator_Params.AlmHiEnable := FALSE; // set to enable alarm if value is high
-  gr_DI_ZS_CFTankLocator_Params.Invert := FALSE;
-  gr_DI_ZS_CFTankLocator_Params.OnDlyTime := T#2s; // delay to make sure signal is present
-  gr_DI_ZS_CFTankLocator_Params.OffDlyTime := T#0ms; // delay time for value turning off
-  gr_DI_ZS_CFTankLocator_Params.AlmLoOnDlyTime := T#3s;
-  gr_DI_ZS_CFTankLocator_Params.AlmHiOnDlyTime := T#1s;
-  gr_DI_ZS_CFTankLocator_Params.AlmLoOffDlyTime := T#1s;
-  gr_DI_ZS_CFTankLocator_Params.AlmHiOffDlyTime := T#1s;
+  gr_DI_JI_480VACOk_Params.AlmLoEnable := FALSE; // set to enable alarm if value is low 
+  gr_DI_JI_480VACOk_Params.AlmHiEnable := FALSE; // set to enable alarm if value is high
+  gr_DI_JI_480VACOk_Params.Invert := FALSE;
+  gr_DI_JI_480VACOk_Params.OnDlyTime := T#2s; // delay to make sure signal is present
+  gr_DI_JI_480VACOk_Params.OffDlyTime := T#0ms; // delay time for value turning off
+  gr_DI_JI_480VACOk_Params.AlmLoOnDlyTime := T#3s;
+  gr_DI_JI_480VACOk_Params.AlmHiOnDlyTime := T#1s;
+  gr_DI_JI_480VACOk_Params.AlmLoOffDlyTime := T#1s;
+  gr_DI_JI_480VACOk_Params.AlmHiOffDlyTime := T#1s;
   
 
 END_ACTION

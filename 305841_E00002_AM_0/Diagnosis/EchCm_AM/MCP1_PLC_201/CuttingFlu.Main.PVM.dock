@@ -1,10 +1,10 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=CuttingFlu 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=151 Type=0 Scope=0 Force=0 Index=39 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=151 Type=0 Scope=0 Force=0 Index=20 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                    cfVfd                         sCuttingFluidVfd    0 "                                                               *"    0   24    1    0    0    1         
                         isAllowedToStart                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                           isAllowedToRun                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                               isLocated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                               isLocated                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                isRunning                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                        isFlowEstablished                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                              isAlmLoFlow                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
@@ -21,7 +21,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=151 Type=0 Scope=0 Force=0 Index
                             isAlmSummary                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                            isWarnSummary                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                             timeCfFlowOk                                     TIME    0 "                                                           T#05s"    0   12    1    1    1    0         
-            gr_AI_PT_CFPumpOutlet_Params                       sAnalogInputParams    0 "                                                               *"    0   24    1    0    0    1         
+            gr_AI_PT_CFPumpOutlet_Params                       sAnalogInputParams    0 "                                                               *"    0   24    1    0    0    0         
                         CalcEUExternally                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                                 LpEnable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                     LpPreserveUnfiltered                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
@@ -38,16 +38,16 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=151 Type=0 Scope=0 Force=0 Index
                                    EuMax                                     REAL    0 "                                                         1450.38"    1    8    1   10    0    0         
                                RawOffset                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                                 EuOffset                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
-                                 LpCoeff                                     REAL    0 "                                                            0.95"    1    8    1   10    0    0         
+                                 LpCoeff                                     REAL    0 "                                                            0.99"    1    8    1   10    0    0         
                         AlmRangeThreshLo                                     REAL    0 "                                                           -10.0"    1    8    1   10    0    0         
                         AlmRangeThreshHi                                     REAL    0 "                                                         1450.38"    1    8    1   10    0    0         
                            AlmThreshLoLo                                     REAL    0 "                                                            25.0"    1    8    1   10    0    0         
                              AlmThreshLo                                     REAL    0 "                                                            30.0"    1    8    1   10    0    0         
                              AlmThreshHi                                     REAL    0 "                                                            75.0"    1    8    1   10    0    0         
                            AlmThreshHiHi                                     REAL    0 "                                                            80.0"    1    8    1   10    0    0         
-                              AlmDbLoPct                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-                              AlmDbHiPct                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
-                          AlmLoOnDlyTime                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
-                          AlmHiOnDlyTime                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
-                         AlmLoOffDlyTime                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
-                         AlmHiOffDlyTime                                     TIME    0 "                                                               *"    1   12    1    1    0    0         
+                              AlmDbLoPct                                     REAL    0 "                                                     0.206842348"    1    8    1   10    0    0         
+                              AlmDbHiPct                                     REAL    0 "                                                     0.206842348"    1    8    1   10    0    0         
+                          AlmLoOnDlyTime                                     TIME    0 "                                                           T#05s"    1   12    1    1    0    0         
+                          AlmHiOnDlyTime                                     TIME    0 "                                                           T#05s"    1   12    1    1    0    0         
+                         AlmLoOffDlyTime                                     TIME    0 "                                                           T#01s"    1   12    1    1    0    0         
+                         AlmHiOffDlyTime                                     TIME    0 "                                                           T#01s"    1   12    1    1    0    0         
