@@ -2,9 +2,11 @@
 <?AutomationStudio Version="4.11.2.75" FileVersion="4.9"?>
 <CamProfile NcSwId="ACP10" MasterAxisVelocity="1" MasterAxisAcceleration="0" DefaultCurveType="Polynomial5" MathematicalNotation="true" >
 <FixPoint x="0" IsMathX="true" y="0" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="45" IsMathX="true" y="90" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="315" IsMathX="true" y="360" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="360" IsMathX="true" y="360" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="20" IsMathX="true" y="77.2046" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="390" IsMathX="true" y="447.2046" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="410" IsMathX="true" y="490.5819" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="780" IsMathX="true" y="860.5819" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="800" IsMathX="true" y="800" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
 <Curve Type="Polynomial5" >
 <LeftBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
 <RightBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
@@ -26,7 +28,21 @@
 <Supremum y="1.7e+308" Dy="1.7e+308" IsMathDy="true" Ddy="1.7e+308" IsMathDdy="true" Dddy="1.7e+308" IsMathDddy="true" />
 <Infimum y="-1.7e+308" Dy="-1.7e+308" IsMathDy="true" Ddy="-1.7e+308" IsMathDdy="true" Dddy="-1.7e+308" IsMathDddy="true" />
 </Curve>
-<Cam Name="" LeftBoundaryIndex="0" RightBoundaryIndex="3" >
+<Curve Type="Polynomial5" >
+<LeftBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<RightBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+ <Spline3 IsContinuous4Derivative="false" IsDefinedSaddlePoint="false" IsDefinedLineAs2ndSegment="false" IsDefinedSlopeOfLine="false" SlopeOfLine="0" IsMathSlopeOfLine="true" />
+<Supremum y="1.7e+308" Dy="1.7e+308" IsMathDy="true" Ddy="1.7e+308" IsMathDdy="true" Dddy="1.7e+308" IsMathDddy="true" />
+<Infimum y="-1.7e+308" Dy="-1.7e+308" IsMathDy="true" Ddy="-1.7e+308" IsMathDdy="true" Dddy="-1.7e+308" IsMathDddy="true" />
+</Curve>
+<Curve Type="Polynomial5" >
+<LeftBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<RightBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+ <Spline3 IsContinuous4Derivative="false" IsDefinedSaddlePoint="false" IsDefinedLineAs2ndSegment="false" IsDefinedSlopeOfLine="false" SlopeOfLine="0" IsMathSlopeOfLine="true" />
+<Supremum y="1.7e+308" Dy="1.7e+308" IsMathDy="true" Ddy="1.7e+308" IsMathDdy="true" Dddy="1.7e+308" IsMathDddy="true" />
+<Infimum y="-1.7e+308" Dy="-1.7e+308" IsMathDy="true" Ddy="-1.7e+308" IsMathDdy="true" Dddy="-1.7e+308" IsMathDddy="true" />
+</Curve>
+<Cam Name="" LeftBoundaryIndex="0" RightBoundaryIndex="5" >
 <Supremum y="1.7e+308" Dy="1.7e+308" IsMathDy="true" Ddy="1.7e+308" IsMathDdy="true" Dddy="1.7e+308" IsMathDddy="true" />
 <Infimum y="-1.7e+308" Dy="-1.7e+308" IsMathDy="true" Ddy="-1.7e+308" IsMathDdy="true" Dddy="1.7e+308" IsMathDddy="true" />
 </Cam>

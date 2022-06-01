@@ -4,10 +4,15 @@
   <Objects>
     <Object Type="File" Private="true">axInE.typ</Object>
     <Object Type="File" Private="true">axInE.var</Object>
-    <Object Type="DataObject" Language="Cam">Cam1P</Object>
-    <Object Type="DataObject" Language="Cam">CamBigP</Object>
-    <Object Type="DataObject" Language="Cam">Cam1Rev</Object>
     <Object Type="DataObject" Language="Apt">axInEParamTable</Object>
     <Object Type="Program" Language="IEC" Description="Axis State Machine">axInESM</Object>
+    <Object Type="DataObject" Language="Cam">Cam1P</Object>
+    <Object Type="DataObject" Language="Cam">Cam1P_Fp</Object>
+    <Object Type="DataObject" Language="Cam">Cam2P</Object>
+    <Object Type="DataObject" Language="Cam">Cam2P_Fp</Object>
+    <Object Type="DataObject" Language="Cam">Cam3P</Object>
+    <Object Type="DataObject" Language="Cam">Cam3P_Fp</Object>
+    <Object Type="DataObject" Language="Cam">Cam4P</Object>
+    <Object Type="DataObject" Language="Cam">Cam4P_Fp</Object>
   </Objects>
 </Package>

@@ -123,6 +123,9 @@
   <Operation Download="vAxHwCfg.br" Memory="UserROM"/>
   <Operation Download="vAxHw.br" Memory="UserROM"/>
   <Operation Download="axCfgCfPmp.br" Memory="UserROM"/>
+  <Operation Download="CamFeature.br" Memory="UserROM"/>
+  <Operation Download="camlist1.br" Memory="UserROM"/>
+  <Operation Download="mappConfig.br" Memory="UserROM"/>
   <Operation Download="brsystem.br" Memory="UserROM"/>
   <Operation Download="SfDomain.br" Memory="UserROM"/>
   <Operation Download="MpRecipe.br" Memory="UserROM"/>
@@ -133,12 +136,14 @@
   <Operation Download="CoTrace.br" Memory="UserROM"/>
   <Operation Download="McDS402Ax.br" Memory="UserROM"/>
   <Operation Download="SfDomVis.br" Memory="UserROM"/>
-  <Operation Download="CamFeature.br" Memory="UserROM"/>
-  <Operation Download="camlist1.br" Memory="UserROM"/>
-  <Operation Download="mappConfig.br" Memory="UserROM"/>
   <Operation Download="Cam1P.br" Memory="UserROM"/>
-  <Operation Download="CamBigP.br" Memory="UserROM"/>
-  <Operation Download="Cam1Rev.br" Memory="UserROM"/>
+  <Operation Download="Cam1P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam2P.br" Memory="UserROM"/>
+  <Operation Download="Cam2P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam3P.br" Memory="UserROM"/>
+  <Operation Download="Cam3P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam4P.br" Memory="UserROM"/>
+  <Operation Download="Cam4P_Fp.br" Memory="UserROM"/>
   <Operation Download="ProdCycle.br" Memory="UserROM"/>
   <Operation Download="Annunc.br" Memory="UserROM"/>
   <Operation Download="Pendant.br" Memory="UserROM"/>

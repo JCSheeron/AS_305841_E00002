@@ -32,9 +32,14 @@
     <NcDataObject Name="axInEParam" Source="PlcLogic.axInE.axInEParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="axZParamTa" Source="PlcLogic.axZ.axZParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="Cam1P" Source="PlcLogic.axInE.Cam1P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam1P_Fp" Source="PlcLogic.axInE.Cam1P_Fp.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam2P" Source="PlcLogic.axInE.Cam2P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam2P_Fp" Source="PlcLogic.axInE.Cam2P_Fp.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam3P" Source="PlcLogic.axInE.Cam3P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam3P_Fp" Source="PlcLogic.axInE.Cam3P_Fp.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam4P" Source="PlcLogic.axInE.Cam4P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam4P_Fp" Source="PlcLogic.axInE.Cam4P_Fp.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
-    <NcDataObject Name="CamBigP" Source="PlcLogic.axInE.CamBigP.dob" Memory="UserROM" Language="Cam" />
-    <NcDataObject Name="Cam1Rev" Source="PlcLogic.axInE.Cam1Rev.dob" Memory="UserROM" Language="Cam" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />
@@ -72,6 +77,9 @@
     <BinaryObject Name="vAxHwCfg" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vAxHw" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="axCfgCfPmp" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="CamFeature" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="camlist1" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="mappConfig" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vAxHwLin" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vAxHwRot" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="wgRecipe" Source="" Memory="UserROM" Language="Binary" />
