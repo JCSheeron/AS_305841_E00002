@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <AcoposParameterTable>
-  <Root Name="Parameters">
-    <Parameter Name="AXLIM_DV_STOP" ID="1150" Value="0.2" Unit="1/s" Description="Limit values: Speed error for stop of a movement" />
-  </Root>
+  <Root Name="Parameters" />
 </AcoposParameterTable>
