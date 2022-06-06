@@ -279,7 +279,7 @@ TRANSITION Step TO or Stop Req FROM Stp_EnableAxes TO Stp_CycleStop:=
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_CycleStop' *)
-TRANSITION min time and axes enabled FROM Stp_EnableAxes TO Stp_ZeroDepth:=
+TRANSITION min time and axes enabled FROM Stp_EnableAxes TO Stp_StartCf1:=
 (* @LANGUAGE := 'st' *)
 // minimum time, axes are enabled, and inner eccentric is not coupled
 tmrStepMin.Q AND
@@ -287,6 +287,61 @@ axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 axes[AD_Z].Status.PlcOpenState = mcAXIS_STANDSTILL
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_StartCf1' *)
+STEP Stp_StartCf1:
+(* @LANGUAGE := 'st' *)
+// Run step hold and timeout timers (PT set in step entry)
+tmrStepMin(IN:= TRUE);
+tmrStepTO(IN:= TRUE);
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Update step 
+partMotion.prodCycleStepCurrent := PCS_START_CF;
+
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= T#100ms);
+tmrStepTO(IN:= FALSE, PT:= T#2s);
+
+
+// Set the vfd speed, and request start if not already running
+// Request to start now, check for flow in a little bit.
+axes[AD_CF_VFD].MoveParameters.Acceleration := gr_CfgCurrent.cfVfd.accel;
+axes[AD_CF_VFD].MoveParameters.Deceleration := gr_CfgCurrent.cfVfd.decel;
+axes[AD_CF_VFD].MoveParameters.Direction := mcDIR_POSITIVE
+// cfVfd.ReqAutoSpeedEU := gr_CfgCurrent.cfVfd.speedPct;
+// cfVfd.ReqAutoStart := cfVfd.State = MTRVFD_REM_AUTO_STOP;
+
+// Enable the axes if they are not already
+axes[AD_SPINDLE].Commands.EnableReq := (axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_DISABLED);
+axes[AD_OUTER_ECCENTRIC].Commands.EnableReq := (axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED);
+axes[AD_INNER_ECCENTRIC].Commands.EnableReq := (axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED);
+axes[AD_Z].Commands.EnableReq := (axes[AD_Z].Status.PlcOpenState = mcAXIS_DISABLED);
+
+// Decouple the inner eccentric from the outer eccentric to start with. This is so
+// the inner eccentric can be easily moved back to zero depth position if this is needed.
+// It will already be decoupled if the axis was disabled. It could have been
+// enabled and coupled while waiting for a cycle start -- in which case it could still be 
+// coupled.
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.GearOutReq:= TRUE;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// The current step holds an ePROD_CYCLE_STEP enum which also 
+// acts as the array index.
+
+// Record the ET
+stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
+// If this is a timeout, record that also
+stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+END_ACTION
+TRANSITION FROM Stp_StartCf1 TO Stp_ZeroDepth:=
+Trans1
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_ZeroDepth' *)
 STEP Stp_ZeroDepth:

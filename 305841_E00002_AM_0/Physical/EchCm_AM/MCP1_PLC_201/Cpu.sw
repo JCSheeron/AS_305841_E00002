@@ -31,6 +31,7 @@
     <NcDataObject Name="axOutEPara" Source="PlcLogic.axOutE.axOutEParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="axInEParam" Source="PlcLogic.axInE.axInEParamTable.dob" Memory="UserROM" Language="Apt" />
     <NcDataObject Name="axZParamTa" Source="PlcLogic.axZ.axZParamTable.dob" Memory="UserROM" Language="Apt" />
+    <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
     <NcDataObject Name="Cam1P" Source="PlcLogic.axInE.Cam1P.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="Cam1P_Fp" Source="PlcLogic.axInE.Cam1P_Fp.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="Cam2P" Source="PlcLogic.axInE.Cam2P.dob" Memory="UserROM" Language="Cam" />
@@ -39,7 +40,10 @@
     <NcDataObject Name="Cam3P_Fp" Source="PlcLogic.axInE.Cam3P_Fp.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="Cam4P" Source="PlcLogic.axInE.Cam4P.dob" Memory="UserROM" Language="Cam" />
     <NcDataObject Name="Cam4P_Fp" Source="PlcLogic.axInE.Cam4P_Fp.dob" Memory="UserROM" Language="Cam" />
-    <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
+    <NcDataObject Name="Cam5P" Source="PlcLogic.axInE.Cam5P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam5P_Fp" Source="PlcLogic.axInE.Cam5P_Fp.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam6P" Source="PlcLogic.axInE.Cam6P.dob" Memory="UserROM" Language="Cam" />
+    <NcDataObject Name="Cam6P_FP" Source="PlcLogic.axInE.Cam6P_FP.dob" Memory="UserROM" Language="Cam" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />

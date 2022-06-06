@@ -14,5 +14,9 @@
     <Object Type="DataObject" Language="Cam">Cam3P_Fp</Object>
     <Object Type="DataObject" Language="Cam">Cam4P</Object>
     <Object Type="DataObject" Language="Cam">Cam4P_Fp</Object>
+    <Object Type="DataObject" Language="Cam">Cam5P</Object>
+    <Object Type="DataObject" Language="Cam">Cam5P_Fp</Object>
+    <Object Type="DataObject" Language="Cam">Cam6P</Object>
+    <Object Type="DataObject" Language="Cam">Cam6P_FP</Object>
   </Objects>
 </Package>

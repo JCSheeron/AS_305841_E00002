@@ -107,4 +107,11 @@ VAR_CONFIG
 	::axes[8].Commands.PlcSafetyEnable AT %QX."SafetyController_R01SL06".BOOL10012;
 	::OmSafeDev:ts_InManualMode AT %QX."SafetyController_R01SL06".BOOL10017;
 	::OmSafeDev:ts_InProductionMode AT %QX."SafetyController_R01SL06".BOOL10018;
+	::cfVfd.isModuleOk AT %IX."VFD1_PLK13".ModuleOk;
+	::cfVfd.DevSpecStatus AT %IW."VFD1_PLK13".HMIS_Input;
+	::cfVfd.DevSpecError AT %IW."VFD1_PLK13".LFT_Input;
+	::cfVfd.StdError AT %IW."VFD1_PLK13".ErrorCode_I603F;
+	::cfVfd.StdStatus AT %IW."VFD1_PLK13".StatusWord_I6041;
+	::cfVfd.VelCommanded AT %IW."VFD1_PLK13".VlVelocityDemand_I6043;
+	::cfVfd.VelAct AT %IW."VFD1_PLK13".VlVelocityActualValue_I6044;
 END_VAR
