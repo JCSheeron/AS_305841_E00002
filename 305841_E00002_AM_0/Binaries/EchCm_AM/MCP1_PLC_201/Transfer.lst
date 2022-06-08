@@ -144,6 +144,10 @@
   <Operation Download="Cam3P_Fp.br" Memory="UserROM"/>
   <Operation Download="Cam4P.br" Memory="UserROM"/>
   <Operation Download="Cam4P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam5P.br" Memory="UserROM"/>
+  <Operation Download="Cam5P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam6P.br" Memory="UserROM"/>
+  <Operation Download="Cam6P_Fp.br" Memory="UserROM"/>
   <Operation Download="ProdCycle.br" Memory="UserROM"/>
   <Operation Download="Annunc.br" Memory="UserROM"/>
   <Operation Download="Pendant.br" Memory="UserROM"/>

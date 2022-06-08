@@ -28,10 +28,10 @@ PROGRAM _CYCLIC
   cfVfd.isAllowedToRun := 
     cfVfd.isAllowedToStart AND
     NOT cfVfd.isAlmLoFlow AND 
-    NOT cfVfd.isAlmHiOutletPressure AND
+    NOT cfVfd.isAlmHiOutletPressure; 
     // no device errors
-    cfVfd.DevSpecError = 0 AND
-    cfVfd.StdError = 0;
+    // cfVfd.DevSpecError = 0 AND
+    // cfVfd.StdError = 0;
     
   // Map the axis status to the cf structure to get a running bit
   cfVfd.isRunning := axes[AD_CF_VFD].Status.IsMoveActive;

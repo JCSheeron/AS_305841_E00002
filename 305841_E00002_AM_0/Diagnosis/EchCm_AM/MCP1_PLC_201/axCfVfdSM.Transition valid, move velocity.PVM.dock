@@ -1,43 +1,43 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=axCfVfdSM 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=950 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=82 Type=0 Scope=0 Force=0 Index=476 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                      ax                                sMot_Axis    0 "                                                               *"    0   24    1    0    2    0         
-                                  Ignore                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               *"    1    4    1   10    0    0 e,0,GAMO
+                                      ax                                sMot_Axis    0 "                                                               *"    0   24    1    0    2    1         
+                                  Ignore                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               8"    1    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               4"    1    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    0         
-                               controlif                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                               controlif                                    UDINT    0 "                                                       116360176"    2    7    1   10    0    0         
                         mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    0         
                                 Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    0         
-                             Internal[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                             Internal[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                                   seqNo                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                             Internal[0]                                    UDINT    0 "                                                       115172792"    4    7    1   10    0    0         
+                             Internal[1]                                    UDINT    0 "                                                      2188714431"    4    7    1   10    0    0         
+                                   seqNo                                     DINT    0 "                                                              32"    2    4    1   10    0    0         
                             SlaveAxisObj                               McAxisType    0 "                                                               *"    1   24    1    0    0    0         
-                               controlif                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
+                               controlif                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
                         mappLinkInternal                   McInternalMappLinkType    0 "                                                               *"    2   24    1    0    0    0         
                                 Internal                              UDINT[0..1]    0 "                                                               *"    3    7    2    0    0    0         
-                             Internal[0]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                             Internal[1]                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
-                                   seqNo                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
+                             Internal[0]                                    UDINT    0 "                                                               0"    4    7    1   10    0    0         
+                             Internal[1]                                    UDINT    0 "                                                               0"    4    7    1   10    0    0         
+                                   seqNo                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
                                   Status                          sMot_AxisStatus    0 "                                                               *"    1   24    1    0    0    0         
-                     IsCommuncationReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                        IsReadyToPowerOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                        IsAtHomingSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                        IsTrigger1Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                        IsTrigger2Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                     IsDriveEnableActive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          IsInSimulation                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             IsPoweredOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                      IsTorqueLimitReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                 IsBrakeManuallyReleased                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                     IsCommuncationReady                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                        IsReadyToPowerOn                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                        IsAtHomingSwitch                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                 IsAtPositiveLimitSwitch                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                 IsAtNegativeLimitSwitch                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        IsTrigger1Active                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                        IsTrigger2Active                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                     IsDriveEnableActive                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                          IsInSimulation                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                             IsPoweredOn                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                      IsTorqueLimitReady                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                 IsBrakeManuallyReleased                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                  IsHomed                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                IsJogging                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                             IsAtJogLimit                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -507,49 +507,49 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                            DriveResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            DriveResetCmd                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                            ErrorResetReq                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           fbMpAxisBasic                              MpAxisBasic    0 "                                                               *"    1   24    1    0    0    0         
-                                  MpLink                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                  Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              ErrorReset                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              Parameters                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                                  Update                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                   Power                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                    Home                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            MoveVelocity                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            MoveAbsolute                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            MoveAdditive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                    Stop                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             JogPositive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                             JogNegative                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                               LimitLoad                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                            ReleaseBrake                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                Simulate                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                AutoTune                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                  Active                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                StatusID                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                              UpdateDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                Position                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
-                             CommandBusy                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          CommandAborted                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 PowerOn                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 IsHomed                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              InVelocity                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              InPosition                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                              MoveActive                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                MoveDone                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                                 Stopped                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                          LimitLoadReady                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
-                           BrakeReleased                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           fbMpAxisBasic                              MpAxisBasic    0 "                                                               *"    1   24    1    0    0    1         
+                                  MpLink                                    UDINT    0 "                                                       129200920"    2    7    1   10    0    0         
+                                  Enable                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                              ErrorReset                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              Parameters                                    UDINT    0 "                                                       146715730"    2    7    1   10    0    0         
+                                  Update                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                   Power                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                    Home                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            MoveVelocity                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            MoveAbsolute                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            MoveAdditive                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                    Stop                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                             JogPositive                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                             JogNegative                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                               LimitLoad                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                            ReleaseBrake                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                Simulate                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                AutoTune                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                  Active                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                StatusID                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
+                              UpdateDone                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                Position                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                             CommandBusy                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          CommandAborted                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 PowerOn                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                 IsHomed                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              InVelocity                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              InPosition                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                              MoveActive                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                MoveDone                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                                 Stopped                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                          LimitLoadReady                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
+                           BrakeReleased                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     Info                      MpAxisBasicInfoType    0 "                                                               *"    2   24    1    0    0    0         
-                      CommunicationReady                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                          ReadyToPowerOn                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                              Simulation                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                                 Jogging                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                         JogLimitReached                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                         LimitLoadActive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                            PLCopenState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAX
+                      CommunicationReady                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                          ReadyToPowerOn                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
+                              Simulation                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                 Jogging                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                         JogLimitReached                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                         LimitLoadActive                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                            PLCopenState                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcAX
 
                      DigitalInputsStatus                 McDigitalInputStatusType    0 "                                                               *"    3   24    1    0    0    0         
                             HomingSwitch                                     BOOL    0 "                                                               *"    4    1    1    2    0    0         
@@ -576,11 +576,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
 
                              LibraryInfo                        McLibraryInfoType    0 "                                                               *"    3   24    1    0    0    0         
                                     Name                               STRING[32]    0 "                                                               *"    4    9   33    1    0    0         
-                      CommunicationState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCO
+                      CommunicationState                                     DINT    0 "                                                             600"    3    4    1   10    0    0 e,0,mcCO
 
-                            StartupCount                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
-                            AutoTuneDone                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
-                         AutoTuneQuality                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                            StartupCount                                    UDINT    0 "                                                               1"    3    7    1   10    0    0         
+                            AutoTuneDone                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                         AutoTuneQuality                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                             HardwareInfo                       McHardwareInfoType    0 "                                                               *"    3   24    1    0    0    0         
                                     Axis                         McHwInfoAxisType    0 "                                                               *"    4   24    1    0    0    0         
                                 AxisName                               STRING[32]    0 "                                                               *"    5    9   33    1    0    0         
@@ -630,7 +630,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              ModelNumber                               STRING[35]    0 "                                                               *"    6    9   36    1    0    0         
                             SerialNumber                               STRING[19]    0 "                                                               *"    6    9   20    1    0    0         
                                 Revision                                STRING[3]    0 "                                                               *"    6    9    4    1    0    0         
-                           AutoTuneState                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcAT
+                           AutoTuneState                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcAT
 
                                 Internal                    MpComInternalDataType    0 "                                                               *"    2   24    1    0    0    0         
                                  pObject                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         

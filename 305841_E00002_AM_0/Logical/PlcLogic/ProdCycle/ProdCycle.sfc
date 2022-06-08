@@ -312,9 +312,7 @@ tmrStepTO(IN:= FALSE, PT:= T#2s);
 // Request to start now, check for flow in a little bit.
 axes[AD_CF_VFD].MoveParameters.Acceleration := gr_CfgCurrent.cfVfd.accel;
 axes[AD_CF_VFD].MoveParameters.Deceleration := gr_CfgCurrent.cfVfd.decel;
-axes[AD_CF_VFD].MoveParameters.Direction := mcDIR_POSITIVE
-// cfVfd.ReqAutoSpeedEU := gr_CfgCurrent.cfVfd.speedPct;
-// cfVfd.ReqAutoStart := cfVfd.State = MTRVFD_REM_AUTO_STOP;
+axes[AD_CF_VFD].MoveParameters.Direction := mcDIR_POSITIVE;
 
 // Enable the axes if they are not already
 axes[AD_SPINDLE].Commands.EnableReq := (axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_DISABLED);
@@ -341,7 +339,7 @@ stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
 TRANSITION FROM Stp_StartCf1 TO Stp_ZeroDepth:=
-Trans1
+TRUE
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_ZeroDepth' *)
 STEP Stp_ZeroDepth:

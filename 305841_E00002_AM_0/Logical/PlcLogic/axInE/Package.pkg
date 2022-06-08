@@ -17,6 +17,6 @@
     <Object Type="DataObject" Language="Cam">Cam5P</Object>
     <Object Type="DataObject" Language="Cam">Cam5P_Fp</Object>
     <Object Type="DataObject" Language="Cam">Cam6P</Object>
-    <Object Type="DataObject" Language="Cam">Cam6P_FP</Object>
+    <Object Type="DataObject" Language="Cam">Cam6P_Fp</Object>
   </Objects>
 </Package>

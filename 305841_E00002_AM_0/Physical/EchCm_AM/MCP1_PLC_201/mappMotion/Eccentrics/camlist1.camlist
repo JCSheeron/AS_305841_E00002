@@ -58,7 +58,7 @@
       <Property ID="Description" />
     </Group>
     <Group ID="Row[12]">
-      <Property ID="CamName" Value="Cam6P_FP" />
+      <Property ID="CamName" Value="Cam6P_Fp" />
       <Property ID="CamID" Value="12" />
       <Property ID="Description" />
     </Group>

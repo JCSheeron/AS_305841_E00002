@@ -557,6 +557,7 @@ operatingMode.ModeReqBits := 16#0;
 // Run the reset pulse and send the reset req
 tmrResetPulse(IN:= TRUE, PT:= timeResetPulse);
 ts_ResetSafeMC := tmrResetPulse.Q;
+
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
