@@ -2,6 +2,6 @@
 <?AutomationStudio FileVersion="4.9"?>
 <DataObject SubType="Cam" xmlns="http://br-automation.co.at/AS/DataObject">
   <Files>
-    <File Description="Cam for mapp Motion">CamSinglePass.cam</File>
+    <File Description="Cam for mapp Motion">Cam1P.cam</File>
   </Files>
 </DataObject>
