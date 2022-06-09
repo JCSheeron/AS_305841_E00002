@@ -17,6 +17,47 @@ ACTION ActionCallMotionFunctions:
   ActionPhaseShift;
 END_ACTION
 
+ACTION ActionRangeCheckMoveParams: 
+  // Range checks position, velocity, accel & Decel
+
+  // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
+  // Clamp if necessary. 
+  
+  // Position
+  IF ax.MoveParameters.Position >  axPositionLimits.PositionLimitPos THEN
+    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitPos;
+    
+  END_IF;
+  IF ax.MoveParameters.Position <  axPositionLimits.PositionLimitNeg THEN
+    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitNeg;
+  END_IF;
+
+  // Velocity
+  IF ax.MoveParameters.Velocity > ax.MoveParameters.VelocityMax THEN
+    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMax;
+  END_IF;
+  IF ax.MoveParameters.Velocity < ax.MoveParameters.VelocityMin THEN
+    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMin;
+  END_IF;
+
+  // Accel and decel
+  IF ax.MoveParameters.Acceleration > ax.MoveParameters.AccelMax THEN
+    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMax;
+  END_IF;
+  IF ax.MoveParameters.Acceleration < ax.MoveParameters.AccelMin THEN
+    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMin;
+  END_IF;
+
+  IF ax.MoveParameters.Deceleration > ax.MoveParameters.DecelMax THEN
+    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMax;
+  END_IF;
+  IF ax.MoveParameters.Deceleration < ax.MoveParameters.DecelMin THEN
+    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMin;
+  END_IF;
+  
+END_ACTION;
+
+
 ACTION ActionMpAxisBasic: 
   // 1) Range checks position, velocity, accel & Decel
   // 2) Packs the sMot_MoveParameters into a local axisBasicParamsStructure
@@ -26,11 +67,12 @@ ACTION ActionMpAxisBasic:
   // 6) Updates the axis structure with the status and axis info coming back from the fb
 
   // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
-  // Clamp if necessary
+  // Clamp if necessary. 
   
   // Position
   IF ax.MoveParameters.Position >  axPositionLimits.PositionLimitPos THEN
     ax.MoveParameters.Position :=  axPositionLimits.PositionLimitPos;
+    
   END_IF;
   IF ax.MoveParameters.Position <  axPositionLimits.PositionLimitNeg THEN
     ax.MoveParameters.Position :=  axPositionLimits.PositionLimitNeg;

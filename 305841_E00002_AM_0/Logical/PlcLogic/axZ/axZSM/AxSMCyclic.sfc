@@ -1569,11 +1569,12 @@ ax.Commands.MoveNotAllowed := FALSE;
 // Use the move parameter position limits, accel, decel and jerk for the jog
 // This way, the application can worry about these values in the 
 // parameter structure, but not have to worry about the jog limits.
-ax.MoveParameters.JogParams.Velocity := ax.MoveParameters.Velocity;
+// Make sure to adhere to min and max
+ax.MoveParameters.JogParams.Velocity := MIN(ax.MoveParameters.VelocityMax, MAX(ax.MoveParameters.VelocityMin, ax.MoveParameters.Velocity));
 ax.MoveParameters.JogParams.LimitPosition.FirstPosition :=  axPositionLimits.PositionLimitNeg;
 ax.MoveParameters.JogParams.LimitPosition.LastPosition :=  axPositionLimits.PositionLimitPos;
-ax.MoveParameters.JogParams.Acceleration := ax.MoveParameters.Acceleration;
-ax.MoveParameters.JogParams.Deceleration := ax.MoveParameters.Deceleration;
+ax.MoveParameters.JogParams.Acceleration := MIN(ax.MoveParameters.AccelMax, MAX(ax.MoveParameters.AccelMin, ax.MoveParameters.Acceleration));
+ax.MoveParameters.JogParams.Deceleration := MIN(ax.MoveParameters.Max, MAX(ax.MoveParameters.AccelMin, ax.MoveParameters.Acceleration));
 ax.MoveParameters.JogParams.Jerk := ax.MoveParameters.MaxJerk;
 
 // Set the request mask for those requests we know we want to honor.
