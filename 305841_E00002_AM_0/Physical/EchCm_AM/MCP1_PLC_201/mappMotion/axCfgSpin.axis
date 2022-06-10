@@ -9,7 +9,7 @@
       <Property ID="MeasurementResolutionIsReadOnly" Value="0" />
       <Property ID="MeasurementResolution" Value="0.01" />
       <Property ID="CountDirectionIsReadOnly" Value="0" />
-      <Property ID="CountDirection" Value="Standard" />
+      <Property ID="CountDirection" Value="Inverse" />
       <Group ID="PeriodSettings">
         <Property ID="Period" Value="1.0" />
       </Group>

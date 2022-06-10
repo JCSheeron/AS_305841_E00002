@@ -82,6 +82,7 @@ TYPE
 
   (* cutting fluid vfd params is defined globally so multiple programs can have scope *)
   sCuttingFluidVfd : 	STRUCT 
+    isModuleOk : BOOL; (* H: interface is seen on the I/O network *)
     isAllowedToStart : BOOL; (* H: Allow to start *)
     isAllowedToRun : BOOL; (* H: Allow to run, L: Shutdown *)
     isLocated : BOOL; (* H: tank is located *)
@@ -100,6 +101,12 @@ TYPE
     isWarnHiFilterDp : BOOL;
     isAlmSummary : BOOL; (* one of the below alarms is active *)
     isWarnSummary : BOOL; (* one of the below alarms is active *)
+    StdStatus : UINT; (* DS402 standardized status *)
+    DevSpecStatus : UINT; (* device specific status *)
+    StdError : UINT; (* DS402 standardized error code *)
+    DevSpecError : UINT; (* device specific error code *)
+    VelCommanded : INT; (* speed ref rpm after ramp *)
+    VelAct : INT; (* speed actual rpm *)
   END_STRUCT;
   
   sCyclePermissives : STRUCT
@@ -123,6 +130,7 @@ TYPE
     (* cycle cfg *)
     ShutOffCfBeforeUnload : BOOL; (* turn off cutting fluid before going to unload pos *)
     SingleCycleInclZIndex : BOOL; (* include Z index at end of single cycle cut *)
+    CycleZInPlace : BOOL; (* allow cycle *)
     HmiSubMode : SINT; (* hmi selections of submode *)
     (* mode request are in a word to allow masking and easy clearing *)
     ModeReqBits : WORD := 16#0; (* see OM_xxx constants for bit *)

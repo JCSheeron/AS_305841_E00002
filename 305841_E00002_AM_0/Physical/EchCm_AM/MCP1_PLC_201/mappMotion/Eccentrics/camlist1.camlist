@@ -42,5 +42,25 @@
       <Property ID="CamID" Value="8" />
       <Property ID="Description" />
     </Group>
+    <Group ID="Row[9]">
+      <Property ID="CamName" Value="Cam5P" />
+      <Property ID="CamID" Value="9" />
+      <Property ID="Description" />
+    </Group>
+    <Group ID="Row[10]">
+      <Property ID="CamName" Value="Cam5P_Fp" />
+      <Property ID="CamID" Value="10" />
+      <Property ID="Description" />
+    </Group>
+    <Group ID="Row[11]">
+      <Property ID="CamName" Value="Cam6P" />
+      <Property ID="CamID" Value="11" />
+      <Property ID="Description" />
+    </Group>
+    <Group ID="Row[12]">
+      <Property ID="CamName" Value="Cam6P_Fp" />
+      <Property ID="CamID" Value="12" />
+      <Property ID="Description" />
+    </Group>
   </Element>
 </Configuration>

@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=7773 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=9029 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                     axes                          sMot_Axis[0..8]    0 "                                                               *"    0   24    9    0    0    1         
                                  axes[0]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
@@ -8306,15 +8306,15 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                    Flags                                    USINT    0 "                                                               *"    4    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    4    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    4    4    1   10    0    0         
-                                 axes[8]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    1         
-                                  Ignore                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                             ForceSetRef                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                           StartupHomeOk                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisVirtual                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                           isAxisEndless                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                          isAxisInverter                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
-                                  AxisNo                                    USINT    0 "                                                               8"    2    5    1   10    0    0         
-                                 SMState                                     DINT    0 "                                                               4"    2    4    1   10    0    0 e,0,GAMO
+                                 axes[8]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
+                                  Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                             ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           StartupHomeOk                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisVirtual                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                           isAxisEndless                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                          isAxisInverter                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                                  AxisNo                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                                 SMState                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,GAMO
 
                                  AxisObj                               McAxisType    0 "                                                               *"    2   24    1    0    0    0         
                                controlif                                    UDINT    0 "                                                               *"    3    7    1   10    0    0         
@@ -8462,12 +8462,12 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
 
                   CoordActualOffsetShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
                    CoordActualPhaseShift                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
-                          MoveParameters                      sMot_MoveParameters    0 "                                                               *"    2   24    1    0    0    1         
-                       PosMovePermissive                                     BOOL    0 "                                                            TRUE"    3    1    1    2    0    0         
-                       NegMovePermissive                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                       EnableTorqueLimit                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                   EnableTorqueLimitPrev                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                    HaltOnSlaveDisengage                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                          MoveParameters                      sMot_MoveParameters    0 "                                                               *"    2   24    1    0    0    0         
+                       PosMovePermissive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                       NegMovePermissive                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                       EnableTorqueLimit                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                   EnableTorqueLimitPrev                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                    HaltOnSlaveDisengage                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                            spareBytes5_7                               BYTE[0..2]    0 "                                                               *"    3   17    3    0    0    0        b
                         spareBytes5_7[0]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
                         spareBytes5_7[1]                                     BYTE    0 "                                                               *"    4   17    1   10    0    0        b
@@ -8484,22 +8484,22 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                            spareBytes[2]                                     BYTE    0 "                                                               *"    5   17    1   10    0    0        b
                            StartPosition                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
                      EstStoppingDistance                                    LREAL    0 "                                                               *"    4   14    1   10    0    0         
-                             VelocityMin                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                             VelocityMax                                     REAL    0 "                                                       19.583334"    3    8    1   10    0    0         
-                                AccelMin                                     REAL    0 "                                                           0.001"    3    8    1   10    0    0         
-                                AccelMax                                     REAL    0 "                                                       19.583334"    3    8    1   10    0    0         
-                                DecelMin                                     REAL    0 "                                                           0.001"    3    8    1   10    0    0         
-                                DecelMax                                     REAL    0 "                                                       19.583334"    3    8    1   10    0    0         
-                        _beginHmiSection                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
-                               Direction                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcDI
+                             VelocityMin                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                             VelocityMax                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                AccelMin                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                AccelMax                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                DecelMin                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                DecelMax                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                        _beginHmiSection                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
+                               Direction                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcDI
 
-                                Distance                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
-                                Position                                    LREAL    0 "                                                             0.0"    3   14    1   10    0    0         
-                                Velocity                                     REAL    0 "                                                      1.66666663"    3    8    1   10    0    0         
-                            Acceleration                                     REAL    0 "                                                            10.0"    3    8    1   10    0    0         
-                            Deceleration                                     REAL    0 "                                                       19.583334"    3    8    1   10    0    0         
-                                 MaxJerk                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                          _endHmiSection                                     BOOL    0 "                                                           FALSE"    3    1    1    2    0    0         
+                                Distance                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                                Position                                    LREAL    0 "                                                               *"    3   14    1   10    0    0         
+                                Velocity                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                            Acceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                            Deceleration                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                                 MaxJerk                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                          _endHmiSection                                     BOOL    0 "                                                               *"    3    1    1    2    0    0         
                               HomeParams                         MpAxisHomingType    0 "                                                               *"    3   24    1    0    0    0         
                                     Mode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mcHO
 
@@ -9814,3 +9814,29 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                                 cfPsiCmd                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
                               zReqPosSoc                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
                              zReqPosLUnL                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
+                                   cfVfd                         sCuttingFluidVfd    0 "                                                               *"    0   24    1    0    0    0         
+                              isModuleOk                                     BOOL    1 "                                                            TRUE"    1    1    1    2    0    0         
+                        isAllowedToStart                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                          isAllowedToRun                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                               isLocated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                               isRunning                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                       isFlowEstablished                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                             isAlmLoFlow                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            isWarnLoFlow                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            isAlmLoLvlSw                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            isAlmLoFluid                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                           isWarnLoFluid                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                   isAlmLoOutletPressure                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                  isWarnLoOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                   isAlmHiOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                  isWarnHiOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                        isWarnLoFilterDp                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                        isWarnHiFilterDp                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                            isAlmSummary                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                           isWarnSummary                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                               StdStatus                                     UINT    1 "                                                            1591"    1    6    1   10    0    0         
+                           DevSpecStatus                                     UINT    1 "                                                               4"    1    6    1   10    0    0         
+                                StdError                                     UINT    1 "                                                           25344"    1    6    1   10    0    0         
+                            DevSpecError                                     UINT    1 "                                                               4"    1    6    1   10    0    0         
+                            VelCommanded                                      INT    1 "                                                              99"    1    3    1   10    0    0         
+                                  VelAct                                      INT    1 "                                                              99"    1    3    1   10    0    0         

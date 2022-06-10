@@ -2,11 +2,11 @@
 <?AutomationStudio Version="4.11.2.75" FileVersion="4.9"?>
 <CamProfile NcSwId="ACP10" MasterAxisVelocity="1" MasterAxisAcceleration="0" DefaultCurveType="Polynomial5" MathematicalNotation="true" >
 <FixPoint x="0" IsMathX="true" y="0" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="20" IsMathX="true" y="98.2502" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="390" IsMathX="true" y="468.2502" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="410" IsMathX="true" y="490.5819" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="780" IsMathX="true" y="860.5819" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
-<FixPoint x="800" IsMathX="true" y="800" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="45" IsMathX="true" y="0.3984" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="415" IsMathX="true" y="370.3985" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="460" IsMathX="true" y="412.9815" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="830" IsMathX="true" y="782.9815" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
+<FixPoint x="875" IsMathX="true" y="875" IsDefinedDy="true" Dy="1" IsMathDy="true" IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
 <Curve Type="Polynomial5" >
 <LeftBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
 <RightBoundary IsDefinedDdy="false" Ddy="0" IsMathDdy="true" IsDefinedDddy="false" Dddy="0" IsMathDddy="true" />
