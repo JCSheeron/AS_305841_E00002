@@ -1,0 +1,16 @@
+VAR
+  (* tables used for lookup. 50 element max,
+  so break the lookup into pieces. *)
+	angleToDepth_T1 : sXYTableReal50;
+	angleToDepth_T2 : sXYTableReal50;
+	angleToDepth_T3 : sXYTableReal50;
+  
+  (* lookup fbs *)
+  fbAngleToDepthT1 : MTLookUpTable;
+  fbAngleToDepthT2 : MTLookUpTable;
+  fbAngleToDepthT3 : MTLookUpTable;
+  
+  (* receipe fbs *)
+  (* fbRecipeRegister *)
+  
+END_VAR
