@@ -36,6 +36,7 @@ PROGRAM _INIT
  
   // set the fb axis references
   ax.fbMpAxisBasic.MpLink := ADR(ax.AxisObj);
+  ax.fbReadDrivePos.Axis:= ADR(ax.AxisObj);
   ax.fbGearIn.Master := ADR(ax.AxisObj);
   ax.fbGearIn.Slave := ADR(ax.SlaveAxisObj);
   ax.fbGearOut.Slave := ADR(ax.SlaveAxisObj);

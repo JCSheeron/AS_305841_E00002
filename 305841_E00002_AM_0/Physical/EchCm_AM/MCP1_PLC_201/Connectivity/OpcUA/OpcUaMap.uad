@@ -74,52 +74,10 @@
           <High ValueProvider="Const">1.0</High>
         </EURange>
       </EURanges>
-      <EURanges Id="15">
-        <EURange>
-          <Low ValueProvider="Const">0</Low>
-          <High ValueProvider="Const">2000</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="18">
-        <EURange>
-          <Low ValueProvider="Const">0.1</Low>
-          <High ValueProvider="Const">12000</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="19">
-        <EURange>
-          <Low ValueProvider="Const">0.1</Low>
-          <High ValueProvider="Const">24000</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="20">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">24000</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="21">
         <EURange>
           <Low ValueProvider="Const">0.0</Low>
           <High ValueProvider="Const">360.0</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="24">
-        <EURange>
-          <Low ValueProvider="Const">0.1</Low>
-          <High ValueProvider="Const">5760.0</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="25">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">23040.0</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="26">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">1440.0</High>
         </EURange>
       </EURanges>
       <EURanges Id="28">
@@ -134,24 +92,6 @@
           <High ValueProvider="Const">4000.0</High>
         </EURange>
       </EURanges>
-      <EURanges Id="30">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">120.0</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="31">
-        <EURange>
-          <Low ValueProvider="Const">0.1</Low>
-          <High ValueProvider="Const">480.0</High>
-        </EURange>
-      </EURanges>
-      <EURanges Id="32">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">1920.0</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="33">
         <EURange>
           <Low ValueProvider="Const">0.0</Low>
@@ -162,6 +102,126 @@
         <EURange>
           <Low ValueProvider="Const">0.0</Low>
           <High ValueProvider="Const">450.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="35">
+        <EURange>
+          <Low ValueProvider="PV">::axes[1].MoveParameters.VelocityMin</Low>
+          <High ValueProvider="PV">::axes[1].MoveParameters.VelocityMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="36">
+        <EURange>
+          <Low ValueProvider="PV">::axes[1].MoveParameters.AccelMin</Low>
+          <High ValueProvider="PV">::axes[1].MoveParameters.AccelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="37">
+        <EURange>
+          <Low ValueProvider="PV">::axes[1].MoveParameters.DecelMin</Low>
+          <High ValueProvider="PV">::axes[1].MoveParameters.DecelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="38">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::axes[1].MoveParameters.MaxJerk</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="40">
+        <EURange>
+          <Low ValueProvider="PV">::gr_AxisPositionLimits[1].PositionLimitNeg</Low>
+          <High ValueProvider="PV">::gr_AxisPositionLimits[1].PositionLimitPos</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="41">
+        <EURange>
+          <Low ValueProvider="PV">::gr_AxisPositionLimits[2].PositionLimitNeg</Low>
+          <High ValueProvider="PV">::gr_AxisPositionLimits[2].PositionLimitPos</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="42">
+        <EURange>
+          <Low ValueProvider="PV">::axes[2].MoveParameters.VelocityMin</Low>
+          <High ValueProvider="PV">::axes[2].MoveParameters.VelocityMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="43">
+        <EURange>
+          <Low ValueProvider="PV">::axes[2].MoveParameters.AccelMin</Low>
+          <High ValueProvider="PV">::axes[2].MoveParameters.AccelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="44">
+        <EURange>
+          <Low ValueProvider="PV">::axes[2].MoveParameters.DecelMin</Low>
+          <High ValueProvider="PV">::axes[2].MoveParameters.DecelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="45">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::axes[2].MoveParameters.MaxJerk</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="46">
+        <EURange>
+          <Low ValueProvider="PV">::gr_AxisPositionLimits[3].PositionLimitNeg</Low>
+          <High ValueProvider="PV">::gr_AxisPositionLimits[3].PositionLimitPos</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="47">
+        <EURange>
+          <Low ValueProvider="PV">::axes[3].MoveParameters.VelocityMin</Low>
+          <High ValueProvider="PV">::axes[3].MoveParameters.VelocityMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="48">
+        <EURange>
+          <Low ValueProvider="PV">::axes[3].MoveParameters.AccelMin</Low>
+          <High ValueProvider="PV">::axes[3].MoveParameters.AccelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="49">
+        <EURange>
+          <Low ValueProvider="PV">::axes[3].MoveParameters.DecelMin</Low>
+          <High ValueProvider="PV">::axes[3].MoveParameters.DecelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="50">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::axes[3].MoveParameters.MaxJerk</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="51">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::axes[4].MoveParameters.MaxJerk</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="52">
+        <EURange>
+          <Low ValueProvider="PV">::axes[4].MoveParameters.DecelMin</Low>
+          <High ValueProvider="PV">::axes[4].MoveParameters.DecelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="53">
+        <EURange>
+          <Low ValueProvider="PV">::axes[4].MoveParameters.AccelMin</Low>
+          <High ValueProvider="PV">::axes[4].MoveParameters.AccelMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="54">
+        <EURange>
+          <Low ValueProvider="PV">::axes[4].MoveParameters.VelocityMin</Low>
+          <High ValueProvider="PV">::axes[4].MoveParameters.VelocityMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="55">
+        <EURange>
+          <Low ValueProvider="PV">::gr_AxisPositionLimits[4].PositionLimitNeg</Low>
+          <High ValueProvider="PV">::gr_AxisPositionLimits[4].PositionLimitPos</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -204,12 +264,39 @@
               <Variable Name="CalculatedPosition3" EngineeringUnitId="11" />
             </Variable>
             <Variable Name="MoveParameters">
-              <Variable Name="Position" />
-              <Variable Name="Distance" />
-              <Variable Name="Velocity" />
-              <Variable Name="Acceleration" />
-              <Variable Name="Deceleration" />
-              <Variable Name="MaxJerk" />
+              <Variable Name="Position" EngineeringUnitId="11" />
+              <Variable Name="Distance" EngineeringUnitId="11" />
+              <Variable Name="Velocity" EngineeringUnitId="12" />
+              <Variable Name="Acceleration" EngineeringUnitId="16" />
+              <Variable Name="Deceleration" EngineeringUnitId="16" />
+              <Variable Name="MaxJerk" EngineeringUnitId="17" />
+              <Variable Name="VelocityMin" EngineeringUnitId="12" />
+              <Variable Name="VelocityMax" EngineeringUnitId="12" />
+              <Variable Name="AccelMin" EngineeringUnitId="16" />
+              <Variable Name="AccelMax" EngineeringUnitId="16" />
+              <Variable Name="DecelMin" EngineeringUnitId="16" />
+              <Variable Name="DecelMax" EngineeringUnitId="16" />
+              <Variable Name="JogParams">
+                <Variable Name="Velocity" EngineeringUnitId="12" />
+                <Variable Name="Acceleration" EngineeringUnitId="16" />
+                <Variable Name="Deceleration" EngineeringUnitId="16" />
+                <Variable Name="LimitPosition">
+                  <Variable Name="FirstPosition" EngineeringUnitId="11" />
+                  <Variable Name="LastPosition" EngineeringUnitId="11" />
+                </Variable>
+                <Variable Name="Jerk" EngineeringUnitId="17" />
+              </Variable>
+              <Variable Name="HomeParams">
+                <Variable Name="Position" EngineeringUnitId="11" />
+              </Variable>
+              <Variable Name="StopParams">
+                <Variable Name="Deceleration" EngineeringUnitId="16" />
+                <Variable Name="Jerk" EngineeringUnitId="17" />
+                <Variable Name="StopAtPosition">
+                  <Variable Name="Deceleration" EngineeringUnitId="16" />
+                  <Variable Name="Position" EngineeringUnitId="11" />
+                </Variable>
+              </Variable>
             </Variable>
             <Variable Name="StatusSlave">
               <Variable Name="Position" EngineeringUnitId="12" />
@@ -236,6 +323,41 @@
               <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
               <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
             </Variable>
+            <Variable Name="MoveParameters">
+              <Variable Name="VelocityMin" EngineeringUnitId="10" />
+              <Variable Name="VelocityMax" EngineeringUnitId="10" />
+              <Variable Name="AccelMin" EngineeringUnitId="9" />
+              <Variable Name="AccelMax" EngineeringUnitId="9" />
+              <Variable Name="DecelMin" EngineeringUnitId="9" />
+              <Variable Name="DecelMax" EngineeringUnitId="9" />
+              <Variable Name="Distance" EngineeringUnitId="4" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Acceleration" EngineeringUnitId="9" />
+              <Variable Name="Deceleration" EngineeringUnitId="9" />
+              <Variable Name="MaxJerk" EngineeringUnitId="14" />
+              <Variable Name="HomeParams">
+                <Variable Name="Position" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="JogParams">
+                <Variable Name="Acceleration" EngineeringUnitId="9" />
+                <Variable Name="Deceleration" EngineeringUnitId="9" />
+                <Variable Name="LimitPosition">
+                  <Variable Name="FirstPosition" EngineeringUnitId="4" />
+                  <Variable Name="LastPosition" EngineeringUnitId="4" />
+                </Variable>
+                <Variable Name="Velocity" EngineeringUnitId="10" />
+                <Variable Name="Jerk" EngineeringUnitId="14" />
+              </Variable>
+              <Variable Name="StopParams">
+                <Variable Name="Jerk" EngineeringUnitId="14" />
+                <Variable Name="Deceleration" EngineeringUnitId="9" />
+                <Variable Name="StopAtPosition">
+                  <Variable Name="Position" EngineeringUnitId="4" />
+                  <Variable Name="Deceleration" EngineeringUnitId="9" />
+                </Variable>
+              </Variable>
+            </Variable>
           </Variable>
           <Variable Name="axes[3]">
             <Variable Name="Status">
@@ -254,6 +376,41 @@
               <Variable Name="CalculatedPosition2" EngineeringUnitId="4" />
               <Variable Name="CalculatedPosition3" EngineeringUnitId="4" />
             </Variable>
+            <Variable Name="MoveParameters">
+              <Variable Name="VelocityMin" EngineeringUnitId="10" />
+              <Variable Name="VelocityMax" EngineeringUnitId="10" />
+              <Variable Name="Distance" EngineeringUnitId="4" />
+              <Variable Name="Position" EngineeringUnitId="4" />
+              <Variable Name="Velocity" EngineeringUnitId="10" />
+              <Variable Name="Acceleration" EngineeringUnitId="9" />
+              <Variable Name="Deceleration" EngineeringUnitId="9" />
+              <Variable Name="MaxJerk" EngineeringUnitId="14" />
+              <Variable Name="StopParams">
+                <Variable Name="StopAtPosition">
+                  <Variable Name="Position" EngineeringUnitId="4" />
+                  <Variable Name="Deceleration" EngineeringUnitId="9" />
+                </Variable>
+                <Variable Name="Jerk" EngineeringUnitId="14" />
+                <Variable Name="Deceleration" EngineeringUnitId="9" />
+              </Variable>
+              <Variable Name="JogParams">
+                <Variable Name="Velocity" EngineeringUnitId="10" />
+                <Variable Name="Acceleration" EngineeringUnitId="9" />
+                <Variable Name="Deceleration" EngineeringUnitId="9" />
+                <Variable Name="Jerk" EngineeringUnitId="14" />
+                <Variable Name="LimitPosition">
+                  <Variable Name="FirstPosition" EngineeringUnitId="4" />
+                  <Variable Name="LastPosition" EngineeringUnitId="4" />
+                </Variable>
+              </Variable>
+              <Variable Name="HomeParams">
+                <Variable Name="Position" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="AccelMin" EngineeringUnitId="9" />
+              <Variable Name="AccelMax" EngineeringUnitId="9" />
+              <Variable Name="DecelMin" EngineeringUnitId="9" />
+              <Variable Name="DecelMax" EngineeringUnitId="9" />
+            </Variable>
           </Variable>
           <Variable Name="axes[4]">
             <Variable Name="Status">
@@ -269,6 +426,41 @@
               <Variable Name="CalculatedPosition1" EngineeringUnitId="2" />
               <Variable Name="CalculatedPosition2" EngineeringUnitId="2" />
               <Variable Name="CalculatedPosition3" EngineeringUnitId="2" />
+            </Variable>
+            <Variable Name="MoveParameters">
+              <Variable Name="Distance" EngineeringUnitId="2" />
+              <Variable Name="Position" EngineeringUnitId="2" />
+              <Variable Name="Velocity" EngineeringUnitId="3" />
+              <Variable Name="Acceleration" EngineeringUnitId="7" />
+              <Variable Name="Deceleration" EngineeringUnitId="7" />
+              <Variable Name="MaxJerk" EngineeringUnitId="15" />
+              <Variable Name="StopParams">
+                <Variable Name="StopAtPosition">
+                  <Variable Name="Position" EngineeringUnitId="2" />
+                  <Variable Name="Deceleration" EngineeringUnitId="7" />
+                </Variable>
+                <Variable Name="Jerk" EngineeringUnitId="15" />
+                <Variable Name="Deceleration" EngineeringUnitId="7" />
+              </Variable>
+              <Variable Name="JogParams">
+                <Variable Name="Velocity" EngineeringUnitId="3" />
+                <Variable Name="Acceleration" EngineeringUnitId="7" />
+                <Variable Name="Deceleration" EngineeringUnitId="7" />
+                <Variable Name="Jerk" EngineeringUnitId="14" />
+                <Variable Name="LimitPosition">
+                  <Variable Name="FirstPosition" EngineeringUnitId="2" />
+                  <Variable Name="LastPosition" EngineeringUnitId="2" />
+                </Variable>
+              </Variable>
+              <Variable Name="HomeParams">
+                <Variable Name="Position" EngineeringUnitId="2" />
+              </Variable>
+              <Variable Name="VelocityMin" EngineeringUnitId="3" />
+              <Variable Name="VelocityMax" EngineeringUnitId="3" />
+              <Variable Name="AccelMin" EngineeringUnitId="7" />
+              <Variable Name="AccelMax" EngineeringUnitId="7" />
+              <Variable Name="DecelMax" EngineeringUnitId="7" />
+              <Variable Name="DecelMin" EngineeringUnitId="7" />
             </Variable>
           </Variable>
           <Variable Name="axes[5]">
@@ -500,70 +692,70 @@
         <Variable Name="ts_ResetSafeMC" />
         <Variable Name="hmiLibraryAxisReqs" EnableArrayElements="True">
           <Variable Name="hmiLibraryAxisReqs[1]">
-            <Variable Name="homePosition" EURangesId="14" EngineeringUnitId="11" />
+            <Variable Name="homePosition" EURangesId="40" EngineeringUnitId="11" />
             <Variable Name="positionLimits">
               <Variable Name="PositionLimitPos" EURangesId="14" EngineeringUnitId="11" />
               <Variable Name="PositionLimitNeg" EURangesId="14" EngineeringUnitId="11" />
             </Variable>
-            <Variable Name="Position" EURangesId="14" EngineeringUnitId="11" />
+            <Variable Name="Position" EURangesId="40" EngineeringUnitId="11" />
             <Variable Name="Distance" EngineeringUnitId="11" />
-            <Variable Name="Velocity" EURangesId="15" EngineeringUnitId="12" />
-            <Variable Name="Acceleration" EURangesId="18" EngineeringUnitId="16" />
-            <Variable Name="Deceleration" EURangesId="19" EngineeringUnitId="16" />
-            <Variable Name="MaxJerk" EURangesId="20" EngineeringUnitId="17" />
+            <Variable Name="Velocity" EURangesId="35" EngineeringUnitId="12" />
+            <Variable Name="Acceleration" EURangesId="36" EngineeringUnitId="16" />
+            <Variable Name="Deceleration" EURangesId="37" EngineeringUnitId="16" />
+            <Variable Name="MaxJerk" EURangesId="38" EngineeringUnitId="17" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="11" />
             <Variable Name="shiftDistance" EngineeringUnitId="11" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[2]">
-            <Variable Name="homePosition" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="homePosition" EURangesId="41" EngineeringUnitId="4" />
             <Variable Name="positionLimits">
               <Variable Name="PositionLimitPos" EURangesId="21" EngineeringUnitId="4" />
               <Variable Name="PositionLimitNeg" EURangesId="21" EngineeringUnitId="4" />
             </Variable>
-            <Variable Name="Position" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="Position" EURangesId="41" EngineeringUnitId="4" />
             <Variable Name="Distance" EngineeringUnitId="4" />
-            <Variable Name="Velocity" EURangesId="26" EngineeringUnitId="10" />
-            <Variable Name="Acceleration" EURangesId="24" EngineeringUnitId="9" />
-            <Variable Name="Deceleration" EURangesId="24" EngineeringUnitId="9" />
-            <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
+            <Variable Name="Velocity" EURangesId="42" EngineeringUnitId="10" />
+            <Variable Name="Acceleration" EURangesId="43" EngineeringUnitId="9" />
+            <Variable Name="Deceleration" EURangesId="44" EngineeringUnitId="9" />
+            <Variable Name="MaxJerk" EURangesId="45" EngineeringUnitId="14" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
             <Variable Name="shiftDistance" EngineeringUnitId="4" />
             <Variable Name="camMasterOffset" EngineeringUnitId="4" />
             <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[3]">
-            <Variable Name="homePosition" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="homePosition" EURangesId="46" EngineeringUnitId="4" />
             <Variable Name="positionLimits">
               <Variable Name="PositionLimitPos" EURangesId="21" EngineeringUnitId="4" />
               <Variable Name="PositionLimitNeg" EngineeringUnitId="4" />
             </Variable>
-            <Variable Name="Position" EURangesId="21" EngineeringUnitId="4" />
+            <Variable Name="Position" EURangesId="46" EngineeringUnitId="4" />
             <Variable Name="Distance" EngineeringUnitId="4" />
-            <Variable Name="Velocity" EURangesId="26" EngineeringUnitId="10" />
-            <Variable Name="Acceleration" EURangesId="24" EngineeringUnitId="9" />
-            <Variable Name="Deceleration" EURangesId="24" EngineeringUnitId="9" />
-            <Variable Name="MaxJerk" EURangesId="25" EngineeringUnitId="14" />
+            <Variable Name="Velocity" EURangesId="47" EngineeringUnitId="10" />
+            <Variable Name="Acceleration" EURangesId="48" EngineeringUnitId="9" />
+            <Variable Name="Deceleration" EURangesId="49" EngineeringUnitId="9" />
+            <Variable Name="MaxJerk" EURangesId="50" EngineeringUnitId="14" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="4" />
             <Variable Name="shiftDistance" EngineeringUnitId="4" />
             <Variable Name="camMasterOffset" EngineeringUnitId="4" />
             <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[4]">
-            <Variable Name="homePosition" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+            <Variable Name="homePosition" EURangeViolationId="1" EURangesId="55" EngineeringUnitId="2" />
             <Variable Name="positionLimits">
               <Variable Name="PositionLimitPos" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
               <Variable Name="PositionLimitNeg" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
             </Variable>
-            <Variable Name="Position" EURangeViolationId="1" EURangesId="28" EngineeringUnitId="2" />
+            <Variable Name="Position" EURangeViolationId="1" EURangesId="55" EngineeringUnitId="2" />
             <Variable Name="Distance" EURangeViolationId="1" EURangesId="29" EngineeringUnitId="2" />
-            <Variable Name="Velocity" EURangeViolationId="1" EURangesId="30" EngineeringUnitId="3" />
-            <Variable Name="Acceleration" EURangeViolationId="1" EURangesId="31" EngineeringUnitId="7" />
-            <Variable Name="Deceleration" EURangeViolationId="1" EURangesId="31" EngineeringUnitId="7" />
-            <Variable Name="MaxJerk" EURangeViolationId="1" EURangesId="32" EngineeringUnitId="15" />
+            <Variable Name="Velocity" EURangeViolationId="1" EURangesId="54" EngineeringUnitId="3" />
+            <Variable Name="Acceleration" EURangeViolationId="1" EURangesId="53" EngineeringUnitId="7" />
+            <Variable Name="Deceleration" EURangeViolationId="1" EURangesId="52" EngineeringUnitId="7" />
+            <Variable Name="MaxJerk" EURangeViolationId="1" EURangesId="51" EngineeringUnitId="15" />
             <Variable Name="shiftProfileDistance" EngineeringUnitId="2" />
             <Variable Name="shiftDistance" EngineeringUnitId="2" />
-            <Variable Name="camMasterOffset" EngineeringUnitId="4" />
-            <Variable Name="camSlaveOffset" EngineeringUnitId="4" />
+            <Variable Name="camMasterOffset" />
+            <Variable Name="camSlaveOffset" />
           </Variable>
           <Variable Name="hmiLibraryAxisReqs[7]">
             <Variable Name="positionLimits">

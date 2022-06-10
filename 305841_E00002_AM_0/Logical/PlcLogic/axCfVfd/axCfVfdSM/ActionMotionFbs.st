@@ -10,54 +10,41 @@
  ********************************************************************) 
 
 ACTION ActionCallMotionFunctions: 
+  ActionRangeCheckMoveParams;
   ActionMpAxisBasic;
+  ActionReadDrivePos;
   ActionCamInOut;
   ActionGearInOut;
   ActionOffsetShift;
   ActionPhaseShift;
 END_ACTION
 
+ACTION ActionRangeCheckMoveParams: 
+  // Range checks position, velocity, accel & Decel
+
+  // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
+  // Clamp if necessary. 
+  
+  // Position
+  ax.MoveParameters.Position := MIN(axPositionLimits.PositionLimitPos, MAX(axPositionLimits.PositionLimitNeg, ax.MoveParameters.Position));
+
+  // Velocity
+  ax.MoveParameters.Velocity := MIN(ax.MoveParameters.VelocityMax, MAX(ax.MoveParameters.VelocityMin, ax.MoveParameters.Velocity));
+
+  // Accel and decel
+  ax.MoveParameters.Acceleration := MIN(ax.MoveParameters.AccelMax, MAX(ax.MoveParameters.AccelMin, ax.MoveParameters.Acceleration));
+  ax.MoveParameters.Deceleration := MIN(ax.MoveParameters.DecelMax, MAX(ax.MoveParameters.DecelMin, ax.MoveParameters.Deceleration));
+  
+END_ACTION
+
 ACTION ActionMpAxisBasic: 
-  // 1) Range checks position, velocity, accel & Decel
+  // 1) Assume velocity, accel & Decel have been range checked
   // 2) Packs the sMot_MoveParameters into a local axisBasicParamsStructure
   // 3) Detects parameter changes and manages the Update and UpdateDone bits
   // 4) Sets the fb command bits based on the axis sMot_AxisCommands structure
   // 5) Runs the fbMpAxisBasic funciton block
   // 6) Updates the axis structure with the status and axis info coming back from the fb
 
-  // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
-  // Clamp if necessary
-  
-  // Position
-  IF ax.MoveParameters.Position >  axPositionLimits.PositionLimitPos THEN
-    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitPos;
-  END_IF;
-  IF ax.MoveParameters.Position <  axPositionLimits.PositionLimitNeg THEN
-    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitNeg;
-  END_IF;
-
-  // Velocity
-  IF ax.MoveParameters.Velocity > ax.MoveParameters.VelocityMax THEN
-    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMax;
-  END_IF;
-  IF ax.MoveParameters.Velocity < ax.MoveParameters.VelocityMin THEN
-    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMin;
-  END_IF;
-
-  // Accel and decel
-  IF ax.MoveParameters.Acceleration > ax.MoveParameters.AccelMax THEN
-    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMax;
-  END_IF;
-  IF ax.MoveParameters.Acceleration < ax.MoveParameters.AccelMin THEN
-    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMin;
-  END_IF;
-
-  IF ax.MoveParameters.Deceleration > ax.MoveParameters.DecelMax THEN
-    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMax;
-  END_IF;
-  IF ax.MoveParameters.Deceleration < ax.MoveParameters.DecelMin THEN
-    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMin;
-  END_IF;
 
   // The execution behavior is determined by the inputs set elsewhere 
   // in particular the sMot_AxisCommands XxxxCmd bits,
@@ -136,6 +123,38 @@ ACTION ActionMpAxisBasic:
   // Now that the status of this axis is known, copy it to the other axes slave status 
   // area if this axis is specified as a slave.
   CopySlaveStatusToMaster;
+
+END_ACTION
+
+ACTION ActionReadDrivePos:
+  // Read the drive position. As opposed to the position value coming from MpAxisBasic,
+  // the drive position allows different position sources to be specified, but it also
+  // allows can provide the position that does not have a MOD applied in the periodic case.
+  // This is helpful to assess long moves on periodic axes (e.g. 1000 degree move on a
+  // 360 degree periodic axis).
+  // Only execute the read position fb if the axis number has been set, 
+  // the axis is not ignored.
+  IF NOT ax.Ignore AND ax.AxisNo <> AD_UNKNOWN THEN
+    // Axis is in play. Go get some of that position ... 
+    // Set the source, enable the fb
+    ax.fbReadDrivePos.ValueSource := mcVALUE_ACTUAL_AXIS_UNITS;
+    ax.fbReadDrivePos.Enable := TRUE;
+  ELSE
+    // axis should be ignored
+    // keep the enable low
+    ax.fbReadDrivePos.Enable := FALSE;
+  END_IF;
+
+  // Block should be set up. Call 'er  
+  ax.fbReadDrivePos();
+
+  // If fb has been enabled and is valid and error , get the drive position. Otherwise
+  // use the sentinel value
+  IF ax.fbReadDrivePos.Enable AND ax.fbReadDrivePos.Valid AND NOT ax.fbReadDrivePos.Error THEN
+    ax.Status.DrivePosition := ax.fbReadDrivePos.CyclicPosition;
+  ELSE
+    ax.Status.DrivePosition := INVALID_SENTINEL_LREAL;
+  END_IF;
 
 END_ACTION
 

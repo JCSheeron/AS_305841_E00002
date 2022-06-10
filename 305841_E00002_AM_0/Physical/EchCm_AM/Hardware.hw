@@ -314,6 +314,7 @@
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
     <Parameter ID="PermanentPvSize" Value="9216" />
+    <Parameter ID="VolatileGlobalPvSize" Value="69630" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
     <Parameter ID="Cyclic1Duration" Value="2000" />
     <Parameter ID="Cyclic1Tolerance" Value="2000" />

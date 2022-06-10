@@ -176,11 +176,17 @@ TYPE
     AutoTuneQuality : REAL := 0.0;
     (* general status values and structures *)
     SafeMotionDiagCode : UINT; (* from Safety Controller safe motion instruction *)
-    Velocity : REAL:= 0.0; (* actual axis velocity *)
-    Position : LREAL:= 0.0; (* actual axis position *)
-    CalculatedPosition1 : LREAL:= 0.0; (* calculated algorithmic position *)
-    CalculatedPosition2 : LREAL:= 0.0; (* calculated algorithmic position *)
-    CalculatedPosition3 : LREAL:= 0.0; (* calculated algorithmic position *)
+    Velocity : REAL:= INVALID_SENTINEL_REAL; (* actual axis velocity *)
+    Position : LREAL:= INVALID_SENTINEL_LREAL; (* actual axis position. Includes MOD to keep value within a period value *)
+    DrivePosition : LREAL := INVALID_SENTINEL_LREAL; (* actual axis position. Does not includes MOD so period is ignored *)
+    CalculatedPosition1 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    CalculatedPosition2 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    CalculatedPosition3 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    (* Values to see progress of a move *)
+    MoveStartPos : LREAL := INVALID_SENTINEL_LREAL;
+    MoveEndPos : LREAL := INVALID_SENTINEL_LREAL;
+    MoveDistanceRemaining : LREAL := 0.0;
+    MoveDistanceComplete : LREAL := 0.0;
     StartupCount : UDINT := 0; (* number of times the drive was started since last PLC start *)
     PlcOpenState : McAxisPLCopenStateEnum;
     networkCommState : McCommunicationStateEnum;
@@ -344,6 +350,7 @@ TYPE
     DateObjectName : STRING[32]; (* Name of rrror text table data object 
   END_STRUCT;
 *)  
+(*
   sMot_FbStatus : 	STRUCT 
     Active : BOOL;
     Error : BOOL;
@@ -351,15 +358,15 @@ TYPE
     CommandBusy : BOOL;
     CommandAborted : BOOL;
     ExecutingCommand : MpAxisExecutingCmdEnum;
-    StatusId : MpAxisErrorEnum; (* axis error *)
+    StatusId : MpAxisErrorEnum; (* axis error 
     StatusSeverity : MpComSeveritiesEnum;
     StatusCode : UINT; 
-    InternalId : DINT; (* status number of the implementation specific library *)
-    InternalSeverity: MpComSeveritiesEnum; (* type of info returned by status id *)
-    InternalFacility: MpComFacilitiesEnum; (* system responsible for the error *)
-    InternalCode: UINT; (* decode value of Status ID -- error number is left over *)
+    InternalId : DINT; (* status number of the implementation specific library 
+    InternalSeverity: MpComSeveritiesEnum; (* type of info returned by status id 
+    InternalFacility: MpComFacilitiesEnum; (* system responsible for the error 
+    InternalCode: UINT; (* decode value of Status ID -- error number is left over 
   END_STRUCT;
-  
+*)  
   sMot_Axis : 	STRUCT  (*substructure for single and master axes*)
     Ignore : BOOL := TRUE; (* when set, some software routines ignore this axis. Default to set so dummy axis is ignored *)
     ForceSetRef : BOOL := TRUE; (* force the operator to have to re-reference the axis *)
@@ -379,6 +386,7 @@ TYPE
     CouplingParametersPrev : sMot_CouplingParameters; (* detect changes *)
     Commands : sMot_AxisCommands; (*command structure for single and master axes*)
     fbMpAxisBasic : MpAxisBasic;
+    fbReadDrivePos : MC_BR_ReadCyclicPosition;
     fbUpdateBFbParams : fbUpdateBasicParams;
     fbGearIn : MC_GearIn;
     fbGearOut : MC_GearOut;

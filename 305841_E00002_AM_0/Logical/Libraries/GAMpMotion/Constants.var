@@ -19,4 +19,10 @@ VAR CONSTANT
   MACM_HALT_MASK             : DINT := 16#4000;
   MACM_DRIVE_RESET_MASK      : DINT := 16#8000;
   MACM_ERROR_RESET_MASK      : DINT := 16#10000;
+  (* redefine constants here to be the same as in the non-library PLC global 
+  so they can be used in the library *)
+  INVALID_SENTINEL : DINT:= -9999;
+  INVALID_SENTINEL_REAL : REAL:= -9999.0;
+  INVALID_SENTINEL_LREAL : LREAL:= -9999.0;
+
 END_VAR
