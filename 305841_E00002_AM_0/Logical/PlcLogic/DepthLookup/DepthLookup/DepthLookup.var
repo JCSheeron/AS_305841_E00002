@@ -4,13 +4,37 @@ VAR
 	angleToDepth_T1 : sXYTableReal50;
 	angleToDepth_T2 : sXYTableReal50;
 	angleToDepth_T3 : sXYTableReal50;
+	depthToAngle_T1 : sXYTableReal50;
+	depthToAngle_T2 : sXYTableReal50;
+	depthToAngle_T3 : sXYTableReal50;
   
-  (* lookup fbs *)
-  fbAngleToDepthT1 : MTLookUpTable;
-  fbAngleToDepthT2 : MTLookUpTable;
-  fbAngleToDepthT3 : MTLookUpTable;
   
-  (* receipe fbs *)
-  (* fbRecipeRegister *)
+  (* program control *)
+  seqCtr : SINT; (* sequence counter *)
+
+  (* program control for directory creation *)
+  initDirs : BOOL := FALSE;
+  initDirsOS : BOOL := FALSE;
+  initDirsDone : BOOL := FALSE;
+  dirStatus : UINT;
+  devName : STRING[80];
+  dirName : STRING[255];
+  
+  (* program control for recipe registration *)
+  registerPv : BOOL := FALSE;
+  registerPvOS : BOOL := FALSE;
+  registerPvDone : BOOL := FALSE;
+  registerPvStatus : DINT;
+  pvName : STRING[100];
+  pvCatagory : STRING[50];
+  
+  idx : UINT; (* index *)
+  
+  (* FileIO fbs *)
+  fbDirCreate : DirCreate;
+  
+  (* recipe fbs *)
+  fbRecipeRegister : MpRecipeRegPar; (* register variable to recipe *)
+  fbRecipeCsv : MpRecipeCsv; (* recipe to/from file *)
   
 END_VAR

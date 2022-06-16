@@ -1,0 +1,18 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=DepthToAng 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=8 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                                initDirs                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                              initDirsOS                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                                   dirNo                                     SINT    0 "                                                               2"    0    2    1   10    1    0         
+                            initDirsDone                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                                 devName                               STRING[80]    0 "                                                       'UsrPart'"    0    9   81    1    1    0         
+                                 dirName                              STRING[255]    0 "                                                           'F:\'"    0    9  256    1    1    0         
+                               dirStatus                                     UINT    0 "                                                           65535"    0    6    1   10    1    0         
+                             fbDirCreate                                DirCreate    0 "                                                               *"    0   24    1    0    1    1         
+                                  enable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                 pDevice                                    UDINT    0 "                                                       186290818"    1    7    1   10    0    0         
+                                   pName                                    UDINT    0 "                                                       186290900"    1    7    1   10    0    0         
+                                  status                                     UINT    0 "                                                           65535"    1    6    1   10    0    0         
+                                 i_state                                     UINT    0 "                                                               2"    1    6    1   10    0    0         
+                                i_result                                     UINT    0 "                                                           20709"    1    6    1   10    0    0         
+                                   i_tmp                                    UDINT    0 "                                                               0"    1    7    1   10    0    0         

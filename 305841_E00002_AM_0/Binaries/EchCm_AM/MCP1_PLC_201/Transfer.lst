@@ -3,6 +3,7 @@
 <Transfer xmlns="http://br-automation.co.at/AS/Transfer">
   <OperatingSystem Version="B4.92"/>
   <Hardware Target="SG4"/>
+  <Operation Delete="DepthToAng.br"/>
   <Operation Delete="OmSafeDev.br"/>
   <Operation Delete="CuttingFlu.br"/>
   <Operation Delete="AxEnable.br"/>
@@ -22,11 +23,11 @@
   <Operation Delete="MpAlarmX.br"/>
   <Operation Delete="GAConvert.br"/>
   <Operation Delete="McPureVAx.br"/>
-  <Operation Delete="MpRecipe.br"/>
   <Operation Delete="SfDomain.br"/>
-  <Operation Delete="brsystem.br"/>
   <Operation Delete="McProfGen.br"/>
   <Operation Delete="mvLoader.br"/>
+  <Operation Delete="MTLookUp.br"/>
+  <Operation Delete="MpRecipe.br"/>
   <Operation Delete="MpAxis.br"/>
   <Operation Delete="GAMpMotion.br"/>
   <Operation Delete="GAProcIO.br"/>
@@ -37,6 +38,7 @@
   <Operation Delete="SfDomDrv.br"/>
   <Operation Delete="asusb.br"/>
   <Operation Delete="astcp.br"/>
+  <Operation Delete="brsystem.br"/>
   <Operation Delete="asioacc.br"/>
   <Operation Delete="AsZip.br"/>
   <Operation Delete="dataobj.br"/>
@@ -88,6 +90,7 @@
   <Operation Download="dataobj.br" Memory="UserROM"/>
   <Operation Download="AsZip.br" Memory="UserROM"/>
   <Operation Download="asioacc.br" Memory="UserROM"/>
+  <Operation Download="brsystem.br" Memory="UserROM"/>
   <Operation Download="astcp.br" Memory="UserROM"/>
   <Operation Download="asusb.br" Memory="UserROM"/>
   <Operation Download="SfDomDrv.br" Memory="UserROM"/>
@@ -98,6 +101,8 @@
   <Operation Download="GAProcIO.br" Memory="UserROM"/>
   <Operation Download="GAMpMotion.br" Memory="UserROM"/>
   <Operation Download="MpAxis.br" Memory="UserROM"/>
+  <Operation Download="MpRecipe.br" Memory="UserROM"/>
+  <Operation Download="MTLookUp.br" Memory="UserROM"/>
   <Operation Download="udbdef.br" Memory="UserROM"/>
   <Operation Download="mvLoader.br" Memory="UserROM"/>
   <Operation Download="TCData.br" Memory="SystemROM"/>
@@ -126,9 +131,8 @@
   <Operation Download="CamFeature.br" Memory="UserROM"/>
   <Operation Download="camlist1.br" Memory="UserROM"/>
   <Operation Download="mappConfig.br" Memory="UserROM"/>
-  <Operation Download="brsystem.br" Memory="UserROM"/>
+  <Operation Download="depthLu.br" Memory="UserROM"/>
   <Operation Download="SfDomain.br" Memory="UserROM"/>
-  <Operation Download="MpRecipe.br" Memory="UserROM"/>
   <Operation Download="McPureVAx.br" Memory="UserROM"/>
   <Operation Download="GAConvert.br" Memory="UserROM"/>
   <Operation Download="MpAlarmX.br" Memory="UserROM"/>
@@ -161,4 +165,5 @@
   <Operation Download="AxEnable.br" Memory="UserROM"/>
   <Operation Download="CuttingFlu.br" Memory="UserROM"/>
   <Operation Download="OmSafeDev.br" Memory="UserROM"/>
+  <Operation Download="DepthToAng.br" Memory="UserROM"/>
 </Transfer>

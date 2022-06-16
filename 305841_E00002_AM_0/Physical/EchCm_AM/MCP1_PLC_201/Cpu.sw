@@ -20,9 +20,10 @@
     <Task Name="AxEnable" Source="PlcLogic.AxEnable.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="CuttingFlu" Source="PlcLogic.CuttingFluidVFD.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="OmSafeDev" Source="PlcLogic.OmSafeDev.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+  </TaskClass>
+  <TaskClass Name="Cyclic#5">
     <Task Name="DepthToAng" Source="PlcLogic.DepthLookup.DepthLookup.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
-  <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
   <DataObjects>
     <DataObject Name="McAcpSys" Source="" Memory="UserROM" Language="Binary" />
@@ -85,6 +86,7 @@
     <BinaryObject Name="CamFeature" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="camlist1" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="mappConfig" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="depthLu" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vAxHwLin" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="vAxHwRot" Source="" Memory="UserROM" Language="Binary" />
     <BinaryObject Name="wgRecipe" Source="" Memory="UserROM" Language="Binary" />
@@ -119,6 +121,7 @@
     <LibraryObject Name="AsZip" Source="Libraries.AsZip.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="FileIO" Source="Libraries.FileIO.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="McDS402Ax" Source="Libraries.McDS402Ax.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="MTLookUp" Source="Libraries.MTLookUp.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="astcp" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asiodiag" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
@@ -136,6 +139,5 @@
     <LibraryObject Name="MTFilter" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="MTBasics" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="MTTypes" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="MTLookUp" Source="Libraries.MTLookUp.lby" Memory="UserROM" Language="binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

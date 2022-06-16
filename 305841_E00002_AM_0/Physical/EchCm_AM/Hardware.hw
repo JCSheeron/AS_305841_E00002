@@ -313,6 +313,7 @@
     <Parameter ID="ConfigurationID" Value="305841_E00002_Rev0_PLC_Main" />
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
+    <Parameter ID="AutomaticTransferOfUserfiles" Value="on" />
     <Parameter ID="PermanentPvSize" Value="9216" />
     <Parameter ID="VolatileGlobalPvSize" Value="69630" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
@@ -325,16 +326,24 @@
     <Parameter ID="Cyclic4Duration" Value="48000" />
     <Parameter ID="Cyclic4Tolerance" Value="48000" />
     <Parameter ID="Cyclic5Duration" Value="96000" />
-    <Parameter ID="Cyclic5Tolerance" Value="96000" />
+    <Parameter ID="Cyclic5Tolerance" Value="9600000" />
     <Parameter ID="Cyclic6Duration" Value="480000" />
     <Parameter ID="Cyclic6Tolerance" Value="480000" />
     <Group ID="FileDevice1" />
-    <Parameter ID="FileDeviceName1" Value="IOScaling" />
-    <Parameter ID="FileDevicePath1" Value="F:\config\io\" />
+    <Parameter ID="FileDeviceName1" Value="UserPartitionRoot" />
+    <Parameter ID="FileDevicePath1" Value="F:\" />
     <Group ID="FileDevice2" />
     <Parameter ID="FileDeviceName2" Value="Recipes" />
     <Parameter ID="FileDevicePath2" Value="F:\config\recipes\" />
+    <Group ID="FileDevice3" />
+    <Parameter ID="FileDeviceName3" Value="IOConfig" />
+    <Parameter ID="FileDevicePath3" Value="F:\config\io\" />
     <Parameter ID="EthernetHostName" Value="mcp1_plc201" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="ftpuser" />
+    <Parameter ID="FtpUserPassword1" Value="wzi3iB5UNI3uCms7ZCmB0Woh2QaOICjzuPm+LM5DkNg=" />
+    <Parameter ID="FtpUserSalt1" Value="UFkRbDjT" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
     <Parameter ID="ActivateOpcUa" Value="1" />
     <Parameter ID="OpcUaPort" Value="4841" />
     <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
