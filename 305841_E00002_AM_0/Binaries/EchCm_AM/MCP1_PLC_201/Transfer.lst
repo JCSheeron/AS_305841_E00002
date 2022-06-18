@@ -3,7 +3,7 @@
 <Transfer xmlns="http://br-automation.co.at/AS/Transfer">
   <OperatingSystem Version="B4.92"/>
   <Hardware Target="SG4"/>
-  <Operation Delete="DepthToAng.br"/>
+  <Operation Delete="CrCamTbl.br"/>
   <Operation Delete="OmSafeDev.br"/>
   <Operation Delete="CuttingFlu.br"/>
   <Operation Delete="AxEnable.br"/>
@@ -131,7 +131,7 @@
   <Operation Download="CamFeature.br" Memory="UserROM"/>
   <Operation Download="camlist1.br" Memory="UserROM"/>
   <Operation Download="mappConfig.br" Memory="UserROM"/>
-  <Operation Download="depthLu.br" Memory="UserROM"/>
+  <Operation Download="angleLu.br" Memory="UserROM"/>
   <Operation Download="SfDomain.br" Memory="UserROM"/>
   <Operation Download="McPureVAx.br" Memory="UserROM"/>
   <Operation Download="GAConvert.br" Memory="UserROM"/>
@@ -165,5 +165,5 @@
   <Operation Download="AxEnable.br" Memory="UserROM"/>
   <Operation Download="CuttingFlu.br" Memory="UserROM"/>
   <Operation Download="OmSafeDev.br" Memory="UserROM"/>
-  <Operation Download="DepthToAng.br" Memory="UserROM"/>
+  <Operation Download="CrCamTbl.br" Memory="UserROM"/>
 </Transfer>

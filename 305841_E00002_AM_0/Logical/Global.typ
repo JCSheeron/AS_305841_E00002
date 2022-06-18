@@ -8,6 +8,21 @@
  ********************************************************************)
 
 TYPE
+  (****************************************)
+  (***** Depth to Angle Lookup ************)
+  (****************************************)
+  
+	sXYTableReal50 : STRUCT 
+    numberOfVals : USINT := 0; (* number of values defined *)
+		xVals : ARRAY[0..49]OF REAL;
+		yVals : ARRAY[0..49]OF REAL;
+	END_STRUCT;
+  
+	sDepthToAngleLu : STRUCT 
+    T1 : sXYTableReal50;
+    T2 : sXYTableReal50;
+    T3 : sXYTableReal50;
+	END_STRUCT;
 
   (****************************************)
   (***** Workpiece related structures *****)
