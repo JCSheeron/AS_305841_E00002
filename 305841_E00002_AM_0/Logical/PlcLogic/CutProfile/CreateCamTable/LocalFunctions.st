@@ -249,7 +249,7 @@ FUNCTION_BLOCK fbPopulateCamSections
             // Establish an offset from previous position
             CamTable.Section[idx].Mode := mcCAMSECTREF_ABSOLUTE;
             CamTable.Section[idx].MasterPoint := (_cutInAngle * passCtr) + ((360.0 + _overCutAngle) * (passCtr - 1));
-            CamTable.Section[idx].SlavePoint := CamTable.Section[idx].MasterPoint - passCtr;
+            CamTable.Section[idx].SlavePoint := CamTable.Section[idx].MasterPoint - passAngle;
             // slave to be at a constant velocity
             CamTable.Section[idx].FirstDerivative := 1.0; // velocity ratio 
             CamTable.Section[idx].SecondDerivative := 0.0; // accel ratio

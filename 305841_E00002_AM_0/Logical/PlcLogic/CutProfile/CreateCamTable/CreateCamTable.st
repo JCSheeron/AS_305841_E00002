@@ -96,12 +96,14 @@ PROGRAM _CYCLIC
       fbCreateCamSections.Enable := FALSE;
       fbCreateCamSections();
       // Use two steps to ease troubleshooting
-      // camSeqCtr := 2;
+      camSeqCtr := 2;
     ELSIF 2 = camSeqCtr THEN
       // set up the populate cam sections fb
       fbCreateCamSections.Enable := TRUE;
       fbCreateCamSections();
-      //camSeqCtr := -1;
+      IF fbCreateCamSections.Done THEN
+        camSeqCtr := -1;
+      END_IF;
     ELSIF -1 = camSeqCtr THEN
       // All done making cam sections.
       // Getting ready if another request is made.
