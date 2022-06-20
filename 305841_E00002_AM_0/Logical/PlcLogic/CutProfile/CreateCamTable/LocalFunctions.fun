@@ -34,7 +34,7 @@ FUNCTION_BLOCK fbLookUpYValT3 (* Given an X, get the possibly interpolated value
 	END_VAR
 END_FUNCTION_BLOCK
 
-FUNCTION_BLOCK fbPopulateCamSections (* Calculate the master and slave angles given cut parameters *)
+FUNCTION_BLOCK fbCalcCamSections (* Calculate the master and slave angles given cut parameters *)
 	VAR_INPUT
     Enable : BOOL;
 		PassCount : USINT := 1; (* number of passes *)

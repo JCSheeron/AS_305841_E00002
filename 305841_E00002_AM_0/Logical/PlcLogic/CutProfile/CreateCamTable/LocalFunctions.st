@@ -132,7 +132,7 @@ FUNCTION_BLOCK fbLookUpYValT3
 END_FUNCTION_BLOCK
 
 // Calculate the master and slave angles given cut parameters
-FUNCTION_BLOCK fbPopulateCamSections
+FUNCTION_BLOCK fbCalcCamSections
   IF Enable AND NOT enableOS THEN
     // Rising edge of enable ... first time thru.
     
@@ -215,7 +215,9 @@ FUNCTION_BLOCK fbPopulateCamSections
               // Force the angle to be positive, as down below the
               // value is subtracted from the master position to force
               // the slave to have a negative offset.
-              passAngle := ABS(fbLookupAngle.YVal);
+              // Round just for safety so crazy decimal imprecision or rounding does not cause
+              // unexpected small differences in cam entries
+              passAngle := fctRound3(_I_src := ABS(fbLookupAngle.YVal));
               // done with LU fb
               fbLookupAngle(Enable := FALSE);
               // move to next step
@@ -309,7 +311,9 @@ FUNCTION_BLOCK fbPopulateCamSections
             // Force the angle to be positive, as down below the
             // value is subtracted from the master position to force
             // the slave to have a negative offset.
-            passAngle := ABS(fbLookupAngle.YVal);
+            // Round just for safety so crazy decimal imprecision or rounding does not cause
+            // unexpected small differences in cam entries
+            passAngle := fctRound3(_I_src := ABS(fbLookupAngle.YVal));
             // done with LU fb
             fbLookupAngle(Enable := FALSE);
             // move to next step

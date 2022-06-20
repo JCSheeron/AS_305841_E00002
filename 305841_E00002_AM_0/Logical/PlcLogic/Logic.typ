@@ -66,6 +66,7 @@ TYPE
     cuttingHeadMoveReqRetract : BOOL := FALSE;
     EndOfClearedRequests : BOOL := FALSE;
     (* NOTE/CAUTION Bool requests below EndOfClearedRequests won't get auto cleared *)
+    camReqCalcTable : BOOL := FALSE; (* calculate a new cam table. Don't auto clear since multiple processes may use this. *)
     cfIsInPressureControl : BOOL := FALSE; (* H: Pressure ctrl, L: Speed Control *)
     cfRunEnable : BOOL := FALSE; (* enable hmi request PB *)
     zMoveUpReqEnable : BOOL := FALSE; (* enable hmi request PBs *)

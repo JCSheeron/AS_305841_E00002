@@ -1,24 +1,38 @@
+
+VAR CONSTANT
+  CAM_POINTS : UINT := 250;
+END_VAR
+
 VAR
-  (* Local version OF the lookup table *)
-	depthToAngleLu : sDepthToAngleLu;
  
   (* program control *)
   seqCtr : SINT; (* sequence counter *)
 
   (****** Cam related ******)
   (* program control for cam creation *)
-  createCamTable : BOOL := FALSE;
+  reqCreateCamTable : BOOL := FALSE; (* request to start seq *)
   createCamTableOS : BOOL := FALSE;
   createCamTableDone : BOOL := FALSE;
-  camTableId : UINT := 20; (* 1-20, but data type compatible with cam prepare fb *)
+  camTableId : UINT := 14; (* 1-14, but data type compatible with cam prepare fb *)
   camSeqCtr : SINT; (* sequence counter *)
-  camTable : McCamSectionsType; (* local cam section table *)
-  fbCreateCamSections : fbPopulateCamSections;
-
+  nxtAddr : UDINT; (* BR Str mem fct return *)
+  camTable : McCamSectionsType; (* local cam sections table *)
+  camData : McCamDataType; (* cam data calculated from sections *)
+  camPointsMaster : ARRAY[0..CAM_POINTS] OF LREAL;
+  camPointsSlave : ARRAY[0..CAM_POINTS] OF LREAL;
+  fbCreateCamSections : fbCalcCamSections;
+  fbCalcCamFromSections : MC_BR_CalcCamFromSections;
+  fbCalcCamPoints : MC_BR_CalcPointsFromCam;
+  fbCamPrepare : MC_BR_CamPrepare;
+  
   
   (****** Recipe and file related ******)
+
+  (* Local version OF the lookup table *)
+	depthToAngleLu : sDepthToAngleLu;
+
   (* program control for directory creation *)
-  initDirs : BOOL := FALSE;
+  reqInitDirs : BOOL := FALSE; (* request to start seq *)
   initDirsOS : BOOL := FALSE;
   initDirsDone : BOOL := FALSE;
   devName : STRING[80]; (* also used for recipe read *)
@@ -35,11 +49,11 @@ VAR
   recipeReadFileName : STRING[255];
   recipeWriteFileName : STRING[255];
 
-  recipeReadAngleLu : BOOL := FALSE;
+  reqRecipeReadAngleLu : BOOL := FALSE;
   recipeReadAngleLuOS : BOOL := FALSE;
   recipeReadAngleLuDone : BOOL := FALSE;
   
-  recipeWriteAngleLu : BOOL := FALSE;
+  reqRecipeWriteAngleLu : BOOL := FALSE;
   recipeWriteAngleLuOS : BOOL := FALSE;
   recipeWriteAngleLuDone : BOOL := FALSE;
   csvHeader : MpRecipeCsvHeaderType;

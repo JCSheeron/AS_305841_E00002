@@ -72,7 +72,12 @@ PROGRAM _CYCLIC
   // Create Cam table on request
   // *****************
   
-  // On request, calculate and populate cam sections base on cut parameters
+  // On request, calculate and populate cam sections base on cut parameters.
+  // Done sucessfully, and camSeqCtr should start from 1, go up, and then end up at -1.
+  // Errors result in a more negative camSeqCtr
+  // TODO: Deal with errors. Right now the sequence stops, with the camSeqCtr being set to 
+  // a value more negative than -1.
+  
   IF createCamTable THEN
   
     // if the OS is clear, this is the first time thru ... 
@@ -87,22 +92,122 @@ PROGRAM _CYCLIC
     END_IF;
 
     IF 1 = camSeqCtr THEN
-      // set up the populate cam sections fb
+      // Use cam id 14 for calculated cam table
+      camTableId := 14;
+      
+      // Set up to calc the cam sections fb
+      // Use the current cutting head configuration for the cut profile
+      
+      // Force the finish pass depth to be zero if the option is not chosen
+      IF gr_CfgCurrent.cuttingHead.finishingPass THEN
+        fbCreateCamSections.FinishPassDepth :=  gr_CfgCurrent.cuttingHead.finishingPassDepth;
+      ELSE
+        fbCreateCamSections.FinishPassDepth := 0.0;
+      END_IF;
       fbCreateCamSections.PassCount := gr_CfgCurrent.cuttingHead.passCount;
       fbCreateCamSections.FinalDepth := gr_CfgCurrent.cuttingHead.totalDepth;
-      fbCreateCamSections.FinishPassDepth :=  gr_CfgCurrent.cuttingHead.finishingPassDepth;
       fbCreateCamSections.CutInAngle :=  LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.depthAdjAngle);
       fbCreateCamSections.OverCutAngle :=  LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.cutOverrunAngle);
+      
+      // Clear the camTable, camData, and point arrays
+      // nxt_adr := brsmemset(ADR(Mem),value,length);
+      nxtAddr := brsmemset(ADR(camTable), 0, SIZEOF(camTable));
+      nxtAddr := brsmemset(ADR(camData), 0, SIZEOF(camData));
+      nxtAddr := brsmemset(ADR(camPointsMaster), 0, SIZEOF(camPointsMaster));
+      nxtAddr := brsmemset(ADR(camPointsSlave), 0, SIZEOF(camPointsSlave));
+      
+      // Call with enable false to make sure everything is reset and ready to execute with new info
       fbCreateCamSections.Enable := FALSE;
       fbCreateCamSections();
-      // Use two steps to ease troubleshooting
+      // onto the next step
       camSeqCtr := 2;
     ELSIF 2 = camSeqCtr THEN
-      // set up the populate cam sections fb
+      // Calc the cam sections
       fbCreateCamSections.Enable := TRUE;
       fbCreateCamSections();
-      IF fbCreateCamSections.Done THEN
+      IF fbCreateCamSections.Done AND NOT fbCreateCamSections.Error THEN
+        // All done and no error. Move on ...
+        // Reset FB and go to next step
+        fbCreateCamSections.Enable := FALSE;
+        fbCreateCamSections();
+        camSeqCtr := 3;
+      ELSIF fbCreateCamSections.Done AND fbCreateCamSections.Error THEN
+        // Done with an error. Bail out ...
+        camSeqCtr := -2; 
+      END_IF;
+    ELSIF 3 = camSeqCtr THEN
+      // Set up to calc the cam from the sections
+      fbCalcCamFromSections.CamSectionsAddress := ADR(camTable);
+      fbCalcCamFromSections.CamDataAddress := ADR(camData);
+      // Call with execute false to make sure everything is reset and ready to execute with new info
+      fbCalcCamFromSections.Execute := FALSE;
+      fbCalcCamFromSections();
+      // onto the next step
+      camSeqCtr := 4;
+    ELSIF 4 = camSeqCtr THEN
+      // Calc the cam sections
+      fbCalcCamFromSections.Execute := TRUE;
+      fbCalcCamFromSections();
+      IF fbCalcCamFromSections.Done AND NOT fbCalcCamFromSections.Error THEN
+        // All done and no error. Move on ...
+        // Reset FB and go to next step
+        fbCalcCamFromSections.Execute := FALSE;
+        fbCalcCamFromSections();
+        camSeqCtr := 5;
+      ELSIF NOT fbCalcCamFromSections.Busy AND fbCalcCamFromSections.Error THEN
+        // Done with an error. Bail out ...
+        camSeqCtr := -4; 
+      END_IF;
+    ELSIF 5 = camSeqCtr THEN
+      // Set up to prepare and load the cam data
+      fbCamPrepare.Axis := ADR(axes[AD_INNER_ECCENTRIC].AxisObj);
+      fbCamPrepare.Cam.DataObjectName := ''; // not used if Cam.DataAdress <> 0
+      fbCamPrepare.Cam.DataAdress := ADR(camData); // cam data calculated in fbCalcCamFromSections
+      fbCamPrepare.CamID := camTableId;
+      // Call with execute false to make sure everything is reset and ready to execute with new info
+      fbCamPrepare.Execute := FALSE;
+      fbCamPrepare();
+      // onto the next step
+      camSeqCtr := 6;
+    ELSIF 6 = camSeqCtr THEN
+      // Prepare and load the cam data
+      fbCamPrepare.Execute := TRUE;
+      fbCamPrepare();
+      IF fbCamPrepare.Done AND NOT fbCamPrepare.Error THEN
+        // All done and no error. Move on ...
+        // Reset FB and go to next step
+        fbCamPrepare.Execute := FALSE;
+        fbCamPrepare();
+        camSeqCtr := -1;  // TEST: skip fbCalcCamPoints. Getting an error
+      ELSIF NOT fbCamPrepare.Busy AND fbCamPrepare.Error THEN
+        // Done with an error. Bail out ...
+        camSeqCtr := -6; 
+      END_IF;
+    ELSIF 7 = camSeqCtr THEN
+      // Set up to calculate cam points
+      fbCalcCamPoints.Cam.DataObjectName := ''; // not used if Cam.DataAdress <> 0
+      fbCalcCamPoints.Cam.DataAdress := ADR(camData); // cam data calculated in fbCalcCamFromSections
+      fbCalcCamPoints.MasterPointsAddress := ADR(camPointsMaster);
+      fbCalcCamPoints.SlavePointsAddress := ADR(camPointsSlave);
+      fbCalcCamPoints.NumberOfPoints := CAM_POINTS;
+      // Call with execute false to make sure everything is reset and ready to execute with new info
+      fbCalcCamPoints.Execute := FALSE;
+      fbCalcCamPoints();
+      // onto the next step
+      camSeqCtr := 8; 
+    ELSIF 8 = camSeqCtr THEN
+      // Calcuate points from the cam data
+      fbCalcCamPoints.Execute := TRUE;
+      fbCalcCamPoints();
+      IF fbCalcCamPoints.Done AND NOT fbCalcCamPoints.Error THEN
+        // All done and no error. Move on ...
+        // reset fb
+        fbCalcCamPoints.Execute := FALSE;
+        fbCalcCamPoints();
         camSeqCtr := -1;
+      ELSIF NOT fbCalcCamPoints.Busy AND fbCalcCamPoints.Error THEN
+        // Done with an error. Bail out ...
+        camSeqCtr := -8; 
       END_IF;
     ELSIF -1 = camSeqCtr THEN
       // All done making cam sections.
@@ -141,7 +246,7 @@ PROGRAM _CYCLIC
       initDirsDone := FALSE;
     END_IF;
       
-    IF seqCtr = 1 THEN
+    IF 1 = seqCtr THEN
       // Setup for first dir
       devName := 'UserPartitionRoot';
       dirName := 'config';
@@ -152,7 +257,7 @@ PROGRAM _CYCLIC
       IF ERR_FUB_ENABLE_FALSE = fbDirCreate.status THEN
         seqCtr := 2;
       END_IF;
-    ELSIF seqCtr = 2 THEN
+    ELSIF 2 = seqCtr THEN
       // create first dir
       fbDirCreate.enable := TRUE;
       fbDirCreate();
@@ -160,7 +265,7 @@ PROGRAM _CYCLIC
         // creation okay or not needed
         seqCtr := 3;
       END_IF;
-    ELSIF seqCtr = 3 THEN
+    ELSIF 3 = seqCtr THEN
       // Setup for seconnd dir
       dirName := 'config\recipes';
       // same addresses for device and name
@@ -169,7 +274,7 @@ PROGRAM _CYCLIC
       IF ERR_FUB_ENABLE_FALSE = fbDirCreate.status THEN
         seqCtr := 4;
       END_IF;
-    ELSIF seqCtr = 4 THEN
+    ELSIF 4 = seqCtr THEN
       // create second dir
       fbDirCreate.enable := TRUE;
       fbDirCreate();
@@ -177,7 +282,7 @@ PROGRAM _CYCLIC
         // creation okay or not needed
         seqCtr := -1;
       END_IF;
-    ELSIF seqCtr = -1 THEN
+    ELSIF -1 = seqCtr THEN
       // All done making directories.
       // Getting ready if another request is made.
       // Clear the initDirs flag and OS and set the done. 
@@ -225,7 +330,7 @@ PROGRAM _CYCLIC
       recipeReadAngleLuDone := FALSE;
     END_IF;
       
-    IF seqCtr = 1 THEN
+    IF 1 = seqCtr THEN
       // Setup for first pv
       devName := 'Recipes';
       pvCatagoryDepthToAngleLu := 'DepthToAngle';
@@ -244,7 +349,7 @@ PROGRAM _CYCLIC
       IF NOT fbRecipeCsv.Enable AND NOT fbRecipeCsv.Active AND 0 = fbRecipeCsv.StatusID THEN
         seqCtr := 2;
       END_IF;
-    ELSIF seqCtr = 2 THEN
+    ELSIF 2 = seqCtr THEN
       // read the recipe file and populate the pv
       fbRecipeCsv.Enable := TRUE;
       fbRecipeCsv();
@@ -256,7 +361,7 @@ PROGRAM _CYCLIC
         END_IF;
         seqCtr := -1; // all done!
       END_IF;
-    ELSIF seqCtr = -1 THEN
+    ELSIF -1 = seqCtr THEN
       // All done reading the recipe. Deal with flags
       recipeReadAngleLu := FALSE;
       recipeReadAngleLuOS := FALSE; // clear the OS so another registerPv resets things
@@ -291,7 +396,7 @@ PROGRAM _CYCLIC
       recipeWriteAngleLuDone := FALSE;
     END_IF;
       
-    IF seqCtr = 1 THEN
+    IF 1 = seqCtr THEN
       // Setup for first pv
       devName := 'Recipes';
       pvCatagoryDepthToAngleLu := 'DepthToAngle';
@@ -314,7 +419,7 @@ PROGRAM _CYCLIC
       IF NOT fbRecipeCsv.Enable AND NOT fbRecipeCsv.Active AND 0 = fbRecipeCsv.StatusID THEN
         seqCtr := 2;
       END_IF;
-    ELSIF seqCtr = 2 THEN
+    ELSIF 2 = seqCtr THEN
       // write pv to recipe file
       fbRecipeCsv.Enable := TRUE;
       fbRecipeCsv();
@@ -322,7 +427,7 @@ PROGRAM _CYCLIC
         // read ok
         seqCtr := -1; // all done!
       END_IF;
-    ELSIF seqCtr = -1 THEN
+    ELSIF -1 = seqCtr THEN
       // All done reading the recipe. Deal with flags
       recipeWriteAngleLu := FALSE;
       recipeWriteAngleLuOS := FALSE; // clear the OS so another registerPv resets things

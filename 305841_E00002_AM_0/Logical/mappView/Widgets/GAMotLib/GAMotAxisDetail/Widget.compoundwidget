@@ -131,7 +131,7 @@
         <Widget xsi:type="widgets.brease.CheckBox" id="chkBoxOverMasterDist" top="114" left="419" width="166" zIndex="13" text="Over Master Dist." />
         <Widget xsi:type="widgets.brease.PushButton" id="pbToMasterPos" top="164" left="454" width="116" height="42" zIndex="14" multiLine="true" text="To Outter\nEcc. Pos." wordWrap="true" />
         <Widget xsi:type="widgets.brease.PushButton" id="pbCamInSlave" top="174" left="14" width="116" height="42" zIndex="15" multiLine="true" text="Cam In Inner Ecc" wordWrap="true" />
-        <Widget xsi:type="widgets.brease.NumericInput" id="numInCamId" top="184" left="209" width="56" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':8}}" maxValue="99999" minValue="1" value="1" />
+        <Widget xsi:type="widgets.brease.NumericInput" id="numInCamId" top="184" left="209" width="66" height="30" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':2},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1,'maximumIntegerDigits':2}}" maxValue="14" minValue="1" value="1" />
         <Widget xsi:type="widgets.brease.Label" id="lblCamId" top="184" left="139" width="66" zIndex="17" text="Cam ID" bold="true" />
       </Widgets>
     </Widget>
