@@ -1,7 +1,7 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=CrCamTbl 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=751 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=21 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                initDirs                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                                initDirs                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
                             initDirsDone                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                    fbRcpiRegGlobalDToALu                           MpRecipeRegPar    0 "                                                               *"    0   24    1    0    1    0         
                                   MpLink                                    UDINT    0 "                                                               *"    1    7    1   10    0    0         
@@ -54,10 +54,10 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                 DateTime                            DATE_AND_TIME    0 "                                                               *"    1   11    1    1    0    0         
                       recipeReadFileName                              STRING[255]    0 "                               'DepthToAngleLookup_recipe_b.csv'"    0    9  256    1    1    0         
                 recipeReadOverwiteGlobal                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
-                       recipeReadAngleLu                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                       recipeReadAngleLu                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
                    recipeReadAngleLuDone                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                      recipeWriteFileName                              STRING[255]    0 "                       'DepthToAngleLookup_recipe_b_FromPlc.csv'"    0    9  256    1    1    0         
-                      recipeWriteAngleLu                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                      recipeWriteAngleLu                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         
                   recipeWriteAngleLuDone                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                     pvNameDepthToAngleLu                                 STRING[]    0 "                                                               *"    0    9  101    1    1    0         
                              fbRecipeCsv                              MpRecipeCsv    0 "                                                               *"    0   24    1    0    1    0         
@@ -718,23 +718,23 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                yVals[47]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                yVals[48]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                yVals[49]                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                           gr_CfgCurrent                        sWp_Configuration    0 "                                                               *"    0   24    1    0    0    1         
-                                    name                               STRING[40]    0 "                                                              ''"    1    9   41    1    0    0         
-                             cuttingHead                          sWp_CuttingHead    0 "                                                               *"    1   24    1    0    0    1         
-                           finishingPass                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                               passCount                                    USINT    0 "                                                               1"    2    5    1   10    0    0         
-                              totalDepth                                     REAL    0 "                                                          0.0189"    2    8    1   10    0    0         
-                      finishingPassDepth                                     REAL    0 "                                                           0.001"    2    8    1   10    0    0         
-                                feedRate                                     REAL    0 "                                                             1.0"    2    8    1   10    0    0         
-                             retractRate                                     REAL    0 "                                                            10.0"    2    8    1   10    0    0         
-                                   accel                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                                   decel                                     REAL    0 "                                                             5.0"    2    8    1   10    0    0         
-                           setZeroOffset                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                depthMod                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                           depthAdjAngle                                    LREAL    0 "                                                            45.0"    2   14    1   10    0    0         
-                         cutOverrunAngle                                    LREAL    0 "                                                            10.0"    2   14    1   10    0    0         
-                     offsetLimitPositive                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
-                     offsetLimitNegative                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                           gr_CfgCurrent                        sWp_Configuration    0 "                                                               *"    0   24    1    0    0    0         
+                                    name                               STRING[40]    0 "                                                               *"    1    9   41    1    0    0         
+                             cuttingHead                          sWp_CuttingHead    0 "                                                               *"    1   24    1    0    0    0         
+                           finishingPass                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
+                               passCount                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
+                              totalDepth                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                      finishingPassDepth                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                feedRate                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                             retractRate                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   accel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                   decel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           setZeroOffset                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                                depthMod                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
+                           depthAdjAngle                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                         cutOverrunAngle                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     offsetLimitPositive                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
+                     offsetLimitNegative                                    LREAL    0 "                                                               *"    2   14    1   10    0    0         
                                  spindle                              sWp_Spindle    0 "                                                               *"    1   24    1    0    0    0         
                                   nomRpm                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                                    accel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
@@ -756,35 +756,38 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                    decel                                     REAL    0 "                                                               *"    2    8    1   10    0    0         
                        eocCutoutWaitTime                                     TIME    0 "                                                               *"    2   12    1    1    0    0         
                               camTableId                                     UINT    0 "                                                              14"    0    6    1   10    1    0         
-                          createCamTable                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                          hmiProcessReqs                          sHmiProcessReqs    0 "                                                               *"    0   24    1    0    0    1         
+                         camReqCalcTable                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                      calCalcTableEnable                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                       reqCreateCamTable                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                       createCamTableDone                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                                camSeqCtr                                     SINT    0 "                                                              -1"    0    2    1   10    1    0         
-                     fbCreateCamSections                        fbCalcCamSections    0 "                                                               *"    0   24    1    0    1    1         
+                     fbCreateCamSections                        fbCalcCamSections    0 "                                                               *"    0   24    1    0    1    0         
                                   Enable                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                               PassCount                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
+                               PassCount                                    USINT    0 "                                                               6"    1    5    1   10    0    0         
                               FinalDepth                                     REAL    0 "                                                          0.0189"    1    8    1   10    0    0         
-                         FinishPassDepth                                     REAL    0 "                                                           0.001"    1    8    1   10    0    0         
+                         FinishPassDepth                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                               CutInAngle                                     REAL    0 "                                                            45.0"    1    8    1   10    0    0         
                             OverCutAngle                                     REAL    0 "                                                            10.0"    1    8    1   10    0    0         
-                                CamTable                                    UDINT    0 "                                                       147250634"    1    7    1   10    0    0         
-                         DepthToAngle_T1                                    UDINT    0 "                                                       128800880"    1    7    1   10    0    0         
-                         DepthToAngle_T2                                    UDINT    0 "                                                       128801284"    1    7    1   10    0    0         
-                         DepthToAngle_T3                                    UDINT    0 "                                                       128801688"    1    7    1   10    0    0         
+                                CamTable                                    UDINT    0 "                                                       147245808"    1    7    1   10    0    0         
+                         DepthToAngle_T1                                    UDINT    0 "                                                       128800980"    1    7    1   10    0    0         
+                         DepthToAngle_T2                                    UDINT    0 "                                                       128801384"    1    7    1   10    0    0         
+                         DepthToAngle_T3                                    UDINT    0 "                                                       128801788"    1    7    1   10    0    0         
                                   Active                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                     Done                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                    Error                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
                                 enableOS                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                              _numPasses                                    USINT    0 "                                                               1"    1    5    1   10    0    0         
+                              _numPasses                                    USINT    0 "                                                               6"    1    5    1   10    0    0         
                              _finalDepth                                     REAL    0 "                                                          0.0189"    1    8    1   10    0    0         
-                        _finishPassDepth                                     REAL    0 "                                                           0.001"    1    8    1   10    0    0         
+                        _finishPassDepth                                     REAL    0 "                                                             0.0"    1    8    1   10    0    0         
                              _cutInAngle                                     REAL    0 "                                                            45.0"    1    8    1   10    0    0         
                            _overCutAngle                                     REAL    0 "                                                            10.0"    1    8    1   10    0    0         
                                   seqCtr                                     SINT    0 "                                                              -1"    1    2    1   10    0    0         
-                                 passCtr                                    USINT    0 "                                                               3"    1    5    1   10    0    0         
-                            incrCutDepth                                     REAL    0 "                                                          0.0179"    1    8    1   10    0    0         
-                          totalPassDepth                                     REAL    0 "                                                          0.0179"    1    8    1   10    0    0         
-                               passAngle                                     REAL    0 "                                                          47.018"    1    8    1   10    0    0         
-                                     idx                                    USINT    0 "                                                               5"    1    5    1   10    0    0         
+                                 passCtr                                    USINT    0 "                                                               7"    1    5    1   10    0    0         
+                            incrCutDepth                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                          totalPassDepth                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                               passAngle                                     REAL    0 "                                                               *"    1    8    1   10    0    0         
+                                     idx                                    USINT    0 "                                                               *"    1    5    1   10    0    0         
                            fbLookupAngle                           fbLookUpYValT3    0 "                                                               *"    1   24    1    0    0    0         
                               LoadTables                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                                   Enable                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -1931,8 +1934,8 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Mode                                     DINT    0 "                                                               *"    4    4    1   10    0    0 e,0,mtLO
 
                                 camTable                        McCamSectionsType    0 "                                                               *"    0   24    1    0    1    1         
-                                 Section                 McCamSectionType[0..129]    0 "                                                               *"    1   24  130    0    0    1         
-                              Section[0]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                                 Section                 McCamSectionType[0..129]    0 "                                                               *"    1   24  130    0    0    0         
+                              Section[0]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                               SlavePoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
@@ -1942,9 +1945,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               4"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[1]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                              Section[1]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                            45.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                       0.3979988"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                          28.067"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -1952,9 +1955,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[2]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                              Section[2]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                           415.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                         370.398"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                         398.067"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -1962,9 +1965,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               4"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[3]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                              Section[3]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                           460.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                         412.982"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                         429.335"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -1972,9 +1975,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[4]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                              Section[4]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                           830.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                         782.982"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                         799.335"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -1982,9 +1985,49 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               4"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[5]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                              Section[5]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                           875.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                           875.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                         830.398"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
+
+                                    Type                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcCA
+
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              Section[6]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
+                             MasterPoint                                     REAL    0 "                                                          1245.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                        1200.398"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
+
+                                    Type                                     DINT    0 "                                                               4"    3    4    1   10    0    0 e,0,mcCA
+
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              Section[7]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
+                             MasterPoint                                     REAL    0 "                                                          1290.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                        1242.982"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
+
+                                    Type                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcCA
+
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              Section[8]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
+                             MasterPoint                                     REAL    0 "                                                          1660.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                        1612.982"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
+
+                                    Type                                     DINT    0 "                                                               4"    3    4    1   10    0    0 e,0,mcCA
+
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              Section[9]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
+                             MasterPoint                                     REAL    0 "                                                          1705.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                          1705.0"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -1992,69 +2035,29 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                     Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                              Section[6]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              Section[7]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              Section[8]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              Section[9]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
-                             MasterPoint                                     REAL    0 "                                                          1705.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                        1667.444"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                             Section[10]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
+                             MasterPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                                    Type                                     DINT    0 "                                                               1"    3    4    1   10    0    0 e,0,mcCA
+                                    Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
-                             Section[10]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
-
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                              Section[11]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                             MasterPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                                    Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                             Section[12]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    1         
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                             Section[12]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                          2490.0"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                        2445.398"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                        2442.982"    3    8    1   10    0    0         
                          FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
                         SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                                     Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
@@ -2063,35 +2066,35 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
 
                          InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                              Section[13]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                             MasterPoint                                     REAL    0 "                                                          2535.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                          2535.0"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             1.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                                    Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                              Section[14]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                             MasterPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                                    Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                              Section[15]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
-                             MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                              SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                         FirstDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                        SecondDerivative                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
-                                    Mode                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                             MasterPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                              SlavePoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                         FirstDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                        SecondDerivative                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
+                                    Mode                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                                    Type                                     DINT    0 "                                                               *"    3    4    1   10    0    0 e,0,mcCA
+                                    Type                                     DINT    0 "                                                               0"    3    4    1   10    0    0 e,0,mcCA
 
-                         InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
+                         InflectionPoint                                     REAL    0 "                                                             0.0"    3    8    1   10    0    0         
                              Section[16]                         McCamSectionType    0 "                                                               *"    2   24    1    0    0    0         
                              MasterPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                               SlavePoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
@@ -3233,9 +3236,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
 
                          InflectionPoint                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
                                  camData                            McCamDataType    0 "                                                               *"    0   24    1    0    1    0         
-                            MasterPeriod                                     DINT    0 "                                                               *"    1    4    1   10    0    0         
-                             SlavePeriod                                     DINT    0 "                                                               *"    1    4    1   10    0    0         
-                        PolynomialNumber                                    UDINT    0 "                                                               *"    1    7    1   10    0    0         
+                            MasterPeriod                                     DINT    0 "                                                            1705"    1    4    1   10    0    0         
+                             SlavePeriod                                     DINT    0 "                                                            1705"    1    4    1   10    0    0         
+                        PolynomialNumber                                    UDINT    0 "                                                               9"    1    7    1   10    0    0         
                           PolynomialData             McPolynomialDataType[0..127]    0 "                                                               *"    1   24  128    0    0    0         
                        PolynomialData[0]                     McPolynomialDataType    0 "                                                               *"    2   24    1    0    0    0         
                                        A                                     REAL    0 "                                                               *"    3    8    1   10    0    0         
@@ -4567,18 +4570,18 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=79 Type=0 Scope=0 Force=0 Index=
                                    Flags                                    USINT    0 "                                                               *"    2    5    1   10    0    0         
                                ControlIf                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
                                    SeqNo                                     DINT    0 "                                                               *"    2    4    1   10    0    0         
-                         fbCalcCamPoints                  MC_BR_CalcPointsFromCam    0 "                                                               *"    0   24    1    0    1    1         
-                                 Execute                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                         fbCalcCamPoints                  MC_BR_CalcPointsFromCam    0 "                                                               *"    0   24    1    0    1    0         
+                                 Execute                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
                                      Cam                          McCamDefineType    0 "                                                               *"    1   24    1    0    0    0         
                           DataObjectName                               STRING[12]    0 "                                                               *"    2    9   13    1    0    0         
                               DataAdress                                    UDINT    0 "                                                               *"    2    7    1   10    0    0         
-                     MasterPointsAddress                                    UDINT    0 "                                                               0"    1    7    1   10    0    0         
-                      SlavePointsAddress                                    UDINT    0 "                                                               0"    1    7    1   10    0    0         
-                          NumberOfPoints                                     UINT    0 "                                                               0"    1    6    1   10    0    0         
-                                    Done                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                    Busy                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                   Error                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                 ErrorID                                     DINT    0 "                                                               0"    1    4    1   10    0    0         
+                     MasterPointsAddress                                    UDINT    0 "                                                               *"    1    7    1   10    0    0         
+                      SlavePointsAddress                                    UDINT    0 "                                                               *"    1    7    1   10    0    0         
+                          NumberOfPoints                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                                    Done                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                    Busy                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                                 ErrorID                                     DINT    0 "                                                               *"    1    4    1   10    0    0         
                           AdditionalInfo            McAdvCalcCamFromPointsParType    0 "                                                               *"    1   24    1    0    0    0         
                        InterpolationMode                                     DINT    0 "                                                               *"    2    4    1   10    0    0 e,0,mcCA
 

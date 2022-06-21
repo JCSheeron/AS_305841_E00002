@@ -216,7 +216,7 @@
         <Mapping widget="numInRatioDenominator" property="value" type="Number" mode="twoWay" memberPath="gearRatioDenominator" mapToNode="false" />
         <Mapping widget="numInSlaveOffsetAmt" property="node" type="Number" mode="twoWay" memberPath="shiftDistance" mapToNode="true" />
         <Mapping widget="numInMasterDistance" property="node" type="Number" mode="twoWay" memberPath="shiftProfileDistance" mapToNode="true" />
-        <Mapping widget="numInCamId" property="node" type="Number" mode="twoWay" memberPath="camId" mapToNode="true" />
+        <Mapping widget="numInCamId" property="value" type="Number" mode="twoWay" memberPath="camId" mapToNode="false" />
       </Mappings>
     </Property>
     

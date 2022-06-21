@@ -16,8 +16,6 @@ ACTION ClearMotionReqs :
   pDest := ADR(hmiProcessReqs.EndOfClearedRequests);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
   nxtAddr := brsmemset(pSrc, 0, byteCount);
-  // Numerical reqs
-  hmiProcessReqs.cuttingHeadReqDepth := 0.0;
   
   // Now clear the machine specific axis reqs
   FOR axisNo := 0 TO AXIS_COUNT DO

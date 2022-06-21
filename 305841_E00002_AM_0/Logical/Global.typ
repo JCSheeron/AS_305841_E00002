@@ -45,18 +45,21 @@ TYPE
 
   (***** Information about a configuration or machine setup *)
   sWp_CuttingHead :	STRUCT 
+    (* changes to cut profile values are detected to enable/disable cam table loading *)
+    StartOfCutProfile : BOOL := FALSE;
     finishingPass : BOOL; (* finishing pass yes or no *)
     passCount : USINT; (* number of passes *)
     totalDepth : REAL; (* mm, finished depth *)
     finishingPassDepth : REAL; (* mm, finishing pass depth *)
+    depthAdjAngle : LREAL; (* degrees, arc over which cut depth is adjusted. LREAL for position compatibility *)
+    cutOverrunAngle : LREAL; (* degrees, arc len to overrun the last pass. LREAL for position compatibility *)
+    EndOfCutProfile : BOOL := FALSE;
     feedRate : REAL; (* mm/sec, feed rate *)
-    retractRate : REAL; (* deg/sec, angular velocity used when retracting cutters. *)
+    retractRate : REAL; (* deg/sec, velocity used when retracting the cutters *)
     accel : REAL;
     decel : REAL;
     setZeroOffset : REAL := 0.0; (* degrees. Offset applied when set zero is requested. *)
     depthMod : REAL := 0.0; (* mm, adjusment to the calculated finished depth *)
-    depthAdjAngle : LREAL; (* degrees, arc over which cut depth is adjusted. LREAL for position compatibility *)
-    cutOverrunAngle : LREAL; (* degrees, arc len to overrun the last pass. LREAL for position compatibility *)
     offsetLimitPositive : LREAL; (* positive offset angle limit *)
     offsetLimitNegative : LREAL; (* negative offset angle limit *)
 

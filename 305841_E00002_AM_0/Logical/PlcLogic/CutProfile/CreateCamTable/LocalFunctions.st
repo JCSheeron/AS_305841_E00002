@@ -359,7 +359,11 @@ FUNCTION_BLOCK fbCalcCamSections
           // Done with finishing pass. Ready to move on.  
           seqCtr := 6;
         END_IF; // seq ctr 4 or 5
-      END_IF; // _finishPassDepth > 0.0
+      ELSE
+        // _finishPassDepth = <= 0.0 (no finish pass)
+        // Ready to move on
+        seqCtr := 6;
+      END_IF; // _finishPassDepth
     
     // **** Do the last entry to retract the cutting head.
     // passCount will either be number of passes + 1 in the non-finishing pass case,

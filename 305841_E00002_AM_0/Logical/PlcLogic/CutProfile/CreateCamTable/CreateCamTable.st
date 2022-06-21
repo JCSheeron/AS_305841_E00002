@@ -7,6 +7,9 @@ PROGRAM _INIT
   fbCreateCamSections.DepthToAngle_T1 := ADR(gr_depthToAngleLu.T1);
   fbCreateCamSections.DepthToAngle_T2 := ADR(gr_depthToAngleLu.T2);
   fbCreateCamSections.DepthToAngle_T3 := ADR(gr_depthToAngleLu.T3);
+  // Get the length of the cut profile parts of the cutting head configuration
+  // This aids in change detection
+  cutProfileBytes := ADR(gr_CfgCurrent.cuttingHead.EndOfCutProfile) - ADR(gr_CfgCurrent.cuttingHead.StartOfCutProfile);
 
   (****** Recipe and file related ******)
   gr_depthToAngleLu; // Make sure the tables exist!!
@@ -43,7 +46,7 @@ PROGRAM _INIT
   fbRcpiRegGlobalDToALu.Enable := TRUE;
 
   // Set flag to create directories
-  initDirs := TRUE; // true will trigger dir setup (creation) after startup
+  reqInitDirs := TRUE; // true will trigger dir setup (creation) after startup
   initDirsOS := FALSE;
   initDirsDone := FALSE;
   
@@ -55,11 +58,11 @@ PROGRAM _INIT
   // set whether or not to overwrite the global data on sucessful local read
   recipeReadOverwiteGlobal := FALSE; 
 
-  recipeReadAngleLu := FALSE; // set high to read recipe after startup
+  reqRecipeReadAngleLu := FALSE; // set high to read recipe after startup
   recipeReadAngleLuOS := FALSE;
   recipeReadAngleLuDone := FALSE;
   
-  recipeWriteAngleLu := FALSE; // set high to read recipe after startup
+  reqRecipeWriteAngleLu := FALSE; // set high to read recipe after startup
   recipeWriteAngleLuOS := FALSE;
   recipeWriteAngleLuDone := FALSE;
   
@@ -69,8 +72,25 @@ PROGRAM _INIT
 PROGRAM _CYCLIC
 
   // *****************
+  // Cam table: Detect cut profile changes
+  // *****************  
+  // result = brsmemcmp(ADR(Mem1),ADR(Mem2),length), result = 0 when equal
+  result := brsmemcmp(ADR(cutProfilePrev.StartOfCutProfile),
+                      ADR(gr_CfgCurrent.cuttingHead.StartOfCutProfile),
+                      cutProfileBytes);
+  // Enable loading the CAM table if it has not been done yet,
+  // or if a change is detected, or if the last time there was an error.
+  hmiProcessReqs.calCalcTableEnable := (result <> 0 OR NOT createCamTableDone OR camSeqCtr < -1);
+
+  // *****************
   // Create Cam table on request
   // *****************
+  // Set the create cam table request and clear the HNI request upon an HMI request. 
+  // The logic will handle the rest.
+  IF hmiProcessReqs.camReqCalcTable THEN
+    reqCreateCamTable := TRUE;
+    hmiProcessReqs.camReqCalcTable := FALSE;
+  END_IF;
   
   // On request, calculate and populate cam sections base on cut parameters.
   // Done sucessfully, and camSeqCtr should start from 1, go up, and then end up at -1.
@@ -78,7 +98,7 @@ PROGRAM _CYCLIC
   // TODO: Deal with errors. Right now the sequence stops, with the camSeqCtr being set to 
   // a value more negative than -1.
   
-  IF createCamTable THEN
+  IF reqCreateCamTable THEN
   
     // if the OS is clear, this is the first time thru ... 
     // init the seq number and manage flags and OS
@@ -89,11 +109,15 @@ PROGRAM _CYCLIC
       camSeqCtr := 1;
       // Clear the done flag
       createCamTableDone := FALSE;
+      // Clear the hmi request
+      hmiProcessReqs.camReqCalcTable := FALSE;
     END_IF;
 
     IF 1 = camSeqCtr THEN
       // Use cam id 14 for calculated cam table
       camTableId := 14;
+      // Guess the operator will use this cam id
+      // TODO: No access to hmiLibraryAxisReqs in OmSaveDev!!
       
       // Set up to calc the cam sections fb
       // Use the current cutting head configuration for the cut profile
@@ -106,8 +130,8 @@ PROGRAM _CYCLIC
       END_IF;
       fbCreateCamSections.PassCount := gr_CfgCurrent.cuttingHead.passCount;
       fbCreateCamSections.FinalDepth := gr_CfgCurrent.cuttingHead.totalDepth;
-      fbCreateCamSections.CutInAngle :=  LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.depthAdjAngle);
-      fbCreateCamSections.OverCutAngle :=  LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.cutOverrunAngle);
+      fbCreateCamSections.CutInAngle := LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.depthAdjAngle);
+      fbCreateCamSections.OverCutAngle := LREAL_TO_REAL(gr_CfgCurrent.cuttingHead.cutOverrunAngle);
       
       // Clear the camTable, camData, and point arrays
       // nxt_adr := brsmemset(ADR(Mem),value,length);
@@ -213,12 +237,17 @@ PROGRAM _CYCLIC
       // All done making cam sections.
       // Getting ready if another request is made.
       // Clear the createCamTable flag and OS and set the done. 
-     createCamTable := FALSE;
-     createCamTableOS := FALSE; // clear the OS so another initDirs resets things up top
-     createCamTableDone := TRUE;
-     // reset fb
-     fbCreateCamSections.Enable := FALSE;
-     fbCreateCamSections();
+      reqCreateCamTable := FALSE;
+      createCamTableOS := FALSE; // clear the OS so another initDirs resets things up top
+      createCamTableDone := TRUE;
+      // reset fb
+      fbCreateCamSections.Enable := FALSE;
+      fbCreateCamSections();
+      // Update the previous cut profile values so changes can be detected
+      // nxtAddr = brsmemcpy(adr(Dest),adr(Src),length)
+      nxtAddr := brsmemcpy(ADR(cutProfilePrev.StartOfCutProfile),
+                           ADR(gr_CfgCurrent.cuttingHead.StartOfCutProfile),
+                           cutProfileBytes);
     END_IF;
   ELSE
     // createCamTable is false. Clear the OS so we can one time thru it next time
@@ -234,7 +263,7 @@ PROGRAM _CYCLIC
   // seqCtr even : create dir
   // Use the OS so the directory management can be easily re-run
   // by setting initDirs true (again)
-  IF initDirs THEN
+  IF reqInitDirs THEN
     // if the OS is clear, this is the first time thru ... 
     // init the seq number and manage flags and OS
     IF NOT initDirsOS THEN
@@ -286,7 +315,7 @@ PROGRAM _CYCLIC
       // All done making directories.
       // Getting ready if another request is made.
       // Clear the initDirs flag and OS and set the done. 
-     initDirs := FALSE;
+     reqInitDirs := FALSE;
      initDirsOS := FALSE; // clear the OS so another initDirs resets things up top
      initDirsDone := TRUE;
      // shut off the fb as a matter of good practice
@@ -315,10 +344,10 @@ PROGRAM _CYCLIC
   // seqCtr even : read recipe
   // Use the OS so the read can be easily re-run
   // by setting registerPvs true (again)
-  IF NOT initDirs AND initDirsDone AND
+  IF NOT reqInitDirs AND initDirsDone AND
       fbRcpiRegLocalDToALu.Active AND NOT fbRcpiRegLocalDToALu.Error AND
       fbRcpiRegGlobalDToALu.Active AND NOT fbRcpiRegGlobalDToALu.Error AND
-      recipeReadAngleLu AND NOT recipeWriteAngleLu THEN
+      reqRecipeReadAngleLu AND NOT reqRecipeWriteAngleLu THEN
     // if the OS is clear, this is the first time thru ... 
     // init the seq number and manage flags and OS
     IF NOT recipeReadAngleLuOS THEN
@@ -363,7 +392,7 @@ PROGRAM _CYCLIC
       END_IF;
     ELSIF -1 = seqCtr THEN
       // All done reading the recipe. Deal with flags
-      recipeReadAngleLu := FALSE;
+      reqRecipeReadAngleLu := FALSE;
       recipeReadAngleLuOS := FALSE; // clear the OS so another registerPv resets things
       recipeReadAngleLuDone := TRUE;
       // shut off the fb as a matter of good practice
@@ -381,10 +410,10 @@ PROGRAM _CYCLIC
   // seqCtr even : read recipe
   // Use the OS so the read can be easily re-run
   // by setting registerPvs true (again)
-  IF NOT initDirs AND initDirsDone AND
+  IF NOT reqInitDirs AND initDirsDone AND
       fbRcpiRegLocalDToALu.Active AND NOT fbRcpiRegLocalDToALu.Error AND
       fbRcpiRegGlobalDToALu.Active AND NOT fbRcpiRegGlobalDToALu.Error AND
-      recipeWriteAngleLu AND NOT recipeReadAngleLu THEN
+      reqRecipeWriteAngleLu AND NOT reqRecipeReadAngleLu THEN
     // if the OS is clear, this is the first time thru ... 
     // init the seq number and manage flags and OS
     IF NOT recipeWriteAngleLuOS THEN
@@ -429,7 +458,7 @@ PROGRAM _CYCLIC
       END_IF;
     ELSIF -1 = seqCtr THEN
       // All done reading the recipe. Deal with flags
-      recipeWriteAngleLu := FALSE;
+      reqRecipeWriteAngleLu := FALSE;
       recipeWriteAngleLuOS := FALSE; // clear the OS so another registerPv resets things
       recipeWriteAngleLuDone := TRUE;
       // shut off the fb as a matter of good practice
@@ -438,7 +467,7 @@ PROGRAM _CYCLIC
     END_IF;
   ELSE
     // Earlier operations not done, or recipeWriteAngleLu flag is clear. Clear to OS so we can one time thru it next time
-    recipeWriteAngleLuOS := FALSE;
+    reqRecipeWriteAngleLu := FALSE;
   END_IF;
   
 END_PROGRAM

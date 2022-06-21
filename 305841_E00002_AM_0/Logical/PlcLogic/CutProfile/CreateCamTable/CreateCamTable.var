@@ -7,7 +7,8 @@ VAR
  
   (* program control *)
   seqCtr : SINT; (* sequence counter *)
-
+  idx : UINT; (* index *)
+  
   (****** Cam related ******)
   (* program control for cam creation *)
   reqCreateCamTable : BOOL := FALSE; (* request to start seq *)
@@ -15,7 +16,6 @@ VAR
   createCamTableDone : BOOL := FALSE;
   camTableId : UINT := 14; (* 1-14, but data type compatible with cam prepare fb *)
   camSeqCtr : SINT; (* sequence counter *)
-  nxtAddr : UDINT; (* BR Str mem fct return *)
   camTable : McCamSectionsType; (* local cam sections table *)
   camData : McCamDataType; (* cam data calculated from sections *)
   camPointsMaster : ARRAY[0..CAM_POINTS] OF LREAL;
@@ -24,6 +24,12 @@ VAR
   fbCalcCamFromSections : MC_BR_CalcCamFromSections;
   fbCalcCamPoints : MC_BR_CalcPointsFromCam;
   fbCamPrepare : MC_BR_CamPrepare;
+  (* detect changes to cut profile *)
+  cutProfilePrev : sWp_CuttingHead;
+  (* BR Str mem fct params *)
+  cutProfileBytes : UDINT;
+  result : DINT;
+  nxtAddr : UDINT; 
   
   
   (****** Recipe and file related ******)
@@ -57,8 +63,6 @@ VAR
   recipeWriteAngleLuOS : BOOL := FALSE;
   recipeWriteAngleLuDone : BOOL := FALSE;
   csvHeader : MpRecipeCsvHeaderType;
-  
-  idx : UINT; (* index *)
   
   (* FileIO fbs *)
   fbDirCreate : DirCreate;

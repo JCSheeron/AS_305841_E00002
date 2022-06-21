@@ -44,12 +44,6 @@
           <High ValueProvider="Const">90</High>
         </EURange>
       </EURanges>
-      <EURanges Id="9">
-        <EURange>
-          <Low ValueProvider="Const">1</Low>
-          <High ValueProvider="Const">3</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="11">
         <EURange>
           <Low ValueProvider="Const">0</Low>
@@ -222,6 +216,12 @@
         <EURange>
           <Low ValueProvider="PV">::gr_AxisPositionLimits[4].PositionLimitNeg</Low>
           <High ValueProvider="PV">::gr_AxisPositionLimits[4].PositionLimitPos</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="56">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">100</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -544,7 +544,7 @@
             <Variable Name="decel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="9" />
             <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="9" />
             <Variable Name="retractRate" EURangeViolationId="1" EURangesId="11" EngineeringUnitId="10" />
-            <Variable Name="passCount" EURangeViolationId="1" EURangesId="9" />
+            <Variable Name="passCount" EURangeViolationId="1" EURangesId="56" />
           </Variable>
           <Variable Name="zAxis">
             <Variable Name="indexSpeed" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="3" />
@@ -640,7 +640,6 @@
           <Variable Name="zMoveDownReqEnable" />
           <Variable Name="zMoveToSocReqEnable" />
           <Variable Name="zMoveToLUnLReqEnable" />
-          <Variable Name="cuttingHeadReqDepth" EngineeringUnitId="2" />
           <Variable Name="zReqPosSoc" EngineeringUnitId="2" />
           <Variable Name="zReqPosLUnL" EngineeringUnitId="2" />
           <Variable Name="cfReqRun" />
@@ -649,6 +648,8 @@
           <Variable Name="cfRunEnable" />
           <Variable Name="cfRpmCmd" EURangeViolationId="1" EURangesId="34" EngineeringUnitId="1" />
           <Variable Name="cfPsiCmd" EngineeringUnitId="19" />
+          <Variable Name="camReqCalcTable" />
+          <Variable Name="calCalcTableEnable" />
         </Variable>
         <Variable Name="AI_DP_CFFilter">
           <Variable Name="InScaled" EngineeringUnitId="19" />
