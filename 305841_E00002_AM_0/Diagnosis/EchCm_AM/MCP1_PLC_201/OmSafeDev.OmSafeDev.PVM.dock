@@ -1,7 +1,7 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=OmSafeDev 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=9029 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index=9030 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                    axes                          sMot_Axis[0..8]    0 "                                                               *"    0   24    9    0    0    1         
+                                    axes                          sMot_Axis[0..8]    0 "                                                               *"    0   24    9    0    0    0         
                                  axes[0]                                sMot_Axis    0 "                                                               *"    1   24    1    0    0    0         
                                   Ignore                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
                              ForceSetRef                                     BOOL    0 "                                                               *"    2    1    1    2    0    0         
@@ -9815,28 +9815,30 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=123 Type=0 Scope=0 Force=0 Index
                               zReqPosSoc                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
                              zReqPosLUnL                                    LREAL    0 "                                                               *"    1   14    1   10    0    0         
                                    cfVfd                         sCuttingFluidVfd    0 "                                                               *"    0   24    1    0    0    0         
-                              isModuleOk                                     BOOL    1 "                                                            TRUE"    1    1    1    2    0    0         
-                        isAllowedToStart                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                          isAllowedToRun                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                               isLocated                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                               isRunning                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                       isFlowEstablished                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                             isAlmLoFlow                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                            isWarnLoFlow                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                            isAlmLoLvlSw                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                            isAlmLoFluid                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                           isWarnLoFluid                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                   isAlmLoOutletPressure                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                  isWarnLoOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                   isAlmHiOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                  isWarnHiOutletPressure                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                        isWarnLoFilterDp                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                        isWarnHiFilterDp                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                            isAlmSummary                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
-                           isWarnSummary                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                               StdStatus                                     UINT    1 "                                                            1591"    1    6    1   10    0    0         
-                           DevSpecStatus                                     UINT    1 "                                                               4"    1    6    1   10    0    0         
-                                StdError                                     UINT    1 "                                                           25344"    1    6    1   10    0    0         
-                            DevSpecError                                     UINT    1 "                                                               4"    1    6    1   10    0    0         
-                            VelCommanded                                      INT    1 "                                                              99"    1    3    1   10    0    0         
-                                  VelAct                                      INT    1 "                                                              99"    1    3    1   10    0    0         
+                              isModuleOk                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                        isAllowedToStart                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                          isAllowedToRun                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                               isLocated                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                               isRunning                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                       isFlowEstablished                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                             isAlmLoFlow                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            isWarnLoFlow                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            isAlmLoLvlSw                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            isAlmLoFluid                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                           isWarnLoFluid                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                   isAlmLoOutletPressure                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                  isWarnLoOutletPressure                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                   isAlmHiOutletPressure                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                  isWarnHiOutletPressure                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                        isWarnLoFilterDp                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                        isWarnHiFilterDp                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                            isAlmSummary                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                           isWarnSummary                                     BOOL    0 "                                                               *"    1    1    1    2    0    0         
+                               StdStatus                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                           DevSpecStatus                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                                StdError                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                            DevSpecError                                     UINT    0 "                                                               *"    1    6    1   10    0    0         
+                            VelCommanded                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                                  VelAct                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                           ts_ResetEStop                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
+                          ts_ResetSafeMC                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         

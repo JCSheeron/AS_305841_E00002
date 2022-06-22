@@ -111,11 +111,19 @@ operatingMode.ModeReqBits := operatingMode.ModeReqBits AND NOT OM_MANUAL_MODE; (
 ManualModeAxisPermits;
 ModeIndependentPermissions;
 
-// Clear process reqs
-ClearProcessReqs;
+// Pulse the Reset SafeMC on request.
+// This allows the reset of the safety enable instructions in the 
+// SafePLC while the system is not in EMO mode.
+// The SafeMC reset sometimes isn't effective unless the axis is otherwise allowed to be powered.
+tmrResetPulse(IN:= operatingMode.ReqEmoReset);
+ts_ResetSafeMC := tmrResetPulse.Q;
+operatingMode.ReqEmoReset := FALSE;
 
-// Clear production, error and estop reqs
-ClearCycleReqs;
+// Clear production start/stop cycle
+operatingMode.ReqCycleStart := FALSE;
+operatingMode.ReqCycleStop := FALSE;
+operatingMode.HmiReqCycleStart := FALSE;
+operatingMode.HmiReqCycleStop:= FALSE;
 
 // Process manual requests
 // Inputs set in init. This fb looks for a rising edge on the HMI move request, and 
@@ -137,6 +145,9 @@ ENTRY_ACTION
 operatingMode.OperatingMode := OM_MANUAL_MODE;
 // To Safety PLC
 ts_InManualMode := TRUE;
+
+// Reset pulse timer
+tmrResetPulse(IN:= FALSE, PT:= timeResetPulse);
 
 // Clear reqs that may result in motion or physical changes to an axis
 ClearMotionReqs;
@@ -224,8 +235,19 @@ ModeIndependentPermissions;
 // Clear process reqs
 ClearProcessReqs;
 
-// Clear reqs
-ClearCycleReqs;
+// Pulse the Reset SafeMC on request.
+// This allows the reset of the safety enable instructions in the 
+// SafePLC while the system is not in EMO mode.
+// The SafeMC reset sometimes isn't effective unless the axis is otherwise allowed to be powered.
+tmrResetPulse(IN:= operatingMode.ReqEmoReset);
+ts_ResetSafeMC := tmrResetPulse.Q;
+operatingMode.ReqEmoReset := FALSE;
+
+// Clear production start/stop cycle
+operatingMode.ReqCycleStart := FALSE;
+operatingMode.ReqCycleStop := FALSE;
+operatingMode.HmiReqCycleStart := FALSE;
+operatingMode.HmiReqCycleStop:= FALSE;
 
 // Use the gear ratio coming from the pendant for the hmi request strucure. 
 // It is the hmi request structure values that will get sent to the axis.
@@ -253,6 +275,9 @@ ENTRY_ACTION
 operatingMode.OperatingMode := OM_PENDANT_MODE;
 // To Safety PLC
 ts_InPendantMode := TRUE; 
+
+// Reset pulse timer
+tmrResetPulse(IN:= FALSE, PT:= timeResetPulse);
 
 // Disable enabled axes on entry into pendant mode -- allows starting from the same point
 FOR axisNo := 1 TO AXIS_COUNT DO
@@ -350,6 +375,14 @@ ModeIndependentPermissions;
 // Decode HMI Submode
 operatingMode.SubMode := fctDecodeHmiSubMode(operatingMode.HmiSubMode);
 
+// Pulse the Reset SafeMC on request.
+// This allows the reset of the safety enable instructions in the 
+// SafePLC while the system is not in EMO mode.
+// The SafeMC reset sometimes isn't effective unless the axis is otherwise allowed to be powered.
+tmrResetPulse(IN:= operatingMode.ReqEmoReset);
+ts_ResetSafeMC := tmrResetPulse.Q;
+operatingMode.ReqEmoReset := FALSE;
+
 // In production mode, cycle start/stop on PB or HMI Req, or on cycle permissives not allowed to run
 // Cycle Stop
 // Stop PB held in or not okay keeps req stop high - blocking the start
@@ -365,8 +398,6 @@ tmrReqStartPulse(IN:= ((operatingMode.HmiReqCycleStart OR (fs_StartPbOk AND fs_S
 operatingMode.ReqCycleStart := NOT operatingMode.ReqCycleStop AND tmrReqStartPulse.Q; 
 operatingMode.HmiReqCycleStart :=FALSE;
 
-// Clear EMO reqs
-operatingMode.ReqEmoReset := FALSE;
 
 // process the process requests
 procHmiProcessReqs();
@@ -380,8 +411,12 @@ ENTRY_ACTION
 operatingMode.OperatingMode := OM_PRODUCTION_MODE;
 // To Safety PLC
 ts_InProductionMode := TRUE;
+
 // Clear process reqs on entry -- just in case one is spuriously set
 ClearProcessReqs;
+
+// Reset pulse timer
+tmrResetPulse(IN:= FALSE, PT:= timeResetPulse);
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)

@@ -221,7 +221,7 @@
       <EURanges Id="56">
         <EURange>
           <Low ValueProvider="Const">1</Low>
-          <High ValueProvider="Const">100</High>
+          <High ValueProvider="Const">50</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -241,6 +241,8 @@
       <EngineeringUnit Id="16" UnitId="4669747" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second²" Symbol="rev/s²" />
       <EngineeringUnit Id="17" UnitId="4669748" NameSpaceUri="http://www.br-automation.com/units" Name="revolutions per second³" Symbol="rev/s³" />
       <EngineeringUnit Id="19" UnitId="4669751" NameSpaceUri="http://www.br-automation.com/units" Name="Pounds Per Square Foot" Symbol="psi" />
+      <EngineeringUnit Id="20" UnitId="4804168" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="inch" Symbol="in" />
+      <EngineeringUnit Id="21" UnitId="18773" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="inch per second" Symbol="in/s" />
     </EngineeringUnitAliases>
   </Aliases>
   <DefaultView AclId="2">
@@ -534,9 +536,9 @@
             <Variable Name="accel" EURangeViolationId="1" EURangesId="12" EngineeringUnitId="8" />
           </Variable>
           <Variable Name="cuttingHead">
-            <Variable Name="totalDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
-            <Variable Name="finishingPassDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
-            <Variable Name="feedRate" EURangeViolationId="1" EURangesId="11" EngineeringUnitId="3" />
+            <Variable Name="totalDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="20" />
+            <Variable Name="finishingPassDepth" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="20" />
+            <Variable Name="feedRate" EURangeViolationId="1" EURangesId="11" EngineeringUnitId="21" />
             <Variable Name="setZeroOffset" EURangeViolationId="1" EURangesId="2" EngineeringUnitId="2" />
             <Variable Name="depthMod" EURangeViolationId="1" EURangesId="13" EngineeringUnitId="2" />
             <Variable Name="depthAdjAngle" EURangeViolationId="1" EURangesId="7" EngineeringUnitId="4" />
@@ -795,7 +797,7 @@
       </Task>
       <Task Name="ProdCycle">
         <Variable Name="partMotion" AutomaticEnable="True">
-          <Variable Name="passDepth" EngineeringUnitId="2" />
+          <Variable Name="passDepth" EngineeringUnitId="20" />
           <Variable Name="depthAdjAngle" EngineeringUnitId="4" />
           <Variable Name="depthAdjAngleMin" EngineeringUnitId="4" />
           <Variable Name="passOffsetAngle" EngineeringUnitId="4" />
