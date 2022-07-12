@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ldef:Layout id="layoutStd_BarsTLR" height="800" width="1280" xmlns:ldef="http://www.br-automation.com/iat2015/layoutDefinition/v2">
-  <Areas>
-    <Area id="areaLeft" height="700" width="110" left="0" top="100" zIndex="0" />
-    <Area id="areaTop" left="0" top="0" width="1280" height="100" zIndex="1" />
-    <Area id="areaRight" left="1130" top="100" width="150" height="700" zIndex="2" />
-    <Area id="areaContent" left="110" top="100" width="1020" height="700" zIndex="3" />
-  </Areas>
-</ldef:Layout>

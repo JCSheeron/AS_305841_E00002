@@ -1,8 +1,0 @@
-(*
-QWS: 00005
-*)
-00001	00066	POE\Main\IOModules.gb
-00002	00203	POE\Main\EMO_PBs.gb
-00003	00058	POE\Main\CFGateStatus.gb
-00004	00096	POE\Main\SafeMode.gb
-00005	00218	POE\Main\AxisEnable.gb

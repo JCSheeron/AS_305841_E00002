@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio FileVersion="4.9"?>
-<Package SubType="DialogsPackage" PackageType="DialogsPackage" xmlns="http://br-automation.co.at/AS/Package">
-  <Objects>
-    <Object Type="Package">DialogSafetySystem</Object>
-    <Object Type="Package">DialogHome</Object>
-    <Object Type="Package">DialogSetPosLimits</Object>
-  </Objects>
-</Package>
