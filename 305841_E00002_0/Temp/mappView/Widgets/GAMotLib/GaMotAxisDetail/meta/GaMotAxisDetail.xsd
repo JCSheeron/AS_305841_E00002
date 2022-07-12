@@ -43,20 +43,23 @@
 			<xs:attribute name="StateStyle" use="optional" type="types:String" default="" />
 			<xs:attribute name="CoordSlavePosition" use="optional" type="types:Number" default="0.0" />
 			<xs:attribute name="CoordSlaveVelocity" use="optional" type="types:Number" default="0.0" />
-			<xs:attribute name="IsCoordSlaveRdyText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordSlaveRdyStyle" use="optional" type="types:String" default="" />
-			<xs:attribute name="IsCoordMasterRdyText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordMasterRdyStyle" use="optional" type="types:String" default="" />
-			<xs:attribute name="IsCoordInCompText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordInCompStyle" use="optional" type="types:String" default="" />
-			<xs:attribute name="IsCoordInSyncText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordInSyncStyle" use="optional" type="types:String" default="" />
-			<xs:attribute name="IsCoordOffsetDoneText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordOffsetDoneStyle" use="optional" type="types:String" default="" />
-			<xs:attribute name="IsCoordPhasingDoneText" use="optional" type="types:String" default="No" />
-			<xs:attribute name="IsCoordPhasingDoneStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="SlaveOffsetToMaster" use="optional" type="types:Number" default="0.0" />
+			<xs:attribute name="IsGearInCompText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsGearInCompStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="IsGearInSyncText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsGearInSyncStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="IsGearOffsetStartedText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsGearOffsetStartedStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="IsGearOffsetDoneText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsGearOffsetDoneStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="IsCamInSyncText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsCamInSyncStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="IsCamEndOfProfileText" use="optional" type="types:String" default="No" />
+			<xs:attribute name="IsCamEndOfProfileStyle" use="optional" type="types:String" default="" />
 			<xs:attribute name="SlaveStatusText" use="optional" type="types:String" default="Unknown" />
 			<xs:attribute name="SlaveStatusStyle" use="optional" type="types:String" default="" />
+			<xs:attribute name="CamStatusText" use="optional" type="types:String" default="Unknown" />
+			<xs:attribute name="CamStatusStyle" use="optional" type="types:String" default="" />
 			<xs:attribute name="SlaveStateText" use="optional" type="types:String" default="Unknown" />
 			<xs:attribute name="SlaveStateStyle" use="optional" type="types:String" default="" />
 			<xs:attribute name="DirMovePosText" use="optional" type="types:String" default="PosDir" />
@@ -70,6 +73,9 @@
 			<xs:attribute name="ShortestDirectionEnable" use="optional" type="types:Boolean" default="true" />
 			<xs:attribute name="DistanceEnable" use="optional" type="types:Boolean" default="true" />
 			<xs:attribute name="PositionEnable" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="GearInEnable" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="CamInEnable" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="DisengageSlaveEnable" use="optional" type="types:Boolean" default="false" />
 			<xs:attribute name="ShiftEnable" use="optional" type="types:Boolean" default="true" />
 			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
 		</xs:extension>

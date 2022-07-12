@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingListsSet id="bindinglist_1"
+  xmlns="http://www.br-automation.com/iat2015/bindingList/engineering/v2"
+  xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BindingLists>
+    <!-- Text styles -->
+    <!-- Return the value of a session variable based on a list index -->
+    <!-- The value of the session variable is expected to be a style name --> 
+      <List xsi:type="session" id="ServoStatusGoodBadText" attribute="value">
+        <bt:Element index="0" refId="svTextOutputWarn"/>
+        <bt:Element index="1" refId="svTextOutputGood"/>
+        <bt:Element index="2" refId="svTextOutputGood"/>
+        <bt:Element index="3" refId="svTextOutputWarn"/>
+        <bt:Element index="4" refId="svTextOutputGood"/>
+        <bt:Element index="5" refId="svTextOutputGood"/>
+        <bt:Element index="6" refId="svTextOutputGood"/>
+        <bt:Element index="7" refId="svTextOutputBad"/>
+        <bt:Element index="8" refId="svTextOutputWarn"/>
+        <bt:Element index="9" refId="svTextOutputBad"/>
+    </List>
+    <List xsi:type="session" id="ServoSmStateGoodBadText" attribute="value">
+      <bt:Element index="0" refId="svTextOutputWarn"/>
+      <bt:Element index="1" refId="svTextOutputBad"/>
+      <bt:Element index="2" refId="svTextOutputWarn"/>
+      <bt:Element index="3" refId="svTextOutputWarn"/>
+      <bt:Element index="4" refId="svTextOutputGood"/>
+      <bt:Element index="5" refId="svTextOutputWarn"/>
+      <bt:Element index="6" refId="svTextOutputWarn"/>
+      <bt:Element index="7" refId="svTextOutputWarn"/>
+      <bt:Element index="8" refId="svTextOutputWarn"/>
+      <bt:Element index="9" refId="svTextOutputBad"/>
+      <bt:Element index="10" refId="svTextOutputBad"/>
+      <bt:Element index="11" refId="svTextOutputBad"/>
+      <bt:Element index="12" refId="svTextOutputBad"/>
+      <bt:Element index="13" refId="svTextOutputBad"/>
+      <bt:Element index="20" refId="svTextOutputGood"/>
+      <bt:Element index="21" refId="svTextOutputGood"/>
+      <bt:Element index="22" refId="svTextOutputWarn"/>
+      <bt:Element index="23" refId="svTextOutputWarn"/>
+      <bt:Element index="31" refId="svTextOutputGood"/>
+      <bt:Element index="32" refId="svTextOutputGood"/>
+      <bt:Element index="33" refId="svTextOutputGood"/>
+      <bt:Element index="41" refId="svTextOutputGood"/>
+      <bt:Element index="51" refId="svTextOutputGood"/>
+      <bt:Element index="61" refId="svTextOutputGood"/>
+      <bt:Element index="71" refId="svTextOutputGood"/>
+      <bt:Element index="72" refId="svTextOutputGood"/>
+    </List>
+    
+      <List xsi:type="session" id="CamStatusGoodBadText" attribute="value">
+        <bt:Element index="0" refId="svTextOutputGood"/>
+        <bt:Element index="1" refId="svTextOutputGood"/>
+        <bt:Element index="2" refId="svTextOutputGood"/>
+        <bt:Element index="3" refId="svTextOutputGood"/>
+        <bt:Element index="4" refId="svTextOutputGood"/>
+        <bt:Element index="5" refId="svTextOutputGood"/>
+    </List>
+
+    <List xsi:type="session" id="TextStyleHiGoodLoBad1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputBad"/>
+      <bt:Element index="true" refId="svTextOutputGood"/>
+    </List>
+ 
+    <List xsi:type="session" id="TextStyleHiGoodLoWarn1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputWarn"/>
+      <bt:Element index="true" refId="svTextOutputGood"/>
+    </List>
+
+    <List xsi:type="session" id="TextStyleLoGoodHiBad1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputGood"/>
+      <bt:Element index="true" refId="svTextOutputBad"/>
+    </List>
+ 
+    <List xsi:type="session" id="TextStyleLoGoodHiWarn1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputGood"/>
+      <bt:Element index="true" refId="svTextOutputWarn"/>
+    </List>
+
+    <List xsi:type="session" id="TextStyleHiGoodLoGood1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputGood"/>
+      <bt:Element index="true" refId="svTextOutputGood"/>
+    </List>
+    
+    <List xsi:type="session" id="TextStyleHiBadLoBad1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputBad"/>
+      <bt:Element index="true" refId="svTextOutputBad"/>
+    </List>
+    
+    <List xsi:type="session" id="TextStyleHiWarnLoWarn1" attribute="value">
+      <bt:Element index="false" refId="svTextOutputWarn"/>
+      <bt:Element index="true" refId="svTextOutputWarn"/>
+    </List>
+  
+    <!-- Label styles -->
+    <List xsi:type="session" id="LabelSytleActiveStyle1" attribute="value">
+      <bt:Element index="false" refId="svLabelInactive"/>
+      <bt:Element index="true" refId="svLabelActive"/>
+    </List>
+    
+    <!-- Button Styles -->
+    <List xsi:type="session" id="ButtonSelectionStyle1" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelected1"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleBlue" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelectedBlue"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleBlueIndicator" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelectedIndicator"/>
+      <bt:Element index="true" refId="svButtonSelectedBlueIndicator"/>
+    </List>
+    
+    <List xsi:type="session" id="ButtonSelectionStyleGreen" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelectedGreen"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleGreenIndicator" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelectedIndicator"/>
+      <bt:Element index="true" refId="svButtonSelectedGreenIndicator"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleYellow" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelectedYellow"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleYellowIndicator" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelectedIndicator"/>
+      <bt:Element index="true" refId="svButtonSelectedYellowIndicator"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleOrange" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelectedOrange"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleOrangeIndicator" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelectedIndicator"/>
+      <bt:Element index="true" refId="svButtonSelectedOrangeIndicator"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleRed" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelected1"/>
+      <bt:Element index="true" refId="svButtonSelectedRed"/>
+    </List>
+
+    <List xsi:type="session" id="ButtonSelectionStyleRedIndicator" attribute="value">
+      <bt:Element index="false" refId="svButtonNotSelectedIndicator"/>
+      <bt:Element index="true" refId="svButtonSelectedRedIndicator"/>
+    </List>
+
+  </BindingLists>
+
+</BindingListsSet>
+

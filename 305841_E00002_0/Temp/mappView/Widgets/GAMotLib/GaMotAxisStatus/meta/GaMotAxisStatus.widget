@@ -11,6 +11,7 @@
 			</Files>
 			<Widgets>
 				<Widget>widgets/GAMotLib/GaMotAxisStatus/GaMotAxisStatus.js</Widget>
+				<Widget>widgets/GAGeneralLib/TitleLabelBindable/TitleLabelBindable.js</Widget>
 				<Widget>widgets/brease/GroupBox/GroupBox.js</Widget>
 				<Widget>widgets/brease/Label/Label.js</Widget>
 				<Widget>widgets/brease/NumericOutput/NumericOutput.js</Widget>
@@ -130,6 +131,12 @@
 				<Mappings>
 					<Mapping widget="numOutPosAct" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true"/>
 					<Mapping widget="numOutVelAct" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true"/>
+				</Mappings>
+			</Property>
+			<Property name="AxisName" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="">
+				<Description>Set the unit string for position and distance units.</Description>
+				<Mappings>
+					<Mapping widget="grpBoxLabel" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
 			<Property name="PositionUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">

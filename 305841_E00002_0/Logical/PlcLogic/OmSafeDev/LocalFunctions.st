@@ -1,22 +1,13 @@
-(* This function block will turn process requests into GaMpMotion library requests.
-The GA Motion Library requests will then be handled by the fbHandleHmiAxisReq fb.
-In this way, there is a cascading mechanism to get process specific then
-machine specific then axis specific reqeusts processed by standard library functions,
-even when process or machine specific things are not known by the library functions. *)
-FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaMpMotion library requests. *)
-  // library axis req pointer is set ... assume it points to the first element of an array of sMot_HmiAxisReqs structures *)
-  // TODO: Need to figure out syntax for accessing individual array elements and implement fb
-  // libReqs ACCESS ADR(_I_pLibraryAxesReqs) + (AD_Z * SIZEOF(sMot_HmiAxisReqs)); // Set to access the Z Axis
-  RETURN;
-END_FUNCTION_BLOCK
 
-(* This function block will turn machine specific requests into GaMpMotion library requests.
-Machine axis requests will be turned into library requests, and finally
-library requests will be called using the library fb.
+(* This function block will turn machine specific requests into GaMpMotion library requests,
+and the library requests will handled with the motion library.
 In this way, there is a cascading mechanism to get machine specific then axis
 specific reqeusts processed by standard library functions,
-even when process or machine specific things are not known by the library functions. *)
-FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI process specific, then machine specific, and then process them with GaMpMotion library fbProcessHmiAxisReq.
+even when process or machine specific things are not known by the library functions.
+Note that the HMI binds to value in library axis req (sMot_HmiAxisReqs) for the move
+requests, and move params. When controlling an individual axis, these are not machine specific.
+This fb handles things like enable/disable choices based on selection, or other machine specific things. *)
+FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI machine specific requests, and then process them with GaMpMotion library fbProcessHmiAxisReq.
   // Map (decode) HMI move type and then direction that the GAMpMotion library will see.
   // Note the direction and move parameters allowd are be influenced by the move type.
   // Do this before processing the move request so values can be checked or used before issuing a move.
@@ -85,14 +76,38 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI process specific, then machin
     _I_MachineAxisReqs.direction := -1;
   END_IF;
 
+  // Coordinated axis PB enable related
+  
+  // Gear In and Cam In
+  // There must be a slave axis designated,
+  // the axes must be homed and enabled,
+  // and these two (gear/cam) are mutually exclusive of each other
+  _I_MachineAxisReqs.gearInEnable := 
+    _I_Axis.CouplingParameters.SlaveAxisNo <> 0 AND
+    _I_Axis.Status.IsHomed AND _I_Axis.Status.IsPoweredOn AND
+    _I_SlaveAxis.Status.IsHomed AND _I_SlaveAxis.Status.IsPoweredOn AND
+    NOT _I_Axis.fbCamIn.Active;
+
+  _I_MachineAxisReqs.camInEnable := 
+    _I_Axis.CouplingParameters.SlaveAxisNo <> 0 AND
+    _I_Axis.Status.IsHomed AND _I_Axis.Status.IsPoweredOn AND
+    _I_SlaveAxis.Status.IsHomed AND _I_SlaveAxis.Status.IsPoweredOn AND
+    NOT _I_Axis.fbGearIn.Active;
+
+  // Disengage enabled if gearing or caming is active
+  _I_MachineAxisReqs.disengageEnable := _I_Axis.fbGearIn.Active OR _I_Axis.fbCamIn.Active;
+  
   // Coordinated shift commands cannot be enabled unless:
-  // 1) The slave is coordinated and InSync
-  // 2) The master is moving  
-  // 3) A phase shift or offset shift is not underway
-  _I_MachineAxisReqs.shiftEnable := _I_Axis.Status.IsCoordInSync AND
-    _I_Axis.Status.IsMoveActive AND
-    NOT _I_Axis.CouplingParameters.OffsetShiftCmd AND
-    NOT _I_Axis.CouplingParameters.PhaseShiftCmd;
+  // 1) The slave is gear coordinated and InSync
+  // 2) The master is moving ?? TODO: verify
+  // 3) Phase shift and offset shift are not in progress
+  // 4) Cam is not active
+  _I_MachineAxisReqs.shiftEnable :=
+    _I_Axis.Status.IsGearInSync AND
+    //_I_Axis.Status.IsMoveActive AND
+    NOT _I_Axis.fbOffsetShift.ShiftStarted AND
+    NOT _I_Axis.fbPhaseShift.ShiftStarted AND
+    NOT _I_Axis.fbCamIn.Active;
   
   // Now the direction options should be qualified, set the direction that the GAMpMotion library will see
   _I_LibraryAxisReqs.Direction := fctDecodeHmiDirection(_I_DirectionReq := _I_MachineAxisReqs.direction);
@@ -105,8 +120,161 @@ FUNCTION_BLOCK fbHandleHmiAxisReq // Condition HMI process specific, then machin
   );
   
   // The move type and direction have now been pre-processed. Call the library function to process the requests.
-  procLibraryReq(_I_HmiAxisReq := ADR(_I_LibraryAxisReqs), _I_Axis := ADR(_I_Axis), _I_SlaveAxis := ADR(_I_SlaveAxis), _I_AxisPositionLimits := ADR(_I_AxisPositionLimits));
+  procLibraryReq(_I_HmiAxisReq := ADR(_I_LibraryAxisReqs),
+                 _I_Axis := ADR(_I_Axis),
+                 _I_SlaveAxis := ADR(_I_SlaveAxis),
+                 _I_AxisPositionLimits := ADR(_I_AxisPositionLimits),
+                 _I_ToleranceZeroDepth := TOL_DEPTH_ZERO_DEG);
 
+END_FUNCTION_BLOCK
+
+(* This function block will turn process requests into GaMpMotion library requests.
+The GA Motion Library requests will then be handled by the library.
+In this way, there is a cascading mechanism to get process specific
+reqeusts processed by standard library functions, even when process specific things 
+are not known by the library functions.*)
+FUNCTION_BLOCK fbHandleHmiProcessReqs (* Turn process specific requests into GaMpMotion library requests. *)
+  // Calc structure sizes becuase they will be used several times
+  szLibReq := SIZEOF(sMot_HmiAxisReqs);
+  szAxis := SIZEOF(sMot_Axis);
+  szAxisPosLimits := SIZEOF(sMot_PositionLimits);
+  
+  // **** Process Cutting Fluid VFD requests
+
+  // First get the CF structures by address arithmetic
+  rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_CF_VFD * szLibReq);
+  rAxis ACCESS _I_pAxis + (AD_CF_VFD * szAxis);
+
+  // If the axis is enabled issue moves. Otherwise do nothing. 
+  // Requests get cleared at the end either way
+  IF rAxis.Status.IsPoweredOn THEN
+    IF _I_ProcessReqs.cfReqRun THEN
+      // TODO: Incorporate pressure control
+      // FOR NOW: Use RPM regardless
+      IF _I_ProcessReqs.cfIsInPressureControl THEN
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0; // hmi in rpm, but axis is in rps
+      ELSE
+        rAxis.MoveParameters.Velocity := _I_ProcessReqs.cfRpmCmd / 60.0; // hmi in rpm, but axis is in rps
+      END_IF;
+      rAxis.MoveParameters.Direction := mcDIR_POSITIVE;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.cfVfd.accel / 60.0; // hmi in rpm, but axis is in rps
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel / 60.0; // hmi in rpm, but axis is in rps
+      rAxis.Commands.MoveVelocityReq := TRUE;
+    END_IF;
+
+    IF _I_ProcessReqs.cfReqStop THEN
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.cfVfd.decel;
+      rAxis.Commands.HaltReq := TRUE;
+    END_IF;
+    
+  END_IF;
+  
+  // **** Process Z axis requests
+  // First get the Z structures by address arithmetic
+  rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_Z * szLibReq);
+  rAxis ACCESS _I_pAxis + (AD_Z * szAxis);
+  // get the slave number, and then calc the memory offset
+  slaveNum := rAxis.CouplingParameters.SlaveAxisNo;
+  rSlaveAxis ACCESS _I_pAxis + (slaveNum * szAxis);
+  rAxisPositionLimits ACCESS _I_pAxisPositionLimits + (AD_Z * szAxisPosLimits);
+  
+  // Set position requests. Axis needs to be homed if current position is needed.
+  // Requests get cleared at the end either way
+  IF _I_ProcessReqs.zReqPosSocUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
+    _I_WpCfg.zAxis.startOfCutPos := rAxis.Status.Position;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosSocUseSpecified THEN // position specified, homing isn't needed
+    _I_WpCfg.zAxis.startOfCutPos := _I_ProcessReqs.zReqPosSoc;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosLUnLUseCurrent AND rAxis.Status.IsHomed THEN // home needed since axis position is used
+    _I_WpCfg.zAxis.loadUnloadPos := rAxis.Status.Position;
+  END_IF;
+  IF _I_ProcessReqs.zReqPosLUnLUseSpecified THEN // position specified, homing isn't needed
+    _I_WpCfg.zAxis.loadUnloadPos := _I_ProcessReqs.zReqPosLUnL;
+  END_IF;
+    
+  // If the axis is enabled and homed, issue moves. Otherwise do nothing. 
+  // Requests get cleared at the end either way
+  IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
+    IF _I_ProcessReqs.zReqMoveUpLimit THEN
+      rAxis.MoveParameters.Position := rAxisPositionLimits.PositionLimitPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
+    END_IF;
+
+    IF _I_ProcessReqs.zReqMoveDownLimit THEN
+      rAxis.MoveParameters.Position := rAxisPositionLimits.PositionLimitNeg;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
+    END_IF;
+
+    IF _I_ProcessReqs.zReqMoveLUnL AND _I_WpCfg.zAxis.loadUnloadPos > 0.0 THEN
+      rAxis.MoveParameters.Position := _I_WpCfg.zAxis.loadUnloadPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
+    END_IF;
+
+    IF _I_ProcessReqs.zReqMoveSoc AND _I_WpCfg.zAxis.startOfCutPos > 0.0 THEN
+      rAxis.MoveParameters.Position := _I_WpCfg.zAxis.startOfCutPos;
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveAbsoluteReq := TRUE;
+    END_IF;    
+    
+    IF _I_ProcessReqs.zReqMoveIndexUp AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
+      rAxis.MoveParameters.Distance := ABS(_I_WpCfg.zAxis.indexDist); // make sure distance is positive
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveRelativeReq := TRUE;
+    END_IF;    
+  
+    IF _I_ProcessReqs.zReqMoveIndexDown AND _I_WpCfg.zAxis.indexDist > 0.0 THEN
+      rAxis.MoveParameters.Distance := -1.0 * ABS(_I_WpCfg.zAxis.indexDist); // make sure distance is negative
+      rAxis.MoveParameters.Velocity := _I_WpCfg.zAxis.indexSpeed;
+      rAxis.MoveParameters.Acceleration := _I_WpCfg.zAxis.accel;
+      rAxis.MoveParameters.Deceleration := _I_WpCfg.zAxis.decel;
+      rAxis.Commands.MoveRelativeReq := TRUE;
+    END_IF;
+        
+  END_IF;
+    
+  // **** Process Cutting Head Requests
+  // First get the Inner Eccentric structures by address arithmetic
+  rLibReqs ACCESS _I_pLibraryAxesReqs + (AD_INNER_ECCENTRIC * szLibReq);
+  rAxis ACCESS _I_pAxis + (AD_INNER_ECCENTRIC * szAxis);
+  // get the slave number, and then calc the memory offset
+  slaveNum := rAxis.CouplingParameters.SlaveAxisNo;
+  rSlaveAxis ACCESS _I_pAxis + (slaveNum * szAxis);
+  rAxisPositionLimits ACCESS _I_pAxisPositionLimits + (AD_INNER_ECCENTRIC * szAxisPosLimits);
+  
+  // If the axis is enabled and homed, issue moves. Otherwise do nothing. 
+  // Requests get cleared at the end either way
+  IF rAxis.Status.IsHomed AND rAxis.Status.IsPoweredOn THEN
+    IF _I_ProcessReqs.cuttingHeadMoveReqRetract THEN
+      // Retract cutting head req
+      IF rAxis.Status.IsGearInSync OR rAxis.Status.IsCamInSync THEN
+        // Axis is coordinated. Modify the offset using the master
+        ;
+        // TODO: Add cases for both inner and outer stopped
+        // TODO: Either or both running but not coord not supported
+      END_IF;
+    END_IF;
+  END_IF;
+  
+  // Clear the process requests
+  pSrc := ADR(_I_ProcessReqs.StartOfClearedRequests);
+  pDest := ADR(_I_ProcessReqs.EndOfClearedRequests);
+  byteCount := pDest - pSrc + SIZEOF(BOOL);
+  nextAddr := brsmemset(pSrc, 0, byteCount);
+   
 END_FUNCTION_BLOCK
 
 // The HMI can easily set values like 0, 1, 2 from radio buttons for example, but it is harder to set specific move type values
@@ -160,3 +328,19 @@ FUNCTION fctDecodeHmiDirection
   END_IF;  
 END_FUNCTION
 
+// The HMI can easily set values like 0, 1, 2 from radio buttons, but it is harder to set specific sub mode values.
+// This function is intended to take an HMI selection and return a sub mode usable by the PLC logic.
+FUNCTION fctDecodeHmiSubMode
+  // Continuous:   HMI Value 0, PLC Value OM_PROD_SM_CONTINUOUS (16#40)
+  // Single Cycle: HMI Value 1, PLC Value OM_PROD_SM_SINGLE (16#41)
+  // Single Step:  HMI Value 2, PLC Value OM_PROD_SM_STEPPED (16#42)
+  IF _I_SubModeReq = 0 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_CONTINUOUS;
+  ELSIF _I_SubModeReq = 1 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_SINGLE;    
+  ELSIF _I_SubModeReq = 2 THEN
+    fctDecodeHmiSubMode := OM_PROD_SM_STEPPED;
+  ELSE 
+    fctDecodeHmiSubMode := OM_UNKNOWN;
+  END_IF;  
+END_FUNCTION

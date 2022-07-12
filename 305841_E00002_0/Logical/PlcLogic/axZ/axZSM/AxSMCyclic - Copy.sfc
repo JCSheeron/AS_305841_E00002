@@ -46,7 +46,7 @@ ActionCallMotionFunctions;
 
 // If the axis in invalid, periodically run the fb with the input disabled to 
 // force a rising edge the next time.
-tmrDriveReset(IN:= ax.statusFpMpAxisBasic.StatusId <> mcAXIS_NO_ERROR AND NOT tmrDriveReset.Q);
+tmrDriveReset(IN:= ax.fbMpAxisBasic.Info.Diag.StatusID.ID <> mcAXIS_NO_ERROR AND NOT tmrDriveReset.Q);
 IF (tmrDriveReset.Q) THEN
   ax.fbMpAxisBasic(Enable:= FALSE);
 END_IF;
@@ -75,13 +75,114 @@ ax.Commands.DriveResetReq
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Error_DriveReset' *)
-TRANSITION Valid and no errors FROM Step_AxisValid_Check TO Step_Disabled:=
+TRANSITION Valid and no errors FROM Step_AxisValid_Check TO Step_CheckRestorePos:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), and no errors
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_CheckRestorePos' *)
+STEP Step_CheckRestorePos:
+(* @LANGUAGE := 'st' *)
+// If this axis is not virtual and not an inverter, check the restore position
+IF NOT ax.isAxisVirtual AND NOT ax.isAxisInverter THEN
+  ax.fbCheckRestorePos(Execute := TRUE);
+END_IF;
+
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set the state
+ax.SMState:= GAMOT_ASMS_CHK_RESTORE_POS;
+END_ACTION
+TRANSITION is virtual or inverter axis FROM Step_CheckRestorePos TO Step_Disabled:=
+(* @LANGUAGE := 'st' *)
+// Axis restore position does not apply to virtual or inverter axes
+ax.isAxisVirtual OR ax.isAxisInverter
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_Disabled' *)
+TRANSITION restore pos done and error or invalid FROM Step_CheckRestorePos TO Step_ForceSetRef:=
+(* @LANGUAGE := 'st' *)
+// Check restore position is done without error
+// and data is valid. Not applicable for virtual or inverter axes.
+NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
+NOT ax.fbCheckRestorePos.Busy AND
+(ax.fbCheckRestorePos.Error OR
+(ax.fbCheckRestorePos.Done AND
+NOT ax.fbCheckRestorePos.DataValid))
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_ForceSetRef' *)
+STEP Step_ForceSetRef:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Force reference to be set
+ax.ForceSetRef := TRUE;
+END_ACTION
+TRANSITION FROM Step_ForceSetRef TO Step_Disabled:=
+TRUE
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_Disabled' *)
+TRANSITION restore pos done and valid FROM Step_CheckRestorePos TO Step_RestorePos:=
+(* @LANGUAGE := 'st' *)
+// Check restore position is done without error
+// and data is valid. Not applicable for virtual or inverter axes.
+NOT ax.isAxisVirtual AND
+NOT ax.isAxisInverter AND
+NOT ax.fbCheckRestorePos.Busy AND
+ax.fbCheckRestorePos.Done AND
+NOT ax.fbCheckRestorePos.Error AND
+ax.fbCheckRestorePos.DataValid
+END_TRANSITION
+(* @SFCNOJUMP := 'Step_RestorePos' *)
+STEP Step_RestorePos:
+(* @LANGUAGE := 'st' *)
+// From here, use the default homing mode, which is set to use restore position.  It will either have an error or become homed.
+// Turn off the other commands and requests
+ax.MoveParameters.HomeParams.Mode := mcHOMING_DEFAULT;
+ax.Commands.HomeCmd := TRUE;
+fctClearMotionCommands(_I_CmdMask := MACM_HOME_MASK, _IO_Commands := ax.Commands);
+fctClearMotionRequests(_I_ReqMask := MACM_NOMASK, _IO_Commands := ax.Commands);
+
+// Assume the homing worked
+ax.ForceSetRef := FALSE;
+
+// Call motion command to get status, and issue the home command, and possibly the enable command.
+ActionCallMotionFunctions;
+
+// Run the timer which holds here for a bit
+tmrHomeMinimum(IN:= TRUE);
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set the state
+ax.SMState:= GAMOT_ASMS_RESTORE_POS;
+// reset the timer
+tmrHomeMinimum(IN:= FALSE, PT:= T#100ms);
+
+END_ACTION
+EXIT_ACTION
+(* @LANGUAGE := 'st' *)
+// Make sure command is off on exit
+ax.Commands.HomeCmd:= FALSE;
+END_ACTION
+TRANSITION Home cmd done FROM Step_RestorePos TO Step_Disabled:=
+(* @LANGUAGE := 'st' *)
+// Instruction done. Response is the same whether or not the homing worked.
+tmrHomeMinimum.Q AND
+ax.fbMpAxisBasic.Info.Diag.ExecutingCommand <> mcAXIS_CMD_HOMING
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disabled' *)
 STEP Step_Disabled:
@@ -92,19 +193,27 @@ STEP Step_Disabled:
 // Clear all the commands except for brake release.
 // Allow the Enable, Brake Release, Home, and Reset requests
 // Note: The brake release is only valid in this state. This command will get cleared when leaving this state
-fctClearMotionCommands(_I_CmdMask := MACM_RELEASE_BRAKE_MASK, _IO_Commands := ax.Commands);
-
-// Set the release brake command if requested. Give priority to the clear cmd.
-IF  ax.Commands.ClearReleaseBrakeReq THEN
-  ax.Commands.ReleaseBrakeCmd := FALSE;
-ELSIF ax.Commands.ReleaseBrakeReq THEN
-  ax.Commands.ReleaseBrakeCmd := TRUE;
+// If axis is virtual, don't allow brake release
+IF ax.isAxisVirtual THEN
+  cmdMask := MACM_NOMASK;
+  fctClearMotionCommands(_I_CmdMask := cmdMask, _IO_Commands := ax.Commands);
+ELSE
+  // non-virtual axis ... allow brake release if requested
+  cmdMask := MACM_RELEASE_BRAKE_MASK;
+  fctClearMotionCommands(_I_CmdMask := cmdMask, _IO_Commands := ax.Commands);
+  // Set the release brake command if requested. Give priority to the clear cmd.
+  IF  ax.Commands.ClearReleaseBrakeReq THEN
+    ax.Commands.ReleaseBrakeCmd := FALSE;
+  ELSIF ax.Commands.ReleaseBrakeReq THEN
+    ax.Commands.ReleaseBrakeCmd := TRUE;
+  END_IF;
 END_IF;
-
+  
 // Call motion command to get status and possibly release the brake
 ActionCallMotionFunctions;
 
 // Clear the requests other than the enable, home, and drive reset
+// The brake release was already handled above, so it is okay (necessary) to clear the req now.
 reqMask := MACM_ENABLE_MASK + MACM_HOME_MASK + MACM_DRIVE_RESET_MASK;
 fctClearMotionRequests(_I_ReqMask := reqMask, _IO_Commands := ax.Commands);
 
@@ -133,13 +242,13 @@ END_TRANSITION
 (* @SFCISJUMP := 'Step_Ignore_Axis' *)
 TRANSITION Invalid Status FROM Step_Disabled TO Step_AxisValid_Check:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
 END_TRANSITION
 (* @SFCISJUMP := 'Step_AxisValid_Check' *)
 TRANSITION Mode problem FROM Step_Disabled TO Step_Disabled:=
@@ -151,18 +260,18 @@ END_TRANSITION
 TRANSITION no errors, reset req FROM Step_Disabled TO Step_Error_DriveReset:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors, drive reset req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.DriveResetReq
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Error_DriveReset' *)
 TRANSITION valid but error FROM Step_Disabled TO Step_Error_DrvRstWait:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 END_TRANSITION
@@ -170,10 +279,10 @@ END_TRANSITION
 TRANSITION no errors, home req FROM Step_Disabled TO Stp_BrakeRel1:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors, home request
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.HomeReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_BrakeRel1' *)
@@ -214,10 +323,10 @@ TRANSITION no errors, global or axis enable req FROM Step_Disabled TO Stp_BrakeR
 (* @LANGUAGE := 'st' *)
 // // Valid status (allow the couple axis warnings), no errors and enable req or global enable req
 // TODO: How to deal with handling global request (local OS or some sort or reset of cmd)
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 (ax.Commands.EnableReq OR gMotionCommands.EnableReq)
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_BrakeRel2' *)
@@ -264,17 +373,40 @@ STEP Step_Enabled:
 // so to prevent a bump when honoring a new move request, don't indiscriminently clear the commands.
 ax.Commands.EnableCmd := TRUE;
 
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
+
+// Check coupling permissives
+ActionChkPermissiveCoupling;
+
 // Jog no used with MpAxisBasic. Velocity move or jog positive limit or jog negative limit used in place of jog.
-// Replace a jog request with a velocity req.
+// Replace a jog request with a velocity req. Jog positive limit and jog negative limit are handled as
+// stand alone requests.
 ax.Commands.MoveVelocityReq := ax.Commands.MoveVelocityReq OR ax.Commands.MoveJogReq;
 ax.Commands.MoveJogReq := FALSE;
 ax.Commands.MoveJogCmd := FALSE;
 
 // Initialize the req mask. This will be used at the bottom to clear the other (unwanted) requests.
 // In between, however, allowed requests may modify the mask.
-reqMask := MACM_DISABLE_MASK + MACM_HOME_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+// Note that motion realted requests are ignored for vitual axes, and homing isn't allowed for an inverter axis
+IF ax.isAxisVirtual THEN
+  // For a vitual axis, set the mask to ignore the motion requests, and don't qualify the move requests.
+  reqMask := MACM_DISABLE_MASK + MACM_HOME_MASK;
+ELSE
+  // Non virtual axis ... handle the move requests.
 
-// Qualify move requests
+  // Set the initial mask that may get altered depeding on move request
+  // For an inverter axis, there is no position feedback, so there is no ability or need to home.
+  // Otherwise, there is position feedback, so allow homing
+  IF ax.isAxisInverter THEN
+    reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+  ELSE
+    reqMask := MACM_DISABLE_MASK + MACM_HOME_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+  END_IF;
+  
+  // Qualify move requests
   // Upon a request, check permissives.
   // If the not allowed flag is clear, then allow the move
   // and clear the other requests. 
@@ -282,116 +414,118 @@ reqMask := MACM_DISABLE_MASK + MACM_HOME_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
   // jog, jog limit positive, jog limit negative, velocity, relative, absolute, engage slave, disengage slave
   // The above priority is somewhat arbitrary, but an order was needed, because only one
   // move is allowed, and each move clears the other requests.  There may be a better/more sensical priority, however.
+  // An invert axis does not have position feedback, so being homed isn't a requirement of motion
 
-// Jog Command
-IF ax.Commands.MoveJogReq THEN
-  ActionChkPermissiveContinuous; 
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_JOG_MASK;
+  // Jog Command
+  IF ax.Commands.MoveJogReq THEN
+    ActionChkPermissiveContinuous; 
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_JOG_MASK;
+    END_IF
   END_IF
-END_IF
   
-// Jog Positive Limit Request
-// Jog Limit requires move permissives.  The FB
-// checks the position window, so this is a duplication of the
-// application position window check.
-IF ax.Commands.MoveJogPositiveReq THEN
-  ActionChkPermissiveContinuous; 
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_JOG_POSITIVE_MASK;
+  // Jog Positive Limit Request
+  // Jog Limit requires move permissives.  The FB
+  // checks the position window, so this is a duplication of the
+  // application position window check.
+  IF ax.Commands.MoveJogPositiveReq THEN
+    ActionChkPermissiveContinuous; 
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_JOG_POSITIVE_MASK;
+    END_IF
   END_IF
-END_IF
       
-// Jog Negative Limit Request
-// Jog Limit requires move permissives.  The FB
-// checks the position window, so this is a duplication of the
-// application position window check.
-IF ax.Commands.MoveJogNegativeReq THEN
-  ActionChkPermissiveContinuous; 
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_JOG_NEGATIVE_MASK;
+  // Jog Negative Limit Request
+  // Jog Limit requires move permissives.  The FB
+  // checks the position window, so this is a duplication of the
+  // application position window check.
+  IF ax.Commands.MoveJogNegativeReq THEN
+    ActionChkPermissiveContinuous; 
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_JOG_NEGATIVE_MASK;
+    END_IF
   END_IF
-END_IF
 
-// Move Velocity Request
-IF ax.Commands.MoveVelocityReq THEN
-  // Take a snapshot of the current position.
-  // This is to allow permissive checking while on the move
-  // and while supporting a changealbe move window
-  ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
-  ActionChkPermissiveRel;
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_VELOCITY_MOVE_MASK;
+  // Move Velocity Request
+  IF ax.Commands.MoveVelocityReq THEN
+    // Take a snapshot of the current position.
+    // This is to allow permissive checking while on the move
+    // and while supporting a changealbe move window
+    ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
+    ActionChkPermissiveRel;
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_VELOCITY_MOVE_MASK;
+    END_IF
   END_IF
-END_IF
   
-// Move Relative Request
-IF ax.Commands.MoveRelativeReq THEN
-  // Take a snapshot of the current position.
-  // This is to allow permissive checking while on the move
-  // and while supporting a changealbe move window
-  ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
-  ActionChkPermissiveRel;    
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_RELATIVE_MOVE_MASK;
+  // Move Relative Request
+  IF ax.Commands.MoveRelativeReq THEN
+    // Take a snapshot of the current position.
+    // This is to allow permissive checking while on the move
+    // and while supporting a changealbe move window
+    ax.MoveParameters.PermissiveCheck.StartPosition:= ax.Status.Position;
+    ActionChkPermissiveRel;    
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_RELATIVE_MOVE_MASK;
+    END_IF
   END_IF
-END_IF
 
-// Move Absolute Request
-IF ax.Commands.MoveAbsoluteReq THEN
-  ActionChkPermissiveAbs;    
-  IF (ax.Commands.MoveNotAllowed OR NOT ax.Status.IsHomed OR ax.ForceSetRef) THEN
-    // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
-    // Set the mask to clear the request, preserving disable, halt and stop reqs
-    // Mask set above, nothing to do
-    // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
-    ;
-  ELSE
-    // Move allowed, leave the request
-    // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
-    reqMask := reqMask + MACM_ABSOLUTE_MOVE_MASK;
+  // Move Absolute Request
+  IF ax.Commands.MoveAbsoluteReq THEN
+    ActionChkPermissiveAbs;    
+    IF (ax.Commands.MoveNotAllowed OR (NOT ax.isAxisInverter AND (NOT ax.Status.IsHomed OR ax.ForceSetRef))) THEN
+      // Move not allowed in requested direction or axis is not homed, or it needs to be re-referenced
+      // Set the mask to clear the request, preserving disable, halt and stop reqs
+      // Mask set above, nothing to do
+      // reqMask := MACM_DISABLE_MASK + MACM_STOP_MASK + MACM_HALT_MASK;
+      ;
+    ELSE
+      // Move allowed, leave the request
+      // Modify the mask set above, and clear the other move requests, preserving disable, halt and stop reqs
+      reqMask := reqMask + MACM_ABSOLUTE_MOVE_MASK;
+    END_IF
   END_IF
-END_IF
+END_IF;
 
 // Clear the requests based on the mask set above
 fctClearMotionRequests(_I_ReqMask := reqMask, _IO_Commands := ax.Commands);
@@ -420,13 +554,13 @@ END_TRANSITION
 (* @SFCISJUMP := 'Step_Ignore_Axis' *)
 TRANSITION Invalid Status FROM Step_Enabled TO Step_AxisValid_Check:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_AxisValid_Check' *)
@@ -473,20 +607,20 @@ ax.SMState:= GAMOT_ASMS_STOP;
 END_ACTION
 TRANSITION Invalid Status FROM Step_StopReq TO Step_AxisValid_Check:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
 END_TRANSITION
 (* @SFCISJUMP := 'Step_AxisValid_Check' *)
 TRANSITION error FROM Step_StopReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -495,10 +629,10 @@ END_TRANSITION
 TRANSITION stopped, reset req, no errors FROM Step_StopReq TO Step_Stop_Reset:=
 (* @LANGUAGE := 'st' *)
 // No errors and drive is stopped, in the standstill state, and a reset req was made
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_STOPPING AND // state will remain in Stopping unitl stop cmd is removed
 ax.Status.IsStopped AND
 ax.Commands.StopResetReq
@@ -582,20 +716,20 @@ ActionCallMotionFunctions;
 END_ACTION
 TRANSITION Invalid Status FROM Step_HaltReq TO Step_AxisValid_Check:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
 END_TRANSITION
 (* @SFCISJUMP := 'Step_AxisValid_Check' *)
 TRANSITION error FROM Step_HaltReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 END_TRANSITION
@@ -603,10 +737,10 @@ END_TRANSITION
 TRANSITION axis stopped, no errors FROM Step_HaltReq TO Step_Enabled:=
 (* @LANGUAGE := 'st' *)
 // No errors and drive is at a standstill.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_STOPPING AND // state will remain in Stopping unitl stop cmd is removed
 ax.Status.IsStopped  // once stoped, we can leave
 END_TRANSITION
@@ -614,18 +748,18 @@ END_TRANSITION
 TRANSITION valid and global or axis disable req FROM Step_Enabled TO Step_Disabled:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and global or axis disable req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 (ax.Commands.DisableReq OR gMotionCommands.DisableReq)
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Disabled' *)
 TRANSITION valid but error FROM Step_Enabled TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 END_TRANSITION
@@ -672,7 +806,8 @@ TRANSITION Stop Cmd is done or in error FROM Step_Error_Stop TO Step_Error_DrvRs
 // Stop command done or an error, or axis was disabled due to error
 ax.Status.PlcOpenState = mcAXIS_STANDSTILL OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
-ax.Status.PlcOpenState = mcAXIS_DISABLED
+ax.Status.PlcOpenState = mcAXIS_DISABLED OR
+(ax.Status.PlcOpenState = mcAXIS_STOPPING AND ax.Status.IsStopped)
 
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Error_DrvRstWait' *)
@@ -764,6 +899,9 @@ fctClearMotionRequests(_I_ReqMask := MACM_NOMASK, _IO_Commands := ax.Commands);
 // Call motion command to get status, and issue the drive reset command
 ActionCallMotionFunctions;
 
+// Hold here for a bit until at least this timer expires
+tmrDriveReset(IN:= TRUE);
+
 END_STEP
 (* @SFCMAXTIME := '' *)
 (* @SFCMINTIME := '' *)
@@ -772,6 +910,8 @@ ENTRY_ACTION
 (* @LANGUAGE := 'st' *)
 // Set the state
 ax.SMState:= GAMOT_ASMS_ERROR_DRVRST;
+// Hold here for a bit -- reset the timer 
+tmrDriveReset(IN:= FALSE, PT:= T#500ms);
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
@@ -780,64 +920,84 @@ ax.Commands.DriveResetCmd := FALSE;
 END_ACTION
 TRANSITION Invalid Status FROM Step_Error_DriveReset TO Step_AxisValid_Check:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+// Min hold time
+tmrDriveReset.Q AND
+(
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
+)
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_AxisValid_Check' *)
+TRANSITION FROM Step_Error_DriveReset TO Step_Ignore_Axis:=
+ax.Ignore
+END_TRANSITION
+(* @SFCISJUMP := 'Step_Ignore_Axis' *)
 TRANSITION error FROM Step_Error_DriveReset TO Step_Error_DrvRstWait:=
 (* @LANGUAGE := 'st' *)
+// Min hold time
+tmrDriveReset.Q AND
+(
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
+)
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Error_DrvRstWait' *)
 TRANSITION valid, no errors, drive in error stop FROM Step_Error_DriveReset TO Step_Error_DrvRstWait:=
 (* @LANGUAGE := 'st' *)
+// min hold time
+tmrDriveReset.Q AND
+(
 // Valid status (allow the couple axis warnings), and no errors,
 // but drive is in ErrorStop. It shouldn't be, but if it is
 // the reset didn't work. Go back to DriveResetWait
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP
-
+)
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Error_DrvRstWait' *)
 TRANSITION valid, no errors, drive (powered) in standstill FROM Step_Error_DriveReset TO Step_Enabled:=
 (* @LANGUAGE := 'st' *)
+// Min hold time
+tmrDriveReset.Q AND
+(
 // Valid status (allow the couple axis warnings), and no errors,
 // and drive in enabled and in standstill
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_STANDSTILL
-
+)
 
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Enabled' *)
 TRANSITION valid, no errors, drive disabled FROM Step_Error_DriveReset TO Step_Disabled:=
 (* @LANGUAGE := 'st' *)
+// Min hold time
+tmrDriveReset.Q AND
+(
 // Valid status (allow the couple axis warnings), and no errors,
 // and drive in disabled
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_DISABLED
-
-
+)
 END_TRANSITION
 (* @SFCISJUMP := 'Step_Disabled' *)
 TRANSITION Mode problem FROM Step_Enabled TO Step_Disabled:=
@@ -849,10 +1009,10 @@ END_TRANSITION
 TRANSITION valid axis, engage as a slave FROM Step_Enabled TO Step_EngageReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and engaged as a slave
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_EngageReq' *)
@@ -869,7 +1029,7 @@ STEP Step_EngageReq:
 // NOTE: It is probably the case for coordinated moves that the slave be engaged as a move permissive for the master, so the above requests should probably stop the master.
 
 // Check positive and negative move permissives and allowable position range
-ActionChkPermissiveEngagedSlave;
+ActionChkPermissiveCoupling;
 
 // If a move is allowed, allow the axis to be engaged as a slave, otherwise don't
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -909,13 +1069,13 @@ END_TRANSITION
 (* @SFCISJUMP := 'Step_Ignore_Axis' *)
 TRANSITION Invalid status FROM Step_EngageReq TO Step_Disengage:=
 (* @LANGUAGE := 'st' *)
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_ACTIVATION OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_NULL OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_INVALID OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CHANGED OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_CORRUPT OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_MPLINK_IN_USE OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PAR_NULL
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_ACTIVATION OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_NULL OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_INVALID OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CHANGED OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_CORRUPT OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_MPLINK_IN_USE OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PAR_NULL
 
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disengage' *)
@@ -931,28 +1091,28 @@ END_TRANSITION
 TRANSITION valid and global or axis disable req FROM Step_EngageReq TO Step_Disengage:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and global or axis disable req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 (ax.Commands.DisableReq OR gMotionCommands.DisableReq)
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disengage' *)
 TRANSITION Disengaged as slave FROM Step_EngageReq TO Step_Disengage:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors, but not in sync motion any more
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_Disengage' *)
 TRANSITION valid but error FROM Step_EngageReq TO Step_Disengage:=
 (* @LANGUAGE := 'st' *)
 // Axis is valid, but there are errors
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 END_TRANSITION
@@ -992,10 +1152,10 @@ END_TRANSITION
 TRANSITION valid, home req FROM Step_Enabled TO Step_HomeReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and home req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.HomeReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_HomeReq' *)
@@ -1027,8 +1187,8 @@ END_ACTION
 TRANSITION error FROM Step_HomeReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1073,8 +1233,8 @@ END_ACTION
 TRANSITION error FROM StepHoming TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1083,10 +1243,10 @@ END_TRANSITION
 TRANSITION Homed FROM StepHoming TO Step_Homed:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), homed, and no errors and disabled or standstill
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Status.IsHomed AND
 (ax.Status.PlcOpenState = mcAXIS_DISABLED OR
 ax.Status.PlcOpenState = mcAXIS_STANDSTILL)
@@ -1122,10 +1282,10 @@ TRANSITION valid, jog req FROM Step_Enabled TO Step_JogReq:=
 // Velocity move or jog positive limit or jog negative limit used in place of jog
 FALSE
 // Valid status (allow the couple axis warnings), no errors and jog req
-// (ax.statusFpMpAxisBasic.AxisError = mcAXIS_NO_ERROR OR
-// ax.statusFpMpAxisBasic.AxisError = mcAXIS_WRN_PLC_OPEN OR
-// ax.statusFpMpAxisBasic.AxisError = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-// NOT ax.statusFpMpAxisBasic.Error AND
+// (ax.fbMpAxisBasic.Info.Diag.AxisError = mcAXIS_NO_ERROR OR
+// ax.fbMpAxisBasic.Info.Diag.AxisError = mcAXIS_WRN_PLC_OPEN OR
+// ax.fbMpAxisBasic.Info.Diag.AxisError = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+// NOT ax.fbMpAxisBasic.Info.Diag.Error AND
 // ax.Commands.MoveJogReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_JogReq' *)
@@ -1135,6 +1295,11 @@ STEP Step_JogReq:
 // Preserve the other move commands.  Other move requests will cause a state change.
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
+
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
 
 // Use the move parameter position limits, accel, decel and jerk for the jog
 // This way, the application can worry about these values in the 
@@ -1154,6 +1319,8 @@ MACM_VELOCITY_MOVE_MASK + MACM_RELATIVE_MOVE_MASK + MACM_ABSOLUTE_MOVE_MASK + MA
 
 // Check move permissives -- move of undefined length
 ActionChkPermissiveContinuous;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1204,12 +1371,13 @@ ax.Commands.MoveJogCmd:= FALSE;
 // falling edge of the command. Unexpected, but not necessarily incorrect
 // behavior may result when one command is not ended before another starts.
 ActionCallMotionFunctions;
+
 END_ACTION
 TRANSITION error FROM Step_JogReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1232,9 +1400,9 @@ TRANSITION no jog req or other move req FROM Step_JogReq TO Step_Enabled:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog req goes away
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (NOT ax.Commands.MoveJogReq OR
 ax.Commands.DisableReq OR
 ax.Commands.MoveJogPositiveReq OR
@@ -1247,10 +1415,10 @@ END_TRANSITION
 TRANSITION valid, jog pos limit req FROM Step_Enabled TO Step_JogPosLimitReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog positive req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.MoveJogPositiveReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_JogPosLimitReq' *)
@@ -1260,6 +1428,11 @@ STEP Step_JogPosLimitReq:
 // Preserve the other move commands.  Other move requests will cause a state change.
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
+
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
 
 // Use the move parameter position limits, accel, decel and jerk for the jog
 // This way, the application can worry about these values in the 
@@ -1279,6 +1452,8 @@ MACM_VELOCITY_MOVE_MASK + MACM_RELATIVE_MOVE_MASK + MACM_ABSOLUTE_MOVE_MASK + MA
 
 // Check move permissives -- move of undefined length
 ActionChkPermissiveContinuous;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1329,13 +1504,12 @@ ax.Commands.MoveJogPositiveReq:= FALSE;
 // behavior may result when one command is not ended before another starts.
 ActionCallMotionFunctions;
 
-
 END_ACTION
 TRANSITION error FROM Step_JogPosLimitReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1358,9 +1532,9 @@ TRANSITION No jog pos limit req or othe rmove req FROM Step_JogPosLimitReq TO St
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog req goes away
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (NOT ax.Commands.MoveJogPositiveReq OR
 ax.Commands.DisableReq OR
 ax.Commands.MoveJogReq OR
@@ -1373,10 +1547,10 @@ END_TRANSITION
 TRANSITION valid, jog neg limit req FROM Step_Enabled TO Step_JogNegLimitReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog negative req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.MoveJogNegativeReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_JogNegLimitReq' *)
@@ -1386,6 +1560,11 @@ STEP Step_JogNegLimitReq:
 // Preserve the other move commands.  Other move requests will cause a state change.
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
+
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
 
 // Use the move parameter position limits, accel, decel and jerk for the jog
 // This way, the application can worry about these values in the 
@@ -1405,6 +1584,8 @@ MACM_VELOCITY_MOVE_MASK + MACM_RELATIVE_MOVE_MASK + MACM_ABSOLUTE_MOVE_MASK + MA
 
 // Check move permissives -- move of undefined length
 ActionChkPermissiveContinuous;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1455,13 +1636,12 @@ ax.Commands.MoveJogNegativeReq:= FALSE;
 // behavior may result when one command is not ended before another starts.
 ActionCallMotionFunctions;
 
-
 END_ACTION
 TRANSITION error FROM Step_JogNegLimitReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1484,9 +1664,9 @@ TRANSITION No jog neg limit req or othe rmove req FROM Step_JogNegLimitReq TO St
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog req goes away
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (NOT ax.Commands.MoveJogNegativeReq OR
 ax.Commands.DisableReq OR
 ax.Commands.MoveJogReq OR
@@ -1499,10 +1679,10 @@ END_TRANSITION
 TRANSITION valid, move velocity FROM Step_Enabled TO Step_MoveVelocityReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog negative req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.MoveVelocityReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_MoveVelocityReq' *)
@@ -1513,6 +1693,11 @@ STEP Step_MoveVelocityReq:
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
 
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
+
 // Set the request mask for those requests we know we want to honor.
 // This move may or may not be allowed, but since it is a jog, it the request should be maintained,
 // and a stop/halt/move/ or other reqeest will clear it.
@@ -1521,6 +1706,8 @@ MACM_RELATIVE_MOVE_MASK + MACM_ABSOLUTE_MOVE_MASK + MACM_STOP_MASK + MACM_HALT_M
 
 // Check move permissives -- move of undefined length
 ActionChkPermissiveContinuous;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1571,13 +1758,12 @@ ax.Commands.MoveVelocityReq:= FALSE;
 // behavior may result when one command is not ended before another starts.
 ActionCallMotionFunctions;
 
-
 END_ACTION
 TRANSITION error FROM Step_MoveVelocityReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1596,13 +1782,13 @@ tmrModeMismatch.Q OR
 ax.Commands.HaltReq OR gMotionCommands.HaltReq
 END_TRANSITION
 (* @SFCISJUMP := 'Step_HaltReq' *)
-TRANSITION no vel req other move req FROM Step_MoveVelocityReq TO Step_Enabled:=
+TRANSITION no vel req or other move req FROM Step_MoveVelocityReq TO Step_Enabled:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and vel req goes away
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (NOT ax.Commands.MoveVelocityReq OR
 ax.Commands.DisableReq OR
 ax.Commands.MoveJogReq OR
@@ -1615,10 +1801,10 @@ END_TRANSITION
 TRANSITION valid, move rel req FROM Step_Enabled TO Step_MoveRelativeReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog negative req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.MoveRelativeReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_MoveRelativeReq' *)
@@ -1629,6 +1815,11 @@ STEP Step_MoveRelativeReq:
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
 
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
+
 // Set the request mask for those requests we know we want to honor.
 // This move may or may not be allowed, but the request has already been honored, so it can be cleared.
 reqMask := MACM_DISABLE_MASK + MACM_JOG_MASK + MACM_JOG_POSITIVE_MASK + MACM_JOG_NEGATIVE_MASK +
@@ -1636,6 +1827,8 @@ MACM_VELOCITY_MOVE_MASK + MACM_ABSOLUTE_MOVE_MASK + MACM_STOP_MASK + MACM_HALT_M
 
 // Check move permissives
 ActionChkPermissiveRel;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1687,13 +1880,12 @@ ax.Commands.MoveRelativeReq:= FALSE;
 // behavior may result when one command is not ended before another starts.
 ActionCallMotionFunctions;
 
-
 END_ACTION
 TRANSITION error FROM Step_MoveRelativeReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1716,9 +1908,9 @@ TRANSITION move done or other move req FROM Step_MoveRelativeReq TO Step_Enabled
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and move is done
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (ax.Status.IsMoveDone AND ax.Status.PlcOpenState = mcAXIS_STANDSTILL) OR
 (ax.Commands.DisableReq OR
 ax.Commands.MoveJogReq OR
@@ -1731,10 +1923,10 @@ END_TRANSITION
 TRANSITION valid, abs move req FROM Step_Enabled TO Step_MoveAbsoluteReq:=
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and jog negative req
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
-NOT ax.statusFpMpAxisBasic.Error AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+NOT ax.fbMpAxisBasic.Error AND
 ax.Commands.MoveAbsoluteReq
 END_TRANSITION
 (* @SFCNOJUMP := 'Step_MoveAbsoluteReq' *)
@@ -1745,6 +1937,11 @@ STEP Step_MoveAbsoluteReq:
 // Preserve the halt, stop, and disable requests.
 ax.Commands.EnableCmd := TRUE;
 
+// Initially clear the move not allowed bit. This may get set by any number of 
+// permissive check actions. The move will be not allowed and/or stopped if it is
+// set true
+ax.Commands.MoveNotAllowed := FALSE;
+
 // Set the request mask for those requests we know we want to honor.
 // This move may or may not be allowed, but the request has already been honored, so it can be cleared.
 reqMask := MACM_DISABLE_MASK + MACM_JOG_MASK + MACM_JOG_POSITIVE_MASK + MACM_JOG_NEGATIVE_MASK +
@@ -1752,6 +1949,8 @@ MACM_VELOCITY_MOVE_MASK + MACM_RELATIVE_MOVE_MASK + MACM_STOP_MASK + MACM_HALT_M
 
 // Check move permissives
 ActionChkPermissiveAbs;
+// Check coupling permissives
+ActionChkPermissiveCoupling;
 
 // If the move is allowed, set the command, otherwise clear it
 IF NOT ax.Commands.MoveNotAllowed THEN
@@ -1802,8 +2001,8 @@ END_ACTION
 TRANSITION error FROM Step_MoveAbsoluteReq TO Step_Error_Stop:=
 (* @LANGUAGE := 'st' *)
 // Valid status, but an error
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 
@@ -1826,9 +2025,9 @@ TRANSITION move done or other move req FROM Step_MoveAbsoluteReq TO Step_Enabled
 (* @LANGUAGE := 'st' *)
 // Valid status (allow the couple axis warnings), no errors and move is done
 // or another move request comes in. Note stop and halt are handled separately.
-(ax.statusFpMpAxisBasic.StatusId = mcAXIS_NO_ERROR OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_PLC_OPEN OR
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_WRN_MULTIPLE_COMMAND) AND
+(ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_NO_ERROR OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_PLC_OPEN OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_WRN_MULTIPLE_COMMAND) AND
 (ax.Status.IsMoveDone AND ax.Status.PlcOpenState = mcAXIS_STANDSTILL) OR
 (ax.Commands.DisableReq OR
 ax.Commands.MoveJogReq OR
@@ -1841,8 +2040,8 @@ END_TRANSITION
 TRANSITION valid but error FROM Step_AxisValid_Check TO Step_Error_DrvRstWait:=
 (* @LANGUAGE := 'st' *)
 // Axis is valid, but there are errors
-ax.statusFpMpAxisBasic.StatusId = mcAXIS_ERR_PLC_OPEN OR
-ax.statusFpMpAxisBasic.Error OR
+ax.fbMpAxisBasic.Info.Diag.StatusID.ID = mcAXIS_ERR_PLC_OPEN OR
+ax.fbMpAxisBasic.Error OR
 ax.Status.PlcOpenState = mcAXIS_ERRORSTOP OR
 ax.Status.PlcOpenState = mcAXIS_INVALID_CONFIGURATION
 

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version="4.10.3.60 SP"?>
+<?AutomationStudio Version="4.11.2.75"?>
 <ProjectSettings xmlns="http://br-automation.co.at/AS/ProjectSettings">
-  <ConfigurationManager ActiveConfigurationName="EchCm_P3" />
+  <ConfigurationManager ActiveConfigurationName="EchCm_AM" />
   <Deployment Value="ActiveCpu" />
-  <ExportProject ExportFilePath="Z:\software\echWaveguide\automationStudio\305841_E00002_Rev0.zip" />
+  <ExportProject ExportFilePath="Z:\software\echWaveguide\automationStudio\305841_E00002_AM_Rev0.zip" />
   <Print Footer="%cPage: %p" Header="%lProject: %n%c%x" />
 </ProjectSettings>

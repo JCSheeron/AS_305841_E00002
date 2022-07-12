@@ -41,7 +41,7 @@ FUNCTION_BLOCK fbHomeAbsSeq
         _I_Axis.MoveParameters.HomeParams.Mode := mcHOMING_DIRECT;
       ELSE
         //. The non-virtual axis case
-        _I_Axis.MoveParameters.HomeParams.Mode := mcHOMING_ABSOLUTE;
+        _I_Axis.MoveParameters.HomeParams.Mode := mcHOMING_DIRECT;
       END_IF;
       
       _I_Axis.MoveParameters.HomeParams.Position := _I_Position;
@@ -129,24 +129,55 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
   
   // Update coupling params if a slave axis is designated for this axis. 
   // The slave need not be engaged. The engage/disengage, gear, and shfit requests are handled later.
-  IF _I_Axis.CouplingParameters.SlaveAxisNo <> GAMOT_ASMS_INITIAL THEN
-    _I_Axis.CouplingParameters.RatioNumerator := _I_HmiAxisReq.GearRatioNumerator;
-    _I_Axis.CouplingParameters.RatioDenominator := _I_HmiAxisReq.GearRatioDenominator;
-    // Gear, Gear In Pos, Offset Shift and Phase shift all use the slave accel/decel values,
+  // These parameters are loaded from the HMI values here, ahead of the request, such that
+  // an HMI change can be detected and acted on below (gear change for example).
+  IF _I_Axis.CouplingParameters.SlaveAxisNo <> 0 THEN
+    // Load the params. Use values from the HMI structure when available
+    
+    // *** Gear In Params
+    _I_Axis.CouplingParameters.GearInRatioNumerator := _I_HmiAxisReq.gearRatioNumerator;
+    _I_Axis.CouplingParameters.GearInRatioDenominator := _I_HmiAxisReq.gearRatioDenominator;
+    _I_Axis.CouplingParameters.GearInMasterValueSource := mcVALUE_SET;
+    _I_Axis.CouplingParameters.GearInBufferMode := mcABORTING;
+    // Gear In,Offset Shift and Phase shift all use the slave accel/decel values,
     // so make sure the values are set in the coupling params structure
-    // Set to 0.0 to use slave max
-    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.Acceleration; // Use slave axis accel/decel
-    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.Deceleration;
-    // Set shift & offset related values
-    _I_Axis.CouplingParameters.Shift := _I_HmiAxisReq.shiftDistance;
+    _I_Axis.CouplingParameters.ShiftAccelerationMax := _I_SlaveAxis.MoveParameters.AccelMax; // slave accel. Set to 0.0 to use slave max
+    _I_Axis.CouplingParameters.ShiftDecelerationMax := _I_SlaveAxis.MoveParameters.DecelMax; // slave decel. Set to 0.0 to use slave max
+    _I_Axis.CouplingParameters.ShiftJerk := 0.0; // non-zero only supported with McProfGen
+    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // _I_Axis.MoveParameters.VelocityMax; // Allow master max velocity
+    
+    // *** Cam params
+    // _I_Axis.CouplingParameters.CamIsPeriodic := FALSE; // TODO: Bring to UI
+    _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.camId;
+    // Allow different cams to have different scaling
+    // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example
+    IF _I_Axis.CouplingParameters.CamId = 1 THEN
+      // Cam table in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    ELSE
+      // Assume Cam table is in units of degrees, and resolution is 0.001 for both axes
+      _I_Axis.CouplingParameters.CamScalingMaster := 1000;
+      _I_Axis.CouplingParameters.CamScalingSlave := 1000;
+    END_IF;
+    // mcCAM_START_DIRECT: Start the cam using the current position of the master and slave.
+    // Use the master offset to set how far into the cam until starting takes place
+    // Slave offset is not used
+    _I_Axis.CouplingParameters.CamStartMode := mcCAM_START_DIRECT;
+    _I_Axis.CouplingParameters.CamMasterOffset := _I_HmiAxisReq.camMasterOffset;
+    _I_Axis.CouplingParameters.CamSlaveOffset := _I_HmiAxisReq.camSlaveOffset;
+    // TODO: Actual or set point??
+    // _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_ACTUAL;
+    _I_Axis.CouplingParameters.CamMasterValueSource := mcVALUE_SET;
+    _I_Axis.CouplingParameters.CamBufferMode := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    
+    // *** Shift & offset related values
+    // accel, decel, jerk and base max vel set above
+    _I_Axis.CouplingParameters.Shift := _I_HmiAxisReq.shiftDistance; // slave shift distance
     _I_Axis.CouplingParameters.ShiftVelocityMax := _I_SlaveAxis.MoveParameters.VelocityMax; // Use slave max velocity
-    // accel set above
-    // cmd independent activation is set false in fctPackMpAxisCouplingParams
-    // shift mode will be set by below base on which request is made
-    _I_Axis.CouplingParameters.ShiftProfileBaseMaxVelocity := 0.0; // Use master axis max velocity
+    // use shift profile distance with mcPROFBASE_MASTER_DISTANCE profile base
     _I_Axis.CouplingParameters.ShiftProfileDistance :=  _I_HmiAxisReq.shiftProfileDistance; // master distance over which to perform the shift
-    // non-zero jerk not supported for this -- set to zero in fctPackMpAxisCouplingParams
-    // no alternate values used. -- set to not used in fctPackMpAxisCouplingParams
+
   END_IF;
   
   IF _I_HmiAxisReq.moveReq THEN
@@ -196,92 +227,133 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_HmiAxisReq.moveDesignation := GAMOT_MD_NO_MOVE_COMMANDED;
   END_IF;
   
-  // Handle a coupling or decoupling (gear in) request.
-  // The gear in is level sensitive, so there is a engage and disengage req
-  // Only allow coupling if the slave allows it
-  IF _I_HmiAxisReq.disengageSlaveReq THEN
-    // turn off gearing, block the engage req, and clear the disengage req
-    _I_Axis.CouplingParameters.GearInCmd := FALSE;
-    _I_HmiAxisReq.engageSlaveReq := FALSE;
-    _I_HmiAxisReq.disengageSlaveReq := FALSE;
-  ELSIF _I_HmiAxisReq.engageSlaveReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
-    // turn on gearing and clear the request
-    _I_Axis.CouplingParameters.GearInCmd := TRUE;
-    _I_HmiAxisReq.engageSlaveReq := FALSE;
-  ELSIF _I_HmiAxisReq.engageSlaveReq AND NOT _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
-    // Request made, but not allowed by slave.
+  // Handle a coupling or decoupling (gear in or cam in) request.
+  // Only allow coupling if a slave is designated and the slave allows it
+  // Decouple on request as long as there is a slave designated.
+  IF _I_Axis.CouplingParameters.SlaveAxisNo = 0 THEN
+    // No slave designated
     // Clear the request
-    _I_HmiAxisReq.engageSlaveReq := FALSE;
+    _I_HmiAxisReq.gearInReq := FALSE;
+    _I_HmiAxisReq.camInReq := FALSE;
+  // Slave must be designated to get past this, so no need to keep checking
+  ELSIF _I_SlaveAxis.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
+        (_I_HmiAxisReq.disengageSlaveReq OR NOT _I_SlaveAxis.CouplingParameters.CouplingPermissive) THEN
+    // Slave is coupled, but disengage slave request or coupling not allowed. 
+    // Turn off gearing, caming, block the engage reqs, and clear the disengage req
+    _I_Axis.CouplingParameters.GearOutReq := TRUE;
+    _I_Axis.CouplingParameters.CamOutReq := TRUE;
+    _I_HmiAxisReq.gearInReq := FALSE;
+    _I_HmiAxisReq.camInReq := FALSE;
+    _I_HmiAxisReq.disengageSlaveReq := FALSE;
+  ELSIF _I_HmiAxisReq.gearInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
+    // Gear in requested and allowed.
+    // Turn on gearing and clear the requst
+    _I_Axis.CouplingParameters.GearInReq := TRUE;
+    _I_HmiAxisReq.gearInReq := FALSE;
+    // make sure the cam req is cleared
+    _I_Axis.CouplingParameters.CamInReq := FALSE;
+  ELSIF _I_HmiAxisReq.camInReq AND _I_SlaveAxis.CouplingParameters.CouplingPermissive THEN
+    // Cam in requested and allowed
+    // Turn on caming and clear the requst
+    _I_Axis.CouplingParameters.CamInReq := TRUE;
+    _I_HmiAxisReq.camInReq := FALSE;
+    // make sure the gear in req is cleared
+    _I_Axis.CouplingParameters.GearInReq := FALSE;
   END_IF;    
   
   // Handle a offset or phase shift request
   // Only one at a time, so both handled by this conditional
-  // Contrary to the documentation, the shift cmds EDGE sensitive, NOT level sensitive.
-  // Even though the cmd could be pulsed, I am keeping the command while active, however,
-  // because there is no "shift in progress bit". The maintianed cmd allows this to be
-  // derrived between the command and shift complete.
-  // Cancel the reqs and cmds if requested, or if the master isn't moving, or if the slave is not coordinated,
-  // or if the shift amount is zero, or the profile (master) distance is zero,
-  // or if offset or phasing is done.
+  // Cancel the reqs if the master isn't moving, or if the slave is not coordinated,
+  // or if the shift amount is zero, or the profile (master) distance is being used but is set to zero,
+  // or a phase or offset shift is in progress
   
-  // request
-  IF  _I_HmiAxisReq.endShiftReq OR
-      // master not moving or slave not coordinated
+  IF // master not moving or slave not coordinated
       NOT _I_Axis.Status.IsMoveActive OR
-      NOT _I_Axis.Status.IsCoordInSync OR
-      // Zero shift distances
-      _I_HmiAxisReq.shiftDistance = 0.0 OR
-      _I_HmiAxisReq.shiftProfileDistance = 0.0 OR
-      // Offset done
-        (_I_Axis.CouplingParameters.OffsetShiftCmd AND
-         _I_Axis.fbMpAxisCoupling.Info.Diag.ExecutingCommand = mcAXIS_CMD_OFFSET_SHIFT AND
-         _I_Axis.fbMpAxisCoupling.OffsetDone) OR
-      // Phase shift done
-        (_I_Axis.CouplingParameters.PhaseShiftCmd AND
-         _I_Axis.fbMpAxisCoupling.Info.Diag.ExecutingCommand = mcAXIS_CMD_PHASE_SHIFT AND
-         _I_Axis.fbMpAxisCoupling.PhasingDone)
-  THEN
+      NOT _I_Axis.Status.IsGearInSync OR
+      // Zero relative shift distance requested
+      ((_I_HmiAxisReq.offsetShiftReq OR _I_HmiAxisReq.phaseShiftReq) AND _I_HmiAxisReq.shiftType = 0 AND _I_HmiAxisReq.shiftDistance = 0.0) OR
+      // zero out position offset to master, but position offset is zero
+      (_I_HmiAxisReq.offsetShiftToMasterPosReq AND ABS(_I_SlaveAxis.Status.CalculatedPosition1) < _I_ToleranceZeroDepth) OR
+      // master distance profile base and zero profile distance
+      (_I_HmiAxisReq.shiftOverMasterDistance AND
+       _I_HmiAxisReq.shiftProfileDistance = 0.0) OR
+       // a shift is active
+       _I_Axis.fbOffsetShift.ShiftStarted OR
+       _I_Axis.fbPhaseShift.ShiftStarted THEN
     // Turn off shifting, block the shift reqs, and clear the end req
-    _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
-    _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
-    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_HmiAxisReq.endShiftReq := FALSE;
-  ELSIF _I_HmiAxisReq.offsetShiftRelReq AND NOT _I_Axis.CouplingParameters.OffsetShiftCmd THEN
-    // New request
+    _I_HmiAxisReq.offsetShiftReq := FALSE;
+    _I_HmiAxisReq.offsetShiftToMasterPosReq := FALSE;
+    _I_HmiAxisReq.phaseShiftReq := FALSE;
+  ELSIF _I_HmiAxisReq.offsetShiftReq OR _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
+    // New offset request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
-    // We want to offset the slave relative to the master, so set the mode to relative
-    _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
-    // We want to perform the shift based on the master moving a distance
-    _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
-    // All params should be set. Set the command and clear the request
-    _I_Axis.CouplingParameters.OffsetShiftCmd := TRUE;
-    _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    // Don't allow a phase shift if an offset shift is requested.
-    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
-  ELSIF _I_HmiAxisReq.offsetShiftRelReq AND _I_Axis.CouplingParameters.OffsetShiftCmd THEN
-    // Must not allow a request while a shift is active.
-    // Clear the command and request.
-    _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-     _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
-    // Don't allow a phase shift if an offset shift is requested.
-    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.PhaseShiftCmd := FALSE;
-  ELSIF _I_HmiAxisReq.phaseShiftRelReq THEN
+    
+    // Look at the shift type to determine absolute or relative
+    IF _I_HmiAxisReq.shiftType = 0 OR _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
+      // relative
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
+    ELSIF _I_HmiAxisReq.shiftType = 1 THEN
+      // absolute
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_ABSOLUTE_NO_RESET;
+    ELSE // catch-all -- use relative
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
+    END_IF;
+    
+    // Look at the shift over master distance option to determine profile base type
+    IF _I_HmiAxisReq.shiftOverMasterDistance THEN
+      // We want to perform the shift over a specified master distance
+      _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
+    ELSE
+      // We want to perform the shift based on the master speed and position at the time the shift was triggered
+      _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_POSITION;
+    END_IF;
+
+    // If requesting to shift back to master position, then overwrite the shift amount
+    // by the opposite of the axis offset.
+    IF _I_HmiAxisReq.offsetShiftToMasterPosReq THEN
+      _I_HmiAxisReq.shiftDistance := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
+      _I_Axis.CouplingParameters.Shift := -1.0 * _I_SlaveAxis.Status.CalculatedPosition1;
+    END_IF;
+
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.OffsetShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
+    _I_HmiAxisReq.offsetShiftReq := FALSE;
+    _I_HmiAxisReq.offsetShiftToMasterPosReq := FALSE;
+    _I_HmiAxisReq.phaseShiftReq := FALSE;
+  ELSIF _I_HmiAxisReq.phaseShiftReq THEN
+    // New phase shift request
     // The non request specific params in the coupling structure were set above.
     // Here we need to handle request specific stuff
-    // We want to offset the slave relative to the master, so set the mode to relative
-    _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
-    // We want to perform the shift based on the master moving a distance
-    _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
-    // All params should be set. Set the command and clear the request
-    _I_Axis.CouplingParameters.PhaseShiftCmd := TRUE;
-    _I_HmiAxisReq.phaseShiftRelReq := FALSE;
-    // Don't allow an offset shift if a phase shift is requested.
-    _I_HmiAxisReq.offsetShiftRelReq := FALSE;
-    _I_Axis.CouplingParameters.OffsetShiftCmd := FALSE;
+    
+    // Look at the shift type to determine absolute or relative
+    // If the request is to shoft to the master position, then use relative
+    IF _I_HmiAxisReq.shiftType = 0 THEN
+      // relative
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
+    ELSIF _I_HmiAxisReq.shiftType = 1 THEN
+      // absolute
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_ABSOLUTE_NO_RESET;
+    ELSE // catch-all -- use relative
+      _I_Axis.CouplingParameters.ShiftMode := mcSHIFT_RELATIVE_NO_RESET;
+    END_IF;
+    
+    // Look at the shift over master distance option to determine profile base type
+    IF _I_HmiAxisReq.shiftOverMasterDistance THEN
+      // We want to perform the shift over a specified master distance
+      _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_DISTANCE;
+    ELSE
+      // We want to perform the shift based on the master speed and position
+      _I_Axis.CouplingParameters.ShiftProfileBase := mcPROFBASE_MASTER_POSITION;
+    END_IF;
+
+    
+    // All params should be set. Set the request in the coupling structure and clear the hmi reqs
+    _I_Axis.CouplingParameters.PhaseShiftReq := TRUE;
+    // turn off the offset and phase shift hmi requests
+    _I_HmiAxisReq.offsetShiftReq := FALSE;
+    _I_HmiAxisReq.phaseShiftReq := FALSE;
   END_IF;
   
   // Handle home requests
@@ -393,76 +465,81 @@ FUNCTION_BLOCK fbUpdateBasicParams
   END_IF;
 END_FUNCTION_BLOCK
 
-// Given an axis structure, set the coupling parameter fb Update bit
-// if any of the parameters have changed.
-// Update the previous values and clear the fb Update bit once the UpdateDone bit is true.
-// A change is detected by comparing the .CouplingParameters and the .CouplingParametersPrev
-// member structures for inequality.
-// Note that the entire structure is not compared -- only the part that deals with actual
-// coupling parameters getting sent to hte MpAxisCoupling fb is used for comparison, while the 
-// command bits and slave number are beyond the scope of this update.
-FUNCTION_BLOCK fbUpdateCouplingParams
-  // Use the OS to control the execution
-  // Set the OS once a change is made until the update is done, then clear the OS
-  IF NOT updateOS THEN
-    // Get the addresses and size up front -- more efficient if values are different
-    // and need updating.
-    // Get size and addresses if not yet set
-    // IF size = 0 THEN
-    // start of where we want to consider for updates
-    pParamsStart := ADR(_I_Axis.CouplingParameters.RatioNumerator);
-    // end is where the next thing in memory would start. Account for the size of the last thing
-    pParamsEnd := ADR(_I_Axis.CouplingParameters.ShiftJerk) + SIZEOF(_I_Axis.CouplingParameters.ShiftJerk);
-    // size is the difference between start and end
-    size:= pParamsEnd - pParamsStart;
-    // previous values should start at the same element as the current values
-    pParamsPrev := ADR(_I_Axis.CouplingParametersPrev.RatioNumerator);
-    //END_IF;
-        
-    // See if the member structures are the same. Result will be 0 if they are the same.
-    result := brsmemcmp(pParamsPrev,pParamsStart,size);
-    IF result <> 0 THEN
-      // Set the OS -- we don't need to check or copy memory again until update is done.
-      updateOS := TRUE;
-      // Change detected.
-      // Set the update bit
-      _I_Axis.fbMpAxisCoupling.Update := TRUE;
-    END_IF;
-  ELSIF updateOS THEN
-    // If the OS is high, an update has at least been requested.  Now look for
-    // the update done bit. Update the previous values and clear the update and 
-    // OS once the done bit is high. Keep the previous value until the end in case
-    // their values are helpful during the update.
-    IF _I_Axis.fbMpAxisCoupling.UpdateDone THEN
-      // Update is done. Update the previous values, and clear the request and OS.
-      nxtAddr := brsmemcpy(pParamsPrev,pParamsStart,size);
-      _I_Axis.fbMpAxisCoupling.Update := FALSE;
-      updateOS := FALSE;
-    END_IF;
-  END_IF;
-END_FUNCTION_BLOCK
 
 // Calcualte the encoder offset needed for absolute home mode
 FUNCTION fctCalcAbsHomeOffset
   fctCalcAbsHomeOffset := _I_DesiredPos - _I_CurrentPos + _I_SetZeroOffset;
 END_FUNCTION
-  
 
-// Check two coupling param structures for equality and return a boolean
-FUNCTION fctCheckEqCouplingParams
-  // Use the minimum size -- should be the becuase the two inputs are the same type
-  // Check for safety just in case the types change in the future
-  size := MIN(SIZEOF(_I_ParamsA),SIZEOF(_I_ParamsB));
-  // brsmemcmp returns 0 on equal and < or > 0 when not equal.
-  result := brsmemcmp(ADR(_I_ParamsA), ADR(_I_ParamsB), size);
-  // Return true on equal, false otherwise
-  IF result = 0 THEN
-    fctCheckEqCouplingParams := TRUE;
-  ELSE
-    fctCheckEqCouplingParams := FALSE;
-  END_IF;
+// Check CamIn params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqCamInParams
+    // This will test the cam in section for equality against the previous values.
+    
+    // First check the cam in section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginCamInSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endCamInSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginCamInSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+
+    // If parameter change has been detected, return false.
+    fctCheckEqCamInParams := (result = 0);
+
 END_FUNCTION
 
+
+// Check GearIn params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqGearInParams
+    // This will test the gear in section and the shift common section for equality
+    // against the previous values.
+    
+    // First check the gear in section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginGearInSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endGearInSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginGearInSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    // If parameter change has been detected, return  false, and no need to go any further.
+    // Otherwise check the shift common section
+    IF result <> 0 THEN
+      fctCheckEqGearInParams := FALSE;
+      RETURN;
+    ELSE
+      // If we get here, the first check was equal.
+      // Get the start of the shift common params where we want to consider for updates
+       pParamsStart := ADR(_I_ParamsA._beginShiftCommonSection);
+      // end is where the next thing in memory would start, in this case the end of the section boundary
+      pParamsEnd := ADR(_I_ParamsA._endShiftCommonSection);
+      // size is the difference between start and end
+      size:= pParamsEnd - pParamsStart;
+      // previous values should start at the same element as the current values. The previous values are the 
+      // same structure type, so the name of the starting element and the length are reused
+      pParamsPrev := ADR(_I_ParamsB._beginShiftCommonSection);
+      
+      // See if the member structures are the same. Result will be 0 if they are the same.
+      result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    END_IF;
+
+    // The first check was equal, and this section checks the second section. If the result is zero,
+    // no change is detected, and the params are equal.
+    fctCheckEqGearInParams := (result = 0);
+      
+
+END_FUNCTION
 
 // Check two move param structures for equality and return a boolean
 FUNCTION fctCheckEqMoveParams
@@ -472,12 +549,54 @@ FUNCTION fctCheckEqMoveParams
   // brsmemcmp returns 0 on equal and < or > 0 when not equal.
   result := brsmemcmp(ADR(_I_ParamsA), ADR(_I_ParamsB), size);
   // Return true on equal, false otherwise
-  IF result = 0 THEN
-    fctCheckEqMoveParams := TRUE;
-  ELSE
-    fctCheckEqMoveParams := FALSE;
-  END_IF;
+  fctCheckEqMoveParams := (result = 0);
 END_FUNCTION
+
+// Check Shift params for a change. Return a boolean, TRUE on no change (equal), FALSE on change (not equal)
+FUNCTION fctCheckEqShiftParams
+    // This will test the shift and the shift common sections for equality
+    // against the previous values.
+    
+    // First check the shift section
+    // Get the start of the gear in params where we want to consider for updates
+    pParamsStart := ADR(_I_ParamsA._beginShiftSection);
+    // end is where the next thing in memory would start, in this case the end of the section boundary
+    pParamsEnd := ADR(_I_ParamsA._endShiftSection);
+    // size is the difference between start and end
+    size:= pParamsEnd - pParamsStart;
+    // previous values should start at the same element as the current values. The previous values are the 
+    // same structure type, so the name of the starting element and the length are reused
+    pParamsPrev := ADR(_I_ParamsB._beginShiftSection);
+    
+    // See if the member structures are the same. Result will be 0 if they are the same.
+    result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    // If parameter change has been detected, return  false, and no need to go any further.
+    // Otherwise check the shift common section
+    IF result <> 0 THEN
+      fctCheckEqShiftParams := FALSE;
+      RETURN;
+    ELSE
+      // If we get here, the first check was equal.
+      // Get the start of the shift common params where we want to consider for updates
+       pParamsStart := ADR(_I_ParamsA._beginShiftCommonSection);
+      // end is where the next thing in memory would start, in this case the end of the section boundary
+      pParamsEnd := ADR(_I_ParamsA._endShiftCommonSection);
+      // size is the difference between start and end
+      size:= pParamsEnd - pParamsStart;
+      // previous values should start at the same element as the current values. The previous values are the 
+      // same structure type, so the name of the starting element and the length are reused
+      pParamsPrev := ADR(_I_ParamsB._beginShiftCommonSection);
+      
+      // See if the member structures are the same. Result will be 0 if they are the same.
+      result := brsmemcmp(pParamsPrev,pParamsStart,size);
+    END_IF;
+
+    // The first check was equal, and this section checks the second section. If the result is zero,
+    // no change is detected, and the params are equal.
+    fctCheckEqShiftParams := (result = 0);
+
+END_FUNCTION
+
 
 // Clear command bits in the _IO_sMot_Command parameter if the bit in the eMOT_AXIS_CMD_MASK input mask is clear
 FUNCTION fctClearMotionCommands
@@ -660,22 +779,6 @@ FUNCTION fctGetMpAxisInfo
   fctGetMpAxisInfo := TRUE;
 END_FUNCTION
 
-// Pack values stored in a MpAxisCouplingInfoType structure into a sMot_AxisStatus structure
-FUNCTION fctGetMpCouplingInfo
-  // This provides some flexability and opportunity for conversion/manipulation when using the sMot_AxisStatus
-  _IO_UdtStatus.IsCoordSlaveReady := _I_MpInfo.SlaveReady;
-  _IO_UdtStatus.IsCoordMasterReady := _I_MpInfo.MasterReady;
-  //_IO_UdtStatus.Cam := _I_MpInfo.Cam; // cam not used
-  _IO_UdtStatus.CoordActualOffsetShift := _I_MpInfo.ActualOffsetShift;
-  _IO_UdtStatus.CoordActualPhaseShift := _I_MpInfo.ActualPhaseShift;
-  //_IO_UdtStatus.GetCamPosition := _I_MpInfo.GetCamPosition; // cam not used
-  //_IO_UdtStatus.Recovery := _I_MpInfo.Recovery; // cam not used
-  _IO_UdtStatus.CoordAxisDiagnostics := _I_MpInfo.Diag;
-  // avoid warning for undefined return
-  fctGetMpCouplingInfo := TRUE;
-END_FUNCTION
-
-
 // Pack values stored in a sMot_MoveParameter structure into a MpAxisBasicParType structure 
 FUNCTION fctPackMpAxisBasicParams
   // This provides some flexability and opportunity for conversion/manipulation when using the sMot_MoveParameter
@@ -693,70 +796,6 @@ FUNCTION fctPackMpAxisBasicParams
   _IO_MpParams.Jerk := _I_UdtParams.MaxJerk;
   // avoid warning for undefined return
   fctPackMpAxisBasicParams := TRUE;
-END_FUNCTION
-
-// Pack values stored in a sMot_MoveParameter structure into a MpAxisCouplingParType structure 
-FUNCTION fctPackMpAxisCouplingParams
-  // This provides some flexability and opportunity for conversion/manipulation when using the sMot_CouplingParameters
-  _IO_MpParams.Gear.RatioNumerator := _I_UdtParams.RatioNumerator;
-  _IO_MpParams.Gear.RatioDenominator := _I_UdtParams.RatioDenominator;
-  _IO_MpParams.Gear.MasterValueSource := _I_UdtParams.MasterPositionSource;
-  _IO_MpParams.Gear.Acceleration := _I_UdtParams.ShiftAccelerationMax;
-  _IO_MpParams.Gear.Deceleration := _I_UdtParams.ShiftDecelerationMax;
-  _IO_MpParams.Gear.Jerk := 0.0; // Jerk not currently supported
-  _IO_MpParams.Gear.Options.MasterMaxVelocity := 0.0; // use limit of the master axis 
-  //_IO_MpParams.Cam := 0;   // caming not used.
-  _IO_MpParams.GearInPos.RatioNumerator := _I_UdtParams.RatioNumerator;
-  _IO_MpParams.GearInPos.RatioDenominator := _I_UdtParams.RatioDenominator;
-  _IO_MpParams.GearInPos.MasterValueSource := _I_UdtParams.MasterPositionSource;
-  _IO_MpParams.GearInPos.SlaveSyncPosition := _I_UdtParams.SlaveSyncPosition;
-  _IO_MpParams.GearInPos.SyncMode := _I_UdtParams.SyncMode;
-  _IO_MpParams.GearInPos.MasterStartDistance := _I_UdtParams.MasterStartDistance;
-  _IO_MpParams.GearInPos.Velocity := _I_UdtParams.ShiftVelocityMax;
-  _IO_MpParams.GearInPos.Acceleration := _I_UdtParams.ShiftAccelerationMax;
-  _IO_MpParams.GearInPos.Deceleration := _I_UdtParams.ShiftDecelerationMax;
-  _IO_MpParams.GearInPos.Jerk := 0.0; // Jerk not currently supported
-  _IO_MpParams.GearInPos.Options.MasterMaxVelocity := 0.0; // use limit of the master axis 
-  _IO_MpParams.Offset.CmdIndependentActivation := FALSE; // permit offset functionality to be enabled independently of OffsetShift cmd.
-  _IO_MpParams.Offset.Shift := _I_UdtParams.Shift;
-  _IO_MpParams.Offset.Velocity := _I_UdtParams.ShiftVelocityMax;
-  _IO_MpParams.Offset.Acceleration := _I_UdtParams.ShiftAccelerationMax;
-  _IO_MpParams.Offset.Options.ShiftMode := _I_UdtParams.ShiftMode;
-  _IO_MpParams.Offset.Options.ProfileBase := _I_UdtParams.ShiftProfileBase;
-  _IO_MpParams.Offset.Options.ProfileBaseMaxVelocity := _I_UdtParams.ShiftProfileBaseMaxVelocity;
-  _IO_MpParams.Offset.Options.DistanceParameters.ProfileDistance := _I_UdtParams.ShiftProfileDistance;
-  _IO_MpParams.Offset.Options.ZoneParameters.StartPosition := _I_UdtParams.ShiftZoneStartPosition;
-  _IO_MpParams.Offset.Options.ZoneParameters.EndPosition := _I_UdtParams.ShiftZoneEndPosition;
-  _IO_MpParams.Offset.Options.ZoneParameters.Period := _I_UdtParams.ShiftZonePeriod;
-  _IO_MpParams.Offset.Options.Jerk := 0.0; // must be 0 if not using McProfGen
-  _IO_MpParams.Offset.Options.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED; // alternate value src not used
-  _IO_MpParams.Phasing.CmdIndependentActivation := FALSE; // permit phasing functionality to be enabled independently of Phasing cmd.
-  _IO_MpParams.Phasing.Shift := _I_UdtParams.Shift;
-  _IO_MpParams.Phasing.Velocity := _I_UdtParams.ShiftVelocityMax;
-  _IO_MpParams.Phasing.Acceleration := _I_UdtParams.ShiftAccelerationMax;
-  _IO_MpParams.Phasing.Options.ShiftMode := _I_UdtParams.ShiftMode;
-  _IO_MpParams.Phasing.Options.ProfileBase := _I_UdtParams.ShiftProfileBase;
-  _IO_MpParams.Phasing.Options.ProfileBaseMaxVelocity := _I_UdtParams.ShiftProfileBaseMaxVelocity;
-  _IO_MpParams.Phasing.Options.DistanceParameters.ProfileDistance := _I_UdtParams.ShiftProfileDistance;
-  _IO_MpParams.Phasing.Options.ZoneParameters.StartPosition := _I_UdtParams.ShiftZoneStartPosition;
-  _IO_MpParams.Phasing.Options.ZoneParameters.EndPosition := _I_UdtParams.ShiftZoneEndPosition;
-  _IO_MpParams.Phasing.Options.ZoneParameters.Period := _I_UdtParams.ShiftZonePeriod;
-  _IO_MpParams.Phasing.Options.Jerk := 0.0; // must be 0 if not using McProfGen
-  _IO_MpParams.Phasing.Options.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED; // alternate value src not used
-  
-  // _IO_MpParams.GetCamPosition := 0; // camming not used
-  // _IO_MpParams.CamList := 0; // cammin not used
-  // recovery not used due to camming not being used
-  //_IO_MpParams.Recovery.Mode := _I_UdtParams.RecoveryMode;
-  //_IO_MpParams.Recovery.Velocity := _I_UdtParams.RecoveryVelocity;
-  //_IO_MpParams.Recovery.Acceleration := _I_UdtParams.RecoveryAcceleration;
-  // _IO_MpParams.Recovery.Deceleration := _I_UdtParams.RecoveryDeceleration;
-  //_IO_MpParams.Recovery.Jerk := _I_UdtParams.RecoveryJerk;
-  //_IO_MpParams.Recovery.Options.ToleranceWindow := _I_UdtParams.RecoveryToleranceWindow;
-  //_IO_MpParams.Recovery.Options.RestartPositionOffset := _I_UdtParams.RecoveryRestartPositionOffset;
-  
-  // avoid warning for undefined return
-  fctPackMpAxisCouplingParams := TRUE;
 END_FUNCTION
 
 

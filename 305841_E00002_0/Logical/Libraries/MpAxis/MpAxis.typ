@@ -55,6 +55,7 @@ TYPE
 		AutoTuneDone : BOOL;
 		AutoTuneQuality : REAL;
 		HardwareInfo : McHardwareInfoType;
+		AutoTuneState : McAutoTuneStateEnum; (* Status of the auto tune activity on the drive*)
 	END_STRUCT;
 	MpAxisDiagExtType : 	STRUCT 
 		StatusID : MpAxisStatusIDType; (*StatusID information*)
@@ -337,6 +338,7 @@ mcSWITCH_ON ... The direction of movement is not permitted to be changed during 
 		SaveControllerSettings : BOOL; (* When TRUE the successfully obtained controller settings will be save into axis configuration*)
 		LoopFilterMode : MpAxisAutoTuneLoopFilterModeEnum; (* Loop filter tuning mode*)
 		Options : MpAxisAutoTuneOptionsType; (*Tuning options*)
+		FeedForward : MpAxisAutoTuneFFOptionsType; (*Feed forward parameters*)
 	END_STRUCT;
 	MpAxisAutoTuneOptionsType : 	STRUCT 
 		MaxProportionalGain : REAL; (*Maximum proportional gain [As]*)
@@ -349,7 +351,8 @@ mcSWITCH_ON ... The direction of movement is not permitted to be changed during 
 		mcAXIS_TUNE_SPEED, (* Speed controller tuning*)
 		mcAXIS_TUNE_POSITION, (* Position controller tuning*)
 		mcAXIS_TUNE_TEST, (* Tests system stability*)
-		mcAXIS_TUNE_LOOP_FILTER (* Loop filter tuning*)
+		mcAXIS_TUNE_LOOP_FILTER, (* Loop filter tuning*)
+		mcAXIS_TUNE_FEED_FORWARD (*Feed forward tuning*)
 		);
 	MpAxisAutoTuneLoopFilterModeEnum : 
 		(
@@ -357,4 +360,16 @@ mcSWITCH_ON ... The direction of movement is not permitted to be changed during 
 		mcAXIS_TUNE_LOOP_FILTER_F1_F2, (*Tuning of filter 1 and 2 as a notch filter*)
 		mcAXIS_TUNE_LOOP_FILTER_F1_F2_F3 (*Tuning of filter 1, 2 and 3 as a notch filter*)
 		);
+	MpAxisAutoTuneFFOptionsType : 	STRUCT 
+		Mode : McAcpAxAutoTuneFeedFwdModeEnum := mcACPAX_TUNE_FF_MODE_STANDARD; (* Operating (identification) mode.*)
+		Direction : McDirectionEnum := mcDIR_POSITIVE; (* Selects the direction of the feed forward movement.
+Note:
+Only mcDIR_POSITIVE, mcDIR_NEGATIVE and mcDIR_BOTH are supported.*)
+		MaxVelocityPercent : REAL := 50.0; (* Percent of the velocity used during auto tuning [%].
+Default value: 50.0F
+Valid range: -100.0F .. +100.0F*)
+		Acceleration : REAL := 0.0; (* Acceleration which is used for the auto tuning. [Measurement units / s].
+Note:
+If "0.0F" is used the acceleration is adjusted during the tuning process using an iterative method. Because of this, the tuning process may take a longer time.*)
+	END_STRUCT;
 END_TYPE

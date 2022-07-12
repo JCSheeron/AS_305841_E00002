@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">axCfgOutE.axis</Object>
+    <Object Type="File">axCfgInE.axis</Object>
+    <Object Type="File">CamFeature.axisfeature</Object>
+    <Object Type="File">camlist1.camlist</Object>
+  </Objects>
+</Package>

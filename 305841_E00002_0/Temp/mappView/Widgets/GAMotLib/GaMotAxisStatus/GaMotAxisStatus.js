@@ -5,6 +5,7 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     /**
     * @class widgets.GAMotLib.GaMotAxisStatus
     * @extends system.widgets.CompoundWidget
+    * @requires widgets.GAGeneralLib.TitleLabelBindable
     * @requires widgets.brease.GroupBox
     * @requires widgets.brease.Label
     * @requires widgets.brease.NumericOutput
@@ -25,6 +26,13 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     * @iatStudioExposed 
     * @iatCategory Axis 
     * Axis Status Structure Binding to sMot_AxisStatus structure  
+    */ 
+    /** 
+    * @cfg {String} AxisName='' 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Set the unit string for position and distance units.  
     */ 
     /** 
     * @cfg {String} PositionUnits='' 
@@ -182,6 +190,7 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     */ 
 
     var defaultSettings = {
+            AxisName: '',
             PositionUnits: '',
             VelocityUnits: '',
             IsReadyForPowerText: 'No',
@@ -209,6 +218,7 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
         propertyMapping = {
             
             StatusStruct: { 'numOutPosAct': 'node', 'numOutVelAct': 'node' }, 
+            AxisName: { 'grpBoxLabel': 'value' }, 
             PositionUnits: { 'numOutPosAct': 'unit' }, 
             VelocityUnits: { 'numOutVelAct': 'unit' }, 
             IsReadyForPowerText: { 'txtOutRdyForPwr': 'value' }, 
@@ -249,6 +259,7 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
         
     };
     p.setStatusStruct = function (value) { this.settings['StatusStruct'] = value; this.setChildProps('StatusStruct', value); };
+    p.setAxisName = function (value) { this.settings['AxisName'] = value; this.setChildProps('AxisName', value); };
     p.setPositionUnits = function (value) { this.settings['PositionUnits'] = value; this.setChildProps('PositionUnits', value); };
     p.setVelocityUnits = function (value) { this.settings['VelocityUnits'] = value; this.setChildProps('VelocityUnits', value); };
     p.setIsReadyForPowerText = function (value) { this.settings['IsReadyForPowerText'] = value; this.setChildProps('IsReadyForPowerText', value); };

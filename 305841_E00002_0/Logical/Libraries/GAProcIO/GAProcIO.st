@@ -344,9 +344,12 @@ FUNCTION_BLOCK fbSclAlmAI
     // input is set, and OS is set ... do nothing
   END_IF;
 
-  // Scale analog input. Look at the module and channel okay bits, and that the raw type is not 'Off'.
-  // If all is okay, scale the raw input, process alarms, and set the scaled value and alarm bits
-  // in the structure.
+  // Scale analog input.
+  // Look at the module and channel okay bits, and that the raw type is not 'Off'.
+  // If all is okay, and the scaling **is not** done externally, scale the raw input, process alarms,
+  // and set the scaled value and alarm bits in the structure.
+  // If all is okay, and the scaling **is** done externally, then assume a scaled value,
+  // but still process and set the alarm bits in the structure.
   // If not, then set the scaled value to a sentinel value.
   IF _InInputStruct.ModuleOk AND _InInputStruct.ChannelOk AND _InParamsStruct.RawType <> GAPIO_RWST_OFF THEN
     // Module and channel are healthy, and type is not set to off ... scale and process alarms
@@ -377,10 +380,14 @@ FUNCTION_BLOCK fbSclAlmAI
       rawAdj := _InInputStruct.InRawREAL + _InParamsStruct.RawOffset;
     END_IF;
     
-    // scale the input value and apply the EU Offset
-    // Scaled value = (((Raw - Raw Min) / Raw Range) * EU Range) + EU Min
-    _InInputStruct.InScaled := (((rawAdj - _InParamsStruct.RawMin) / (_InParamsStruct.RawMax - _InParamsStruct.RawMin)) * 
-    (_InParamsStruct.EuMax - _InParamsStruct.EuMin)) + _InParamsStruct.EuOffset;
+    IF NOT _InParamsStruct.CalcEUExternally THEN
+      // Scale the value here. This is the normal behavior for typical PLC AI instruments.
+      // If CalcEuExternally is set, the scaled value needs to be calcualted and set elsewhere.
+      // scale the input value and apply the EU Offset
+      // Scaled value = (((Raw - Raw Min) / Raw Range) * EU Range) + EU Min
+      _InInputStruct.InScaled := (((rawAdj - _InParamsStruct.RawMin) / (_InParamsStruct.RawMax - _InParamsStruct.RawMin)) * 
+                                 (_InParamsStruct.EuMax - _InParamsStruct.EuMin)) + _InParamsStruct.EuMin + _InParamsStruct.EuOffset;
+    END_IF;
     
     // filter the scaled value if enabled
     IF _InParamsStruct.LpEnable THEN

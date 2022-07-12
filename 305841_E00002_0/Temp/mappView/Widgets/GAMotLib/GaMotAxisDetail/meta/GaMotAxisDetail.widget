@@ -12,6 +12,7 @@
 			<Widgets>
 				<Widget>widgets/GAMotLib/GaMotAxisDetail/GaMotAxisDetail.js</Widget>
 				<Widget>widgets/GAGeneralLib/TitleLabelBindable/TitleLabelBindable.js</Widget>
+				<Widget>widgets/brease/CheckBox/CheckBox.js</Widget>
 				<Widget>widgets/brease/GroupBox/GroupBox.js</Widget>
 				<Widget>widgets/brease/Label/Label.js</Widget>
 				<Widget>widgets/brease/NumericInput/NumericInput.js</Widget>
@@ -169,8 +170,7 @@
 				<Mappings>
 					<Mapping widget="numOutPosAct" property="node" type="Number" mode="oneWay" memberPath="Position" mapToNode="true"/>
 					<Mapping widget="numOutVelAct" property="node" type="Number" mode="oneWay" memberPath="Velocity" mapToNode="true"/>
-					<Mapping widget="numOutPhaseShiftAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true"/>
-					<Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualPhaseShift" mapToNode="true"/>
+					<Mapping widget="numOutOffsetAct" property="node" type="Number" mode="oneWay" memberPath="CoordActualOffsetShift" mapToNode="true"/>
 				</Mappings>
 			</Property>
 			<Property name="MoveLimitsStruct" type="sMot_PositionLimits" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Axis" isStruct="true" hide="true">
@@ -190,22 +190,26 @@
 					<Mapping widget="pbDisable" property="value" type="Boolean" mode="oneWayToSource" memberPath="disableReq" mapToNode="false"/>
 					<Mapping widget="pbManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="manBrakeRelReq" mapToNode="false"/>
 					<Mapping widget="pbClearManBrakeRel" property="value" type="Boolean" mode="oneWayToSource" memberPath="clearManBrakeRelReq" mapToNode="false"/>
-					<Mapping widget="pbEngageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="engageSlaveReq" mapToNode="false"/>
-					<Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false"/>
-					<Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftRelReq" mapToNode="false"/>
 					<Mapping widget="pbStopReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="stopResetReq" mapToNode="false"/>
-					<Mapping widget="pbErrorReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="errorResetReq" mapToNode="false"/>
 					<Mapping widget="pbDriveReset" property="value" type="Boolean" mode="oneWayToSource" memberPath="driveResetReq" mapToNode="false"/>
+					<Mapping widget="pbGearInSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="gearInReq" mapToNode="false"/>
+					<Mapping widget="pbCamInSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="camInReq" mapToNode="false"/>
+					<Mapping widget="pbDisengageSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="disengageSlaveReq" mapToNode="false"/>
+					<Mapping widget="pbOffsetSlave" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftReq" mapToNode="false"/>
+					<Mapping widget="pbToMasterPos" property="value" type="Boolean" mode="oneWayToSource" memberPath="offsetShiftToMasterPosReq" mapToNode="false"/>
+					<Mapping widget="chkBoxOverMasterDist" property="value" type="Boolean" mode="oneWayToSource" memberPath="shiftOverMasterDistance" mapToNode="false"/>
+					<Mapping widget="rdoBtnGrpShiftType" property="selectedIndex" type="Number" mode="oneWayToSource" memberPath="shiftType" mapToNode="false"/>
 					<Mapping widget="numInPosMoveParam" property="node" type="Number" mode="twoWay" memberPath="Position" mapToNode="true"/>
 					<Mapping widget="numInDistMoveParam" property="node" type="Number" mode="twoWay" memberPath="Distance" mapToNode="true"/>
 					<Mapping widget="numInVelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Velocity" mapToNode="true"/>
 					<Mapping widget="numInAccelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Acceleration" mapToNode="true"/>
 					<Mapping widget="numInDecelMoveParam" property="node" type="Number" mode="twoWay" memberPath="Deceleration" mapToNode="true"/>
 					<Mapping widget="numInJerkMoveParam" property="node" type="Number" mode="twoWay" memberPath="MaxJerk" mapToNode="true"/>
-					<Mapping widget="numInRatioNumerator" property="value" type="Number" mode="twoWay" memberPath="GearRatioNumerator" mapToNode="false"/>
-					<Mapping widget="numInRatioDenominator" property="value" type="Number" mode="twoWay" memberPath="GearRatioDenominator" mapToNode="false"/>
+					<Mapping widget="numInRatioNumerator" property="value" type="Number" mode="twoWay" memberPath="gearRatioNumerator" mapToNode="false"/>
+					<Mapping widget="numInRatioDenominator" property="value" type="Number" mode="twoWay" memberPath="gearRatioDenominator" mapToNode="false"/>
 					<Mapping widget="numInSlaveOffsetAmt" property="node" type="Number" mode="twoWay" memberPath="shiftDistance" mapToNode="true"/>
 					<Mapping widget="numInMasterDistance" property="node" type="Number" mode="twoWay" memberPath="shiftProfileDistance" mapToNode="true"/>
+					<Mapping widget="numInCamId" property="value" type="Number" mode="twoWay" memberPath="camId" mapToNode="false"/>
 				</Mappings>
 			</Property>
 			<Property name="AxisName" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="">
@@ -238,6 +242,7 @@
 					<Mapping widget="numOutPosLimitNeg" property="unit" mode="oneWay"/>
 					<Mapping widget="numInSlaveOffsetAmt" property="unit" mode="oneWay"/>
 					<Mapping widget="numInMasterDistance" property="unit" mode="oneWay"/>
+					<Mapping widget="numOutOffsetFromMaster" property="unit" mode="oneWay"/>
 				</Mappings>
 			</Property>
 			<Property name="PositionUnitsSlave" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
@@ -245,7 +250,6 @@
 				<Mappings>
 					<Mapping widget="numOutPosActSlave" property="unit" mode="oneWay"/>
 					<Mapping widget="numOutOffsetAct" property="unit" mode="oneWay"/>
-					<Mapping widget="numOutPhaseShiftAct" property="unit" mode="oneWay"/>
 				</Mappings>
 			</Property>
 			<Property name="VelocityUnits" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Units" defaultValue="">
@@ -406,76 +410,82 @@
 					<Mapping widget="numOutVelActSlave" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordSlaveRdyText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="SlaveOffsetToMaster" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="0.0">
+				<Description>Coordinated Slave Offset To Master</Description>
+				<Mappings>
+					<Mapping widget="numOutOffsetFromMaster" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="IsGearInCompText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordSlaveRdy" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearInComp" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordSlaveRdyStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsGearInCompStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordSlaveRdy" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearInComp" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordMasterRdyText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="IsGearInSyncText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordMasterRdy" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearInSync" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordMasterRdyStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsGearInSyncStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordMasterRdy" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearInSync" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordInCompText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="IsGearOffsetStartedText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordInComp" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearOffsetStarted" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordInCompStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsGearOffsetStartedStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordInComp" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearOffsetStarted" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordInSyncText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="IsGearOffsetDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordInSync" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearOffsetDone" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordInSyncStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsGearOffsetDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordInSync" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsGearOffsetDone" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordOffsetDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="IsCamInSyncText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordOffsetDone" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsCamInSync" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordOffsetDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsCamInSyncStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordOffsetDone" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsCamInSync" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordPhasingDoneText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
+			<Property name="IsCamEndOfProfileText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="No">
 				<Description>Text display for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordPhasingDone" property="value" mode="oneWay"/>
+					<Mapping widget="txtOutIsCamEndOfProfile" property="value" mode="oneWay"/>
 				</Mappings>
 			</Property>
-			<Property name="IsCoordPhasingDoneStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+			<Property name="IsCamEndOfProfileStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>Text style for boolean status</Description>
 				<Mappings>
-					<Mapping widget="txtOutIsCoordPhasingDone" property="style" mode="oneWay"/>
+					<Mapping widget="txtOutIsCamEndOfProfile" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
 			<Property name="SlaveStatusText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
@@ -488,6 +498,18 @@
 				<Description>Text style for integer status values.</Description>
 				<Mappings>
 					<Mapping widget="txtOutStatusSlave" property="style" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="CamStatusText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
+				<Description>Text display for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutCamStatus" property="value" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="CamStatusStyle" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text style for integer status values.</Description>
+				<Mappings>
+					<Mapping widget="txtOutCamStatus" property="style" mode="oneWay"/>
 				</Mappings>
 			</Property>
 			<Property name="SlaveStateText" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="Unknown">
@@ -569,12 +591,33 @@
 					<Mapping widget="numInPosMoveParam" property="enable" mode="oneWay"/>
 				</Mappings>
 			</Property>
+			<Property name="GearInEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="false">
+				<Description>Gear In is enabled</Description>
+				<Mappings>
+					<Mapping widget="pbGearInSlave" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="CamInEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="false">
+				<Description>Cam In is enabled</Description>
+				<Mappings>
+					<Mapping widget="pbCamInSlave" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
+			<Property name="DisengageSlaveEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="false">
+				<Description>Disengage Slave is enabled</Description>
+				<Mappings>
+					<Mapping widget="pbDisengageSlave" property="enable" mode="oneWay"/>
+				</Mappings>
+			</Property>
 			<Property name="ShiftEnable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Axis" defaultValue="true">
-				<Description>Slave Shift Parameters are enabled</Description>
+				<Description>Slave Shift is enabled</Description>
 				<Mappings>
 					<Mapping widget="numInSlaveOffsetAmt" property="enable" mode="oneWay"/>
 					<Mapping widget="numInMasterDistance" property="enable" mode="oneWay"/>
 					<Mapping widget="pbOffsetSlave" property="enable" mode="oneWay"/>
+					<Mapping widget="pbToMasterPos" property="enable" mode="oneWay"/>
+					<Mapping widget="rdoBtnGrpShiftType" property="enable" mode="oneWay"/>
+					<Mapping widget="chkBoxOverMasterDist" property="enable" mode="oneWay"/>
 				</Mappings>
 			</Property>
 		</Properties>

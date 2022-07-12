@@ -21,8 +21,8 @@ TYPE
     GAMOT_ASMS_HOME_REQ := 5, (*constant for the state in which the axis home was requested *)
     GAMOT_ASMS_HOMING := 6, (*constant for the state in which the axis is being referenced *)
     GAMOT_ASMS_HOMED := 7, (*constant for the state in which the axis is referenced *)
-    GAMOT_ASMS_INITEP := 8, (* constant for Init Endless Position State *)
-    GAMOT_ASMS_INITEP_ERROR := 9, (* constant for Init Endless Position Error State *)
+    GAMOT_ASMS_CHK_RESTORE_POS := 8, (* constant for Init Endless Position State *)
+    GAMOT_ASMS_RESTORE_POS := 9, (* constant for Init Endless Position Error State *)
     GAMOT_ASMS_ERROR_STOP := 10, (*constant for function block error stop state *)
     GAMOT_ASMS_ERROR_DRVRSTWAIT := 11, (*constant for axis error drive reset wait state *)
     GAMOT_ASMS_ERROR_DISABLE := 12, (*constant for axis error drive reset wait state *)
@@ -75,6 +75,7 @@ TYPE
     (* NOTE: BE CAREFUL about changes and reordering -- HMI and memcopy/memset ramifications *)
     (* Boolean reqs are cleared with memset so adding/removing/moving may be problematic *)
     (* NOTE: Do not add bool reqs before moveReq that should be cleared while in safe/emo modes. *)
+    _beginResetSection : BOOL := FALSE;
     moveReq : BOOL := FALSE;
     haltReq : BOOL := FALSE;
     stopReq : BOOL := FALSE;
@@ -85,11 +86,13 @@ TYPE
     disableReq : BOOL := FALSE;
     manBrakeRelReq : BOOL := FALSE;
     clearManBrakeRelReq : BOOL := FALSE;
-    offsetShiftRelReq : BOOL := FALSE; (* shift slave pos a relative amount on the slave axis *)
-    phaseShiftRelReq : BOOL := FALSE; (* shift master pos a relative amount on the slave axis *)
-    endShiftReq : BOOL := FALSE; (* shift reqs are level sensitive. This clear them *)
-    engageSlaveReq : BOOL := FALSE; (* level sensitive *)
-    disengageSlaveReq : BOOL := FALSE; (* gear in cmds are level sensitive. This clears them *)
+    offsetShiftReq : BOOL := FALSE; (* shift slave pos on the slave axis, shift value in slave units *)
+    offsetShiftToMasterPosReq : BOOL := FALSE; (* shift slave position by axis offset in slave units *)
+    phaseShiftReq : BOOL := FALSE; (* shift master pos on the slave axis, shift value in master units *)
+    gearInReq : BOOL := FALSE;
+    camInReq : BOOL := FALSE;
+    disengageSlaveReq : BOOL := FALSE; (* Disengage cam and gear *)
+    _endResetSection : BOOL := FALSE;
     (* NOTE: Do not add bool reqs after disengageSlaveReq that should be cleared in safe/emo modes.  HMI and memcopy/memset ramifications. *)
     (* Other requests *)
     (* NOTE: Do not add bool reqs before setPositionLimitsReq that should be cleared while in emo mode. *)
@@ -99,19 +102,27 @@ TYPE
     stopResetReq : BOOL := FALSE;
     errorResetReq : BOOL := FALSE;
     driveResetReq : BOOL := FALSE;
-    (* NOTE: Do not add bool reqs after driveResetReq that should be cleared in emo mode.  HMI and memcopy/memset ramifications. *)
-    axisNo : USINT := 0;
-    GearRatioNumerator : DINT := 100; (* gear factor of the slave / measurment resolution of the slave *)
-    GearRatioDenominator : DINT := 100; (* gear factor of the master / measurment resolution of the master *)
-    homePosition : LREAL := 0.0;
+    axisNo : USINT := 0; (* convenience axis number this structure corresponds to *)
+    (* gear in related *)
+    gearRatioNumerator : DINT := 1000; (* gear factor of the slave / measurment resolution of the slave *)
+    gearRatioDenominator : DINT := 1000; (* gear factor of the master / measurment resolution of the master *)
+    (* shift related *)
+    shiftOverMasterDistance : BOOL := FALSE; (* H: Perofrm shift over specified master distance Use mcPROFBASE_MASTER_DISTANCE and shiftProfileDistance *)
+    shiftType : SINT := 0; (* based on HMI radio buttons. 0: Relative, 1: Abs *)
     shiftDistance : LREAL := 0.0; (* phase/offset shift distance *)
     shiftProfileDistance : LREAL := 0.0; (* distance master moves during a shift *)
+    (* cam related *)
+    camId : UINT;
+    camMasterOffset : LREAL := 0.0; (* gear factor of the slave / measurment resolution of the slave *)
+    camSlaveOffset : LREAL := 0.0; (* gear factor of the master / measurment resolution of the master *)
+    homePosition : LREAL := 0.0;
     positionLimits : sMot_PositionLimits;
     moveDesignation : eGAMOT_MOVE_DESIGNATION := GAMOT_MD_NO_MOVE_COMMANDED;
     (* HMI move req *)
     (* BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk *)
     (* MAY NEED TO ADJUST fgProcessHmiMoveReq instruction in GaMpMotion library *)
     (* These move params are copied to/from the HMI move req structure using memcpy *)
+    _startParamCopy : BOOL := FALSE;
     Direction : McDirectionEnum := mcDIR_UNDEFINED; (* direction for commanded movements*)
     Distance : LREAL := 0.0; (* distance for move Commands *)
     Position : LREAL := 0.0; (* target position for home or the motion *)
@@ -119,6 +130,7 @@ TYPE
     Acceleration : REAL := 1.0; (* acceleration for commanded movements *)
     Deceleration : REAL := 1.0; (* deceleration for commanded movements *)
     MaxJerk : REAL := 0.0; (* deceleration for commanded movements *)
+    _endParamCopy : BOOL := FALSE;
     (* NOTE: BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between direction and MaxJerk *)
   END_STRUCT;
   
@@ -164,28 +176,35 @@ TYPE
     AutoTuneQuality : REAL := 0.0;
     (* general status values and structures *)
     SafeMotionDiagCode : UINT; (* from Safety Controller safe motion instruction *)
-    Velocity : REAL:= 0.0; (* actual axis velocity *)
-    Position : LREAL:= 0.0; (* actual axis position *)
-    CalculatedPosition1 : LREAL:= 0.0; (* calculated algorithmic position *)
-    CalculatedPosition2 : LREAL:= 0.0; (* calculated algorithmic position *)
-    CalculatedPosition3 : LREAL:= 0.0; (* calculated algorithmic position *)
+    Velocity : REAL:= INVALID_SENTINEL_REAL; (* actual axis velocity *)
+    Position : LREAL:= INVALID_SENTINEL_LREAL; (* actual axis position. Includes MOD to keep value within a period value *)
+    DrivePosition : LREAL := INVALID_SENTINEL_LREAL; (* actual axis position. Does not includes MOD so period is ignored *)
+    CalculatedPosition1 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    CalculatedPosition2 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    CalculatedPosition3 : LREAL:= INVALID_SENTINEL_LREAL; (* calculated position -- axis specific *)
+    (* Values to see progress of a move *)
+    MoveStartPos : LREAL := INVALID_SENTINEL_LREAL;
+    MoveEndPos : LREAL := INVALID_SENTINEL_LREAL;
+    MoveDistanceRemaining : LREAL := 0.0;
+    MoveDistanceComplete : LREAL := 0.0;
     StartupCount : UDINT := 0; (* number of times the drive was started since last PLC start *)
     PlcOpenState : McAxisPLCopenStateEnum;
     networkCommState : McCommunicationStateEnum;
     AxisDiagnostics : MpAxisDiagExtType;
     LibraryInfo : McLibraryInfoType;
     (* coupling related *)
-    IsCoordSlaveReady : BOOL := FALSE; (* slave axis rdy -- is powered, is homed *)
-    IsCoordMasterReady : BOOL := FALSE; (* master axis rdy for operation -- comm rdy *)
-    IsCoordInCompensation : BOOL := FALSE; (* axis is performing a compensating movement *)
-    IsCoordInSync : BOOL := FALSE; (* slave is in sync with the master *)
-    IsCoordOffsetDone : BOOL := FALSE; (* shift in slave position successful *)
-    IsCoordPhasingDone : BOOL := FALSE; (* shift in master position successful *)
-    IsCoordRecoveryDone : BOOL := FALSE; (* slave in in sync with the master *)
+    HasCoordinatedSlave : BOOL := FALSE;
+    IsGearInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsGearInCompensation : BOOL := FALSE; (* slave is in compensation with the master *)
+    IsCamInSync : BOOL := FALSE; (* slave is in sync with the master *)
+    IsCamEndOfProfile : BOOL := FALSE; (* Pulsed output indicating cyclic end of cam *)
+    IsCoordOffsetShiftStarted : BOOL := FALSE; 
+    IsCoordOffsetShiftAttained : BOOL := FALSE;
+    IsCoordPhaseShiftStarted : BOOL := FALSE;
+    IsCoordPhaseShiftAttained : BOOL := FALSE;
+    CamStatus : McCamInStatusEnum;
     CoordActualOffsetShift : LREAL := 0.0; (* current shift of the slave *)
     CoordActualPhaseShift : LREAL := 0.0; (* current shift of the master axis *)
-    CoordRecoveryPosition : LREAL := 0.0; (* calculated recovery restart position *)
-    CoordAxisDiagnostics : MpAxisDiagExtType;
   END_STRUCT;
 
   sMot_MoveParameters : 	STRUCT  (*parameter structure*)
@@ -205,6 +224,7 @@ TYPE
     AccelMax : REAL := 100.0; (* bytes 44-47 *)
     DecelMin : REAL := 0.001; (* bytes 48-51 min and max allowed deceleration *)
     DecelMax : REAL := 100.0; (* bytes 52-55 *)
+    _beginHmiSection : BOOL := FALSE;
     (* HMI move req related *)
     (* BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk 
     (* and between Direction to the end of the structure.*)
@@ -221,6 +241,7 @@ TYPE
     MaxJerk : REAL := 0.0; (* bytes 88-91 *)
     (* NOTE: BE CAREFUL ABOUT MOVING/DELETING/ADDING/CHANGING MEMORY between Direction and MaxJerk *)
     (* End Hmi Move Req *)
+    _endHmiSection : BOOL := FALSE;
     HomeParams : MpAxisHomingType; (* parameters for referencing the axis*)
     JogParams : MpAxisJogType; (* parameters for jog command *)
     StopParams : MpAxisStopType; (* parameters for stop command *)
@@ -230,38 +251,60 @@ TYPE
 
   sMot_CouplingParameters : 	STRUCT  (* coupling parameter structure*)
     CouplingPermissive : BOOL := FALSE; (* axis allowing itself to be coupled as a slave *)
-    GearInCmd : BOOL := FALSE; (* set to engage coupling *)
-    GearInPosCmd : BOOL := FALSE;(* bring slave into coupling at defined master pos *)    
-    OffsetShiftCmd : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
-    PhaseShiftCmd : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
-    SlaveAxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to 0 so setting a value can be detected *)
-    RatioNumerator : DINT := 100; (* Gear factor of the slave / Measurement resolution of the slave *)
-    RatioDenominator : DINT:= 100; (* Gear factor of the master / Measurement resolution of the master *)
-    MasterPositionSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
-    MasterSyncPosition : LREAL; (*  master position from which the axes move synchronously *)
-    SlaveSyncPosition : LREAL; (* slave position from which the axes move synchronously *)
-    SyncMode : McSyncModeEnum; (* type of synchronization *)
-    MasterStartDistance : LREAL;(* Master distance during which the slave synchronizes *)
-    Shift : LREAL; (* shift distance *)
-    ShiftVelocityMax : REAL;
-    ShiftAccelerationMax : REAL;
-    ShiftDecelerationMax : REAL;
-    ShiftProfileDistance : LREAL;
+    GearInReq : BOOL := FALSE; (* Set to request gear coupling *)
+    GearOutReq : BOOL := FALSE; (* Set to request gear decoupling *)
+    CamInReq : BOOL := FALSE; (* Set to request cam coupling *)
+    CamOutReq : BOOL := FALSE; (* Set to request cam decoupling *)
+    OffsetShiftReq : BOOL := FALSE;(* Generate an offset shift in the position of the slave on the slave axis *)
+    PhaseShiftReq : BOOL := FALSE; (* Geneate a phase shift in the position of the master on the slave axis *)
+    SlaveAxisNo : USINT := 0; (* default to 0 so setting a value can be detected *)
+    (* CAUTION
+    mem compare and mem copy are used for these values when dealing with run time value changes.
+    Be very careful about where you add values. For example, changes to values in the gearin section will 
+    cause a gearin update *)
+    (* Gear In params *)
+    _beginGearInSection : BOOL := FALSE;
+    GearInRatioNumerator : DINT := 1000; (* Gear factor of the slave / Measurement resolution of the slave *)
+    GearInRatioDenominator : DINT:= 1000; (* Gear factor of the master / Measurement resolution of the master *)
+    GearInMasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
+    GearInBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is the only mode currently supported *)
+    _endGearInSection : BOOL := FALSE;
+    (* Offset / Phase shift params *)
+    (* The values in the common section are common to gear in, cam, and shift *)
+    _beginShiftCommonSection : BOOL := FALSE;
+    ShiftAccelerationMax : REAL; (* if 0 limit for slave axis is used *)
+    ShiftDecelerationMax : REAL; (* if 0 limit for slave axis is used *)
+    ShiftJerk : REAL := 0.0; (* non zero only supported with McProfGen *)
+    ShiftProfileBaseMaxVelocity : REAL := 0.0; (* also use for cam adv paramm vel. 0.0: use max velocity master axis *)
+    _endShiftCommonSection : BOOL := FALSE;
+    _beginShiftSection : BOOL := FALSE;
     ShiftMode : McShiftModeEnum;
     ShiftProfileBase : McProfileBaseEnum;
-    ShiftProfileBaseMaxVelocity :REAL := 0.0; (* max velocity of profile base during offset. 0.0: use velocity of the profile base axis *)
+    Shift : LREAL; (* shift distance *)
+    ShiftVelocityMax : REAL;
+    ShiftProfileDistance : LREAL;
     (* Zone params used with profile base mcXxx_ZONE *)
     ShiftZoneStartPosition : LREAL;
     ShiftZoneEndPosition : LREAL;
     ShiftZonePeriod : LREAL := 0.0; (* 0: period defined for the profile base is used *)
-    ShiftJerk : REAL := 0.0;
+    _endShiftSection : BOOL := FALSE;
+    _beginCamInSection : BOOL := FALSE;
+    CamIsPeriodic : BOOL := TRUE; (* H: cam is performed periodically, L: cam is performed once *)
+    CamId : UINT := 1; (* cam id used with CamIn *)
+    CamMasterOffset : LREAL := 0.0;  
+    CamSlaveOffset : LREAL := 0.0;  
+    CamScalingMaster : DINT := 1000; (* Cam scaling factor for master *)
+    CamScalingSlave : DINT := 1000; (* Cam scaling factor for scaling *)
+    CamStartMode : McCamStartModeEnum;
+    CamMasterValueSource : McValueSrcEnum := mcVALUE_ACTUAL; (* Master position source *)
+    CamBufferMode : McBufferModeEnum := mcABORTING; (* mcABORTING is thye only mode currently supported *)
+    _endCamInSection : BOOL := FALSE;
   END_STRUCT;
 
   sMot_AxisCommands : 	STRUCT  (*command structure for single and master axes*)
     MoveNotAllowed : BOOL:= TRUE; (* set if a requested move is not allowed, clear upon good request *)
     PlcSafetyEnable : BOOL := FALSE; (* PLC logic enable of SafeMC, via safety controller *)
     UpdateMoveParams : BOOL := FALSE; (* used to control the update bit to McAxisBasic when move params change *)
-    UpdateCouplingParams : BOOL := FALSE; (* used to control the update bit to McAxisCoupling when move params change *)
     EnableReq : BOOL:= FALSE; (* request enabling (powering on) the controller. *)
     DisableReq : BOOL:= FALSE; (* request disabeling (powering off) the controller *)
     EnableCmd : BOOL:= FALSE; (* enable (power on) the controller. Power off on false *)
@@ -307,6 +350,7 @@ TYPE
     DateObjectName : STRING[32]; (* Name of rrror text table data object 
   END_STRUCT;
 *)  
+(*
   sMot_FbStatus : 	STRUCT 
     Active : BOOL;
     Error : BOOL;
@@ -314,21 +358,22 @@ TYPE
     CommandBusy : BOOL;
     CommandAborted : BOOL;
     ExecutingCommand : MpAxisExecutingCmdEnum;
-    StatusId : MpAxisErrorEnum; (* axis error *)
+    StatusId : MpAxisErrorEnum; (* axis error 
     StatusSeverity : MpComSeveritiesEnum;
     StatusCode : UINT; 
-    InternalId : DINT; (* status number of the implementation specific library *)
-    InternalSeverity: MpComSeveritiesEnum; (* type of info returned by status id *)
-    InternalFacility: MpComFacilitiesEnum; (* system responsible for the error *)
-    InternalCode: UINT; (* decode value of Status ID -- error number is left over *)
+    InternalId : DINT; (* status number of the implementation specific library 
+    InternalSeverity: MpComSeveritiesEnum; (* type of info returned by status id 
+    InternalFacility: MpComFacilitiesEnum; (* system responsible for the error 
+    InternalCode: UINT; (* decode value of Status ID -- error number is left over 
   END_STRUCT;
-  
+*)  
   sMot_Axis : 	STRUCT  (*substructure for single and master axes*)
     Ignore : BOOL := TRUE; (* when set, some software routines ignore this axis. Default to set so dummy axis is ignored *)
     ForceSetRef : BOOL := TRUE; (* force the operator to have to re-reference the axis *)
     StartupHomeOk : BOOL := FALSE; (* axis can home itself after startup *)
     isAxisVirtual : BOOL := FALSE; (* axis is virtual if true and motion commands are not allowed *)
-    isAxisEndless : BOOL := FALSE; (* Axis has no physical limits *)
+    isAxisEndless : BOOL := FALSE; (* axis has no physical limits *)
+    isAxisInverter : BOOL := FALSE; (* axis is an inverter in motion control mode *)
     AxisNo : USINT := GAMOT_ASMS_INITIAL; (* default to initial so setting a value can be detected *)
     SMState : eGAMOT_AXIS_STATE_MACHINE_STATE := 0; (* enumeration managed by the state machine *)
     AxisObj : McAxisType ; (* reference to global axis object (i.e. the drive) *)
@@ -341,11 +386,18 @@ TYPE
     CouplingParametersPrev : sMot_CouplingParameters; (* detect changes *)
     Commands : sMot_AxisCommands; (*command structure for single and master axes*)
     fbMpAxisBasic : MpAxisBasic;
-    statusFpMpAxisBasic :sMot_FbStatus;
+    fbReadDrivePos : MC_BR_ReadCyclicPosition;
     fbUpdateBFbParams : fbUpdateBasicParams;
-    fbMpAxisCoupling : MpAxisCoupling;
-    statusFpMpAxisCoupling :sMot_FbStatus;
-    fbUpdateCFbParams : fbUpdateCouplingParams;
+    fbGearIn : MC_GearIn;
+    fbGearOut : MC_GearOut;
+    fbOffsetShift : MC_BR_Offset;
+    fbPhaseShift : MC_BR_Phasing;
+    fbCalcCam : MC_BR_CalcCamFromSections;
+    fbCalcPoints : MC_BR_CalcPointsFromCam;
+    fbCamPrepare : MC_BR_CamPrepare;
+    fbCamIn : MC_CamIn;
+    fbCamOut : MC_CamOut;
+    fbCheckRestorePos : MC_BR_CheckRestorePositionData;
   END_STRUCT;
   
   sMot_GlobalCommands : 	STRUCT  (*command structure for global axis commands*)

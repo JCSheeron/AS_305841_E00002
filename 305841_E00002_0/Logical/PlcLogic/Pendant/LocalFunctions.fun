@@ -53,7 +53,7 @@ FUNCTION_BLOCK fbEnabledAxis
 	VAR
     axisSelected : REFERENCE TO sMot_Axis;
     currentStep : USINT := 0;
-    selAxisNoPrev : USINT; (* detect changes to the selected axis *)
+    selAxisNoPrev : DINT; (* detect changes to the selected axis *)
     selSpeedPrev : REAL; (* detect changes *)
     tmrStep : TON;
     CalcGearRatioFb : fbCalcGearRatio;

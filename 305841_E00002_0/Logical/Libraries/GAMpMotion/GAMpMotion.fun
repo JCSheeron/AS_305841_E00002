@@ -25,6 +25,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq   (* Process axis requests from HMI and popul
     _I_Axis : REFERENCE TO sMot_Axis;
     _I_SlaveAxis : REFERENCE TO sMot_Axis;
     _I_AxisPositionLimits : REFERENCE TO sMot_PositionLimits;
+    _I_ToleranceZeroDepth : LREAL := 0.001;
   END_VAR
 	
   VAR
@@ -33,7 +34,6 @@ FUNCTION_BLOCK fbProcessHmiAxisReq   (* Process axis requests from HMI and popul
     size :  UDINT;
     nxtAddr :  UDINT;
     fbHomeSeq : fbHomeAbsSeq;
-    tReal : LREAL;
   END_VAR
   
 END_FUNCTION_BLOCK
@@ -56,21 +56,6 @@ FUNCTION_BLOCK fbUpdateBasicParams
   END_VAR
 END_FUNCTION_BLOCK
 
-FUNCTION_BLOCK fbUpdateCouplingParams
-  VAR_INPUT
-    _I_Axis : REFERENCE TO sMot_Axis;
-  END_VAR
-  VAR
-    updateOS :  BOOL;
-    result :  DINT;
-    pParamsStart :  UDINT := 0;
-    pParamsEnd :  UDINT := 0;
-    pParamsPrev :  UDINT := 0;
-    size :  UDINT := 0;
-    nxtAddr :  UDINT;
-  END_VAR
-END_FUNCTION_BLOCK
-
 FUNCTION fctCalcAbsHomeOffset : LREAL (* Return encoder offset for absolute home mode *)
   VAR_INPUT
     _I_CurrentPos : LREAL;
@@ -79,14 +64,31 @@ FUNCTION fctCalcAbsHomeOffset : LREAL (* Return encoder offset for absolute home
   END_VAR
 END_FUNCTION
 
-FUNCTION fctCheckEqCouplingParams : BOOL (*Return true if the two structures are equal*)
+FUNCTION fctCheckEqCamInParams : BOOL (*Return true if the two structures are equal*)
 	VAR_INPUT
 		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
 		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
 	END_VAR
 	VAR
-		size : UDINT;
-		result : DINT;
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION fctCheckEqGearInParams : BOOL (*Return true if the two structures are equal*)
+	VAR_INPUT
+		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
+		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
+	END_VAR
+	VAR
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
 	END_VAR
 END_FUNCTION
 
@@ -98,6 +100,20 @@ FUNCTION fctCheckEqMoveParams : BOOL (*Return true if the two structures are equ
 	VAR
 		size : UDINT;
 		result : DINT;
+	END_VAR
+END_FUNCTION
+
+FUNCTION fctCheckEqShiftParams : BOOL (*Return true if the two structures are equal*)
+	VAR_INPUT
+		_I_ParamsA : REFERENCE TO sMot_CouplingParameters;
+		_I_ParamsB : REFERENCE TO sMot_CouplingParameters;
+	END_VAR
+	VAR
+    pParamsStart :  UDINT := 0;
+    pParamsEnd :  UDINT := 0;
+    pParamsPrev :  UDINT := 0;
+    size : UDINT := 0;
+    result : UDINT;
 	END_VAR
 END_FUNCTION
 
@@ -143,15 +159,6 @@ FUNCTION fctGetMpAxisInfo : BOOL (*Pack values stored in a MpAxisBasicInfoType s
   END_VAR
 END_FUNCTION
 
-FUNCTION fctGetMpCouplingInfo : BOOL (*Pack values stored in a MpAxisCouplingInfoType structure into a sMot_AxisStatus structure*)
-  VAR_INPUT
-    _I_MpInfo : REFERENCE TO MpAxisCouplingInfoType; (* packed Mapp Motion structure *)
-  END_VAR
-  VAR_IN_OUT
-    _IO_UdtStatus : sMot_AxisStatus; (* input move params in a udt *)
-  END_VAR
-END_FUNCTION
-
 FUNCTION fctPackMpAxisBasicParams : BOOL (*Pack values stored in a sMot_MoveParameter structure into a MpAxisBasicParType structure *)
   VAR_INPUT
     _I_UdtParams : REFERENCE TO sMot_MoveParameters; (* input move params in a udt *)
@@ -160,13 +167,3 @@ FUNCTION fctPackMpAxisBasicParams : BOOL (*Pack values stored in a sMot_MovePara
     _IO_MpParams : MpAxisBasicParType; (* packed Mapp Motion structure *)
   END_VAR
 END_FUNCTION
-
-FUNCTION fctPackMpAxisCouplingParams : BOOL (*Pack values stored in a sMot_MoveParameter structure into a MpAxisCouplingParType structure *)
-  VAR_INPUT
-    _I_UdtParams : REFERENCE TO sMot_CouplingParameters; (* input move params in a udt *)
-  END_VAR
-  VAR_IN_OUT
-		_IO_MpParams : MpAxisCouplingParType; (* packed Mapp Motion structure *)
-	END_VAR
-END_FUNCTION
-

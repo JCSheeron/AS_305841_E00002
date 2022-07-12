@@ -18,6 +18,7 @@ TYPE
 		mcCFG_AX_FEAT_CAM_AUT_CMN := 10101, (*AxisFeatureCamAutCommon -*)
 		mcCFG_AX_FEAT_PROF_GEN := 10102, (*AxisFeatureProfGen -*)
 		mcCFG_AX_FEAT_DIG_CAM_SW := 10103, (*Associated with data type McCfgAxFeatDigCamSwType*)
+		mcCFG_AX_FEAT_DIG_OUT := 10107, (*Associated with data type McCfgAxFeatDigOutType*)
 		mcCFG_AX_FEAT_CAM_LST := 11102, (*AxisFeatureCamList -*)
 		mcCFG_AX_FEAT_ALT_VAL_SRC := 10104, (*Associated with data type McCfgAxFeatAltValSrcType*)
 		mcCFG_AX_FEAT_BRK := 10105, (*Associated with data type McCfgAxFeatBrkType*)
@@ -266,9 +267,9 @@ TYPE
 		Z : LREAL; (*Translation in Z direction [measurement units]*)
 	END_STRUCT;
 	McCfgOrientType : STRUCT (*Orientation parameters*)
-		Angle1 : LREAL; (*Rotation around the first coordinateaxis of the rotation order [measurement units]*)
-		Angle2 : LREAL; (*Rotation around the second coordinateaxis of the rotation order [measurement units]*)
-		Angle3 : LREAL; (*Rotation around the third coordinateaxis of the rotation order [measurement units]*)
+		Angle1 : LREAL; (*Rotation around the first coordinate axis of the rotation order [measurement units]*)
+		Angle2 : LREAL; (*Rotation around the second coordinate axis of the rotation order [measurement units]*)
+		Angle3 : LREAL; (*Rotation around the third coordinate axis of the rotation order [measurement units]*)
 	END_STRUCT;
 	McWSCubeDimType : STRUCT (*Dimension parameters*)
 		X : LREAL; (*Dimension of the cuboid in the x-direction (endpoint) [measurement units]*)

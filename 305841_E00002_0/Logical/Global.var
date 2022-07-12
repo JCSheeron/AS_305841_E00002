@@ -12,6 +12,10 @@ VAR RETAIN
 
   (* Retained and here in global so they can be permanent variables *)
 
+  (* Tables used to lookup inner eccentric offset angles given a depth.
+  50 element max, per lookup table, so break the lookup into pieces. *)
+	gr_depthToAngleLu : sDepthToAngleLu;
+ 
   (* Part and Machine cfg *)
   gr_CfgCurrent : sWp_Configuration;
   gr_PartCurrent :sWp_Part;
@@ -19,6 +23,7 @@ VAR RETAIN
   gr_PartSaved : ARRAY[0..19] OF sWp_Part;
 
   (* Axis restore positions *)
+  gr_AxSpindleRestorePos : McAcpAxRestorePosType;
   gr_AxOutERestorePos : McAcpAxRestorePosType;
   gr_AxInERestorePos : McAcpAxRestorePosType;
   gr_AxZRestorePos : McAcpAxRestorePosType;

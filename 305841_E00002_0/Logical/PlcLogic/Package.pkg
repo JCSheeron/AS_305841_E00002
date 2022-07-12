@@ -4,8 +4,8 @@
   <Objects>
     <Object Type="File" Private="true">Logic.typ</Object>
     <Object Type="File" Private="true">Logic.var</Object>
-    <Object Type="Program" Language="IEC">Pendant</Object>
     <Object Type="Program" Language="IEC">ProcInputs</Object>
+    <Object Type="Program" Language="IEC">Pendant</Object>
     <Object Type="Program" Language="IEC">CuttingFluidVFD</Object>
     <Object Type="Program" Language="IEC" Description="Operating Mode State Machine">OmSafeDev</Object>
     <Object Type="Program" Language="IEC">Annunc</Object>
@@ -17,5 +17,6 @@
     <Object Type="Package">axZ</Object>
     <Object Type="Package">axHandwheel</Object>
     <Object Type="Package">axCfVfd</Object>
+    <Object Type="Package">CutProfile</Object>
   </Objects>
 </Package>

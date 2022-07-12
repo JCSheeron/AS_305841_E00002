@@ -27,4 +27,26 @@
     textAlign="center"
   />
 
+  <Style id="GaInfoActive" xsi:type="widgets.brease.Label" 
+		fontSize="18px" 
+		textColor="#474747" 
+		backColor="transparent" 
+		borderColor="#0000FF" 
+		borderWidth="3px" 
+		borderStyle="solid" 
+		padding="5px" 
+		bold="true"
+  /> 
+
+	<Style id="GaInfoInactive" xsi:type="widgets.brease.Label" 
+		fontSize="18px" 
+		textColor="#A9A9A9" 
+		backColor="transparent" 
+		borderColor="#A9A9A9" 
+		borderWidth="3px" 
+		borderStyle="dotted" 
+		padding="5px" 
+		bold="true"
+  />
+
 </Styles>

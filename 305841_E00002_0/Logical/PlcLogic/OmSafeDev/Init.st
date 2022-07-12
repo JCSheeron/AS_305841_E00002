@@ -37,7 +37,12 @@ PROGRAM _INIT
 
   // Init process req fb
   procHmiProcessReqs._I_ProcessReqs := ADR(hmiProcessReqs);
-  procHmiProcessReqs._I_pLibraryAxesReqs:= ADR(hmiLibraryAxisReqs); // Start of array of sMot_HmiAxisReqs
+  procHmiProcessReqs._I_WpCfg := ADR(gr_CfgCurrent);
+  // use the base (element 0) address for these arrays. Element
+  // positions will be calculated and accessed within the function
+  procHmiProcessReqs._I_pLibraryAxesReqs := ADR(hmiLibraryAxisReqs);
+  procHmiProcessReqs._I_pAxis := ADR(axes);
+  procHmiProcessReqs._I_pAxisPositionLimits := ADR(gr_AxisPositionLimits);
   
   // Init manual mode requests
   hmiLibraryAxisReqs[AD_SPINDLE].axisNo := DINT_TO_USINT(AD_SPINDLE);

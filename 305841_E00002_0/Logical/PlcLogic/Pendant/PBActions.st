@@ -144,13 +144,13 @@ ACTION SetZeroSeq :
       axes[axisSelection].MoveParameters.HomeParams.Position := 0.0;
     ELSIF axisSelection = AD_Z THEN
       // After homing, the desired position is zero + a possible offset
-      axes[axisSelection].MoveParameters.HomeParams.Position :=  gr_CfgCurrent.zAxis.setZeroOffset;;
+      axes[axisSelection].MoveParameters.HomeParams.Position :=  0.0;
     ELSIF axisSelection = AD_OUTER_ECCENTRIC THEN
       // Outer eccentric just gets homed to 0, no matter where it is, so there is no offset.
       axes[axisSelection].MoveParameters.HomeParams.Position := 0.0;
     ELSIF axisSelection = AD_INNER_ECCENTRIC THEN
       // After homing, the desired position is zero + a possible offset
-      axes[axisSelection].MoveParameters.HomeParams.Position := gr_CfgCurrent.cuttingHead.setZeroOffset;
+      axes[axisSelection].MoveParameters.HomeParams.Position :=0.0;
     ELSIF axisSelection = AD_SPINDLE THEN
       // Spindle position isn't critical, so just home to zero
       axes[axisSelection].MoveParameters.HomeParams.Position := 0.0;

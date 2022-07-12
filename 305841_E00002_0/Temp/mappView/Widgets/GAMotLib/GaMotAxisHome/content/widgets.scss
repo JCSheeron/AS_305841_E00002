@@ -18,7 +18,7 @@
 	@include border-radius(8px 8px 0px 0px);
 }
 #GaMotAxisHome_numInSetOffset {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisHome_numInSetOffset {
 	@include elemTop(229);
@@ -27,7 +27,7 @@
 	@include elemLeft(10);
 }
 #GaMotAxisHome_numInSetOffset {
-	@include elemWidth(135);
+	@include elemAutoWidth(135);
 }
 #GaMotAxisHome_numInSetOffset {
 		z-index: 0;

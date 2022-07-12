@@ -1,13 +1,21 @@
+ACTION ClearProcessReqs :
+  // Clear Process Reqs, and then the machine specific axis Reqs
+  // Process Reqs
+  // Bool reqs
+  pSrc := ADR(hmiProcessReqs.StartOfClearedRequests);
+  pDest := ADR(hmiProcessReqs.EndOfClearedRequests);
+  byteCount := pDest - pSrc + SIZEOF(BOOL);
+  nxtAddr := brsmemset(pSrc, 0, byteCount);
+END_ACTION
+
 ACTION ClearMotionReqs :
   // Clear Process Reqs, and then the machine specific axis Reqs
   // Process Reqs
   // Bool reqs
-  pSrc := ADR(hmiProcessReqs.zReqMoveUpLimit);
-  pDest := ADR(hmiProcessReqs.cuttingHeadMoveReqRetract);
+  pSrc := ADR(hmiProcessReqs.StartOfClearedRequests);
+  pDest := ADR(hmiProcessReqs.EndOfClearedRequests);
   byteCount := pDest - pSrc + SIZEOF(BOOL);
   nxtAddr := brsmemset(pSrc, 0, byteCount);
-  // Numerical reqs
-  hmiProcessReqs.cuttingHeadReqDepth := 0.0;
   
   // Now clear the machine specific axis reqs
   FOR axisNo := 0 TO AXIS_COUNT DO
@@ -59,7 +67,6 @@ ACTION ClearCycleReqs :
   operatingMode.HmiReqCycleStart := FALSE;
   operatingMode.HmiReqCycleStop:= FALSE;
   operatingMode.ReqEmoReset := FALSE;
-  operatingMode.ReqAxisReset := FALSE;
 END_ACTION
 
 ACTION ManualModeAxisPermits : 
@@ -149,12 +156,39 @@ ACTION ProductionModeAxisPermits :
   // TODO: mask requests or commands?
 
   // Z
-  // TODO: mask requests or commands?
-  // fctClearMotionRequests(_I_ReqMask := MACM_NOMASK, _IO_Commands := axes[AD_Z].Commands);
-  // TODO: require eccentrics to be homed and spindle to be stopped
-  axes[AD_Z].MoveParameters.PosMovePermissive := TRUE;
-  axes[AD_Z].MoveParameters.NegMovePermissive := TRUE;
-  // TODO: mask requests or commands?
+  // Axis needs to homed and enabled, but also,
+  // moving Z Axis requires the cutting head to be retracted.
+  // Therefore the inner and outer both need to be homed, so the position is known,
+  // and the difference in posiiton (axis.Status.CalculatedPosition1) needs to be within
+  // tolerance.
+  axes[AD_Z].MoveParameters.PosMovePermissive := 
+    axes[AD_Z].Status.IsHomed AND axes[AD_Z].Status.IsPoweredOn AND
+    axes[AD_INNER_ECCENTRIC].Status.IsHomed AND axes[AD_OUTER_ECCENTRIC].Status.IsHomed AND
+    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < TOL_DEPTH_ZERO_DEG AND
+    // position must be less than limit
+    axes[AD_Z].Status.Position <= gr_AxisPositionLimits[AD_Z].PositionLimitPos;
+    
+  axes[AD_Z].MoveParameters.NegMovePermissive := 
+    axes[AD_Z].Status.IsHomed AND axes[AD_Z].Status.IsPoweredOn AND
+    axes[AD_INNER_ECCENTRIC].Status.IsHomed AND axes[AD_OUTER_ECCENTRIC].Status.IsHomed AND
+    ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) < TOL_DEPTH_ZERO_DEG AND
+    // position must be less than limit
+    axes[AD_Z].Status.Position >= gr_AxisPositionLimits[AD_Z].PositionLimitNeg;
+    
+  // Set process related enable/disables
+  hmiProcessReqs.zMoveDownReqEnable := axes[AD_Z].MoveParameters.NegMovePermissive;
+  hmiProcessReqs.zMoveUpReqEnable := axes[AD_Z].MoveParameters.PosMovePermissive;
+  hmiProcessReqs.zMoveToLUnLReqEnable := 
+    // okay to go up
+    (axes[AD_Z].Status.Position < gr_CfgCurrent.zAxis.loadUnloadPos AND axes[AD_Z].MoveParameters.PosMovePermissive) OR
+    // okay to go down
+    (axes[AD_Z].Status.Position > gr_CfgCurrent.zAxis.loadUnloadPos AND axes[AD_Z].MoveParameters.NegMovePermissive);
+  hmiProcessReqs.zMoveToSocReqEnable := 
+    // okay to go up
+    (axes[AD_Z].Status.Position < gr_CfgCurrent.zAxis.startOfCutPos AND axes[AD_Z].MoveParameters.PosMovePermissive) OR
+    // okay to go down
+    (axes[AD_Z].Status.Position > gr_CfgCurrent.zAxis.startOfCutPos AND axes[AD_Z].MoveParameters.NegMovePermissive);
+
 
   // Handwheel is virtual -- don't allow moves
   axes[AD_HANDWHEEL].MoveParameters.PosMovePermissive := FALSE;
@@ -162,6 +196,7 @@ ACTION ProductionModeAxisPermits :
     
   // cutting fluid pump
   axes[AD_CF_VFD].MoveParameters.PosMovePermissive := cfVfd.isAllowedToRun;
+  hmiProcessReqs.cfRunEnable := axes[AD_CF_VFD].MoveParameters.PosMovePermissive;
 // Allow forward running only
   axes[AD_CF_VFD].MoveParameters.NegMovePermissive := FALSE;
 

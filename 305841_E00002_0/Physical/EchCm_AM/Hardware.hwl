@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?AutomationStudio FileVersion="4.9"?>
+<BR.AS.HardwareTopology>
+  <TimeStamps>
+    <TimeStamp LogicalPath="EchCm_AM.Hardware.hw" LastWriteTime="04/28/2022 12:02:41" />
+  </TimeStamps>
+  <Modules>
+    <Module Name="ServoMotor_Spindle" Type="8LSA46.DB030S200-3" X="163" Y="595" />
+    <Module Name="VFD1_PLK13" Type="8I66xxxxxxx.0P-xxx" X="429" Y="308" />
+    <Module Name="ServoMotor_Z" Type="8LSA45.D1030D200-0" X="293" Y="595" />
+    <Module Name="MCP1_PLC_201" Type="X20CP3586" X="97" Y="102" />
+    <Module Name="PLK240-2" Type="X20IF1082-2" X="209" Y="102" />
+    <Module Name="X20BM11" Type="X20BM11" X="297" Y="102" />
+    <Module Name="IOR00SL01" Type="X20DI4371" X="297" Y="102" />
+    <Module Name="X20TB12" Type="X20TB12" X="297" Y="129" />
+    <Module Name="X20BM33d" Type="X20BM33" X="310" Y="102" />
+    <Module Name="IOR00SL02" Type="X20SO6300" X="310" Y="102" />
+    <Module Name="X20TB52d" Type="X20TB52" X="323" Y="128" />
+    <Module Name="OWS1_OIT1" Type="6PPT50.121E-16B" X="638" Y="-159" />
+    <Module Name="RIO_OWS1_PLK1" Type="X20BB81" X="604" Y="102" />
+    <Module Name="X20BM11l" Type="X20BM11" X="667" Y="102" />
+    <Module Name="PLK1_IOR01SL02" Type="X20DI6371" X="667" Y="102" />
+    <Module Name="X20TB12n" Type="X20TB12" X="667" Y="129" />
+    <Module Name="X20BM11c" Type="X20BM11" X="680" Y="102" />
+    <Module Name="PLK1_IOR01SL03" Type="X20DI6371" X="680" Y="102" />
+    <Module Name="X20TB12c" Type="X20TB12" X="680" Y="129" />
+    <Module Name="X20BM11x" Type="X20BM11" X="693" Y="102" />
+    <Module Name="PLK1_IOR01SL04" Type="X20DI6371" X="693" Y="102" />
+    <Module Name="X20TB12ab" Type="X20TB12" X="693" Y="129" />
+    <Module Name="X20BM11e" Type="X20BM11" X="706" Y="102" />
+    <Module Name="PLK1_IOR01SL05" Type="X20DS1119" X="706" Y="102" />
+    <Module Name="X20TB12e" Type="X20TB12" X="706" Y="129" />
+    <Module Name="X20BM33" Type="X20BM33" X="719" Y="102" />
+    <Module Name="SafetyController_R01SL06" Type="X20SLX410" X="719" Y="102" />
+    <Module Name="X20TB52" Type="X20TB52" X="732" Y="128" />
+    <Module Name="X20cBM11a" Type="X20cBM11" X="745" Y="102" />
+    <Module Name="PLK1_IOR01SL07" Type="X20DO6322" X="745" Y="102" />
+    <Module Name="X20TB12p" Type="X20TB12" X="745" Y="129" />
+    <Module Name="X20BM11h" Type="X20BM11" X="758" Y="102" />
+    <Module Name="PLK1_IOR01SL08" Type="X20DO6322" X="758" Y="102" />
+    <Module Name="X20TB12h" Type="X20TB12" X="758" Y="129" />
+    <Module Name="X20BM11n" Type="X20BM11" X="771" Y="102" />
+    <Module Name="PLK1_IOR01SL09" Type="X20ZF0000" X="771" Y="102" />
+    <Module Name="X20TB12o" Type="X20TB12" X="771" Y="129" />
+    <Module Name="X20BM11m" Type="X20BM11" X="784" Y="102" />
+    <Module Name="PLK1_IOR01SL10" Type="X20ZF0000" X="784" Y="102" />
+    <Module Name="X20TB12i" Type="X20TB12" X="784" Y="129" />
+    <Module Name="X20BM01" Type="X20BM01" X="797" Y="102" />
+    <Module Name="PLK1_IOR01SL11" Type="X20PS3300" X="797" Y="102" />
+    <Module Name="X20TB12z" Type="X20TB12" X="797" Y="129" />
+    <Module Name="X20BM11d" Type="X20BM11" X="810" Y="102" />
+    <Module Name="PLK1_IOR01SL12" Type="X20DI6371" X="810" Y="102" />
+    <Module Name="X20TB12d" Type="X20TB12" X="810" Y="129" />
+    <Module Name="X20BM11b" Type="X20BM11" X="823" Y="102" />
+    <Module Name="PLK1_IOR01SL13" Type="X20DO6322" X="823" Y="102" />
+    <Module Name="X20TB12b" Type="X20TB12" X="823" Y="129" />
+    <Module Name="X20BM11f" Type="X20BM11" X="836" Y="102" />
+    <Module Name="PLK1_IOR01SL14" Type="X20ZF0000" X="836" Y="102" />
+    <Module Name="X20TB12f" Type="X20TB12" X="836" Y="129" />
+    <Module Name="X20BM11o" Type="X20BM11" X="849" Y="102" />
+    <Module Name="PLK1_IOR01SL15" Type="X20ZF0000" X="849" Y="102" />
+    <Module Name="X20TB12q" Type="X20TB12" X="849" Y="129" />
+    <Module Name="X20BM33b" Type="X20BM33" X="862" Y="102" />
+    <Module Name="PLK1_IOR01SL16" Type="X20SI4100" X="862" Y="102" />
+    <Module Name="X20TB52b" Type="X20TB52" X="875" Y="128" />
+    <Module Name="X20BM33a" Type="X20BM33" X="888" Y="102" />
+    <Module Name="PLK1_IOR01SL17" Type="X20SI4100" X="888" Y="102" />
+    <Module Name="X20TB52a" Type="X20TB52" X="901" Y="128" />
+    <Module Name="PS_PLK1" Type="X20PS9400" X="654" Y="102" />
+    <Module Name="X20TB12m" Type="X20TB12" X="654" Y="129" />
+    <Module Name="BC_PLK1" Type="X20BC8083" X="629" Y="102" />
+    <Module Name="RIO_JB1_PLK2" Type="X20BB81" X="1067" Y="114" />
+    <Module Name="X20BM11p" Type="X20BM11" X="1130" Y="114" />
+    <Module Name="PLK2_IOR02SL02" Type="X20DI4371" X="1130" Y="114" />
+    <Module Name="X20TB12s" Type="X20TB12" X="1130" Y="141" />
+    <Module Name="X20BM11q" Type="X20BM11" X="1143" Y="114" />
+    <Module Name="PLK2_IOR02SL03" Type="X20DI4371" X="1143" Y="114" />
+    <Module Name="X20TB12t" Type="X20TB12" X="1143" Y="141" />
+    <Module Name="X20BM11r" Type="X20BM11" X="1156" Y="114" />
+    <Module Name="PLK2_IOR02SL04" Type="X20AI4632-1" X="1156" Y="114" />
+    <Module Name="X20TB12u" Type="X20TB12" X="1156" Y="141" />
+    <Module Name="X20BM11w" Type="X20BM11" X="1169" Y="114" />
+    <Module Name="PLK2_IOR02SL05" Type="X20DS438A" X="1169" Y="114" />
+    <Module Name="X20TB12aa" Type="X20TB12" X="1169" Y="141" />
+    <Module Name="X20BM11g" Type="X20BM11" X="1182" Y="114" />
+    <Module Name="PLK2_IOR02SL06" Type="X20PD2113" X="1182" Y="114" />
+    <Module Name="X20TB12g" Type="X20TB12" X="1182" Y="141" />
+    <Module Name="X20BM11t" Type="X20BM11" X="1195" Y="114" />
+    <Module Name="PLK2_IOR02SL07" Type="X20ZF0000" X="1195" Y="114" />
+    <Module Name="X20TB12x" Type="X20TB12" X="1195" Y="141" />
+    <Module Name="X20BM11v" Type="X20BM11" X="1208" Y="114" />
+    <Module Name="PLK2_IOR02SL08" Type="X20ZF0000" X="1208" Y="114" />
+    <Module Name="X20TB12w" Type="X20TB12" X="1208" Y="141" />
+    <Module Name="X20BM01a" Type="X20BM01" X="1221" Y="114" />
+    <Module Name="PLK2_IOR02SL09" Type="X20PS3300" X="1221" Y="114" />
+    <Module Name="X20TB12ac" Type="X20TB12" X="1221" Y="141" />
+    <Module Name="X20BM11u" Type="X20BM11" X="1234" Y="114" />
+    <Module Name="PLK2_IOR02SL10" Type="X20ZF0000" X="1234" Y="114" />
+    <Module Name="X20TB12y" Type="X20TB12" X="1234" Y="141" />
+    <Module Name="X20BM11s" Type="X20BM11" X="1247" Y="114" />
+    <Module Name="PLK2_IOR02SL11" Type="X20ZF0000" X="1247" Y="114" />
+    <Module Name="X20TB12v" Type="X20TB12" X="1247" Y="141" />
+    <Module Name="X20BM33c" Type="X20BM33" X="1260" Y="114" />
+    <Module Name="PLK2_IOR02SL12" Type="X20SI4100" X="1260" Y="114" />
+    <Module Name="X20TB52c" Type="X20TB52" X="1273" Y="140" />
+    <Module Name="X20BM33e" Type="X20BM33" X="1286" Y="114" />
+    <Module Name="PLK2_IOR02SL13" Type="X20SO4120" X="1286" Y="114" />
+    <Module Name="X20TB52e" Type="X20TB52" X="1299" Y="140" />
+    <Module Name="PS_PLK2" Type="X20PS9400" X="1117" Y="114" />
+    <Module Name="X20TB12r" Type="X20TB12" X="1117" Y="141" />
+    <Module Name="BC_PLK2" Type="X20BC1083" X="1092" Y="114" />
+    <Module Name="ServoMotor_InE" Type="8LSA26.D9060S200-3" X="-43" Y="595" />
+    <Module Name="ServoMotor_OutE" Type="8LSA26.D9060S200-3" X="-191" Y="595" />
+    <Module Name="PS51x_100_LI2UPN8_IODD1_1" Type="FBD.IOLink.GenericDeviceDTM.DTMCore.PS51x-100-LI2UPN8 IODD1.1" X="1067" Y="236" />
+    <Module Name="PS51x_100_LI2UPN8_IODD1_1a" Type="FBD.IOLink.GenericDeviceDTM.DTMCore.PS51x-100-LI2UPN8 IODD1.1" X="1222" Y="236" />
+    <Module Name="AM1_PLK11" Type="8BVI0055HCD0.000-1" X="-80" Y="341" />
+    <Module Name="AM2Enc2_Z" Type="8BAC0120.001-2" X="-60.4" Y="516" />
+    <Module Name="AM2Enc1_Spindle" Type="8BAC0120.001-2" X="-77.2" Y="516" />
+    <Module Name="AM2_PLK12" Type="8BVI0055HCDS.000-1" X="220" Y="352" />
+    <Module Name="AM1Enc_InE_SM12" Type="8BVSV2SAFE1-1" X="239.6" Y="527" />
+    <Module Name="AM1Enc_OutE_SM11" Type="8BVSV2SAFE1-1" X="222.8" Y="527" />
+    <Module Name="AM_PS_PLK10" Type="8B0P0440HC00.000-1" X="-354" Y="352" />
+  </Modules>
+  <Links>
+    <Link From="AM1Enc_InE_SM12" To="ServoMotor_InE" FromPort="EC" ToPort="EC" IsRoutedByUser="False">
+      <Point X="246.400009" Y="543.6" />
+      <Point X="246.400009" Y="543.6" />
+      <Point X="257.400024" Y="543.6" />
+      <Point X="272" Y="543.6" />
+      <Point X="272" Y="585" />
+      <Point X="-21.5" Y="585" />
+      <Point X="-21.5" Y="594.1" />
+      <Point X="-21.5" Y="601.1" />
+      <Point X="-21.5" Y="601.1" />
+    </Link>
+    <Link From="AM1Enc_OutE_SM11" To="ServoMotor_OutE" FromPort="EC" ToPort="EC" IsRoutedByUser="False">
+      <Point X="229.6" Y="543.6" />
+      <Point X="229.6" Y="543.6" />
+      <Point X="219.6" Y="543.6" />
+      <Point X="208" Y="543.6" />
+      <Point X="208" Y="568" />
+      <Point X="-169.5" Y="568" />
+      <Point X="-169.5" Y="594.1" />
+      <Point X="-169.5" Y="601.1" />
+      <Point X="-169.5" Y="601.1" />
+    </Link>
+    <Link From="AM1_PLK11" To="AM2_PLK12" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="-68.1" Y="348" />
+      <Point X="-68.1" Y="348" />
+      <Point X="-68.1" Y="340" />
+      <Point X="-68.1" Y="328" />
+      <Point X="243.8" Y="328" />
+      <Point X="243.8" Y="351" />
+      <Point X="243.8" Y="359" />
+      <Point X="243.8" Y="359" />
+    </Link>
+    <Link From="AM1_PLK11" To="VFD1_PLK13" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="-56.2" Y="348" />
+      <Point X="-56.2" Y="348" />
+      <Point X="-42.2" Y="348" />
+      <Point X="265" Y="348" />
+      <Point X="265" Y="415" />
+      <Point X="446" Y="415" />
+      <Point X="446" Y="408" />
+      <Point X="446" Y="402" />
+      <Point X="446" Y="402" />
+    </Link>
+    <Link From="AM1_PLK11" To="ServoMotor_Spindle" FromPort="MT1" ToPort="MT" IsRoutedByUser="False">
+      <Point X="-63.9" Y="555.9" />
+      <Point X="-63.9" Y="555.9" />
+      <Point X="-63.9" Y="563.9" />
+      <Point X="-63.9" Y="575" />
+      <Point X="212.5" Y="575" />
+      <Point X="212.5" Y="594.1" />
+      <Point X="212.5" Y="601.1" />
+      <Point X="212.5" Y="601.1" />
+    </Link>
+    <Link From="AM1_PLK11" To="ServoMotor_Z" FromPort="MT2" ToPort="MT" IsRoutedByUser="False">
+      <Point X="-47.1" Y="555.9" />
+      <Point X="-47.1" Y="555.9" />
+      <Point X="-42.1" Y="555.9" />
+      <Point X="-28" Y="555.9" />
+      <Point X="-28" Y="585" />
+      <Point X="342.5" Y="585" />
+      <Point X="342.5" Y="594.1" />
+      <Point X="342.5" Y="601.1" />
+      <Point X="342.5" Y="601.1" />
+    </Link>
+    <Link From="AM2Enc1_Spindle" To="ServoMotor_Spindle" FromPort="EC" ToPort="EC" IsRoutedByUser="False">
+      <Point X="-70.3999939" Y="532.6" />
+      <Point X="-70.3999939" Y="532.6" />
+      <Point X="-80.3999939" Y="532.6" />
+      <Point X="-85" Y="532.6" />
+      <Point X="-85" Y="575" />
+      <Point X="184.5" Y="575" />
+      <Point X="184.5" Y="594.1" />
+      <Point X="184.5" Y="601.1" />
+      <Point X="184.5" Y="601.1" />
+    </Link>
+    <Link From="AM2Enc2_Z" To="ServoMotor_Z" FromPort="EC" ToPort="EC" IsRoutedByUser="False">
+      <Point X="-53.6000023" Y="532.6" />
+      <Point X="-53.6000023" Y="532.6" />
+      <Point X="-42.6000023" Y="532.6" />
+      <Point X="-35" Y="532.6" />
+      <Point X="-35" Y="585" />
+      <Point X="314.5" Y="585" />
+      <Point X="314.5" Y="594.1" />
+      <Point X="314.5" Y="601.1" />
+      <Point X="314.5" Y="601.1" />
+    </Link>
+    <Link From="AM2_PLK12" To="AM_PS_PLK10" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="231.9" Y="359" />
+      <Point X="231.9" Y="359" />
+      <Point X="219.9" Y="359" />
+      <Point X="215" Y="359" />
+      <Point X="215" Y="321" />
+      <Point X="-330.2" Y="321" />
+      <Point X="-330.2" Y="351" />
+      <Point X="-330.2" Y="359" />
+      <Point X="-330.2" Y="359" />
+    </Link>
+    <Link From="AM2_PLK12" To="ServoMotor_OutE" FromPort="MT1" ToPort="MT" IsRoutedByUser="False">
+      <Point X="236.1" Y="566.9" />
+      <Point X="236.1" Y="566.9" />
+      <Point X="219.1" Y="566.9" />
+      <Point X="215" Y="566.9" />
+      <Point X="215" Y="575" />
+      <Point X="-141.5" Y="575" />
+      <Point X="-141.5" Y="594.1" />
+      <Point X="-141.5" Y="601.1" />
+      <Point X="-141.5" Y="601.1" />
+    </Link>
+    <Link From="AM2_PLK12" To="ServoMotor_InE" FromPort="MT2" ToPort="MT" IsRoutedByUser="False">
+      <Point X="252.9" Y="566.9" />
+      <Point X="252.9" Y="566.9" />
+      <Point X="257.9" Y="566.9" />
+      <Point X="265" Y="566.9" />
+      <Point X="265" Y="585" />
+      <Point X="6.5" Y="585" />
+      <Point X="6.5" Y="594.1" />
+      <Point X="6.5" Y="601.1" />
+      <Point X="6.5" Y="601.1" />
+    </Link>
+    <Link From="AM_PS_PLK10" To="MCP1_PLC_201" FromPort="PLK1" ToPort="IF3" IsRoutedByUser="False">
+      <Point X="153" Y="189" />
+      <Point X="153" Y="189" />
+      <Point X="153" Y="202" />
+      <Point X="153" Y="215" />
+      <Point X="-342.1764" Y="215" />
+      <Point X="-342.1764" Y="351.890259" />
+      <Point X="-342.1764" Y="359.890259" />
+      <Point X="-342.1764" Y="359.890259" />
+    </Link>
+    <Link From="BC_PLK1" To="PLK240-2" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="False">
+      <Point X="643" Y="177" />
+      <Point X="634.75" Y="177" />
+      <Point X="634.75" Y="202" />
+      <Point X="634.75" Y="215" />
+      <Point X="595" Y="215" />
+      <Point X="595" Y="88" />
+      <Point X="375" Y="88" />
+      <Point X="375" Y="222" />
+      <Point X="214.75" Y="222" />
+      <Point X="214.75" Y="202" />
+      <Point X="214.75" Y="177" />
+      <Point X="223" Y="177" />
+    </Link>
+    <Link From="BC_PLK1" To="BC_PLK2" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="643" Y="192" />
+      <Point X="643" Y="192" />
+      <Point X="643" Y="202" />
+      <Point X="643" Y="225" />
+      <Point X="1097.75" Y="225" />
+      <Point X="1097.75" Y="214" />
+      <Point X="1097.75" Y="189" />
+      <Point X="1106" Y="189" />
+    </Link>
+    <Link From="MCP1_PLC_201" To="OWS1_OIT1" FromPort="IF2" ToPort="ETH1" IsRoutedByUser="False">
+      <Point X="129" Y="189" />
+      <Point X="129" Y="189" />
+      <Point X="129" Y="202" />
+      <Point X="129" Y="229" />
+      <Point X="352" Y="229" />
+      <Point X="352" Y="81" />
+      <Point X="745.4" Y="81" />
+      <Point X="745.4" Y="5.399994" />
+      <Point X="745.4" Y="0.3999939" />
+      <Point X="745.4" Y="0.3999939" />
+    </Link>
+    <Link From="PLK2_IOR02SL05" To="PS51x_100_LI2UPN8_IODD1_1" FromPort="IF1" ToPort="IO-Link1" IsRoutedByUser="False">
+      <Point X="1176" Y="158" />
+      <Point X="1171" Y="158" />
+      <Point X="1171" Y="214" />
+      <Point X="1171" Y="295" />
+      <Point X="1086" Y="295" />
+      <Point X="1086" Y="287" />
+      <Point X="1086" Y="275" />
+      <Point X="1086" Y="275" />
+    </Link>
+    <Link From="PLK2_IOR02SL05" To="PS51x_100_LI2UPN8_IODD1_1a" FromPort="IF2" ToPort="IO-Link1" IsRoutedByUser="False">
+      <Point X="1176" Y="173" />
+      <Point X="1179" Y="173" />
+      <Point X="1179" Y="214" />
+      <Point X="1179" Y="295" />
+      <Point X="1241" Y="295" />
+      <Point X="1241" Y="287" />
+      <Point X="1241" Y="275" />
+      <Point X="1241" Y="275" />
+    </Link>
+  </Links>
+  <InfoElements />
+</BR.AS.HardwareTopology>

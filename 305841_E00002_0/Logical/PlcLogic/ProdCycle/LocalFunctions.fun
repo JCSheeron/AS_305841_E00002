@@ -48,4 +48,3 @@ FUNCTION fctCalcDepthAdjVelocity : REAL (* deg/sec Return the depth adjustment v
   END_VAR
 END_FUNCTION
 
-

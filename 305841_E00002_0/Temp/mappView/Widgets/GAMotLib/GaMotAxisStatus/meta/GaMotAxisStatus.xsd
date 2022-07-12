@@ -12,6 +12,7 @@
 <xs:complexType name="widgets.GAMotLib.GaMotAxisStatus">
 	<xs:complexContent>
 		<xs:extension base="iat:widgets.GAMotLib.GaMotAxisStatusRestrict">
+			<xs:attribute name="AxisName" use="optional" type="types:String" default="" />
 			<xs:attribute name="PositionUnits" use="optional" type="types:String" default="" />
 			<xs:attribute name="VelocityUnits" use="optional" type="types:String" default="" />
 			<xs:attribute name="IsReadyForPowerText" use="optional" type="types:String" default="No" />

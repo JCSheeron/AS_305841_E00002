@@ -116,3 +116,38 @@ FUNCTION fctRound2 : REAL (* Return the source value (real) rounded to 2 decimal
   END_VAR
 END_FUNCTION
 
+FUNCTION fctRound3 : REAL (* Return the source value (real) rounded to 2 decimal places *)
+  VAR_INPUT
+    _I_src : LREAL; (* REAL value to be rounded *)
+  END_VAR
+  VAR
+    dintTemp : DINT; (* temp value *)
+  END_VAR
+END_FUNCTION
+
+FUNCTION fctLRound1 : LREAL (* Return the source value (LREAL) rounded to 1 decimal place *)
+  VAR_INPUT
+    _I_src : LREAL; (* REAL value to be rounded *)
+  END_VAR
+  VAR
+    dintTemp : DINT; (* temp value *)
+  END_VAR
+END_FUNCTION
+
+FUNCTION fctLRound2 : LREAL (* Return the source value (LREAL) rounded to 2 decimal places *)
+  VAR_INPUT
+    _I_src : LREAL; (* REAL value to be rounded *)
+  END_VAR
+  VAR
+    dintTemp : DINT; (* temp value *)
+  END_VAR
+END_FUNCTION
+
+FUNCTION fctLRound3 : LREAL (* Return the source value (LREAL) rounded to 2 decimal places *)
+  VAR_INPUT
+    _I_src : LREAL; (* REAL value to be rounded *)
+  END_VAR
+  VAR
+    dintTemp : DINT; (* temp value *)
+  END_VAR
+END_FUNCTION

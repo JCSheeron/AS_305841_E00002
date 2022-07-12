@@ -15,18 +15,19 @@
     <Object Type="Library" Language="IEC" Description="Mapp Motion Helper Functions">GAMpMotion</Object>
     <Object Type="Library" Language="IEC">GAConvert</Object>
     <Object Type="Library" Language="IEC">GAMath</Object>
+    <Object Type="Library" Language="binary" Description="The AsZip library offers compressing archive-support">AsZip</Object>
+    <Object Type="Library" Language="binary" Description="The FileIO library provides function blocks for file handling.">FileIO</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Base library">McBase</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Axis library">MpAxis</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] ACOPOS axis library">McAcpAx</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] Purely virtual axis library">McPureVAx</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] PLCopen axis library">McAxis</Object>
-    <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
     <Object Type="Library" Language="binary" Description="[mapp Motion] DS402 axis library">McDS402Ax</Object>
+    <Object Type="Library" Language="Binary" Description="Core library for mapp components">MpBase</Object>
     <Object Type="Library" Language="Binary" Description="[mapp Safety] SafeDOMAIN management library">SfDomain</Object>
     <Object Type="Library" Language="Binary" Description="Recipe management">MpRecipe</Object>
     <Object Type="Library" Language="Binary" Description="Advanced alarm management">MpAlarmX</Object>
     <Object Type="Library" Language="binary" Description="This library contains functionality to execute traces (to sample numeric values periodically for a defined time-span)">CoTrace</Object>
-    <Object Type="Library" Language="binary" Description="The AsZip library offers compressing archive-support">AsZip</Object>
-    <Object Type="Library" Language="binary" Description="The FileIO library provides function blocks for file handling.">FileIO</Object>
+    <Object Type="Library" Language="binary" Description="This mechatronics library contains lookup table function blocks.">MTLookUp</Object>
   </Objects>
 </Package>

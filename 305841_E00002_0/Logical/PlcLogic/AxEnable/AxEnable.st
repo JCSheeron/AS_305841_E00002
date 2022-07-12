@@ -12,6 +12,7 @@ PROGRAM _CYCLIC
   axes[AD_OUTER_ECCENTRIC].Commands.PlcSafetyEnable := TRUE;
   axes[AD_INNER_ECCENTRIC].Commands.PlcSafetyEnable := TRUE;
   axes[AD_Z].Commands.PlcSafetyEnable := TRUE;
+  axes[AD_CF_VFD].Commands.PlcSafetyEnable := TRUE;
   
 END_PROGRAM
 

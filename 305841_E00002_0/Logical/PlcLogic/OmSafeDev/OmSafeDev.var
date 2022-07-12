@@ -27,6 +27,8 @@ VAR
   ts_InEmoMode : BOOL;
   ts_InSafeMode : BOOL;
   ts_InPendantMode : BOOL;
+  ts_InManualMode : BOOL;
+  ts_InProductionMode : BOOL;
   
   (* cycle start/stop req *)
   tmrReqStartPulse : TP;
@@ -38,9 +40,8 @@ VAR
   tmrEStopResetAllow : TON;
   timeResetPulse : TIME;
   tmrResetPulse : TP;
-  
-  (* HMI process specific, machine specific, and axis requests *)
-  hmiProcessReqs : sHmiProcessReqs; (* process specific reqs *)
+
+  (* HMI machine specific and axis requests *)
   hmiMachineAxisReqs : ARRAY[0..AXIS_COUNT] OF sHmiAxisReqs; (* machine specific requests that get turned into library reqs *)
   hmiLibraryAxisReqs : ARRAY[0..AXIS_COUNT] OF sMot_HmiAxisReqs; (* standard/basic requests handled by the library *)
  

@@ -130,7 +130,7 @@
 	@include font-weight-bold(true);
 }
 #GaMotAxisSetPosLimits_numInPosLimitPos {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisSetPosLimits_numInPosLimitPos {
 	@include elemTop(129);
@@ -139,13 +139,13 @@
 	@include elemLeft(45);
 }
 #GaMotAxisSetPosLimits_numInPosLimitPos {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisSetPosLimits_numInPosLimitPos {
 		z-index: 6;
 }
 #GaMotAxisSetPosLimits_numInPosLimitNeg {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisSetPosLimits_numInPosLimitNeg {
 	@include elemTop(129);
@@ -154,7 +154,7 @@
 	@include elemLeft(189);
 }
 #GaMotAxisSetPosLimits_numInPosLimitNeg {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisSetPosLimits_numInPosLimitNeg {
 		z-index: 7;

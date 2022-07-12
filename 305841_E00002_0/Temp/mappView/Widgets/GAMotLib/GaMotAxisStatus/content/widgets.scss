@@ -1,24 +1,24 @@
 @import "mixins.scss";
-#GaMotAxisStatus_grpBoxAxisStatus {
-	@include elemTop(5);
+#GaMotAxisStatus_lblAxisStatus {
+	@include elemTop(0);
 }
-#GaMotAxisStatus_grpBoxAxisStatus {
-	@include elemLeft(5);
+#GaMotAxisStatus_lblAxisStatus {
+	@include elemLeft(0);
 }
-#GaMotAxisStatus_grpBoxAxisStatus {
+#GaMotAxisStatus_lblAxisStatus {
 	@include elemWidth(370);
 }
-#GaMotAxisStatus_grpBoxAxisStatus {
-	@include elemHeight(290);
+#GaMotAxisStatus_lblAxisStatus {
+	@include elemHeight(295);
 }
-#GaMotAxisStatus_grpBoxAxisStatus {
+#GaMotAxisStatus_lblAxisStatus {
 		z-index: 0;
 }
 #GaMotAxisStatus_lblRdyForPower {
-	@include elemTop(8);
+	@include elemTop(47);
 }
 #GaMotAxisStatus_lblRdyForPower {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblRdyForPower {
 	@include elemAutoWidth(125);
@@ -35,10 +35,10 @@
 	}
 }
 #GaMotAxisStatus_lblIsHomed {
-	@include elemTop(30);
+	@include elemTop(69);
 }
 #GaMotAxisStatus_lblIsHomed {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsHomed {
 	@include elemAutoWidth(125);
@@ -55,10 +55,10 @@
 	}
 }
 #GaMotAxisStatus_lblIsAtPos {
-	@include elemTop(119);
+	@include elemTop(158);
 }
 #GaMotAxisStatus_lblIsAtPos {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsAtPos {
 	@include elemAutoWidth(125);
@@ -75,10 +75,10 @@
 	}
 }
 #GaMotAxisStatus_lblIsMoveActive {
-	@include elemTop(97);
+	@include elemTop(136);
 }
 #GaMotAxisStatus_lblIsMoveActive {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsMoveActive {
 	@include elemAutoWidth(125);
@@ -95,10 +95,10 @@
 	}
 }
 #GaMotAxisStatus_lblIsMoveDone {
-	@include elemTop(141);
+	@include elemTop(180);
 }
 #GaMotAxisStatus_lblIsMoveDone {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsMoveDone {
 	@include elemAutoWidth(125);
@@ -115,10 +115,10 @@
 	}
 }
 #GaMotAxisStatus_lblIsStopped {
-	@include elemTop(163);
+	@include elemTop(202);
 }
 #GaMotAxisStatus_lblIsStopped {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsStopped {
 	@include elemAutoWidth(125);
@@ -135,10 +135,10 @@
 	}
 }
 #GaMotAxisStatus_lblStatus {
-	@include elemTop(193);
+	@include elemTop(232);
 }
 #GaMotAxisStatus_lblStatus {
-	@include elemLeft(238);
+	@include elemLeft(233);
 }
 #GaMotAxisStatus_lblStatus {
 	@include elemAutoWidth(60);
@@ -155,10 +155,10 @@
 	}
 }
 #GaMotAxisStatus_lblState {
-	@include elemTop(218);
+	@include elemTop(257);
 }
 #GaMotAxisStatus_lblState {
-	@include elemLeft(238);
+	@include elemLeft(233);
 }
 #GaMotAxisStatus_lblState {
 	@include elemAutoWidth(60);
@@ -175,10 +175,10 @@
 	}
 }
 #GaMotAxisStatus_txtOutStatus {
-	@include elemTop(193);
+	@include elemTop(232);
 }
 #GaMotAxisStatus_txtOutStatus {
-	@include elemLeft(9);
+	@include elemLeft(4);
 }
 #GaMotAxisStatus_txtOutStatus {
 	@include elemAutoWidth(228);
@@ -196,10 +196,10 @@
 	@include text-alignment-all('right');
 }
 #GaMotAxisStatus_txtOutState {
-	@include elemTop(218);
+	@include elemTop(257);
 }
 #GaMotAxisStatus_txtOutState {
-	@include elemLeft(9);
+	@include elemLeft(4);
 }
 #GaMotAxisStatus_txtOutState {
 	@include elemAutoWidth(228);
@@ -217,10 +217,10 @@
 	@include text-alignment-all('right');
 }
 #GaMotAxisStatus_txtOutRdyForPwr {
-	@include elemTop(5);
+	@include elemTop(44);
 }
 #GaMotAxisStatus_txtOutRdyForPwr {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutRdyForPwr {
 	@include elemAutoWidth(30);
@@ -238,10 +238,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_txtOutIsHomed {
-	@include elemTop(28);
+	@include elemTop(67);
 }
 #GaMotAxisStatus_txtOutIsHomed {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsHomed {
 	@include elemAutoWidth(30);
@@ -259,10 +259,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_txtOutIsMoveActive {
-	@include elemTop(95);
+	@include elemTop(134);
 }
 #GaMotAxisStatus_txtOutIsMoveActive {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsMoveActive {
 	@include elemAutoWidth(30);
@@ -280,10 +280,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_txtOutIsAtPos {
-	@include elemTop(118);
+	@include elemTop(157);
 }
 #GaMotAxisStatus_txtOutIsAtPos {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsAtPos {
 	@include elemAutoWidth(30);
@@ -301,10 +301,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_txtOutIsMoveDone {
-	@include elemTop(140);
+	@include elemTop(179);
 }
 #GaMotAxisStatus_txtOutIsMoveDone {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsMoveDone {
 	@include elemAutoWidth(30);
@@ -322,10 +322,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_txtOutIsStopped {
-	@include elemTop(163);
+	@include elemTop(202);
 }
 #GaMotAxisStatus_txtOutIsStopped {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsStopped {
 	@include elemAutoWidth(30);
@@ -343,10 +343,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_numOutPosAct {
-	@include elemTop(93);
+	@include elemTop(132);
 }
 #GaMotAxisStatus_numOutPosAct {
-	@include elemLeft(14);
+	@include elemLeft(9);
 }
 #GaMotAxisStatus_numOutPosAct {
 	@include elemAutoWidth(120);
@@ -363,10 +363,10 @@
 	}
 }
 #GaMotAxisStatus_numOutVelAct {
-	@include elemTop(148);
+	@include elemTop(187);
 }
 #GaMotAxisStatus_numOutVelAct {
-	@include elemLeft(14);
+	@include elemLeft(9);
 }
 #GaMotAxisStatus_numOutVelAct {
 	@include elemAutoWidth(120);
@@ -386,10 +386,10 @@
 	@include elemAutoWidth(80);
 }
 #GaMotAxisStatus_lblPosAct {
-	@include elemTop(68);
+	@include elemTop(107);
 }
 #GaMotAxisStatus_lblPosAct {
-	@include elemLeft(34);
+	@include elemLeft(29);
 }
 #GaMotAxisStatus_lblPosAct {
 	@include elemAutoHeight(15);
@@ -404,10 +404,10 @@
 	@include elemAutoWidth(80);
 }
 #GaMotAxisStatus_lblVelAct {
-	@include elemTop(123);
+	@include elemTop(162);
 }
 #GaMotAxisStatus_lblVelAct {
-	@include elemLeft(34);
+	@include elemLeft(29);
 }
 #GaMotAxisStatus_lblVelAct {
 	@include elemAutoHeight(15);
@@ -419,10 +419,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_lblIsPoweredOn {
-	@include elemTop(52);
+	@include elemTop(91);
 }
 #GaMotAxisStatus_lblIsPoweredOn {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsPoweredOn {
 	@include elemAutoWidth(125);
@@ -439,10 +439,10 @@
 	}
 }
 #GaMotAxisStatus_txtOutIsPoweredOn {
-	@include elemTop(50);
+	@include elemTop(89);
 }
 #GaMotAxisStatus_txtOutIsPoweredOn {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsPoweredOn {
 	@include elemAutoWidth(30);
@@ -460,10 +460,10 @@
 	@include text-alignment-all('center');
 }
 #GaMotAxisStatus_lblIsBrakeManRel {
-	@include elemTop(74);
+	@include elemTop(113);
 }
 #GaMotAxisStatus_lblIsBrakeManRel {
-	@include elemLeft(184);
+	@include elemLeft(179);
 }
 #GaMotAxisStatus_lblIsBrakeManRel {
 	@include elemAutoWidth(151);
@@ -480,10 +480,10 @@
 	}
 }
 #GaMotAxisStatus_txtOutIsBrakeManRel {
-	@include elemTop(73);
+	@include elemTop(112);
 }
 #GaMotAxisStatus_txtOutIsBrakeManRel {
-	@include elemLeft(139);
+	@include elemLeft(134);
 }
 #GaMotAxisStatus_txtOutIsBrakeManRel {
 	@include elemAutoWidth(30);
@@ -499,4 +499,19 @@
 }
 #GaMotAxisStatus_txtOutIsBrakeManRel {
 	@include text-alignment-all('center');
+}
+#GaMotAxisStatus_grpBoxLabel {
+	@include elemTop(-1);
+}
+#GaMotAxisStatus_grpBoxLabel {
+	@include elemLeft(-1);
+}
+#GaMotAxisStatus_grpBoxLabel {
+	@include elemAutoWidth(370);
+}
+#GaMotAxisStatus_grpBoxLabel {
+	@include elemAutoHeight(36);
+}
+#GaMotAxisStatus_grpBoxLabel {
+		z-index: 24;
 }

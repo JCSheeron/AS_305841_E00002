@@ -23,6 +23,17 @@
         InA OR InB
       </Operation>
     </ExpressionType>
+
+    <!-- Two bools false -->
+    <ExpressionType name="InA_AND_InB_False" datatype="BOOL">
+      <Operands>
+        <Operand name="InA" datatype="BOOL" />
+        <Operand name="InB" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        NOT (InA OR InB)
+      </Operation>
+    </ExpressionType>
     
     <!-- Integer + 1 -->
     <ExpressionType name="IntPlusOne" datatype="ANY_INT">

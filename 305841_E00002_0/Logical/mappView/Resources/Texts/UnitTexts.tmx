@@ -117,5 +117,21 @@
         <seg>jerk (accel/sec) for inches</seg>
       </tuv>
     </tu>
+    <tu tuid="4669751.Name">
+      <tuv xml:lang="en">
+        <seg>Pounds Per Square Inch</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669751.Sym">
+      <tuv xml:lang="en">
+        <seg>psi</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669751.Desc">
+      <tuv xml:lang="en">
+        <seg>pounds/in² using psi as a symbol
+</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

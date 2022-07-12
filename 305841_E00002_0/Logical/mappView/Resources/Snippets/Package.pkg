@@ -5,6 +5,8 @@
     <Object Type="File">booleanSnippets.snippet</Object>
     <Object Type="File">dlgSafetySystem.snippet</Object>
     <Object Type="File">axisStatus.snippet</Object>
+    <Object Type="File">cuttingHead.snippet</Object>
+    <Object Type="File">cfAxisStatus.snippet</Object>
     <Object Type="File">zAxisStatus.snippet</Object>
   </Objects>
 </Package>

@@ -8,6 +8,10 @@ VAR RETAIN
 END_VAR
   
 VAR
+  disableStepTO : BOOL := FALSE;
+  startCycleOS : BOOL := FALSE;
+  idx : SINT;
+  
   calcReal1 : REAL;  (* temporary value *)
   calcLReal1 : LREAL; (* temporary value *)
   calcDint1 : DINT;  (* temporary value *)
@@ -25,5 +29,7 @@ VAR
   stepETs  : ARRAY[0..40] OF TIME; (* step elapsed times *)
   stepTOs  : ARRAY[0..40] OF TIME; (* step Timeout values *)
   stepIsTO : ARRAY[0..40] OF BOOL; (* set if the step has a TO *)
+  
+  prodCycleStep : ePROD_CYCLE_STEP;
 END_VAR
 

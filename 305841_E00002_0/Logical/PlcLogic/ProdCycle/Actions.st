@@ -69,7 +69,10 @@ ACTION CalcAngles :
   // If the entered depth adjustment angle is too small, set the warning and enforce the minimum
   partMotion.warnAdjAngleTooSmall := gr_CfgCurrent.cuttingHead.depthAdjAngle < partMotion.depthAdjAngleMin;
   partMotion.depthAdjAngle := MAX(gr_CfgCurrent.cuttingHead.depthAdjAngle, partMotion.depthAdjAngleMin);
- 
+
+  // INITIALLY HARD CODE depth adj angle
+  partMotion.depthAdjAngle := 10.0;
+
 END_ACTION
 
 ACTION CalcDepthAdjVelocity : // deg/sec. Calc depth adjustment velocity

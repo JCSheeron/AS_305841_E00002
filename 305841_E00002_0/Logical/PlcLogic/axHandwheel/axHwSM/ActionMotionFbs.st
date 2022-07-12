@@ -10,51 +10,41 @@
  ********************************************************************) 
 
 ACTION ActionCallMotionFunctions: 
+  ActionRangeCheckMoveParams;
   ActionMpAxisBasic;
-  ActionMpAxisCoupling;
+  ActionReadDrivePos;
+  ActionCamInOut;
+  ActionGearInOut;
+  ActionOffsetShift;
+  ActionPhaseShift;
+END_ACTION
+
+ACTION ActionRangeCheckMoveParams: 
+  // Range checks position, velocity, accel & Decel
+
+  // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
+  // Clamp if necessary. 
+  
+  // Position
+  ax.MoveParameters.Position := MIN(axPositionLimits.PositionLimitPos, MAX(axPositionLimits.PositionLimitNeg, ax.MoveParameters.Position));
+
+  // Velocity
+  ax.MoveParameters.Velocity := MIN(ax.MoveParameters.VelocityMax, MAX(ax.MoveParameters.VelocityMin, ax.MoveParameters.Velocity));
+
+  // Accel and decel
+  ax.MoveParameters.Acceleration := MIN(ax.MoveParameters.AccelMax, MAX(ax.MoveParameters.AccelMin, ax.MoveParameters.Acceleration));
+  ax.MoveParameters.Deceleration := MIN(ax.MoveParameters.DecelMax, MAX(ax.MoveParameters.DecelMin, ax.MoveParameters.Deceleration));
+  
 END_ACTION
 
 ACTION ActionMpAxisBasic: 
-  // 1) Range checks position, velocity, accel & Decel
+  // 1) Assume velocity, accel & Decel have been range checked
   // 2) Packs the sMot_MoveParameters into a local axisBasicParamsStructure
   // 3) Detects parameter changes and manages the Update and UpdateDone bits
   // 4) Sets the fb command bits based on the axis sMot_AxisCommands structure
   // 5) Runs the fbMpAxisBasic funciton block
   // 6) Updates the axis structure with the status and axis info coming back from the fb
 
-  // Make sure min/max values are not exceeded for position, velocity, accel, and decel.
-  // Clamp if necessary
-  
-  // Position
-  IF ax.MoveParameters.Position >  axPositionLimits.PositionLimitPos THEN
-    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitPos;
-  END_IF;
-  IF ax.MoveParameters.Position <  axPositionLimits.PositionLimitNeg THEN
-    ax.MoveParameters.Position :=  axPositionLimits.PositionLimitNeg;
-  END_IF;
-
-  // Velocity
-  IF ax.MoveParameters.Velocity > ax.MoveParameters.VelocityMax THEN
-    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMax;
-  END_IF;
-  IF ax.MoveParameters.Velocity < ax.MoveParameters.VelocityMin THEN
-    ax.MoveParameters.Velocity := ax.MoveParameters.VelocityMin;
-  END_IF;
-
-  // Accel and decel
-  IF ax.MoveParameters.Acceleration > ax.MoveParameters.AccelMax THEN
-    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMax;
-  END_IF;
-  IF ax.MoveParameters.Acceleration < ax.MoveParameters.AccelMin THEN
-    ax.MoveParameters.Acceleration := ax.MoveParameters.AccelMin;
-  END_IF;
-
-  IF ax.MoveParameters.Deceleration > ax.MoveParameters.DecelMax THEN
-    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMax;
-  END_IF;
-  IF ax.MoveParameters.Deceleration < ax.MoveParameters.DecelMin THEN
-    ax.MoveParameters.Deceleration := ax.MoveParameters.DecelMin;
-  END_IF;
 
   // The execution behavior is determined by the inputs set elsewhere 
   // in particular the sMot_AxisCommands XxxxCmd bits,
@@ -83,7 +73,7 @@ ACTION ActionMpAxisBasic:
   // when to trigger the update. If parameters need to be set in possibly different areas of the software,
   // and all the updates should take place at once, the update fb is called conditionally. The
   // checked bit can be set high so it is called all the time if the checked bit is not managed.
-  ax.Commands.UpdateMoveParams:= FALSE;
+  ax.Commands.UpdateMoveParams:= TRUE;
   IF ax.Commands.UpdateMoveParams THEN
     ax.fbUpdateBFbParams(_IO_MpParams := axisBasicParams);
     ax.Commands.UpdateMoveParams := FALSE;
@@ -110,15 +100,7 @@ ACTION ActionMpAxisBasic:
   
   // Call the fb
   ax.fbMpAxisBasic();
-  
-  // Update the fb status structure
-  ax.statusFpMpAxisBasic.Active := ax.fbMpAxisBasic.Active;
-  ax.statusFpMpAxisBasic.Error := ax.fbMpAxisBasic.Error;
-  ax.statusFpMpAxisBasic.StatusId := ax.fbMpAxisBasic.StatusID;
-  ax.statusFpMpAxisBasic.UpdateDone := ax.fbMpAxisBasic.UpdateDone;
-  ax.statusFpMpAxisBasic.CommandBusy := ax.fbMpAxisBasic.CommandBusy;
-  ax.statusFpMpAxisBasic.CommandAborted := ax.fbMpAxisBasic.CommandAborted;
-  
+ 
   // Update the axis status structure
   ax.Status.Position := ax.fbMpAxisBasic.Position;
   ax.Status.Velocity := ax.fbMpAxisBasic.Velocity;
@@ -134,15 +116,6 @@ ACTION ActionMpAxisBasic:
   
   // Now load the sMot_AxisStatus structure with the data returned from the fb
   fctGetMpAxisInfo(_I_MpInfo := ADR(ax.fbMpAxisBasic.Info), _IO_UdtStatus := ax.Status);
-  // further unpack diag info into fb status structure for easier access
-  ax.statusFpMpAxisBasic.StatusId := ax.Status.AxisDiagnostics.StatusID.ID;
-  ax.statusFpMpAxisBasic.StatusSeverity := ax.Status.AxisDiagnostics.StatusID.Severity;
-  ax.statusFpMpAxisBasic.StatusCode := ax.Status.AxisDiagnostics.StatusID.Code;
-  ax.statusFpMpAxisBasic.InternalId := ax.Status.AxisDiagnostics.Internal.ID;
-  ax.statusFpMpAxisBasic.InternalSeverity := ax.Status.AxisDiagnostics.Internal.Severity;
-  ax.statusFpMpAxisBasic.InternalFacility := ax.Status.AxisDiagnostics.Internal.Facility;
-  ax.statusFpMpAxisBasic.InternalCode := ax.Status.AxisDiagnostics.Internal.Code;
-  ax.statusFpMpAxisBasic.ExecutingCommand := ax.Status.AxisDiagnostics.ExecutingCommand;
   
   // Calculate special (algorithmic) positions
   CalcSpecialPositions;
@@ -153,117 +126,330 @@ ACTION ActionMpAxisBasic:
 
 END_ACTION
 
-ACTION ActionMpAxisCoupling:
-  // 1) Packs the sMot_CouplingParameters into a local axisCouplingParamsStructure
-  // 2) Detects parameter changes and manages the Update and UpdateDone bits
-  // 3) Sets the fb command bits based on the axis sMot_AxisCommands structure
-  // 4) Runs the fbMpAxisCoupling funciton block
-  // 5) Updates the axis structure with the status and axis info coming back from the fb
-
-  // The execution behavior is determined by the inputs set elsewhere 
-  // in particular the sMot_AxisCommands Engage/Disengage Slave bits, 
-  // and the values in sMot_CouplingParameters struture.
-
-  // Axis references set in init routine 
-
-  // Only enable the coupling fb if the axis number has been set, 
-  // the slave axis number has been set, and neither is set to be ignored.
-  IF NOT ax.Ignore AND ax.AxisNo <> AD_UNKNOWN AND
-     ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND
-     NOT axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
-    ax.fbMpAxisCoupling.Enable := TRUE;
+ACTION ActionReadDrivePos:
+  // Read the drive position. As opposed to the position value coming from MpAxisBasic,
+  // the drive position allows different position sources to be specified, but it also
+  // allows can provide the position that does not have a MOD applied in the periodic case.
+  // This is helpful to assess long moves on periodic axes (e.g. 1000 degree move on a
+  // 360 degree periodic axis).
+  // Only execute the read position fb if the axis number has been set, 
+  // the axis is not ignored.
+  IF NOT ax.Ignore AND ax.AxisNo <> AD_UNKNOWN THEN
+    // Axis is in play. Go get some of that position ... 
+    // Set the source, enable the fb
+    ax.fbReadDrivePos.ValueSource := mcVALUE_ACTUAL_AXIS_UNITS;
+    ax.fbReadDrivePos.Enable := TRUE;
   ELSE
-    ax.fbMpAxisCoupling.Enable := FALSE;
-  END_IF;
-  
-  // If the slave axis has changed, update the fb link to the slave axis
-  // Handle this change before the call to fbUpdateCFbParams because
-  // a slave number change would be detected but not handled by fbUpdateCFbParams.
-  IF ax.CouplingParameters.SlaveAxisNo <> ax.CouplingParametersPrev.SlaveAxisNo THEN
-    // Set the axis object based on the slave number
-    IF ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN THEN
-      ax.SlaveAxisObj := axes[ax.CouplingParameters.SlaveAxisNo].AxisObj;
-    ELSE
-      ax.SlaveAxisObj := axDummySlave;
-    END_IF;  
-    ax.fbMpAxisCoupling.MpLink := ADR(ax.SlaveAxisObj);
-    // Update the previous value now that the change is handled
-    ax.CouplingParametersPrev.SlaveAxisNo := ax.CouplingParameters.SlaveAxisNo;
-  END_IF;
-  
-  // Load the parameters from the sMot_CouplingParameters structure into
-  // local structure variables used for the call to fbMpAxisCoupling
-  fctPackMpAxisCouplingParams(_I_UdtParams:= ADR(ax.CouplingParameters), _IO_MpParams := axisCouplingParams);
-  
-  // To allow coupling parameter changes to take effect without having to stop, 
-  // detect a difference between the desired parameters and the previous values.
-  // If they are different, then set the update bit until the UpdateDone bit is set.
-  // NOTE: This fb manages the ax.fbMpAxisCoupling.Update request and monitors the .UpdateDone bit
-  // Use the .UpdateCouplingParams bit in the command structure if the application needs to control
-  // when to trigger the update. If parameters need to be set in possibly different areas of the software,
-  // and all the updates should take place at once, the update fb is called conditionally. The
-  // checked bit can be set high so it is called all the time if the checked bit is not managed.
-  ax.Commands.UpdateCouplingParams:= TRUE;
-  IF ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND ax.Commands.UpdateCouplingParams THEN
-    ax.fbUpdateCFbParams();
-    ax.Commands.UpdateCouplingParams := FALSE;
+    // axis should be ignored
+    // keep the enable low
+    ax.fbReadDrivePos.Enable := FALSE;
   END_IF;
 
-  // Use the commands from the axis structue
-  ax.fbMpAxisCoupling.ErrorReset := ax.Commands.DriveResetCmd;
+  // Block should be set up. Call 'er  
+  ax.fbReadDrivePos();
 
-  // Gear in if there is a slave, it is requested and it is allowed by the slave
-  ax.fbMpAxisCoupling.Gear := ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND ax.CouplingParameters.GearInCmd AND axes[ax.CouplingParameters.SlaveAxisNo].CouplingParameters.CouplingPermissive;
-  ax.fbMpAxisCoupling.Cam := FALSE; // Not using camming
-  // Gear in position if there is a slave, it is requested and it is allowed by the slave
-  ax.fbMpAxisCoupling.GearInPos := ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND ax.CouplingParameters.GearInPosCmd AND axes[ax.CouplingParameters.SlaveAxisNo].CouplingParameters.CouplingPermissive;
-  // Generate an offset or phase shift if there is a slave, it is requested and it is allowed by the slave
-  ax.fbMpAxisCoupling.OffsetShift := ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND ax.CouplingParameters.OffsetShiftCmd AND axes[ax.CouplingParameters.SlaveAxisNo].CouplingParameters.CouplingPermissive;
-  ax.fbMpAxisCoupling.PhaseShift := ax.CouplingParameters.SlaveAxisNo <> AD_UNKNOWN AND ax.CouplingParameters.PhaseShiftCmd AND axes[ax.CouplingParameters.SlaveAxisNo].CouplingParameters.CouplingPermissive;
-  ax.fbMpAxisCoupling.GetCamPosition := FALSE; // not using camming
-  ax.fbMpAxisCoupling.CamPrepare := FALSE; // not using camming
-  ax.fbMpAxisCoupling.Recovery := FALSE; // not using camming
-
-  // Call the fb
-  ax.fbMpAxisCoupling();
-
-  // Update the fb status structure
-  ax.statusFpMpAxisCoupling.Active := ax.fbMpAxisCoupling.Active;
-  ax.statusFpMpAxisCoupling.Error := ax.fbMpAxisCoupling.Error;
-  ax.statusFpMpAxisCoupling.StatusId := ax.fbMpAxisCoupling.StatusID;
-  ax.statusFpMpAxisCoupling.UpdateDone := ax.fbMpAxisCoupling.UpdateDone;
-  ax.statusFpMpAxisCoupling.CommandBusy := ax.fbMpAxisCoupling.CommandBusy;
-  ax.statusFpMpAxisCoupling.CommandAborted := ax.fbMpAxisCoupling.CommandAborted;
-  
-  // Update the axis status structure
-  ax.Status.IsCoordInCompensation := ax.fbMpAxisCoupling.InCompensation;
-  ax.Status.IsCoordInSync := ax.fbMpAxisCoupling.InSync;
-  ax.Status.IsCoordOffsetDone := ax.fbMpAxisCoupling.OffsetDone;
-  ax.Status.IsCoordPhasingDone := ax.fbMpAxisCoupling.PhasingDone;
-  ax.Status.IsCoordRecoveryDone := ax.fbMpAxisCoupling.RecoveryDone;
-
-  // Now load the sMot_AxisStatus structure with the data returned from the fb
-  fctGetMpCouplingInfo(_I_MpInfo := ADR(ax.fbMpAxisCoupling.Info), _IO_UdtStatus := ax.Status);
-  // add to the isCoordSlaveReady status the slave coupling permissive
-  ax.Status.IsCoordSlaveReady := ax.Status.IsCoordSlaveReady AND axes[ax.CouplingParameters.SlaveAxisNo].CouplingParameters.CouplingPermissive;
-  // further unpack diag info into fb status structure for easier access
-  ax.statusFpMpAxisCoupling.StatusId := ax.Status.CoordAxisDiagnostics.StatusID.ID;
-  ax.statusFpMpAxisCoupling.StatusSeverity := ax.Status.CoordAxisDiagnostics.StatusID.Severity;
-  ax.statusFpMpAxisCoupling.StatusCode := ax.Status.CoordAxisDiagnostics.StatusID.Code;
-  ax.statusFpMpAxisCoupling.InternalId := ax.Status.CoordAxisDiagnostics.Internal.ID;
-  ax.statusFpMpAxisCoupling.InternalSeverity := ax.Status.CoordAxisDiagnostics.Internal.Severity;
-  ax.statusFpMpAxisCoupling.InternalFacility := ax.Status.CoordAxisDiagnostics.Internal.Facility;
-  ax.statusFpMpAxisCoupling.InternalCode := ax.Status.CoordAxisDiagnostics.Internal.Code;
-  ax.statusFpMpAxisCoupling.ExecutingCommand := ax.Status.CoordAxisDiagnostics.ExecutingCommand;
+  // If fb has been enabled and is valid and error , get the drive position. Otherwise
+  // use the sentinel value
+  IF ax.fbReadDrivePos.Enable AND ax.fbReadDrivePos.Valid AND NOT ax.fbReadDrivePos.Error THEN
+    ax.Status.DrivePosition := ax.fbReadDrivePos.CyclicPosition;
+  ELSE
+    ax.Status.DrivePosition := INVALID_SENTINEL_LREAL;
+  END_IF;
 
 END_ACTION
 
-ACTION CalcSpecialPositions :
-  // If there is an algorithm needed for calculating a different position, it can be done here
-  // If not, just use the axis position.
-  ax.Status.CalculatedPosition1 :=  ax.Status.Position;
-  ax.Status.CalculatedPosition2 :=  ax.Status.Position;
-  ax.Status.CalculatedPosition3 :=  ax.Status.Position;
+ACTION ActionCamInOut:
+  // Execute the cam in or cam out fbs based on the CamIn/Out requests
+  // The fbs are edge triggered, and the requests are cleared once serviced.
+  // If the caming params change, another request must be made.
+  // TODO: Is cam out and another cam in needed if params change?
+
+  // Only execute the cam in fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored,
+  // and it is requested.
+  IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
+       ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored
+    // keep the requests and executes low
+    ax.CouplingParameters.CamInReq := FALSE;
+    ax.CouplingParameters.CamOutReq := FALSE;
+    ax.fbCamIn.Execute := FALSE;
+    ax.fbCamOut.Execute := FALSE;
+  ELSIF ax.CouplingParameters.CamInReq THEN
+    // CamIn request is made.
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.CamInReq := FALSE;
+    // Make sure the CamOut req and execute is clear
+    ax.CouplingParameters.CamOutReq := FALSE;
+    ax.fbCamOut.Execute := FALSE;
+    // Load the cam in params, then set the execute input (edge triggered fb)
+    ax.fbCamIn.MasterOffset := ax.CouplingParameters.CamMasterOffset;
+    ax.fbCamIn.SlaveOffset := ax.CouplingParameters.CamSlaveOffset;
+    ax.fbCamIn.MasterScaling := ax.CouplingParameters.CamScalingMaster;
+    ax.fbCamIn.SlaveScaling := ax.CouplingParameters.CamScalingSlave;
+    ax.fbCamIn.StartMode := ax.CouplingParameters.CamStartMode;
+    ax.fbCamIn.MasterValueSource := ax.CouplingParameters.CamMasterValueSource;
+    ax.fbCamIn.CamID := ax.CouplingParameters.CamId;
+    ax.fbCamIn.BufferMode := ax.CouplingParameters.CamBufferMode; // only mcAborting currently supported
+    ax.fbCamIn.AdvancedParameters.Periodic := ax.CouplingParameters.CamIsPeriodic;
+    ax.fbCamIn.AdvancedParameters.Velocity := 0.0; // disable, use (slave?) axis max vel
+    ax.fbCamIn.AdvancedParameters.Acceleration := 0.0; // disable, use (slave?) axis max accel
+    ax.fbCamIn.AdvancedParameters.Deceleration := 0.0; // disable, use (slave?) axis max decel
+    ax.fbCamIn.AdvancedParameters.Jerk := 0.0; // only non-zero if using McProfGen
+    ax.fbCamIn.Execute := TRUE; // fb looks for a rising edge
+  ELSIF ax.CouplingParameters.CamOutReq THEN
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.CamOutReq := FALSE;
+    // Make sure the GearIn req and execute is clear
+    ax.CouplingParameters.CamInReq := FALSE;
+    ax.fbCamIn.Execute := FALSE;
+    // Load the cam out params, then set the execute input (edge triggered fb)
+    ax.fbCamOut.Jerk := 0.0; // only non-zero if using McProfGen
+    ax.fbCamOut.Execute := TRUE;
+  END_IF;
+  
+  // Call the cam in and cam out fbs.
+  ax.fbCamIn();
+  ax.fbCamOut();
+  // Clear the exuecute bits. The fbs are edge triggerd, and would have been seen by the above call.
+  ax.fbCamIn.Execute := FALSE;
+  ax.fbCamOut.Execute := FALSE;
+    
+  // Update the axis status structure
+  IF NOT ax.fbCamIn.Error THEN
+    ax.Status.IsCamInSync := ax.fbCamIn.InSync;
+    ax.Status.IsCamEndOfProfile := ax.fbCamIn.EndOfProfile;
+    ax.Status.CamStatus := ax.fbCamIn.Status;
+  ELSE
+    ax.Status.IsCamInSync := FALSE;
+    ax.Status.IsCamEndOfProfile := FALSE;
+    ax.Status.CamStatus := mcCAM_STATUS_PREPARING_MOVE; // 0 value, but don't have a good choice for "not active"
+  END_IF;
+
+END_ACTION
+
+ACTION ActionGearInOut:
+  // Execute the gear in or gear out fbs based on the GearIn/Out requests
+  // The fbs are edge triggered, and the requests are cleared once serviced.
+  // If the gearing params change, another request must be made.
+
+  // Only execute the gear in fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored,
+  // and it is requested.
+  IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
+       ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+       axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored
+    // keep the requests and executes low
+    ax.CouplingParameters.GearInReq := FALSE;
+    ax.CouplingParameters.GearOutReq := FALSE;
+    ax.fbGearIn.Execute := FALSE;
+    ax.fbGearOut.Execute := FALSE;
+  ELSIF ax.CouplingParameters.GearInReq THEN
+    // GearIn request is made.
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.GearInReq := FALSE;
+    // Make sure the GearOut req and execute is clear
+    ax.CouplingParameters.GearOutReq := FALSE;
+    ax.fbGearOut.Execute := FALSE;
+    // Load the gear in params, then set the execute input (edge triggered fb)
+    ax.fbGearIn.RatioNumerator := ax.CouplingParameters.GearInRatioNumerator;
+    ax.fbGearIn.RatioDenominator := ax.CouplingParameters.GearInRatioDenominator;
+    ax.fbGearIn.MasterValueSource := ax.CouplingParameters.GearInMasterValueSource;
+    ax.fbGearIn.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    ax.fbGearIn.Deceleration := ax.CouplingParameters.ShiftDecelerationMax;
+    ax.fbGearIn.Jerk := ax.CouplingParameters.ShiftJerk; // only non-zero if using McProfGen
+    ax.fbGearIn.BufferMode := ax.CouplingParameters.GearInBufferMode; // onlly mcAborting currently supported
+    ax.fbGearIn.AdvancedParameters.MasterMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbGearIn.Execute := TRUE; // fb looks for a rising edge
+  ELSIF ax.CouplingParameters.GearOutReq THEN
+    // Clear the req so a future rising edge can be seen
+    ax.CouplingParameters.GearOutReq := FALSE;
+    // Make sure the GearIn req and execute is clear
+    ax.CouplingParameters.GearInReq := FALSE;
+    ax.fbGearIn.Execute := FALSE;
+    // Load the gear out params, then set the execute input (edge triggered fb)
+    ax.fbGearOut.Jerk := 0.0; // only non-zero if using McProfGen
+    ax.fbGearOut.Execute := TRUE;
+  END_IF;
+  
+  // Call the gear in and gear out fbs.
+  ax.fbGearIn();
+  ax.fbGearOut();
+  // Clear the exuecute bits. The fbs are edge triggerd, and would have been seen by the above call.
+  ax.fbGearIn.Execute := FALSE;
+  ax.fbGearOut.Execute := FALSE;
+      
+  // Update the axis status structure.
+  // Derrive InCompensation -- Active but not in sync
+  IF ax.fbGearIn.Active AND NOT ax.fbGearIn.Error THEN
+    // If gear in is active, it is either in sync or in compensation
+    ax.Status.IsGearInSync := ax.fbGearIn.InGear;
+    ax.Status.IsGearInCompensation := NOT ax.fbGearIn.InGear;
+  ELSE
+    ax.Status.IsGearInSync := FALSE;
+    ax.Status.IsGearInCompensation := FALSE;
+  END_IF;
+
+END_ACTION
+
+ACTION ActionOffsetShift:
+  // Execute the offset shift fb based on the offset shift request.
+  // The fb has a level sensitive enable and an edge triggered StartShift input.
+  // NOTE: Either by design or because of a bug, the AdvancedParameters.ProfileBase
+  // seems to be evaluated based on Enable going high. Changes made to the ProfileBase,
+  // after enable going high but before StartShift input going high are ignored.
+  // If the shift params change, another request must be made.
+  // A shift cannot be stopped once started without halting or some oher means of stopping
+  // the axes outside the scope of the shift fb.
+
+  // Since triggering an offset while another shift is in progress triggers an error,
+  // the request, enable, and start shift are only cleared once the shift is finished,
+  // or the fb is invalid or in error
+
+  // Only execute the offset shift fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored
+  IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
+    ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+    axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored, or slave is not set, or 
+    // master is not powered.  Keep the request, enable, and startshift low
+    ax.CouplingParameters.OffsetShiftReq := FALSE;
+    ax.fbOffsetShift.Enable := FALSE;
+    ax.fbOffsetShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND NOT ax.fbOffsetShift.Enable THEN 
+    // Offset Shift request is made.
+    // Set the fb params so a start shift can act on them. Set them
+    // before bringing enable high because the profile base param(s) seem to 
+    // need to be set before the StartShift input is raised.
+    ax.fbOffsetShift.OffsetShift := ax.CouplingParameters.Shift;
+    ax.fbOffsetShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
+    ax.fbOffsetShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    ax.fbOffsetShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbOffsetShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbOffsetShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
+    ax.fbOffsetShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
+    ax.fbOffsetShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
+    // Enable the fb so we can look for a valid before starting the shift.
+    ax.fbOffsetShift.Enable := TRUE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND
+    NOT ax.fbOffsetShift.StartShift AND ax.fbOffsetShift.Valid AND NOT ax.fbOffsetShift.Error THEN
+    // fb is enabled and valid and not in error, but not started yet.
+    // Start the shift on the edge triggered StartShift input.
+    ax.fbOffsetShift.StartShift := TRUE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Enable AND ax.fbOffsetShift.Error THEN 
+    // fb is enabled but in error. Clear the request, enable, and make sure the start shift stays low
+    ax.CouplingParameters.OffsetShiftReq := FALSE;
+    ax.fbOffsetShift.Enable := FALSE;
+    ax.fbOffsetShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Valid AND ax.fbOffsetShift.StartShift AND
+    NOT ax.fbOffsetShift.ShiftAttained THEN
+    // Shift was triggered, but isn't done yet.
+    // Update the axis status structure
+    ax.Status.IsCoordOffsetShiftAttained := FALSE;
+    ax.Status.IsCoordOffsetShiftStarted := ax.fbOffsetShift.ShiftStarted;
+    ax.Status.CoordActualOffsetShift := ax.fbOffsetShift.ActualOffsetShift;
+  ELSIF ax.CouplingParameters.OffsetShiftReq AND ax.fbOffsetShift.Valid AND ax.fbOffsetShift.StartShift AND
+    ax.fbOffsetShift.ShiftAttained THEN
+    // Shift was triggered, and is now done.
+    // Update the axis status structure
+    ax.Status.IsCoordOffsetShiftAttained := ax.fbOffsetShift.ShiftAttained;
+    ax.Status.IsCoordOffsetShiftStarted := FALSE;
+    ax.Status.CoordActualOffsetShift := ax.fbOffsetShift.ActualOffsetShift;
+    // Clear the request, enable, and start shift.
+    // Clearing the original request at the end prevents another request from triggering a shift while
+    // a shift is in progress, but also allows another request to be triggered once done.
+    ax.CouplingParameters.OffsetShiftReq := FALSE;
+    ax.fbOffsetShift.Enable := FALSE;
+    ax.fbOffsetShift.StartShift := FALSE;
+  END_IF;
+  
+  // Call the offset shift fb.
+  ax.fbOffsetShift();
+
+END_ACTION
+
+ACTION ActionPhaseShift:
+  // Execute the phase shift fb based on the phase shift request.
+  // The fb has a level sensitive enable and an edge triggered StartShift input.
+  // NOTE: Either by design or because of a bug, the AdvancedParameters.ProfileBase
+  // seems to be evaluated based on Enable going high. Changes made to the ProfileBase,
+  // after enable going high but before StartShift input going high are ignored.
+  // If the shift params change, another request must be made.
+  // A shift cannot be stopped once started without halting or some oher means of stopping
+  // the axes outside the scope of the shift fb.
+
+  // Since triggering phase shift while another shift is in progress triggers an error,
+  // the request, enable, and start shift are only cleared once the shift is finished,
+  // or the fb is invalid or in error
+
+  // Only execute the phase shift fb if the axis number has been set, 
+  // the slave axis number has been set, and neither is set to be ignored
+  IF ax.Ignore OR ax.AxisNo = AD_UNKNOWN OR
+    ax.CouplingParameters.SlaveAxisNo = AD_UNKNOWN OR
+    axes[ax.CouplingParameters.SlaveAxisNo].Ignore THEN
+    // slave or master should be ignored, or slave is not set, or 
+    // master is not powered.  Keep the request, enable, and startshift low
+    ax.CouplingParameters.PhaseShiftReq := FALSE;
+    ax.fbPhaseShift.Enable := FALSE;
+    ax.fbPhaseShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND NOT ax.fbPhaseShift.Enable THEN 
+    // Phase Shift request is made.
+    // Set the fb params so a start shift can act on them. Set them
+    // before bringing enable high because the profile base param(s) seem to 
+    // need to be set before the StartShift input is raised.
+    ax.fbPhaseShift.PhaseShift := ax.CouplingParameters.Shift;
+    ax.fbPhaseShift.Velocity := ax.CouplingParameters.ShiftVelocityMax;
+    ax.fbPhaseShift.Acceleration := ax.CouplingParameters.ShiftAccelerationMax;
+    ax.fbPhaseShift.AdvancedParameters.ShiftMode := ax.CouplingParameters.ShiftMode;
+    ax.fbPhaseShift.AdvancedParameters.ProfileBase := ax.CouplingParameters.ShiftProfileBase;
+    ax.fbPhaseShift.AdvancedParameters.ProfileBaseMaxVelocity := ax.CouplingParameters.ShiftProfileBaseMaxVelocity;
+    ax.fbPhaseShift.AdvancedParameters.DistanceParameters.ProfileDistance := ax.CouplingParameters.ShiftProfileDistance;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.StartPosition := ax.CouplingParameters.ShiftZoneStartPosition;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.EndPosition := ax.CouplingParameters.ShiftZoneEndPosition;
+    ax.fbPhaseShift.AdvancedParameters.ZoneParameters.Period := ax.CouplingParameters.ShiftZonePeriod;
+    ax.fbPhaseShift.AdvancedParameters.ShiftAlternativeValueSource := mcALT_VALUE_NOT_USED;
+    // Enable the fb so we can look for a valid before starting the shift.
+    ax.fbPhaseShift.Enable := TRUE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Enable AND
+    NOT ax.fbPhaseShift.StartShift AND ax.fbPhaseShift.Valid AND NOT ax.fbPhaseShift.Error THEN
+    // fb is enabled and valid and not in error, but not started yet.
+    // Start the shift on the edge triggered StartShift input.
+    ax.fbPhaseShift.StartShift := TRUE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Enable AND ax.fbPhaseShift.Error THEN 
+    // fb is enabled but in error. Clear the request, enable, and make sure the start shift stays low
+    ax.CouplingParameters.PhaseShiftReq := FALSE;
+    ax.fbPhaseShift.Enable := FALSE;
+    ax.fbPhaseShift.StartShift := FALSE;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Valid AND ax.fbPhaseShift.StartShift AND
+    NOT ax.fbPhaseShift.ShiftAttained THEN
+    // Shift was triggered, but isn't done yet.
+    // Update the axis status structure
+    ax.Status.IsCoordPhaseShiftAttained := FALSE;
+    ax.Status.IsCoordPhaseShiftStarted := ax.fbPhaseShift.ShiftStarted;
+    ax.Status.CoordActualPhaseShift := ax.fbPhaseShift.ActualPhaseShift;
+  ELSIF ax.CouplingParameters.PhaseShiftReq AND ax.fbPhaseShift.Valid AND ax.fbPhaseShift.StartShift AND
+    ax.fbPhaseShift.ShiftAttained THEN
+    // Shift was triggered, and is now done.
+    // Update the axis status structure
+    ax.Status.IsCoordPhaseShiftAttained := ax.fbPhaseShift.ShiftAttained;
+    ax.Status.IsCoordPhaseShiftStarted := FALSE;
+    ax.Status.CoordActualPhaseShift := ax.fbPhaseShift.ActualPhaseShift;
+    // Clear the request, enable, and start shift.
+    // Clearing the original request at the end prevents another request from triggering a shift while
+    // a shift is in progress, but also allows another request to be triggered once done.
+    ax.CouplingParameters.PhaseShiftReq := FALSE;
+    ax.fbPhaseShift.Enable := FALSE;
+    ax.fbPhaseShift.StartShift := FALSE;
+  END_IF;
+  
+  // Call the phase shift fb.
+  ax.fbPhaseShift();
+
 END_ACTION
 
 ACTION CopySlaveStatusToMaster :
@@ -283,4 +469,3 @@ ACTION CopySlaveStatusToMaster :
     END_IF;
   END_FOR;
 END_ACTION
-

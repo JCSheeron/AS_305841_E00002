@@ -5,6 +5,7 @@
     <Object Type="Package" Description="AreaContents">DefaultContent</Object>
     <Object Type="Package">pageWorkSummary</Object>
     <Object Type="Package">pageWorkSetup</Object>
+    <Object Type="Package">pageProduction</Object>
     <Object Type="Package">pageZAxis</Object>
     <Object Type="Package">pageCuttingHead</Object>
     <Object Type="Package">pageSpindle</Object>

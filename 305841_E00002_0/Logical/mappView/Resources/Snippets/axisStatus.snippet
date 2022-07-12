@@ -6,7 +6,7 @@
     <!-- These snippets are intended to take in an index in, use it as an index in a text list, and return the text from the list -->
     <!-- The {1} represents the bound value and the format item is used to look up the text to return. -->
     <!-- IAT is the root namespace for mapp View -->
-    <!-- Axis Status related -->
+    <!-- Axis Detail Page, Axis Status related -->
     <Snippet id="snAxisNameInt" xsi:type="session" type="IndexText" formatItem="IAT/axisName.{1}" />
     <Snippet id="snIsReadyToPowerOn" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
     <Snippet id="snIsHomed" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
@@ -19,13 +19,15 @@
     <Snippet id="snAxisStatusInt" xsi:type="session" type="IndexText" formatItem="IAT/axisStatus.{1}" />
     <Snippet id="snAxisStateInt" xsi:type="session" type="IndexText" formatItem="IAT/gamot_SmState.{1}" />
     <Snippet id="snSlaveAxisNameInt" xsi:type="session" type="IndexText" formatItem="IAT/axisName.{1}" />
-    <Snippet id="snIsCoordSlaveRdy" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
-    <Snippet id="snIsCoordMasterRdy" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
-    <Snippet id="snIsCoordInComp" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
-    <Snippet id="snIsCoordInSync" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
-    <Snippet id="snIsCoordOffsetDone" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
-    <Snippet id="snIsCoordPhasingDone" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsGearInComp" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsGearInSync" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsGearOffsetStarted" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsGearOffsetDone" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsCamInSync" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snIsCamEndOfProfile" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
     <Snippet id="snSlaveAxisStatusInt" xsi:type="session" type="IndexText" formatItem="IAT/axisStatus.{1}" />
     <Snippet id="snSlaveAxisStateInt" xsi:type="session" type="IndexText" formatItem="IAT/gamot_SmState.{1}" />
+    <Snippet id="snCamStatusInt" xsi:type="session" type="IndexText" formatItem="IAT/camStatus.{1}" />
+
   </Snippets>
 </SnippetsSet>

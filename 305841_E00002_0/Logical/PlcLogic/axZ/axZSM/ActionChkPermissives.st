@@ -273,18 +273,26 @@ ACTION ActionChkPermissiveCoupling:
   ax.MoveParameters.PermissiveCheck.CheckFailed:= FALSE;
 
   // Make sure to stop the master if the slave goes out of sync w/o being commanded to
-  IF (ax.fbMpAxisCoupling.Gear OR ax.fbMpAxisCoupling.GearInPos) AND ax.fbMpAxisCoupling.InSync THEN
-    // Slave is geared and in sync. Set the flag so loss of sync can be acted on
-    inSyncSlave := TRUE;
-  ELSIF NOT ax.CouplingParameters.GearInCmd AND NOT ax.CouplingParameters.GearInPosCmd THEN
-    // Slave is not geared. Clear the flag
-    inSyncSlave := FALSE;
+  IF (ax.fbGearIn.Active OR ax.fbCamIn.Active) AND ax.StatusSlave.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION THEN
+    // Slave is geared or cammed (in synchronized motion) Set the flag so loss of sync can be acted on
+    // This flag gets cleared if GearOut or CamOut go active, or
+    // if the master enteres the stopping, homing, disabled, or error stop state.
+    ax.Status.HasCoordinatedSlave := TRUE;
+  ELSIF (ax.fbGearOut.Done OR ax.fbCamOut.Done) OR
+          // ax.Status.PlcOpenState = mcAXIS_STOPPING OR
+          ax.Status.PlcOpenState = mcAXIS_HOMING OR
+          ax.Status.PlcOpenState = mcAXIS_DISABLED OR
+          ax.Status.PlcOpenState = mcAXIS_ERRORSTOP THEN
+    // Slave is not geared or cammed. Clear the flag
+    ax.Status.HasCoordinatedSlave := FALSE;
   END_IF;
   
-  // If slave was synched, and is still supposed to be synched, and the master is moving, then stop the axis if the slave is not in sync or not in compensation
-  // In compensation is true when slave is slowing down or speeding up to get into sync, like after a gear ratio change.
-  IF inSyncSlave AND ax.Status.IsMoveActive AND (NOT ax.fbMpAxisCoupling.InSync AND NOT ax.fbMpAxisCoupling.InCompensation) THEN
-    ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+  // If slave was synched or in compensation, and is still supposed to be synched (but isnt'), and the master is moving, then
+  // stop the master.
+  IF ax.Status.HasCoordinatedSlave AND ax.StatusSlave.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION THEN
+    // ax.MoveParameters.PermissiveCheck.CheckFailed:= TRUE;
+    ax.Commands.HaltReq := TRUE;
+    
   END_IF;
   
   // TODO: Are there other checks??
@@ -299,9 +307,14 @@ ACTION ActionChkPermissiveCoupling:
     ax.Commands.MoveNotAllowed:= TRUE;
   END_IF;
   
-  // The slave allows itself to be coupled by setting the coupling permissive.
-  // TODO. For now, set it to facilitate testing
-  ax.CouplingParameters.CouplingPermissive := TRUE;
-  
+  // The slave allows itself to be coupled by setting the coupling permissive in its own axis structure.
+  // Allow coupling if homed, and in standstill (powered), discrete or continuous motion,
+  // Or if it is already coupled
+  ax.CouplingParameters.CouplingPermissive :=
+    ax.Status.IsHomed AND 
+    (ax.Status.PlcOpenState = mcAXIS_STANDSTILL OR
+     ax.Status.PlcOpenState = mcAXIS_DISCRETE_MOTION OR
+     ax.Status.PlcOpenState = mcAXIS_CONTINUOUS_MOTION OR 
+     ax.Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION);
 
 END_ACTION

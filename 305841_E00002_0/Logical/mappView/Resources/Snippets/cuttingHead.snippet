@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SnippetsSet id="cuttingHead_snippets"
+  xmlns="http://www.br-automation.com/iat2015/snippet/engineering/v3"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Snippets>
+    <!-- These snippets are intended to take in an index in, use it as an index in a text list, and return the text from the list -->
+    <!-- The {1} represents the bound value and the format item is used to look up the text to return. -->
+    <!-- IAT is the root namespace for mapp View -->
+    <!-- Outer Eccentric Axis Status related -->
+    <Snippet id="snOutEIsReadyToPowerOn" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsHomed" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsPoweredOn" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsBrakeManRel" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsMoveActive" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsAtPosition" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsMoveDone" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEIsStopped" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snOutEStatusInt" xsi:type="session" type="IndexText" formatItem="IAT/axisStatus.{1}" />
+    <Snippet id="snOutEStateInt" xsi:type="session" type="IndexText" formatItem="IAT/gamot_SmState.{1}" />
+
+    <!-- Inner Eccentric Axis Status related -->
+    <Snippet id="snInEIsReadyToPowerOn" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsHomed" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsPoweredOn" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsBrakeManRel" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsMoveActive" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsAtPosition" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsMoveDone" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEIsStopped" xsi:type="session" type="IndexText" formatItem="IAT/bool_ny.{1}" />
+    <Snippet id="snInEStatusInt" xsi:type="session" type="IndexText" formatItem="IAT/axisStatus.{1}" />
+    <Snippet id="snInEStateInt" xsi:type="session" type="IndexText" formatItem="IAT/gamot_SmState.{1}" />
+
+  </Snippets>
+</SnippetsSet>

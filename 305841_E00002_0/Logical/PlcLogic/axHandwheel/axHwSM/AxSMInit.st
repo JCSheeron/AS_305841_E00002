@@ -14,12 +14,15 @@ PROGRAM _INIT
   ax.Ignore := FALSE;
   ax.isAxisEndless := TRUE;
   ax.isAxisVirtual := TRUE;
-  
-  // If this is a 
-  
+  ax.isAxisInverter := FALSE;
+
   // Point to the mappMotion axis, and a slave if there is one
   ax.AxisObj := gvAxHw; // mappMotion axis -- see mappMotion in cfg view
   ax.SlaveAxisObj := axDummySlave; // slave axis for the handwheel is dynamic
+
+  // Set the restore pos check fb
+  // ax.fbCheckRestorePos.Axis := ADR(ax.AxisObj);
+  // ax.fbCheckRestorePos.DataAddress := ADR(gr_AxHwRestorePos); // Set this per axis
 
   // Load the min/max velocity and accel/decel from constants
   // Note: Moves not used for virtual axes, so values are not important
@@ -32,20 +35,24 @@ PROGRAM _INIT
 
   // **** The settings below don't normally need to be altered
   
-  // set the fb references
+  // set the fb axis references
   ax.fbMpAxisBasic.MpLink := ADR(ax.AxisObj);
-  ax.fbMpAxisCoupling.MpLinkMaster := ADR(ax.AxisObj);
-  ax.fbMpAxisCoupling.MpLink := ADR(ax.SlaveAxisObj);
+  ax.fbReadDrivePos.Axis:= ADR(ax.AxisObj);
+  ax.fbGearIn.Master := ADR(ax.AxisObj);
+  ax.fbGearIn.Slave := ADR(ax.SlaveAxisObj);
+  ax.fbGearOut.Slave := ADR(ax.SlaveAxisObj);
+  ax.fbOffsetShift.Slave := ADR(ax.SlaveAxisObj);
+  ax.fbPhaseShift.Slave := ADR(ax.SlaveAxisObj);
+  ax.fbCamIn.Master := ADR(ax.AxisObj);
+  ax.fbCamIn.Slave := ADR(ax.SlaveAxisObj);
+  ax.fbCamOut.Slave := ADR(ax.SlaveAxisObj);
   ax.fbUpdateBFbParams._I_Axis := ADR(ax);
-  ax.fbUpdateCFbParams._I_Axis := ADR(ax);
 
   // Set fb reference to local variables
   ax.fbMpAxisBasic.Parameters := ADR(axisBasicParams);
-  ax.fbMpAxisCoupling.Parameters := ADR(axisCouplingParams);
   
-  // Set previous values for motion and coupling parameters so changes can be detected
+  // Set previous values for motion parameters so changes can be detected
   ax.MoveParametersPrev := ax.MoveParameters;
-  ax.CouplingParametersPrev := ax.CouplingParameters;
     
   // Clear commands and requests
   fctClearMotionCommands(_I_CmdMask := MACM_NOMASK, _IO_Commands := ax.Commands);

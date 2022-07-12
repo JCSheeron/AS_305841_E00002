@@ -6,6 +6,7 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     * @class widgets.GAMotLib.GaMotAxisDetail
     * @extends system.widgets.CompoundWidget
     * @requires widgets.GAGeneralLib.TitleLabelBindable
+    * @requires widgets.brease.CheckBox
     * @requires widgets.brease.GroupBox
     * @requires widgets.brease.Label
     * @requires widgets.brease.NumericInput
@@ -261,84 +262,91 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     * Coordinated Axis Velocity  
     */ 
     /** 
-    * @cfg {String} IsCoordSlaveRdyText='No' 
+    * @cfg {Number} SlaveOffsetToMaster=0.0 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Coordinated Slave Offset To Master  
+    */ 
+    /** 
+    * @cfg {String} IsGearInCompText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordSlaveRdyStyle='' 
+    * @cfg {String} IsGearInCompStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
     * Text style for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordMasterRdyText='No' 
+    * @cfg {String} IsGearInSyncText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordMasterRdyStyle='' 
+    * @cfg {String} IsGearInSyncStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
     * Text style for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordInCompText='No' 
+    * @cfg {String} IsGearOffsetStartedText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordInCompStyle='' 
+    * @cfg {String} IsGearOffsetStartedStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
     * Text style for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordInSyncText='No' 
+    * @cfg {String} IsGearOffsetDoneText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordInSyncStyle='' 
+    * @cfg {String} IsGearOffsetDoneStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
     * Text style for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordOffsetDoneText='No' 
+    * @cfg {String} IsCamInSyncText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordOffsetDoneStyle='' 
+    * @cfg {String} IsCamInSyncStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
     * Text style for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordPhasingDoneText='No' 
+    * @cfg {String} IsCamEndOfProfileText='No' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
     * Text display for boolean status  
     */ 
     /** 
-    * @cfg {String} IsCoordPhasingDoneStyle='' 
+    * @cfg {String} IsCamEndOfProfileStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
@@ -353,6 +361,20 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     */ 
     /** 
     * @cfg {String} SlaveStatusStyle='' 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Appearance 
+    * Text style for integer status values.  
+    */ 
+    /** 
+    * @cfg {String} CamStatusText='Unknown' 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Text display for integer status values.  
+    */ 
+    /** 
+    * @cfg {String} CamStatusStyle='' 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Appearance 
@@ -450,11 +472,32 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     * Position parameter input is enabled  
     */ 
     /** 
+    * @cfg {Boolean} GearInEnable=false 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Gear In is enabled  
+    */ 
+    /** 
+    * @cfg {Boolean} CamInEnable=false 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Cam In is enabled  
+    */ 
+    /** 
+    * @cfg {Boolean} DisengageSlaveEnable=false 
+    * @iatStudioExposed 
+    * @bindable 
+    * @iatCategory Axis 
+    * Disengage Slave is enabled  
+    */ 
+    /** 
     * @cfg {Boolean} ShiftEnable=true 
     * @iatStudioExposed 
     * @bindable 
     * @iatCategory Axis 
-    * Slave Shift Parameters are enabled  
+    * Slave Shift is enabled  
     */ 
 
     var defaultSettings = {
@@ -489,20 +532,23 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
             StateStyle: '',
             CoordSlavePosition: 0.0,
             CoordSlaveVelocity: 0.0,
-            IsCoordSlaveRdyText: 'No',
-            IsCoordSlaveRdyStyle: '',
-            IsCoordMasterRdyText: 'No',
-            IsCoordMasterRdyStyle: '',
-            IsCoordInCompText: 'No',
-            IsCoordInCompStyle: '',
-            IsCoordInSyncText: 'No',
-            IsCoordInSyncStyle: '',
-            IsCoordOffsetDoneText: 'No',
-            IsCoordOffsetDoneStyle: '',
-            IsCoordPhasingDoneText: 'No',
-            IsCoordPhasingDoneStyle: '',
+            SlaveOffsetToMaster: 0.0,
+            IsGearInCompText: 'No',
+            IsGearInCompStyle: '',
+            IsGearInSyncText: 'No',
+            IsGearInSyncStyle: '',
+            IsGearOffsetStartedText: 'No',
+            IsGearOffsetStartedStyle: '',
+            IsGearOffsetDoneText: 'No',
+            IsGearOffsetDoneStyle: '',
+            IsCamInSyncText: 'No',
+            IsCamInSyncStyle: '',
+            IsCamEndOfProfileText: 'No',
+            IsCamEndOfProfileStyle: '',
             SlaveStatusText: 'Unknown',
             SlaveStatusStyle: '',
+            CamStatusText: 'Unknown',
+            CamStatusStyle: '',
             SlaveStateText: 'Unknown',
             SlaveStateStyle: '',
             DirMovePosText: 'PosDir',
@@ -516,19 +562,22 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
             ShortestDirectionEnable: true,
             DistanceEnable: true,
             PositionEnable: true,
+            GearInEnable: false,
+            CamInEnable: false,
+            DisengageSlaveEnable: false,
             ShiftEnable: true
         },
 
         propertyMapping = {
             
-            StatusStruct: { 'numOutPosAct': 'node', 'numOutVelAct': 'node', 'numOutPhaseShiftAct': 'node', 'numOutOffsetAct': 'node' }, 
+            StatusStruct: { 'numOutPosAct': 'node', 'numOutVelAct': 'node', 'numOutOffsetAct': 'node' }, 
             MoveLimitsStruct: { 'numOutPosLimitPos': 'node', 'numOutPosLimitNeg': 'node' }, 
-            LibraryAxisReqStruct: { 'pbStart': 'value', 'pbHalt': 'value', 'pbStop': 'value', 'pbEnable': 'value', 'pbDisable': 'value', 'pbManBrakeRel': 'value', 'pbClearManBrakeRel': 'value', 'pbEngageSlave': 'value', 'pbDisengageSlave': 'value', 'pbOffsetSlave': 'value', 'pbStopReset': 'value', 'pbErrorReset': 'value', 'pbDriveReset': 'value', 'numInPosMoveParam': 'node', 'numInDistMoveParam': 'node', 'numInVelMoveParam': 'node', 'numInAccelMoveParam': 'node', 'numInDecelMoveParam': 'node', 'numInJerkMoveParam': 'node', 'numInRatioNumerator': 'value', 'numInRatioDenominator': 'value', 'numInSlaveOffsetAmt': 'node', 'numInMasterDistance': 'node' }, 
+            LibraryAxisReqStruct: { 'pbStart': 'value', 'pbHalt': 'value', 'pbStop': 'value', 'pbEnable': 'value', 'pbDisable': 'value', 'pbManBrakeRel': 'value', 'pbClearManBrakeRel': 'value', 'pbStopReset': 'value', 'pbDriveReset': 'value', 'pbGearInSlave': 'value', 'pbCamInSlave': 'value', 'pbDisengageSlave': 'value', 'pbOffsetSlave': 'value', 'pbToMasterPos': 'value', 'chkBoxOverMasterDist': 'value', 'rdoBtnGrpShiftType': 'selectedIndex', 'numInPosMoveParam': 'node', 'numInDistMoveParam': 'node', 'numInVelMoveParam': 'node', 'numInAccelMoveParam': 'node', 'numInDecelMoveParam': 'node', 'numInJerkMoveParam': 'node', 'numInRatioNumerator': 'value', 'numInRatioDenominator': 'value', 'numInSlaveOffsetAmt': 'node', 'numInMasterDistance': 'node', 'numInCamId': 'value' }, 
             AxisName: { 'lblAxisStatus1': 'value' }, 
             HasSlaveAxis: { 'grpBoxSlaveStatus': 'visible', 'grpBoxSlaveControl': 'visible' }, 
             SlaveAxisName: { 'lblSlaveAxisStatus1': 'value', 'lblSlaveAxisStatus2': 'value' }, 
-            PositionUnits: { 'numInPosMoveParam': 'unit', 'numInDistMoveParam': 'unit', 'numOutPosAct': 'unit', 'numOutPosLimitPos': 'unit', 'numOutPosLimitNeg': 'unit', 'numInSlaveOffsetAmt': 'unit', 'numInMasterDistance': 'unit' }, 
-            PositionUnitsSlave: { 'numOutPosActSlave': 'unit', 'numOutOffsetAct': 'unit', 'numOutPhaseShiftAct': 'unit' }, 
+            PositionUnits: { 'numInPosMoveParam': 'unit', 'numInDistMoveParam': 'unit', 'numOutPosAct': 'unit', 'numOutPosLimitPos': 'unit', 'numOutPosLimitNeg': 'unit', 'numInSlaveOffsetAmt': 'unit', 'numInMasterDistance': 'unit', 'numOutOffsetFromMaster': 'unit' }, 
+            PositionUnitsSlave: { 'numOutPosActSlave': 'unit', 'numOutOffsetAct': 'unit' }, 
             VelocityUnits: { 'numInVelMoveParam': 'unit', 'numOutVelAct': 'unit' }, 
             VelocityUnitsSlave: { 'numOutVelActSlave': 'unit' }, 
             AccelDecelUnits: { 'numInAccelMoveParam': 'unit', 'numInDecelMoveParam': 'unit' }, 
@@ -555,20 +604,23 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
             StateStyle: { 'txtOutState': 'style' }, 
             CoordSlavePosition: { 'numOutPosActSlave': 'value' }, 
             CoordSlaveVelocity: { 'numOutVelActSlave': 'value' }, 
-            IsCoordSlaveRdyText: { 'txtOutIsCoordSlaveRdy': 'value' }, 
-            IsCoordSlaveRdyStyle: { 'txtOutIsCoordSlaveRdy': 'style' }, 
-            IsCoordMasterRdyText: { 'txtOutIsCoordMasterRdy': 'value' }, 
-            IsCoordMasterRdyStyle: { 'txtOutIsCoordMasterRdy': 'style' }, 
-            IsCoordInCompText: { 'txtOutIsCoordInComp': 'value' }, 
-            IsCoordInCompStyle: { 'txtOutIsCoordInComp': 'style' }, 
-            IsCoordInSyncText: { 'txtOutIsCoordInSync': 'value' }, 
-            IsCoordInSyncStyle: { 'txtOutIsCoordInSync': 'style' }, 
-            IsCoordOffsetDoneText: { 'txtOutIsCoordOffsetDone': 'value' }, 
-            IsCoordOffsetDoneStyle: { 'txtOutIsCoordOffsetDone': 'style' }, 
-            IsCoordPhasingDoneText: { 'txtOutIsCoordPhasingDone': 'value' }, 
-            IsCoordPhasingDoneStyle: { 'txtOutIsCoordPhasingDone': 'style' }, 
+            SlaveOffsetToMaster: { 'numOutOffsetFromMaster': 'value' }, 
+            IsGearInCompText: { 'txtOutIsGearInComp': 'value' }, 
+            IsGearInCompStyle: { 'txtOutIsGearInComp': 'style' }, 
+            IsGearInSyncText: { 'txtOutIsGearInSync': 'value' }, 
+            IsGearInSyncStyle: { 'txtOutIsGearInSync': 'style' }, 
+            IsGearOffsetStartedText: { 'txtOutIsGearOffsetStarted': 'value' }, 
+            IsGearOffsetStartedStyle: { 'txtOutIsGearOffsetStarted': 'style' }, 
+            IsGearOffsetDoneText: { 'txtOutIsGearOffsetDone': 'value' }, 
+            IsGearOffsetDoneStyle: { 'txtOutIsGearOffsetDone': 'style' }, 
+            IsCamInSyncText: { 'txtOutIsCamInSync': 'value' }, 
+            IsCamInSyncStyle: { 'txtOutIsCamInSync': 'style' }, 
+            IsCamEndOfProfileText: { 'txtOutIsCamEndOfProfile': 'value' }, 
+            IsCamEndOfProfileStyle: { 'txtOutIsCamEndOfProfile': 'style' }, 
             SlaveStatusText: { 'txtOutStatusSlave': 'value' }, 
             SlaveStatusStyle: { 'txtOutStatusSlave': 'style' }, 
+            CamStatusText: { 'txtOutCamStatus': 'value' }, 
+            CamStatusStyle: { 'txtOutCamStatus': 'style' }, 
             SlaveStateText: { 'txtOutStateSlave': 'value' }, 
             SlaveStateStyle: { 'txtOutStateSlave': 'style' }, 
             DirMovePosText: { 'rdoBtnDirPos': 'value' }, 
@@ -582,7 +634,10 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
             ShortestDirectionEnable: { 'rdoBtnDirShortest': 'enable' }, 
             DistanceEnable: { 'numInDistMoveParam': 'enable' }, 
             PositionEnable: { 'numInPosMoveParam': 'enable' }, 
-            ShiftEnable: { 'numInSlaveOffsetAmt': 'enable', 'numInMasterDistance': 'enable', 'pbOffsetSlave': 'enable' }
+            GearInEnable: { 'pbGearInSlave': 'enable' }, 
+            CamInEnable: { 'pbCamInSlave': 'enable' }, 
+            DisengageSlaveEnable: { 'pbDisengageSlave': 'enable' }, 
+            ShiftEnable: { 'numInSlaveOffsetAmt': 'enable', 'numInMasterDistance': 'enable', 'pbOffsetSlave': 'enable', 'pbToMasterPos': 'enable', 'rdoBtnGrpShiftType': 'enable', 'chkBoxOverMasterDist': 'enable' }
         },
 
         WidgetClass = SuperClass.extend(function GaMotAxisDetail() {
@@ -634,20 +689,23 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     p.setStateStyle = function (value) { this.settings['StateStyle'] = value; this.setChildProps('StateStyle', value); };
     p.setCoordSlavePosition = function (value) { this.settings['CoordSlavePosition'] = value; this.setChildProps('CoordSlavePosition', value); };
     p.setCoordSlaveVelocity = function (value) { this.settings['CoordSlaveVelocity'] = value; this.setChildProps('CoordSlaveVelocity', value); };
-    p.setIsCoordSlaveRdyText = function (value) { this.settings['IsCoordSlaveRdyText'] = value; this.setChildProps('IsCoordSlaveRdyText', value); };
-    p.setIsCoordSlaveRdyStyle = function (value) { this.settings['IsCoordSlaveRdyStyle'] = value; this.setChildProps('IsCoordSlaveRdyStyle', value); };
-    p.setIsCoordMasterRdyText = function (value) { this.settings['IsCoordMasterRdyText'] = value; this.setChildProps('IsCoordMasterRdyText', value); };
-    p.setIsCoordMasterRdyStyle = function (value) { this.settings['IsCoordMasterRdyStyle'] = value; this.setChildProps('IsCoordMasterRdyStyle', value); };
-    p.setIsCoordInCompText = function (value) { this.settings['IsCoordInCompText'] = value; this.setChildProps('IsCoordInCompText', value); };
-    p.setIsCoordInCompStyle = function (value) { this.settings['IsCoordInCompStyle'] = value; this.setChildProps('IsCoordInCompStyle', value); };
-    p.setIsCoordInSyncText = function (value) { this.settings['IsCoordInSyncText'] = value; this.setChildProps('IsCoordInSyncText', value); };
-    p.setIsCoordInSyncStyle = function (value) { this.settings['IsCoordInSyncStyle'] = value; this.setChildProps('IsCoordInSyncStyle', value); };
-    p.setIsCoordOffsetDoneText = function (value) { this.settings['IsCoordOffsetDoneText'] = value; this.setChildProps('IsCoordOffsetDoneText', value); };
-    p.setIsCoordOffsetDoneStyle = function (value) { this.settings['IsCoordOffsetDoneStyle'] = value; this.setChildProps('IsCoordOffsetDoneStyle', value); };
-    p.setIsCoordPhasingDoneText = function (value) { this.settings['IsCoordPhasingDoneText'] = value; this.setChildProps('IsCoordPhasingDoneText', value); };
-    p.setIsCoordPhasingDoneStyle = function (value) { this.settings['IsCoordPhasingDoneStyle'] = value; this.setChildProps('IsCoordPhasingDoneStyle', value); };
+    p.setSlaveOffsetToMaster = function (value) { this.settings['SlaveOffsetToMaster'] = value; this.setChildProps('SlaveOffsetToMaster', value); };
+    p.setIsGearInCompText = function (value) { this.settings['IsGearInCompText'] = value; this.setChildProps('IsGearInCompText', value); };
+    p.setIsGearInCompStyle = function (value) { this.settings['IsGearInCompStyle'] = value; this.setChildProps('IsGearInCompStyle', value); };
+    p.setIsGearInSyncText = function (value) { this.settings['IsGearInSyncText'] = value; this.setChildProps('IsGearInSyncText', value); };
+    p.setIsGearInSyncStyle = function (value) { this.settings['IsGearInSyncStyle'] = value; this.setChildProps('IsGearInSyncStyle', value); };
+    p.setIsGearOffsetStartedText = function (value) { this.settings['IsGearOffsetStartedText'] = value; this.setChildProps('IsGearOffsetStartedText', value); };
+    p.setIsGearOffsetStartedStyle = function (value) { this.settings['IsGearOffsetStartedStyle'] = value; this.setChildProps('IsGearOffsetStartedStyle', value); };
+    p.setIsGearOffsetDoneText = function (value) { this.settings['IsGearOffsetDoneText'] = value; this.setChildProps('IsGearOffsetDoneText', value); };
+    p.setIsGearOffsetDoneStyle = function (value) { this.settings['IsGearOffsetDoneStyle'] = value; this.setChildProps('IsGearOffsetDoneStyle', value); };
+    p.setIsCamInSyncText = function (value) { this.settings['IsCamInSyncText'] = value; this.setChildProps('IsCamInSyncText', value); };
+    p.setIsCamInSyncStyle = function (value) { this.settings['IsCamInSyncStyle'] = value; this.setChildProps('IsCamInSyncStyle', value); };
+    p.setIsCamEndOfProfileText = function (value) { this.settings['IsCamEndOfProfileText'] = value; this.setChildProps('IsCamEndOfProfileText', value); };
+    p.setIsCamEndOfProfileStyle = function (value) { this.settings['IsCamEndOfProfileStyle'] = value; this.setChildProps('IsCamEndOfProfileStyle', value); };
     p.setSlaveStatusText = function (value) { this.settings['SlaveStatusText'] = value; this.setChildProps('SlaveStatusText', value); };
     p.setSlaveStatusStyle = function (value) { this.settings['SlaveStatusStyle'] = value; this.setChildProps('SlaveStatusStyle', value); };
+    p.setCamStatusText = function (value) { this.settings['CamStatusText'] = value; this.setChildProps('CamStatusText', value); };
+    p.setCamStatusStyle = function (value) { this.settings['CamStatusStyle'] = value; this.setChildProps('CamStatusStyle', value); };
     p.setSlaveStateText = function (value) { this.settings['SlaveStateText'] = value; this.setChildProps('SlaveStateText', value); };
     p.setSlaveStateStyle = function (value) { this.settings['SlaveStateStyle'] = value; this.setChildProps('SlaveStateStyle', value); };
     p.setDirMovePosText = function (value) { this.settings['DirMovePosText'] = value; this.setChildProps('DirMovePosText', value); };
@@ -661,6 +719,9 @@ define(['system/widgets/CompoundWidget/CompoundWidget', 'brease/core/Types', 'te
     p.setShortestDirectionEnable = function (value) { this.settings['ShortestDirectionEnable'] = value; this.setChildProps('ShortestDirectionEnable', value); };
     p.setDistanceEnable = function (value) { this.settings['DistanceEnable'] = value; this.setChildProps('DistanceEnable', value); };
     p.setPositionEnable = function (value) { this.settings['PositionEnable'] = value; this.setChildProps('PositionEnable', value); };
+    p.setGearInEnable = function (value) { this.settings['GearInEnable'] = value; this.setChildProps('GearInEnable', value); };
+    p.setCamInEnable = function (value) { this.settings['CamInEnable'] = value; this.setChildProps('CamInEnable', value); };
+    p.setDisengageSlaveEnable = function (value) { this.settings['DisengageSlaveEnable'] = value; this.setChildProps('DisengageSlaveEnable', value); };
     p.setShiftEnable = function (value) { this.settings['ShiftEnable'] = value; this.setChildProps('ShiftEnable', value); };
 
     return WidgetClass;

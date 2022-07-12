@@ -8,6 +8,21 @@
  ********************************************************************)
 
 TYPE
+  (****************************************)
+  (***** Depth to Angle Lookup ************)
+  (****************************************)
+  
+	sXYTableReal50 : STRUCT 
+    numberOfVals : USINT := 0; (* number of values defined *)
+		xVals : ARRAY[0..49]OF REAL;
+		yVals : ARRAY[0..49]OF REAL;
+	END_STRUCT;
+  
+	sDepthToAngleLu : STRUCT 
+    T1 : sXYTableReal50;
+    T2 : sXYTableReal50;
+    T3 : sXYTableReal50;
+	END_STRUCT;
 
   (****************************************)
   (***** Workpiece related structures *****)
@@ -30,18 +45,21 @@ TYPE
 
   (***** Information about a configuration or machine setup *)
   sWp_CuttingHead :	STRUCT 
+    (* changes to cut profile values are detected to enable/disable cam table loading *)
+    StartOfCutProfile : BOOL := FALSE;
     finishingPass : BOOL; (* finishing pass yes or no *)
     passCount : USINT; (* number of passes *)
     totalDepth : REAL; (* mm, finished depth *)
     finishingPassDepth : REAL; (* mm, finishing pass depth *)
+    depthAdjAngle : LREAL; (* degrees, arc over which cut depth is adjusted. LREAL for position compatibility *)
+    cutOverrunAngle : LREAL; (* degrees, arc len to overrun the last pass. LREAL for position compatibility *)
+    EndOfCutProfile : BOOL := FALSE;
     feedRate : REAL; (* mm/sec, feed rate *)
-    retractRate : REAL; (* deg/sec, angular velocity used when retracting cutters. *)
+    retractRate : REAL; (* deg/sec, velocity used when retracting the cutters *)
     accel : REAL;
     decel : REAL;
     setZeroOffset : REAL := 0.0; (* degrees. Offset applied when set zero is requested. *)
     depthMod : REAL := 0.0; (* mm, adjusment to the calculated finished depth *)
-    depthAdjAngle : LREAL; (* degrees, arc over which cut depth is adjusted. LREAL for position compatibility *)
-    cutOverrunAngle : LREAL; (* degrees, arc len to overrun the last pass. LREAL for position compatibility *)
     offsetLimitPositive : LREAL; (* positive offset angle limit *)
     offsetLimitNegative : LREAL; (* negative offset angle limit *)
 
@@ -65,7 +83,11 @@ TYPE
   END_STRUCT;
 
   sWp_CfVfd :	STRUCT 
-    speedPct : REAL; (* vfd speed EU *)
+    isInPressureControl : BOOL; (* H: Pressure ctrl, L: Speed Control *)
+    runSpeedManualCtrl : REAL; (* rpm, manual run speed *)
+    pressureSpAutoCtrl : REAL; (* psi, auto pressure setpoint *)
+    accel : REAL;
+    decel : REAL;
     eocCutoutWaitTime : TIME; (* how long to wait while idle at the end of a cycle before shutting off the cutting fluid *)
   END_STRUCT;
 

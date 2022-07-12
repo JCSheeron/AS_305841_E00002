@@ -601,7 +601,7 @@
 	@include elemWidth(585);
 }
 #GaMotAxisDetail_grpBoxMoveCmd {
-	@include elemHeight(485);
+	@include elemHeight(435);
 }
 #GaMotAxisDetail_grpBoxMoveCmd {
 		z-index: 1;
@@ -757,7 +757,7 @@
 	}
 }
 #GaMotAxisDetail_numInDistMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInDistMoveParam {
 	@include elemTop(53);
@@ -766,22 +766,22 @@
 	@include elemLeft(364);
 }
 #GaMotAxisDetail_numInDistMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInDistMoveParam {
 		z-index: 2;
 }
 #GaMotAxisDetail_numInVelMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInVelMoveParam {
-	@include elemTop(188);
+	@include elemTop(173);
 }
 #GaMotAxisDetail_numInVelMoveParam {
 	@include elemLeft(29);
 }
 #GaMotAxisDetail_numInVelMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInVelMoveParam {
 		z-index: 3;
@@ -793,7 +793,7 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblVelMoveParam {
-	@include elemTop(163);
+	@include elemTop(148);
 }
 #GaMotAxisDetail_lblVelMoveParam {
 	@include elemLeft(24);
@@ -817,16 +817,16 @@
 		z-index: 5;
 }
 #GaMotAxisDetail_numInAccelMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInAccelMoveParam {
-	@include elemTop(188);
+	@include elemTop(173);
 }
 #GaMotAxisDetail_numInAccelMoveParam {
 	@include elemLeft(164);
 }
 #GaMotAxisDetail_numInAccelMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInAccelMoveParam {
 		z-index: 6;
@@ -838,7 +838,7 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblAccelMoveParam {
-	@include elemTop(163);
+	@include elemTop(148);
 }
 #GaMotAxisDetail_lblAccelMoveParam {
 	@include elemLeft(159);
@@ -847,16 +847,16 @@
 		z-index: 7;
 }
 #GaMotAxisDetail_numInDecelMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInDecelMoveParam {
-	@include elemTop(188);
+	@include elemTop(173);
 }
 #GaMotAxisDetail_numInDecelMoveParam {
 	@include elemLeft(304);
 }
 #GaMotAxisDetail_numInDecelMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInDecelMoveParam {
 		z-index: 8;
@@ -868,7 +868,7 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblDecelMoveParam {
-	@include elemTop(163);
+	@include elemTop(148);
 }
 #GaMotAxisDetail_lblDecelMoveParam {
 	@include elemLeft(299);
@@ -877,7 +877,7 @@
 		z-index: 9;
 }
 #GaMotAxisDetail_numInPosMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInPosMoveParam {
 	@include elemTop(8);
@@ -886,7 +886,7 @@
 	@include elemLeft(364);
 }
 #GaMotAxisDetail_numInPosMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInPosMoveParam {
 		z-index: 10;
@@ -907,16 +907,16 @@
 		z-index: 11;
 }
 #GaMotAxisDetail_numInJerkMoveParam {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInJerkMoveParam {
-	@include elemTop(188);
+	@include elemTop(173);
 }
 #GaMotAxisDetail_numInJerkMoveParam {
 	@include elemLeft(444);
 }
 #GaMotAxisDetail_numInJerkMoveParam {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInJerkMoveParam {
 		z-index: 12;
@@ -928,7 +928,7 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblJerkMoveParam {
-	@include elemTop(163);
+	@include elemTop(148);
 }
 #GaMotAxisDetail_lblJerkMoveParam {
 	@include elemLeft(439);
@@ -937,7 +937,7 @@
 		z-index: 13;
 }
 #GaMotAxisDetail_pbStart {
-	@include elemTop(253);
+	@include elemTop(213);
 }
 #GaMotAxisDetail_pbStart {
 	@include elemLeft(14);
@@ -952,7 +952,7 @@
 		z-index: 14;
 }
 #GaMotAxisDetail_pbStop {
-	@include elemTop(253);
+	@include elemTop(213);
 }
 #GaMotAxisDetail_pbStop {
 	@include elemLeft(444);
@@ -967,7 +967,7 @@
 		z-index: 15;
 }
 #GaMotAxisDetail_pbStopReset {
-	@include elemTop(323);
+	@include elemTop(273);
 }
 #GaMotAxisDetail_pbStopReset {
 	@include elemLeft(444);
@@ -981,23 +981,8 @@
 #GaMotAxisDetail_pbStopReset {
 		z-index: 16;
 }
-#GaMotAxisDetail_pbErrorReset {
-	@include elemTop(323);
-}
-#GaMotAxisDetail_pbErrorReset {
-	@include elemLeft(14);
-}
-#GaMotAxisDetail_pbErrorReset {
-	@include elemAutoWidth(116);
-}
-#GaMotAxisDetail_pbErrorReset {
-	@include elemAutoHeight(42);
-}
-#GaMotAxisDetail_pbErrorReset {
-		z-index: 17;
-}
 #GaMotAxisDetail_pbDriveReset {
-	@include elemTop(388);
+	@include elemTop(338);
 }
 #GaMotAxisDetail_pbDriveReset {
 	@include elemLeft(14);
@@ -1012,7 +997,7 @@
 		z-index: 18;
 }
 #GaMotAxisDetail_pbHomeDlg {
-	@include elemTop(388);
+	@include elemTop(338);
 }
 #GaMotAxisDetail_pbHomeDlg {
 	@include elemLeft(444);
@@ -1027,7 +1012,7 @@
 		z-index: 19;
 }
 #GaMotAxisDetail_pbEnable {
-	@include elemTop(323);
+	@include elemTop(273);
 }
 #GaMotAxisDetail_pbEnable {
 	@include elemLeft(159);
@@ -1042,7 +1027,7 @@
 		z-index: 20;
 }
 #GaMotAxisDetail_pbDisable {
-	@include elemTop(388);
+	@include elemTop(338);
 }
 #GaMotAxisDetail_pbDisable {
 	@include elemLeft(159);
@@ -1057,7 +1042,7 @@
 		z-index: 21;
 }
 #GaMotAxisDetail_pbHalt {
-	@include elemTop(253);
+	@include elemTop(213);
 }
 #GaMotAxisDetail_pbHalt {
 	@include elemLeft(230);
@@ -1072,7 +1057,7 @@
 		z-index: 22;
 }
 #GaMotAxisDetail_pbManBrakeRel {
-	@include elemTop(323);
+	@include elemTop(273);
 }
 #GaMotAxisDetail_pbManBrakeRel {
 	@include elemLeft(304);
@@ -1087,7 +1072,7 @@
 		z-index: 23;
 }
 #GaMotAxisDetail_pbClearManBrakeRel {
-	@include elemTop(388);
+	@include elemTop(338);
 }
 #GaMotAxisDetail_pbClearManBrakeRel {
 	@include elemLeft(304);
@@ -1126,180 +1111,98 @@
 	@include elemWidth(370);
 }
 #GaMotAxisDetail_grpBoxSlaveStatus {
-	@include elemHeight(365);
+	@include elemHeight(375);
 }
 #GaMotAxisDetail_grpBoxSlaveStatus {
 		z-index: 2;
 }
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
-	@include elemTop(49);
+#GaMotAxisDetail_lblIsGearInComp {
+	@include elemTop(169);
 }
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
-	@include elemLeft(174);
+#GaMotAxisDetail_lblIsGearInComp {
+	@include elemLeft(189);
 }
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
+#GaMotAxisDetail_lblIsGearInComp {
 	@include elemAutoWidth(175);
 }
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
+#GaMotAxisDetail_lblIsGearInComp {
 	@include elemAutoHeight(15);
 }
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
-		z-index: 0;
-}
-#GaMotAxisDetail_lblIsCoordSlaveRdy {
-	span{
-		padding: 0px;
-	}
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-	@include elemTop(79);
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-	@include elemLeft(174);
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-	@include elemAutoWidth(175);
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-	@include elemAutoHeight(15);
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-		z-index: 1;
-}
-#GaMotAxisDetail_lblIsCoordMstrRdy {
-	span{
-		padding: 0px;
-	}
-}
-#GaMotAxisDetail_lblIsCoordInComp {
-	@include elemTop(109);
-}
-#GaMotAxisDetail_lblIsCoordInComp {
-	@include elemLeft(174);
-}
-#GaMotAxisDetail_lblIsCoordInComp {
-	@include elemAutoWidth(175);
-}
-#GaMotAxisDetail_lblIsCoordInComp {
-	@include elemAutoHeight(15);
-}
-#GaMotAxisDetail_lblIsCoordInComp {
+#GaMotAxisDetail_lblIsGearInComp {
 		z-index: 2;
 }
-#GaMotAxisDetail_lblIsCoordInComp {
+#GaMotAxisDetail_lblIsGearInComp {
 	span{
 		padding: 0px;
 	}
 }
-#GaMotAxisDetail_lblIsCoordInSync {
-	@include elemTop(139);
+#GaMotAxisDetail_lblIsGearInSync {
+	@include elemTop(189);
 }
-#GaMotAxisDetail_lblIsCoordInSync {
-	@include elemLeft(174);
+#GaMotAxisDetail_lblIsGearInSync {
+	@include elemLeft(189);
 }
-#GaMotAxisDetail_lblIsCoordInSync {
+#GaMotAxisDetail_lblIsGearInSync {
 	@include elemAutoWidth(175);
 }
-#GaMotAxisDetail_lblIsCoordInSync {
+#GaMotAxisDetail_lblIsGearInSync {
 	@include elemAutoHeight(15);
 }
-#GaMotAxisDetail_lblIsCoordInSync {
+#GaMotAxisDetail_lblIsGearInSync {
 		z-index: 3;
 }
-#GaMotAxisDetail_lblIsCoordInSync {
+#GaMotAxisDetail_lblIsGearInSync {
 	span{
 		padding: 0px;
 	}
 }
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
-	@include elemTop(49);
+#GaMotAxisDetail_txtOutIsGearInComp {
+	@include elemTop(167);
 }
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
-	@include elemLeft(139);
+#GaMotAxisDetail_txtOutIsGearInComp {
+	@include elemLeft(154);
 }
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+#GaMotAxisDetail_txtOutIsGearInComp {
 	@include elemAutoWidth(30);
 }
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
+#GaMotAxisDetail_txtOutIsGearInComp {
 	@include elemAutoHeight(20);
 }
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
-		z-index: 4;
-}
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
-		background-color: rgba(255, 255, 255, 0);
-}
-#GaMotAxisDetail_txtOutIsCoordSlaveRdy {
-	@include text-alignment-all('center');
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-	@include elemTop(79);
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-	@include elemLeft(139);
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-	@include elemAutoWidth(30);
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-	@include elemAutoHeight(20);
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-		z-index: 5;
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-		background-color: rgba(255, 255, 255, 0);
-}
-#GaMotAxisDetail_txtOutIsCoordMasterRdy {
-	@include text-alignment-all('center');
-}
-#GaMotAxisDetail_txtOutIsCoordInComp {
-	@include elemTop(109);
-}
-#GaMotAxisDetail_txtOutIsCoordInComp {
-	@include elemLeft(139);
-}
-#GaMotAxisDetail_txtOutIsCoordInComp {
-	@include elemAutoWidth(30);
-}
-#GaMotAxisDetail_txtOutIsCoordInComp {
-	@include elemAutoHeight(20);
-}
-#GaMotAxisDetail_txtOutIsCoordInComp {
+#GaMotAxisDetail_txtOutIsGearInComp {
 		z-index: 6;
 }
-#GaMotAxisDetail_txtOutIsCoordInComp {
+#GaMotAxisDetail_txtOutIsGearInComp {
 		background-color: rgba(255, 255, 255, 0);
 }
-#GaMotAxisDetail_txtOutIsCoordInComp {
+#GaMotAxisDetail_txtOutIsGearInComp {
 	@include text-alignment-all('center');
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
-	@include elemTop(139);
+#GaMotAxisDetail_txtOutIsGearInSync {
+	@include elemTop(190);
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
-	@include elemLeft(139);
+#GaMotAxisDetail_txtOutIsGearInSync {
+	@include elemLeft(154);
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
+#GaMotAxisDetail_txtOutIsGearInSync {
 	@include elemAutoWidth(30);
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
+#GaMotAxisDetail_txtOutIsGearInSync {
 	@include elemAutoHeight(20);
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
+#GaMotAxisDetail_txtOutIsGearInSync {
 		z-index: 7;
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
+#GaMotAxisDetail_txtOutIsGearInSync {
 		background-color: rgba(255, 255, 255, 0);
 }
-#GaMotAxisDetail_txtOutIsCoordInSync {
+#GaMotAxisDetail_txtOutIsGearInSync {
 	@include text-alignment-all('center');
 }
 #GaMotAxisDetail_numOutPosActSlave {
-	@include elemTop(79);
+	@include elemTop(119);
 }
 #GaMotAxisDetail_numOutPosActSlave {
-	@include elemLeft(9);
+	@include elemLeft(-1);
 }
 #GaMotAxisDetail_numOutPosActSlave {
 	@include elemAutoWidth(120);
@@ -1316,10 +1219,10 @@
 	}
 }
 #GaMotAxisDetail_numOutVelActSlave {
-	@include elemTop(134);
+	@include elemTop(119);
 }
 #GaMotAxisDetail_numOutVelActSlave {
-	@include elemLeft(9);
+	@include elemLeft(249);
 }
 #GaMotAxisDetail_numOutVelActSlave {
 	@include elemAutoWidth(120);
@@ -1339,10 +1242,10 @@
 	@include elemAutoWidth(80);
 }
 #GaMotAxisDetail_lblPosActSlave {
-	@include elemTop(54);
+	@include elemTop(99);
 }
 #GaMotAxisDetail_lblPosActSlave {
-	@include elemLeft(24);
+	@include elemLeft(14);
 }
 #GaMotAxisDetail_lblPosActSlave {
 	@include elemAutoHeight(15);
@@ -1357,10 +1260,10 @@
 	@include elemAutoWidth(80);
 }
 #GaMotAxisDetail_lblVelActSlave {
-	@include elemTop(109);
+	@include elemTop(99);
 }
 #GaMotAxisDetail_lblVelActSlave {
-	@include elemLeft(24);
+	@include elemLeft(264);
 }
 #GaMotAxisDetail_lblVelActSlave {
 	@include elemAutoHeight(15);
@@ -1371,90 +1274,90 @@
 #GaMotAxisDetail_lblVelActSlave {
 	@include text-alignment-all('center');
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
-	@include elemTop(169);
+#GaMotAxisDetail_lblIsGearOffsetDone {
+	@include elemTop(237);
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
-	@include elemLeft(174);
+#GaMotAxisDetail_lblIsGearOffsetDone {
+	@include elemLeft(189);
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
+#GaMotAxisDetail_lblIsGearOffsetDone {
 	@include elemAutoWidth(175);
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
+#GaMotAxisDetail_lblIsGearOffsetDone {
 	@include elemAutoHeight(15);
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
+#GaMotAxisDetail_lblIsGearOffsetDone {
 		z-index: 12;
 }
-#GaMotAxisDetail_lblIsCoordOffsetDone {
+#GaMotAxisDetail_lblIsGearOffsetDone {
 	span{
 		padding: 0px;
 	}
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
-	@include elemTop(169);
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
+	@include elemTop(235);
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
-	@include elemLeft(139);
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
+	@include elemLeft(154);
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
 	@include elemAutoWidth(30);
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
 	@include elemAutoHeight(20);
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
 		z-index: 13;
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
 		background-color: rgba(255, 255, 255, 0);
 }
-#GaMotAxisDetail_txtOutIsCoordOffsetDone {
+#GaMotAxisDetail_txtOutIsGearOffsetDone {
 	@include text-alignment-all('center');
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
-	@include elemTop(199);
+#GaMotAxisDetail_lblIsGearOffsetStarted {
+	@include elemTop(209);
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
-	@include elemLeft(174);
+#GaMotAxisDetail_lblIsGearOffsetStarted {
+	@include elemLeft(189);
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
+#GaMotAxisDetail_lblIsGearOffsetStarted {
 	@include elemAutoWidth(175);
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
+#GaMotAxisDetail_lblIsGearOffsetStarted {
 	@include elemAutoHeight(22);
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
+#GaMotAxisDetail_lblIsGearOffsetStarted {
 		z-index: 14;
 }
-#GaMotAxisDetail_lblIsCoordPhasingDone {
+#GaMotAxisDetail_lblIsGearOffsetStarted {
 	span{
 		padding: 0px;
 	}
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
-	@include elemTop(199);
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
+	@include elemTop(212);
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
-	@include elemLeft(139);
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
+	@include elemLeft(154);
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
 	@include elemAutoWidth(30);
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
 	@include elemAutoHeight(20);
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
 		z-index: 15;
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
 		background-color: rgba(255, 255, 255, 0);
 }
-#GaMotAxisDetail_txtOutIsCoordPhasingDone {
+#GaMotAxisDetail_txtOutIsGearOffsetStarted {
 	@include text-alignment-all('center');
 }
 #GaMotAxisDetail_numOutOffsetAct {
-	@include elemTop(189);
+	@include elemTop(214);
 }
 #GaMotAxisDetail_numOutOffsetAct {
 	@include elemLeft(9);
@@ -1477,10 +1380,10 @@
 	@include elemAutoWidth(80);
 }
 #GaMotAxisDetail_lblOffsetAct {
-	@include elemTop(164);
+	@include elemTop(189);
 }
 #GaMotAxisDetail_lblOffsetAct {
-	@include elemLeft(24);
+	@include elemLeft(29);
 }
 #GaMotAxisDetail_lblOffsetAct {
 	@include elemAutoHeight(15);
@@ -1491,89 +1394,51 @@
 #GaMotAxisDetail_lblOffsetAct {
 	@include text-alignment-all('center');
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
-	@include elemTop(249);
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemTop(54);
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
-	@include elemLeft(9);
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemLeft(289);
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
-	@include elemAutoWidth(120);
+#GaMotAxisDetail_lblStatusSlave {
+	@include elemAutoWidth(60);
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
+#GaMotAxisDetail_lblStatusSlave {
 	@include elemAutoHeight(15);
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
+#GaMotAxisDetail_lblStatusSlave {
 		z-index: 18;
 }
-#GaMotAxisDetail_numOutPhaseShiftAct {
-	input{
-	@include text-alignment(center);
+#GaMotAxisDetail_lblStatusSlave {
+	span{
+		padding: 0px;
 	}
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
-	@include elemTop(224);
+#GaMotAxisDetail_lblStateSlave {
+	@include elemTop(74);
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
-	@include elemLeft(19);
+#GaMotAxisDetail_lblStateSlave {
+	@include elemLeft(289);
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
-	@include elemAutoWidth(91);
+#GaMotAxisDetail_lblStateSlave {
+	@include elemAutoWidth(60);
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
+#GaMotAxisDetail_lblStateSlave {
 	@include elemAutoHeight(15);
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
+#GaMotAxisDetail_lblStateSlave {
 		z-index: 19;
 }
-#GaMotAxisDetail_lblPhaseShiftAct {
-	@include text-alignment-all('center');
-}
-#GaMotAxisDetail_lblStatusSlave {
-	@include elemTop(253);
-}
-#GaMotAxisDetail_lblStatusSlave {
-	@include elemLeft(289);
-}
-#GaMotAxisDetail_lblStatusSlave {
-	@include elemAutoWidth(60);
-}
-#GaMotAxisDetail_lblStatusSlave {
-	@include elemAutoHeight(15);
-}
-#GaMotAxisDetail_lblStatusSlave {
-		z-index: 20;
-}
-#GaMotAxisDetail_lblStatusSlave {
-	span{
-		padding: 0px;
-	}
-}
-#GaMotAxisDetail_lblStateSlave {
-	@include elemTop(278);
-}
-#GaMotAxisDetail_lblStateSlave {
-	@include elemLeft(289);
-}
-#GaMotAxisDetail_lblStateSlave {
-	@include elemAutoWidth(60);
-}
-#GaMotAxisDetail_lblStateSlave {
-	@include elemAutoHeight(15);
-}
-#GaMotAxisDetail_lblStateSlave {
-		z-index: 21;
-}
 #GaMotAxisDetail_lblStateSlave {
 	span{
 		padding: 0px;
 	}
 }
 #GaMotAxisDetail_txtOutStatusSlave {
-	@include elemTop(253);
+	@include elemTop(54);
 }
 #GaMotAxisDetail_txtOutStatusSlave {
-	@include elemLeft(100);
+	@include elemLeft(99);
 }
 #GaMotAxisDetail_txtOutStatusSlave {
 	@include elemAutoWidth(187);
@@ -1582,7 +1447,7 @@
 	@include elemAutoHeight(15);
 }
 #GaMotAxisDetail_txtOutStatusSlave {
-		z-index: 22;
+		z-index: 20;
 }
 #GaMotAxisDetail_txtOutStatusSlave {
 		background-color: rgba(255, 255, 255, 0);
@@ -1591,10 +1456,10 @@
 	@include text-alignment-all('right');
 }
 #GaMotAxisDetail_txtOutStateSlave {
-	@include elemTop(278);
+	@include elemTop(74);
 }
 #GaMotAxisDetail_txtOutStateSlave {
-	@include elemLeft(90);
+	@include elemLeft(89);
 }
 #GaMotAxisDetail_txtOutStateSlave {
 	@include elemAutoWidth(197);
@@ -1603,7 +1468,7 @@
 	@include elemAutoHeight(15);
 }
 #GaMotAxisDetail_txtOutStateSlave {
-		z-index: 23;
+		z-index: 21;
 }
 #GaMotAxisDetail_txtOutStateSlave {
 		background-color: rgba(255, 255, 255, 0);
@@ -1624,10 +1489,171 @@
 	@include elemAutoHeight(40);
 }
 #GaMotAxisDetail_lblSlaveAxisStatus1 {
+		z-index: 22;
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+	@include elemTop(119);
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+	@include elemLeft(109);
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+	@include elemAutoWidth(151);
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+		z-index: 23;
+}
+#GaMotAxisDetail_numOutOffsetFromMaster {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisDetail_lblOffsetFromMaster {
+	@include elemTop(99);
+}
+#GaMotAxisDetail_lblOffsetFromMaster {
+	@include elemLeft(104);
+}
+#GaMotAxisDetail_lblOffsetFromMaster {
+	@include elemAutoWidth(151);
+}
+#GaMotAxisDetail_lblOffsetFromMaster {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblOffsetFromMaster {
 		z-index: 24;
 }
+#GaMotAxisDetail_lblOffsetFromMaster {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblIsCamInSync {
+	@include elemTop(284);
+}
+#GaMotAxisDetail_lblIsCamInSync {
+	@include elemLeft(189);
+}
+#GaMotAxisDetail_lblIsCamInSync {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCamInSync {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCamInSync {
+		z-index: 25;
+}
+#GaMotAxisDetail_lblIsCamInSync {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+	@include elemTop(307);
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+	@include elemLeft(189);
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+	@include elemAutoWidth(175);
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+		z-index: 26;
+}
+#GaMotAxisDetail_lblIsCamEndOfProfile {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+	@include elemTop(282);
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+	@include elemLeft(154);
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+		z-index: 27;
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCamInSync {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+	@include elemTop(305);
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+	@include elemLeft(154);
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+	@include elemAutoWidth(30);
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+	@include elemAutoHeight(20);
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+		z-index: 28;
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutIsCamEndOfProfile {
+	@include text-alignment-all('center');
+}
+#GaMotAxisDetail_lblCamStatus {
+	@include elemTop(329);
+}
+#GaMotAxisDetail_lblCamStatus {
+	@include elemLeft(189);
+}
+#GaMotAxisDetail_lblCamStatus {
+	@include elemAutoWidth(91);
+}
+#GaMotAxisDetail_lblCamStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_lblCamStatus {
+		z-index: 29;
+}
+#GaMotAxisDetail_lblCamStatus {
+	span{
+		padding: 0px;
+	}
+}
+#GaMotAxisDetail_txtOutCamStatus {
+	@include elemTop(329);
+}
+#GaMotAxisDetail_txtOutCamStatus {
+	@include elemLeft(9);
+}
+#GaMotAxisDetail_txtOutCamStatus {
+	@include elemAutoWidth(187);
+}
+#GaMotAxisDetail_txtOutCamStatus {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisDetail_txtOutCamStatus {
+		z-index: 30;
+}
+#GaMotAxisDetail_txtOutCamStatus {
+		background-color: rgba(255, 255, 255, 0);
+}
+#GaMotAxisDetail_txtOutCamStatus {
+	@include text-alignment-all('right');
+}
 #GaMotAxisDetail_grpBoxSlaveControl {
-	@include elemTop(510);
+	@include elemTop(460);
 }
 #GaMotAxisDetail_grpBoxSlaveControl {
 	@include elemLeft(415);
@@ -1636,7 +1662,7 @@
 	@include elemWidth(585);
 }
 #GaMotAxisDetail_grpBoxSlaveControl {
-	@include elemHeight(165);
+	@include elemHeight(230);
 }
 #GaMotAxisDetail_grpBoxSlaveControl {
 		z-index: 3;
@@ -1645,37 +1671,37 @@
 		background-color: rgba(255, 255, 255, 1);
 }
 #GaMotAxisDetail_numInRatioDenominator {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInRatioDenominator {
-	@include elemTop(64);
+	@include elemTop(54);
 }
 #GaMotAxisDetail_numInRatioDenominator {
 	@include elemLeft(149);
 }
 #GaMotAxisDetail_numInRatioDenominator {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInRatioDenominator {
 		z-index: 0;
 }
 #GaMotAxisDetail_numInRatioNumerator {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInRatioNumerator {
-	@include elemTop(64);
+	@include elemTop(54);
 }
 #GaMotAxisDetail_numInRatioNumerator {
 	@include elemLeft(9);
 }
 #GaMotAxisDetail_numInRatioNumerator {
-	@include elemWidth(120);
+	@include elemAutoWidth(120);
 }
 #GaMotAxisDetail_numInRatioNumerator {
 		z-index: 1;
 }
 #GaMotAxisDetail_lblMasterToSlave {
-	@include elemTop(34);
+	@include elemTop(24);
 }
 #GaMotAxisDetail_lblMasterToSlave {
 	@include elemLeft(54);
@@ -1695,26 +1721,26 @@
 #GaMotAxisDetail_lblMasterToSlave {
 	@include font-weight-bold(true);
 }
-#GaMotAxisDetail_pbEngageSlave {
-	@include elemTop(109);
+#GaMotAxisDetail_pbGearInSlave {
+	@include elemTop(89);
 }
-#GaMotAxisDetail_pbEngageSlave {
-	@include elemLeft(9);
+#GaMotAxisDetail_pbGearInSlave {
+	@include elemLeft(14);
 }
-#GaMotAxisDetail_pbEngageSlave {
+#GaMotAxisDetail_pbGearInSlave {
 	@include elemAutoWidth(116);
 }
-#GaMotAxisDetail_pbEngageSlave {
+#GaMotAxisDetail_pbGearInSlave {
 	@include elemAutoHeight(42);
 }
-#GaMotAxisDetail_pbEngageSlave {
+#GaMotAxisDetail_pbGearInSlave {
 		z-index: 3;
 }
 #GaMotAxisDetail_pbDisengageSlave {
-	@include elemTop(109);
+	@include elemTop(119);
 }
 #GaMotAxisDetail_pbDisengageSlave {
-	@include elemLeft(149);
+	@include elemLeft(154);
 }
 #GaMotAxisDetail_pbDisengageSlave {
 	@include elemAutoWidth(116);
@@ -1726,7 +1752,7 @@
 		z-index: 4;
 }
 #GaMotAxisDetail_lblColon {
-	@include elemTop(68);
+	@include elemTop(59);
 }
 #GaMotAxisDetail_lblColon {
 	@include elemLeft(129);
@@ -1750,6 +1776,9 @@
 	@include font-weight-bold(true);
 }
 #GaMotAxisDetail_lblSlaveAxisStatus2 {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblSlaveAxisStatus2 {
 	@include elemTop(-1);
 }
 #GaMotAxisDetail_lblSlaveAxisStatus2 {
@@ -1762,31 +1791,31 @@
 		z-index: 6;
 }
 #GaMotAxisDetail_numInSlaveOffsetAmt {
-	@include elemWidth(100);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInSlaveOffsetAmt {
-	@include elemHeight(30);
+	@include elemTop(54);
 }
 #GaMotAxisDetail_numInSlaveOffsetAmt {
-	@include elemTop(64);
+	@include elemLeft(300);
 }
 #GaMotAxisDetail_numInSlaveOffsetAmt {
-	@include elemLeft(309);
+	@include elemAutoWidth(104);
 }
 #GaMotAxisDetail_numInSlaveOffsetAmt {
 		z-index: 7;
 }
 #GaMotAxisDetail_numInMasterDistance {
-	@include elemWidth(100);
+	@include elemAutoWidth(100);
 }
 #GaMotAxisDetail_numInMasterDistance {
-	@include elemHeight(30);
+	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_numInMasterDistance {
-	@include elemTop(64);
+	@include elemTop(119);
 }
 #GaMotAxisDetail_numInMasterDistance {
-	@include elemLeft(444);
+	@include elemLeft(304);
 }
 #GaMotAxisDetail_numInMasterDistance {
 		z-index: 8;
@@ -1795,7 +1824,7 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblSlaveOffsetAmt {
-	@include elemTop(34);
+	@include elemTop(29);
 }
 #GaMotAxisDetail_lblSlaveOffsetAmt {
 	@include elemLeft(304);
@@ -1813,10 +1842,10 @@
 	@include elemAutoHeight(30);
 }
 #GaMotAxisDetail_lblMasterDistance {
-	@include elemTop(34);
+	@include elemTop(89);
 }
 #GaMotAxisDetail_lblMasterDistance {
-	@include elemLeft(444);
+	@include elemLeft(304);
 }
 #GaMotAxisDetail_lblMasterDistance {
 	@include elemAutoWidth(106);
@@ -1828,10 +1857,10 @@
 	@include font-weight-bold(true);
 }
 #GaMotAxisDetail_pbOffsetSlave {
-	@include elemTop(109);
+	@include elemTop(164);
 }
 #GaMotAxisDetail_pbOffsetSlave {
-	@include elemLeft(369);
+	@include elemLeft(299);
 }
 #GaMotAxisDetail_pbOffsetSlave {
 	@include elemAutoWidth(116);
@@ -1841,4 +1870,127 @@
 }
 #GaMotAxisDetail_pbOffsetSlave {
 		z-index: 11;
+}
+#GaMotAxisDetail_rdoBtnGrpShiftType {
+	@include elemTop(34);
+}
+#GaMotAxisDetail_rdoBtnGrpShiftType {
+	@include elemLeft(414);
+}
+#GaMotAxisDetail_rdoBtnGrpShiftType {
+	@include elemWidth(121);
+}
+#GaMotAxisDetail_rdoBtnGrpShiftType {
+	@include elemHeight(66);
+}
+#GaMotAxisDetail_rdoBtnGrpShiftType {
+		z-index: 12;
+}
+#GaMotAxisDetail_rdoBtnOffsetRel {
+	@include elemTop(5);
+}
+#GaMotAxisDetail_rdoBtnOffsetRel {
+	@include elemLeft(5);
+}
+#GaMotAxisDetail_rdoBtnOffsetRel {
+	@include elemAutoWidth(105);
+}
+#GaMotAxisDetail_rdoBtnOffsetRel {
+	@include elemAutoHeight(25);
+}
+#GaMotAxisDetail_rdoBtnOffsetRel {
+		z-index: 0;
+}
+#GaMotAxisDetail_rdoBtnOffsetAbs {
+	@include elemTop(35);
+}
+#GaMotAxisDetail_rdoBtnOffsetAbs {
+	@include elemLeft(5);
+}
+#GaMotAxisDetail_rdoBtnOffsetAbs {
+	@include elemAutoWidth(105);
+}
+#GaMotAxisDetail_rdoBtnOffsetAbs {
+	@include elemAutoHeight(25);
+}
+#GaMotAxisDetail_rdoBtnOffsetAbs {
+		z-index: 1;
+}
+#GaMotAxisDetail_chkBoxOverMasterDist {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_chkBoxOverMasterDist {
+	@include elemTop(114);
+}
+#GaMotAxisDetail_chkBoxOverMasterDist {
+	@include elemLeft(419);
+}
+#GaMotAxisDetail_chkBoxOverMasterDist {
+	@include elemAutoWidth(166);
+}
+#GaMotAxisDetail_chkBoxOverMasterDist {
+		z-index: 13;
+}
+#GaMotAxisDetail_pbToMasterPos {
+	@include elemTop(164);
+}
+#GaMotAxisDetail_pbToMasterPos {
+	@include elemLeft(454);
+}
+#GaMotAxisDetail_pbToMasterPos {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbToMasterPos {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbToMasterPos {
+		z-index: 14;
+}
+#GaMotAxisDetail_pbCamInSlave {
+	@include elemTop(174);
+}
+#GaMotAxisDetail_pbCamInSlave {
+	@include elemLeft(14);
+}
+#GaMotAxisDetail_pbCamInSlave {
+	@include elemAutoWidth(116);
+}
+#GaMotAxisDetail_pbCamInSlave {
+	@include elemAutoHeight(42);
+}
+#GaMotAxisDetail_pbCamInSlave {
+		z-index: 15;
+}
+#GaMotAxisDetail_numInCamId {
+	@include elemTop(184);
+}
+#GaMotAxisDetail_numInCamId {
+	@include elemLeft(209);
+}
+#GaMotAxisDetail_numInCamId {
+	@include elemAutoWidth(66);
+}
+#GaMotAxisDetail_numInCamId {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_numInCamId {
+		z-index: 16;
+}
+#GaMotAxisDetail_lblCamId {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisDetail_lblCamId {
+	@include elemTop(184);
+}
+#GaMotAxisDetail_lblCamId {
+	@include elemLeft(139);
+}
+#GaMotAxisDetail_lblCamId {
+	@include elemAutoWidth(66);
+}
+#GaMotAxisDetail_lblCamId {
+		z-index: 17;
+}
+#GaMotAxisDetail_lblCamId {
+	@include font-weight-bold(true);
 }

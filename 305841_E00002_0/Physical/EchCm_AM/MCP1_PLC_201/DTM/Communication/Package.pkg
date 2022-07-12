@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Communication.dtm</Object>
+    <Object Type="Package">CommDTM</Object>
+    <Object Type="Package">PLK2_IOR02SL05</Object>
+    <Object Type="Package">PS51x_100_LI2UPN8_IODD1_1</Object>
+    <Object Type="Package">PS51x_100_LI2UPN8_IODD1_1a</Object>
+  </Objects>
+</Package>

@@ -11,7 +11,7 @@ ACTION ProcessAlarms :
   
   // Pressure and flow sensors -- enable while pump is running
   gr_AI_PT_CFPumpOutlet_Params.AlmEnable := cfVfd.isRunning;
-  gr_AI_PT_CFFilterOutlet_Params.AlmEnable := cfVfd.isRunning;
+  gr_AI_PT_CFFilterOutlet_Params.AlmEnable := FALSE; // cfVfd.isRunning; Don't an alarm on both HP gauges
   gr_AI_DP_CFFilter_Params.AlmEnable := cfVfd.isRunning;
   gr_AI_FT_CFFlow_Params.AlmEnable := cfVfd.isRunning;
 

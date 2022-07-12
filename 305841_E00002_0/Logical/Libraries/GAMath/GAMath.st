@@ -176,7 +176,6 @@ FUNCTION fctLRMod
   fctLRMod := rem * _I_Divisor; // remainder * divisor = mod
 END_FUNCTION
 
-
 // Return the source value (real) rounded to 1 decimal place 
 FUNCTION fctRound1
   dintTemp:= LREAL_TO_DINT(_I_src * 10.0);
@@ -191,3 +190,32 @@ FUNCTION fctRound2
   fctRound2:= DINT_TO_REAL(dintTemp) / 100.0;
 END_FUNCTION
 
+// Return the source value (real) rounded to 3 decimal places
+FUNCTION fctRound3
+  // On SG4 systems the REAL_TO_DINT function rounds. 
+  // Beware that on SG3 systems, it truncates.
+  dintTemp:= LREAL_TO_DINT(_I_src * 1000.0);
+  fctRound3:= DINT_TO_REAL(dintTemp) / 1000.0;
+END_FUNCTION
+
+// Return the source value (LREAL) rounded to 1 decimal place 
+FUNCTION fctLRound1
+  dintTemp:= LREAL_TO_DINT(_I_src * 10.0);
+  fctLRound1:= DINT_TO_LREAL(dintTemp) / 10.0;
+END_FUNCTION
+
+// Return the source value (LREAL) rounded to 2 decimal places
+FUNCTION fctLRound2
+  // On SG4 systems the REAL_TO_DINT function rounds. 
+  // Beware that on SG3 systems, it truncates.
+  dintTemp:= LREAL_TO_DINT(_I_src * 100.0);
+  fctLRound2:= DINT_TO_LREAL(dintTemp) / 100.0;
+END_FUNCTION
+
+// Return the source value (LREAL) rounded to 3 decimal places
+FUNCTION fctLRound3
+  // On SG4 systems the REAL_TO_DINT function rounds. 
+  // Beware that on SG3 systems, it truncates.
+  dintTemp:= LREAL_TO_DINT(_I_src * 1000.0);
+  fctLRound3:= DINT_TO_LREAL(dintTemp) / 1000.0;
+END_FUNCTION

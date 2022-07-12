@@ -52,8 +52,9 @@ TYPE
   END_STRUCT;
   
 	sAnalogInputParams : 	STRUCT  (* analog scaling and alarm parameters *) (* raw scale type - how to interpret InRawBuffer *)
+    CalcEUExternally : BOOL := FALSE; (* InScaled value is calculated outside the fbSclAlmAI fb *)
 		LpEnable : BOOL := FALSE; (* turn off Low Pass Filter by default *)
-		LpPreserveUnfiltered : BOOL := TRUE; (* F: unfiltered = filtered, T: keep separate *)
+		LpPreserveUnfiltered : BOOL := TRUE; (* F: filtered => unfiltered, T: keep separate *)
 		AlmEnable : BOOL := FALSE;
 		AlmLoLoEnable : BOOL := FALSE;
 		AlmLoEnable : BOOL := FALSE;
