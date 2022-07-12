@@ -1,0 +1,30 @@
+.dropDownMenu {
+    width: 100% !important;
+    height: 25% !important;
+    background-color: #ececec !important;
+    background-color: var(--main-grey-dark1) !important;
+    padding: 1px 5px;
+    border-radius: 2px;
+    border-bottom: 1px solid #c8c8c8 !important; 
+    border-top-width: 0px !important;
+    border-right-width: 0px !important;
+    border-left-width: 0px !important;
+    font-family: var(--main-font);
+    font-weight: normal;
+    text-align: left;
+    color: var(--main-white)!important;
+}
+.dropDownMenu:hover {
+    background-color: lightgrey !important;
+    background-color: var(--main-orange) !important;
+    color: var(--main-white)!important;
+}
+.dropDownMenu.e-disable {
+    background-color: lightgrey !important;
+    background-color: var(--main-grey-dark1) !important;
+    color: var(--main-grey)!important;
+}
+.dropDownMenu:not(.e-disable):active {
+    background-color: var(--main-orange) !important;
+    color: var(--main-white)!important;
+}

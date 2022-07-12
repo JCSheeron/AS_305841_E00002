@@ -1,0 +1,98 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_GaTextOutputGood {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: #228B22;
+}
+	border-width: 0px;
+	font-size: 16px;
+	background-color: transparent;
+@include font-weight-bold(true);
+@include text-alignment-all('center');
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_GaTextOutputBad {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: #FF0000;
+}
+	border-width: 0px;
+	font-size: 16px;
+	background-color: transparent;
+@include font-weight-bold(true);
+@include text-alignment-all('center');
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_GaTextOutputWarn {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: #FF8000;
+}
+	border-width: 0px;
+	font-size: 16px;
+	background-color: transparent;
+@include font-weight-bold(true);
+@include text-alignment-all('center');
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_GaInfoActive {
+@include widgets_brease_Label_base; 
+	font-size: 18px;
+& span {
+	color: #474747;
+}
+	background-color: transparent;
+	border-color: #0000FF;
+&:before {
+	border-color: #0000FF;
+}
+&:after {
+	border-color: #0000FF;
+}
+	border-width: 3px;
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+span {
+	padding: 5px;
+}
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_GaInfoInactive {
+@include widgets_brease_Label_base; 
+	font-size: 18px;
+& span {
+	color: #A9A9A9;
+}
+	background-color: transparent;
+	border-color: #A9A9A9;
+&:before {
+	border-color: #A9A9A9;
+}
+&:after {
+	border-color: #A9A9A9;
+}
+	border-width: 3px;
+	border-style: dotted;
+&:before {
+	border-style: dotted;
+}
+&:after {
+	border-style: dotted;
+}
+span {
+	padding: 5px;
+}
+@include font-weight-bold(true);
+
+}

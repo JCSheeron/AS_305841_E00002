@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.br-automation.com/iat2014/widget"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:widget="http://www.br-automation.com/iat2014/widget" elementFormDefault="qualified">
+
+  <xs:element name="WidgetLibrary" type="widget:WidgetLibrary"/>
+  <xs:complexType name="WidgetLibrary">
+    <xs:sequence>
+      <xs:element name="Widget" type="widget:Widget" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Widget">
+    <xs:all>
+      <xs:element name="ASEngineeringInfo" type="widget:ASEngineeringInfo" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Dependencies" type="widget:Dependencies" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Categories" type="widget:Categories" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Descriptions" type="widget:Descriptions" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="aprolMeta" type="widget:aprolMeta" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Inheritance" type="widget:Inheritance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Parents" type="widget:Parents" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Children" type="widget:Children" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Methods" type="widget:Methods" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Events" type="widget:Events" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Properties" type="widget:Properties" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StructuredProperties" type="widget:StructuredProperties" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BindingTemplates" type="widget:BindingTemplates" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PropertyGroups" type="widget:PropertyGroups" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StyleProperties" type="widget:StyleProperties" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attribute name="name" use="optional" type="xs:string"/>
+    <xs:attribute name="category" use="optional" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ASEngineeringInfo">
+    <xs:sequence>
+      <xs:element name="IsProjectable" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LicenseInfo" type="widget:LicenseMode" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="IsDerived" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IsCompound" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Keyboard" type="widget:Keyboard" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="Keyboard">
+      <xs:restriction base="xs:string">
+      <xs:enumeration value="NumPad" />
+      <xs:enumeration value="AlphaPad" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LicenseMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unlicensed"/><!-- default -->
+      <xs:enumeration value="undefined"/>
+      <xs:enumeration value="licensed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Dependencies">
+    <xs:sequence>
+      <xs:element name="Files" type="widget:Files" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="Widgets" type="widget:WidgetDependencies" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Files">
+    <xs:sequence>
+      <xs:element name="File" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WidgetDependencies">
+    <xs:sequence>
+      <xs:element name="Widget" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Categories">
+    <xs:sequence>
+      <xs:element name="Category" type="widget:Category" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Category">
+    <xs:simpleContent>
+      <xs:extension base="widget:SubCategoriesType">
+        <xs:attribute name="name" type="widget:CategoriesType"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+
+  </xs:complexType>
+
+  <xs:simpleType name="CategoriesType">
+    <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SubCategoriesType">
+    <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Descriptions">
+    <xs:sequence>
+      <xs:element name="Description" type="widget:Description" minOccurs="0" maxOccurs="unbounded">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Description">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="name" type="widget:DescriptionType"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="DescriptionType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="aprolMeta">
+    <xs:sequence>
+      <xs:element name="Configuration" type="widget:aprolConfig" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aprolConfig">
+    <xs:attribute name="key" use="required" type="xs:string"/>
+    <xs:attribute name="value" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="Inheritance">
+    <xs:sequence>
+      <xs:element name="Class" type="widget:Class" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Class">
+    <xs:simpleContent>
+      <xs:extension base="widget:ClassType">
+        <xs:attribute name="level" type="xs:integer" use="required"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ClassType">
+    <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Parents">
+    <xs:sequence>
+      <xs:element name="Parent" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Children">
+    <xs:sequence>
+      <xs:element name="Child" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Properties">
+    <xs:sequence>
+      <xs:element name="Property" type="widget:Property" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Property">
+    <xs:all>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="aprolMeta" type="widget:aprolMeta" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Mappings" type="widget:PropertyMappings" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="type" use="required" type="widget:widgetPropertyType"/>
+    <xs:attribute name="iatType" use="optional" type="xs:string"/>
+    <xs:attribute name="category" use="optional" type="xs:string"/>
+    <xs:attribute name="initOnly" use="required" type="xs:boolean"/>
+    <xs:attribute name="readOnly" use="required" type="xs:boolean"/>
+    <xs:attribute name="required" use="required" type="xs:boolean"/>
+    <xs:attribute name="projectable" use="optional" type="xs:boolean"/>
+    <xs:attribute name="localizable" use="optional" type="xs:boolean"/>
+    <xs:attribute name="editableBinding" use="optional" type="xs:boolean"/>
+    <xs:attribute name="defaultValue" use="optional" type="xs:string"/>
+    <xs:attribute name="typeRefId" use="optional" type="xs:string"/>
+    <xs:attribute name="nodeRefId" use="optional" type="xs:string"/>
+    <xs:attribute name="nodeOnly" use="optional" type="xs:boolean"/>
+    <xs:attribute name="groupRefId" use="optional" type="xs:string"/>
+    <xs:attribute name="groupOrder" use="optional" type="xs:integer"/>
+    <xs:attribute name="subtype" use="optional" type="xs:string"/>
+    <xs:attribute name="hide" use="optional" type="xs:boolean"/>
+    <xs:attribute name="isStruct" use="optional" type="xs:boolean"/>
+    <xs:attribute name="deprecated" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyMappings">
+    <xs:sequence>
+      <xs:element name="Mapping" type="widget:PropertyMapping" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyMapping" mixed="true">
+    <xs:attribute name="widget" use="required" type="xs:string"/>
+    <xs:attribute name="property" use="required" type="xs:string"/>
+    <xs:attribute name="mode" use="optional" type="widget:BindingMode"/>
+  </xs:complexType>
+
+  <xs:complexType name="StructuredProperties">
+    <xs:sequence>
+      <xs:element name="StructuredProperty" type="widget:StructuredProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StructuredProperty" >
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Properties" type="widget:Properties" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StyleProperties" type="widget:StyleProperties" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="type" use="required" type="xs:string" />
+    <xs:attribute name="category" use="optional" type="xs:string"/>
+    <xs:attribute name="maxSize" use="optional" type="xs:unsignedInt"/>
+    <xs:attribute name="minSize" use="optional" type="xs:unsignedInt"/>
+  </xs:complexType>
+
+  <xs:complexType name="Events">
+    <xs:sequence>
+      <xs:element name="Event" type="widget:Event" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Methods">
+    <xs:sequence>
+      <xs:element name="Method" type="widget:Method" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Event">
+    <xs:all>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="aprolMeta" type="widget:aprolMeta" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Arguments" type="widget:Arguments" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Mappings" type="widget:EventMappings" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="deprecated" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="EventMappings">
+    <xs:sequence>
+      <xs:element name="Mapping" type="widget:EventMapping" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EventMapping" mixed="true">
+    <xs:attribute name="widget" use="required" type="xs:string"/>
+    <xs:attribute name="event" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="Method">
+    <xs:all>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="aprolMeta" type="widget:aprolMeta" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Arguments" type="widget:Arguments" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Result" type="widget:MethodResult" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Mappings" type="widget:ActionMappings" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="read" use="required" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="MethodResult">
+    <xs:attribute name="type" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ActionMappings">
+    <xs:sequence>
+      <xs:element name="Mapping" type="widget:ActionMapping" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ActionMapping" mixed="true">
+    <xs:sequence>
+      <xs:element name="Arguments" type="widget:ActionArgumentsMapping" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="widget" use="required" type="xs:string"/>
+    <xs:attribute name="action" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="ActionArgumentsMapping" mixed="true">
+    <xs:sequence>
+      <xs:element name="Argument" type="widget:ActionArgumentMapping" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ActionArgumentMapping" mixed="true">
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="mapTo" use="required" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="BindingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="oneWay"/>
+      <xs:enumeration value="oneWayToSource"/>
+      <xs:enumeration value="twoWay"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PropertyGroups">
+    <xs:sequence>
+      <xs:element name="PropertyGroup" type="widget:PropertyGroup" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyGroup">
+    <xs:sequence>
+      <xs:element name="Description" type="widget:Description" minOccurs="0" maxOccurs="1" ></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="type" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="category" use="optional" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="StyleProperties">
+    <xs:sequence>
+      <xs:element name="StyleProperty" type="widget:StyleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="defaultStyle" use="optional" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="StyleProperty">
+    <xs:sequence>
+      <xs:element name="StyleElement" type="widget:StyleElement" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="aprolMeta" type="widget:aprolMeta" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string"/>
+    <xs:attribute name="type" use="required" type="xs:string"/>
+    <xs:attribute name="category" use="optional" type="xs:string"/>
+    <xs:attribute name="default" use="optional" type="xs:string"/>
+    <xs:attribute name="not_styleable" use="optional" type="xs:boolean"/>
+    <xs:attribute name="owner" use="optional" type="xs:string"/>
+    <xs:attribute name="hide" use="optional" type="xs:boolean"/>
+    <xs:attribute name="required" use="optional" type="xs:boolean"/>
+    <xs:attribute name="groupRefId" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="groupOrder" use="optional" type="xs:integer"></xs:attribute>
+    <xs:attribute name="deprecated" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="StyleElement">
+    <xs:attribute name="attribute" use="required" type="xs:string"/>
+    <xs:attribute name="selector" use="optional" type="xs:string"/>
+    <xs:attribute name="idsuffix" use="optional" type="xs:string"/>
+    <xs:attribute name="indexed" use="optional" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="BindingTemplates">
+    <xs:sequence>
+      <xs:element name="BindingTemplate" type="widget:BindingTemplate" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BindingTemplate">
+    <xs:sequence>
+      <xs:element name="BindingMember" type="widget:BindingMember" minOccurs="1" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="widgetType" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="BindingMember">
+    <xs:sequence>
+      <xs:element name="SourceMember" type="widget:Member" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="TargetMember" type="widget:Member" minOccurs="1" maxOccurs="1"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="mode" type="widget:bindingMode" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Member">
+    <xs:attribute name="refId" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="attribute" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="samplingRate" type="widget:samplingRateMode" use="optional"></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="samplingRateMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fast" />
+      <xs:enumeration value="slow" />
+      <xs:enumeration value="default" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bindingMode">
+    <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Arguments">
+    <xs:sequence>
+      <xs:element name="Argument" type="widget:Argument" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Argument">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="name" use="optional" type="xs:string"/>
+    <xs:attribute name="type" use="optional" type="xs:string"/>
+    <xs:attribute name="index" use="optional" type="xs:int"/>
+    <xs:attribute name="required" use="optional" type="xs:boolean"/>
+    <xs:attribute name="typeRefId" use="optional" type="xs:string"/>
+    <xs:attribute name="deprecated" use="optional" type="xs:boolean"/>
+    <xs:attribute name="localizable" use="optional" type="xs:boolean"/>
+    <xs:attribute name="defaultValue" use="optional" type="xs:string"/>
+  </xs:complexType>
+
+</xs:schema>

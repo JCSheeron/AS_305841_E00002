@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.TableRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="300" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="400" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.Table">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.TableRestrict">
+			<xs:all>
+				<xs:element name="Widgets" type="iat:Widgets" minOccurs="1" maxOccurs="1">
+					<xs:unique name="widgets.brease.Table.zIndex">
+						<xs:selector xpath="./iat:Widget"/>
+						<xs:field xpath="@zIndex"/>
+					</xs:unique>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="busyIndicatorDelay" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="columnWidth" use="optional" type="types:Size" default="100" />
+			<xs:attribute name="dataOrientation" use="optional" type="types:brease.enum.Direction" default="vertical" />
+			<xs:attribute name="ellipsis" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="filterConfiguration" use="optional" type="types:String" default="" />
+			<xs:attribute name="headerSize" use="optional" type="types:UInteger" default="0" />
+			<xs:attribute name="initRefreshRate" use="optional" type="types:UInteger" default="0" />
+			<xs:attribute name="maxHeight" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="multiLine" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="refreshRate" use="optional" type="types:UInteger" default="600" />
+			<xs:attribute name="rowHeight" use="optional" type="types:Size" default="30" />
+			<xs:attribute name="scrollLinkXRefId" use="optional" type="types:WidgetReference" default="" />
+			<xs:attribute name="scrollLinkYRefId" use="optional" type="types:WidgetReference" default="" />
+			<xs:attribute name="selectedColumn" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="selectedRow" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="selection" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="showHeader" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="showScrollbars" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="showSortingButton" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="stopRefreshAtScroll" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="useTableStyling" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="wordWrap" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="activeBackColor" use="optional" type="types:Color" default="#FF8800" />
+			<xs:attribute name="activeBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="mouseDownTextColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="mouseDownBackColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="mouseDownBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="activeInputCellTextColor" use="optional" type="types:Color" default="#333333" />
+			<xs:attribute name="activeInputCellInnerShadow" use="optional" type="types:Shadow" default="none" />
+			<xs:attribute name="activeInputCellBackColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="activeInputCellBackgroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="inputCellTextColor" use="optional" type="types:Color" default="#333333" />
+			<xs:attribute name="inputCellInnerShadow" use="optional" type="types:Shadow" default="none" />
+			<xs:attribute name="inputCellBackColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="inputCellBackgroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="activeTextColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="backColorEvenColumn" use="optional" type="types:Color" default="#EAEAEA" />
+			<xs:attribute name="backColorOddColumn" use="optional" type="types:Color" default="#FCFCFC" />
+			<xs:attribute name="backGroundGradientEvenColumn" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="backGroundGradientOddColumn" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="backColorEvenRow" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="backColorOddRow" use="optional" type="types:Color" default="#FCFCFC" />
+			<xs:attribute name="backGroundGradientEvenRow" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="backGroundGradientOddRow" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="borderColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="none" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="cellAlign" use="optional" type="types:brease.enum.BackgroundPosition" default="center center" />
+			<xs:attribute name="cellBorderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="cellBorderColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="cellBorderWidth" use="optional" type="types:PixelValCollection" default="0px 0px 1px 1px" />
+			<xs:attribute name="cellPadding" use="optional" type="types:Padding" default="0px" />
+			<xs:attribute name="headerCellPadding" use="optional" type="types:Padding" default="0px" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="disabledActiveTextColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="disabledActiveBackColor" use="optional" type="types:Color" default="#C7C7C7" />
+			<xs:attribute name="disabledActiveBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="disabledBackColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="disabledBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="disabledBackColorEvenRow" use="optional" type="types:Color" default="#EAEAEA" />
+			<xs:attribute name="disabledBackColorOddRow" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="disabledBackColorEvenColumn" use="optional" type="types:Color" default="#EAEAEA" />
+			<xs:attribute name="disabledBackColorOddColumn" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="disabledBorderColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="disabledCellBorderColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="disabledItemBorderColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="disabledHeaderTextColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="disabledHeaderBackColor" use="optional" type="types:Color" default="#FCFCFC" />
+			<xs:attribute name="disabledHeaderGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="disabledTextColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="fontSize" use="optional" type="types:PixelVal" default="14px" />
+			<xs:attribute name="headerBackColor" use="optional" type="types:Color" default="#FCFCFC" />
+			<xs:attribute name="headerGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="headerTextColor" use="optional" type="types:Color" default="#333333" />
+			<xs:attribute name="headerFontSize" use="optional" type="types:PixelVal" default="14px" />
+			<xs:attribute name="sortingButtonColor" use="optional" type="types:Color" default="#ececec" />
+			<xs:attribute name="sortingButtonActiveColor" use="optional" type="types:Color" default="#5f8dd3" />
+			<xs:attribute name="textColor" use="optional" type="types:Color" default="#333333" />
+			<xs:attribute name="bold" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="shadow" use="optional" type="types:Shadow" default="none" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

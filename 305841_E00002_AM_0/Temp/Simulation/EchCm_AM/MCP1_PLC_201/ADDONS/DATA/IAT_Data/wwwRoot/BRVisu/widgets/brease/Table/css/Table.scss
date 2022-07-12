@@ -1,0 +1,352 @@
+@import '../../../../css/libs/mixins.scss';
+
+$backColorEvenRow: #ffffff;
+$backColorOddRow: #fcfcfc;
+$backColorEvenColumn: #ffffff;
+$backColorOddColumn: #fcfcfc;
+
+
+$activeBackColor: #ff8800;
+
+$textColor: #333333;
+$activeTextColor: #FFFFFF;
+$headerBackColor: #FCFCFC;
+$headerTextColor: #000000;
+
+$headerFontSize: 14px;
+$fontName: Arial;
+$fontSize: 14px;
+
+$fontWeight: normal;
+$fontStyle: normal;
+
+$cellAlign: center;
+
+$none: none;
+$gridColor: #DADCDD;
+
+$disabled-border-color: #555555;
+$disabled-text-color: #C8C8C8;
+$disabled-bg-color: #F1F1F1;
+
+
+.breaseTable {
+    
+    .flex {
+        @include displayFlexBox(true);
+        padding-top: 30px;
+        box-sizing: border-box;
+        
+        &.vertical {
+            flex-direction: row;
+        }
+        
+        &.horizontal {
+            flex-direction: column;
+        }
+    }
+    
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    /*text-properties*/
+    &.ellipsis {
+        .tableHeader {
+            span {
+                @include text-overflow(ellipsis);
+            }
+        }
+
+        .dataTables_scrollBody tbody td {
+            @include text-overflow(ellipsis);
+        }
+
+        .dataTables_scrollHead .tableHeader div span {
+            @include text-overflow(ellipsis);
+        }
+    }
+
+    &.multiLine {
+        .tableHeader {
+            span {
+                white-space: pre;
+            }
+        }
+
+        .dataTables_scrollBody tbody td {
+            white-space: pre;
+        }
+
+        .dataTables_scrollHead .tableHeader div span {
+            white-space: pre;
+        }
+    }
+
+    &.wordWrap {
+        .tableHeader {
+            span {
+                white-space: pre-wrap;
+            }
+        }
+
+        .dataTables_scrollBody tbody td {
+            white-space: pre-wrap;
+        }
+
+        .dataTables_scrollHead .tableHeader div span {
+            white-space: pre-wrap;
+        }
+    }
+
+    /*general Header settings*/
+    .dataTables_scrollHead {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+
+        .tableHeader {
+            @include displayFlexBox(false);
+            flex-wrap: nowrap;
+
+            div {
+                @include displayFlexBox(false);
+                flex-shrink: 0;
+                overflow: hidden;
+
+                &.hidden {
+                    display: none;
+                }
+
+                span {
+                    overflow: hidden;
+                    width: 100%;
+                    padding-right: 0.08em;
+                }
+            }
+        }
+
+        /*orientation VERTICAL*/
+        &.verticalOrientation {
+            @include displayFlexBox(false);
+            /*header orientation*/
+            .tableHeader {
+                height: inherit;
+                flex-direction: row;
+
+                div {
+                    box-sizing: border-box;
+                    height: inherit;
+                }
+            }
+        }
+
+        /*orientation HORIZONTAL*/
+        &.horizontalOrientation {
+            float: left;
+            /*header orientation*/
+            .tableHeader {
+                flex-direction: column;
+
+                div {
+                    height: initial;
+                }
+            }
+        }
+    }
+    /*general Body settings*/
+    .dataTables_scrollBody {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .tableCells {
+            float: left;
+            table-layout: fixed;
+            border-spacing: 0;
+            border-collapse: separate;
+            width: 0px;
+
+            .dataTables_empty {
+                display: none;
+            }
+
+            tbody {
+                white-space: nowrap;
+
+                td {
+                    overflow: hidden;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+
+                td:not(.override) {
+                    padding: 0px;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+
+                tr.hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    /*Wrapper settings*/
+    .container {
+        height: 100%;
+        width: 100%;
+
+        .dataTables_wrapper {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    /* HORIZONTAL cell settings*/
+    .horizontalOrientation {
+        .tableCells {
+            tbody {
+                tr {
+				
+                 td {
+                    img {
+                        display: block;
+						margin-left: auto;
+                        margin-right: auto;
+                        pointer-events: none;
+                    }
+                    span {
+                        display: none;
+                    }
+                }
+                    /* backColorOddColumn */
+                    td:nth-child(odd) {
+                        background-color: $backColorOddColumn;
+
+                        &.selected {
+                            color: $activeTextColor;
+                        }
+                    }
+                    /* backColorEvenColumn */
+                    td:nth-child(even) {
+                        background-color: $backColorEvenColumn;
+
+                        &.selected {
+                            color: $activeTextColor;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                /* hover (disabled by default) */
+                tr {
+                    &:hover {
+                        background-color: $none;
+                    }
+
+                    &:hover.selected {
+                        background-color: $none;
+                    }
+                }
+            }
+        }
+    }
+    /* VERTICAL cell settings*/
+    .verticalOrientation {
+        .tableCells {
+            tbody {
+                /* activeBackColor (for odd rows) */
+                tr.odd.selected {
+                    background-attachment: fixed;
+                    background-color: $activeBackColor;
+                }
+                /* backColorOddRow */
+                tr.odd:not(.selected) {
+                    background-color: $backColorOddRow;
+                }
+            }
+
+            tbody {
+                /* hover (disabled by default) */
+                tr {
+                    &:hover {
+                        background-color: $none;
+                    }
+
+                        &:hover.selected {
+                            background-color: $none;
+                        }
+                }
+            }
+        }
+
+        td {
+            color: $textColor;
+        }
+
+		tr {
+            background-attachment: fixed;
+            td {
+                img {
+                    display: block;
+					margin-left: auto;
+					margin-right: auto;
+                    pointer-events: none;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        tbody {
+            /* activeBackColor, activeTextColor */
+            tr.selected {
+                background-attachment: fixed;
+                background-color: $activeBackColor;
+                td {
+                    color: $activeTextColor;
+                }
+            }
+            /* backColorEvenRow */
+            tr {
+                background-color: $backColorEvenRow;
+            }
+        }
+    }
+
+
+    .tableHeader {
+        font-size: $headerFontSize;
+        div {
+            color: $headerTextColor;
+            font-family: $fontName;
+            font-weight: $fontWeight;
+            font-style: $fontStyle;
+
+            span{
+                width: 100%;
+            }
+
+            .img_horz{
+                -webkit-transform: rotate(90deg);
+                -ms-transform: rotate(90deg); 
+                transform: rotate(90deg);
+                max-height: 16px;
+                max-width: 16px;
+            }
+
+            .img_vert{
+                max-height: 16px;
+                max-width: 16px;
+            }
+        }
+    }
+}

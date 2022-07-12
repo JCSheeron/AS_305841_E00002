@@ -1,0 +1,84 @@
+/* Set the position of the toolbar item */
+.watchablesWidget>.e-horizontal .e-treegridtoolbaritem .e-treegridcustomtoolbaritem{
+    margin-top: 1px;
+    margin-left: 0px;
+}
+
+/* Set the size of the icon, ... */
+.watchablesWidget>.e-horizontal .e-icon{
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+/* Set the hover color for the toolbar item */
+.watchablesWidget>.e-horizontal .e-hover{
+    background-color: var(--main-grey-dark1);
+}
+
+/* Set some state icons */
+.wTbI_CommunicationNotReady {
+    background-image: url(../images/toolbar/CommunicationNotReady.svg);
+}
+
+.wTbI_FindingPosition {
+    background-image: url(../images/toolbar/FindingPosition.svg);
+}
+
+.wTbI_GearDisabled {
+    background-image: url(../images/toolbar/GearDisabled.svg);
+}
+
+.wTbI_GearEnabled {
+    background-image: url(../images/toolbar/GearEnabled.svg);
+}
+
+.wTbI_GearRotating {
+    background-image: url(../images/toolbar/GearRotating.svg);
+}
+
+.wTbI_GearsDisabled {
+    background-image: url(../images/toolbar/GearsDisabled.svg);
+}
+
+.wTbI_GearsEnabled {
+    background-image: url(../images/toolbar/GearsEnabled.svg);
+}
+
+.wTbI_GearsRotating {
+    background-image: url(../images/toolbar/GearsRotating.svg);
+}
+
+.wTbI_GeneralError {
+    background-image: url(../images/toolbar/GeneralError.svg);
+}
+
+.wTbI_KnownPosition {
+    background-image: url(../images/toolbar/KnownPosition.svg);
+}
+
+.wTbI_Off {
+    background-image: url(../images/toolbar/Off.svg);
+}
+
+.wTbI_On {
+    background-image: url(../images/toolbar/On.svg);
+}
+
+.wTbI_Invalid {
+    background-image: url(../images/toolbar/unknown.svg);
+}
+
+.wTbI_UnknownPosition {
+    background-image: url(../images/toolbar/UnknownPosition.svg);
+}
+
+/* Legacy class names because of type "unkown"; can be removed when all uses are removed*/
+.wTbI_unkown {
+    background-image: url(../images/toolbar/unknown.svg);
+}
+
+/* Legacy class names because of type "unkown"; can be removed when all uses are removed*/
+.wTbI_UnkownPosition {
+    background-image: url(../images/toolbar/UnknownPosition.svg);
+}

@@ -1,0 +1,16 @@
+﻿@import "mixins.scss";
+#mainContentSpindle_Label1 {
+	@include elemAutoHeight(30);
+}
+#mainContentSpindle_Label1 {
+	@include elemTop(230);
+}
+#mainContentSpindle_Label1 {
+	@include elemLeft(450);
+}
+#mainContentSpindle_Label1 {
+	@include elemAutoWidth(180);
+}
+#mainContentSpindle_Label1 {
+		z-index: 0;
+}

@@ -1,0 +1,8 @@
+<StyleProperty name="width" type="Size" not_styleable="true" default="DEFAULT_WIDTH" category="Layout" groupRefId="Size" groupOrder="1">
+  <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+  <Description>outer width of widget</Description>
+</StyleProperty>
+<StyleProperty name="height" type="Size" not_styleable="true" default="DEFAULT_HEIGHT" category="Layout" groupRefId="Size" groupOrder="2">
+  <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+  <Description>outer height of widget</Description>
+</StyleProperty>

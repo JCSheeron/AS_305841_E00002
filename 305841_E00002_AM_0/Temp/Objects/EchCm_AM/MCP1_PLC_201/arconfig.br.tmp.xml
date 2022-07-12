@@ -1,0 +1,1505 @@
+<?xml version="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+  <Module ID="$root" Hardware="X20CP3586">
+    <Parameter ID="HardwareModuleName" Value="MCP1_PLC_201" />
+    <Parameter ID="SimulationIPAddress" Value="127.0.0.1" />
+    <Parameter ID="SimulationInaPort" Value="11160" Type="UDINT" />
+    <Parameter ID="SimulationInaNodeNumber" Value="1" Type="UDINT" />
+    <Parameter ID="SimulationModeOpcUa" Value="on" />
+    <Parameter ID="ActivateDtmServer" Value="0" Type="UDINT" />
+    <Parameter ID="TemperatureCPUType" Value="UINT" />
+    <Parameter ID="TemperatureENVType" Value="UINT" />
+  </Module>
+  <Module ID="IF2" Hardware="X20CP3586">
+    <Parameter ID="DeviceDescription" Value="gei" />
+    <Parameter ID="EthInterfaceRedundant" Value="0" />
+    <Parameter ID="ActivateOSAFT" Value="0" />
+  </Module>
+  <Module ID="IF2.OPCUA" Hardware="OPCUA">
+    <Parameter ID="ActivateOpcUa" Value="1" Type="INT" />
+  </Module>
+  <Module ID="IF2.SITEMAN" Hardware="SITEMAN">
+    <Parameter ID="ActivateSiteMan" Value="1" Type="INT" />
+  </Module>
+  <Module ID="IF2.ST1" Hardware="6PPT50.121E-16B">
+    <Parameter ID="HardwareModuleName" Value="OWS1_OIT1" />
+    <Parameter ID="OS" Value="PPT" />
+    <Parameter ID="Startmode" Value="0" />
+    <Parameter ID="Mode" Value="Manual" />
+    <Parameter ID="InternetAddress" Value="10.10.2.20" />
+    <Parameter ID="Subnetmask" Value="255.255.255.0" />
+    <Parameter ID="Hostname" Value="ows1_oit1" />
+    <Parameter ID="ActivateDns" Value="1" />
+    <Parameter ID="DnsDefaultDomain" Value="DnsSuffix" />
+    <Parameter ID="DnsFromDhcp" Value="1" />
+    <Parameter ID="ActivateNtpClient" Value="0" />
+    <Parameter ID="ActivateDaylightSavingTime" Value="0" />
+    <Parameter ID="TimeZone" Value="130" Type="UDINT" />
+    <Parameter ID="Displaybrightness" Value="50" Type="UINT" />
+    <Parameter ID="Screensaver" Value="0" />
+    <Parameter ID="ScreenRotation" Value="0" />
+    <Parameter ID="GifOffsetX" Value="0" Type="UDINT" />
+    <Parameter ID="GifOffsetY" Value="0" Type="UDINT" />
+    <Parameter ID="GifDelayMs" Value="0" Type="UDINT" />
+    <Parameter ID="ActivateBuzzer" Value="0" />
+    <Parameter ID="ActivateOpenService" Value="1" />
+    <Parameter ID="PasswordVNCEncrypt" Value="0" />
+    <Parameter ID="ActivateRFBext" Value="0" />
+    <Parameter ID="ConnMonVNC" Value="0" />
+    <Parameter ID="LocalScaling" Value="0" />
+    <Parameter ID="BrowserVKeyboard" Value="1" />
+    <Parameter ID="DisablePinchZoom" Value="0" />
+    <Parameter ID="EnableViewportOvrd" Value="0" />
+    <Parameter ID="USBmemshare" Value="0" />
+    <Parameter ID="Usermemshare" Value="0" />
+    <Parameter ID="PasswordCIFSEncrypt" Value="0" />
+    <Parameter ID="UpdateServerType" Value="1" />
+    <Parameter ID="UpdateServerFromDhcp" Value="1" />
+    <Parameter ID="PasswordServiceEncrypt" Value="0" />
+    <Parameter ID="ActivateRemoteAccess" Value="0" />
+    <Parameter ID="ActivateOpcUaServer" Value="0" />
+    <Parameter ID="PPTLogo" Value="none" />
+    <Parameter ID="AnimatedBootLogo" Value="none" />
+    <Parameter ID="PPTImage" Value="none" />
+    <Parameter ID="VncAuthentication" Value="0" />
+    <Parameter ID="VncPortNumber" Value="5900" Type="UDINT" />
+    <Parameter ID="VncMaxConnections" Value="1" Type="UINT" />
+    <Parameter ID="VncRefreshRate" Value="1000" Type="UDINT" />
+    <Parameter ID="VncConnectionTimeout" Value="4" Type="UDINT" />
+    <Parameter ID="ANSLConnectionTypeForTerminals" Value="non-secure" />
+    <Parameter ID="ConfigFileName" Value="PPT50Config" />
+  </Module>
+  <Module ID="IF3" Hardware="X20CP3586">
+    <Parameter ID="Operation" Value="EPL-V2" />
+    <Parameter ID="MtuSize" Value="300" Type="UDINT" />
+  </Module>
+  <Module ID="IF3.PLK" Hardware="EPL-V2">
+    <Parameter ID="EplInterfaceRedundant" Value="0" />
+    <Parameter ID="EplHostName" Value="PLC_MCP1_PLK1" />
+    <Parameter ID="CycleTime" Value="800" Type="UDINT" />
+    <Parameter ID="Synchron" Value="off" />
+    <Parameter ID="MuxPrescaler" Value="8" Type="UDINT" />
+    <Parameter ID="Mode" Value="MN" />
+    <Parameter ID="NodeID" Value="240" Type="DINT" />
+    <Parameter ID="AsyncTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="TransferOnlyActive" Value="off" />
+    <Parameter ID="OutputJustInTime" Value="off" />
+    <Parameter ID="BasicEthernetInServiceMode" Value="off" />
+    <Parameter ID="EplNatSubnet" Value="192.168.101.0" />
+    <Parameter ID="EPL_LossFrameTolerance" Value="-1" Type="DINT" />
+    <Parameter ID="ApplSwDate" Value="0" Type="UDINT" />
+    <Parameter ID="ApplSwTime" Value="0" Type="UDINT" />
+    <Parameter ID="BusCycleTrigger" Value="auto" />
+    <Parameter ID="OutputCycleTrigger" Value="auto" />
+  </Module>
+  <Module ID="IF3.ST10" Hardware="8B0P0440HC00.000-1">
+    <Parameter ID="HardwareModuleName" Value="AM_PS_PLK10" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EnableDNA" Value="off" />
+    <Parameter ID="FunctionModel" Value="DoubleAxis" />
+    <Parameter ID="InSize" Value="152" Type="UDINT" />
+    <Parameter ID="OutSize" Value="64" Type="UDINT" />
+  </Module>
+  <Module ID="IF3.ST11" Hardware="8BVI0055HCD0.000-1">
+    <Parameter ID="HardwareModuleName" Value="AM1_PLK11" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EnableDNA" Value="off" />
+    <Parameter ID="FunctionModel" Value="DoubleAxis" />
+    <Parameter ID="InSize" Value="152" Type="UDINT" />
+    <Parameter ID="OutSize" Value="64" Type="UDINT" />
+  </Module>
+  <Module ID="IF3.ST11.M1" Hardware="8LSA26.D9060S200-3">
+    <Parameter ID="HardwareModuleName" Value="ServoMotor_OutE" />
+  </Module>
+  <Module ID="IF3.ST11.M2" Hardware="8LSA26.D9060S200-3">
+    <Parameter ID="HardwareModuleName" Value="ServoMotor_InE" />
+  </Module>
+  <Module ID="IF3.ST11.SS1" Hardware="8BAC0120.001-2">
+    <Parameter ID="HardwareModuleName" Value="AM1Enc1_OutE" />
+  </Module>
+  <Module ID="IF3.ST11.SS2" Hardware="8BAC0120.001-2">
+    <Parameter ID="HardwareModuleName" Value="AM2Enc2_InE" />
+  </Module>
+  <Module ID="IF3.ST12" Hardware="8BVI0055HCDS.000-1">
+    <Parameter ID="HardwareModuleName" Value="AM2_PLK12" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EnableDNA" Value="off" />
+    <Parameter ID="FunctionModel" Value="DoubleAxis" />
+    <Parameter ID="EPL_ParamStrategy" Value="Load" />
+    <Parameter ID="EPL_NoResetOnConfigFail" Value="on" />
+    <Channel ID="CyclicParameterRequest_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012020" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="12" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicDataToDrive_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022020" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="20" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicParameterRequest_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012021" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="12" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicDataToDrive_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022021" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="20" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicParameterResponse_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="12" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicStatusBitsResponse_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="4" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicMonitorData_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="16" Type="UDINT" />
+    </Channel>
+    <Channel ID="CycUserFromDrive_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="20" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA1CYCSEND_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA2CYCSEND_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00062030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA3CYCSEND_AX_1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00072030" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicParameterResponse_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="12" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicStatusBitsResponse_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="4" Type="UDINT" />
+    </Channel>
+    <Channel ID="CyclicMonitorData_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="16" Type="UDINT" />
+    </Channel>
+    <Channel ID="CycUserFromDrive_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="20" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA1CYCSEND_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA2CYCSEND_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00062031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+    <Channel ID="MA3CYCSEND_AX_2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00072031" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="8" Type="UDINT" />
+    </Channel>
+  </Module>
+  <Module ID="IF3.ST12.M1" Hardware="8LSA26.D9060S200-3">
+    <Parameter ID="HardwareModuleName" Value="ServoMotor_Spin" />
+  </Module>
+  <Module ID="IF3.ST12.M2" Hardware="8LSA46.DB030S200-3">
+    <Parameter ID="HardwareModuleName" Value="ServoMotor_Z" />
+  </Module>
+  <Module ID="IF3.ST12.SS1" Hardware="8BVSV2SAFE1-1">
+    <Parameter ID="HardwareModuleName" Value="AM1Enc_Spin_SM11" />
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="11" Type="UDINT" />
+    <Parameter ID="ShutDownTime" Value="0" Type="UDINT" />
+  </Module>
+  <Module ID="IF3.ST12.SS1.IO" Hardware="8BVSV2SAFE1-1">
+    <XLink ID="SafeOUT">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID11_OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="19" Type="UDINT" />
+    </XLink>
+  </Module>
+  <Module ID="IF3.ST12.SS2" Hardware="8BVSV2SAFE1-1">
+    <Parameter ID="HardwareModuleName" Value="AM1Enc_Z_SM12" />
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="12" Type="UDINT" />
+    <Parameter ID="ShutDownTime" Value="0" Type="UDINT" />
+  </Module>
+  <Module ID="IF3.ST12.SS2.IO" Hardware="8BVSV2SAFE1-1">
+    <XLink ID="SafeOUT">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID12_OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="19" Type="UDINT" />
+    </XLink>
+  </Module>
+  <Module ID="IF3.ST13" Hardware="8I66xxxxxxx.0P-xxx">
+    <Parameter ID="HardwareModuleName" Value="VFD1_PLK13" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="PlkDiagnosisAdd" Value="on" />
+    <Parameter ID="LinkSelectorInfo" Value="off" />
+    <Parameter ID="IPGateway" Value="240" Type="DINT" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EPL_PReqDataInPResMN" Value="off" />
+    <Parameter ID="EnableDNA" Value="off" />
+    <Parameter ID="FunctionModel" Value="MotionConfig" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="UnitOfSetpoint" Value="Rpm" />
+    <Parameter ID="IOM_AIDP1" Value="HMIS" />
+    <Parameter ID="IOM_AIDP2" Value="LFT" />
+    <Parameter ID="IOM_AIDP3" Value="ETAD_u" />
+    <Parameter ID="FunctionModel_ACPi" Value="Template50_ASM" />
+    <Parameter ID="Download_PS" Value="YES" />
+    <Parameter ID="CCheck_PS" Value="NO" />
+    <Parameter ID="Mode_LI1" Value="Standard" />
+    <Parameter ID="IOM_DI1" Value="IL1R" />
+    <Parameter ID="Mode_LI2" Value="Standard" />
+    <Parameter ID="IOM_DI2" Value="IL1R" />
+    <Parameter ID="Mode_LI3" Value="Safety" />
+    <Parameter ID="IOM_DI3" Value="IL1R" />
+    <Parameter ID="Mode_LI4" Value="Standard" />
+    <Parameter ID="IOM_DI4" Value="IL1R" />
+    <Parameter ID="Mode_LI5" Value="Standard" />
+    <Parameter ID="IOM_DI5" Value="IL1R" />
+    <Parameter ID="Mode_LI6" Value="Standard" />
+    <Parameter ID="IOM_DI6" Value="IL1R" />
+    <Parameter ID="Mode_AI1" Value="Standard" />
+    <Parameter ID="Sel_AI1T_AI1L" Value="10U_POS" />
+    <Parameter ID="Mode_AI2" Value="Standard" />
+    <Parameter ID="Sel_AI2T_AI2L" Value="N10U_POS" />
+    <Parameter ID="Mode_AI3" Value="Standard" />
+    <Parameter ID="Sel_AI3T_AI3L" Value="0A_POS" />
+    <Parameter ID="IOM_R1ctrl" Value="local_D" />
+    <Parameter ID="IOM_R2ctrl" Value="local_D" />
+    <Parameter ID="IOM_LO1ctrl" Value="local_D" />
+    <Parameter ID="IOM_AO1ctrl" Value="local_A" />
+    <Parameter ID="Sel_AO1T" Value="0A" />
+    <Parameter ID="Cfg_FTD" Value="500" Type="UINT" />
+    <Parameter ID="Cfg_F2D" Value="500" Type="UINT" />
+    <Parameter ID="Cfg_EPL" Value="0" Type="INT" />
+    <Parameter ID="Sel_NameplateMask" Value="8Ix6T401100_IEC" />
+    <Parameter ID="Cfg_NSP" Value="1175" Type="UINT" />
+    <Parameter ID="Cfg_FRS" Value="600" Type="UINT" />
+    <Parameter ID="Cfg_UNS" Value="480" Type="UINT" />
+    <Parameter ID="Cfg_COS" Value="73" Type="UINT" />
+    <Parameter ID="Sel_TUN" Value="MEAS" />
+    <Parameter ID="Cfg_TUN" Value="2" Type="INT" />
+    <Parameter ID="Cfg_TUL" Value="0" Type="INT" />
+    <Parameter ID="Cfg_TUNU" Value="1" Type="INT" />
+    <Parameter ID="Sel_THT" Value="ACL" />
+    <Parameter ID="Cfg_MTM" Value="1" Type="INT" />
+    <Parameter ID="Sel_ITH" Value="AUTO" />
+    <Parameter ID="Cfg_ITH_auto" Value="1" Type="UINT" />
+    <Parameter ID="Sel_I2TA" Value="NO" />
+    <Parameter ID="Sel_CLI" Value="NO" />
+    <Parameter ID="Sel_TLA" Value="NO" />
+    <Parameter ID="Sel_TAA" Value="NO" />
+    <Parameter ID="Cfg_LAC" Value="3" Type="INT" />
+    <Parameter ID="Sel_CHCF" Value="NET" />
+    <Parameter ID="Cfg_CHCF" Value="1" Type="INT" />
+    <Parameter ID="Cfg_CSB" Value="2" Type="INT" />
+    <Parameter ID="Cfg_CD1" Value="30" Type="INT" />
+    <Parameter ID="Cfg_CCS" Value="98" Type="INT" />
+    <Parameter ID="Cfg_CD2" Value="30" Type="INT" />
+    <Parameter ID="Cfg_FR1B" Value="0" Type="INT" />
+    <Parameter ID="Cfg_RCB" Value="96" Type="INT" />
+    <Parameter ID="Cfg_FR1" Value="169" Type="INT" />
+    <Parameter ID="Cfg_RFC" Value="96" Type="INT" />
+    <Parameter ID="Cfg_FR2" Value="169" Type="INT" />
+    <Parameter ID="Sel_DCtype" Value="AUTO" />
+    <Parameter ID="Sel_DCCM" Value="NO" />
+    <Parameter ID="Sel_STP" Value="NO" />
+    <Parameter ID="Sel_USB" Value="0" />
+    <Parameter ID="Cfg_OPL" Value="1" Type="INT" />
+    <Parameter ID="Sel_SVL" Value="NO" />
+    <Parameter ID="Sel_CTT" Value="UUC" />
+    <Parameter ID="Cfg_CTT" Value="0" Type="INT" />
+    <Parameter ID="Sel_BOA" Value="1" />
+    <Parameter ID="Cfg_DCF" Value="1" Type="UINT" />
+    <Parameter ID="Sel_RPT" Value="LIN" />
+    <Parameter ID="Sel_ADC" Value="YES" />
+    <Parameter ID="Cfg_ADC" Value="1" Type="INT" />
+    <Parameter ID="Sel_SDCswitch" Value="YES" />
+    <Parameter ID="Cfg_BRA" Value="1" />
+    <Parameter ID="Sel_HEX605A" Value="DS402_2" />
+    <Parameter ID="Cfg_HEX605A" Value="2" Type="INT" />
+    <Parameter ID="Sel_HEX605B" Value="DS402_0" />
+    <Parameter ID="Cfg_HEX605B" Value="0" Type="INT" />
+    <Parameter ID="Sel_HEX605C" Value="DS402_1" />
+    <Parameter ID="Cfg_HEX605C" Value="1" Type="INT" />
+    <Parameter ID="Sel_HEX605D" Value="DS402_1" />
+    <Parameter ID="Cfg_HEX605D" Value="1" Type="INT" />
+    <Parameter ID="Sel_HEX605E" Value="DS402_1" />
+    <Parameter ID="Cfg_HEX605E" Value="1" Type="INT" />
+    <Parameter ID="Sel_HEX6007" Value="DS402_1" />
+    <Parameter ID="Cfg_HEX6007" Value="1" Type="INT" />
+    <Parameter ID="Cfg_LFF" Value="0" Type="UINT" />
+    <Parameter ID="Cfg_PST" Value="0" Type="INT" />
+  </Module>
+  <Module ID="IF6.X2X" Hardware="X2X">
+    <Parameter ID="CycleTime" Value="2000" Type="UDINT" />
+    <Parameter ID="Synchron" Value="on" />
+    <Parameter ID="BusLength" Value="1000" Type="UDINT" />
+    <Parameter ID="Stations" Value="64" Type="UDINT" />
+    <Parameter ID="AsyncPayload" Value="80" Type="UDINT" />
+    <Parameter ID="Asymmetric" Value="off" />
+    <Parameter ID="OutputJustInTime" Value="on" />
+    <Parameter ID="BusCycleTrigger" Value="auto" />
+    <Parameter ID="OutputCycleTrigger" Value="auto" />
+  </Module>
+  <Module ID="IF6.ST1" Hardware="X20DI4371">
+    <Parameter ID="HardwareModuleName" Value="IOR00SL01" />
+  </Module>
+  <Module ID="IF6.ST1.IO" Hardware="X20DI4371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="10" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="IF6.ST2" Hardware="X20SO6300">
+    <Parameter ID="HardwareModuleName" Value="IOR00SL02" />
+  </Module>
+  <Module ID="IF6.ST2.IO" Hardware="X20SO6300">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="Blackout" Value="off" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="2" Type="UDINT" />
+    <Parameter ID="DigitalOutput01" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput02" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput03" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput04" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput05" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput06" Value="viaSafeLOGIC" />
+    <XLink ID="SafeOUT">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID2_OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </XLink>
+  </Module>
+  <Module ID="SS1" Hardware="X20IF1082-2">
+    <Parameter ID="HardwareModuleName" Value="PLK240-2" />
+  </Module>
+  <Module ID="SS1.IF1" Hardware="X20IF1082-2">
+    <Parameter ID="Operation" Value="EPL-V2" />
+    <Parameter ID="MtuSize" Value="300" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.PLK" Hardware="EPL-V2">
+    <Parameter ID="EplInterfaceRedundant" Value="0" />
+    <Parameter ID="EplHostName" Value="PLC_MCP1_PLK2" />
+    <Parameter ID="CycleTime" Value="2000" Type="UDINT" />
+    <Parameter ID="Synchron" Value="on" />
+    <Parameter ID="MuxPrescaler" Value="8" Type="UDINT" />
+    <Parameter ID="Mode" Value="MN" />
+    <Parameter ID="NodeID" Value="240" Type="DINT" />
+    <Parameter ID="AsyncTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="TransferOnlyActive" Value="off" />
+    <Parameter ID="OutputJustInTime" Value="off" />
+    <Parameter ID="BasicEthernetInServiceMode" Value="off" />
+    <Parameter ID="EplNatSubnet" Value="192.168.102.0" />
+    <Parameter ID="RingRedundancy" Value="0" Type="UDINT" />
+    <Parameter ID="EPL_LossFrameTolerance" Value="-1" Type="DINT" />
+    <Parameter ID="ApplSwDate" Value="0" Type="UDINT" />
+    <Parameter ID="ApplSwTime" Value="0" Type="UDINT" />
+    <Parameter ID="BusCycleTrigger" Value="auto" />
+    <Parameter ID="OutputCycleTrigger" Value="auto" />
+  </Module>
+  <Module ID="SS1.IF1.ST1" Hardware="X20BC8083">
+    <Parameter ID="HardwareModuleName" Value="BC_PLK1" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="LinkSelectorInfo" Value="off" />
+    <Parameter ID="IPGateway" Value="240" Type="DINT" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="CiR" Value="off" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EPL_PReqDataInPResMN" Value="off" />
+    <Parameter ID="SyncMode" Value="SoC" />
+    <Parameter ID="EnableDNA" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1" Hardware="IF1">
+    <Parameter ID="QLinkMinBitsize" Value="8" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.X2X" Hardware="X2X">
+    <Parameter ID="CycleTime" Value="2000" Type="UDINT" />
+    <Parameter ID="Synchron" Value="on" />
+    <Parameter ID="BusLength" Value="1000" Type="UDINT" />
+    <Parameter ID="Stations" Value="64" Type="UDINT" />
+    <Parameter ID="AsyncPayload" Value="80" Type="UDINT" />
+    <Parameter ID="Asymmetric" Value="off" />
+    <Parameter ID="CyclicX2XNettime" Value="off" />
+    <Parameter ID="CiR" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST1" Hardware="X20PS9400a">
+    <Parameter ID="HardwareModuleName" Value="PS_PLK1" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST1.IO" Hardware="X20PS9400a">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="PowerInfo" Value="on" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST2" Hardware="X20DI6371">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL02" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST2.IO" Hardware="X20DI6371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="250" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST3" Hardware="X20DI6371">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL03" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST3.IO" Hardware="X20DI6371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="250" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST4" Hardware="X20DI6371">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL04" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST4.IO" Hardware="X20DI6371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="250" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST5" Hardware="X20DS1119">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL05" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST5.IO" Hardware="X20DS1119">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="PSInfo" Value="on" />
+    <Parameter ID="SDCInfo" Value="on" />
+    <Parameter ID="NetworkInfo" Value="8Bit" />
+    <Parameter ID="SIframeGenCycleID" Value="SOAI" />
+    <Parameter ID="SystemCycleTime" Value="100" Type="UINT" />
+    <Parameter ID="SystemCyclePrescaler" Value="2" Type="UINT" />
+    <Parameter ID="SystemCycleOffset" Value="0" Type="INT" />
+    <Parameter ID="Channel01Config" Value="input" />
+    <Parameter ID="Channel01Source" Value="DirectIO" />
+    <Parameter ID="Channel02Config" Value="input" />
+    <Parameter ID="Channel02Source" Value="DirectIO" />
+    <Parameter ID="Channel03Config" Value="input" />
+    <Parameter ID="Channel03Source" Value="DirectIO" />
+    <Parameter ID="Channel04Config" Value="input" />
+    <Parameter ID="Channel05Config" Value="input" />
+    <Parameter ID="DirectIOControlConfig" Value="off" />
+    <Parameter ID="OversampledIOConfig" Value="off" />
+    <Parameter ID="EdgeDetectEnable" Value="off" />
+    <Parameter ID="Function01" Value="off" />
+    <Parameter ID="Function02" Value="off" />
+    <Parameter ID="Function03" Value="AB" />
+    <Parameter ID="CounterCycleSelect" Value="Timer" />
+    <Parameter ID="CounterTimeInfo" Value="off" />
+    <Parameter ID="LatchMode" Value="off" />
+    <Parameter ID="CounterCmp01" Value="off" />
+    <Parameter ID="CounterCmp02" Value="off" />
+    <Parameter ID="CounterCmp03" Value="off" />
+    <Parameter ID="CounterCmp04" Value="off" />
+    <Parameter ID="CounterStd01" Value="32Bit" />
+    <Parameter ID="CounterLat01" Value="off" />
+    <Parameter ID="CounterRel01" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST6" Hardware="X20SLX410">
+    <Parameter ID="HardwareModuleName" Value="SafetyController_R01SL06" />
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID_SCM" Value="1023" Type="UDINT" />
+    <Parameter ID="ManualCycleTimeConfiguration" Value="No" />
+    <Parameter ID="CycleTimeConfig" Value="0" Type="UINT" />
+    <Parameter ID="SProxyActivate" Value="on" />
+    <Parameter ID="SProxyServer" Value="/FRAMENUMB=8 /FRAMESIZE=256" />
+    <Parameter ID="SProxySProtocol" Value="TCP/IP" />
+    <Parameter ID="SProxySAddress" Value="0.0.0.0" />
+    <Parameter ID="SProxySCommID" Value="50000" />
+    <Parameter ID="SProxyClient" Value="/FRAMENUMB=8 /FRAMESIZE=62" />
+    <Parameter ID="SProxyCProtocol" Value="asyncX2XChannel" />
+    <Parameter ID="SProxyCAddress" Value="CCP.SSCH" />
+    <Parameter ID="SProxyCCommID" Value="4" />
+    <Parameter ID="SLOG_FacilityId" Value="2" Type="UDINT" />
+    <Channel ID="PackedOut1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012500" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL10001">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10002">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10003">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10004">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10005">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10006">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10007">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10008">
+      <Parameter ID="Ext" Value="/SUB=PackedOut1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="PackedOut2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022500" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL10009">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10010">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10011">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10012">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10013">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10014">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10015">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10016">
+      <Parameter ID="Ext" Value="/SUB=PackedOut2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="PackedOut3">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032500" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL10017">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10018">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10019">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10020">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10021">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10022">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10023">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL10024">
+      <Parameter ID="Ext" Value="/SUB=PackedOut3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="PackedIn1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL00001">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00002">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00003">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00004">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00005">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00006">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00007">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00008">
+      <Parameter ID="Ext" Value="/SUB=PackedIn1" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="PackedIn2">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL00009">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00010">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00011">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00012">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00013">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00014">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00015">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00016">
+      <Parameter ID="Ext" Value="/SUB=PackedIn2" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="PackedIn3">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="1" Type="UDINT" />
+    </Channel>
+    <Channel ID="BOOL00017">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00018">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000001" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00019">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000002" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00020">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000003" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00021">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000004" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00022">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000005" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00023">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000006" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="BOOL00024">
+      <Parameter ID="Ext" Value="/SUB=PackedIn3" />
+      <Parameter ID="Address" Value="0x00000000" Type="UDINT" />
+      <Parameter ID="BitOffset" Value="0x00000007" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="BOOL" />
+    </Channel>
+    <Channel ID="UINT0001">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="UINT" />
+    </Channel>
+    <Channel ID="UINT0002">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="UINT" />
+    </Channel>
+    <Channel ID="UINT0003">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00062580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="UINT" />
+    </Channel>
+    <Channel ID="UINT0004">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00072580" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="UINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID2_IN">
+      <Parameter ID="SDevice" Value="IF6.ST2" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="13" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID2_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="13" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID2_OUT">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00012210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID2_PDOi1">
+      <Parameter ID="SDevice" Value="IF6.ST2" />
+      <Parameter ID="SName" Value="PDOi1" />
+      <Parameter ID="Type" Value="USINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID2_PDOi1">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042500" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="USINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID11_IN">
+      <Parameter ID="SDevice" Value="IF3.ST12.SS1" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="37" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID11_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="37" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID11_OUT">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00022210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="19" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID12_IN">
+      <Parameter ID="SDevice" Value="IF3.ST12.SS2" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="37" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID12_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="37" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID12_OUT">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00032210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="19" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID116_IN">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST16" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID116_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID116_TIME">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00042210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID117_IN">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST17" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID117_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID117_TIME">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID212_IN">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST2.IF1.ST12" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID212_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00062200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID212_TIME">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00062210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID213_IN">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST2.IF1.ST13" />
+      <Parameter ID="SName" Value="SafeIN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="13" Type="UDINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID213_IN">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00072200" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="13" Type="UDINT" />
+    </Channel>
+    <Channel ID="SLID1_SMID213_OUT">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00072210" Type="UDINT" />
+      <Parameter ID="Direction" Value="IN" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </Channel>
+    <XLink ID="SLID1_SMID213_PDOi">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST2.IF1.ST13" />
+      <Parameter ID="SName" Value="PDOi" />
+      <Parameter ID="Type" Value="USINT" />
+    </XLink>
+    <Channel ID="SLID1_SMID213_PDOi">
+      <Parameter ID="Ext" Value="/DYNAMIC" />
+      <Parameter ID="Address" Value="0x00052500" Type="UDINT" />
+      <Parameter ID="Direction" Value="OUT" />
+      <Parameter ID="Type" Value="USINT" />
+    </Channel>
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST7" Hardware="X20DO6322">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL07" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST7.IO" Hardware="X20DO6322">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="DigitalOutputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST8" Hardware="X20DO6322">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL08" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST8.IO" Hardware="X20DO6322">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="DigitalOutputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST11" Hardware="X20PS3300">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL11" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST11.IO" Hardware="X20PS3300">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="PowerInfo" Value="on" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST12" Hardware="X20DI6371">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL12" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST12.IO" Hardware="X20DI6371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="10" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST13" Hardware="X20DO6322">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL13" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST13.IO" Hardware="X20DO6322">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="DigitalOutputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST16" Hardware="X20SI4100">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL16" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST16.IO" Hardware="X20SI4100">
+    <XLink ID="SafeTIME">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID116_TIME" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </XLink>
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="Blackout" Value="off" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="116" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST17" Hardware="X20SI4100">
+    <Parameter ID="HardwareModuleName" Value="PLK1_IOR01SL17" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST17.IO" Hardware="X20SI4100">
+    <XLink ID="SafeTIME">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID117_TIME" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </XLink>
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="Blackout" Value="off" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="117" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.ST2" Hardware="X20BC1083">
+    <Parameter ID="HardwareModuleName" Value="BC_PLK2" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="LinkSelectorInfo" Value="off" />
+    <Parameter ID="IPGateway" Value="240" Type="DINT" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="CiR" Value="off" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EPL_PReqDataInPResMN" Value="off" />
+    <Parameter ID="SyncMode" Value="SoC" />
+    <Parameter ID="EnableDNA" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1" Hardware="IF1">
+    <Parameter ID="QLinkMinBitsize" Value="8" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.X2X" Hardware="X2X">
+    <Parameter ID="CycleTime" Value="2000" Type="UDINT" />
+    <Parameter ID="Synchron" Value="on" />
+    <Parameter ID="BusLength" Value="1000" Type="UDINT" />
+    <Parameter ID="Stations" Value="64" Type="UDINT" />
+    <Parameter ID="AsyncPayload" Value="80" Type="UDINT" />
+    <Parameter ID="Asymmetric" Value="off" />
+    <Parameter ID="CyclicX2XNettime" Value="off" />
+    <Parameter ID="CiR" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST1" Hardware="X20PS9400a">
+    <Parameter ID="HardwareModuleName" Value="PS_PLK2" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST1.IO" Hardware="X20PS9400a">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="PowerInfo" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST2" Hardware="X20DI4371">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL02" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST2.IO" Hardware="X20DI4371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="10" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST3" Hardware="X20DI4371">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL03" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST3.IO" Hardware="X20DI4371">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="InputFilter" Value="10" Type="USINT" />
+    <Parameter ID="DigitalInputsPacked" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST4" Hardware="X20AI4632-1">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL04" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST4.IO" Hardware="X20AI4632-1">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="ChStatusInfo" Value="on" />
+    <Parameter ID="ExtChStatusInfo" Value="off" />
+    <Parameter ID="SampleTime" Value="100" Type="UINT" />
+    <Parameter ID="TraceEnable" Value="off" />
+    <Parameter ID="Channel01enable" Value="on" />
+    <Parameter ID="ChannelType01" Value="0 to 22mA" />
+    <Parameter ID="ChannelErrCheck01" Value="on" />
+    <Parameter ID="MinMaxCheck01" Value="off" />
+    <Parameter ID="MinLimit01" Value="-32768" Type="INT" />
+    <Parameter ID="MaxLimit01" Value="32767" Type="INT" />
+    <Parameter ID="UserGain01" Value="65536" Type="DINT" />
+    <Parameter ID="Useroffset01" Value="0" Type="DINT" />
+    <Parameter ID="ChannelFilter01" Value="on" />
+    <Parameter ID="FilterOrder01" Value="1" Type="USINT" />
+    <Parameter ID="FilterConstant01" Value="500" Type="UINT" />
+    <Parameter ID="Channel02enable" Value="on" />
+    <Parameter ID="ChannelType02" Value="0 to 22mA" />
+    <Parameter ID="ChannelErrCheck02" Value="on" />
+    <Parameter ID="MinMaxCheck02" Value="off" />
+    <Parameter ID="MinLimit02" Value="-32768" Type="INT" />
+    <Parameter ID="MaxLimit02" Value="32767" Type="INT" />
+    <Parameter ID="UserGain02" Value="65536" Type="DINT" />
+    <Parameter ID="Useroffset02" Value="0" Type="DINT" />
+    <Parameter ID="ChannelFilter02" Value="on" />
+    <Parameter ID="FilterOrder02" Value="1" Type="USINT" />
+    <Parameter ID="FilterConstant02" Value="500" Type="UINT" />
+    <Parameter ID="Channel03enable" Value="off" />
+    <Parameter ID="Channel04enable" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST5" Hardware="X20DS438A">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL05" />
+    <Parameter ID="ConfigModule" Value="asiol1" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST5.IF1.ST1" Hardware="IO-Link_any">
+    <Parameter ID="HardwareModuleName" Value="PS51x_100_LI2UPN8_IODD1_1" />
+    <Parameter ID="OrderNumber" Value="PS51x-100-LI2UPN8 IODD1.1" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST5.IF2.ST1" Hardware="IO-Link_any">
+    <Parameter ID="HardwareModuleName" Value="PS51x_100_LI2UPN8_IODD1_1a" />
+    <Parameter ID="OrderNumber" Value="PS51x-100-LI2UPN8 IODD1.1" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST5.IO" Hardware="X20DS438A">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="CycleEndEnable" Value="off" />
+    <Parameter ID="SyncInformationEnable" Value="off" />
+    <Parameter ID="OverloadInformationEnable" Value="off" />
+    <Parameter ID="SupplySwitchable" Value="off" />
+    <Parameter ID="ShutdownDelay" Value="1ms" />
+    <Parameter ID="ShutdownDuration" Value="20ms" />
+    <Parameter ID="TimerCycle" Value="auto" />
+    <Parameter ID="Flatstream_DPS" Value="on" />
+    <Parameter ID="EnableAllDpsElements" Value="0" Type="INT" />
+    <Parameter ID="FshFifoActivate" Value="1" Type="INT" />
+    <Parameter ID="InputMTU_DPS" Value="3byte" />
+    <Parameter ID="TaskClass" Value="XLINK" />
+    <Parameter ID="EventEnable" Value="off" />
+    <Parameter ID="OdaEnable" Value="off" />
+    <Parameter ID="OperatingMode01" Value="Operate" />
+    <Parameter ID="selPortCycleMode01" Value="X2XSynchronizedAuto" />
+    <Parameter ID="iolInTimestampEnable01" Value="off" />
+    <Parameter ID="iolOutTimestampEnable01" Value="off" />
+    <Parameter ID="CycleStartNettimeEnable01" Value="off" />
+    <Parameter ID="CycleEndNettimeEnable01" Value="off" />
+    <Parameter ID="InspectionLevel01" Value="NoCheck" />
+    <Parameter ID="OfflineConfiguration01" Value="off" />
+    <Parameter ID="ParameterServer01" Value="off" />
+    <Parameter ID="SaveCommand01" Value="off" />
+    <Parameter ID="VendorIDEnable01" Value="off" />
+    <Parameter ID="DeviceIDEnable01" Value="off" />
+    <Parameter ID="FunctionIDEnable01" Value="off" />
+    <Parameter ID="CycleTimeEnable01" Value="off" />
+    <Parameter ID="FrameCounterEnable01" Value="off" />
+    <Parameter ID="DpsBlockCounterEnable01" Value="off" />
+    <Parameter ID="ProcessDataInDigital01" Value="off" />
+    <Parameter ID="PDI_Enable01" Value="variousTypes" />
+    <Parameter ID="PDI_DataType01_1" Value="UINT" />
+    <Parameter ID="ProcessDataOutDigital01" Value="off" />
+    <Parameter ID="PDO_Enable01" Value="off" />
+    <Parameter ID="OperatingMode02" Value="Operate" />
+    <Parameter ID="selPortCycleMode02" Value="X2XSynchronizedAuto" />
+    <Parameter ID="iolInTimestampEnable02" Value="off" />
+    <Parameter ID="iolOutTimestampEnable02" Value="off" />
+    <Parameter ID="CycleStartNettimeEnable02" Value="off" />
+    <Parameter ID="CycleEndNettimeEnable02" Value="off" />
+    <Parameter ID="InspectionLevel02" Value="NoCheck" />
+    <Parameter ID="OfflineConfiguration02" Value="off" />
+    <Parameter ID="ParameterServer02" Value="off" />
+    <Parameter ID="SaveCommand02" Value="off" />
+    <Parameter ID="VendorIDEnable02" Value="off" />
+    <Parameter ID="DeviceIDEnable02" Value="off" />
+    <Parameter ID="FunctionIDEnable02" Value="off" />
+    <Parameter ID="CycleTimeEnable02" Value="off" />
+    <Parameter ID="FrameCounterEnable02" Value="off" />
+    <Parameter ID="DpsBlockCounterEnable02" Value="off" />
+    <Parameter ID="ProcessDataInDigital02" Value="off" />
+    <Parameter ID="PDI_Enable02" Value="variousTypes" />
+    <Parameter ID="PDI_DataType02_1" Value="UINT" />
+    <Parameter ID="ProcessDataOutDigital02" Value="off" />
+    <Parameter ID="PDO_Enable02" Value="off" />
+    <Parameter ID="OperatingMode03" Value="Inactive" />
+    <Parameter ID="VendorIDEnable03" Value="off" />
+    <Parameter ID="DeviceIDEnable03" Value="off" />
+    <Parameter ID="FunctionIDEnable03" Value="off" />
+    <Parameter ID="CycleTimeEnable03" Value="off" />
+    <Parameter ID="OperatingMode04" Value="Inactive" />
+    <Parameter ID="VendorIDEnable04" Value="off" />
+    <Parameter ID="DeviceIDEnable04" Value="off" />
+    <Parameter ID="FunctionIDEnable04" Value="off" />
+    <Parameter ID="CycleTimeEnable04" Value="off" />
+    <Parameter ID="Flatstream" Value="off" />
+    <Parameter ID="FormatFS" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST6" Hardware="X20PD2113">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL06" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST6.IO" Hardware="X20PD2113">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="ActivateEdgeCount" Value="off" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST12" Hardware="X20SI4100">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL12" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST12.IO" Hardware="X20SI4100">
+    <XLink ID="SafeTIME">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID212_TIME" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="11" Type="UDINT" />
+    </XLink>
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="Blackout" Value="off" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="off" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="212" Type="UDINT" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST13" Hardware="X20SO4120">
+    <Parameter ID="HardwareModuleName" Value="PLK2_IOR02SL13" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST13.IO" Hardware="X20SO4120">
+    <XLink ID="SafeOUT">
+      <Parameter ID="SDevice" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Parameter ID="SName" Value="SLID1_SMID213_OUT" />
+      <Parameter ID="Type" Value="OCTET" />
+      <Parameter ID="NrElements" Value="15" Type="UDINT" />
+    </XLink>
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="Blackout" Value="off" />
+    <Parameter ID="ErrorInfo" Value="on" />
+    <Parameter ID="PLCopenInfo" Value="on" />
+    <Parameter ID="SafeLogicID" Value="1" Type="UDINT" />
+    <Parameter ID="SafeModuleID" Value="213" Type="UDINT" />
+    <Parameter ID="DigitalOutput01" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput02" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput03" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput04" Value="viaSafeLOGIC" />
+  </Module>
+  <Module ID="SS1.IO" Hardware="X20IF1082-2">
+    <Parameter ID="FunctionModel" Value="Standard" />
+  </Module>
+</IOCFG>

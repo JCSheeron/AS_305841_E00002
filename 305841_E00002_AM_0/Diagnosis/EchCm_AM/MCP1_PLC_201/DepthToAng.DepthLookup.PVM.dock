@@ -1,0 +1,45 @@
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=DepthToAng 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=20 ASCIIString=0
+                                    name                                     type force                                                            value level type len format place expand specs
+                                initDirs                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                              initDirsOS                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                                  seqCtr                                     SINT    0 "                                                               2"    0    2    1   10    1    0         
+                            initDirsDone                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                                 devName                               STRING[80]    0 "                                             'UserPartitionRoot'"    0    9   81    1    1    0         
+                                 dirName                              STRING[255]    0 "                                                'config\recipes'"    0    9  256    1    1    0         
+                               dirStatus                                     UINT    0 "                                                           20725"    0    6    1   10    1    0         
+                             fbDirCreate                                DirCreate    0 "                                                               *"    0   24    1    0    1    0         
+                                  enable                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                 pDevice                                    UDINT    0 "                                                       185657110"    1    7    1   10    0    0         
+                                   pName                                    UDINT    0 "                                                       185657192"    1    7    1   10    0    0         
+                                  status                                     UINT    0 "                                                           65534"    1    6    1   10    0    0         
+                                 i_state                                     UINT    0 "                                                               0"    1    6    1   10    0    0         
+                                i_result                                     UINT    0 "                                                           20725"    1    6    1   10    0    0         
+                                   i_tmp                                    UDINT    0 "                                                               0"    1    7    1   10    0    0         
+                              registerPv                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                            registerPvOS                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                          registerPvDone                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                                  pvName                              STRING[100]    0 "                                   'DepthLookup:depthToAngle_T1'"    0    9  101    1    1    0         
+                              pvCatagory                               STRING[50]    0 "                                                  'DepthToAngle'"    0    9   51    1    1    0         
+                        registerPvStatus                                     DINT    0 "                                                     -1064140786"    0    4    1   10    1    0         
+                        fbRecipeRegister                           MpRecipeRegPar    0 "                                                               *"    0   24    1    0    1    1         
+                                  MpLink                                    UDINT    0 "                                                       129223480"    1    7    1   10    0    0         
+                                  Enable                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                              ErrorReset                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                  PVName                                    UDINT    0 "                                                       185657458"    1    7    1   10    0    0         
+                                Category                                    UDINT    0 "                                                       185657560"    1    7    1   10    0    0         
+                                  Active                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                   Error                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                StatusID                                     DINT    0 "                                                     -1064140786"    1    4    1   10    0    0         
+                      UpdateNotification                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                    Info                         MpRecipeInfoType    0 "                                                               *"    1   24    1    0    0    1         
+                                    Diag                         MpRecipeDiagType    0 "                                                               *"    2   24    1    0    0    1         
+                                StatusID                     MpRecipeStatusIDType    0 "                                                               *"    3   24    1    0    0    1         
+                                      ID                                     DINT    0 "                                                     -1064140786"    4    4    1   10    0    0 e,0,mpRE
+
+                                Severity                                     DINT    0 "                                                               3"    4    4    1   10    0    0 e,0,mpCO
+
+                                    Code                                     UINT    0 "                                                           32782"    4    6    1   10    0    0         
+                                Internal                    MpComInternalDataType    0 "                                                               *"    1   24    1    0    0    0         
+                                 pObject                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         
+                                   State                                    UDINT    0 "                                                               0"    2    7    1   10    0    0         

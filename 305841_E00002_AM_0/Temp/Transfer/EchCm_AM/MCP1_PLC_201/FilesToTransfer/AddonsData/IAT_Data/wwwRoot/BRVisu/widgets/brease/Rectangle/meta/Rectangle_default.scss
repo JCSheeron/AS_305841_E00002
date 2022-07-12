@@ -1,0 +1,21 @@
+@import "mixins.scss";
+@mixin widgets_brease_Rectangle_base {
+	@include elemWidth(100);
+	@include elemHeight(100);
+	border-style: solid;
+	border-width: 1px;
+	@include border-radius(0px);
+	border-color: #000000;
+	background-color: #FF8800;
+	opacity: 1;
+	@include rotate(0deg);
+	margin: 0px;
+	@include box-shadow(none);
+	@include backGroundGradient('');
+	@include borderImageGradient('');
+
+}
+
+.widgets_brease_Rectangle_style_default {
+@include widgets_brease_Rectangle_base 
+}

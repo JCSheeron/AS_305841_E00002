@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.TabItem">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/ContainerWidget.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/core/Types.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsImage.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/TabItem/TabItem.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Container</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Tab plus content in a TabController</Description>
+			<Description name="de">Konfiguriert einen Tab im TabController</Description>
+			<Description name="en">Configures one tab in a TabController</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.TabItem</Class>
+			<Class level="1">brease.core.ContainerWidget</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>widgets.brease.TabControl</Parent>
+		</Parents>
+		<Children>
+			<Child>*</Child>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="RemoveImage" read="false">
+				<Description>Remove an image.</Description>
+			</Method>
+			<Method name="RemoveText" read="false">
+				<Description>Remove text.</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetImage" read="false">
+				<Description>Sets an image.</Description>
+				<Arguments>
+					<Argument name="image" type="ImagePath" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetText" read="false">
+				<Description>Sets the visible text. This method can remove an optional textkey.</Description>
+				<Arguments>
+					<Argument name="text" type="String" index="0" required="true" localizable="true"/>
+					<Argument name="keepKey" type="Boolean" index="1" required="true">
+						<Description>Set true, if textkey should not be removed.</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="ellipsis" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="image" type="ImagePath" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Path to an optional image.
+When svg - graphics are used, be sure that in your *.svg-file height and width attributes are specified on the svg-element.
+For more detailed information see https://www.w3.org/TR/SVG/struct.html (chapter 5.1.2)				</Description>
+			</Property>
+			<Property name="imageAlign" type="brease.enum.ImageAlign" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="left">
+				<Description>Position of image relative to text.</Description>
+			</Property>
+			<Property name="mouseDownImage" type="ImagePath" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Path to an optional image for mouseDown.
+When svg - graphics are used, be sure that in your *.svg-file height and width attributes are specified on the svg-element.
+For more detailed information see https://www.w3.org/TR/SVG/struct.html (chapter 5.1.2)				</Description>
+			</Property>
+			<Property name="multiLine" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, more than one line is possible. Text will wrap when necessary (wordWrap=true) or at line breaks (\n).
+If false, text will never wrap to the next line. The text continues on the same line.				</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text which is displayed in the button</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="useSVGStyling" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="true">
+				<Description>Define if the image stylings (i.e imageColor) are applied - only valid when SVG Images are used.</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+			<Property name="wordWrap" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, text will wrap when necessary.</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.TabItem" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include elemWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.TabItem" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include elemHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="widgets.brease.TabItem" category="Layout" groupRefId="Position" groupOrder="1" hide="true">
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="widgets.brease.TabItem" category="Layout" groupRefId="Position" groupOrder="2">
+				<Description>Applies an offset to the TabItem relative to its &quot;nominal&quot; position. For instance, if a space of 10px is desired between each 
+      TabItem within a TabControl, the following should be configured: First TabItem: left=&quot;0px&quot; / Second TabItem: left=&quot;10px&quot; / Third TabItem: left=&quot;20px&quot; / ...				</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp; &gt; img" attribute="@include imageWidth($value)"/>
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp; &gt; svg" attribute="@include imageWidth($value)"/>
+				<Description>width of the image</Description>
+			</StyleProperty>
+			<StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp; &gt; img" attribute="@include imageHeight($value)"/>
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp; &gt; svg" attribute="@include imageHeight($value)"/>
+				<Description>height of the image</Description>
+			</StyleProperty>
+			<StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;:not(.active):not(.disabled) &gt; svg" attribute="fill"/>
+				<Description>Color of the image - only apply if a SVG image is used</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.active &gt; svg" attribute="fill"/>
+				<Description>Color of the image - only apply if a SVG image is used</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-style"/>
+				<Description>Sets the border style of the tab. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-width"/>
+				<Description>Sets the border width of the tab. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="5px 5px 0px 0px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the tab rounded corners. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-color"/>
+				<Description>Sets the border color of the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="background-color"/>
+				<Description>Sets the background color of the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Sets the background color of the tab as gradient. For further information, please see CSS Gradients</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active) span" attribute="color"/>
+				<Description>Sets the color of the text displayed on the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBorderStyle" type="BorderStyle" category="Appearance" default="solid">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-style"/>
+				<Description>Sets the border style of the tab when it is selected. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBorderWidth" category="Appearance" type="PixelValCollection" default="4px 2px 0px 2px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-width"/>
+				<Description>Sets the border width of the tab when it is selected. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of rounded corners of the tab when selected. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01 #5B7C70 #5B7C70 #5B7C70">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-color"/>
+				<Description>Sets the border color of the tab when it is selected</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#FFFFFF">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="background-color"/>
+				<Description>Sets the background color of the tab when selected</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Sets the background color of the selected tab as gradients. For further information, please see CSS Gradients</Description>
+			</StyleProperty>
+			<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active span" attribute="color"/>
+				<Description>Sets the text color of the tab when selected</Description>
+			</StyleProperty>
+			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include text-alignment($value)"/>
+				<Description>Sets the text alignment of the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="opacity"/>
+				<Description>Sets the opacity of the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="font-size"/>
+				<Description>Sets the font size of the text displayed on the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="font-family"/>
+				<Description>Sets the font name of the text displayed on the tab</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" category="Font" type="Boolean" default="true">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="@include font-weight-bold($value)"/>
+				<Description>If **true**, it sets the font style of the text displayed on the tab to bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="@include font-style-italic($value)"/>
+				<Description>If **true**, it sets the font style of the text displayed on the tab to italic</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="margin"/>
+				<Description>Sets a space around the tab. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="padding" category="Layout" type="Padding" default="0px 10px">
+				<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="padding"/>
+				<Description>Sets a space around the text displayed on the tab. For further information, please see its type</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

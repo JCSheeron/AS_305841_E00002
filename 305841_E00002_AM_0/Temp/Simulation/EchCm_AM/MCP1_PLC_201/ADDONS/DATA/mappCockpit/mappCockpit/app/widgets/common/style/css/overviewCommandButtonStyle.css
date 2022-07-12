@@ -1,0 +1,18 @@
+/* definition of the command button for the overview pages(component, trace, tools, ...)*/
+.overviewCommandButton {
+    background-color: var(--main-grey) !important;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 1px solid var(--main-black) !important; 
+    font-size: 12px !important;
+    font-family: var(--main-font);
+    font-weight: normal;
+}
+
+.overviewCommandButton:hover {
+    background-color: lightgrey !important;
+}
+
+.overviewCommandButton:active {
+    background-color: var(--main-orange) !important;
+}

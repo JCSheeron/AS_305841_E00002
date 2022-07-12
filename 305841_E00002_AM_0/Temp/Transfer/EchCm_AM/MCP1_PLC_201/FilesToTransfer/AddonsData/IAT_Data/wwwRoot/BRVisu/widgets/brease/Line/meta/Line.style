@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.Line" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<StyleProperties>
+		<StyleProperty name="lineColor" category="Appearance" type="Color" default="#000000">
+			<StyleElement selector="line" attribute="stroke"></StyleElement>
+			<Description>
+        Sets the color of the line
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="lineWidth" category="Appearance" type="PixelVal" default="1px">
+			<StyleElement selector="line" attribute="stroke-width"></StyleElement>
+			<Description>
+        Sets the width of the line
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="lineCap" category="Appearance" type="LineCap" default="butt">
+			<StyleElement selector="line" attribute="stroke-linecap"></StyleElement>
+			<Description>
+				Sets the type of ending of the line
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement selector="line" attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the widget
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Margin of the Widget
+			</Description>
+		</StyleProperty>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="top" type="Integer" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="left" type="Integer" not_styleable="true" hide="true">
+    </StyleProperty>
+    
+  </StyleProperties>
+</StyleInformation>
+	
+	
+

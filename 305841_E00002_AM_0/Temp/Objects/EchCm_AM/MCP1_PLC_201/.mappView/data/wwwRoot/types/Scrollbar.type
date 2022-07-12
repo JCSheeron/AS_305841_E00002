@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scrollbar xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="rgba(0,0,0,0.5)">
+      <Description>background-color of scrollbar thumb</Description>
+      <StyleElement selector=".iScrollIndicator" attribute="background-color"/>
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar-thumb" attribute="background"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="width" category="Appearance" type="PixelVal" default="7px">
+      <Description>width of scrollbar thumb (height for horizontal scrollbars)</Description>
+      <StyleElement selector=".iScrollVerticalScrollbar" attribute="width" />
+      <StyleElement selector=".iScrollHorizontalScrollbar" attribute="height" />
+      <StyleElement selector=".iScrollHorizontalScrollbar.iScrollBothScrollbars" attribute="@include position(right,$value+2)" />
+      <StyleElement selector=".iScrollVerticalScrollbar.iScrollBothScrollbars" attribute="@include position(bottom,$value+2)" />
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar" attribute="width"></StyleElement>
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar" attribute="height"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <Description>border width of scrollbar thumb</Description>
+      <StyleElement selector=".iScrollIndicator" attribute="border-width" />
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar-thumb" attribute="border-width"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="rgba(255,255,255,0.9)">
+      <Description>border color of scrollbar thumb</Description>
+      <StyleElement selector=".iScrollIndicator" attribute="border-color" />
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar-thumb" attribute="border-color"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <Description>border style of scrollbar thumb</Description>
+      <StyleElement selector=".iScrollIndicator" attribute="border-style" />
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar-thumb" attribute="border-style"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="borderRadius" category="Appearance" type="PixelValCollection" default="3px">
+      <Description>border radius of scrollbar thumb</Description>
+      <StyleElement selector=".iScrollIndicator" attribute="border-radius" />
+			<StyleElement selector=".dataTables_scrollBody::-webkit-scrollbar-thumb" attribute="border-radius"></StyleElement>
+    </StyleProperty>
+
+    <!--<StyleProperty name="margin" category="Appearance" type="PixelVal" default="1px">
+      <Description>margin of scrollbar to the edge of the scrollable area</Description>
+      <StyleElement selector=".iScrollVerticalScrollbar" attribute="right" />
+      <StyleElement selector=".iScrollHorizontalScrollbar" attribute="bottom" />
+    </StyleProperty>-->
+
+  </StyleProperties>
+
+</Scrollbar>

@@ -1,0 +1,353 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Caption {
+@include widgets_brease_Label_base; 
+	font-size: 16px;
+& span {
+	color: #474747;
+}
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 5px;
+}
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Title1 {
+@include widgets_brease_Label_base; 
+	font-size: 22px;
+& span {
+	color: #FF8A00;
+}
+@include font-weight-bold(true);
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 5px;
+}
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Title2 {
+@include widgets_brease_Label_base; 
+	font-size: 18px;
+& span {
+	color: #FF8A00;
+}
+@include font-weight-bold(true);
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 5px;
+}
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Title3 {
+@include widgets_brease_Label_base; 
+	font-size: 16px;
+& span {
+	color: #FF8A00;
+}
+@include font-weight-bold(true);
+@include font-style-italic(true);
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 5px;
+}
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Description {
+@include widgets_brease_Label_base; 
+	font-size: 18px;
+& span {
+	color: #474747;
+}
+	background-color: transparent;
+	border-color: #FD7B01;
+&:before {
+	border-color: #FD7B01;
+}
+&:after {
+	border-color: #FD7B01;
+}
+	border-width: 1px;
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+span {
+	padding: 5px;
+}
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_Information {
+@include widgets_brease_Label_base; 
+	font-size: 18px;
+& span {
+	color: #474747;
+}
+	background-color: transparent;
+	border-color: #FF0000;
+&:before {
+	border-color: #FF0000;
+}
+&:after {
+	border-color: #FF0000;
+}
+	border-width: 2px;
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+span {
+	padding: 5px;
+}
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_Output {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: #474747;
+}
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+	border-width: 1px;
+	border-color: #999999;
+&:before {
+	border-color: #999999;
+}
+&:after {
+	border-color: #999999;
+}
+	font-size: 20px;
+@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_OutputLarge {
+@include widgets_brease_TextOutput_base; 
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+	border-width: 1px;
+	border-color: #999999;
+&:before {
+	border-color: #999999;
+}
+&:after {
+	border-color: #999999;
+}
+& span {
+	color: #474747;
+}
+	font-size: 32px;
+@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/TextOutput/meta/TextOutput_base";
+.widgets_brease_TextOutput_style_Overview {
+@include widgets_brease_TextOutput_base; 
+& span {
+	color: #474747;
+}
+	border-width: 0px;
+	font-size: 72px;
+@include font-weight-bold(true);
+	background-color: transparent;
+
+}
+@import "../../../../widgets/brease/TextInput/meta/TextInput_base";
+.widgets_brease_TextInput_style_Input {
+@include widgets_brease_TextInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&:not(.disabled).active {
+	border-color: #FF8800;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/TextInput/meta/TextInput_base";
+.widgets_brease_TextInput_style_InputLarge {
+@include widgets_brease_TextInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&:not(.disabled).active {
+	border-color: #FF8800;
+}
+input {
+	font-size: 32px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/TextInput/meta/TextInput_base";
+.widgets_brease_TextInput_style_InputCommand {
+@include widgets_brease_TextInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #5196AF;
+}
+&:not(.disabled).active {
+	border-color: #5196AF;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(81, 150, 175, 0.75));
+
+}
+@import "../../../../widgets/brease/LoginInfo/meta/LoginInfo_base";
+.widgets_brease_LoginInfo_style_Output {
+@include widgets_brease_LoginInfo_base; 
+& span {
+	color: #474747;
+}
+	border-style: solid;
+&:before {
+	border-style: solid;
+}
+&:after {
+	border-style: solid;
+}
+	border-width: 1px;
+	border-color: #999999;
+&:before {
+	border-color: #999999;
+}
+&:after {
+	border-color: #999999;
+}
+	font-size: 20px;
+@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+@include font-weight-bold(true);
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_FavoriteWatch {
+@include widgets_brease_Label_base; 
+	font-size: 14px;
+& span {
+	color: #474747;
+}
+	background-color: #ff8500;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 5px;
+}
+
+}

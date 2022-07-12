@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="16"
+   viewBox="0 0 24 16"
+   version="1.1"
+   id="svgXySeries"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="xySeries.svg">
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-304.53334)">
+    <path
+       style="fill:none;stroke:#76bea6;stroke-width:1.99296927;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 8.046984,314.05242 c -0.025029,-1.29908 -0.050067,-2.59865 1.1122316,-3.26427 1.1622984,-0.66561 3.5082884,-0.6982 5.6819714,-0.61987 2.173682,0.0783 4.169409,0.26704 5.21889,2.12211 1.049482,1.85507 1.146325,5.36064 -0.136063,7.11379 -1.282388,1.75315 -3.936115,1.73899 -5.54167,0.45247 -1.605555,-1.28652 -2.150241,-3.84282 -0.862855,-4.8902 1.287386,-1.04739 4.416833,-0.59228 6.394908,-0.25609 1.978076,0.33618 2.810092,0.55402 3.625351,0.37923 0.815259,-0.17479 1.612597,-0.74059 2.40937,-1.30599"
+       id="path854"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect856"
+       inkscape:original-d="m 8.046984,314.05242 c 0,0 -0.048573,-2.59868 -0.075086,-3.89725 2.3496025,-0.0336 4.6955925,-0.0662 7.0417325,-0.0978 2.001345,0.18811 3.997072,0.37682 5.998662,0.56723 0.09877,3.52082 0.195611,7.02639 0.291366,10.54694 -2.662027,-0.0152 -5.315754,-0.0294 -7.981649,-0.0426 -0.543605,-2.55915 -1.088291,-5.11545 -1.632864,-7.66329 3.117903,0.45222 6.24735,0.90733 9.369768,1.36264 0.833899,0.21695 1.665916,0.43479 2.496764,0.65372 0.799352,-0.56718 1.59669,-1.13298 2.393441,-1.69841"
+       transform="matrix(0.67797854,0,0,1,5.2226664,-2.5078057)"
+       sodipodi:nodetypes="ccccccccsc" />
+  </g>
+</svg>

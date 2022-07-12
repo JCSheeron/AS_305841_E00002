@@ -1,0 +1,71 @@
+﻿@import "mixins.scss";
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader .imageDiv{
+	min-width: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader div.textDiv{
+	line-height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	height: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader div.imageDiv{
+@include factor('max-width',0px, 2);
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowContentBox > .breaseLayout{
+	background-color: rgba(255, 255, 255, 0);
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowContentBox{
+	border-width: 0px;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowContentBox{
+	border-style: none;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader{
+	background-color: rgba(255, 255, 255, 0);
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseDialogWindowHeader{
+	border-style: none;
+	}
+}
+div[data-brease-dialogId='SfMP19_dialogProcess'] {
+	.breaseWindowClose{
+@include display(false);
+	}
+}

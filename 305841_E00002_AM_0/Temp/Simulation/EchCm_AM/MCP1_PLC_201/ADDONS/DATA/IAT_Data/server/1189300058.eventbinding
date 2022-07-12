@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Visualization>
+    <EventBinding id="eventbinding_61">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_StatusSDConnected" event="ValueChanged" />
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandUserHasAccess" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_UserHasAccess">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandEnableNavComp" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableNavCompletion">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandEnableNavExchange" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnExSN">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_AppEngineer" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_ServiceMachineOP" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- show btn disconnet - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- show btn disconnet - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- show btn details - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDetails">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDetails">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn ackn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn ackn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn navigation completion - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavComp AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+
+			<!-- enable btn navigation transfer - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavTransfer">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavTransfer">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavExchange AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavExchange AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_62">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnExSN" event="ValueChanged" />
+
+			<Operand name="OperandUserHasAccess" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_UserHasAccess">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_AppEngineer" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_ServiceMachineOP" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- enable btn ackn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn ackn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_63">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ActiveClientTracer" event="ValueChanged" />
+
+			<Operand name="OperandUserHasAccess" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_UserHasAccess">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandEnableNavComp" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableNavCompletion">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandEnableNavExchange" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnExSN">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_AppEngineer" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_ServiceMachineOP" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- show btn connect - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- show btn connect - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+
+
+			<!-- show btn disconnet - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- show btn disconnet - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- show btn details - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDetails">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDetails">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn ackn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn ackn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn navigation completion - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavComp AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+
+			<!-- enable btn navigation transfer - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavTransfer">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavTransfer">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavExchange AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- enable btn exchange - condition for service machine operator -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandEnableNavExchange AND OperandSafetyRoleTag_ServiceMachineOP">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_64">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableNavCompletion" event="ValueChanged" />
+
+			<Operand name="OperandUserHasAccess" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_UserHasAccess">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSafetyRoleTag_AppEngineer" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- enable btn navigation completion - condition for application engineer -->
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess AND OperandSafetyRoleTag_AppEngineer">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_65">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_isStartUpRunning" event="ValueChanged" />
+
+			<Operand name="OperandUserHasAccess" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_UserHasAccess">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+
+			<EventHandler condition="NOT newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND NOT OperandSessionIsLoggedIn AND NOT OperandUserHasAccess">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableTableConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="NOT newValue AND OperandSessionIsLoggedIn AND OperandUserHasAccess">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableTableConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_66">
+			<Source type="session.Event" refId="SfMP182_sessionvar_isLoggedIn" event="ValueChanged" />
+
+			<!-- hide btn connect -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnConnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- hide btn disconnet -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDisconnect">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- hide btn details -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowBtnDetails">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- disable btn nav transfer  -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavTransfer">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- disable btn ackn exchange  -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<!-- disable btn navigation completion -->
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnNavCompletion">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+</EventBindingDefinition>

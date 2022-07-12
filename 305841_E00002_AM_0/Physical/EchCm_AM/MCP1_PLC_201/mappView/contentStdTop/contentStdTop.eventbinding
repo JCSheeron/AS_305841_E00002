@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="contentStdTop_eventbindings" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="contentStdTop.btnManualMode.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentStdTop" widgetRefId="btnManualMode" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="svReqOperatingMode">
+            <Method xsi:type="session.VariableAction.SetValueNumber" value="16" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="contentStdTop.btnPendantMode.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentStdTop" widgetRefId="btnPendantMode" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="svReqOperatingMode">
+            <Method xsi:type="session.VariableAction.SetValueNumber" value="32" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="contentStdTop.btnProductionMode.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentStdTop" widgetRefId="btnProductionMode" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="svReqOperatingMode">
+            <Method xsi:type="session.VariableAction.SetValueNumber" value="64" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="contentStdTop.btnSafetySystem.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="contentStdTop" widgetRefId="btnSafetySystem" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dlgSafetySystem" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

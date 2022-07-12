@@ -1,0 +1,139 @@
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+  top: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+  width: 140px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+  z-index: 0;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+  top: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+  width: 140px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+  z-index: 1;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+  top: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+  left: 180px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+  width: 240px;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+  z-index: 2;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+  top: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+  left: 180px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+  width: 240px;
+}
+
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+  z-index: 3;
+}
+
+#SfMP171_contentLogin_SfMP171_btnLogin {
+  width: 100px;
+}
+
+#SfMP171_contentLogin_SfMP171_btnLogin {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_btnLogin {
+  top: 155px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_btnLogin {
+  left: 320px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_btnLogin {
+  z-index: 4;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  height: 30px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  width: 260px;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  z-index: 5;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg span {
+  color: red;
+}
+
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+  font-weight: bold;
+}

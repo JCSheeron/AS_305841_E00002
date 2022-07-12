@@ -1,0 +1,42 @@
+﻿@import '../../../../../../../css/libs/mixins.scss';
+
+.HTMLView {
+
+    overflow: hidden;
+    pointer-events: none;
+    color: #535353;
+    @include text-alignment(center);
+    font-size: 12px;
+    font-family: Arial;
+    @include font-weight-bold(true);
+    @include font-style-italic(false);
+    white-space: nowrap;
+
+    &.textSelected {
+        color: #ffffff;
+    }
+
+    &.ellipsis {
+        span  {
+            overflow: hidden;
+            @include text-overflow(ellipsis);
+        }
+    }
+
+    &.multiLine {
+        white-space: pre;
+    }
+
+    &.breakWord {
+        white-space: pre-line;
+        word-wrap: break-word;
+    }
+
+    &.wordWrap {
+        white-space: pre-wrap;
+    }
+
+    img {
+        max-height: 100%;
+    }
+}

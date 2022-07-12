@@ -1,0 +1,104 @@
+@import "mixins.scss";
+@mixin system_brease_MessageBox_base {
+.breaseMessageBoxHeader {
+	border-radius: 0px;
+}
+.messageBoxFooter {
+	border-radius: 0px;
+}
+.breaseMessageBoxContentBox {
+	border-width: 5px;
+}
+.breaseMessageBoxContentBox {
+	background-color: #FFF;
+}
+.breaseMessageBoxContentBox {
+	border-color: #333;
+}
+.breaseMessageBoxContentBox {
+	border-style: solid;
+}
+.breaseMessageBoxContentBox div.content {
+	color: #333;
+}
+.breaseMessageBoxContentBox div.content {
+	font-size: 12px;
+}
+.breaseMessageBoxContentBox div.content {
+	@include font-weight-bold(false);
+}
+.breaseMessageBoxContentBox {
+	@include text-alignment(center);
+}
+.breaseMessageBoxHeader {
+	background-color: #333;
+}
+.messageBoxFooter {
+	background-color: #333;
+}
+.breaseMessageBoxHeader {
+	border-width: 0px;
+}
+.breaseMessageBoxHeader {
+	border-color: #333;
+}
+&.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+	@include font-weight-bold(true);
+}
+.messageBoxButton {
+	border-width: 2px;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-width: 2px;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-width: 2px;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-width: 2px;
+}
+.messageBoxButton {
+	border-color: #5B7C70;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-color: #FD7B01;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-color: #FD7B01;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-color: #FD7B01;
+}
+.messageBoxButton {
+	background-color: #DBDBDB;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	background-color: #DBDBDB;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	background-color: #DBDBDB;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	background-color: #DBDBDB;
+}
+.messageBoxButton span {
+	color: #000;
+}
+.messageBoxButton:not(.disabled) span {
+	color: #000;
+}
+.messageBoxButton.disabled span {
+	color: #000;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active span {
+	color: #000;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active span {
+	color: #000;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked span {
+	color: #000;
+}
+
+}
+

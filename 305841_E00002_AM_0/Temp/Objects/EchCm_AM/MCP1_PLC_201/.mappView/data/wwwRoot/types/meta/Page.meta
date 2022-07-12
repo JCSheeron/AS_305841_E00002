@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://www.br-automation.com/iat2014/widget" >
+  <Properties>
+    <Property name="id" type="String" initOnly="true" localizable="false" readOnly="false" required="true" projectable="true" category="Common">
+      <Description>ID of the page</Description>
+    </Property>
+    <Property name="displayName" type="String" initOnly="true" localizable="true" readOnly="false" required="false" projectable="true" defaultValue="" category="Appearance">
+      <Description>Display name used in title or Navigation</Description>
+    </Property>
+    <Property name="description" type="String" initOnly="true" localizable="true" readOnly="false" required="false" projectable="true" defaultValue="" category="Common">
+      <Description>description</Description>
+    </Property>
+    <Property name="layoutRefId" type="Layout" initOnly="true" localizable="false" readOnly="false" required="true" projectable="true" category="Common">
+      <Description>referenced Layout</Description>
+    </Property>
+    <Property name="styleRefId" type="StyleReference" initOnly="true" localizable="false" readOnly="false" required="false" projectable="true" defaultValue="default" category="Appearance">
+      <Description>referenced Style</Description>
+    </Property>
+    <Property name="image" type="ImagePath" initOnly="true" localizable="false" readOnly="false" required="false" projectable="true" defaultValue="" category="Appearance">
+      <Description>image used in NavigationButton</Description>
+    </Property>
+  </Properties>
+
+  <StyleProperties>
+    <StyleProperty name="backGround" type="ImagePath" default="" category="Appearance">
+      <Description>background image</Description>
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="brease.enum.SizeMode" default="fill" category="Behavior">
+      <Description>size mode of background image </Description>
+      <StyleElement attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+  </StyleProperties>
+</Page>

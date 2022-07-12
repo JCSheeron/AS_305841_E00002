@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.br-automation.com/iat2014/widgetStyles" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://www.br-automation.com/iat2014/widgetStyles" elementFormDefault="qualified">
+
+  <xs:element name="StyleInformation" type="s1:StyleInformation"></xs:element>
+
+  <xs:complexType name="StyleInformation">
+    <xs:sequence>
+      <xs:element name="PropertyGroups" type="s1:PropertyGroups" minOccurs="0" maxOccurs="1" />
+      <xs:element name="StyleProperties" type="s1:StyleProperties" minOccurs="1" maxOccurs="1" />
+      <xs:element name="StructuredProperties" type="s1:StructuredProperties" minOccurs="0" maxOccurs="1">
+        <xs:unique name="uniqueStructPropName">
+          <xs:selector xpath="s1:StructuredProperty"/>
+          <xs:field xpath="@name"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyGroups">
+    <xs:sequence>
+      <xs:element name="PropertyGroup" type="s1:PropertyGroup" minOccurs="0" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PropertyGroup">
+    <xs:sequence>
+      <xs:element name="Description" type="s1:Description" minOccurs="0" maxOccurs="1" ></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="type" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="category" use="optional" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="StyleProperties">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StyleProperty" type="s1:StyleProperty"></xs:element>
+        <xs:element name="IndexedStyleProperty" type="s1:IndexedStyleProperty"></xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StructuredProperties">
+    <xs:sequence>
+        <xs:element name="StructuredProperty" type="s1:StructuredProperty" minOccurs="1" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StructuredProperty">
+    <xs:sequence>
+      <xs:element name="StyleProperty" type="s1:StyleProperty" minOccurs="1" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:Name" ></xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="IndexedStyleProperty">
+    <xs:complexContent>
+      <xs:extension base="s1:BaseStyleProperty">
+        <xs:sequence>
+          <xs:element name="IndexedStyleElement" type="s1:IndexedStyleElement" minOccurs="0" maxOccurs="1"></xs:element>
+          <xs:element name="Description" type="s1:Description" minOccurs="0" maxOccurs="1" ></xs:element>
+        </xs:sequence>
+        <xs:attribute name="type" use="required" type="s1:ListTypes" ></xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StyleProperty">
+    <xs:complexContent>
+      <xs:extension base="s1:BaseStyleProperty">
+        <xs:sequence>
+          <xs:element name="StyleElement" type="s1:StyleElement" minOccurs="0" maxOccurs="unbounded"></xs:element>
+          <xs:element name="Description" type="s1:Description" minOccurs="0" maxOccurs="1" ></xs:element>
+          <xs:element name="aprolMeta" type="s1:aprolMeta" minOccurs="0" maxOccurs="1"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="type" use="required" type="xs:string" ></xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseStyleProperty">
+    <xs:attribute name="name" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="default" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="category" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="owner" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="not_styleable" use="optional" type="s1:Boolean"></xs:attribute>
+    <xs:attribute name="hide" use="optional" type="s1:Boolean"></xs:attribute>
+    <xs:attribute name="required" use="optional" type="s1:Boolean"></xs:attribute>
+    <xs:attribute name="groupRefId" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="groupOrder" use="optional" type="xs:integer"></xs:attribute>
+    <xs:attribute name="deprecated" use="optional" type="s1:Boolean"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="StyleElement">
+    <xs:attribute name="selector" use="optional" type="xs:string"></xs:attribute>
+    <xs:attribute name="attribute" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="idsuffix" use="optional" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="IndexedStyleElement">
+    <xs:attribute name="selector" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="attribute" use="required" type="xs:string"></xs:attribute>
+    <xs:attribute name="idsuffix" use="optional" type="xs:string"></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="Description">
+    <xs:restriction base="xs:string"></xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="aprolMeta">
+    <xs:sequence>
+      <xs:element name="Configuration" type="s1:aprolConfig" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aprolConfig">
+    <xs:attribute name="key" use="required" type="xs:string"/>
+    <xs:attribute name="value" use="required" type="xs:string"/>
+  </xs:complexType>
+  <xs:simpleType name="ListTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ColorList"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Boolean">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

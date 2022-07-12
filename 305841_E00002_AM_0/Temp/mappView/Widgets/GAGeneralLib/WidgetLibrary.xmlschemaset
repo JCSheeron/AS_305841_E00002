@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+	<Schema href="GaSafetyDeviceStatus/meta/GaSafetyDeviceStatus.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
+	<Schema href="TitleLabel/meta/TitleLabel.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
+	<Schema href="TitleLabelBindable/meta/TitleLabelBindable.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
+</SchemaCatalog>

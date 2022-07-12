@@ -1,0 +1,6 @@
+@import "mixins.scss";
+@mixin system_brease_Page_base {
+	@include backgroundSize(fill);
+
+}
+

@@ -1,0 +1,11 @@
+$(AS_PROJECT_PATH)/Logical/Libraries/GAMpMotion/GAMpMotion.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/GAMpMotion/Types.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/McAxis/McAxis.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/McBase/McBase.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/MpAxis/MpAxis.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/MpAxis/MpAxisError.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/MpBase/MpBase.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/GAMpMotion/Constants.var
+$(AS_PROJECT_PATH)/Logical/Libraries/MpAxis/MpAxis.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/McAxis/McAxis.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/AsBrStr/AsBrStr.fun

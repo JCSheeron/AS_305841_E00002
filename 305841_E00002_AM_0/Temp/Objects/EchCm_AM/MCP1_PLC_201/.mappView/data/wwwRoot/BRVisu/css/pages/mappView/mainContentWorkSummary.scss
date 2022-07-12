@@ -1,0 +1,1482 @@
+﻿@import "mixins.scss";
+#mainContentWorkSummary_grpBox_Workpiece {
+	@include elemTop(30);
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+	@include elemLeft(30);
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+	@include elemWidth(220);
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+	@include elemHeight(240);
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+		z-index: 0;
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_grpBox_Workpiece {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label1 {
+	@include elemAutoWidth(80);
+}
+#mainContentWorkSummary_Label1 {
+	@include elemTop(17);
+}
+#mainContentWorkSummary_Label1 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label1 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label1 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label2 {
+	@include elemAutoWidth(80);
+}
+#mainContentWorkSummary_Label2 {
+	@include elemTop(37);
+}
+#mainContentWorkSummary_Label2 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label2 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label2 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Label2 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label2 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label3 {
+	@include elemTop(17);
+}
+#mainContentWorkSummary_Label3 {
+	@include elemLeft(69);
+}
+#mainContentWorkSummary_Label3 {
+	@include elemAutoWidth(126);
+}
+#mainContentWorkSummary_Label3 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label3 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Label4 {
+	@include elemTop(37);
+}
+#mainContentWorkSummary_Label4 {
+	@include elemLeft(69);
+}
+#mainContentWorkSummary_Label4 {
+	@include elemAutoWidth(126);
+}
+#mainContentWorkSummary_Label4 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label4 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Label5 {
+	@include elemTop(79);
+}
+#mainContentWorkSummary_Label5 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label5 {
+	@include elemAutoWidth(89);
+}
+#mainContentWorkSummary_Label5 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label5 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Label6 {
+	@include elemTop(79);
+}
+#mainContentWorkSummary_Label6 {
+	@include elemLeft(109);
+}
+#mainContentWorkSummary_Label6 {
+	@include elemAutoWidth(126);
+}
+#mainContentWorkSummary_Label6 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label6 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label8 {
+	@include elemTop(99);
+}
+#mainContentWorkSummary_Label8 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label8 {
+	@include elemAutoWidth(89);
+}
+#mainContentWorkSummary_Label8 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label8 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Label9 {
+	@include elemTop(99);
+}
+#mainContentWorkSummary_Label9 {
+	@include elemLeft(109);
+}
+#mainContentWorkSummary_Label9 {
+	@include elemAutoWidth(126);
+}
+#mainContentWorkSummary_Label9 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label9 {
+		z-index: 7;
+}
+#mainContentWorkSummary_Button3 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Button3 {
+	@include elemLeft(49);
+}
+#mainContentWorkSummary_Button3 {
+	@include elemAutoWidth(110);
+}
+#mainContentWorkSummary_Button3 {
+	@include elemAutoHeight(60);
+}
+#mainContentWorkSummary_Button3 {
+		z-index: 8;
+}
+#mainContentWorkSummary_Button3 {
+	span{
+		font-size: 14px;
+	}
+}
+#mainContentWorkSummary_Button3 {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#mainContentWorkSummary_Label14 {
+	@include elemAutoWidth(80);
+}
+#mainContentWorkSummary_Label14 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Label14 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label14 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label14 {
+		z-index: 9;
+}
+#mainContentWorkSummary_Label14 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label14 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label42 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Label42 {
+	@include elemLeft(69);
+}
+#mainContentWorkSummary_Label42 {
+	@include elemAutoWidth(126);
+}
+#mainContentWorkSummary_Label42 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label42 {
+		z-index: 10;
+}
+#mainContentWorkSummary_GroupBox1 {
+	@include elemTop(30);
+}
+#mainContentWorkSummary_GroupBox1 {
+	@include elemLeft(280);
+}
+#mainContentWorkSummary_GroupBox1 {
+	@include elemWidth(310);
+}
+#mainContentWorkSummary_GroupBox1 {
+	@include elemHeight(240);
+}
+#mainContentWorkSummary_GroupBox1 {
+		z-index: 1;
+}
+#mainContentWorkSummary_GroupBox1 {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_GroupBox1 {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label11 {
+	@include elemAutoWidth(80);
+}
+#mainContentWorkSummary_Label11 {
+	@include elemTop(17);
+}
+#mainContentWorkSummary_Label11 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label11 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label11 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label11 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label11 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label13 {
+	@include elemTop(37);
+}
+#mainContentWorkSummary_Label13 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label13 {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSummary_Label13 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label13 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Label13 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label13 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Rectangle1 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Rectangle1 {
+	@include elemLeft(199);
+}
+#mainContentWorkSummary_Rectangle1 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle1 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle1 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Rectangle1 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label7 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Label7 {
+	@include elemLeft(199);
+}
+#mainContentWorkSummary_Label7 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label7 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label7 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Label7 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label7 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Label15 {
+	@include elemTop(57);
+}
+#mainContentWorkSummary_Label15 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label15 {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSummary_Label15 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label15 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Label15 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label15 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label26 {
+	@include elemTop(79);
+}
+#mainContentWorkSummary_Label26 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label26 {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSummary_Label26 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label26 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label26 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label26 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Button1 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Button1 {
+	@include elemLeft(29);
+}
+#mainContentWorkSummary_Button1 {
+	@include elemAutoWidth(110);
+}
+#mainContentWorkSummary_Button1 {
+	@include elemAutoHeight(60);
+}
+#mainContentWorkSummary_Button1 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Button1 {
+	span{
+		font-size: 14px;
+	}
+}
+#mainContentWorkSummary_Button1 {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#mainContentWorkSummary_Button2 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Button2 {
+	@include elemLeft(169);
+}
+#mainContentWorkSummary_Button2 {
+	@include elemAutoWidth(110);
+}
+#mainContentWorkSummary_Button2 {
+	@include elemAutoHeight(60);
+}
+#mainContentWorkSummary_Button2 {
+		z-index: 7;
+}
+#mainContentWorkSummary_Button2 {
+	span{
+		font-size: 14px;
+	}
+}
+#mainContentWorkSummary_Button2 {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#mainContentWorkSummary_Label39 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Label39 {
+	@include elemLeft(199);
+}
+#mainContentWorkSummary_Label39 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label39 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label39 {
+		z-index: 9;
+}
+#mainContentWorkSummary_Label39 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label39 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle8 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Rectangle8 {
+	@include elemLeft(199);
+}
+#mainContentWorkSummary_Rectangle8 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle8 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle8 {
+		z-index: 8;
+}
+#mainContentWorkSummary_Rectangle8 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_GroupBox2 {
+	@include elemTop(290);
+}
+#mainContentWorkSummary_GroupBox2 {
+	@include elemLeft(30);
+}
+#mainContentWorkSummary_GroupBox2 {
+	@include elemWidth(220);
+}
+#mainContentWorkSummary_GroupBox2 {
+	@include elemHeight(370);
+}
+#mainContentWorkSummary_GroupBox2 {
+		z-index: 2;
+}
+#mainContentWorkSummary_GroupBox2 {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_GroupBox2 {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label10 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Label10 {
+	@include elemLeft(29);
+}
+#mainContentWorkSummary_Label10 {
+	@include elemAutoWidth(151);
+}
+#mainContentWorkSummary_Label10 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label10 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label12 {
+	@include elemTop(79);
+}
+#mainContentWorkSummary_Label12 {
+	@include elemLeft(39);
+}
+#mainContentWorkSummary_Label12 {
+	@include elemAutoWidth(151);
+}
+#mainContentWorkSummary_Label12 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label12 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Label34 {
+	@include elemTop(101);
+}
+#mainContentWorkSummary_Label34 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label34 {
+	@include elemAutoWidth(61);
+}
+#mainContentWorkSummary_Label34 {
+	@include elemAutoHeight(21);
+}
+#mainContentWorkSummary_Label34 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Label34 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label34 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Rectangle6 {
+	@include elemTop(101);
+}
+#mainContentWorkSummary_Rectangle6 {
+	@include elemLeft(79);
+}
+#mainContentWorkSummary_Rectangle6 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle6 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle6 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Rectangle6 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label36 {
+	@include elemTop(101);
+}
+#mainContentWorkSummary_Label36 {
+	@include elemLeft(79);
+}
+#mainContentWorkSummary_Label36 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label36 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label36 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Label36 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label36 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle7 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Rectangle7 {
+	@include elemLeft(59);
+}
+#mainContentWorkSummary_Rectangle7 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle7 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle7 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Rectangle7 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label38 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Label38 {
+	@include elemLeft(59);
+}
+#mainContentWorkSummary_Label38 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label38 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label38 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Label38 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label38 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_GroupBox3 {
+	@include elemTop(290);
+}
+#mainContentWorkSummary_GroupBox3 {
+	@include elemLeft(280);
+}
+#mainContentWorkSummary_GroupBox3 {
+	@include elemWidth(310);
+}
+#mainContentWorkSummary_GroupBox3 {
+	@include elemHeight(370);
+}
+#mainContentWorkSummary_GroupBox3 {
+		z-index: 3;
+}
+#mainContentWorkSummary_GroupBox3 {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_GroupBox3 {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label16 {
+	@include elemTop(97);
+}
+#mainContentWorkSummary_Label16 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label16 {
+	@include elemAutoWidth(81);
+}
+#mainContentWorkSummary_Label16 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label16 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label16 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label16 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label17 {
+	@include elemTop(67);
+}
+#mainContentWorkSummary_Label17 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label17 {
+	@include elemAutoWidth(151);
+}
+#mainContentWorkSummary_Label17 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label17 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Label17 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label17 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label18 {
+	@include elemTop(97);
+}
+#mainContentWorkSummary_Label18 {
+	@include elemLeft(99);
+}
+#mainContentWorkSummary_Label18 {
+	@include elemAutoWidth(201);
+}
+#mainContentWorkSummary_Label18 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label18 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Label18 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label18 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label19 {
+	@include elemTop(127);
+}
+#mainContentWorkSummary_Label19 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label19 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label19 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label19 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Label19 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label19 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label20 {
+	@include elemTop(127);
+}
+#mainContentWorkSummary_Label20 {
+	@include elemLeft(99);
+}
+#mainContentWorkSummary_Label20 {
+	@include elemAutoWidth(151);
+}
+#mainContentWorkSummary_Label20 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label20 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Label20 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label20 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label21 {
+	@include elemTop(147);
+}
+#mainContentWorkSummary_Label21 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label21 {
+	@include elemAutoWidth(231);
+}
+#mainContentWorkSummary_Label21 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label21 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label22 {
+	@include elemTop(177);
+}
+#mainContentWorkSummary_Label22 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label22 {
+	@include elemAutoWidth(231);
+}
+#mainContentWorkSummary_Label22 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label22 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Label23 {
+	@include elemTop(207);
+}
+#mainContentWorkSummary_Label23 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label23 {
+	@include elemAutoWidth(281);
+}
+#mainContentWorkSummary_Label23 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label23 {
+		z-index: 7;
+}
+#mainContentWorkSummary_Button4 {
+	@include elemTop(249);
+}
+#mainContentWorkSummary_Button4 {
+	@include elemLeft(89);
+}
+#mainContentWorkSummary_Button4 {
+	@include elemAutoWidth(110);
+}
+#mainContentWorkSummary_Button4 {
+	@include elemAutoHeight(60);
+}
+#mainContentWorkSummary_Button4 {
+		z-index: 8;
+}
+#mainContentWorkSummary_Button4 {
+	span{
+		font-size: 14px;
+	}
+}
+#mainContentWorkSummary_Button4 {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#mainContentWorkSummary_Rectangle9 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Rectangle9 {
+	@include elemLeft(109);
+}
+#mainContentWorkSummary_Rectangle9 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle9 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle9 {
+		z-index: 9;
+}
+#mainContentWorkSummary_Rectangle9 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label40 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Label40 {
+	@include elemLeft(109);
+}
+#mainContentWorkSummary_Label40 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label40 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label40 {
+		z-index: 10;
+}
+#mainContentWorkSummary_Label40 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label40 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_LinearGauge1 {
+	@include elemTop(70);
+}
+#mainContentWorkSummary_LinearGauge1 {
+	@include elemLeft(980);
+}
+#mainContentWorkSummary_LinearGauge1 {
+	@include elemWidth(110);
+}
+#mainContentWorkSummary_LinearGauge1 {
+	@include elemHeight(410);
+}
+#mainContentWorkSummary_LinearGauge1 {
+		z-index: 4;
+}
+#mainContentWorkSummary_LinearGauge1 {
+	.scaleArea1{
+		fill: rgba(255, 255, 192, 1);
+	}
+}
+#mainContentWorkSummary_LinearGauge1 {
+	.scaleArea2{
+		fill: rgba(153, 204, 255, 1);
+	}
+}
+#mainContentWorkSummary_LinearGauge1 {
+	.scaleArea3{
+		fill: rgba(255, 255, 192, 1);
+	}
+}
+#mainContentWorkSummary_Label24 {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSummary_Label24 {
+	@include elemTop(30);
+}
+#mainContentWorkSummary_Label24 {
+	@include elemLeft(965);
+}
+#mainContentWorkSummary_Label24 {
+	@include elemAutoWidth(140);
+}
+#mainContentWorkSummary_Label24 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label24 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Label25 {
+	@include elemTop(50);
+}
+#mainContentWorkSummary_Label25 {
+	@include elemLeft(1010);
+}
+#mainContentWorkSummary_Label25 {
+	@include elemAutoWidth(50);
+}
+#mainContentWorkSummary_Label25 {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSummary_Label25 {
+		z-index: 6;
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	@include elemTop(30);
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	@include elemLeft(620);
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	@include elemWidth(270);
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	@include elemHeight(240);
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+		z-index: 7;
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_grpBox_Workpiece1 {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label27 {
+	@include elemTop(14);
+}
+#mainContentWorkSummary_Label27 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label27 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label27 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label27 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label28 {
+	@include elemAutoWidth(80);
+}
+#mainContentWorkSummary_Label28 {
+	@include elemTop(39);
+}
+#mainContentWorkSummary_Label28 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label28 {
+	@include elemAutoHeight(21);
+}
+#mainContentWorkSummary_Label28 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Label28 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label28 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label31 {
+	@include elemTop(70);
+}
+#mainContentWorkSummary_Label31 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label31 {
+	@include elemAutoWidth(89);
+}
+#mainContentWorkSummary_Label31 {
+	@include elemAutoHeight(22);
+}
+#mainContentWorkSummary_Label31 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Label29 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Label29 {
+	@include elemLeft(19);
+}
+#mainContentWorkSummary_Label29 {
+	@include elemAutoWidth(61);
+}
+#mainContentWorkSummary_Label29 {
+	@include elemAutoHeight(21);
+}
+#mainContentWorkSummary_Label29 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Label29 {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSummary_Label29 {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSummary_Label30 {
+	@include elemTop(9);
+}
+#mainContentWorkSummary_Label30 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label30 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label30 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label30 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label30 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label30 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle2 {
+	@include elemTop(9);
+}
+#mainContentWorkSummary_Rectangle2 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle2 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle2 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle2 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Rectangle2 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label32 {
+	@include elemTop(39);
+}
+#mainContentWorkSummary_Label32 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label32 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label32 {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSummary_Label32 {
+		z-index: 7;
+}
+#mainContentWorkSummary_Label32 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label32 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle3 {
+	@include elemTop(39);
+}
+#mainContentWorkSummary_Rectangle3 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle3 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle3 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle3 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Rectangle3 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label33 {
+	@include elemTop(69);
+}
+#mainContentWorkSummary_Label33 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label33 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label33 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label33 {
+		z-index: 9;
+}
+#mainContentWorkSummary_Label33 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label33 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle4 {
+	@include elemTop(69);
+}
+#mainContentWorkSummary_Rectangle4 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle4 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle4 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle4 {
+		z-index: 8;
+}
+#mainContentWorkSummary_Rectangle4 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Rectangle5 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Rectangle5 {
+	@include elemLeft(79);
+}
+#mainContentWorkSummary_Rectangle5 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle5 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle5 {
+		z-index: 10;
+}
+#mainContentWorkSummary_Rectangle5 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label35 {
+	@include elemTop(119);
+}
+#mainContentWorkSummary_Label35 {
+	@include elemLeft(79);
+}
+#mainContentWorkSummary_Label35 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label35 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label35 {
+		z-index: 11;
+}
+#mainContentWorkSummary_Label35 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label35 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_GroupBox4 {
+	@include elemTop(290);
+}
+#mainContentWorkSummary_GroupBox4 {
+	@include elemLeft(620);
+}
+#mainContentWorkSummary_GroupBox4 {
+	@include elemWidth(270);
+}
+#mainContentWorkSummary_GroupBox4 {
+	@include elemHeight(370);
+}
+#mainContentWorkSummary_GroupBox4 {
+		z-index: 8;
+}
+#mainContentWorkSummary_GroupBox4 {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSummary_GroupBox4 {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSummary_Label37 {
+	@include elemTop(24);
+}
+#mainContentWorkSummary_Label37 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label37 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label37 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label37 {
+		z-index: 0;
+}
+#mainContentWorkSummary_Label41 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Label41 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label41 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label41 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label41 {
+		z-index: 2;
+}
+#mainContentWorkSummary_Label41 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label41 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle10 {
+	@include elemTop(19);
+}
+#mainContentWorkSummary_Rectangle10 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle10 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle10 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle10 {
+		z-index: 1;
+}
+#mainContentWorkSummary_Rectangle10 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label44 {
+	@include elemTop(59);
+}
+#mainContentWorkSummary_Label44 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label44 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label44 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label44 {
+		z-index: 3;
+}
+#mainContentWorkSummary_Label45 {
+	@include elemTop(54);
+}
+#mainContentWorkSummary_Label45 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label45 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label45 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label45 {
+		z-index: 5;
+}
+#mainContentWorkSummary_Label45 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label45 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle11 {
+	@include elemTop(54);
+}
+#mainContentWorkSummary_Rectangle11 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle11 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle11 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle11 {
+		z-index: 4;
+}
+#mainContentWorkSummary_Rectangle11 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label46 {
+	@include elemTop(94);
+}
+#mainContentWorkSummary_Label46 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label46 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label46 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label46 {
+		z-index: 6;
+}
+#mainContentWorkSummary_Label47 {
+	@include elemTop(89);
+}
+#mainContentWorkSummary_Label47 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label47 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label47 {
+	@include elemAutoHeight(23);
+}
+#mainContentWorkSummary_Label47 {
+		z-index: 8;
+}
+#mainContentWorkSummary_Label47 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label47 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle12 {
+	@include elemTop(89);
+}
+#mainContentWorkSummary_Rectangle12 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle12 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle12 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle12 {
+		z-index: 7;
+}
+#mainContentWorkSummary_Rectangle12 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label48 {
+	@include elemTop(134);
+}
+#mainContentWorkSummary_Label48 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label48 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label48 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label48 {
+		z-index: 9;
+}
+#mainContentWorkSummary_Label49 {
+	@include elemTop(129);
+}
+#mainContentWorkSummary_Label49 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label49 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label49 {
+	@include elemAutoHeight(21);
+}
+#mainContentWorkSummary_Label49 {
+		z-index: 11;
+}
+#mainContentWorkSummary_Label49 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label49 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle13 {
+	@include elemTop(129);
+}
+#mainContentWorkSummary_Rectangle13 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle13 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle13 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle13 {
+		z-index: 10;
+}
+#mainContentWorkSummary_Rectangle13 {
+		background-color: rgba(0, 255, 0, 1);
+}
+#mainContentWorkSummary_Label50 {
+	@include elemTop(174);
+}
+#mainContentWorkSummary_Label50 {
+	@include elemLeft(9);
+}
+#mainContentWorkSummary_Label50 {
+	@include elemAutoWidth(101);
+}
+#mainContentWorkSummary_Label50 {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSummary_Label50 {
+		z-index: 12;
+}
+#mainContentWorkSummary_Label51 {
+	@include elemTop(169);
+}
+#mainContentWorkSummary_Label51 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Label51 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSummary_Label51 {
+	@include elemAutoHeight(21);
+}
+#mainContentWorkSummary_Label51 {
+		z-index: 14;
+}
+#mainContentWorkSummary_Label51 {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSummary_Label51 {
+	@include font-weight-bold(true);
+}
+#mainContentWorkSummary_Rectangle14 {
+	@include elemTop(169);
+}
+#mainContentWorkSummary_Rectangle14 {
+	@include elemLeft(119);
+}
+#mainContentWorkSummary_Rectangle14 {
+	@include elemWidth(91);
+}
+#mainContentWorkSummary_Rectangle14 {
+	@include elemHeight(23);
+}
+#mainContentWorkSummary_Rectangle14 {
+		z-index: 13;
+}
+#mainContentWorkSummary_Rectangle14 {
+		background-color: rgba(0, 255, 0, 1);
+}

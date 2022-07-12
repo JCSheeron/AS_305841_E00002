@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="system.widgets.KeyBoard" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<StyleProperties>
+
+     <StyleProperty name="width" type="Size" not_styleable="true" default="957" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="473" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+    </StyleProperty>
+    
+  </StyleProperties>
+</StyleInformation>

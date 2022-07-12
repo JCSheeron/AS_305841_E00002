@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDefinition xmlns="http://www.br-automation.com/iat2014/session/runtime/v1">
+  <Session>
+    <Variable name="SfMP182_sessionvar_ErrorTxt_MsgBox" xsi:type="ANY_STRING" value="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_buttonTxtAckSn_FW" xsi:type="ANY_STRING" value="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_InitDialogOpener" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_btnConnect" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_visuId" xsi:type="ANY_STRING" value="mappSafety" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableInfoTxtHeader" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_RowConnectTable" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isLoggedIn" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_LoggedInID" xsi:type="ANY_INT" value="-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_currentPageID" xsi:type="ANY_STRING" value="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_safetyRoleTag" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_safetyRoleTag_App_Engineer" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_safetyRoleTag_Machine_Operator" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowLoggedInAsLabel" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnLogin" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowLoginFailedMsg" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isSessionActive" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isBusyDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isTransferDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isErrorDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isBusyConnectDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isBusyDisconnectDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_isBusyBrowseFilesDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_UserHasAccess" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_TransferDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_BusyDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_BusyConnectDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_BusyDisconnectDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_BusyBrowseFilesDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ProcessDialogOpen" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnConnect" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnConnect" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnDisconnect" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnDetails" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnFormatSafeKey" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnClearData" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableCheckBoxSafeApp" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableCheckBoxSafeComm" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnAckExchange" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnTransfer" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowBtnBrowseData" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnBrowseData" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnNavTransfer" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnNavCompletion" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableBtnExchange" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_EnableTableConnect" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowProgressReadConfig" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="SfMP182_sessionvar_ShowRootText" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+</VariableDefinition>

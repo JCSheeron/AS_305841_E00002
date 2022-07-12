@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 22 22"
+   xml:space="preserve"
+   width="22"
+   height="22"
+   class="br-symbol-library"
+   id="svg5"
+   sodipodi:docname="Arrow_Right_Err.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs9" /><sodipodi:namedview
+   id="namedview7"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="17.942835"
+   inkscape:cx="-2.2014358"
+   inkscape:cy="6.548575"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg5"
+   width="22px" />
+<path
+   id="rect5425"
+   style="fill:#ffffff;fill-opacity:1;stroke-width:2"
+   d="m 11.144531,6.2871094 c -0.07172,0.00413 -0.111328,0.082812 -0.111328,0.2246094 V 9.296875 H 6.435547 c -0.225,0 -0.402344,0.1949219 -0.402344,0.4199219 v 2.4628911 c 0,0.224999 0.177344,0.398437 0.402344,0.398437 h 4.597656 v 2.910156 c 0,0.226875 0.104219,0.292188 0.277344,0.148438 l 5.21289,-4.375 c 0.173125,-0.14375 0.184217,-0.381016 0.01172,-0.525391 L 11.30664,6.3632813 c -0.06516,-0.054375 -0.119079,-0.078651 -0.162109,-0.076172 z" /><g
+   id="Forward"
+   transform="matrix(0.625,0,0,0.625,1,1)"
+   style="fill:#55787d;fill-opacity:1">
+	<path
+   id="Zurück_3_"
+   style="fill:#55787d;fill-opacity:1;stroke-width:0.625"
+   d="M 11 1 C 5.478125 1 1 5.476875 1 11 C 1 16.52375 5.478125 21 11 21 C 12.304326 21 13.549103 20.74926 14.691406 20.294922 C 14.614114 20.147133 14.568359 19.995834 14.568359 19.84375 C 14.568359 19.357817 14.994928 18.86689 15.724609 18.535156 C 15.763715 18.516947 15.832378 18.525058 15.873047 18.507812 L 15.546875 18.507812 L 14.746094 12.753906 L 11.310547 15.636719 C 11.137422 15.780469 11.033203 15.715156 11.033203 15.488281 L 11.033203 12.578125 L 6.4355469 12.578125 C 6.2105469 12.578125 6.0332031 12.404687 6.0332031 12.179688 L 6.0332031 9.7167969 C 6.0332031 9.4917969 6.2105469 9.296875 6.4355469 9.296875 L 11.033203 9.296875 L 11.033203 6.5117188 C 11.033203 6.3699212 11.072811 6.2912394 11.144531 6.2871094 C 11.187561 6.2846304 11.241481 6.3089062 11.306641 6.3632812 L 16.535156 10.736328 C 16.707654 10.880703 16.696562 11.117969 16.523438 11.261719 L 16.476562 11.300781 L 20.994141 11.300781 C 20.997451 11.200561 21 11.100698 21 11 C 21 5.476875 16.521875 1 11 1 z M 17.607422 12.697266 L 17.871094 14.59375 L 17.742188 12.697266 L 17.607422 12.697266 z "
+   transform="matrix(1.6,0,0,1.6,-1.6,-1.6)" />
+</g><g
+   id="Forward-0"
+   transform="matrix(0.625,0,0,0.625,-28.224545,-5.3184655)"
+   style="fill:#55787d;fill-opacity:1" /><g
+   aria-label="!"
+   transform="matrix(2.1701389,0,0,1.0593221,45.497155,3.3914463)"
+   id="text8640"
+   style="font-weight:bold;font-size:12px;font-family:SAPIcons;-inkscape-font-specification:'SAPIcons Bold';white-space:pre;fill:#ff0000;stroke:#000000;stroke-width:1.31908327"><g
+     id="path24894"
+     style="fill:#ff0000"><g
+       id="g7331"
+       style="fill:#ff0000"><g
+         id="path1163"
+         style="fill:#ff0000"><path
+           style="color:#000000;-inkscape-font-specification:'SAPIcons Bold';stroke:none;stroke-width:1.31908;-inkscape-stroke:none;fill:#ff0000"
+           d="m -13.556289,8.1264742 h 2.232 l -0.372,5.4839998 h -1.488 z m 1.116,8.4959998 q -0.492,0 -0.828,-0.312 -0.324,-0.324 -0.324,-0.78 0,-0.456 0.324,-0.756 0.324,-0.312 0.828,-0.312 0.504,0 0.828,0.312 0.324,0.3 0.324,0.756 0,0.456 -0.336,0.78 -0.324,0.312 -0.816,0.312 z"
+           id="path857" /></g></g></g></g>
+<g
+   id="Ebene_1">
+</g>
+</svg>

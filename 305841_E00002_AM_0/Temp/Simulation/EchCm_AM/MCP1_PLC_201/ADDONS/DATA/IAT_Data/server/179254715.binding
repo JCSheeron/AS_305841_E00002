@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_contentDetails">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SvgHWTreeContent" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_contentDetails_SfMP171_paperHWTreeConnect" attribute="svgContent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+</BindingDefinition>

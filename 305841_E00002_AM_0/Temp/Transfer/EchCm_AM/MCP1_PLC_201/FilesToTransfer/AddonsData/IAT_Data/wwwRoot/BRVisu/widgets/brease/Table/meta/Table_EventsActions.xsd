@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:s1="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:var="http://www.br-automation.com/iat2015/varTypes/v2" elementFormDefault="qualified">
+	<xs:complexType name="widgets.brease.Table.Action">
+		<xs:complexContent>
+			<xs:extension base="s1:Target.BaseWidget">
+				<xs:sequence>
+					<xs:element name="Method" type="s1:widgets.brease.Table.Action.widgetMethod"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.widgetMethod" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="s1:widgetMethod"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.Focus">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.OpenConfiguration">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="type" type="var:TableConfigurationType" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollPageDown">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollPageLeft">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollPageRight">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollPageUp">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollStepDown">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollStepLeft">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollStepRight">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollStepUp">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollToHorizontal">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:UInteger" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ScrollToVertical">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:UInteger" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetColumnVisibility">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="index" type="var:Integer" use="required"></xs:attribute>
+				<xs:attribute name="visible" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetEnable">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetRowVisibility">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="index" type="var:Integer" use="required"></xs:attribute>
+				<xs:attribute name="visible" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetSelectedColumn">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Integer" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetSelectedRow">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Integer" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetStyle">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:StyleReference" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.SetVisible">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Action.ShowTooltip">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brease.Table.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brease.Table.Event">
+		<xs:complexContent>
+			<xs:extension base="s1:Source.BaseWidget">
+				<xs:attribute name="event" type="s1:widgets.brease.Table.Events" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="widgets.brease.Table.Events">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"></xs:enumeration>
+			<xs:enumeration value="DisabledClick"></xs:enumeration>
+			<xs:enumeration value="EnableChanged"></xs:enumeration>
+			<xs:enumeration value="FocusIn"></xs:enumeration>
+			<xs:enumeration value="FocusOut"></xs:enumeration>
+			<xs:enumeration value="ValueChanged"></xs:enumeration>
+			<xs:enumeration value="VisibleChanged"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 22 22"
+   xml:space="preserve"
+   width="22"
+   height="22"
+   class="br-symbol-library"
+   id="svg5"
+   sodipodi:docname="Arrow_Left_Asterisk_Right.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs9" /><sodipodi:namedview
+   id="namedview7"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="25.375"
+   inkscape:cx="2.0689655"
+   inkscape:cy="12.866995"
+   inkscape:window-width="1700"
+   inkscape:window-height="881"
+   inkscape:window-x="2391"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg5"
+   width="31px" />
+<g
+   id="Back"
+   transform="matrix(0.625,0,0,0.625,1,1)"
+   style="fill:#7da0a5;fill-opacity:1">
+	<path
+   id="Vor_3_"
+   style="fill:#7da0a5;fill-opacity:1;stroke-width:0.625"
+   d="M 11 1 C 5.478125 1 1 5.476875 1 11 C 1 16.52375 5.478125 21 11 21 C 11.666298 21 12.317396 20.932919 12.947266 20.808594 L 11.482422 17.984375 L 13.453125 16.916016 L 11.482422 15.853516 L 13.050781 12.826172 L 15.230469 14.060547 L 15.230469 12.734375 L 11.025391 12.734375 L 11.025391 15.488281 C 11.025391 15.715156 10.897734 15.779844 10.724609 15.636719 L 5.4804688 11.261719 C 5.3073437 11.117969 5.3092969 10.882031 5.4824219 10.738281 L 10.720703 6.3652344 C 10.893828 6.2196094 11.025391 6.2854687 11.025391 6.5117188 L 11.025391 9.453125 L 15.564453 9.453125 C 15.789453 9.453125 16.025391 9.5953125 16.025391 9.8203125 L 16.025391 11.798828 L 18.597656 11.798828 L 18.597656 14.058594 L 20.767578 12.824219 L 20.814453 12.916016 C 20.934856 12.295707 21 11.655547 21 11 C 21 5.476875 16.521875 1 11 1 z M 15.230469 19.767578 L 13.751953 20.613281 C 14.261902 20.467503 14.757335 20.283706 15.230469 20.0625 L 15.230469 19.767578 z "
+   transform="matrix(1.6,0,0,1.6,-1.6,-1.6)" />
+</g>
+<g
+   id="Ebene_1">
+</g>
+<g
+   aria-label="*"
+   transform="matrix(0.90767468,0,0,0.94394346,23.245034,-6.0159564)"
+   id="text30138-6"
+   style="font-size:23.9998px;white-space:pre;fill:#a58c7d;fill-opacity:1;stroke:#000000;stroke-width:1.9643"><g
+     id="path85459-0"
+     style="fill:#a58c7d;fill-opacity:1"><path
+       style="color:#000000;-inkscape-font-specification:'sans-serif Bold';fill:#525252;fill-opacity:1;stroke:none;stroke-width:1.9643;-inkscape-stroke:none"
+       d="m -2.4733911,22.714115 -3.0077856,1.576808 3.0077856,1.585924 -0.6927021,1.285144 -3.0351292,-1.677068 v 3.135389 h -1.5494653 v -3.135389 l -3.0442433,1.677068 -0.692703,-1.285144 3.0442441,-1.585924 -3.0442441,-1.576808 0.692703,-1.285145 3.0442433,1.658839 V 19.95242 h 1.5494653 v 3.135389 l 3.0351292,-1.658839 z"
+       id="path86399" /></g></g><path
+   id="rect880"
+   style="fill:#ffffff;fill-opacity:1;stroke-width:2"
+   d="m 10.892579,6.2871095 c -0.04843,-0.00246 -0.106955,0.023516 -0.171875,0.078125 L 5.482423,10.738282 c -0.173122,0.14375 -0.175078,0.379687 -0.00195,0.523437 l 5.24414,4.375 c 0.173125,0.143125 0.300781,0.07844 0.300781,-0.148437 v -2.753906 h 4.539063 c 0.225,-10e-7 0.460938,-0.226172 0.460938,-0.451172 V 9.820313 c 0,-0.225 -0.235938,-0.367188 -0.460938,-0.367188 H 11.025391 V 6.5117188 c 0,-0.1414064 -0.05209,-0.2204993 -0.132812,-0.2246093 z" /></svg>

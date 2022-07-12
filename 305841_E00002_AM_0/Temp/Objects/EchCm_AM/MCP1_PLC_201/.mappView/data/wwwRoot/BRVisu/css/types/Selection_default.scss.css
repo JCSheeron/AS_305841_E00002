@@ -1,0 +1,7 @@
+.system_brease_Selection_style_default .breaseWidget input::selection {
+  background: #5E9ED6;
+}
+
+.system_brease_Selection_style_default .breaseWidget input::selection {
+  color: #FFFFFF;
+}

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dialog xmlns="http://www.br-automation.com/iat2014/widget" >
+  <Properties>
+    <Property name="id" type="String" initOnly="true" localizable="false" readOnly="false" required="true" projectable="true" category="Common">
+      <Description>ID of the dialog.</Description>
+    </Property>
+    <Property name="displayName" type="String" initOnly="true" localizable="true" readOnly="false" required="false" projectable="true" defaultValue="" category="Appearance">
+      <Description>Display name used in title or navigation.</Description>
+    </Property>
+    <Property name="layoutRefId" type="Layout" initOnly="true" localizable="false" readOnly="false" required="true" projectable="true" category="Common">
+      <Description>Referenced Layout.</Description>
+    </Property>
+    <Property name="styleRefId" type="StyleReference" initOnly="true" localizable="false" readOnly="false" required="false" projectable="true" defaultValue="default" category="Appearance">
+      <Description>Referenced Style.</Description>
+    </Property>
+  </Properties>
+
+  <StyleProperties>
+    <StyleProperty name="image" type="ImagePath" category="Appearance" default="">
+      <Description>Image for the header of the dialog box window.
+This image is shown next to the header text.
+      </Description>
+      <StyleElement selector=".breaseDialogWindowHeader .imageDiv" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="textAlign" type="brease.enum.TextAlign" category="Appearance" default="center">
+      <StyleElement selector=".breaseDialogWindowHeader div.innerHeader" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>Alignment of the text:
+- left
+- center
+- right
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerHeight" type="PixelVal" default="42px" category="Appearance">
+      <Description>Height of the dialog box window header.</Description>
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader .breaseWindowClose" attribute="height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader .breaseWindowClose" attribute="line-height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader .imageDiv" attribute="min-width"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader div.innerHeader" attribute="line-height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader div.textDiv" attribute="line-height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader div.innerHeader" attribute="height"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader div.imageDiv" attribute="@include factor('max-width',$value, 2)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGround" type="ImagePath" category="Appearance" default="">
+      <Description>Background image.</Description>
+      <StyleElement selector=".breaseDialogWindowContentBox .breaseLayout" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="brease.enum.SizeMode" category="Behavior" default="fill">
+      <Description>Background image size mode.</Description>
+      <StyleElement selector=".breaseDialogWindowContentBox .breaseLayout" attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#ebebeb">
+      <StyleElement selector=".breaseDialogWindowContentBox .breaseLayout" attribute="background-color"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- HEX Color code: #FFFFFF
+- rgba Component syntax: rgba(100,100,100,255)
+- transparent
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <Description>Background gradient for the dialog box.</Description>
+      <StyleElement selector=".breaseDialogWindowContentBox .breaseLayout" attribute="background-image"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderWidth" type="PixelValCollection" default="2px" category="Appearance">
+      <StyleElement selector=".breaseDialogWindowContentBox" attribute="border-width"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- single Value for all directions e.g. 2px
+- seperate Value for each direction e.g. 1px 2px 3px 4px
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+      <StyleElement attribute="@include border-radius($value)"/>
+      <StyleElement selector=".breaseDialogWindowContentBox" attribute="@include border-radius($value)"/>
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="@include border-radius($value)"/>
+      <Description>Usage (Syntax like CSS):
+- single Value for all directions e.g. 2px
+- seperate Value for each direction e.g. 1px 2px 3px 4px
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+      <StyleElement selector=".breaseDialogWindowContentBox" attribute="border-color"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- single Value for all directions e.g. #FFF
+- seperate Value for each direction e.g. #FFF #333 #FFF #333
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="borderStyle" type="BorderStyle" default="solid" category="Appearance">
+      <StyleElement selector=".breaseDialogWindowContentBox" attribute="border-style"></StyleElement>
+      <Description>Style of the Border of the widget.
+Possible Values: solid, dotted, none, dashed, double, groove
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerGradient" category="Appearance" type="Gradient" default="none">
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="background-image"></StyleElement>
+      <Description>Background of header as a gradient.
+For further information see CSS Gradients.
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerBackColor" category="Appearance" type="Color" default="#DBDBDB">
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="background-color"></StyleElement>
+      <Description>Background-Color of header.
+Usage (Syntax like CSS):
+- HEX Color code: #FFFFFF
+- rgba Component syntax: rgba(100,100,100,255)
+- transparent
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerBorderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="border-color"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- single Value for all directions e.g. #FFF
+- seperate Value for each direction e.g. #FFF #333 #FFF #333
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerBorderWidth" type="PixelValCollection" default="2px 2px 0 2px" category="Appearance">
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="border-width"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- single Value for all directions e.g. 2px
+- seperate Value for each direction e.g. 1px 2px 3px 4px
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerBorderStyle" type="BorderStyle" default="solid" category="Appearance">
+      <StyleElement selector=".breaseDialogWindowHeader" attribute="border-style"></StyleElement>
+      <Description>Style of the Border of the widget.
+Possible Values: solid, dotted, none, dashed, double, groove
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+      <StyleElement selector=".breaseDialogWindowHeader .textDiv" attribute="color"></StyleElement>
+      <Description>Usage (Syntax like CSS):
+- HEX Color code: #FFFFFF
+- rgba Component syntax: rgba(100,100,100,255)
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="bold" category="Appearance.Font" type="Boolean" default="false">
+      <StyleElement selector=".breaseDialogWindowHeader .textDiv" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>If **true** font style is bold.</Description>
+    </StyleProperty>
+    <StyleProperty name="italic" category="Appearance.Font" type="Boolean" default="false">
+      <StyleElement selector=".breaseDialogWindowHeader .textDiv" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>If **true** font style is italic.</Description>
+    </StyleProperty>
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+      <Description>Opacity of the dialog box window.
+0 = 0% invisible
+1 = 100%
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+      <Description>Shadow of the dialog box window.
+Usage (Syntax like CSS):
+- h-shadow v-shadow [blur] [spread] color e.g. 10px 10px 5px #888888
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="fontName" category="Appearance.Font" type="FontName" default="Arial">
+      <StyleElement selector=".breaseDialogWindowHeader .textDiv" attribute="font-family"></StyleElement>
+      <Description>Fontname of the text.</Description>
+    </StyleProperty>
+    <StyleProperty name="fontSize" category="Appearance.Font" type="PixelVal" default="12px">
+      <StyleElement selector=".breaseDialogWindowHeader .textDiv" attribute="font-size"></StyleElement>
+      <Description>Fontsize of the text in pixel. e.g 24px.</Description>
+    </StyleProperty>
+    <StyleProperty name="closeImage" type="ImagePath" category="Appearance" default="">
+      <Description>Image for the "x" button in the header of the dialog box window for closing the dialog box.</Description>
+      <StyleElement selector=".breaseDialogWindowHeader .breaseWindowClose" attribute="@include backGroundImage('../$value');background-position: center center;background-repeat:no-repeat"></StyleElement>
+      <StyleElement selector=".breaseDialogWindowHeader .breaseWindowClose:after" attribute="@include static('$value');content:''"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="showCloseButton" type="Boolean" category="Appearance" default="true">
+      <Description>Visibilty of the close button.</Description>
+      <StyleElement selector=".breaseWindowClose" attribute="@include visible($value)"></StyleElement>
+    </StyleProperty>
+  </StyleProperties>
+</Dialog>

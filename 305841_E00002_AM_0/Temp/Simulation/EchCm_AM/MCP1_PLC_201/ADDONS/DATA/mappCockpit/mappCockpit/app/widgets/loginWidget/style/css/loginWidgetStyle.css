@@ -1,0 +1,76 @@
+.loginWidgetMain{
+    overflow: hidden;
+}
+
+.loginWidgetMainBackground{
+    display: flex;
+    overflow: hidden;
+    font-Family: var(--main-font);
+    font-Size: 12px;
+    font-Weight: Normal;
+    background-Image: url(../images/Background.png);
+    background-Size: cover;
+}
+
+.loginInputFieldPosition{
+    position: relative;
+    left: 60px;
+    top: 50px;
+}
+
+.loginButtonPosition{
+    position: relative;
+    left: 227px;
+    top: 65px;
+}
+
+.logoutButtonPosition{
+    position: relative;
+    left: 227px;
+    top: 135px;
+}
+
+.loginMessagePosition{
+    position: relative;
+    left: 60px;
+    top: 80px;
+}
+
+.loginInputText {
+    height: 25px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.loginInputTextReadOnly {
+    background-color: var(--main-grey) !important;
+}
+
+.loginMiddleContainer{
+    z-index: -1;
+    position: absolute;
+    top: -50px;
+    width: var(--tabWidgetFlexTabAreaWidth);
+    height: 50px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: var(--main-border-color);
+    background-color: var(--main-black);
+}
+
+.loginMiddleContainerBorder{
+    border-style: solid;
+    border-color: #808080;
+    border-width: 3px;
+    width: 440px;
+    height: 260px;
+    margin: auto;
+    background-color: #FEFEFE;
+}
+
+.loginHeader{
+    font-size: 16px;
+    position: relative;
+    left: 190px;
+    top: 20px;
+}

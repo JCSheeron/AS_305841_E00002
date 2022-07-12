@@ -1,0 +1,117 @@
+@import "mixins.scss";
+@mixin system_brease_TableConfigurationDialog_base {
+.breaseWindowClose {
+	@include display(true);
+}
+	@include border-radius(0px);
+header {
+	@include border-radius(0px);
+}
+.generic-dialog-content-footer-container {
+	@include border-radius(0px);
+}
+.generic-dialog-content-footer-container {
+	background-color: #FFFFFF;
+}
+	background-color: #FFFFFF;
+.generic-dialog-content-footer-container {
+	@include backGroundGradient('');
+}
+	@include backGroundGradient('');
+	border-color: #333333;
+.arrowLeft .breaseWindowArrow {
+	border-right-color: #333333;
+}
+.arrowRight .breaseWindowArrow {
+	border-left-color: #333333;
+}
+header {
+	@include reverseMargin(9px);
+}
+	border-bottom-width: 9px;
+	border-left-width: 9px;
+	border-right-width: 9px;
+	@include static-top-border(9px);
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	opacity: 1;
+	@include box-shadow(none);
+header div {
+	color: #FFF;
+}
+header div {
+	font-family: Arial;
+}
+header div {
+	font-size: 16px;
+}
+header div {
+	@include font-weight-bold(false);
+}
+header div {
+	@include font-style-italic(false);
+}
+header {
+	background-color: #333;
+}
+header {
+	border-color: #333;
+}
+header {
+	border-width: 0px;
+}
+header {
+	border-style: none;
+}
+header {
+	height: 42px;
+}
+header .breaseWindowClose {
+	height: 42px;
+}
+header .breaseWindowClose {
+	line-height: 42px;
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy.success span {
+	color: #008000;
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy.fail span {
+	color: #FF0000;
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+	font-family: Arial;
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+	font-size: 14px;
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+	@include font-weight-bold(false);
+}
+&.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+	@include font-style-italic(false);
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success svg {
+	fill: #008000;
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success {
+	width: 16px;
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success {
+	height: 16px;
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail svg {
+	fill: #FF0000;
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail {
+	width: 16px;
+}
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail {
+	height: 16px;
+}
+
+}
+
+.system_brease_TableConfigurationDialog_style_default {
+@include system_brease_TableConfigurationDialog_base 
+}

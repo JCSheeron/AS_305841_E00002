@@ -1,0 +1,5 @@
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/standard/standard.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/AsBrStr/AsBrStr.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.var

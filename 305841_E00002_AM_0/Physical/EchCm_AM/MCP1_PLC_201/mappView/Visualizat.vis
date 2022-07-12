@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="vis_ECHCorrugationMachine" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+  <StartPage pageRefId="pageWorkSummary" />
+  <Pages>
+    <Page refId="pageWorkSummary"/>
+    <Page refId="pageWorkSetup"/>
+    <Page refId="pageProduction"/>
+    <Page refId="pageZAxis"/>
+    <Page refId="pageCuttingHead"/>
+    <Page refId="pageSpindle"/>
+    <Page refId="pageCuttingFluid"/>
+    <Page refId="pageAxisDetail"/>
+  </Pages>
+  <Navigations>
+    <!--<Navigation refId="" />-->
+  </Navigations>  
+  <BindingsSets> 
+    <!-- <BindingsSet refId="" /> -->
+    <BindingsSet refId="dlgSafetySystem_bindings" />
+    <BindingsSet refId="dlgHome_bindings" />
+    <BindingsSet refId="dlgSetPosLimits_bindings" />
+    <BindingsSet refId="contentStdTop_bindings" />
+    <BindingsSet refId="contentWorkSetup_bindings" />
+    <BindingsSet refId="production_bindings" />
+    <BindingsSet refId="zAxis_bindings" />
+    <BindingsSet refId="cuttingHead_bindings" />
+    <BindingsSet refId="cuttingFluid_bindings" />
+    <BindingsSet refId="axisDetailLt_bindings" />
+    <BindingsSet refId="axisDetail_bindings" />
+    
+  </BindingsSets>
+  <EventBindingsSets>
+    <!-- <EventBindingsSet refId="" /> -->
+    <EventBindingsSet refId="dlgSafetySystem_eventbindings" />
+    <EventBindingsSet refId="dlgHome_eventbindings" />
+    <EventBindingsSet refId="dlgSetPosLimits_eventbindings" />
+    <EventBindingsSet refId="contentStdTop_eventbindings" />
+    <EventBindingsSet refId="contentWorkSetup_eventbindings" />
+    <EventBindingsSet refId="leftContentAxisDetail_eventbindings" />
+    <EventBindingsSet refId="axisDetail_eventbindings" />
+  </EventBindingsSets>
+  <Dialogs>
+    <!-- <Dialog refId="" /> -->
+    <Dialog refId="dlgSafetySystem"/>
+    <Dialog refId="dlgHome"/>
+    <Dialog refId="dlgSetPosLimits"/>
+  </Dialogs>
+  <Contents>
+    <!--<Content refId="" />-->
+  </Contents>
+  <SnippetsSets>
+    <!--<SnippetsSet refId=""/>-->
+    <SnippetsSet refId="boolean_snippets" />
+    <SnippetsSet refId="dlgSafetySystem_snippets" />
+    <SnippetsSet refId="cuttingHead_snippets" />
+    <SnippetsSet refId="cfAxisStatus_snippets" />
+    <SnippetsSet refId="zAxisStatus_snippets" />
+    <SnippetsSet refId="axisStatus_snippets" />
+  </SnippetsSets>
+  <ExpressionsSets>
+    <!--<ExpressionsSet refId=""/>-->
+    <ExpressionsSet refId="expAxisStatus"/>
+  </ExpressionsSets>
+  <VariablesSets>
+    <!--<VariablesSet refId="" />-->
+    <VariablesSet refId="varsConst" />
+    <VariablesSet refId="varsMotionConst" />
+    <VariablesSet refId="varsStyles" />
+    <VariablesSet refId="varsDlgSafetySystem" />
+    <VariablesSet refId="varsOperatingMode" />
+    <VariablesSet refId="varsWorkSetup" />
+    <VariablesSet refId="varsCuttingHead" />
+    <VariablesSet refId="varsCfAxisStatus" />
+    <VariablesSet refId="varsZAxisStatus" />
+    <VariablesSet refId="varsAxisDetail" />
+  </VariablesSets>
+
+  <!-- <StartTheme themeRefId="" /> -->
+  <StartTheme themeRefId="GaTheme1" />
+  <Themes>
+    <!--<Theme refId="" />-->
+    <Theme refId="GaTheme1"/>
+  </Themes>
+  <Configurations>
+    <Configuration key="activityCount" value="false" />
+	  <Gestures>
+		  <!--<SystemGesture1 touchPoints="2" />
+		  <SystemGesture2 touchPoints="2" />
+		  <SystemGesture3 touchPoints="2" />-->
+	  </Gestures>
+    <VirtualKeyboards>
+      <!--<InputProcessing onKeyDown="true" />-->
+    </VirtualKeyboards> 
+  </Configurations>
+</vdef:Visualization>

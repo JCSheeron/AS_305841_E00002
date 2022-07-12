@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Monitor>
+<InputFile>C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\OmSafeDev\OmSafeDev.sfc</InputFile>
+<OutputFile>C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\OmSafeDev\OmSafeDev.sfc.o</OutputFile>
+<MainSFC>
+<STEP00002 NAME="Stp_Init" CYCLIC="12"/>
+<TRANSITION00003 CYCLIC="13"/>
+<TRANSITION00004 CYCLIC="14"/>
+<TRANSITION00005 CYCLIC="15"/>
+<STEP00006 NAME="Stp_CheckModeReq" CYCLIC="16" EXIT="17"/>
+<TRANSITION00007 CYCLIC="18"/>
+<TRANSITION00009 CYCLIC="19"/>
+<TRANSITION00010 CYCLIC="20"/>
+<STEP00011 NAME="Stp_ManualMode" ENTRY="21" CYCLIC="22" EXIT="23"/>
+<TRANSITION00012 CYCLIC="24"/>
+<TRANSITION00014 CYCLIC="25"/>
+<TRANSITION00015 CYCLIC="26"/>
+<TRANSITION00017 CYCLIC="27"/>
+<STEP00018 NAME="Stp_PendantMode" ENTRY="28" CYCLIC="29" EXIT="30"/>
+<TRANSITION00019 CYCLIC="31"/>
+<TRANSITION00021 CYCLIC="32"/>
+<TRANSITION00022 CYCLIC="33"/>
+<TRANSITION00024 CYCLIC="34"/>
+<STEP00025 NAME="Stp_ProductionMode" ENTRY="35" CYCLIC="36" EXIT="37"/>
+<TRANSITION00026 CYCLIC="38"/>
+<TRANSITION00028 CYCLIC="39"/>
+<TRANSITION00029 CYCLIC="40"/>
+<STEP00031 NAME="Stp_SafeMode" ENTRY="41" CYCLIC="42" EXIT="43"/>
+<TRANSITION00032 CYCLIC="44"/>
+<STEP00034 NAME="Stp_EMOMode" ENTRY="45" CYCLIC="46"/>
+<TRANSITION00035 CYCLIC="47"/>
+<STEP00036 NAME="Stp_ResetAxes" ENTRY="48" CYCLIC="49" EXIT="50"/>
+<TRANSITION00037 CYCLIC="51"/>
+</MainSFC>
+<ClearProcessReqs USED="TRUE" NR="4">
+</ClearProcessReqs>
+<ClearMotionReqs USED="TRUE" NR="2">
+</ClearMotionReqs>
+<ClearNonMotionReqs USED="TRUE" NR="3">
+</ClearNonMotionReqs>
+<ClearCycleReqs USED="TRUE" NR="1">
+</ClearCycleReqs>
+<ManualModeAxisPermits USED="TRUE" NR="5">
+</ManualModeAxisPermits>
+<PendantModeAxisPermits USED="TRUE" NR="8">
+</PendantModeAxisPermits>
+<ProductionModeAxisPermits USED="TRUE" NR="9">
+</ProductionModeAxisPermits>
+<OtherModeAxisPermits USED="TRUE" NR="7">
+</OtherModeAxisPermits>
+<ModeIndependentPermissions USED="TRUE" NR="6">
+</ModeIndependentPermissions>
+</Monitor>

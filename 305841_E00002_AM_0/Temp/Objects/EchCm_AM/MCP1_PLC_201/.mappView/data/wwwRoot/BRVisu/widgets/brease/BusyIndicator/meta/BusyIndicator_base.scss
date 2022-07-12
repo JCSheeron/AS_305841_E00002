@@ -1,0 +1,7 @@
+@import "mixins.scss";
+@mixin widgets_brease_BusyIndicator_base {
+	@include elemWidth(30);
+	@include elemHeight(30);
+
+}
+

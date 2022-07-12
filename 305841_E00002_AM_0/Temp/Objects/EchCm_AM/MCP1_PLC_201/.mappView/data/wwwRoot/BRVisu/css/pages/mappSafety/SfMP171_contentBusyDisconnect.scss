@@ -1,0 +1,37 @@
+﻿@import "mixins.scss";
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+	@include elemTop(20);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+	@include elemLeft(40);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+	@include elemAutoWidth(220);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+		z-index: 0;
+}
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+	@include text-alignment-all('center');
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+	@include elemTop(48);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+	@include elemLeft(40);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+	@include elemWidth(220);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+	@include elemHeight(20);
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+		z-index: 1;
+}
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+		border-width: 0px;
+}

@@ -1,0 +1,10 @@
+@import "mixins.scss";
+@mixin widgets_brease_RadioButtonGroup_base {
+	@include elemWidth(150);
+	@include elemHeight(90);
+
+}
+
+.widgets_brease_RadioButtonGroup_style_default {
+@include widgets_brease_RadioButtonGroup_base 
+}

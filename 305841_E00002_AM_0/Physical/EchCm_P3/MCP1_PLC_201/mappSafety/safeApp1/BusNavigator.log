@@ -1,0 +1,226 @@
+LOGStart created on Thursday 2022/03/17  UTC 17:57:57:544
+
+Reading "OSDD Data"...
+Reading Content "Start"
+Reading properties for module "X20SLX410_110.MainSN".
+  ParameterGroup "Basic_PLC" has 15 parameters.
+  ParameterGroup "Safety_Response_Time_Defaults" has 11 parameters.
+  ParameterGroup "Options" has 3 parameters.
+  ParameterGroup "SafeDigitalInput01" has 5 parameters.
+  ParameterGroup "SafeDigitalInput02" has 5 parameters.
+  ParameterGroup "SafeDigitalInput03" has 5 parameters.
+  ParameterGroup "SafeDigitalInput04" has 5 parameters.
+  ParameterGroup "PulseOutput" has 4 parameters.
+  ParameterGroup "http://www.br-automation.com" has 89 parameters.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 1 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 2 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 3 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 4 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 5 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 6 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 7 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 8 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 9 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 10 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 11 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 12 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 13 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 14 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 15 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 16 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 17 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 18 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 19 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 20 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 21 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 22 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 23 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 24 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 25 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 26 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 27 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 28 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 29 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 30 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 31 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 32 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 33 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 34 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 35 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 36 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 37 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 38 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 39 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 40 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 41 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 42 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 43 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 44 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 45 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 46 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 47 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 48 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 49 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 50 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 51 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 52 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 53 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 54 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 55 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 56 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 57 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 58 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 59 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 60 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 61 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 62 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 63 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20 SafeLOGIC Compact, 4xI, 24V, 2xCAT4" and has 64 external machine option objects.
+Module "X20SLX410_110.MainSN.SL1.SM1" is of type "X20SLX410" and has 57 channels and 9 parameter groups.
+Reading properties for module "X20SO4120_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "ModuleConfiguration" has 1 parameters.
+  ParameterGroup "http://www.br-automation.com" has 12 parameters.
+Module "X20SO4120_110.SL1.SM2" is of type "X20SO4120" and has 18 channels and 4 parameter groups.
+Reading properties for module "8ESMC59316_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "Safe machine options" has 4 parameters.
+  ParameterGroup "Axis01 - General settings - Automatic reset on start" has 1 parameters.
+  ParameterGroup "Axis01 - General settings - Behavior of Functional Fail Safe (FFS)" has 4 parameters.
+  ParameterGroup "Axis01 - General settings - Blackout Mode" has 3 parameters.
+  ParameterGroup "Axis01 - General settings - Safe User Data 1 (4 Byte)" has 2 parameters.
+  ParameterGroup "Axis01 - General settings - Encoder Unit System (EUS)" has 8 parameters.
+  ParameterGroup "Axis01 - General settings - Motor" has 13 parameters.
+  ParameterGroup "Axis01 - General settings - Safe Speed Observer (SSO)" has 6 parameters.
+  ParameterGroup "Axis01 - General settings - Encoder monitoring" has 13 parameters.
+  ParameterGroup "Axis01 - General settings - Standstill monitoring" has 2 parameters.
+  ParameterGroup "Axis01 - General settings - Early limit monitoring" has 5 parameters.
+  ParameterGroup "Axis01 - General settings - Ramp monitoring" has 2 parameters.
+  ParameterGroup "Axis01 - Basic functions - STO1" has 4 parameters.
+  ParameterGroup "Axis01 - Basic functions - SS1" has 5 parameters.
+  ParameterGroup "Axis01 - Basic functions - SBC" has 1 parameters.
+  ParameterGroup "Axis01 - Speed functions - SS2" has 6 parameters.
+  ParameterGroup "Axis01 - Speed functions - SLA" has 5 parameters.
+  ParameterGroup "Axis01 - Speed functions - SMS/SLS" has 13 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SDI" has 1 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SLI" has 3 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SBT" has 6 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SLT" has 2 parameters.
+  ParameterGroup "Axis01 - Absolute position functions - Homing" has 15 parameters.
+  ParameterGroup "Axis01 - Absolute position functions - SMP / SLP" has 9 parameters.
+  ParameterGroup "Axis02 - General settings - Automatic reset on start" has 1 parameters.
+  ParameterGroup "Axis02 - General settings - Behavior of Functional Fail Safe (FFS)" has 4 parameters.
+  ParameterGroup "Axis02 - General settings - Blackout Mode" has 3 parameters.
+  ParameterGroup "Axis02 - General settings - Safe User Data 1 (4 Byte)" has 2 parameters.
+  ParameterGroup "Axis02 - General settings - Encoder Unit System (EUS)" has 8 parameters.
+  ParameterGroup "Axis02 - General settings - Motor" has 13 parameters.
+  ParameterGroup "Axis02 - General settings - Safe Speed Observer (SSO)" has 6 parameters.
+  ParameterGroup "Axis02 - General settings - Encoder monitoring" has 13 parameters.
+  ParameterGroup "Axis02 - General settings - Standstill monitoring" has 2 parameters.
+  ParameterGroup "Axis02 - General settings - Early limit monitoring" has 5 parameters.
+  ParameterGroup "Axis02 - General settings - Ramp monitoring" has 2 parameters.
+  ParameterGroup "Axis02 - Basic functions - STO1" has 4 parameters.
+  ParameterGroup "Axis02 - Basic functions - SS1" has 5 parameters.
+  ParameterGroup "Axis02 - Basic functions - SBC" has 1 parameters.
+  ParameterGroup "Axis02 - Speed functions - SS2" has 6 parameters.
+  ParameterGroup "Axis02 - Speed functions - SLA" has 5 parameters.
+  ParameterGroup "Axis02 - Speed functions - SMS/SLS" has 13 parameters.
+  ParameterGroup "Axis02 - Advanced functions - SDI" has 1 parameters.
+  ParameterGroup "Axis02 - Advanced functions - SLI" has 3 parameters.
+  ParameterGroup "Axis02 - Advanced functions - SBT" has 6 parameters.
+  ParameterGroup "Axis02 - Advanced functions - SLT" has 2 parameters.
+  ParameterGroup "Axis02 - Absolute position functions - Homing" has 15 parameters.
+  ParameterGroup "Axis02 - Absolute position functions - SMP / SLP" has 9 parameters.
+  ParameterGroup "Axis03 - General settings - Automatic reset on start" has 1 parameters.
+  ParameterGroup "Axis03 - General settings - Behavior of Functional Fail Safe (FFS)" has 4 parameters.
+  ParameterGroup "Axis03 - General settings - Blackout Mode" has 3 parameters.
+  ParameterGroup "Axis03 - General settings - Safe User Data 1 (4 Byte)" has 2 parameters.
+  ParameterGroup "Axis03 - General settings - Encoder Unit System (EUS)" has 8 parameters.
+  ParameterGroup "Axis03 - General settings - Motor" has 13 parameters.
+  ParameterGroup "Axis03 - General settings - Safe Speed Observer (SSO)" has 6 parameters.
+  ParameterGroup "Axis03 - General settings - Encoder monitoring" has 13 parameters.
+  ParameterGroup "Axis03 - General settings - Standstill monitoring" has 2 parameters.
+  ParameterGroup "Axis03 - General settings - Early limit monitoring" has 5 parameters.
+  ParameterGroup "Axis03 - General settings - Ramp monitoring" has 2 parameters.
+  ParameterGroup "Axis03 - Basic functions - STO1" has 4 parameters.
+  ParameterGroup "Axis03 - Basic functions - SS1" has 5 parameters.
+  ParameterGroup "Axis03 - Basic functions - SBC" has 1 parameters.
+  ParameterGroup "Axis03 - Speed functions - SS2" has 6 parameters.
+  ParameterGroup "Axis03 - Speed functions - SLA" has 5 parameters.
+  ParameterGroup "Axis03 - Speed functions - SMS/SLS" has 13 parameters.
+  ParameterGroup "Axis03 - Advanced functions - SDI" has 1 parameters.
+  ParameterGroup "Axis03 - Advanced functions - SLI" has 3 parameters.
+  ParameterGroup "Axis03 - Advanced functions - SBT" has 6 parameters.
+  ParameterGroup "Axis03 - Advanced functions - SLT" has 2 parameters.
+  ParameterGroup "Axis03 - Absolute position functions - Homing" has 15 parameters.
+  ParameterGroup "Axis03 - Absolute position functions - SMP / SLP" has 9 parameters.
+  ParameterGroup "http://www.br-automation.com" has 12 parameters.
+Module "8ESMC59316_110.SL1.SM11" is of type "8ESMC59316" and has 199 channels and 73 parameter groups.
+Reading properties for module "8ESMC59314_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "Safe machine options" has 4 parameters.
+  ParameterGroup "Axis01 - General settings - Automatic reset on start" has 1 parameters.
+  ParameterGroup "Axis01 - General settings - Behavior of Functional Fail Safe (FFS)" has 4 parameters.
+  ParameterGroup "Axis01 - General settings - Blackout Mode" has 3 parameters.
+  ParameterGroup "Axis01 - General settings - Safe User Data 1 (4Byte)" has 2 parameters.
+  ParameterGroup "Axis01 - General settings - Encoder Unit System (EUS)" has 8 parameters.
+  ParameterGroup "Axis01 - General settings - Motor" has 13 parameters.
+  ParameterGroup "Axis01 - General settings - Safe Speed Observer (SSO)" has 6 parameters.
+  ParameterGroup "Axis01 - General settings - Encoder monitoring" has 13 parameters.
+  ParameterGroup "Axis01 - General settings - Standstill monitoring" has 2 parameters.
+  ParameterGroup "Axis01 - General settings - Early limit monitoring" has 5 parameters.
+  ParameterGroup "Axis01 - General settings - Ramp monitoring" has 2 parameters.
+  ParameterGroup "Axis01 - Basic functions - STO1" has 4 parameters.
+  ParameterGroup "Axis01 - Basic functions - SS1" has 5 parameters.
+  ParameterGroup "Axis01 - Basic functions - SBC" has 1 parameters.
+  ParameterGroup "Axis01 - Speed functions - SS2" has 6 parameters.
+  ParameterGroup "Axis01 - Speed functions - SLA" has 5 parameters.
+  ParameterGroup "Axis01 - Speed functions - SMS/SLS" has 13 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SDI" has 1 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SLI" has 3 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SBT" has 6 parameters.
+  ParameterGroup "Axis01 - Advanced functions - SLT" has 2 parameters.
+  ParameterGroup "Axis01 - Absolute position functions - Homing" has 15 parameters.
+  ParameterGroup "Axis01 - Absolute position functions - SMP / SLP" has 9 parameters.
+  ParameterGroup "http://www.br-automation.com" has 12 parameters.
+Module "8ESMC59314_110.SL1.SM12" is of type "8ESMC59314" and has 67 channels and 27 parameter groups.
+Reading properties for module "X20SI4100_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "SafeDigitalInput01" has 5 parameters.
+  ParameterGroup "SafeDigitalInput02" has 5 parameters.
+  ParameterGroup "SafeDigitalInput03" has 5 parameters.
+  ParameterGroup "SafeDigitalInput04" has 5 parameters.
+  ParameterGroup "PulseOutput" has 4 parameters.
+  ParameterGroup "http://www.br-automation.com" has 11 parameters.
+Module "X20SI4100_110.SL1.SM116" is of type "X20SI4100" and has 13 channels and 8 parameter groups.
+Reading properties for module "X20SI4100_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "SafeDigitalInput01" has 5 parameters.
+  ParameterGroup "SafeDigitalInput02" has 5 parameters.
+  ParameterGroup "SafeDigitalInput03" has 5 parameters.
+  ParameterGroup "SafeDigitalInput04" has 5 parameters.
+  ParameterGroup "PulseOutput" has 4 parameters.
+  ParameterGroup "http://www.br-automation.com" has 11 parameters.
+Module "X20SI4100_110.SL1.SM117" is of type "X20SI4100" and has 13 channels and 8 parameter groups.
+Reading properties for module "X20SI4100_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "SafeDigitalInput01" has 5 parameters.
+  ParameterGroup "SafeDigitalInput02" has 5 parameters.
+  ParameterGroup "SafeDigitalInput03" has 5 parameters.
+  ParameterGroup "SafeDigitalInput04" has 5 parameters.
+  ParameterGroup "PulseOutput" has 4 parameters.
+  ParameterGroup "http://www.br-automation.com" has 11 parameters.
+Module "X20SI4100_110.SL1.SM212" is of type "X20SI4100" and has 13 channels and 8 parameter groups.
+Reading properties for module "X20SO4120_110".
+  ParameterGroup "Basic_Node" has 5 parameters.
+  ParameterGroup "Safety_Response_Time" has 4 parameters.
+  ParameterGroup "ModuleConfiguration" has 1 parameters.
+  ParameterGroup "http://www.br-automation.com" has 12 parameters.
+Module "X20SO4120_110.SL1.SM213" is of type "X20SO4120" and has 18 channels and 4 parameter groups.
+Content "name1" successfully read from "name2"

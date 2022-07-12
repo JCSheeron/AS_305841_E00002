@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mappings>
+  <Mapping parameter="widgets.GAGeneralLib.GaSafetyDeviceStatus.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAGeneralLib.GaSafetyDeviceStatus.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabel.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabel.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabel.Action.SetText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabel.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabelBindable.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabelBindable.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabelBindable.Action.SetValue.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.GAGeneralLib.TitleLabelBindable.Action.SetVisible.value" type="BOOL"/>
+</Mappings>

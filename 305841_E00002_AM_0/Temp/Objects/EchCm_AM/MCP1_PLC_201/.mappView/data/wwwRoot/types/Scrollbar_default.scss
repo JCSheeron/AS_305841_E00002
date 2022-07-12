@@ -1,0 +1,56 @@
+@import "mixins.scss";
+@mixin system_brease_Scrollbar_base {
+.iScrollIndicator {
+	background-color: rgba(0,0,0,0.5);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,0.5);
+}
+.iScrollVerticalScrollbar {
+	width: 7px;
+}
+.iScrollHorizontalScrollbar {
+	height: 7px;
+}
+.iScrollHorizontalScrollbar.iScrollBothScrollbars {
+	@include position(right,7px+2);
+}
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+	@include position(bottom,7px+2);
+}
+.dataTables_scrollBody::-webkit-scrollbar {
+	width: 7px;
+}
+.dataTables_scrollBody::-webkit-scrollbar {
+	height: 7px;
+}
+.iScrollIndicator {
+	border-width: 1px;
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-width: 1px;
+}
+.iScrollIndicator {
+	border-color: rgba(255,255,255,0.9);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-color: rgba(255,255,255,0.9);
+}
+.iScrollIndicator {
+	border-style: solid;
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-style: solid;
+}
+.iScrollIndicator {
+	border-radius: 3px;
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+}
+
+}
+
+.system_brease_Scrollbar_style_default {
+@include system_brease_Scrollbar_base 
+}

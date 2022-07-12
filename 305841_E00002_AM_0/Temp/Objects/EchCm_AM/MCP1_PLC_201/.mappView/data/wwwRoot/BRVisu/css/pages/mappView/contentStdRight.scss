@@ -1,0 +1,141 @@
+﻿@import "mixins.scss";
+#contentStdRight_NavBar_StdRight {
+	@include elemTop(10);
+}
+#contentStdRight_NavBar_StdRight {
+	@include elemLeft(10);
+}
+#contentStdRight_NavBar_StdRight {
+	@include elemWidth(130);
+}
+#contentStdRight_NavBar_StdRight {
+	@include elemHeight(680);
+}
+#contentStdRight_NavBar_StdRight {
+		z-index: 0;
+}
+#contentStdRight_btnWorkSummary {
+	@include elemTop(10);
+}
+#contentStdRight_btnWorkSummary {
+	@include elemLeft(10);
+}
+#contentStdRight_btnWorkSummary {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_btnWorkSummary {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_btnWorkSummary {
+		z-index: 0;
+}
+#contentStdRight_btnWorkSummary {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#contentStdRight_brnWorkSetup {
+	@include elemTop(80);
+}
+#contentStdRight_brnWorkSetup {
+	@include elemLeft(10);
+}
+#contentStdRight_brnWorkSetup {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_brnWorkSetup {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_brnWorkSetup {
+		z-index: 1;
+}
+#contentStdRight_btnZAxis {
+	@include elemTop(220);
+}
+#contentStdRight_btnZAxis {
+	@include elemLeft(10);
+}
+#contentStdRight_btnZAxis {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_btnZAxis {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_btnZAxis {
+		z-index: 2;
+}
+#contentStdRight_btnCuttingHead {
+	@include elemTop(290);
+}
+#contentStdRight_btnCuttingHead {
+	@include elemLeft(10);
+}
+#contentStdRight_btnCuttingHead {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_btnCuttingHead {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_btnCuttingHead {
+		z-index: 3;
+}
+#contentStdRight_btnSpindle {
+	@include elemTop(360);
+}
+#contentStdRight_btnSpindle {
+	@include elemLeft(10);
+}
+#contentStdRight_btnSpindle {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_btnSpindle {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_btnSpindle {
+		z-index: 4;
+}
+#contentStdRight_btnCuttingFluid {
+	@include elemTop(430);
+}
+#contentStdRight_btnCuttingFluid {
+	@include elemLeft(10);
+}
+#contentStdRight_btnCuttingFluid {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_btnCuttingFluid {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_btnCuttingFluid {
+		z-index: 5;
+}
+#contentStdRight_brnAxisDetails {
+	@include elemTop(500);
+}
+#contentStdRight_brnAxisDetails {
+	@include elemLeft(10);
+}
+#contentStdRight_brnAxisDetails {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_brnAxisDetails {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_brnAxisDetails {
+		z-index: 6;
+}
+#contentStdRight_brnProduction {
+	@include elemTop(150);
+}
+#contentStdRight_brnProduction {
+	@include elemLeft(10);
+}
+#contentStdRight_brnProduction {
+	@include elemAutoWidth(110);
+}
+#contentStdRight_brnProduction {
+	@include elemAutoHeight(50);
+}
+#contentStdRight_brnProduction {
+		z-index: 7;
+}

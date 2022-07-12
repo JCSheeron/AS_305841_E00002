@@ -1,0 +1,44 @@
+@import "mixins.scss";
+@mixin system_brease_Tooltip_base {
+.breaseTooltip {
+	background-color: #333333;
+}
+.tooltip-arrow .tooltip-arrow-background {
+	border-top-color: #333333;
+}
+.breaseTooltip {
+	border-width: 1px;
+}
+.breaseTooltip {
+	border-color: #ebebeb;
+}
+.tooltip-arrow .tooltip-arrow-border {
+	border-top-color: #ebebeb;
+}
+.breaseTooltip {
+	border-style: solid;
+}
+.breaseTooltip {
+	@include border-radius(6px);
+}
+.breaseTooltip .breaseTooltipText {
+	color: #ffffff;
+}
+.breaseTooltip {
+	padding: 10px;
+}
+.breaseTooltip .breaseTooltipText {
+	font-size: 12px;
+}
+.tooltip-arrow {
+	@include display(true);
+}
+.breaseTooltipIndicatorInner {
+	height: 20px;
+}
+.breaseTooltipIndicatorInner {
+	width: 20px;
+}
+
+}
+

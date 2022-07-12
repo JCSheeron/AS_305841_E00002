@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="contentStdTop">
+    <EventBinding id="contentStdTop.btnManualMode.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="contentStdTop_btnManualMode" />
+      <EventHandler>
+        <Action>
+          <Target type="session.VariableAction" refId="svReqOperatingMode">
+            <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="contentStdTop">
+    <EventBinding id="contentStdTop.btnPendantMode.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="contentStdTop_btnPendantMode" />
+      <EventHandler>
+        <Action>
+          <Target type="session.VariableAction" refId="svReqOperatingMode">
+            <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="32" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="contentStdTop">
+    <EventBinding id="contentStdTop.btnProductionMode.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="contentStdTop_btnProductionMode" />
+      <EventHandler>
+        <Action>
+          <Target type="session.VariableAction" refId="svReqOperatingMode">
+            <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="64" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="contentStdTop">
+    <EventBinding id="contentStdTop.btnSafetySystem.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="contentStdTop_btnSafetySystem" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="dlgSafetySystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

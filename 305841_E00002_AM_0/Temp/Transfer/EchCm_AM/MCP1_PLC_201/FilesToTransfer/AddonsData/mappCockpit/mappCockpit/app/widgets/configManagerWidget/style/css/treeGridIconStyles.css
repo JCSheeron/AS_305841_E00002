@@ -1,0 +1,116 @@
+/* defines the expand icon */
+.e-treegrid .e-cmtreegridexpand {
+    background-image: url(../images/tree/expanded.svg);
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 16px;
+}
+
+/* defines the collapse icon */
+.e-treegrid .e-cmtreegridcollapse {
+    background-image: url(../images/tree/collapsed.svg);
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 16px;
+}
+
+/* defines the group icon in expand state */
+.e-treegrid .e-cmtreegridexpandgroup {
+    background-image: url(../images/tree/group.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines the group icon in collapse state */
+.e-treegrid .e-cmtreegridcollapsegroup {
+    background-image: url(../images/tree/group.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines the default node icon */
+.e-treegrid .e-cmdoc {
+    background-image: url(../images/tree/parameter.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;			
+}
+
+/* defines icon for modified nodes */
+.modifiedIcon {
+    background-image: url(../images/tree/parameterEdited.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines icon for not transferable nodes */
+.notTransferableIcon {
+    background-image: url(../images/tree/notTransferable.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines icon for nodes where the transfer failed */
+.transferFailedIcon {
+    background-image: url(../images/tree/transferFailed.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines icon for group nodes which have changes(modified, notTransferable, ...) inside */
+.containsChangesIcon {
+    background-image: url(../images/tree/containsChanges.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+/* defines the div for the intend */
+.cmIndent{
+    height: 22px;
+    float: left;
+}
+
+/* defines the div for the collapse/expand icon */
+.cmCollapseExpandIcon{
+    height:22px;
+    width:8px;
+    margin:auto;
+    float:left;
+    margin-left:10px;
+    padding-top: 4px
+}
+
+/* defines the div for the icon of this node */
+.cmNodeIcon{
+    height:22px;
+    width:24px;
+    margin:auto;
+    float:left;
+    padding-top: 4px
+}
+
+/* defines the div for the text of this node */
+.cmCell{
+    display:inline-block;
+    width:100%;
+    margin-left: 6px;
+}
+
+/* Needed for the collapse/expand behavior of group nodes */
+.e-treegrid .e-cmtreegridexpand:before {
+    content: none;
+}
+.e-treegrid .e-cmtreegridcollapse:before {
+    content: none;
+}
+.e-treegrid .e-cmtreegridcollapse:after,
+.e-treegrid .e-cmtreegridexpand:after {
+    opacity: 0;
+}

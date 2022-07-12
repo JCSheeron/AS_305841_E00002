@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <Properties>
+    <Property name="id" type="String" initOnly="true" readOnly="true" required="true" projectable="true" category="Property">
+      <Description>ID of the page</Description>
+    </Property>
+    <Property name="displayName" type="String" initOnly="true" readOnly="false" required="false" projectable="true" category="Property">
+      <Description>Display name used in title or Navigation</Description>
+    </Property>
+    <Property name="description" type="String" initOnly="true" readOnly="false" required="false" projectable="true" category="Property">
+    </Property>
+    <Property name="layoutRefId" type="Layout" initOnly="true" readOnly="true" required="true" projectable="true" category="Property">
+      <Description>referenced Layout</Description>
+    </Property>
+    <Property name="styleRefId" type="StyleReference" initOnly="false" readOnly="false" required="false" projectable="true" defaultValue="default">
+    </Property>
+    <Property name="image" type="ImagePath" initOnly="true" readOnly="false" required="false" projectable="true" category="Property">
+      <Description>image used in NavigationButton</Description>
+    </Property>
+  </Properties>
+
+  <StyleProperties>
+    <StyleProperty name="backGround" type="ImagePath" category="StyleProperty">
+      <Description>background image</Description>
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="SizeMode" default="fill" category="StyleProperty">
+      <Description>size mode of background image </Description>
+      <StyleElement attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+  </StyleProperties>
+</Page>

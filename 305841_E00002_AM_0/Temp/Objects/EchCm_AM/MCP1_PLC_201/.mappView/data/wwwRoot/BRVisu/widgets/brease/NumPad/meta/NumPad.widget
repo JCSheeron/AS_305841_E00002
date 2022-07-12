@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.NumPad">
+		<ASEngineeringInfo>
+			<IsProjectable>false</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+			<Keyboard>NumPad</Keyboard>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>system/widgets/NumPad/NumPad.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/core/Utils.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/NumPad/NumPad.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">System</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">NumPad zur Eingabe numerischer Werte</Description>
+			<Description name="de">NumPad zur Eingabe numerischer Werte</Description>
+			<Description name="en">NumPad for the input of numeric values</Description>
+			<Description name="ASHelp">The NumPad widget can not be used in a content directly, but its possible to use styles for it</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.NumPad</Class>
+			<Class level="1">system.widgets.NumPad</Class>
+			<Class level="2">widgets.brease.Window</Class>
+			<Class level="3">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="autoRaise" type="brease.enum.AutoRaise" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" defaultValue="enabled">
+				<Description>Can be used to configure the behavior of raising a window above others when the user
+clicks on it. The default behavior will raise the window automaically when the user clicks on it				</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="modal" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" defaultValue="true">
+				<Description>If true, the window will be modal, in the meaning that no interaction with beneath page is possible. A semi transparent overlay between window and parent application will catch user actions.
+It depends on settings &apos;showCloseButton&apos; and &apos;forceInteraction&apos; how the user can close the window.				</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="position" type="Object" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" defaultValue="{&apos;horizontal&apos;:&apos;center&apos;, &apos;vertical&apos;:&apos;middle&apos;}">
+				<Description>Horizontal and vertical position of the Window.
+Either a string (horizontal:left/center/right, vertical:top/middle/bottom) or an integer.
+Example :
+
+&lt;pre&gt;&lt;code&gt;  {&apos;horizontal&apos;: &apos;center&apos;, &apos;vertical&apos;: 105}
+&lt;/code&gt;&lt;/pre&gt;				</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.NumPad" category="Layout" groupRefId="Size" groupOrder="1" default="354">
+				<StyleElement attribute="@include elemWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.NumPad" category="Layout" groupRefId="Size" groupOrder="2" default="411">
+				<StyleElement attribute="@include elemHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<StyleElement selector=".numpadHeader" attribute="@include border-radius($value)"/>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF">
+				<StyleElement selector=".numpad" attribute="background-color"/>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".numpad" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="headerGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".numpadHeader" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333333">
+				<StyleElement attribute="border-color"/>
+				<StyleElement selector="header" attribute="background-color"/>
+				<StyleElement selector="&amp;.arrowLeft .breaseWindowArrow" attribute="border-right-color"/>
+				<StyleElement selector="&amp;.arrowRight .breaseWindowArrow" attribute="border-left-color"/>
+				<StyleElement selector="&amp;.arrowTop .breaseWindowArrow" attribute="border-bottom-color"/>
+				<StyleElement selector="&amp;.arrowBottom .breaseWindowArrow" attribute="border-top-color"/>
+			</StyleProperty>
+			<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="color"/>
+				<StyleElement selector=".maxValueBox .maxValue" attribute="color"/>
+				<StyleElement selector=".maxValueBox label" attribute="color"/>
+				<StyleElement selector=".minValueBox .minValue" attribute="color"/>
+				<StyleElement selector=".minValueBox label" attribute="color"/>
+				<StyleElement selector=".breaseNumPadDeleteIcon" attribute="@include svgcolordelete(&apos;$value&apos;)"/>
+				<StyleElement selector=".breaseNumPadEnterIcon" attribute="@include svgcolorenter(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#FFA800">
+				<StyleElement selector=".breaseNumPadButtons button.active" attribute="background-color"/>
+			</StyleProperty>
+			<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector=".breaseNumPadButtons button.active" attribute="color"/>
+				<StyleElement selector=".breaseNumPadButtons button.active .breaseNumPadDeleteIcon" attribute="@include svgcolordelete(&apos;$value&apos;)"/>
+				<StyleElement selector=".breaseNumPadButtons button.active .breaseNumPadEnterIcon" attribute="@include svgcolorenter(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".breaseNumPadButtons button:not(.active)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="buttonCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="@include border-radius($value)"/>
+			</StyleProperty>
+			<StyleProperty name="buttonMouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".breaseNumPadButtons button.active" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="buttonMouseDownBorderColor" category="Appearance" type="ColorCollection" default="#333333">
+				<StyleElement selector=".solidBtnBorder .breaseNumPadButtons button.active" attribute="border-color"/>
+			</StyleProperty>
+			<StyleProperty name="buttonBackColor" category="Appearance" type="Color" default="#FFFFFF">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="background-color"/>
+			</StyleProperty>
+			<StyleProperty name="buttonMargin" category="Appearance" type="PixelValCollection" default="0px 0px 0px 0px">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="margin"/>
+			</StyleProperty>
+			<StyleProperty name="buttonBorderColor" category="Appearance" type="ColorCollection" default="#555555">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="border-color"/>
+				<StyleElement selector=".solidBtnBorder .breaseNumPadButtons button" attribute="border-color"/>
+				<StyleElement selector=".breaseNumPadButtons button[data-value=&apos;0&apos;]" attribute="border-right-color"/>
+			</StyleProperty>
+			<StyleProperty name="buttonBorderWidth" category="Appearance" type="PixelValCollection" default="1px 1px 1px 1px">
+				<StyleElement selector=".breaseNumPadButtons button" attribute="border-width"/>
+				<StyleElement selector=".solidBtnBorder .breaseNumPadButtons button" attribute="border-width"/>
+				<StyleElement selector=".breaseNumPadButtons button[data-value=&apos;0&apos;]" attribute="border-width"/>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+				<StyleElement attribute="opacity"/>
+			</StyleProperty>
+			<StyleProperty name="fontName" type="FontName" default="Arial">
+				<StyleElement attribute="font-family"/>
+			</StyleProperty>
+			<StyleProperty name="shadow" type="Shadow" default="none">
+				<StyleElement attribute="@include box-shadow($value)"/>
+			</StyleProperty>
+			<StyleProperty name="sliderForeColor" category="Appearance" type="Color" default="#FFF">
+				<StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="background-color"/>
+			</StyleProperty>
+			<StyleProperty name="sliderForeGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+			</StyleProperty>
+			<StyleProperty name="sliderOutputBackColor" category="Appearance" type="Color" default="transparent">
+				<StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output" attribute="background-color"/>
+				<StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output:after" attribute="border-top-color"/>
+			</StyleProperty>
+			<StyleProperty name="valueBackColor" category="Appearance" type="Color" default="#FFFFFF">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="background-color"/>
+				<Description>Sets the background color of the numericValue</Description>
+			</StyleProperty>
+			<StyleProperty name="valueBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="valueBorderColor" category="Appearance" type="ColorCollection" default="#333333">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-color"/>
+				<Description>Sets the border color of the numericValue. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="valueBorderStyle" category="Appearance" type="BorderStyle" default="none">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-style"/>
+				<Description>Sets the border style of the numericValue</Description>
+			</StyleProperty>
+			<StyleProperty name="valueBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-width"/>
+				<Description>Sets the border width of the numericValue. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="valueCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the numericValue rounded corners. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="valueFontName" category="Font" type="FontName" default="Arial">
+				<StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="font-family"/>
+				<Description>Sets the font name of the displayed text in the numericValue output</Description>
+			</StyleProperty>
+			<StyleProperty name="valueFontSize" category="Font" type="PixelVal" default="18px">
+				<StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="font-size"/>
+				<Description>Sets the font size of the displayed text in the numericValue output</Description>
+			</StyleProperty>
+			<StyleProperty name="valueTextAlign" category="Appearance" type="brease.enum.TextAlign" default="left">
+				<StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="@include text-alignment($value)"/>
+				<Description>Aligns the value text</Description>
+			</StyleProperty>
+			<StyleProperty name="valueTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="color"/>
+				<StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span" attribute="color"/>
+				<Description>Sets the color of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="valueShadow" category="Appearance" type="Shadow" default="none">
+				<StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include box-shadow($value)"/>
+				<Description>Sets the shadow effect of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="showSlider" category="Appearance" type="Boolean" default="true">
+				<StyleElement selector=".breaseNumpadNumericValueOutterWrapper" attribute="@include display(if($value, false, true), &apos;flex&apos;)"/>
+				<Description>If **false** numericValue is shown</Description>
+			</StyleProperty>
+			<StyleProperty name="showMinMax" category="Appearance" type="Boolean" default="true">
+				<StyleElement selector=".minValueBox" attribute="@include display($value)"/>
+				<StyleElement selector=".maxValueBox" attribute="@include display($value)"/>
+				<Description>If **true** minMax value is shown</Description>
+			</StyleProperty>
+			<StyleProperty name="imageDeleteBackground" category="Appearance" type="ImagePath" default="">
+				<StyleElement selector=".breaseNumPadDeleteIcon" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
+				<Description>Sets the backgroundimage of the delete icon</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownImageDeleteBackground" category="Appearance" type="ImagePath" default="">
+				<StyleElement selector="button.breaseNumPadDelete.active .breaseNumPadDeleteIcon" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
+				<Description>Sets the backgroundimage of the delete icon when mouse down</Description>
+			</StyleProperty>
+			<StyleProperty name="imageEnterBackground" category="Appearance" type="ImagePath" default="">
+				<StyleElement selector=".breaseNumPadEnterIcon" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
+				<Description>Sets the backgroundimage of the Enter icon</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownImageEnterBackground" category="Appearance" type="ImagePath" default="">
+				<StyleElement selector="button.breaseNumPadEnter.active .breaseNumPadEnterIcon" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
+				<Description>Sets the backgroundimage of the Enter icon when mouse down</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

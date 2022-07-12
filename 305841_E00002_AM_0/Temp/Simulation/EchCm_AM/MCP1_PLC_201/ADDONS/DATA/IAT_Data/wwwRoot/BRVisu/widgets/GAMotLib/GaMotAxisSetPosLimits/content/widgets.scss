@@ -1,0 +1,161 @@
+@import "mixins.scss";
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+	@include elemTop(25);
+}
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+	@include elemLeft(20);
+}
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+	@include elemWidth(355);
+}
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+	@include elemHeight(285);
+}
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+		z-index: 0;
+}
+#GaMotAxisSetPosLimits_grpBoxAxisSetLimits {
+	@include border-radius(8px 8px 0px 0px);
+}
+#GaMotAxisSetPosLimits_lblTitle {
+	@include elemTop(-5);
+}
+#GaMotAxisSetPosLimits_lblTitle {
+	@include elemLeft(-1);
+}
+#GaMotAxisSetPosLimits_lblTitle {
+	@include elemAutoWidth(355);
+}
+#GaMotAxisSetPosLimits_lblTitle {
+	@include elemAutoHeight(35);
+}
+#GaMotAxisSetPosLimits_lblTitle {
+		z-index: 0;
+}
+#GaMotAxisSetPosLimits_pbSetLimits {
+	@include elemAutoWidth(100);
+}
+#GaMotAxisSetPosLimits_pbSetLimits {
+	@include elemTop(209);
+}
+#GaMotAxisSetPosLimits_pbSetLimits {
+	@include elemLeft(124);
+}
+#GaMotAxisSetPosLimits_pbSetLimits {
+	@include elemAutoHeight(40);
+}
+#GaMotAxisSetPosLimits_pbSetLimits {
+		z-index: 1;
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+	@include elemTop(84);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+	@include elemLeft(44);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+		z-index: 2;
+}
+#GaMotAxisSetPosLimits_numOutPosLimitPos {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include elemTop(54);
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include elemLeft(34);
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+		z-index: 3;
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include text-alignment-all('center');
+}
+#GaMotAxisSetPosLimits_lblPosLimitPos {
+	@include font-weight-bold(true);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+	@include elemTop(84);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+	@include elemLeft(199);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+	@include elemAutoHeight(15);
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+		z-index: 4;
+}
+#GaMotAxisSetPosLimits_numOutPosLimitNeg {
+	input{
+	@include text-alignment(center);
+	}
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include elemTop(54);
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include elemLeft(189);
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include elemAutoWidth(130);
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include elemAutoHeight(22);
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+		z-index: 5;
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include text-alignment-all('center');
+}
+#GaMotAxisSetPosLimits_lblPosLimitNeg {
+	@include font-weight-bold(true);
+}
+#GaMotAxisSetPosLimits_numInPosLimitPos {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisSetPosLimits_numInPosLimitPos {
+	@include elemTop(129);
+}
+#GaMotAxisSetPosLimits_numInPosLimitPos {
+	@include elemLeft(45);
+}
+#GaMotAxisSetPosLimits_numInPosLimitPos {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisSetPosLimits_numInPosLimitPos {
+		z-index: 6;
+}
+#GaMotAxisSetPosLimits_numInPosLimitNeg {
+	@include elemAutoHeight(30);
+}
+#GaMotAxisSetPosLimits_numInPosLimitNeg {
+	@include elemTop(129);
+}
+#GaMotAxisSetPosLimits_numInPosLimitNeg {
+	@include elemLeft(189);
+}
+#GaMotAxisSetPosLimits_numInPosLimitNeg {
+	@include elemAutoWidth(120);
+}
+#GaMotAxisSetPosLimits_numInPosLimitNeg {
+		z-index: 7;
+}

@@ -1,0 +1,891 @@
+@import '../../../../css/libs/variables';
+@import '../../../../css/libs/mixins';
+
+$border-outer-color: #333;
+
+$btn-color: #FFF;
+$text-color: #333333;
+$btn-active-color: $active-color;
+$active-text-color: #FFF;
+
+$max-md-keyboard-width: 1000px;
+$max-sm-keyboard-width: 640px;
+
+.breaseKeyBoard {
+    .keyBoardHeader {
+        margin-left: -9px;
+        margin-right: -9px;
+        overflow: hidden;
+    }
+
+    .margin1 {
+        margin-left: 24px;
+    }
+
+    .margin2 {
+        margin-left: 48px;
+    }
+    //DELETE ICON
+    .icon-delete {
+        width: 30px;
+        pointer-events: none;
+    }
+    //SHIFT ICON
+    .icon-shift {
+        display: inline-block;
+        position: relative;
+        width: 6px;
+        height: 9px;
+        background-color: $text-color;
+        pointer-events: none;
+
+        &:after {
+            content: ' ';
+            position: absolute;
+            top: -11px;
+            left: -5px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid $text-color;
+        }
+    }
+    //KEYBOARD DOWN ICON
+    .icon-down {
+        width: 38px;
+        pointer-events: none;
+    }
+    //MOVE LEFT ICON
+    .moveLeft > svg {
+        pointer-events: none;
+    }
+    //MOVE RIGHT ICON
+    .moveRight > svg {
+        pointer-events: none;
+    }
+
+    .keyBoardFooter {
+        width: 957px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .keyBoardBody {
+        width: 957px;
+        //height: 473px;
+        background-color: $border-outer-color;
+        display: block;
+        overflow: hidden;
+
+        button {
+            @include appearance(none);
+            background-color: $btn-color;
+            position: relative;
+
+            &:focus {
+                outline: none;
+            }
+
+            sub {
+                position: absolute;
+                top: 3px;
+                right: 4px;
+                font-size: 11px;
+                color: #444;
+                line-height: initial;
+            }
+
+            .moveLeft svg, .moveRight svg {
+                position: relative;
+                fill: $text-color;
+                pointer-events: none;
+            }
+
+            &.active, &.selected {
+                background-color: $btn-active-color;
+                color: $active-text-color;
+
+                .icon-shift {
+                    background-color: $active-text-color;
+
+                    &:after {
+                        border-bottom-color: $active-text-color;
+                    }
+                }
+
+                .moveLeft svg, .moveRight svg {
+                    fill: $active-text-color;
+                }
+            }
+        }
+
+        button.keyBoardBtnClear {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 28px;
+            width: 28px;
+            line-height: 26px;
+            border: 0px;
+            border-radius: 14px;
+            background-color: #C8C8C8;
+            font-size: 22px;
+            font-size: 27px;
+            color: #FFF;
+            display: none;
+            padding: 0;
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+
+    .keyBoardRow {
+        //margin: 1px 0 0 0;
+        height: 74px;
+        position: relative;
+        border: none;
+        padding: 0;
+        font-size: 0;
+        @include displayFlexBox(true);
+        @include flex-direction(row);
+        @include align-items(center);
+        @include flex-wrap(nowrap);
+        @include justify-content(center);
+        text-align: center;
+        overflow: hidden;
+
+        button {
+            display: inline-block;
+            @include flex(1 0 auto);
+        }
+    }
+
+    .keyBoardButtons {
+        @include displayFlexBox(false);
+        @include flex-direction(column);
+        @include align-items(center);
+        margin-left: 1px;
+
+        button {
+            height: 74px;
+            color: #333;
+            font-size: 20px;
+            background-color: #fff;
+            border: none;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            text-align: center;
+            line-height: 90px;
+            padding: 0 6px;
+            position: relative;
+        }
+    }
+
+    .delete {
+        text-align: right;
+        line-height: 105px;
+    }
+
+    .enter {
+        width: 152px;
+    }
+
+    .moveLeft, .moveRight {
+        width: 103px;
+        line-height: 105px;
+    }
+
+    .enter, .specialChars {
+        font-size: 18px;
+    }
+
+    .shift-left {
+        text-align: left;
+        line-height: 105px;
+        padding: 0 6px;
+    }
+
+    .shift-right {
+        width: 176px;
+        text-align: right;
+        padding: 0 6px;
+    }
+
+    .specialChars {
+        text-align: right;
+        width: 165px;
+    }
+
+    .space {
+        width: 639px;
+    }
+
+    .btnClose {
+        width: 152px;
+    }
+
+    .btnCloseSm {
+        width: 76px;
+    }
+
+    .keyBoardTop {
+        padding: 0 24px 24px 24px;
+        height: 100px;
+    }
+
+    .keyBoardPlugin {
+        @include displayFlexBox(true);
+        position: relative;
+        /*left: 155px;
+        top: -10px;*/
+        width: 100%;
+        z-index: 10;
+    }
+
+    .pluginList {
+        position: relative;
+        @include displayFlexBox(true);
+        @include flex-direction(row);
+        @include justify-content(flex-start);
+        @include box-sizing(border-box);
+        /*background-color: #333;*/
+        width: auto;
+        height: 64px;
+        margin: 5px 0 0 0;
+        border-width: 1px;
+        border-style: solid;
+        border-left-style: none;
+    }
+
+    .pluginList div {
+        padding: 10px 10px 10px 10px;
+        width: 50px;
+        @include displayFlexBox(true);
+        @include justify-content(center);
+        @include align-items(center);
+        //height: 30px;
+        text-align: center;
+        font-size: 20px;
+        border-left-width: 1px;
+        border-left-style: solid;
+
+        &.itemLarge {
+            width: 132px;
+        }
+    }
+
+    .keyBoardInputField {
+        height: 49px;
+        line-height: 49px;
+        padding: 0 54px;
+        background-color: #FFF;
+        margin: 0 auto 0 auto;
+        position: relative;
+
+        input {
+            font-size: 20px;
+            color: #545454;
+            padding: 0;
+            height: 49px;
+            width: 100%;
+            border: none;
+            @include user-select(text);
+
+            &:focus {
+                outline: none;
+            }
+
+            &::-ms-clear {
+                display: none;
+            }
+        }
+    }
+
+    .dropdown {
+        //overflow: hidden;
+        position: relative;
+        background-color: #fff;
+
+        .button {
+            font-size: 14px;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            outline: none;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            box-sizing: border-box;
+            height: 74px;
+            padding: 10px;
+            background-image: inherit;
+            color: inherit;
+        }
+
+        .dropdownlist {
+            display: none;
+            position: absolute;
+            background-color: inherit;
+            min-width: 160px;
+            bottom: 20px;
+            left: -1px;
+            border: 1px solid #333;
+            z-index: 11;
+            background-image: inherit;
+            font-family: inherit;
+            color: inherit;
+
+            div {
+                padding: 10px 0;
+                background-image: inherit;
+                background-color: inherit;
+                font-family: inherit;
+                color: inherit;
+            }
+
+            div.selected {
+                background-color: $btn-active-color;
+                color: $active-text-color;
+            }
+
+            &.open {
+                display: block;
+            }
+        }
+    }
+
+    .keyBoardAbout {
+        display: none;
+        position: absolute;
+        width: 953px;
+        height: 464px;
+        top: 42px;
+        left: 0;
+        background-color: #FFF;
+        padding-top: 25px;
+        padding-right: 4px;
+        z-index: 11;
+
+        div {
+            position: absolute;
+            top: 0px;
+        }
+
+        button {
+            @include appearance(none);
+            /*background-color: #333;
+            color: #FFF;*/
+            left: 2px;
+            top: 2px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        iframe {
+            @include appearance(none);
+            width: inherit;
+            height: inherit;
+        }
+    }
+
+    &.keyBoardFull {
+
+        .dropdown {
+            .button {
+                height: 74px;
+            }
+
+            .button, .dropdownlist > div {
+                font-size: 20px;
+                padding: 24px 0;
+            }
+
+            .dropdownlist {
+                bottom: 74px;
+            }
+        }
+
+        .keyBoardButtons {
+            button {
+                width: 64px;
+
+                sub {
+                    font-size: 14px;
+                }
+            }
+
+            .delete {
+                width: 123px;
+            }
+
+            .enter {
+                width: 164px;
+            }
+
+            .moveLeft, .moveRight {
+                width: 70px;
+            }
+
+            .shift-left, .shift-right {
+                width: 126px;
+            }
+
+            .shift-left.wide, .shift-right.wide {
+                width: 158px;
+            }
+
+            .specialChars {
+                text-align: right;
+                width: 165px;
+            }
+
+            .space {
+                width: 639px;
+            }
+
+            .btnClose {
+                width: 152px;
+            }
+        }
+
+        &.layoutScand {
+            .keyBoardButtons {
+                .moveLeft, .moveRight {
+                    width: 64px;
+                }
+
+                .delete {
+                    width: 76px;
+                }
+            }
+        }
+
+        &.layoutIT {
+            .keyBoardButtons {
+                .shift-left {
+                    width: 67px;
+                }
+
+                .moveLeft, .moveRight {
+                    width: 102px;
+                }
+            }
+        }
+
+        &[data-lang='sk'] {
+            .keyBoardButtons {
+                .shift-left {
+                    width: 67px;
+                }
+            }
+        }
+
+        &[data-lang='sv'] {
+            .keyBoardButtons {
+                .delete {
+                    width: 124px;
+                }
+            }
+        }
+
+        &[data-lang='zh-CHS'], &[data-lang='zh-CHS_en'] {
+            .keyBoardButtons {
+                .specialChars {
+                    width: 145px;
+                }
+
+                .alt-lt-Wrapper {
+                    width: 108px;
+                }
+            }
+        }
+    }
+
+    &.keyBoardMd {
+        .dropdown {
+            .button {
+                height: 48px;
+            }
+
+            .button, .dropdownlist > div {
+                font-size: 16px;
+                padding: 13px 0;
+            }
+
+            .dropdownlist {
+                bottom: 48px;
+                min-width: 160px;
+            }
+        }
+
+        .keyBoardAbout {
+            width: 597px;
+            height: 307px;
+        }
+
+        .keyBoardTop {
+            padding: 0 0 8px 0;
+            height: 89px;
+        }
+
+        .keyBoardBody {
+            width: 601px;
+            //height: 314px;
+        }
+
+        .keyBoardFooter {
+            width: 601px;
+            font-size: 15px;
+        }
+
+        .keyBoardRow {
+            height: 48px;
+        }
+
+
+        .pluginList {
+            //width: 550px;
+            height: 35px;
+        }
+
+        .pluginList div {
+            padding: 7px;
+            width: 35px;
+            height: 20px;
+            //line-height: 20px;
+            font-size: 16px;
+
+            &.itemLarge {
+                width: 85px;
+            }
+        }
+
+        .margin1 {
+            margin: 0 0 0 20px;
+        }
+
+        .margin2 {
+            margin: 0 0 0 40px;
+        }
+
+        .keyBoardButtons button {
+            height: 48px;
+            line-height: 60px;
+            width: 38px;
+
+            sub {
+                font-size: 11px;
+            }
+        }
+
+        .delete .icon-delete {
+            width: 24px;
+        }
+
+        .keyBoardButtons {
+            .delete {
+                width: 104px;
+            }
+
+            .delete.narrow {
+                width: 78px;
+            }
+
+            .enter {
+                width: 122px;
+            }
+
+            .moveLeft, .moveRight {
+                width: 51px;
+            }
+
+            .shift-left, .shift-right {
+                width: 90px;
+                padding: 0 16px;
+            }
+
+            .shift-left.wide, .shift-right.wide {
+                width: 109px;
+            }
+
+            .moveLeft svg, .moveRight svg {
+                top: 2px;
+            }
+
+            .specialChars {
+                width: 140px;
+            }
+
+            .space {
+                width: 318px;
+            }
+
+            .btnClose {
+                width: 140px;
+            }
+
+            .btnCloseSm {
+                width: 70px;
+            }
+        }
+
+        .keyBoardInputField {
+            padding: 0 34px;
+        }
+
+        &.layoutIT {
+            .keyBoardButtons {
+                .shift-left, .shift-right {
+                    width: 57px;
+                }
+            }
+        }
+
+        &.layoutScand {
+            .keyBoardButtons {
+                .delete {
+                    width: 48px;
+                }
+
+                .moveLeft, .moveRight {
+                    width: 46px;
+                }
+            }
+        }
+
+        &[data-lang='ar'] {
+            .keyBoardInputField {
+                padding: 0 44px 0 34px;
+            }
+        }
+
+        &[data-lang='sk'] {
+            .keyBoardButtons {
+                .shift-left, .shift-right {
+                    width: 57px;
+                }
+            }
+        }
+
+
+        &[data-lang='zh-CHS'], &[data-lang='zh-CHS_en'] {
+            .keyBoardButtons {
+                .specialChars {
+                    width: 120px;
+                }
+
+                .alt-lt-Wrapper {
+                    width: 90px;
+                }
+            }
+        }
+    }
+
+    &.keyBoardSm {
+        .dropdown {
+            .button {
+                height: 40px;
+            }
+
+            .button, .dropdownlist > div {
+                font-size: 12px;
+                padding: 12px 0;
+            }
+
+            .dropdownlist {
+                bottom: 40px;
+                min-width: 90px;
+            }
+        }
+
+        .keyBoardAbout {
+            width: 397px;
+            height: 253px;
+        }
+
+        border-width: 4px;
+        box-sizing: content-box;
+
+        .keyBoardBody {
+            width: 401px;
+            //height: 265px;
+            button.keyBoardBtnClear {
+                top: 9px;
+                right: 10px;
+                height: 24px;
+                width: 24px;
+                line-height: 18px;
+                border-radius: 12px;
+                font-size: 22px;
+            }
+
+            button .icon-down, button.selected .icon-down, button.active .icon-down {
+                transform: scale(0.8,0.8);
+                margin-top: 3px;
+            }
+        }
+
+        .keyBoardFooter {
+            width: 401px;
+            font-size: 10px;
+        }
+
+        .keyBoardHeader {
+            margin-left: -4px;
+            margin-right: -4px;
+        }
+
+        .keyBoardTop {
+            padding: 0 0 8px 0;
+            height: 75px;
+        }
+
+        .keyBoardRow {
+            height: 40px;
+        }
+
+        .pluginList {
+            //width: 350px;
+            height: 30px;
+        }
+
+        .pluginList div {
+            padding: 5px;
+            width: 25px;
+            //height: 14px;
+            //line-height: 14px;
+            font-size: 12px;
+
+            &.itemLarge {
+                width: 54.5px;
+            }
+        }
+
+        .margin1, .margin2 {
+            margin-left: 0px;
+        }
+
+        .icon-delete {
+            width: 18px;
+        }
+
+        .keyBoardButtons button {
+            height: 40px;
+            width: 28px;
+            line-height: 50px;
+            padding: 0 4px;
+            font-size: 16px;
+
+            sub {
+                font-size: 10px;
+            }
+        }
+
+        .keyBoardButtons {
+
+            .delete {
+                width: 36px;
+            }
+
+            .enter {
+                width: 64px;
+            }
+
+            .moveLeft, .moveRight {
+                width: 32px;
+            }
+
+            .shift-left, .shift-right {
+                width: 46px;
+            }
+
+            .shift-left.wide, .shift-right.wide {
+                width: 60px;
+            }
+
+            .moveLeft svg, .moveRight svg {
+                transform: scale(0.666667);
+                top: 4px;
+            }
+
+            .specialChars {
+                width: 80px;
+            }
+
+            .space {
+                width: 240px;
+            }
+
+            .btnClose {
+                width: 80px;
+            }
+
+            .btnCloseSm {
+                width: 40px;
+            }
+        }
+
+        .keyBoardInputField {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 24px;
+
+            input {
+                font-size: 20px;
+                height: 40px;
+            }
+        }
+
+        &[data-lang='ar'] {
+            .keyBoardInputField {
+                padding: 0 40px 0 24px;
+            }
+        }
+
+        &[data-lang='sk'] {
+            .keyBoardButtons {
+                .shift-left, .shift-right {
+                    width: 43px;
+                }
+            }
+        }
+
+        &.layoutIT {
+            .keyBoardButtons {
+                .moveLeft, .moveRight {
+                    width: 46px;
+                }
+
+                .shift-left, .shift-right {
+                    width: 42px;
+                }
+            }
+        }
+
+        &.layoutScand {
+            .keyBoardButtons {
+                .moveLeft, .moveRight {
+                    width: 30px;
+                }
+
+                .delete {
+                    width: 32px;
+                }
+            }
+        }
+
+        &[data-lang='zh-CHS'], &[data-lang='zh-CHS_en'] {
+            .keyBoardButtons {
+                .specialChars {
+                    width: 70px;
+                }
+
+                .alt-lt-Wrapper {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}

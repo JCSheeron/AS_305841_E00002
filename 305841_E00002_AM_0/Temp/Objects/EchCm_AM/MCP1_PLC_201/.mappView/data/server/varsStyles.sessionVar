@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDefinition xmlns="http://www.br-automation.com/iat2014/session/runtime/v1">
+  <Session>
+    <Variable name="svTextOutputGood" xsi:type="ANY_STRING" value="GaTextOutputGood" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svTextOutputBad" xsi:type="ANY_STRING" value="GaTextOutputBad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svTextOutputWarn" xsi:type="ANY_STRING" value="GaTextOutputWarn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svLabelInactive" xsi:type="ANY_STRING" value="GaInfoInactive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svLabelActive" xsi:type="ANY_STRING" value="GaInfoActive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelected1" xsi:type="ANY_STRING" value="ModButtonSelected1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonNotSelected1" xsi:type="ANY_STRING" value="ModButtonNotSelected1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonNotSelectedIndicator" xsi:type="ANY_STRING" value="ModButtonNotSelectedIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedBlue" xsi:type="ANY_STRING" value="ModButtonSelectedBlue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedBlueIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedBlueIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedGreen" xsi:type="ANY_STRING" value="ModButtonSelectedGreen" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedGreenIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedGreenIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedYellow" xsi:type="ANY_STRING" value="ModButtonSelectedYellow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedYellowIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedYellowIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedOrange" xsi:type="ANY_STRING" value="ModButtonSelectedOrange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedOrangeIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedOrangeIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedRed" xsi:type="ANY_STRING" value="ModButtonSelectedRed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svButtonSelectedRedIndicator" xsi:type="ANY_STRING" value="ModButtonSelectedRedIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+</VariableDefinition>

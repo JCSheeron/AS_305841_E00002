@@ -1,0 +1,99 @@
+﻿@import "mixins.scss";
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+	@include elemTop(40);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+	@include elemLeft(20);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+	@include elemAutoWidth(140);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginUsername {
+		z-index: 0;
+}
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+	@include elemTop(80);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+	@include elemLeft(20);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+	@include elemAutoWidth(140);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginPassword {
+		z-index: 1;
+}
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+	@include elemTop(80);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+	@include elemLeft(180);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+	@include elemAutoWidth(240);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginPassword {
+		z-index: 2;
+}
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+	@include elemTop(40);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+	@include elemLeft(180);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+	@include elemAutoWidth(240);
+}
+#SfMP171_contentLogin_SfMP171_inputLoginUsername {
+		z-index: 3;
+}
+#SfMP171_contentLogin_SfMP171_btnLogin {
+	@include elemAutoWidth(100);
+}
+#SfMP171_contentLogin_SfMP171_btnLogin {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_btnLogin {
+	@include elemTop(155);
+}
+#SfMP171_contentLogin_SfMP171_btnLogin {
+	@include elemLeft(320);
+}
+#SfMP171_contentLogin_SfMP171_btnLogin {
+		z-index: 4;
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	@include elemTop(140);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	@include elemLeft(20);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	@include elemAutoWidth(260);
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+		z-index: 5;
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	& span{
+		color: rgba(255, 0, 0, 1);
+	}
+}
+#SfMP171_contentLogin_SfMP171_labelLoginFailedMsg {
+	@include font-weight-bold(true);
+}

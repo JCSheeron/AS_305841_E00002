@@ -1,0 +1,91 @@
+﻿@import "mixins.scss";
+#leftContentAxisDetail_btnSpindle {
+	@include elemTop(30);
+}
+#leftContentAxisDetail_btnSpindle {
+	@include elemLeft(5);
+}
+#leftContentAxisDetail_btnSpindle {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnSpindle {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnSpindle {
+		z-index: 0;
+}
+#leftContentAxisDetail_btnOutEcc {
+	@include elemTop(95);
+}
+#leftContentAxisDetail_btnOutEcc {
+	@include elemLeft(5);
+}
+#leftContentAxisDetail_btnOutEcc {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnOutEcc {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnOutEcc {
+		z-index: 1;
+}
+#leftContentAxisDetail_btnInEcc {
+	@include elemTop(160);
+}
+#leftContentAxisDetail_btnInEcc {
+	@include elemLeft(5);
+}
+#leftContentAxisDetail_btnInEcc {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnInEcc {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnInEcc {
+		z-index: 2;
+}
+#leftContentAxisDetail_btnZ {
+	@include elemTop(225);
+}
+#leftContentAxisDetail_btnZ {
+	@include elemLeft(5);
+}
+#leftContentAxisDetail_btnZ {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnZ {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnZ {
+		z-index: 3;
+}
+#leftContentAxisDetail_btnHandwheel {
+	@include elemTop(290);
+}
+#leftContentAxisDetail_btnHandwheel {
+	@include elemLeft(5);
+}
+#leftContentAxisDetail_btnHandwheel {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnHandwheel {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnHandwheel {
+		z-index: 4;
+}
+#leftContentAxisDetail_btnCfVfd {
+	@include elemTop(355);
+}
+#leftContentAxisDetail_btnCfVfd {
+	@include elemLeft(10);
+}
+#leftContentAxisDetail_btnCfVfd {
+	@include elemAutoWidth(90);
+}
+#leftContentAxisDetail_btnCfVfd {
+	@include elemAutoHeight(45);
+}
+#leftContentAxisDetail_btnCfVfd {
+		z-index: 5;
+}

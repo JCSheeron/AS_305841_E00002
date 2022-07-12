@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="axisDetailLt_bindings" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+    <!-- Text Snippet binding: dynamic text strings based on values -->
+    <!-- Template to bind an Indexed Text snippet to the UI -->
+    <!-- The first one updates the snippet, the second one updates the UI -->
+    <!--
+    <Binding mode="oneWay">
+    <Source xsi:type="opcUa" refId="::MyProgram:MyStatus" attribute="value"/>
+    <Target xsi:type="snippet" refId="MySnippetId" attribute="value"/>
+    </Binding>
+
+    <Binding mode="oneWay">
+    <Source xsi:type="snippet" refId="MySnippetId" attribute="value"/>
+    <Target xsi:type="brease" widgetRefId="MyTextOutputWidget" contentRefId="MyContent" attribute="value"/>
+    </Binding>
+    -->
+    
+    <!-- Selected axis -->
+    <!-- Style selection buttons based on selected axis -->
+    <!-- Use the isAxisSelected expression to provide a true/false comparison to an axis number -->
+    <!-- Use a true/false list to look up a style -->
+
+    <!-- Spindle button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxSpindle" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_SPINDLE" attribute="value" />
+      <Target xsi:type="expression" refId="isAxSpindle" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isAxSpindle" attribute="result" />
+        <List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnSpindle" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+    
+    <!-- Outter Eccentric button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxOutEcc" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_OUTER_ECCENTRIC" attribute="value" />
+      <Target xsi:type="expression" refId="isAxOutEcc" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isAxOutEcc" attribute="result" />
+        <List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnOutEcc" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+
+    <!-- Inner Eccentric button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxInEcc" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_INNER_ECCENTRIC" attribute="value" />
+      <Target xsi:type="expression" refId="isAxInEcc" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isAxInEcc" attribute="result" />
+        <List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnInEcc" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+
+    <!-- Z button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxZ" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_Z" attribute="value" />
+      <Target xsi:type="expression" refId="isAxZ" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+        <Selector xsi:type="expression" refId="isAxZ" attribute="result" />
+        <List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnZ" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+
+    <!-- Handwheel button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxHandwheel" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_HANDWHEEL" attribute="value" />
+      <Target xsi:type="expression" refId="isAxHandwheel" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="expression" refId="isAxHandwheel" attribute="result" />
+				<List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnHandwheel" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+    
+     <!-- Cutting Fluid VFD button -->
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAxisSelected" attribute="value" />
+      <Target xsi:type="expression" refId="isAxCfVfd" attribute="AxisValue" />
+    </Binding>	
+    <Binding mode="oneWay">
+      <Source xsi:type="session" refId="svAD_CF_VFD" attribute="value" />
+      <Target xsi:type="expression" refId="isAxCfVfd" attribute="CheckValue" />
+    </Binding>
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="expression" refId="isAxCfVfd" attribute="result" />
+				<List refId="ButtonSelectionStyle1" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="btnCfVfd" contentRefId="leftContentAxisDetail" attribute="style" />
+    </Binding>
+    
+    <!-- Set move param units -->
+    <!-- Use a list element lookup to set the units of the move parameters -->
+    <!-- Position Units -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+				<List refId="cmpwid_posUnits_list" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="PositionUnits" />
+    </Binding>
+    <!-- Velocity Units -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+				<List refId="cmpwid_velUnits_list" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="VelocityUnits" />
+    </Binding>
+    <!-- Accel Decel Units -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+				<List refId="cmpwid_accelUnits_list" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="AccelDecelUnits" />
+    </Binding>
+    <!-- Jerk Units -->
+    <Binding mode="oneWay">
+      <Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="svAxisSelected" attribute="value" />
+				<List refId="cmpwid_jerkUnits_list" />
+      </Source>
+      <Target xsi:type="brease" widgetRefId="GaMotAxisDetail1" contentRefId="mainContentAxisDetail" attribute="JerkUnits" />
+    </Binding>
+
+   
+  </Bindings>
+</BindingsSet>

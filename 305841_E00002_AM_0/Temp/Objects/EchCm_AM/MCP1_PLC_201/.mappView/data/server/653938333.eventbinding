@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnSpindle.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnSpindle" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CCW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnOutEcc.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnOutEcc" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CCW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnInEcc.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnInEcc" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CCW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnZ.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnZ" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="Down" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="Up" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnHandwheel.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnHandwheel" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="Over There" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="Over Here" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <EventBinding id="leftContentAxisDetail.btnCfVfd.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="leftContentAxisDetail_btnCfVfd" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisSelected">
+                <Method type="session.VariableAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirNegText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CCW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target type="session.VariableAction" refId="svDirPosText">
+                <Method type="session.VariableAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="CW" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target type="session.VariableAction" refId="svAxisHasSlave">
+                <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

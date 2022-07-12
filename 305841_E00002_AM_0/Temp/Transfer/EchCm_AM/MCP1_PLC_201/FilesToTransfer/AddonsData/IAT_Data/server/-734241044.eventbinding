@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_contentEditOPPara">
+    <EventBinding id="eventbinding_57">
+      <Source type="widgets.brease.ButtonBar.Event" event="SelectedIndexChanged" refId="SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara" />
+
+      <Operand name="operandSelectedIndex" datatype="ANY_INT">
+        <ReadTarget type="widgets.brease.ButtonBar.ReadAction" refId="SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara">
+          <Method type="widgets.brease.ButtonBar.Action.GetSelectedIndex" />
+        </ReadTarget>
+      </Operand>
+
+      <EventHandler condition="operandSelectedIndex = 0">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 1">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 2">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 3">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 4">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 5">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 6">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 7">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 8">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 9">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+    </EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="eventbinding_58">
+      <Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogProcess" event="ValueChanged" />
+
+      <Operand name="operandBool" datatype="BOOL">
+        <ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogProcess">
+          <Method type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+
+      <Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+        <ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+          <Method type="session.VariableAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+
+      <EventHandler condition="operandBool AND OperandSessionIsLoggedIn">
+        <Parallel>
+	        <Action>
+	          <Target type="clientSystem.Action">
+	            <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogProcess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+	          </Target>
+	        </Action>
+	        <Action>
+	          <Target type="session.VariableAction" refId="SfMP182_sessionvar_ProcessDialogOpen">
+	            <Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+	          </Target>
+	        </Action>
+        </Parallel>
+      </EventHandler>
+      <!--<EventHandler condition="NOT operandBool">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.CloseDialog" dialogId="SfMP19_dialogProcess" />
+          </Target>
+        </Action>
+      </EventHandler>-->
+
+    </EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_59">
+		<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogProcess" event="ValueChanged" />	
+		<Operand datatype="BOOL" name="OperandSessionProcessDialogOpen">
+			<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_ProcessDialogOpen">
+				<Method type="session.VariableAction.GetValue" />
+			</ReadTarget>
+		</Operand>
+		<Operand datatype="BOOL" name="operandBool">
+			<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogProcess">
+				<Method type="opcUa.NodeAction.GetValue" />
+			</ReadTarget>
+		</Operand>
+		<EventHandler condition="NOT operandBool AND OperandSessionProcessDialogOpen">
+			<Parallel>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogProcess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ProcessDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</Parallel>
+		</EventHandler>
+    </EventBinding>
+  </Visualization>
+  <Content id="SfMP171_contentEditOPPara">
+    <EventBinding id="eventbinding_60">
+		<Source type="widgets.brease.NumericInput.Event" event="ValueChanged" refId="SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara" />
+
+		<EventHandler>
+			<Action>
+				<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SignalNumericInputOptionParaEdit_ValueChanged">
+					<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+				</Target>
+			</Action>
+		</EventHandler>
+
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

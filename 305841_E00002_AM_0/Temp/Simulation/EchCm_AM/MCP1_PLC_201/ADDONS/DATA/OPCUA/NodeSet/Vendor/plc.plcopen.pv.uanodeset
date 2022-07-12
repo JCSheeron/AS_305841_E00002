@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:s1="urn:PLCopen/pv/Types.xsd" xmlns:s2="urn:B&amp;R/plc/Types.xsd" xmlns:s3="http://PLCopen.org/OpcUa/IEC61131-3/Types.xsd" xmlns:ua="http://unifiedautomation.com/Configuration/NodeSet.xsd" xmlns:s4="http://opcfoundation.org/UA/DI/Types.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <NamespaceUris>
+        <Uri>urn:PLCopen/pv/</Uri>
+        <Uri>urn:B&amp;R/plc/</Uri>
+        <Uri>http://PLCopen.org/OpcUa/IEC61131-3/</Uri>
+        <Uri>http://opcfoundation.org/UA/DI/</Uri>
+    </NamespaceUris>
+    <Models>
+        <Model ModelUri="urn:PLCopen/pv/" PublicationDate="2013-10-11T00:00:00Z" Version="1.00">
+            <RequiredModel ModelUri="http://opcfoundation.org/UA/" PublicationDate="2016-04-15T00:00:00Z" Version="1.03"/>
+            <RequiredModel ModelUri="http://opcfoundation.org/UA/DI/" PublicationDate="2013-12-02T00:00:00Z" Version="1.01"/>
+            <RequiredModel ModelUri="http://PLCopen.org/OpcUa/IEC61131-3/" PublicationDate="2010-03-24T00:00:00Z" Version="1.00"/>
+            <RequiredModel ModelUri="urn:B&amp;R/plc/" PublicationDate="2013-10-11T00:00:00Z" Version="1.00"/>
+        </Model>
+    </Models>
+    <Aliases>
+        <Alias Alias="Boolean">i=1</Alias>
+        <Alias Alias="UInt32">i=7</Alias>
+        <Alias Alias="String">i=12</Alias>
+        <Alias Alias="DateTime">i=13</Alias>
+        <Alias Alias="Organizes">i=35</Alias>
+        <Alias Alias="HasTypeDefinition">i=40</Alias>
+        <Alias Alias="HasProperty">i=46</Alias>
+        <Alias Alias="HasComponent">i=47</Alias>
+        <Alias Alias="IdType">i=256</Alias>
+        <Alias Alias="NumericRange">i=291</Alias>
+    </Aliases>
+    <Extensions>
+        <Extension>
+            <Provider xmlns="http://br-automation.com/OpcUa/PLC.xsd" Name="PLC"/>
+        </Extension>
+        <Extension>
+            <ua:ModelInfo Tool="UaModeler" Hash="ZY1RSQkik6qHow87FlzDCw==" Version="1.5.2"/>
+        </Extension>
+    </Extensions>
+    <UAObject NodeId="ns=1;i=21009" BrowseName="1:GlobalVars">
+        <DisplayName>GlobalVars</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=2;i=21004</Reference>
+        </References>
+    </UAObject>
+    <UAObject NodeId="ns=1;i=21005" BrowseName="3:Programs">
+        <DisplayName>Programs</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=4;i=1004</Reference>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=2;i=21004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=21006</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=21005" NodeId="ns=1;i=21006" BrowseName="4:SupportedTypes">
+        <DisplayName>SupportedTypes</DisplayName>
+        <Description>Folder maintaining the set of (sub-types of) BaseObjectTypes that can be instantiated in the ConfigurableComponent</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21005</Reference>
+        </References>
+    </UAObject>
+    <UAObject NodeId="ns=1;i=21007" BrowseName="3:Tasks">
+        <DisplayName>Tasks</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=4;i=1004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=21008</Reference>
+            <Reference ReferenceType="Organizes" IsForward="false">ns=2;i=21004</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC1</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC2</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC3</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC4</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC5</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC6</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC7</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC8</Reference>
+        </References>
+    </UAObject>
+    <UAObject ParentNodeId="ns=1;i=21007" NodeId="ns=1;i=21008" BrowseName="4:SupportedTypes">
+        <DisplayName>SupportedTypes</DisplayName>
+        <Description>Folder maintaining the set of (sub-types of) BaseObjectTypes that can be instantiated in the ConfigurableComponent</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+    </UAObject>
+    <UAObject SymbolicName="TC_1" NodeId="ns=1;s=TC1" BrowseName="1:TC#1">
+        <DisplayName>TC#1</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC1#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC1" NodeId="ns=1;s=TC1#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC1</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>1</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_2" NodeId="ns=1;s=TC2" BrowseName="1:TC#2">
+        <DisplayName>TC#2</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC2#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC2" NodeId="ns=1;s=TC2#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC2</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>2</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_3" NodeId="ns=1;s=TC3" BrowseName="1:TC#3">
+        <DisplayName>TC#3</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC3#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC3" NodeId="ns=1;s=TC3#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC3</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>3</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_4" NodeId="ns=1;s=TC4" BrowseName="1:TC#4">
+        <DisplayName>TC#4</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC4#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC4" NodeId="ns=1;s=TC4#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC4</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>4</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_5" NodeId="ns=1;s=TC5" BrowseName="1:TC#5">
+        <DisplayName>TC#5</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC5#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC5" NodeId="ns=1;s=TC5#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC5</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>5</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_6" NodeId="ns=1;s=TC6" BrowseName="1:TC#6">
+        <DisplayName>TC#6</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC6#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC6" NodeId="ns=1;s=TC6#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC6</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>6</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_7" NodeId="ns=1;s=TC7" BrowseName="1:TC#7">
+        <DisplayName>TC#7</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC7#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC7" NodeId="ns=1;s=TC7#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC7</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>7</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="TC_8" NodeId="ns=1;s=TC8" BrowseName="1:TC#8">
+        <DisplayName>TC#8</DisplayName>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">ns=3;i=1006</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;s=TC8#Priority</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=21007</Reference>
+        </References>
+        <Extensions>
+            <Extension>
+                <ObjectExtension xmlns="http://br-automation.com/OpcUa/PLC.xsd">
+                    <Delegates>
+                        <Delegate Type="Browse">uaPlcCpuTasksBrowseTask</Delegate>
+                    </Delegates>
+                </ObjectExtension>
+            </Extension>
+        </Extensions>
+    </UAObject>
+    <UAVariable DataType="UInt32" ParentNodeId="ns=1;s=TC8" NodeId="ns=1;s=TC8#Priority" BrowseName="3:Priority">
+        <DisplayName>Priority</DisplayName>
+        <References>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;s=TC8</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:UInt32>8</uax:UInt32>
+        </Value>
+    </UAVariable>
+    <UAObject SymbolicName="urn_PLCopen_pv_" NodeId="ns=1;i=5001" BrowseName="1:urn:PLCopen/pv/">
+        <DisplayName>urn:PLCopen/pv/</DisplayName>
+        <Description>Provides the metadata for a namespace used by the server.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty">ns=1;i=6001</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=11616</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6002</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6003</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6004</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6005</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6006</Reference>
+            <Reference ReferenceType="HasProperty">ns=1;i=6007</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">i=11715</Reference>
+        </References>
+    </UAObject>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=5001" NodeId="ns=1;i=6001" BrowseName="IsNamespaceSubset">
+        <DisplayName>IsNamespaceSubset</DisplayName>
+        <Description>If TRUE then the server only supports a subset of the namespace.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:Boolean>false</uax:Boolean>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="DateTime" ParentNodeId="ns=1;i=5001" NodeId="ns=1;i=6002" BrowseName="NamespacePublicationDate">
+        <DisplayName>NamespacePublicationDate</DisplayName>
+        <Description>The publication date for the namespace.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:DateTime>2013-10-11T00:00:00Z</uax:DateTime>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5001" NodeId="ns=1;i=6003" BrowseName="NamespaceUri">
+        <DisplayName>NamespaceUri</DisplayName>
+        <Description>The URI of the namespace.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:String>urn:PLCopen/pv/</uax:String>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5001" NodeId="ns=1;i=6004" BrowseName="NamespaceVersion">
+        <DisplayName>NamespaceVersion</DisplayName>
+        <Description>The human readable string representing version of the namespace.</Description>
+        <References>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+        </References>
+        <Value>
+            <uax:String>1.00</uax:String>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="IdType" ParentNodeId="ns=1;i=5001" ValueRank="1" NodeId="ns=1;i=6005" BrowseName="StaticNodeIdTypes">
+        <DisplayName>StaticNodeIdTypes</DisplayName>
+        <Description>A list of IdTypes for nodes which are the same in every server that exposes them.</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="NumericRange" ParentNodeId="ns=1;i=5001" ValueRank="1" NodeId="ns=1;i=6006" BrowseName="StaticNumericNodeIdRange">
+        <DisplayName>StaticNumericNodeIdRange</DisplayName>
+        <Description>A list of ranges for numeric node ids which are the same in every server that exposes them.</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+        </References>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=5001" NodeId="ns=1;i=6007" BrowseName="StaticStringNodeIdPattern">
+        <DisplayName>StaticStringNodeIdPattern</DisplayName>
+        <Description>A regular expression which matches string node ids are the same in every server that exposes them.</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+            <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=5001</Reference>
+        </References>
+    </UAVariable>
+</UANodeSet>

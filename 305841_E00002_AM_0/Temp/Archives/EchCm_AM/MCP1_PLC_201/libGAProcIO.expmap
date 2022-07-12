@@ -1,0 +1,9 @@
+{
+  global:
+    fbSclAlmAI;
+    fbLpFilter;
+    fbProcDI;
+    fbProcPB;
+  local:
+    *;
+ };

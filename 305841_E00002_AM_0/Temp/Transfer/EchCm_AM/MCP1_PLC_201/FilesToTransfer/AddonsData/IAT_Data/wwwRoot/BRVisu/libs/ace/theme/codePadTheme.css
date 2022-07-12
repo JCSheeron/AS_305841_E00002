@@ -1,0 +1,173 @@
+/* motionPad theme for G-code languages */
+/* 
+  sepia: #fdeecc - background/body
+  olive - #780 - main color
+  light green (teal) - #088 - main color ??
+  indigo - #78B - parameters in function
+  cyan: #2A9 - for function calls
+  blue: #0077AC - function/tags
+  green: #094 - function names 
+  yellow: #B82 - ? - use as active row
+  orange: #F67A00 - used below in hashtags/color defs/new / numbers / operators
+  red/rosy: #DA2D2D - returns / switch
+  purple: #9932cc  - undefined, true/false
+  gray: #8d796b - selected row
+  brown: #8b6d3c - strings
+  silver: #888888  - comments
+
+
+*/
+
+
+.ace-codePadTheme .ace_gutter {
+  background: #ecdebc;
+  color: #890;
+}
+
+.ace-codePadTheme  {
+  background: #fdeecc;
+  color: #088;
+}
+
+.ace-codePadTheme .ace_identifier {
+  color: #890;
+}
+
+.ace-codePadTheme.ace-debugging {
+    background-color: rgba(147,161,161, 0.4);
+    color: #890;
+}
+
+/* Comments, block-numbers */
+.ace-codePadTheme .ace_comment {
+  color: #888;
+  font-style: italic;
+}
+
+.ace-codePadTheme .ace_string.ace_start,
+.ace-codePadTheme .ace_string.ace_end {
+  color: #888;
+}
+
+/* Strings */
+.ace-codePadTheme .ace_string,
+.ace-codePadTheme .ace_constant {  
+  color: #8b6d3c;
+}
+
+/* Numerical constants */
+.ace-codePadTheme .ace_constant.ace_numeric {  
+  color: #F67A00;
+}
+
+/* Axis names and G-code arguments */
+.ace-codePadTheme .ace_variable.ace_parameter {
+  color: #6677aa;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Arithmetic operators */
+.ace-codePadTheme .ace_keyword.ace_operator{
+    color: #F67A00;
+    font-weight: bold;
+}
+
+/* Control keywords */
+.ace-codePadTheme .ace_keyword.ace_control  {
+  font-weight: bold;
+  color: #094;
+}
+
+/* Miscellaneous keywords */
+.ace-codePadTheme .ace_keyword.ace_other {
+  font-weight: bold;
+  /*color: #0000FF;*/
+}
+
+/* Commands - G-codes, M-functions and Technology functions */
+.ace-codePadTheme .ace_support.ace_function {
+  color: #0077AC;
+}
+
+/* Data types */
+.ace-codePadTheme .ace_support.ace_type {  
+  color: #0077AC;
+  font-weight: bold;
+}
+
+/* Constants (MC_X, MC_NAME_P1, ...) */
+.ace-codePadTheme .ace_support.ace_constant {
+  color: #9932cc;
+  font-weight: bold;
+}
+
+/* System variables ($WFRAME, $RAD, ... ) */
+.ace-codePadTheme .ace_support.ace_variable {
+  font-weight: bold;
+}
+
+/* Parentheses */
+.ace-codePadTheme .ace_paren {
+  font-weight: bold;
+}
+
+.ace-codePadTheme .ace_cursor {
+  color: black;
+}
+
+/* active-line is for edit mode */
+.ace-codePadTheme.ace_focus .ace_marker-layer .ace_active-line {
+  background-color: rgba(139,109,60, 0.2);
+}
+.ace-codePadTheme .ace_marker-layer .ace_active-line {
+  background-color: rgba(139,109,60, 0.2);
+}
+
+.ace-codePadTheme .ace_marker-layer .ace_selection {
+  background: rgba(93,190,137, 0.5);
+}
+
+.ace-codePadTheme.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #888;
+}
+
+/* bold keywords cause cursor issues for some fonts */
+/* this disables bold style for editor and keeps for static highlighter */
+.ace-codePadTheme.ace_nobold .ace_line > span {
+    font-weight: normal !important;
+}
+
+.ace-codePadTheme .ace_marker-layer .ace_step {
+  background: rgba(187,136,34, 0.3);
+}
+
+.ace-codePadTheme .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-codePadTheme .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-codePadTheme .ace_gutter-active-line {
+    background-color : rgba(0, 0, 0, 0.07);
+}
+
+.ace-codePadTheme .ace_marker-layer .ace_selected-word {
+  box-shadow: 0 0 3px 0px #888;
+}
+
+.ace-codePadTheme .ace_invisible {
+  color: #BFBFBF
+}
+
+.ace-codePadTheme .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-codePadTheme .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}

@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin system_widgets_CompoundWidget_base {
+	@include elemWidth(400);
+	@include elemHeight(300);
+	margin: 0px;
+
+}
+

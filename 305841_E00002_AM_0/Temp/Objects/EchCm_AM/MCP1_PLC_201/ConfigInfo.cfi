@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.11.2.75"?>
+<ConfigInfo xmlns="http://br-automation.co.at/AS/BuildInfo">
+  <TaskClass
+    Name="Cyclic#1" />
+  <TaskClass
+    Name="Cyclic#2">
+    <Task
+      Name="ProdCycle"
+      Disable="false"
+      Source="PlcLogic.ProdCycle"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\ProdCycle\ProdCycle.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\ProdCycle\ProdCycle.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProdCycle\Init.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProdCycle\ProdCycle.sfc.var" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\ProdCycle\LocalFunctions.fun" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProdCycle\LocalFunctions.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProdCycle\Actions.st.var" />
+    </Task>
+    <Task
+      Name="Annunc"
+      Disable="false"
+      Source="PlcLogic.Annunc"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Annunc\Annunc.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Annunc\Annunc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Annunc\Main.st.var" />
+    </Task>
+  </TaskClass>
+  <TaskClass
+    Name="Cyclic#3">
+    <Task
+      Name="Pendant"
+      Disable="false"
+      Source="PlcLogic.Pendant"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Pendant\Pendant.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Pendant\Pendant.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Pendant\Pendant.st.var" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Pendant\LocalFunctions.fun" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Pendant\LocalFunctions.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Pendant\fbEnabledAxis.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Pendant\PBActions.st.var" />
+    </Task>
+    <Task
+      Name="ProcInputs"
+      Disable="false"
+      Source="PlcLogic.ProcInputs"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\ProcInputs\ProcInputs.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\ProcInputs\ProcInputs.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProcInputs\ProcInputs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\ProcInputs\Action.st.var" />
+    </Task>
+    <Task
+      Name="axSpinSM"
+      Disable="false"
+      Source="PlcLogic.axSpindle.axSpindleSM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axSpindle\axSpindleSM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axSpinSM\ActionAxisSpecific.st.var" />
+    </Task>
+    <Task
+      Name="axOutESM"
+      Disable="false"
+      Source="PlcLogic.axOutE.axOutESM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axOutE\axOutESM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axOutESM\ActionAxisSpecific.st.var" />
+    </Task>
+    <Task
+      Name="axInESM"
+      Disable="false"
+      Source="PlcLogic.axInE.axInESM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axInE\axInESM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axInESM\ActionAxisSpecific.st.var" />
+    </Task>
+    <Task
+      Name="axZSM"
+      Disable="false"
+      Source="PlcLogic.axZ.axZSM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axZ\axZSM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axZSM\ActionAxisSpecific.st.var" />
+    </Task>
+    <Task
+      Name="axHwSM"
+      Disable="false"
+      Source="PlcLogic.axHandwheel.axHwSM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axHandwheel\axHwSM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axHwSM\ActionAxisSpecific.st.var" />
+    </Task>
+    <Task
+      Name="axCfVfdSM"
+      Disable="false"
+      Source="PlcLogic.axCfVfd.axCfVfdSM"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\axCfVfd\axCfVfdSM\AxSM.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\AxSMInit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\AxSMCyclic.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\AxSMExit.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\ActionChkPermissives.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\ActionMotionFbs.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\axCfVfdSM\ActionAxisSpecific.st.var" />
+    </Task>
+  </TaskClass>
+  <TaskClass
+    Name="Cyclic#4">
+    <Task
+      Name="AxEnable"
+      Disable="false"
+      Source="PlcLogic.AxEnable"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\AxEnable\AxEnable.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\AxEnable\AxEnable.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\AxEnable\AxEnable.st.var" />
+    </Task>
+    <Task
+      Name="CuttingFlu"
+      Disable="false"
+      Source="PlcLogic.CuttingFluidVFD"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\CuttingFluidVFD\Types.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\CuttingFluidVFD\Variables.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\CuttingFlu\Main.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\CuttingFlu\Action.st.var" />
+    </Task>
+    <Task
+      Name="OmSafeDev"
+      Disable="false"
+      Source="PlcLogic.OmSafeDev"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\OmSafeDev\OmSafeDev.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\OmSafeDev\OmSafeDev.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\OmSafeDev\Init.st.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\OmSafeDev\OmSafeDev.sfc.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\OmSafeDev\Action.st.var" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\OmSafeDev\LocalFunctions.fun" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\OmSafeDev\LocalFunctions.st.var" />
+    </Task>
+    <Task
+      Name="CrCamTbl"
+      Disable="false"
+      Source="PlcLogic.CutProfile.CreateCamTable"
+      Language="IEC">
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\CutProfile\CreateCamTable\CreateCamTable.typ" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\CutProfile\CreateCamTable\CreateCamTable.var" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\CrCamTbl\CreateCamTable.st.var" />
+      <File
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\CutProfile\CreateCamTable\LocalFunctions.fun" />
+      <InternalFile
+        Path="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\CrCamTbl\LocalFunctions.st.var" />
+    </Task>
+  </TaskClass>
+  <TaskClass
+    Name="Cyclic#5" />
+  <TaskClass
+    Name="Cyclic#6" />
+</ConfigInfo>

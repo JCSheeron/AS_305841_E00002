@@ -1,0 +1,32 @@
+body {
+    margin: 0px;
+    user-select: none;
+}
+
+.dropLocationArea {
+    border: 2px dotted var(--main-blue-light1) !important;
+    background: rgba(125,160,165, 0.2);
+}
+
+.draggedOver {
+    border: 3px solid var(--main-blue-dark1) !important;
+    background: rgba(125,160,165, 0.4);
+    /* background: rgba(25, 40, 45, 0.5) !important; */
+}
+
+.chartTypes {
+    height: 100%;
+    border: 2px dotted var(--main-blue-light1);
+    float: left;
+    text-align: center;
+}
+
+.disabled {
+    background: rgba(104,104,104,1) !important;
+    border-color: rgba(104,104,104,1);
+}
+
+.imageChart {
+    width: 70%;
+    height: 100%;
+}

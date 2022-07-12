@@ -1,0 +1,17 @@
+@import "mixins.scss";
+@mixin system_brease_Focus_base {
+.breaseWidget:focus, .focusWithin, .breaseFocusable:focus {
+	outline-style: solid;
+}
+.breaseWidget:focus, .focusWithin, .breaseFocusable:focus {
+	outline-color: #5E9ED6;
+}
+.breaseWidget:focus, .focusWithin, .breaseFocusable:focus {
+	outline-width: 3px;
+}
+.breaseWidget:focus, .focusWithin, .breaseFocusable:focus {
+	outline-offset: 2px;
+}
+
+}
+

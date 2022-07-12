@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="dlgSafetySystemBottom_content">
+    <EventBinding id="dlgSafetySystemBottom_content.btnClose.Click">
+      <Source type="widgets.brease.Button.Event" event="Click" refId="dlgSafetySystemBottom_content_btnClose" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="dlgSafetySystem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <EventBinding id="dlgSafetySystemBottom_content.pbResetEmo.Click">
+      <Source type="widgets.brease.PushButton.Event" event="Click" refId="dlgSafetySystemTop_content_pbResetEmo" />
+      <EventHandler>
+        <Action>
+          <Target type="opcUa.NodeAction" refId="::AsGlobalPV:operatingMode.ReqEmoReset">
+            <Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

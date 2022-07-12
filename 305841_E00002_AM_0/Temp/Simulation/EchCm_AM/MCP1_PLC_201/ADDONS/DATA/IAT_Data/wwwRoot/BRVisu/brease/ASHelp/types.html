@@ -1,0 +1,677 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cat="http://schemas.microsoft.com/xsd/catalog" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Types Documentation</title>
+<link rel="stylesheet" href="../../../../../../Help/styles.css">
+<link rel="stylesheet" href="../../styles/mappView.css">
+<script src="highlighter.js"></script>
+</head>
+<body onload="DomcatInitialize();highlight();">
+<script src="../../../../../../AS/Glossary/glossary.js" type="text/javascript"></script><script src="../../../../../../AS/Domcat/Domcat.js" type="text/javascript"></script><div class="container">
+<h1>Type Documentation</h1>
+<div>
+<div><h2>Properties</h2></div>
+<table class="parameter_tab">
+<thead><tr>
+<th class="parameter_tab">Name</th>
+<th class="parameter_tab">Description</th>
+</tr></thead>
+<tbody>
+<tr data-id="AreaReference">
+<td class="parameter_tab">
+<a name="AreaReference"></a>AreaReference</td>
+<td class="parameter_tab">
+        ID of an Area Object
+      </td>
+</tr>
+<tr data-id="Array">
+<td class="parameter_tab">
+<a name="Array"></a>Array</td>
+<td class="parameter_tab">
+        Definition of Arrays in JSON Annotation, e.g. ['Item1', 'Item2'].
+      </td>
+</tr>
+<tr data-id="AutoSize">
+<td class="parameter_tab">
+<a name="AutoSize"></a>AutoSize</td>
+<td class="parameter_tab">
+        Size Value<br>
+        usage:<br>
+        - definition as an Integer e.g. 40<br>
+        - definition percentage value e.g. 40% <br>
+        - definition as 'auto' value
+      </td>
+</tr>
+<tr data-id="Boolean">
+<td class="parameter_tab">
+<a name="Boolean"></a>Boolean</td>
+<td class="parameter_tab">
+        Boolean value. Possible options are true and false
+      </td>
+</tr>
+<tr data-id="BooleanArray1D">
+<td class="parameter_tab">
+<a name="BooleanArray1D"></a>BooleanArray1D</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#Boolean">Boolean</a>
+</td>
+</tr>
+<tr data-id="BooleanArray1D_Variable">
+<td class="parameter_tab">
+<a name="BooleanArray1D_Variable"></a>BooleanArray1D_Variable</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#Boolean">Boolean</a>
+</td>
+</tr>
+<tr data-id="BorderStyle">
+<td class="parameter_tab">
+<a name="BorderStyle"></a>BorderStyle</td>
+<td class="parameter_tab">
+        Style of the Border<br>
+        Possible Values: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+      </td>
+</tr>
+<tr data-id="brease.config.MeasurementSystemFormat">
+<td class="parameter_tab">
+<a name="brease.config.MeasurementSystemFormat"></a>brease.config.MeasurementSystemFormat</td>
+<td class="parameter_tab">
+        Definition of the format conversion depending on the MeasurementSystem (metric, imperial, imperial-us).<br>
+        The format is an object with key value pairs for each MeasurementSystem.<br>
+        The value is an object with the format description<br>
+        The format description has the keys:<br>
+        - decimalPlaces: number of decimal places<br>
+        - minimumIntegerDigits: minimum number leading integer digits<br>
+        - maximumIntegerDigits (optional): maximum number of leading integer digits. For higher numbers display mode switches to normalized scientific notation.<br>
+        Example:<br>
+        {'metric':{ 'decimalPlaces': 0, 'minimumIntegerDigits':1 }, 'imperial':{ 'decimalPlaces': 0 }, 'imperial-us':{ 'decimalPlaces': 2 }}
+      </td>
+</tr>
+<tr data-id="brease.config.MeasurementSystemUnit">
+<td class="parameter_tab">
+<a name="brease.config.MeasurementSystemUnit"></a>brease.config.MeasurementSystemUnit</td>
+<td class="parameter_tab">
+        Definition of the unit conversion depending on the MeasurementSystem (metric, imperial, imperial-us).<br>
+        The format is an object with key value pairs for each MeasurementSystem. The value is the common code for the unit.<br>
+        Example:<br>
+        {'metric':'CEL','imperial':'FAH','imperial-us':'KEL'}<br>
+</td>
+</tr>
+<tr data-id="brease.datatype.ArrayNode">
+<td class="parameter_tab">
+<a name="brease.datatype.ArrayNode"></a>brease.datatype.ArrayNode</td>
+<td class="parameter_tab">
+        Array of values with one unit. <br>Notation as object with following properties:<br><br>
+        •id: String (optional)<br><br>
+        •maxValue: Number (optional)<br><br>
+        •minValue: Number (optional)<br><br>
+        •unit: String (required) <br>
+        common code of unit of values.<br><br>
+        •value: Number[] (required)<br>
+</td>
+</tr>
+<tr data-id="brease.datatype.Node">
+<td class="parameter_tab">
+<a name="brease.datatype.Node"></a>brease.datatype.Node</td>
+<td class="parameter_tab">
+        Value with unit for binding with OPC-UA nodes. <br>Notation as object with following properties:<br><br>
+        •id: String (optional)<br><br>
+        •maxValue: Number (optional)<br><br>
+        •minValue: Number (optional)<br><br>
+        •unit: String (required) <br>
+        common code of unit of values.<br><br>
+        •value: Number (required)<br>
+</td>
+</tr>
+<tr data-id="brease.datatype.Notification">
+<td class="parameter_tab">
+<a name="brease.datatype.Notification"></a>brease.datatype.Notification</td>
+<td class="parameter_tab">
+        Notification for changes of Big Data. <br>Notation as object with following poperties:<br><br>
+        •action: String (optional)<br><br>
+        •row: Number (optional)<br>
+</td>
+</tr>
+<tr data-id="Color">
+<td class="parameter_tab">
+<a name="Color"></a>Color</td>
+<td class="parameter_tab">
+        Single Color Value<br>
+        usage (Syntax like CSS):<br>
+        - HEX Color code: #FFFFFF<br>
+        - rgba Component syntax: rgba(100,100,100,1)
+        - transparent
+      </td>
+</tr>
+<tr data-id="ColorCollection">
+<td class="parameter_tab">
+<a name="ColorCollection"></a>ColorCollection</td>
+<td class="parameter_tab">
+        Color Collection Value<br>
+        usage (Syntax like CSS):<br>
+        - One single value applies to all four sides e.g. #FFFFFF<br>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  #FFFFFF #333333<br>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  #FFFFFF #333333 #FFFFFF #333333<br>
+</td>
+</tr>
+<tr data-id="ColorList">
+<td class="parameter_tab">
+<a name="ColorList"></a>ColorList</td>
+<td class="parameter_tab">
+        list of colors, e.g. #FF8800,rgba(255,136,0,1)
+      </td>
+</tr>
+<tr data-id="ContentCollection">
+<td class="parameter_tab">
+<a name="ContentCollection"></a>ContentCollection</td>
+<td class="parameter_tab">
+        Array of content IDs values, e.g. ['content1', 'content2', ...]
+      </td>
+</tr>
+<tr data-id="ContentReference">
+<td class="parameter_tab">
+<a name="ContentReference"></a>ContentReference</td>
+<td class="parameter_tab">
+        ID of a Content Object
+      </td>
+</tr>
+<tr data-id="DateTime">
+<td class="parameter_tab">
+<a name="DateTime"></a>DateTime</td>
+<td class="parameter_tab">
+        Date and Time string according to ECMA-262<br>
+        Examples:<br>
+        2017-06-21<br>
+        2017-06-21T17:59<br>
+        2017-06-21T17:59:00<br>
+        2017-06-21T17:59:00Z<br>
+        2017-06-21T17:59:00.000+03:00<br>
+</td>
+</tr>
+<tr data-id="DateTimeArray1D">
+<td class="parameter_tab">
+<a name="DateTimeArray1D"></a>DateTimeArray1D</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#DateTime">DateTime</a>
+</td>
+</tr>
+<tr data-id="DateTimeArray1D_Variable">
+<td class="parameter_tab">
+<a name="DateTimeArray1D_Variable"></a>DateTimeArray1D_Variable</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#DateTime">DateTime</a>
+</td>
+</tr>
+<tr data-id="DialogReference">
+<td class="parameter_tab">
+<a name="DialogReference"></a>DialogReference</td>
+<td class="parameter_tab">
+        ID of a Dialog Object
+      </td>
+</tr>
+<tr data-id="DirectoryPath">
+<td class="parameter_tab">
+<a name="DirectoryPath"></a>DirectoryPath</td>
+<td class="parameter_tab">
+        Path to a directory
+      </td>
+</tr>
+<tr data-id="Double">
+<td class="parameter_tab">
+<a name="Double"></a>Double</td>
+<td class="parameter_tab">
+        datatype xs:double for expressions in e.g. parameter of methods of actions
+      </td>
+</tr>
+<tr data-id="Expression">
+<td class="parameter_tab">
+<a name="Expression"></a>Expression</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="FilePath">
+<td class="parameter_tab">
+<a name="FilePath"></a>FilePath</td>
+<td class="parameter_tab">
+        path to a file
+      </td>
+</tr>
+<tr data-id="FontName">
+<td class="parameter_tab">
+<a name="FontName"></a>FontName</td>
+<td class="parameter_tab">
+        Fontname
+      </td>
+</tr>
+<tr data-id="Gradient">
+<td class="parameter_tab">
+<a name="Gradient"></a>Gradient</td>
+<td class="parameter_tab">
+        Background as a gradient.<br>
+        For further information see CSS Gradients.<br>
+</td>
+</tr>
+<tr data-id="GraphicCollection">
+<td class="parameter_tab">
+<a name="GraphicCollection"></a>GraphicCollection</td>
+<td class="parameter_tab">
+        Array of images, e.g. ['image1.png', 'image2.png', ...]
+      </td>
+</tr>
+<tr data-id="HPos">
+<td class="parameter_tab">
+<a name="HPos"></a>HPos</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="ImagePath">
+<td class="parameter_tab">
+<a name="ImagePath"></a>ImagePath</td>
+<td class="parameter_tab">
+        Relative URL to an image.<br>
+        e.g. Media/Arrow.png
+      </td>
+</tr>
+<tr data-id="ImageSize">
+<td class="parameter_tab">
+<a name="ImageSize"></a>ImageSize</td>
+<td class="parameter_tab">
+        Size of an image<br>
+        usage:<br>
+        - definition as an Integer e.g. 40<br>
+        - definition percentage value e.g. 40%
+      </td>
+</tr>
+<tr data-id="ImageType">
+<td class="parameter_tab">
+<a name="ImageType"></a>ImageType</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="Index">
+<td class="parameter_tab">
+<a name="Index"></a>Index</td>
+<td class="parameter_tab">
+        the Index type represents an Integer Value starting with -1
+      </td>
+</tr>
+<tr data-id="Integer">
+<td class="parameter_tab">
+<a name="Integer"></a>Integer</td>
+<td class="parameter_tab">
+        Integer Value e.g. 5
+      </td>
+</tr>
+<tr data-id="IntegerList">
+<td class="parameter_tab">
+<a name="IntegerList"></a>IntegerList</td>
+<td class="parameter_tab">
+        List of Integer values separated by , e.g. 1,2,3,4,5
+      </td>
+</tr>
+<tr data-id="IntervalType">
+<td class="parameter_tab">
+<a name="IntervalType"></a>IntervalType</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="ItemCollection">
+<td class="parameter_tab">
+<a name="ItemCollection"></a>ItemCollection</td>
+<td class="parameter_tab">
+        ItemCollection for List Widgets like DropDownBox or ListBox<br>
+
+        Example of language dependent entries:
+        [{ 'value': 1, 'text': '$brease.demo.dropdown.testoption1' },<br>
+        { 'value': 2, 'text': '$brease.demo.dropdown.testoption2' },<br>
+        { 'value': 3, 'text': '$brease.demo.dropdown.testoption3' }]<br><br>
+        Example of language independent entries:<br>
+        [{ 'value': 'a', 'text': 'Eintrag A' },<br>
+        { 'value': 'b', 'text': 'Eintrag B' },<br>
+        { 'value': 'c', 'text': 'Eintrag C' }]
+      </td>
+</tr>
+<tr data-id="LayoutReference">
+<td class="parameter_tab">
+<a name="LayoutReference"></a>LayoutReference</td>
+<td class="parameter_tab">
+        ID of a Layout Object
+      </td>
+</tr>
+<tr data-id="LineCap">
+<td class="parameter_tab">
+<a name="LineCap"></a>LineCap</td>
+<td class="parameter_tab">
+        Style of the end of a line<br>
+        Possible Values: butt, round, square
+      </td>
+</tr>
+<tr data-id="MappTableConfigurationType">
+<td class="parameter_tab">
+<a name="MappTableConfigurationType"></a>MappTableConfigurationType</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="Margin">
+<td class="parameter_tab">
+<a name="Margin"></a>Margin</td>
+<td class="parameter_tab">
+        Margin of an Element<br>
+        usage (Syntax like CSS):<br>
+        - One single value applies to all four sides e.g. 2px<br>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br>
+</td>
+</tr>
+<tr data-id="MpComIdentReference">
+<td class="parameter_tab">
+<a name="MpComIdentReference"></a>MpComIdentReference</td>
+<td class="parameter_tab">mapp link</td>
+</tr>
+<tr data-id="MpComIdentType">
+<td class="parameter_tab">
+<a name="MpComIdentType"></a>MpComIdentType</td>
+<td class="parameter_tab">mapp link</td>
+</tr>
+<tr data-id="NavigationReference">
+<td class="parameter_tab">
+<a name="NavigationReference"></a>NavigationReference</td>
+<td class="parameter_tab">
+        ID of a Navigation Object
+      </td>
+</tr>
+<tr data-id="Number">
+<td class="parameter_tab">
+<a name="Number"></a>Number</td>
+<td class="parameter_tab">
+        Any number, e.g. floating point value (e.g. 5.4) or integer (e.g. 5)
+      </td>
+</tr>
+<tr data-id="NumberArray1D">
+<td class="parameter_tab">
+<a name="NumberArray1D"></a>NumberArray1D</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#Number">Number</a>
+</td>
+</tr>
+<tr data-id="NumberArray1D_Variable">
+<td class="parameter_tab">
+<a name="NumberArray1D_Variable"></a>NumberArray1D_Variable</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#Number">Number</a>
+</td>
+</tr>
+<tr data-id="Object">
+<td class="parameter_tab">
+<a name="Object"></a>Object</td>
+<td class="parameter_tab">
+        Value in JSON Annotation e.g. {'key' : 'value'}
+      </td>
+</tr>
+<tr data-id="Opacity">
+<td class="parameter_tab">
+<a name="Opacity"></a>Opacity</td>
+<td class="parameter_tab">
+        Opacity of an Element<br>
+        0 = 0% invisible<br>
+        0.5 = 50% opacity<br>
+        1 = 100%<br>
+</td>
+</tr>
+<tr data-id="Padding">
+<td class="parameter_tab">
+<a name="Padding"></a>Padding</td>
+<td class="parameter_tab">
+        Padding of an Element<br>
+        usage (Syntax like CSS):<br>
+        - One single value applies to all four sides e.g. 2px<br>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br>
+</td>
+</tr>
+<tr data-id="PageReference">
+<td class="parameter_tab">
+<a name="PageReference"></a>PageReference</td>
+<td class="parameter_tab">
+        ID of a Page Object
+      </td>
+</tr>
+<tr data-id="PdfPath">
+<td class="parameter_tab">
+<a name="PdfPath"></a>PdfPath</td>
+<td class="parameter_tab">
+        Path to a Pdf File
+      </td>
+</tr>
+<tr data-id="Percentage">
+<td class="parameter_tab">
+<a name="Percentage"></a>Percentage</td>
+<td class="parameter_tab">
+        Floating point value in the range 0..100
+      </td>
+</tr>
+<tr data-id="PixelVal">
+<td class="parameter_tab">
+<a name="PixelVal"></a>PixelVal</td>
+<td class="parameter_tab">
+        Single Pixel Value<br>
+        usage (Syntax like CSS) e.g. 2px<br>
+        allows additional % values: e.g. 50%<br>
+        allows additional zero without unit: 0<br>
+</td>
+</tr>
+<tr data-id="PixelValCollection">
+<td class="parameter_tab">
+<a name="PixelValCollection"></a>PixelValCollection</td>
+<td class="parameter_tab">
+        Pixel Collection Value<br>
+        usage (Syntax like CSS):<br>
+        - One single value applies to all four sides e.g. 2px<br>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br>
+</td>
+</tr>
+<tr data-id="PropertyCollectionReference">
+<td class="parameter_tab">
+<a name="PropertyCollectionReference"></a>PropertyCollectionReference</td>
+<td class="parameter_tab">
+        Reference to a member of a StructuredProperty
+      </td>
+</tr>
+<tr data-id="RegEx">
+<td class="parameter_tab">
+<a name="RegEx"></a>RegEx</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="RoleCollection">
+<td class="parameter_tab">
+<a name="RoleCollection"></a>RoleCollection</td>
+<td class="parameter_tab">
+        Array of Roles, e.g. ['Role1', 'Role2', ...]
+      </td>
+</tr>
+<tr data-id="Rotation">
+<td class="parameter_tab">
+<a name="Rotation"></a>Rotation</td>
+<td class="parameter_tab">
+        Rotation of widget.<br>
+        Rotates the element clockwise around its origin (center of whole widget).<br>
+        Unit is degrees, declared by appending the string “deg” at the end of the value.<br>
+        e.g. rotation="30deg"
+      </td>
+</tr>
+<tr data-id="Shadow">
+<td class="parameter_tab">
+<a name="Shadow"></a>Shadow</td>
+<td class="parameter_tab">
+        Shadow of the Widget<br>
+        usage (Syntax like CSS):<br>
+        - h-shadow v-shadow [blur] [spread] color e.g. 10px 10px 5px #888888
+      </td>
+</tr>
+<tr data-id="Size">
+<td class="parameter_tab">
+<a name="Size"></a>Size</td>
+<td class="parameter_tab">
+        Size Value<br>
+        usage:<br>
+        - definition as an Integer e.g. 40<br>
+        - definition percentage value e.g. 40%
+      </td>
+</tr>
+<tr data-id="StepItemSource">
+<td class="parameter_tab">
+<a name="StepItemSource"></a>StepItemSource</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="StepItemStyleReferenceCollection">
+<td class="parameter_tab">
+<a name="StepItemStyleReferenceCollection"></a>StepItemStyleReferenceCollection</td>
+<td class="parameter_tab">
+        Array of objects which have a StepItemGroup and the referenced style to this group
+        e.g.: [{'group':'Basic','style':'StepItem_Blue'},{'group':'Control','style':'StepItem_Pink'}]
+      </td>
+</tr>
+<tr data-id="StrictPixelVal">
+<td class="parameter_tab">
+<a name="StrictPixelVal"></a>StrictPixelVal</td>
+<td class="parameter_tab">
+        Pixel Value<br>
+</td>
+</tr>
+<tr data-id="StrictSignedPixelVal">
+<td class="parameter_tab">
+<a name="StrictSignedPixelVal"></a>StrictSignedPixelVal</td>
+<td class="parameter_tab">
+        Signed Pixel Value<br>
+</td>
+</tr>
+<tr data-id="String">
+<td class="parameter_tab">
+<a name="String"></a>String</td>
+<td class="parameter_tab">
+        String Value
+      </td>
+</tr>
+<tr data-id="StringArray1D">
+<td class="parameter_tab">
+<a name="StringArray1D"></a>StringArray1D</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#String">String</a>
+</td>
+</tr>
+<tr data-id="StringArray1D_Variable">
+<td class="parameter_tab">
+<a name="StringArray1D_Variable"></a>StringArray1D_Variable</td>
+<td class="parameter_tab">
+        one-dimensional array with elements of type <a href="#String">String</a>
+</td>
+</tr>
+<tr data-id="StringList">
+<td class="parameter_tab">
+<a name="StringList"></a>StringList</td>
+<td class="parameter_tab">
+        List of String values separated by , e.g. 'Item1', 'Item2', ...
+      </td>
+</tr>
+<tr data-id="StructuredPropertyElement">
+<td class="parameter_tab">
+<a name="StructuredPropertyElement"></a>StructuredPropertyElement</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="StyleReference">
+<td class="parameter_tab">
+<a name="StyleReference"></a>StyleReference</td>
+<td class="parameter_tab">
+        ID of a Style Object (more info at <a href="../../ThemesAndStyles/Style_ConnectToWidget.html">Connect style to widget</a> and <a href="../../ThemesAndStyles/Style_ChangeProperties.html">adapt styles</a>)
+      </td>
+</tr>
+<tr data-id="TableConfigurationType">
+<td class="parameter_tab">
+<a name="TableConfigurationType"></a>TableConfigurationType</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="ThemeReference">
+<td class="parameter_tab">
+<a name="ThemeReference"></a>ThemeReference</td>
+<td class="parameter_tab">
+        ID of a Theme Object
+      </td>
+</tr>
+<tr data-id="Time">
+<td class="parameter_tab">
+<a name="Time"></a>Time</td>
+<td class="parameter_tab">
+        time in ms
+      </td>
+</tr>
+<tr data-id="UInteger">
+<td class="parameter_tab">
+<a name="UInteger"></a>UInteger</td>
+<td class="parameter_tab">
+        unsigned Integer Value e.g. 5
+      </td>
+</tr>
+<tr data-id="UNumber">
+<td class="parameter_tab">
+<a name="UNumber"></a>UNumber</td>
+<td class="parameter_tab">
+        unsigned decimal Value e.g. 5.2
+      </td>
+</tr>
+<tr data-id="VideoPath">
+<td class="parameter_tab">
+<a name="VideoPath"></a>VideoPath</td>
+<td class="parameter_tab">
+        Path to a Pdf File
+      </td>
+</tr>
+<tr data-id="VPos">
+<td class="parameter_tab">
+<a name="VPos"></a>VPos</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr data-id="WidgetId">
+<td class="parameter_tab">
+<a name="WidgetId"></a>WidgetId</td>
+<td class="parameter_tab">
+        Valid Widget ID. Has to start with a letter followed by letters, numbers or _ -
+      </td>
+</tr>
+<tr data-id="WidgetReference">
+<td class="parameter_tab">
+<a name="WidgetReference"></a>WidgetReference</td>
+<td class="parameter_tab">
+        ID of a Widget
+      </td>
+</tr>
+<tr data-id="WritingMode">
+<td class="parameter_tab">
+<a name="WritingMode"></a>WritingMode</td>
+<td class="parameter_tab">
+        Writing direction of a text<br>
+        Possible Values: horizonal, vertical
+      </td>
+</tr>
+<tr data-id="XSBoolean">
+<td class="parameter_tab">
+<a name="XSBoolean"></a>XSBoolean</td>
+<td class="parameter_tab">
+        datatype xs:boolean for expressions in e.g. parameter of methods of actions
+      </td>
+</tr>
+<tr data-id="ZoomType">
+<td class="parameter_tab">
+<a name="ZoomType"></a>ZoomType</td>
+<td class="parameter_tab">
+        Zoom mode for scaling an image.<br>
+        Possible values:<br>
+        - original: original size of the image<br>
+        - contain: Scale the image to the largest size such that both its width and its height can fit inside the content area<br>
+        - cover: Scale the background image to be as large as possible so that the background area is completely covered by the background image. Some parts of the background image may not be in view within the background positioning area<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

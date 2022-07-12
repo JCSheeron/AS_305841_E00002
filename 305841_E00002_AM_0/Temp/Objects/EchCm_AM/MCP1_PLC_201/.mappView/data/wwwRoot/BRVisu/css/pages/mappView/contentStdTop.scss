@@ -1,0 +1,145 @@
+﻿@import "mixins.scss";
+#contentStdTop_DateTimeOutput1 {
+	@include elemAutoHeight(30);
+}
+#contentStdTop_DateTimeOutput1 {
+	@include elemTop(35);
+}
+#contentStdTop_DateTimeOutput1 {
+	@include elemLeft(920);
+}
+#contentStdTop_DateTimeOutput1 {
+	@include elemAutoWidth(350);
+}
+#contentStdTop_DateTimeOutput1 {
+		z-index: 0;
+}
+#contentStdTop_btnEmoMode {
+	@include elemTop(15);
+}
+#contentStdTop_btnEmoMode {
+	@include elemLeft(20);
+}
+#contentStdTop_btnEmoMode {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnEmoMode {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnEmoMode {
+		z-index: 1;
+}
+#contentStdTop_btnEmoMode {
+	@include border-radius(8px);
+}
+#contentStdTop_btnEmoMode {
+	&.disabled{
+		background-color: rgba(255, 128, 128, 1);
+	}
+}
+#contentStdTop_btnEmoMode {
+	&.disabled.active{
+		background-color: rgba(255, 128, 128, 1);
+	}
+}
+#contentStdTop_btnEmoMode {
+	&.disabled.checked{
+		background-color: rgba(255, 128, 128, 1);
+	}
+}
+#contentStdTop_btnSafeMode {
+	@include elemTop(15);
+}
+#contentStdTop_btnSafeMode {
+	@include elemLeft(164);
+}
+#contentStdTop_btnSafeMode {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnSafeMode {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnSafeMode {
+		z-index: 2;
+}
+#contentStdTop_btnSafeMode {
+	@include border-radius(8px);
+}
+#contentStdTop_btnSafetySystem {
+	@include elemTop(15);
+}
+#contentStdTop_btnSafetySystem {
+	@include elemLeft(785);
+}
+#contentStdTop_btnSafetySystem {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnSafetySystem {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnSafetySystem {
+		z-index: 3;
+}
+#contentStdTop_btnSafetySystem {
+	@include text-alignment(center);
+}
+#contentStdTop_GroupBox1 {
+	@include elemTop(5);
+}
+#contentStdTop_GroupBox1 {
+	@include elemLeft(290);
+}
+#contentStdTop_GroupBox1 {
+	@include elemWidth(460);
+}
+#contentStdTop_GroupBox1 {
+	@include elemHeight(90);
+}
+#contentStdTop_GroupBox1 {
+		z-index: 4;
+}
+#contentStdTop_btnManualMode {
+	@include elemTop(9);
+}
+#contentStdTop_btnManualMode {
+	@include elemLeft(19);
+}
+#contentStdTop_btnManualMode {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnManualMode {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnManualMode {
+		z-index: 0;
+}
+#contentStdTop_btnPendantMode {
+	@include elemTop(9);
+}
+#contentStdTop_btnPendantMode {
+	@include elemLeft(169);
+}
+#contentStdTop_btnPendantMode {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnPendantMode {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnPendantMode {
+		z-index: 1;
+}
+#contentStdTop_btnProductionMode {
+	@include elemTop(9);
+}
+#contentStdTop_btnProductionMode {
+	@include elemLeft(319);
+}
+#contentStdTop_btnProductionMode {
+	@include elemAutoWidth(115);
+}
+#contentStdTop_btnProductionMode {
+	@include elemAutoHeight(70);
+}
+#contentStdTop_btnProductionMode {
+		z-index: 2;
+}

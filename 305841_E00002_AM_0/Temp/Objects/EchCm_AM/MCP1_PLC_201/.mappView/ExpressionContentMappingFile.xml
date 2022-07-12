@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Mapping contentRefId="contentStdTop" expressionRefId="isModeEmoModeSel" />
+  <Mapping contentRefId="dlgSafetySystemTop_content" expressionRefId="isModeEmoSafety" />
+  <Mapping contentRefId="contentStdTop" expressionRefId="isModeSafe" />
+  <Mapping contentRefId="contentStdTop" expressionRefId="isModeManual" />
+  <Mapping contentRefId="contentStdTop" expressionRefId="isModePendant" />
+  <Mapping contentRefId="contentStdTop" expressionRefId="isModeProduction" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxSpindle" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxOutEcc" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxInEcc" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxZ" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxHandwheel" />
+  <Mapping contentRefId="leftContentAxisDetail" expressionRefId="isAxCfVfd" />
+  <Mapping contentRefId="dlgSafetySystemTop_content" expressionRefId="isEmoResetAllowed" />
+  <Mapping contentRefId="mainContentWorkSetup" expressionRefId="passSelect_exp" />
+  <Mapping contentRefId="mainContentProduction" expressionRefId="isCycleIdle" />
+</Mappings>

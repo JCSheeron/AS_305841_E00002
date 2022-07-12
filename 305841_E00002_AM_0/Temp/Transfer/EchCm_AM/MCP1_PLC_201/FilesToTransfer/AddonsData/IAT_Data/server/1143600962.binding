@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.nomRpm" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleRpm" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.nomRpm" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleRpm" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.passCount" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPasses" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.passCount" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPasses" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.totalDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInTotalDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.totalDepth" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInTotalDepth" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPass" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_chkBoxFinishingPass" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPass" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_chkBoxFinishingPass" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPassDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInFinishingPass" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.finishingPassDepth" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInFinishingPass" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numOutNomPassDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDepth" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numOutNomPassDepth" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.depthAdjAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInDepthAdjArc" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.depthAdjAngle" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInDepthAdjArc" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.cutOverrunAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCutOverrunArc" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.cutOverrunAngle" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCutOverrunArc" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.feedRate" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInFeedRate" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cuttingHead.feedRate" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInFeedRate" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomCutLength" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPartLen" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomCutLength" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPartLen" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomId" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPartInnerDia" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_PartCurrent.partDfn.nomId" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInPartInnerDia" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.camReqCalcTable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_pbLoadCamTable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.camReqCalcTable" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_pbLoadCamTable" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.calCalcTableEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_pbLoadCamTable" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.decel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleDecel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.decel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleDecel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.accel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleAccel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.spindle.accel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInSpindleAccel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.decel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZDecel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.decel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZDecel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.accel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZAccel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.accel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZAccel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexSpeed" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZSpeed" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexSpeed" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZSpeed" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexDist" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZIndexDist" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.indexDist" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInZIndexDist" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.runSpeedManualCtrl" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidRpm" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.runSpeedManualCtrl" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidRpm" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.pressureSpAutoCtrl" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidPressure" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.pressureSpAutoCtrl" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidPressure" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.isInPressureControl" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.isInPressureControl" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.accel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidAccel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.accel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidAccel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.decel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidDecel" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.cfVfd.decel" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentWorkSetup_numInCuttingFluidDecel" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

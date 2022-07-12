@@ -1,0 +1,28 @@
+VAR CONSTANT
+  (* Command and request masks *)
+  (* Use constants instead of enum so logical bit operations are not a problem with bit conversion *)
+  MACM_NOMASK                : DINT := 16#0;
+  MACM_ENABLE_MASK           : DINT := 16#1;
+  MACM_DISABLE_MASK          : DINT := 16#2;
+  MACM_RELEASE_BRAKE_MASK    : DINT := 16#4;
+  MACM_HOME_MASK             : DINT := 16#8;
+  MACM_JOG_MASK              : DINT := 16#10;
+  MACM_JOG_POSITIVE_MASK     : DINT := 16#20;
+  MACM_JOG_NEGATIVE_MASK     : DINT := 16#40;
+  MACM_VELOCITY_MOVE_MASK    : DINT := 16#80;
+  MACM_RELATIVE_MOVE_MASK    : DINT := 16#100;
+  MACM_ABSOLUTE_MOVE_MASK    : DINT := 16#200;
+  MACM_ENGAGE_SLAVE_MASK     : DINT := 16#400;
+  MACM_DISENGAGE_SLAVE_MASK  : DINT := 16#800;
+  MACM_STOP_MASK             : DINT := 16#1000;
+  MACM_STOP_RESET_MASK       : DINT := 16#2000; 
+  MACM_HALT_MASK             : DINT := 16#4000;
+  MACM_DRIVE_RESET_MASK      : DINT := 16#8000;
+  MACM_ERROR_RESET_MASK      : DINT := 16#10000;
+  (* redefine constants here to be the same as in the non-library PLC global 
+  so they can be used in the library *)
+  INVALID_SENTINEL : DINT:= -9999;
+  INVALID_SENTINEL_REAL : REAL:= -9999.0;
+  INVALID_SENTINEL_LREAL : LREAL:= -9999.0;
+
+END_VAR

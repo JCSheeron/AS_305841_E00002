@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.LineRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="left" use="prohibited" type="types:Integer" />
+			<xs:attribute name="top" use="prohibited" type="types:Integer" />
+			<xs:attribute name="height" use="prohibited" type="types:Size" />
+			<xs:attribute name="width" use="prohibited" type="types:Size" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.Line">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.LineRestrict">
+			<xs:attribute name="x1" use="required" type="types:Integer" />
+			<xs:attribute name="x2" use="required" type="types:Integer" />
+			<xs:attribute name="y1" use="required" type="types:Integer" />
+			<xs:attribute name="y2" use="required" type="types:Integer" />
+			<xs:attribute name="lineColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="lineWidth" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="lineCap" use="optional" type="types:LineCap" default="butt" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

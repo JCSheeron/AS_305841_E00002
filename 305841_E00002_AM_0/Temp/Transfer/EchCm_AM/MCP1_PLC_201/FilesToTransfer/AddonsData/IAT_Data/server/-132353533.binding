@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoOwsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEmoOwsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEmoOwsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEmoOwsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoOwsActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEmoOwsActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEmoOwsActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEmoOwsActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.emoWiringOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEmoPendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEmoPendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEmoPendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.emoAcivated" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEmoPendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEmoPendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEmoPendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.enableSwWiringOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEnablePendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEnablePendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEnablePendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:owsPendant.enableSwActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsEnablePendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsEnablePendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsEnablePendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_KeyswitchOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsKeyswitchOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsKeyswitchOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsKeyswitchOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_KeyswitchInRun" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsKeyswitchInRun" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsKeyswitchInRun" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsKeyswitchInRun" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StopPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsStopPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsStopPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsStopPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StopPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsStopPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsStopPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsStopPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StartPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsStartPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsStartPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsStartPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_StartPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsStartPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsStartPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsStartPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosedOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsCfGateOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsCfGateOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsCfGateOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsCfGateClosed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsCfGateClosed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsCfGateClosed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_CfGateClosedLocked" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svIsCfGateLockedStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsCfGateLockedStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsCfGateLockedStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateLockedStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutCfGateLocked" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsCfGateLockedStatus" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutCfGateLocked" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_AllSMsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svAllSafeModulesOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAllSafeModulesOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snAllSafeModulesOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snAllSafeModulesOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutSafeModulesOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAllSafeModulesOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutSafeModulesOk" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[1].Status.SafeMotionDiagCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_numOutSpindleCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[2].Status.SafeMotionDiagCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_numOutOuterEccCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[3].Status.SafeMotionDiagCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_numOutInnerEccCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[4].Status.SafeMotionDiagCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_numOutZCode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeEmoSafety" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_EMO_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeEmoSafety" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="expression" refId="isModeEmoSafety" attribute="result" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snEmoMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snEmoMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModeEmoSafety" attribute="result" /><List refId="TextStyleLoGoodHiBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:fs_EmoCmd" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svEmoActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svEmoActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snEmoActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snEmoActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svEmoActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:ts_ResetEStop" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svResetEmoStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svResetEmoStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snResetEmoStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snResetEmoStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoResetStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svResetEmoStatus" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutEmoResetStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:ts_ResetSafeMC" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svResetDrivesStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svResetDrivesStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snResetDrivesStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snResetDrivesStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutDrivesResetStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svResetDrivesStatus" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_txtOutDrivesResetStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::OmSafeDev:eStopResetAllowSecRemain" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svEmoResetSecRemain" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svEmoResetSecRemain" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_numOutResetSecRemain" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svEmoResetSecRemain" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isEmoResetAllowed" attribute="Time" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svTRUE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isEmoResetAllowed" attribute="InA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="expression" refId="isEmoResetAllowed" attribute="result" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_pbResetEmo" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoOwsOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoOwsΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEmoOwsOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoOwsΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoOwsActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoOwsΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEmoOwsActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoOwsΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoPendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoPendantΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEmoPendantOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoPendantΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEmoPendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoPendantΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEmoPendantActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatEmoPendantΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEnablePendantOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatPendantEnableΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEnablePendantOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatPendantEnableΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsEnablePendantActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatPendantEnableΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsEnablePendantActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatPendantEnableΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsKeyswitchOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatKeyswitchRunΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsKeyswitchOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatKeyswitchRunΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsKeyswitchInRun" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatKeyswitchRunΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsKeyswitchInRun" attribute="value" /><List refId="TextStyleHiGoodLoGood1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatKeyswitchRunΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStopPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStopPbΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsStopPbOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStopPbΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStopPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStopPbΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsStopPbActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStopPbΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStartPbOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStartPbΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsStartPbOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStartPbΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStartPbActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStartPbΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsStartPbActive" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatStartPbΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateOk" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatCfGateΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsCfGateOk" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatCfGateΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCfGateClosed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatCfGateΘtxtOutActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsCfGateClosed" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="dlgSafetySystemTop_content_safeDevStatCfGateΘtxtOutActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

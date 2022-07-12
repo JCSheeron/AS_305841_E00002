@@ -1,0 +1,1089 @@
+﻿@import "mixins.scss";
+#mainContentWorkSetup_grpBoxCuttingHead {
+	@include elemTop(20);
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+	@include elemLeft(450);
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+	@include elemWidth(490);
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+	@include elemHeight(360);
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+		z-index: 0;
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSetup_grpBoxCuttingHead {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	@include elemTop(189);
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	@include elemLeft(29);
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+		z-index: 0;
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSetup_lblDepthAdjArc {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSetup_lblTotalDepth {
+	@include elemTop(24);
+}
+#mainContentWorkSetup_lblTotalDepth {
+	@include elemLeft(154);
+}
+#mainContentWorkSetup_lblTotalDepth {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_lblTotalDepth {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSetup_lblTotalDepth {
+		z-index: 1;
+}
+#mainContentWorkSetup_lblTotalDepth {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSetup_lblTotalDepth {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSetup_numInTotalDepth {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInTotalDepth {
+	@include elemTop(14);
+}
+#mainContentWorkSetup_numInTotalDepth {
+	@include elemLeft(264);
+}
+#mainContentWorkSetup_numInTotalDepth {
+	@include elemAutoWidth(121);
+}
+#mainContentWorkSetup_numInTotalDepth {
+		z-index: 2;
+}
+#mainContentWorkSetup_chkBoxFinishingPass {
+	@include elemTop(94);
+}
+#mainContentWorkSetup_chkBoxFinishingPass {
+	@include elemLeft(104);
+}
+#mainContentWorkSetup_chkBoxFinishingPass {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSetup_chkBoxFinishingPass {
+	@include elemAutoHeight(33);
+}
+#mainContentWorkSetup_chkBoxFinishingPass {
+		z-index: 3;
+}
+#mainContentWorkSetup_numInFinishingPass {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInFinishingPass {
+	@include elemTop(94);
+}
+#mainContentWorkSetup_numInFinishingPass {
+	@include elemLeft(264);
+}
+#mainContentWorkSetup_numInFinishingPass {
+	@include elemAutoWidth(120);
+}
+#mainContentWorkSetup_numInFinishingPass {
+		z-index: 4;
+}
+#mainContentWorkSetup_numInDepthAdjArc {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInDepthAdjArc {
+	@include elemTop(179);
+}
+#mainContentWorkSetup_numInDepthAdjArc {
+	@include elemLeft(179);
+}
+#mainContentWorkSetup_numInDepthAdjArc {
+	@include elemAutoWidth(131);
+}
+#mainContentWorkSetup_numInDepthAdjArc {
+		z-index: 5;
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	@include elemTop(229);
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	@include elemLeft(10);
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	@include elemAutoWidth(190);
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+		z-index: 6;
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSetup_lblCutOverrunArc {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSetup_numInCutOverrunArc {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInCutOverrunArc {
+	@include elemTop(219);
+}
+#mainContentWorkSetup_numInCutOverrunArc {
+	@include elemLeft(179);
+}
+#mainContentWorkSetup_numInCutOverrunArc {
+	@include elemAutoWidth(131);
+}
+#mainContentWorkSetup_numInCutOverrunArc {
+		z-index: 7;
+}
+#mainContentWorkSetup_lblFeedRate {
+	@include elemTop(279);
+}
+#mainContentWorkSetup_lblFeedRate {
+	@include elemLeft(29);
+}
+#mainContentWorkSetup_lblFeedRate {
+	@include elemAutoWidth(171);
+}
+#mainContentWorkSetup_lblFeedRate {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSetup_lblFeedRate {
+		z-index: 8;
+}
+#mainContentWorkSetup_lblFeedRate {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSetup_lblFeedRate {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSetup_numInFeedRate {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInFeedRate {
+	@include elemTop(271);
+}
+#mainContentWorkSetup_numInFeedRate {
+	@include elemLeft(179);
+}
+#mainContentWorkSetup_numInFeedRate {
+	@include elemAutoWidth(136);
+}
+#mainContentWorkSetup_numInFeedRate {
+		z-index: 9;
+}
+#mainContentWorkSetup_rdoBrnGrpPasses {
+	@include elemTop(4);
+}
+#mainContentWorkSetup_rdoBrnGrpPasses {
+	@include elemLeft(14);
+}
+#mainContentWorkSetup_rdoBrnGrpPasses {
+	@include elemWidth(131);
+}
+#mainContentWorkSetup_rdoBrnGrpPasses {
+	@include elemHeight(130);
+}
+#mainContentWorkSetup_rdoBrnGrpPasses {
+		z-index: 10;
+}
+#mainContentWorkSetup_rdoBtn1Pass {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_rdoBtn1Pass {
+	@include elemTop(10);
+}
+#mainContentWorkSetup_rdoBtn1Pass {
+	@include elemLeft(10);
+}
+#mainContentWorkSetup_rdoBtn1Pass {
+	@include elemAutoWidth(105);
+}
+#mainContentWorkSetup_rdoBtn1Pass {
+		z-index: 0;
+}
+#mainContentWorkSetup_rdoBtn2Pass {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_rdoBtn2Pass {
+	@include elemTop(50);
+}
+#mainContentWorkSetup_rdoBtn2Pass {
+	@include elemLeft(10);
+}
+#mainContentWorkSetup_rdoBtn2Pass {
+	@include elemAutoWidth(105);
+}
+#mainContentWorkSetup_rdoBtn2Pass {
+		z-index: 1;
+}
+#mainContentWorkSetup_rdoBtn3Pass {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_rdoBtn3Pass {
+	@include elemTop(90);
+}
+#mainContentWorkSetup_rdoBtn3Pass {
+	@include elemLeft(10);
+}
+#mainContentWorkSetup_rdoBtn3Pass {
+	@include elemAutoWidth(105);
+}
+#mainContentWorkSetup_rdoBtn3Pass {
+		z-index: 2;
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+	@include elemTop(134);
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+	@include elemLeft(264);
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+	@include elemAutoWidth(119);
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+		z-index: 11;
+}
+#mainContentWorkSetup_numOutNomPassDepth {
+	input{
+	@include font-weight-bold(false);
+	}
+}
+#mainContentWorkSetup_lblNomPassDepth {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblNomPassDepth {
+	@include elemTop(134);
+}
+#mainContentWorkSetup_lblNomPassDepth {
+	@include elemLeft(113);
+}
+#mainContentWorkSetup_lblNomPassDepth {
+	@include elemAutoWidth(146);
+}
+#mainContentWorkSetup_lblNomPassDepth {
+		z-index: 12;
+}
+#mainContentWorkSetup_lblPasses {
+	@include elemTop(64);
+}
+#mainContentWorkSetup_lblPasses {
+	@include elemLeft(179);
+}
+#mainContentWorkSetup_lblPasses {
+	@include elemAutoWidth(75);
+}
+#mainContentWorkSetup_lblPasses {
+	@include elemAutoHeight(13);
+}
+#mainContentWorkSetup_lblPasses {
+		z-index: 13;
+}
+#mainContentWorkSetup_lblPasses {
+	& span{
+		color: rgba(0, 0, 0, 1);
+	}
+}
+#mainContentWorkSetup_lblPasses {
+	@include font-weight-bold(false);
+}
+#mainContentWorkSetup_numInPasses {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInPasses {
+	@include elemTop(54);
+}
+#mainContentWorkSetup_numInPasses {
+	@include elemLeft(264);
+}
+#mainContentWorkSetup_numInPasses {
+	@include elemAutoWidth(121);
+}
+#mainContentWorkSetup_numInPasses {
+		z-index: 14;
+}
+#mainContentWorkSetup_pbLoadCamTable {
+	@include elemTop(184);
+}
+#mainContentWorkSetup_pbLoadCamTable {
+	@include elemLeft(344);
+}
+#mainContentWorkSetup_pbLoadCamTable {
+	@include elemAutoWidth(121);
+}
+#mainContentWorkSetup_pbLoadCamTable {
+	@include elemAutoHeight(51);
+}
+#mainContentWorkSetup_pbLoadCamTable {
+		z-index: 15;
+}
+#mainContentWorkSetup_grpBoxCfg {
+	@include elemTop(390);
+}
+#mainContentWorkSetup_grpBoxCfg {
+	@include elemLeft(450);
+}
+#mainContentWorkSetup_grpBoxCfg {
+	@include elemWidth(490);
+}
+#mainContentWorkSetup_grpBoxCfg {
+	@include elemHeight(190);
+}
+#mainContentWorkSetup_grpBoxCfg {
+		z-index: 1;
+}
+#mainContentWorkSetup_grpBoxCfg {
+	> .header span{
+		font-size: 20px;
+	}
+}
+#mainContentWorkSetup_grpBoxCfg {
+	> .header{
+	height: 20px + 20px;
+	}
+}
+#mainContentWorkSetup_TblWp1 {
+	@include elemTop(17);
+}
+#mainContentWorkSetup_TblWp1 {
+	@include elemLeft(9);
+}
+#mainContentWorkSetup_TblWp1 {
+	@include elemWidth(220);
+}
+#mainContentWorkSetup_TblWp1 {
+	@include elemHeight(123);
+}
+#mainContentWorkSetup_TblWp1 {
+		z-index: 0;
+}
+#mainContentWorkSetup_TableItem6 {
+		z-index: 0;
+}
+#mainContentWorkSetup_Button1 {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_Button1 {
+	@include elemTop(107);
+}
+#mainContentWorkSetup_Button1 {
+	@include elemLeft(309);
+}
+#mainContentWorkSetup_Button1 {
+	@include elemAutoHeight(33);
+}
+#mainContentWorkSetup_Button1 {
+		z-index: 1;
+}
+#mainContentWorkSetup_TextInput1 {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_TextInput1 {
+	@include elemTop(17);
+}
+#mainContentWorkSetup_TextInput1 {
+	@include elemLeft(239);
+}
+#mainContentWorkSetup_TextInput1 {
+	@include elemAutoWidth(220);
+}
+#mainContentWorkSetup_TextInput1 {
+		z-index: 2;
+}
+#mainContentWorkSetup_TextInput1 {
+	input{
+	@include text-alignment(left);
+	}
+}
+#mainContentWorkSetup_Button2 {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_Button2 {
+	@include elemTop(57);
+}
+#mainContentWorkSetup_Button2 {
+	@include elemLeft(309);
+}
+#mainContentWorkSetup_Button2 {
+	@include elemAutoHeight(43);
+}
+#mainContentWorkSetup_Button2 {
+		z-index: 3;
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	@include elemTop(320);
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	@include elemLeft(20);
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	@include elemWidth(415);
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	@include elemHeight(265);
+}
+#mainContentWorkSetup_tabCtrlAxes {
+		z-index: 2;
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	> .tabItemContainer{
+		border-style: outset;
+	}
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	> .tabItemContainer{
+		border-width: 1px;
+	}
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	> .tabItemContainer{
+	@include border-radius(8px);
+	}
+}
+#mainContentWorkSetup_tabCtrlAxes {
+	> .tabItemContainer{
+		border-color: rgba(168, 153, 160, 1) rgba(95, 95, 95, 1) rgba(95, 95, 95, 1) rgba(168, 153, 160, 1);
+	}
+}
+#mainContentWorkSetup_tabZ_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(100);
+	}
+}
+#mainContentWorkSetup_tabZ_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#mainContentWorkSetup_tabZ {
+		z-index: 0;
+}
+#mainContentWorkSetup_numInZIndexDist {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInZIndexDist {
+	@include elemTop(39);
+}
+#mainContentWorkSetup_numInZIndexDist {
+	@include elemLeft(24);
+}
+#mainContentWorkSetup_numInZIndexDist {
+	@include elemAutoWidth(130);
+}
+#mainContentWorkSetup_numInZIndexDist {
+		z-index: 0;
+}
+#mainContentWorkSetup_lblZIndexDistst {
+	@include elemTop(18);
+}
+#mainContentWorkSetup_lblZIndexDistst {
+	@include elemLeft(23);
+}
+#mainContentWorkSetup_lblZIndexDistst {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_lblZIndexDistst {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSetup_lblZIndexDistst {
+		z-index: 1;
+}
+#mainContentWorkSetup_numInZSpeed {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInZSpeed {
+	@include elemTop(39);
+}
+#mainContentWorkSetup_numInZSpeed {
+	@include elemLeft(204);
+}
+#mainContentWorkSetup_numInZSpeed {
+	@include elemAutoWidth(130);
+}
+#mainContentWorkSetup_numInZSpeed {
+		z-index: 2;
+}
+#mainContentWorkSetup_lblZSpeed {
+	@include elemTop(19);
+}
+#mainContentWorkSetup_lblZSpeed {
+	@include elemLeft(204);
+}
+#mainContentWorkSetup_lblZSpeed {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_lblZSpeed {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSetup_lblZSpeed {
+		z-index: 3;
+}
+#mainContentWorkSetup_numInZAccel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInZAccel {
+	@include elemTop(104);
+}
+#mainContentWorkSetup_numInZAccel {
+	@include elemLeft(24);
+}
+#mainContentWorkSetup_numInZAccel {
+	@include elemAutoWidth(130);
+}
+#mainContentWorkSetup_numInZAccel {
+		z-index: 4;
+}
+#mainContentWorkSetup_lblZAccel {
+	@include elemTop(83);
+}
+#mainContentWorkSetup_lblZAccel {
+	@include elemLeft(23);
+}
+#mainContentWorkSetup_lblZAccel {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_lblZAccel {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSetup_lblZAccel {
+		z-index: 5;
+}
+#mainContentWorkSetup_numInZDecel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInZDecel {
+	@include elemTop(104);
+}
+#mainContentWorkSetup_numInZDecel {
+	@include elemLeft(204);
+}
+#mainContentWorkSetup_numInZDecel {
+	@include elemAutoWidth(130);
+}
+#mainContentWorkSetup_numInZDecel {
+		z-index: 6;
+}
+#mainContentWorkSetup_lblZDecel {
+	@include elemTop(83);
+}
+#mainContentWorkSetup_lblZDecel {
+	@include elemLeft(203);
+}
+#mainContentWorkSetup_lblZDecel {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_lblZDecel {
+	@include elemAutoHeight(20);
+}
+#mainContentWorkSetup_lblZDecel {
+		z-index: 7;
+}
+#mainContentWorkSetup_tabSpindle_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(100);
+	}
+}
+#mainContentWorkSetup_tabSpindle_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#mainContentWorkSetup_tabSpindle {
+		z-index: 1;
+}
+#mainContentWorkSetup_numInSpindleRpm {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInSpindleRpm {
+	@include elemTop(35);
+}
+#mainContentWorkSetup_numInSpindleRpm {
+	@include elemLeft(140);
+}
+#mainContentWorkSetup_numInSpindleRpm {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_numInSpindleRpm {
+		z-index: 0;
+}
+#mainContentWorkSetup_lblSpindleRpm {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblSpindleRpm {
+	@include elemTop(35);
+}
+#mainContentWorkSetup_lblSpindleRpm {
+	@include elemLeft(20);
+}
+#mainContentWorkSetup_lblSpindleRpm {
+	@include elemAutoWidth(66);
+}
+#mainContentWorkSetup_lblSpindleRpm {
+		z-index: 1;
+}
+#mainContentWorkSetup_numInSpindleAccel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInSpindleAccel {
+	@include elemTop(80);
+}
+#mainContentWorkSetup_numInSpindleAccel {
+	@include elemLeft(142);
+}
+#mainContentWorkSetup_numInSpindleAccel {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_numInSpindleAccel {
+		z-index: 2;
+}
+#mainContentWorkSetup_lblSpindleAccel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblSpindleAccel {
+	@include elemTop(80);
+}
+#mainContentWorkSetup_lblSpindleAccel {
+	@include elemLeft(17);
+}
+#mainContentWorkSetup_lblSpindleAccel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_lblSpindleAccel {
+		z-index: 3;
+}
+#mainContentWorkSetup_numInSpindleDecel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInSpindleDecel {
+	@include elemTop(125);
+}
+#mainContentWorkSetup_numInSpindleDecel {
+	@include elemLeft(140);
+}
+#mainContentWorkSetup_numInSpindleDecel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_numInSpindleDecel {
+		z-index: 4;
+}
+#mainContentWorkSetup_lblSpindleDecel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblSpindleDecel {
+	@include elemTop(125);
+}
+#mainContentWorkSetup_lblSpindleDecel {
+	@include elemLeft(15);
+}
+#mainContentWorkSetup_lblSpindleDecel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_lblSpindleDecel {
+		z-index: 5;
+}
+#mainContentWorkSetup_tabCuttingFluid_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#mainContentWorkSetup_tabCuttingFluid_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(120);
+	}
+}
+#mainContentWorkSetup_tabCuttingFluid {
+		z-index: 2;
+}
+#mainContentWorkSetup_numInCuttingFluidRpm {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInCuttingFluidRpm {
+	@include elemTop(44);
+}
+#mainContentWorkSetup_numInCuttingFluidRpm {
+	@include elemLeft(9);
+}
+#mainContentWorkSetup_numInCuttingFluidRpm {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_numInCuttingFluidRpm {
+		z-index: 0;
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+	@include elemTop(14);
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+	@include elemLeft(10);
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+		z-index: 1;
+}
+#mainContentWorkSetup_lblCuttingFluidRpm {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSetup_numInCuttingFluidAccel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInCuttingFluidAccel {
+	@include elemTop(144);
+}
+#mainContentWorkSetup_numInCuttingFluidAccel {
+	@include elemLeft(159);
+}
+#mainContentWorkSetup_numInCuttingFluidAccel {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_numInCuttingFluidAccel {
+		z-index: 2;
+}
+#mainContentWorkSetup_lbCuttingFluidAccel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lbCuttingFluidAccel {
+	@include elemTop(144);
+}
+#mainContentWorkSetup_lbCuttingFluidAccel {
+	@include elemLeft(34);
+}
+#mainContentWorkSetup_lbCuttingFluidAccel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_lbCuttingFluidAccel {
+		z-index: 3;
+}
+#mainContentWorkSetup_numInCuttingFluidDecel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInCuttingFluidDecel {
+	@include elemTop(189);
+}
+#mainContentWorkSetup_numInCuttingFluidDecel {
+	@include elemLeft(157);
+}
+#mainContentWorkSetup_numInCuttingFluidDecel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_numInCuttingFluidDecel {
+		z-index: 4;
+}
+#mainContentWorkSetup_lbCuttingFluidDecel {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lbCuttingFluidDecel {
+	@include elemTop(189);
+}
+#mainContentWorkSetup_lbCuttingFluidDecel {
+	@include elemLeft(32);
+}
+#mainContentWorkSetup_lbCuttingFluidDecel {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_lbCuttingFluidDecel {
+		z-index: 5;
+}
+#mainContentWorkSetup_numInCuttingFluidPressure {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInCuttingFluidPressure {
+	@include elemTop(44);
+}
+#mainContentWorkSetup_numInCuttingFluidPressure {
+	@include elemLeft(194);
+}
+#mainContentWorkSetup_numInCuttingFluidPressure {
+	@include elemAutoWidth(145);
+}
+#mainContentWorkSetup_numInCuttingFluidPressure {
+		z-index: 6;
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+	@include elemTop(14);
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+	@include elemLeft(200);
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+	@include elemAutoWidth(135);
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+		z-index: 7;
+}
+#mainContentWorkSetup_lblCuttingFluidPressure {
+	@include text-alignment-all('center');
+}
+#mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl {
+	@include elemAutoWidth(150);
+}
+#mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl {
+	@include elemTop(89);
+}
+#mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl {
+	@include elemLeft(194);
+}
+#mainContentWorkSetup_chkBoxCuttingFluidPressureCtrl {
+		z-index: 8;
+}
+#mainContentWorkSetup_tabCtrlPart {
+	@include elemTop(20);
+}
+#mainContentWorkSetup_tabCtrlPart {
+	@include elemLeft(25);
+}
+#mainContentWorkSetup_tabCtrlPart {
+	@include elemWidth(410);
+}
+#mainContentWorkSetup_tabCtrlPart {
+	@include elemHeight(285);
+}
+#mainContentWorkSetup_tabCtrlPart {
+		z-index: 3;
+}
+#mainContentWorkSetup_tabCtrlPart {
+	> .tabItemContainer{
+		background-color: rgba(255, 255, 255, 0);
+	}
+}
+#mainContentWorkSetup_tabCtrlPart {
+	> .tabItemContainer{
+		border-style: outset;
+	}
+}
+#mainContentWorkSetup_tabCtrlPart {
+	> .tabItemContainer{
+		border-width: 1px;
+	}
+}
+#mainContentWorkSetup_tabCtrlPart {
+	> .tabItemContainer{
+	@include border-radius(8px);
+	}
+}
+#mainContentWorkSetup_tabCtrlPart {
+	> .tabItemContainer{
+		border-color: rgba(168, 153, 160, 1) rgba(95, 95, 95, 1) rgba(95, 95, 95, 1) rgba(168, 153, 160, 1);
+	}
+}
+#mainContentWorkSetup_tabPartSelect_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#mainContentWorkSetup_tabPartSelect_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(110);
+	}
+}
+#mainContentWorkSetup_tabPartSelect {
+		z-index: 0;
+}
+#mainContentWorkSetup_tblWp {
+	@include elemTop(13);
+}
+#mainContentWorkSetup_tblWp {
+	@include elemLeft(8);
+}
+#mainContentWorkSetup_tblWp {
+	@include elemWidth(380);
+}
+#mainContentWorkSetup_tblWp {
+	@include elemHeight(130);
+}
+#mainContentWorkSetup_tblWp {
+		z-index: 0;
+}
+#mainContentWorkSetup_TableItem1 {
+		z-index: 0;
+}
+#mainContentWorkSetup_TableItem2 {
+		z-index: 1;
+}
+#mainContentWorkSetup_TableItem3 {
+		z-index: 2;
+}
+#mainContentWorkSetup_Button3 {
+	@include elemTop(168);
+}
+#mainContentWorkSetup_Button3 {
+	@include elemLeft(303);
+}
+#mainContentWorkSetup_Button3 {
+	@include elemAutoWidth(91);
+}
+#mainContentWorkSetup_Button3 {
+	@include elemAutoHeight(31);
+}
+#mainContentWorkSetup_Button3 {
+		z-index: 1;
+}
+#mainContentWorkSetup_Button4 {
+	@include elemAutoWidth(100);
+}
+#mainContentWorkSetup_Button4 {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_Button4 {
+	@include elemTop(208);
+}
+#mainContentWorkSetup_Button4 {
+	@include elemLeft(33);
+}
+#mainContentWorkSetup_Button4 {
+		z-index: 2;
+}
+#mainContentWorkSetup_tabPartDetail_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(100);
+	}
+}
+#mainContentWorkSetup_tabPartDetail_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#mainContentWorkSetup_tabPartDetail {
+		z-index: 1;
+}
+#mainContentWorkSetup_numInPartLen {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInPartLen {
+	@include elemTop(33);
+}
+#mainContentWorkSetup_numInPartLen {
+	@include elemLeft(136);
+}
+#mainContentWorkSetup_numInPartLen {
+	@include elemAutoWidth(154);
+}
+#mainContentWorkSetup_numInPartLen {
+		z-index: 0;
+}
+#mainContentWorkSetup_lblPartLen {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblPartLen {
+	@include elemTop(33);
+}
+#mainContentWorkSetup_lblPartLen {
+	@include elemLeft(18);
+}
+#mainContentWorkSetup_lblPartLen {
+	@include elemAutoWidth(118);
+}
+#mainContentWorkSetup_lblPartLen {
+		z-index: 1;
+}
+#mainContentWorkSetup_numInPartInnerDia {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_numInPartInnerDia {
+	@include elemTop(78);
+}
+#mainContentWorkSetup_numInPartInnerDia {
+	@include elemLeft(136);
+}
+#mainContentWorkSetup_numInPartInnerDia {
+	@include elemAutoWidth(154);
+}
+#mainContentWorkSetup_numInPartInnerDia {
+		z-index: 2;
+}
+#mainContentWorkSetup_lblPartInnerDIa {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblPartInnerDIa {
+	@include elemTop(78);
+}
+#mainContentWorkSetup_lblPartInnerDIa {
+	@include elemLeft(18);
+}
+#mainContentWorkSetup_lblPartInnerDIa {
+	@include elemAutoWidth(118);
+}
+#mainContentWorkSetup_lblPartInnerDIa {
+		z-index: 3;
+}
+#mainContentWorkSetup_txtInPartSn {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_txtInPartSn {
+	@include elemTop(128);
+}
+#mainContentWorkSetup_txtInPartSn {
+	@include elemLeft(73);
+}
+#mainContentWorkSetup_txtInPartSn {
+	@include elemAutoWidth(220);
+}
+#mainContentWorkSetup_txtInPartSn {
+		z-index: 4;
+}
+#mainContentWorkSetup_txtInPartSn {
+	input{
+	@include text-alignment(left);
+	}
+}
+#mainContentWorkSetup_lblPartSn {
+	@include elemAutoHeight(30);
+}
+#mainContentWorkSetup_lblPartSn {
+	@include elemTop(128);
+}
+#mainContentWorkSetup_lblPartSn {
+	@include elemLeft(13);
+}
+#mainContentWorkSetup_lblPartSn {
+	@include elemAutoWidth(121);
+}
+#mainContentWorkSetup_lblPartSn {
+		z-index: 5;
+}

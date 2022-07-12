@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventsActionsDefinitions xmlns="http://www.br-automation.com/iat2019/eventactiondefinition"
+						xmlns:w1="http://www.br-automation.com/iat2014/widget">
+  <EventsActionsDefinition name="session">
+    <MethodGroups>
+      <MethodGroup name="VariableAction">
+        <Methods>
+          <AdvancedMethod name="SetValueBool" read="false">
+            <w1:Description>Sets the "value" attribute of a variable to a Boolean value.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="XSBoolean" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>BOOL</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="ToggleValueBool" read="false">
+            <w1:Description>Switches variable attribute "value" to its opposite Boolean value. </w1:Description>
+            <FilterInfo>BOOL</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueNumber" read="false">
+            <w1:Description>Sets variable attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="Numeric" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>ANY_REAL,ANY_INT</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="AddValue" read="false">
+            <w1:Description>Adds a value to the current value of node OpcUa attribute "value". </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="Numeric" index="0" required="true">
+                <w1:Description>The value to be added</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>ANY_REAL,ANY_INT</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueString" read="false">
+            <w1:Description>Sets variable attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="String" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>ANY_STRING</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueDateTime" read="false">
+            <w1:Description>Sets variable attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="DateTime" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>DATE_AND_TIME,DT</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="GetValue" read="true">
+            <w1:Description>Provides the value of attribute "value" for the referenced object</w1:Description>
+            <w1:Result type="DYNAMIC" />
+            <FilterInfo>BOOL,ANY_REAL,ANY_INT,ANY_STRING,DATE_AND_TIME,DT</FilterInfo>
+          </AdvancedMethod>
+        </Methods>
+      </MethodGroup>
+      <MethodGroup name="TimerAction">
+        <Methods>
+          <w1:Method name="Start" read="false">
+            <w1:Description>This action is used to start the timer interval.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="interval" type="IntervalType" index="0" required="false" defaultValue="">
+                <w1:Description>Optional interval time in milliseconds greater than 100, in steps of 100.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+          </w1:Method>
+          <w1:Method name="Stop" read="false">
+            <w1:Description>This action is used to stop the timer interval.</w1:Description>
+          </w1:Method>
+          <w1:Method name="IsRunning" read="true">
+            <w1:Description>Returns the current status of the referenced timer.</w1:Description>
+            <w1:Result type="BOOL" />
+          </w1:Method>
+        </Methods>
+      </MethodGroup>
+    </MethodGroups>
+    <w1:Events>
+      <w1:Event name="ValueChanged">
+        <w1:Description>triggered if the value of the variable changes.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="newValue" type="String" index="0" required="true">
+            <w1:Description>The new, changed value.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="oldValue" type="String" index="1" required="true">
+            <w1:Description>The old value before the change.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+    </w1:Events>
+  </EventsActionsDefinition>
+  
+  <EventsActionsDefinition name="sessionTimer">
+    <MethodGroups>
+      <MethodGroup name="TimerAction">
+      </MethodGroup>
+    </MethodGroups>
+    <w1:Events>
+      <w1:Event name="Elapsed">
+        <w1:Description>Triggered when the interval of the timer elapses.</w1:Description>
+        <w1:Arguments />
+      </w1:Event>
+    </w1:Events>
+  </EventsActionsDefinition>
+
+
+  </EventsActionsDefinitions>

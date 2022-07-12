@@ -1,0 +1,32 @@
+@import "mixins.scss";
+@mixin widgets_brease_TabControl_base {
+	@include elemWidth(250);
+	@include elemHeight(150);
+> .tabbar {
+	background-color: transparent;
+}
+> .tabItemContainer {
+	background-color: transparent;
+}
+> .tabItemContainer {
+	border-style: none;
+}
+> .tabItemContainer {
+	border-width: 2px;
+}
+> .tabItemContainer {
+	@include border-radius(0px);
+}
+> .tabItemContainer {
+	border-color: #5B7C70;
+}
+> .tabItemContainer {
+	padding: 0px;
+}
+	margin: 0px;
+
+}
+
+.widgets_brease_TabControl_style_default {
+@include widgets_brease_TabControl_base 
+}

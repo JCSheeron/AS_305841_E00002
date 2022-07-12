@@ -1,0 +1,11 @@
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] .breaseDialogWindowHeader .imageDiv {
+  background-image: url("../Media/SafedomainMP11_SVG/SafedomainMP11_Wait.svg");
+}
+
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] .breaseWindowClose {
+  display: none;
+}
+
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] .breaseDialogWindowContentBox > .breaseLayout {
+  background-color: white;
+}

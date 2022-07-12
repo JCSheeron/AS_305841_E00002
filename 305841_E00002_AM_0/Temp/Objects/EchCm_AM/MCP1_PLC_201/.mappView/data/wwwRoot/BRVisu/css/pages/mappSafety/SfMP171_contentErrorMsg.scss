@@ -1,0 +1,105 @@
+﻿@import "mixins.scss";
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include elemTop(20);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include elemLeft(20);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include elemAutoWidth(300);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include elemAutoHeight(40);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+		z-index: 0;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+		font-size: 12px;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtHeaderErrorMsg {
+	span{
+		padding: 5px;
+	}
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	@include elemTop(180);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	@include elemLeft(20);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	@include elemAutoWidth(310);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	@include elemAutoHeight(60);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+		z-index: 1;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	@include text-alignment-all('center');
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+		font-size: 12px;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtFooterErrorMsg {
+	span{
+		padding: 5px;
+	}
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+	@include elemAutoWidth(100);
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+	@include elemTop(250);
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+	@include elemLeft(130);
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+		z-index: 2;
+}
+#SfMP171_contentErrorMsg_SfMP171_btnCancelError {
+	span{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	@include elemTop(60);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	@include elemLeft(20);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	@include elemAutoWidth(310);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	@include elemAutoHeight(110);
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+		z-index: 3;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+		font-size: 12px;
+}
+#SfMP171_contentErrorMsg_SfMP171_txtMainErrorMsg {
+	span{
+		padding: 0px 5px 0px 5px;
+	}
+}
+#SfMP171_contentErrorMsg_SfMP171_Line1 {
+		z-index: 4;
+}

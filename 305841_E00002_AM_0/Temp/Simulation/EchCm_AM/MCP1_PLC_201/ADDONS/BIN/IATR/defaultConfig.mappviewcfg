@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="MappViewConfiguration" Type="MAPPVIEWCFG">
+    <Group ID="Server">
+      <Selector ID="WebServerProtocol" Value="1">
+        <Property ID="WebServerPort" Value="81" />
+      </Selector>
+      <Property ID="MaxBRClientConnections" Value="0" />
+      <Property ID="MaxSystemVisuClientConnections" Value="5" />
+      <Property ID="SystemMaxClientConnections" Value="100" />
+      <Property ID="ClientConnectionTimeout" Value="30000" />
+      <Property ID="FileHandlerBufferSize" Value="32768" />
+      <Property ID="HttpRequestTimeout" Value="120000" />
+      <Property ID="DeactivateScopeTimeout" Value="3000" />
+      <Selector ID="AuthenticationMode" Value="AuthenticationModeRbac" />
+    </Group>
+    <Group ID="OpcUa">
+      <Property ID="ServerConnectionTimeout" Value="5000" />
+      <Property ID="ServerConnectionWatchdogIntervall" Value="1000" />
+      <Property ID="DefaultSubscriptionPublishingInterval" Value="100" />
+      <Property ID="RereadNetworkTime" Value="100" />
+      <Group ID="SamplingRates">
+        <Property ID="default" Value="200" />
+        <Property ID="slow" Value="1000" />
+        <Property ID="fast" Value="100" />
+      </Group>
+      <Property ID="InitValueChangedEvents" Value="FALSE" />
+    </Group>
+    <Group ID="Timer" />
+    <Group ID="Mapp">
+      <Property ID="Port" Value="4213" />
+      <Property ID="RPCSocketTimeout" Value="2000" />
+    </Group>
+    <Group ID="Client">
+      <Group ID="ContentCaching" >
+        <Property ID="cachingSlots" Value="200" />
+        <Property ID="preserveOldValues" Value="TRUE" />
+      </Group>
+      <Property ID="defaultVisu" Value="" />
+      <Group ID="Widget">
+        <Selector ID="renderingPolicy" Value="1">
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

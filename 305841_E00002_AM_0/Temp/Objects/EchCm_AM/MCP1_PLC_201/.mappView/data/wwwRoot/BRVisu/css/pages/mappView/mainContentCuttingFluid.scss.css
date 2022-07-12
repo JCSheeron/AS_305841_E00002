@@ -1,0 +1,619 @@
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+  top: 55px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+  left: 375px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+  width: 410px;
+}
+
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+  height: 485px;
+}
+
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+  z-index: 0;
+}
+
+#mainContentCuttingFluid_numInRpm {
+  height: 30px;
+}
+
+#mainContentCuttingFluid_numInRpm {
+  top: 53px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numInRpm {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numInRpm {
+  width: 145px;
+}
+
+#mainContentCuttingFluid_numInRpm {
+  z-index: 0;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  height: 30px;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  top: 23px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  left: 40px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  width: 145px;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  z-index: 1;
+}
+
+#mainContentCuttingFluid_lblRpmCmd {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_numInPressure {
+  height: 30px;
+}
+
+#mainContentCuttingFluid_numInPressure {
+  top: 53px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numInPressure {
+  left: 224px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numInPressure {
+  width: 145px;
+}
+
+#mainContentCuttingFluid_numInPressure {
+  z-index: 2;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  height: 30px;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  top: 23px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  left: 230px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  width: 135px;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  z-index: 3;
+}
+
+#mainContentCuttingFluid_lblPressureCmd {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_pbStart {
+  top: 253px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbStart {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbStart {
+  width: 116px;
+}
+
+#mainContentCuttingFluid_pbStart {
+  height: 45px;
+}
+
+#mainContentCuttingFluid_pbStart {
+  z-index: 4;
+}
+
+#mainContentCuttingFluid_pbHalt {
+  top: 253px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbHalt {
+  left: 255px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbHalt {
+  width: 115px;
+}
+
+#mainContentCuttingFluid_pbHalt {
+  height: 45px;
+}
+
+#mainContentCuttingFluid_pbHalt {
+  z-index: 5;
+}
+
+#mainContentCuttingFluid_pbDriveReset {
+  top: 388px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbDriveReset {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbDriveReset {
+  width: 116px;
+}
+
+#mainContentCuttingFluid_pbDriveReset {
+  height: 42px;
+}
+
+#mainContentCuttingFluid_pbDriveReset {
+  z-index: 6;
+}
+
+#mainContentCuttingFluid_pbEnable {
+  top: 322px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbEnable {
+  left: 254px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbEnable {
+  width: 116px;
+}
+
+#mainContentCuttingFluid_pbEnable {
+  height: 42px;
+}
+
+#mainContentCuttingFluid_pbEnable {
+  z-index: 7;
+}
+
+#mainContentCuttingFluid_pbDisable {
+  top: 388px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbDisable {
+  left: 254px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_pbDisable {
+  width: 116px;
+}
+
+#mainContentCuttingFluid_pbDisable {
+  height: 42px;
+}
+
+#mainContentCuttingFluid_pbDisable {
+  z-index: 8;
+}
+
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+  width: 150px;
+}
+
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+  height: 30px;
+}
+
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+  top: 108px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+  left: 224px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+  z-index: 9;
+}
+
+#mainContentCuttingFluid_grpBoxStatus {
+  top: 55px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_grpBoxStatus {
+  left: 20px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_grpBoxStatus {
+  width: 330px;
+}
+
+#mainContentCuttingFluid_grpBoxStatus {
+  height: 485px;
+}
+
+#mainContentCuttingFluid_grpBoxStatus {
+  z-index: 1;
+}
+
+#mainContentCuttingFluid_numOutRpmAct {
+  top: 63px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutRpmAct {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutRpmAct {
+  width: 120px;
+}
+
+#mainContentCuttingFluid_numOutRpmAct {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_numOutRpmAct {
+  z-index: 0;
+}
+
+#mainContentCuttingFluid_numOutRpmAct input {
+  justify-content: center;
+  text-align: center;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  top: 43px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  left: 29px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  width: 130px;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  height: 22px;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  z-index: 1;
+}
+
+#mainContentCuttingFluid_lblRpmAct {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_lblStatus {
+  top: 388px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblStatus {
+  left: 238px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblStatus {
+  width: 60px;
+}
+
+#mainContentCuttingFluid_lblStatus {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_lblStatus {
+  z-index: 2;
+}
+
+#mainContentCuttingFluid_lblStatus span {
+  padding: 0px;
+}
+
+#mainContentCuttingFluid_lblState {
+  top: 413px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblState {
+  left: 238px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblState {
+  width: 60px;
+}
+
+#mainContentCuttingFluid_lblState {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_lblState {
+  z-index: 3;
+}
+
+#mainContentCuttingFluid_lblState span {
+  padding: 0px;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  top: 388px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  left: 29px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  width: 207px;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  z-index: 4;
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#mainContentCuttingFluid_txtOutStatus {
+  justify-content: flex-end;
+  text-align: right;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  top: 413px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  left: 29px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  width: 207px;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  z-index: 5;
+}
+
+#mainContentCuttingFluid_txtOutState {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#mainContentCuttingFluid_txtOutState {
+  justify-content: flex-end;
+  text-align: right;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+  top: 128px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+  width: 120px;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+  z-index: 6;
+}
+
+#mainContentCuttingFluid_numOutPtPumpOutlet input {
+  justify-content: center;
+  text-align: center;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  top: 108px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  left: 29px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  width: 130px;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  height: 22px;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  z-index: 7;
+}
+
+#mainContentCuttingFluid_lblPtPumpOutlet {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+  top: 183px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+  width: 120px;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+  z-index: 8;
+}
+
+#mainContentCuttingFluid_numOutPtFilterOutlet input {
+  justify-content: center;
+  text-align: center;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  top: 163px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  left: 29px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  width: 130px;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  height: 22px;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  z-index: 9;
+}
+
+#mainContentCuttingFluid_lblPtFilterOutlet {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mainContentCuttingFluid_numOutDpFilter {
+  top: 148px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutDpFilter {
+  left: 174px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_numOutDpFilter {
+  width: 120px;
+}
+
+#mainContentCuttingFluid_numOutDpFilter {
+  height: 15px;
+}
+
+#mainContentCuttingFluid_numOutDpFilter {
+  z-index: 10;
+}
+
+#mainContentCuttingFluid_numOutDpFilter input {
+  justify-content: center;
+  text-align: center;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  top: 128px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  left: 164px;
+  position: absolute;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  width: 130px;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  height: 22px;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  z-index: 11;
+}
+
+#mainContentCuttingFluid_lblDpFilter {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}

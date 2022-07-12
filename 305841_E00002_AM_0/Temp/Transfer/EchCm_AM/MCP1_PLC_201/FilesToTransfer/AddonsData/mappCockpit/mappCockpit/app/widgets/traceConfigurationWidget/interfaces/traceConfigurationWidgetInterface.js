@@ -1,0 +1,5 @@
+define(["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHJhY2VDb25maWd1cmF0aW9uV2lkZ2V0SW50ZXJmYWNlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vc3JjL2FwcC93aWRnZXRzL3RyYWNlQ29uZmlndXJhdGlvbldpZGdldC9pbnRlcmZhY2VzL3RyYWNlQ29uZmlndXJhdGlvbldpZGdldEludGVyZmFjZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSVdpZGdldCB9IGZyb20gXCIuLi8uLi9jb21tb24vaW50ZXJmYWNlcy93aWRnZXRJbnRlcmZhY2VcIjtcclxuXHJcbmludGVyZmFjZSBJVHJhY2VDb25maWd1cmF0aW9uV2lkZ2V0IGV4dGVuZHMgSVdpZGdldCB7XHJcblxyXG59XHJcblxyXG5leHBvcnQge0lUcmFjZUNvbmZpZ3VyYXRpb25XaWRnZXR9OyJdfQ==

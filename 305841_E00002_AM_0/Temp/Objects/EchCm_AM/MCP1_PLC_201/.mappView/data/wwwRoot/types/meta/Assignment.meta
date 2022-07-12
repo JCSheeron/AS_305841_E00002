@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Assignment xmlns="http://www.br-automation.com/iat2014/widget" >
+  <Properties>
+    <Property name="zoomMode" type="ZoomType" initOnly="true" localizable="false" readOnly="false" required="false" projectable="true" defaultValue="original" category="Appearance" >
+      <Description>Zoom mode for scaling an image.</Description>
+    </Property>
+    <Property name="styleRefId" type="StyleReference" initOnly="true" localizable="false" readOnly="false" required="false" projectable="true" defaultValue="default" category="Appearance">
+      <Description>referenced style</Description>
+    </Property>
+  </Properties>
+
+  <StyleProperties>
+    <StyleProperty name="backColor" type="Color" default="transparent" category="Appearance" >
+      <Description>background color</Description>
+      <StyleElement attribute="background-color"/>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" type="Gradient" default="" category="Appearance" >
+      <Description>background gradient</Description>
+      <StyleElement attribute="background-image"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGround" type="ImagePath" default="" category="Appearance">
+      <Description>background image</Description>
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="brease.enum.SizeMode" default="fill" category="Behavior">
+      <Description>size mode of background image </Description>
+      <StyleElement attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+  </StyleProperties>
+</Assignment>

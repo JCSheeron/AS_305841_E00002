@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.TableItemWidget">
+		<ASEngineeringInfo>
+			<IsProjectable>false</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/BaseWidget.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/core/Types.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/TableItemWidget/TableItemWidget.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+		</Categories>
+		<Descriptions>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.TableItemWidget</Class>
+			<Class level="1">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="SetColumnWidth" read="false">
+				<Description>Sets columnWidth</Description>
+				<Arguments>
+					<Argument name="value" type="Size" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetRowHeight" read="false">
+				<Description>Sets rowHeight</Description>
+				<Arguments>
+					<Argument name="value" type="Size" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetText" read="false">
+				<Description>Sets text</Description>
+				<Arguments>
+					<Argument name="value" type="String" index="0" required="true" localizable="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="columnWidth" type="UInteger" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="2" groupRefId="CellSize" category="Appearance" defaultValue="0">
+				<Description>Can individually override columnWidth of Table if !== 0 when TableItem is a column.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="rowHeight" type="UInteger" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="1" groupRefId="CellSize" category="Appearance" defaultValue="0">
+				<Description>Can individually override rowHeight of Table if !== 0 when TableItem is a row.</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Heading for table column.</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.TableItemWidget" category="Layout" groupRefId="Size" groupOrder="1" hide="true">
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.TableItemWidget" category="Layout" groupRefId="Size" groupOrder="2" hide="true">
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="widgets.brease.TableItemWidget" category="Layout" groupRefId="Position" groupOrder="1" hide="true">
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="widgets.brease.TableItemWidget" category="Layout" groupRefId="Position" groupOrder="2" hide="true">
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorOdd" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;:not(.disabled).odd.override:not(.selected)" attribute="background-color"/>
+				<Description>Sets the background color of the table</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorEven" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;:not(.disabled).even.override:not(.selected)" attribute="background-color"/>
+				<Description>Sets the background color of the table</Description>
+			</StyleProperty>
+			<StyleProperty name="backgroundGradientEven" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled).even.override:not(.selected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backgroundGradientOdd" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled).odd.override:not(.selected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="headerBackColor" type="Color" category="Appearance" default="#FCFCFC">
+				<StyleElement selector="&amp;.headerElement.override:not(.disabled)" attribute="@include importantBackColor($value)"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="headerGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;.headerElement.override:not(.disabled)" attribute="@include importantGradient($value)"/>
+				<Description>Background gradient for table header</Description>
+			</StyleProperty>
+			<StyleProperty name="headerTextColor" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;.headerElement.override:not(.disabled) &gt; span" attribute="@include importantTextColor($value)"/>
+				<Description>Sets the header text color</Description>
+			</StyleProperty>
+			<StyleProperty name="headerFontSize" type="PixelVal" default="14px" category="Font">
+				<StyleElement selector="&amp;.headerElement.override &gt; span" attribute="font-size"/>
+				<Description>Fontsize of the header text</Description>
+			</StyleProperty>
+			<StyleProperty name="headerBold" type="Boolean" default="false" category="Font">
+				<StyleElement selector="&amp;.headerElement.override &gt; span" attribute="@include importantBoldText($value)"/>
+				<Description>If true header text is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="headerItalic" type="Boolean" default="false" category="Font">
+				<StyleElement selector="&amp;.headerElement.override &gt; span" attribute="@include importantItalicText($value)"/>
+				<Description>If true header text is italic</Description>
+			</StyleProperty>
+			<StyleProperty name="sortingButtonColor" category="Appearance" type="Color" default="#ececec">
+				<StyleElement selector="svg &gt; g &gt; path.unselected" attribute="fill"/>
+				<Description>Color of the arrow that is not the sorted way</Description>
+			</StyleProperty>
+			<StyleProperty name="sortingButtonActiveColor" category="Appearance" type="Color" default="#5f8dd3">
+				<StyleElement selector="svg &gt; g &gt; path.selected" attribute="fill"/>
+				<Description>Color of the arrow that is the sorted way</Description>
+			</StyleProperty>
+			<StyleProperty name="textColorOdd" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled):not(.selected):not(.headerElement).override.odd" attribute="color"/>
+				<Description>Sets the text color</Description>
+			</StyleProperty>
+			<StyleProperty name="textColorEven" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled):not(.selected):not(.headerElement).override.even" attribute="color"/>
+				<Description>Sets the text color</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" type="Boolean" default="false" category="Font">
+				<StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="@include importantBoldText($value)"/>
+				<StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="@include importantBoldText($value)"/>
+				<Description>If **true** font style is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" type="Boolean" default="false" category="Font">
+				<StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="@include importantItalicText($value)"/>
+				<StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="@include importantItalicText($value)"/>
+				<Description>If **true** font style is italic</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
+				<StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="font-size"/>
+				<StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="font-size"/>
+				<Description>Fontsize of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="cellAlign" type="brease.enum.BackgroundPosition" default="center center" category="Appearance">
+				<StyleElement selector="&amp;:not(.headerElement).override" attribute="@include text-position(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.headerElement) &gt;img .override" attribute="@include image-align(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.headerElement.override" attribute="@include flex-position(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.headerElement.override &gt; span" attribute="@include text-position(&apos;$value&apos;)"/>
+				<Description>Alignment of the text in a cell</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderStyle" type="BorderStyle" category="Appearance" default="solid">
+				<StyleElement selector="&amp;.override" attribute="border-style"/>
+				<StyleElement selector="&amp;.headerElement .override" attribute="border-style"/>
+				<Description>Style of the cell borders</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;.override" attribute="border-color"/>
+				<StyleElement selector="&amp;.headerElement.override" attribute="border-color"/>
+				<Description>Sets the border color of each cell. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderWidth" type="PixelValCollection" category="Appearance" default="0px 0px 1px 1px">
+				<StyleElement selector="&amp;.override" attribute="border-width"/>
+				<StyleElement selector="&amp;.headerElement.override" attribute="border-width"/>
+				<Description>Sets the border width of each cell. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cellPadding" category="Layout" type="Padding" default="0px">
+				<StyleElement selector="&amp;.override:not(.headerElement)" attribute="padding"/>
+				<Description>Padding of table cells.</Description>
+			</StyleProperty>
+			<StyleProperty name="headerCellPadding" category="Layout" type="Padding" default="0px">
+				<StyleElement selector="&amp;.headerElement.override" attribute="padding"/>
+				<Description>Padding of the header cells.</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsReadyToPowerOn_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsHomed_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsPoweredOn_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsBrakeManRel_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsMoveActive_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsInPosition_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsMoveDone_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_IsStopped_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_PlcOpenState_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_axesSMState_list" /></Source>
+      <Target xsi:type="variable" refId="svZAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svZAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snZAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseCurrent" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbSocUseCurrent" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseCurrent" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbSocUseCurrent" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseSpecified" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbSocUseSpecified" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSocUseSpecified" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbSocUseSpecified" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseCurrent" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbLUnLUseCurrent" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseCurrent" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbLUnLUseCurrent" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseSpecified" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbLUnLUseSpecified" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnLUseSpecified" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbLUnLUseSpecified" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSoc" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numInSocSpecifiedPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosSoc" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numInSocSpecifiedPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnL" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numInLUnLSpecifiedPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqPosLUnL" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numInLUnLSpecifiedPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.startOfCutPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numOutSocPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.startOfCutPos" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numOutSocPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.loadUnloadPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numOutLUnLPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:gr_CfgCurrent.zAxis.loadUnloadPos" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_numOutLUnLPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveUpLimit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullUp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveUpLimit" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullUp" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullUp" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexUp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexUp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexUp" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexUp" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveUpReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexUp" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexDown" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexDown" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveIndexDown" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexDown" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqIndexDown" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveDownLimit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullDown" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveDownLimit" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullDown" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveDownReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqFullDown" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveLUnL" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqLUnL" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveLUnL" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqLUnL" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToLUnLReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqLUnL" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveSoc" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqSoc" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zReqMoveSoc" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqSoc" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.zMoveToSocReqEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_pbReqSoc" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_axesStatus_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘnumOutPosAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_Z" attribute="value" /><List refId="cmpwid_axesStatus_listΘVelocityΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘnumOutVelAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsReadyToPowerOn" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsHomed" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsHomed" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsPoweredOn" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsBrakeManRel" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsMoveActive" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsAtPosition" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsMoveDone" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisIsStopped" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutIsStopped" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisStatusInt" attribute="value" /><List refId="ServoStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snZAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutState" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentZAxis">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svZAxisStateInt" attribute="value" /><List refId="ServoSmStateGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentZAxis_ZAxisStatusΘtxtOutState" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

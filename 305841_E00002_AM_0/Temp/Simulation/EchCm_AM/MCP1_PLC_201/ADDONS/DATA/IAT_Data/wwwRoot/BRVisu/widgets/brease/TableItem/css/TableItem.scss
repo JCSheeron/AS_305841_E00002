@@ -1,0 +1,18 @@
+.breaseTableItem:not(.editMode) {
+    display: none;
+}
+
+.breaseTableItem {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    overflow:hidden;
+    position: static !important;
+    display:inline-block;
+    left: 0px !important;
+    top: 0px !important;
+
+    .horizontal {
+        display: inline-grid;
+    }
+}

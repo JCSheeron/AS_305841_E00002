@@ -1,0 +1,49 @@
+@import "mixins.scss";
+@mixin widgets_brease_TextOutput_base {
+	@include elemAutoWidth(100);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-width: 0px;
+	@include border-radius(0px);
+	background-color: transparent;
+	@include backGroundGradient('');
+	border-color: #C8C8C8;
+&:before {
+	border-color: #C8C8C8;
+}
+&:after {
+	border-color: #C8C8C8;
+}
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+& span {
+	color: #000000;
+}
+	@include text-alignment-all('left');
+	opacity: 1;
+	@include rotate(0deg);
+span {
+	font-family: Arial;
+}
+	font-size: 14px;
+	@include font-weight-bold(false);
+	@include font-style-italic(false);
+span {
+	@include text-decoration-underline(false);
+}
+span {
+	padding: 0px 15px 0px 15px;
+}
+	margin: 0px;
+	@include box-shadow(none);
+
+}
+

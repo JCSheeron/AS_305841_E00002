@@ -1,0 +1,253 @@
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+  height: 30px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+  top: 380px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+  width: 110px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+  z-index: 0;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+  width: 100px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+  height: 30px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+  top: 380px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+  left: 305px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+  z-index: 1;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget.DropDownBoxView {
+  height: 30px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+  left: 160px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget.DropDownBoxView {
+  width: 120px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+  z-index: 2;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+  height: 30px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+  width: 140px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+  z-index: 3;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+  top: 45px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+  width: 395px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+  height: 155px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+  z-index: 4;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication > .header span {
+  font-size: 14px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication > .header {
+  height: 34px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+  left: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+  width: 395px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+  height: 120px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+  z-index: 0;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl .tableCells tbody tr td:not(.override) {
+  font-size: 14px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeDesignerProject {
+  z-index: 0;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemCRC {
+  z-index: 1;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemTimeStamp {
+  z-index: 2;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemUser {
+  z-index: 3;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+  top: 200px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+  width: 395px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+  height: 165px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+  z-index: 5;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning > .header span {
+  font-size: 14px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning > .header {
+  height: 34px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+  left: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+  width: 395px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+  height: 120px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+  z-index: 5;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP .tableCells tbody tr td:not(.override) {
+  font-size: 14px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPName {
+  z-index: 0;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPCRC {
+  z-index: 1;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPTimeStamp {
+  z-index: 2;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPUser {
+  z-index: 3;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+  height: 30px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+  top: 380px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+  left: 140px;
+  position: absolute;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+  width: 145px;
+}
+
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+  z-index: 6;
+}

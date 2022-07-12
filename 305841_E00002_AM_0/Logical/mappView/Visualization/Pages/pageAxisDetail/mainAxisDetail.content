@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="mainContentAxisDetail" height="700" width="1020" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.GAMotLib.GaMotAxisDetail" id="GaMotAxisDetail1" top="15" left="10" zIndex="0" />
+  </Widgets>
+</Content>

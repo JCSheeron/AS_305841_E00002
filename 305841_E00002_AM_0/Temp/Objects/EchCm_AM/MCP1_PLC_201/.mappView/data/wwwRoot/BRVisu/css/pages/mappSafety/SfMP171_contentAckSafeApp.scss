@@ -1,0 +1,56 @@
+﻿@import "mixins.scss";
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+	@include elemTop(260);
+}
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+	@include elemLeft(140);
+}
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+	@include elemAutoWidth(180);
+}
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+		z-index: 0;
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	@include elemTop(20);
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	@include elemLeft(10);
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	@include elemWidth(435);
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	@include elemHeight(200);
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+		z-index: 1;
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	&.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override){
+		padding: 10px;
+	}
+}
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+	&.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override){
+		padding: 10px;
+	}
+}
+#SfMP171_contentAckSafeApp_SfMP171_TableItemSafeDesignerProject {
+		z-index: 0;
+}
+#SfMP171_contentAckSafeApp_SfMP171_TableItemCRC {
+		z-index: 1;
+}
+#SfMP171_contentAckSafeApp_SfMP171_TableItemTimeStamp {
+		z-index: 2;
+}
+#SfMP171_contentAckSafeApp_SfMP171_TableItemUser {
+		z-index: 3;
+}
+#SfMP171_contentAckSafeApp_SfMP171_AppAckDialog {
+		z-index: 2;
+}

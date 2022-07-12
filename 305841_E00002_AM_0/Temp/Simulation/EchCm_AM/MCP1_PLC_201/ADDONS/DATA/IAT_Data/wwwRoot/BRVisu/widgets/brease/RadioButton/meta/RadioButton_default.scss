@@ -1,0 +1,171 @@
+@import "mixins.scss";
+@mixin widgets_brease_RadioButton_base {
+	@include elemAutoWidth(150);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-style: none;
+	border-width: 0px;
+	@include border-radius(0px);
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: #F1F1F1;
+}
+&.disabled.checked {
+	background-color: #F1F1F1;
+}
+&.disabled.active {
+	background-color: #F1F1F1;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	@include backGroundGradient('');
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&.disabled.active {
+	@include backGroundGradient('');
+}
+&.disabled.checked {
+	@include backGroundGradient('');
+}
+&.active:not(.disabled) {
+	@include backGroundGradient('');
+}
+&.checked:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) {
+	@include pureBackgroundImage('../');
+}
+&:not(.disabled):not(.checked):not(.active) {
+	border-color: #5B7C70;
+}
+&.disabled {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+&.disabled.checked {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+&.disabled.active {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+span {
+	color: #333;
+}
+&.disabled span {
+	color: #989898;
+}
+&.disabled.checked span {
+	color: #989898;
+}
+&.disabled.active span {
+	color: #989898;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: #FD7B01;
+}
+&.checked:not(.disabled) {
+	border-color: #FD7B01;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 2px;
+}
+&.checked:not(.disabled) {
+	border-width: 2px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #000000;
+}
+&.checked:not(.disabled) span {
+	color: #000000;
+}
+span {
+	text-align: left;
+}
+	opacity: 1;
+	@include rotate(0deg);
+span {
+	font-size: 12px;
+}
+span {
+	font-family: Arial;
+}
+span {
+	@include font-weight-bold(true);
+}
+span {
+	@include font-style-italic(false);
+}
+	padding: 0px;
+	margin: 0px;
+&:not(.active):not(.checked) {
+	@include box-shadow(none);
+}
+&.disabled.active {
+	@include box-shadow(none);
+}
+&.disabled.checked {
+	@include box-shadow(none);
+}
+&.active:not(.disabled):not(.editMode) {
+	@include box-shadow(none);
+}
+&.checked {
+	@include box-shadow(none);
+}
+&.disabled.checked {
+	@include box-shadow(none);
+}
+&.checked:not(.disabled):not(.active) span {
+	color: #000000;
+}
+&.disabled.checked:not(.active) span {
+	color: #000000;
+}
+&:not(.disabled):not(.active):not(.checked) .radiobutton {
+	background-color: #FFF;
+}
+&.disabled .radiobutton {
+	background-color: #FFF;
+}
+&.disabled.checked .radiobutton {
+	background-color: #FFF;
+}
+&.disabled.active .radiobutton {
+	background-color: #FFF;
+}
+&.active:not(.disabled):not(.editMode) .radiobutton {
+	background-color: #FFF;
+}
+&.checked:not(.disabled) .radiobutton {
+	background-color: #FFF;
+}
+&:not(.disabled):not(.checked) svg {
+	fill: #000000;
+}
+&.checked:not(.disabled) svg {
+	fill: #000000;
+}
+&.disabled:not(.checked) svg {
+	fill: #000000;
+}
+&.checked.disabled svg {
+	fill: #000000;
+}
+
+}
+
+.widgets_brease_RadioButton_style_default {
+@include widgets_brease_RadioButton_base 
+}

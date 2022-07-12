@@ -1,0 +1,92 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-outer: #5B7C70;
+$default-text-color: #333;
+$default-background: #FFF;
+
+$active-border-outer: $active-color;
+$active-border-inner: #CB6000;
+$active-text-color: #333;
+$active-background: #FFF;
+
+$disabled-border-outer: #C8C8C8;
+$disabled-border-inner: #FFF;
+$disabled-text-color: #C8C8C8;
+$disbled-background: #F1F1F1;
+
+.breaseTabControl {
+
+
+    &.tabs-top, &.tabs-bottom {
+        @include displayFlexBox(true);
+        @include flex-direction(column);
+        @include align-items(start);
+        @include flex-wrap(nowrap);
+        @include justify-content(start);
+
+        > .tabbar {
+            width: 100%;
+            @include displayFlexBox(true);
+            @include flex-direction(row);
+            @include align-items(end);
+            @include flex-wrap(nowrap);
+            @include justify-content(start);
+            @include flex(0 1 auto);
+        }
+
+        > .container {
+            @include flex(1 0 auto);
+            @include box-sizing(border-box);
+            width: inherit;
+            @include displayFlexBox(false);
+        }
+    }
+
+    &.tabs-left, &.tabs-right {
+        @include displayFlexBox(true);
+        @include flex-direction(row);
+        @include align-items(start);
+        @include flex-wrap(nowrap);
+        @include justify-content(start);
+
+        > .tabbar {
+            height: 100%;
+            @include displayFlexBox(true);
+            @include flex-direction(column);
+            @include align-items(start);
+            @include flex-wrap(nowrap);
+            @include justify-content(start);
+            @include flex(0 1 auto);
+        }
+
+        > .container {
+            @include flex(1 1 auto);
+            @include box-sizing(border-box);
+            height: 100%;
+            @include displayFlexBox(false);
+        }
+    }
+
+    &.tabs-top, &.tabs-left {
+
+        > .tabbar {
+            order: 1
+        }
+
+        > .tabItemContainer {
+            order: 2
+        }
+    }
+
+    &.tabs-bottom, &.tabs-right {
+
+        > .tabbar {
+            order: 2
+        }
+
+        > .tabItemContainer {
+            order: 1
+        }
+    }
+}

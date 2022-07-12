@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_ContentHeaderLand">
+    <EventBinding id="eventbinding_70">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentHeaderLand_SfMP171_btnLoginHeader" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogLogindialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="eventbinding_71">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableInfoTxtHeader" event="ValueChanged" />
+			
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<Operand name="OperandPageId" datatype="ANY_STRING">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_currentPageID">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableInfoTxtHeader">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn AND OperandPageId = &quot;SfMP171_TransferLandpage&quot;">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableInfoTxtHeader">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_72">
+			<Source type="session.Event" refId="SfMP182_sessionvar_currentPageID" event="ValueChanged" />
+			
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<Operand name="operandEnable" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableInfoTxtHeader">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+      
+			<EventHandler condition="OperandSessionIsLoggedIn AND newValue = &quot;SfMP171_TransferLandpage&quot; AND operandEnable">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableInfoTxtHeader">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler condition="OperandSessionIsLoggedIn AND newValue &lt;&gt; &quot;SfMP171_TransferLandpage&quot;">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableInfoTxtHeader">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Content id="SfMP171_ContentHeaderLand">
+    <EventBinding id="eventbinding_73">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentHeaderLand_SfMP171_btnLogout" />
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnLogout">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="eventbinding_74">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Signal_SystemDisconnected" event="ValueChanged" />
+      
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Parallel>
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Signal_SystemDisconnected">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.Logout" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_75">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Signal_Logout" event="ValueChanged" />
+      
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Parallel>
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Signal_Logout">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.Logout" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+</EventBindingDefinition>

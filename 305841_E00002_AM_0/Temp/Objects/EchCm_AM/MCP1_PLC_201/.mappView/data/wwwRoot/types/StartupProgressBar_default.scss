@@ -1,0 +1,33 @@
+@import "mixins.scss";
+@mixin system_brease_StartupProgressBar_base {
+	background-color: rgba(242,242,242,1);
+.startupProgressBar {
+	background-color: rgba(51,153,255,1);
+}
+.startupProgressBar {
+	border-radius: 999px;
+}
+.startupProgressBar {
+	border-width: 1px;
+}
+.startupProgressBar {
+	border-color: rgba(0,0,0,1);
+}
+.startupProgressBar {
+	border-style: solid;
+}
+.preLoadingInfoWrapper .preLoadingInfo {
+	@include text-alignment(center);
+}
+.preLoadingInfoWrapper .preLoadingInfo {
+	color: rgba(0,0,0,1);
+}
+.preLoadingInfoWrapper .preLoadingInfo {
+	font-size: 14px;
+}
+
+}
+
+.system_brease_StartupProgressBar_style_default {
+@include system_brease_StartupProgressBar_base 
+}

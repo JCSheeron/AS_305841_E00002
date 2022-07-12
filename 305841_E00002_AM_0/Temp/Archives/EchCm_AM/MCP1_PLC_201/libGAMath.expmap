@@ -1,0 +1,17 @@
+{
+  global:
+    fbCalcTrapMoveTime;
+    fctAziDiff;
+    fctLRCeiling;
+    fctLRFloor;
+    fctLRFract;
+    fctLRMod;
+    fctRound1;
+    fctRound2;
+    fctRound3;
+    fctLRound1;
+    fctLRound2;
+    fctLRound3;
+  local:
+    *;
+ };

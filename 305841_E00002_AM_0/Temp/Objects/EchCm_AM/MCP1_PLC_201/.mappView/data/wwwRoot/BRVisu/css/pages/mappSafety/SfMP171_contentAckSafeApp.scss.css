@@ -1,0 +1,71 @@
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+  height: 30px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+  top: 260px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+  left: 140px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+  width: 180px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK {
+  z-index: 0;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+  top: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+  width: 435px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+  height: 200px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl {
+  z-index: 1;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+  padding: 10px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_tableShowSafeAppl.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+  padding: 10px;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_TableItemSafeDesignerProject {
+  z-index: 0;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_TableItemCRC {
+  z-index: 1;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_TableItemTimeStamp {
+  z-index: 2;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_TableItemUser {
+  z-index: 3;
+}
+
+#SfMP171_contentAckSafeApp_SfMP171_AppAckDialog {
+  z-index: 2;
+}

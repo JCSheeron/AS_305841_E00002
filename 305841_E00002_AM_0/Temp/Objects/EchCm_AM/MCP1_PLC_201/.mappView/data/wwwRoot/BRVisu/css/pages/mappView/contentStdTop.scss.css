@@ -1,0 +1,200 @@
+#contentStdTop_DateTimeOutput1 {
+  height: 30px;
+}
+
+#contentStdTop_DateTimeOutput1 {
+  top: 35px;
+  position: absolute;
+}
+
+#contentStdTop_DateTimeOutput1 {
+  left: 920px;
+  position: absolute;
+}
+
+#contentStdTop_DateTimeOutput1 {
+  width: 350px;
+}
+
+#contentStdTop_DateTimeOutput1 {
+  z-index: 0;
+}
+
+#contentStdTop_btnEmoMode {
+  top: 15px;
+  position: absolute;
+}
+
+#contentStdTop_btnEmoMode {
+  left: 20px;
+  position: absolute;
+}
+
+#contentStdTop_btnEmoMode {
+  width: 115px;
+}
+
+#contentStdTop_btnEmoMode {
+  height: 70px;
+}
+
+#contentStdTop_btnEmoMode {
+  z-index: 1;
+}
+
+#contentStdTop_btnEmoMode {
+  border-radius: 8px;
+}
+
+#contentStdTop_btnEmoMode.disabled {
+  background-color: #ff8080;
+}
+
+#contentStdTop_btnEmoMode.disabled.active {
+  background-color: #ff8080;
+}
+
+#contentStdTop_btnEmoMode.disabled.checked {
+  background-color: #ff8080;
+}
+
+#contentStdTop_btnSafeMode {
+  top: 15px;
+  position: absolute;
+}
+
+#contentStdTop_btnSafeMode {
+  left: 164px;
+  position: absolute;
+}
+
+#contentStdTop_btnSafeMode {
+  width: 115px;
+}
+
+#contentStdTop_btnSafeMode {
+  height: 70px;
+}
+
+#contentStdTop_btnSafeMode {
+  z-index: 2;
+}
+
+#contentStdTop_btnSafeMode {
+  border-radius: 8px;
+}
+
+#contentStdTop_btnSafetySystem {
+  top: 15px;
+  position: absolute;
+}
+
+#contentStdTop_btnSafetySystem {
+  left: 785px;
+  position: absolute;
+}
+
+#contentStdTop_btnSafetySystem {
+  width: 115px;
+}
+
+#contentStdTop_btnSafetySystem {
+  height: 70px;
+}
+
+#contentStdTop_btnSafetySystem {
+  z-index: 3;
+}
+
+#contentStdTop_btnSafetySystem {
+  justify-content: center;
+  text-align: center;
+}
+
+#contentStdTop_GroupBox1 {
+  top: 5px;
+  position: absolute;
+}
+
+#contentStdTop_GroupBox1 {
+  left: 290px;
+  position: absolute;
+}
+
+#contentStdTop_GroupBox1 {
+  width: 460px;
+}
+
+#contentStdTop_GroupBox1 {
+  height: 90px;
+}
+
+#contentStdTop_GroupBox1 {
+  z-index: 4;
+}
+
+#contentStdTop_btnManualMode {
+  top: 9px;
+  position: absolute;
+}
+
+#contentStdTop_btnManualMode {
+  left: 19px;
+  position: absolute;
+}
+
+#contentStdTop_btnManualMode {
+  width: 115px;
+}
+
+#contentStdTop_btnManualMode {
+  height: 70px;
+}
+
+#contentStdTop_btnManualMode {
+  z-index: 0;
+}
+
+#contentStdTop_btnPendantMode {
+  top: 9px;
+  position: absolute;
+}
+
+#contentStdTop_btnPendantMode {
+  left: 169px;
+  position: absolute;
+}
+
+#contentStdTop_btnPendantMode {
+  width: 115px;
+}
+
+#contentStdTop_btnPendantMode {
+  height: 70px;
+}
+
+#contentStdTop_btnPendantMode {
+  z-index: 1;
+}
+
+#contentStdTop_btnProductionMode {
+  top: 9px;
+  position: absolute;
+}
+
+#contentStdTop_btnProductionMode {
+  left: 319px;
+  position: absolute;
+}
+
+#contentStdTop_btnProductionMode {
+  width: 115px;
+}
+
+#contentStdTop_btnProductionMode {
+  height: 70px;
+}
+
+#contentStdTop_btnProductionMode {
+  z-index: 2;
+}

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ddef:Dialog xmlns:ddef="http://www.br-automation.com/iat2015/dialogDefinition/v2" id="dlgSafetySystem" layoutRefId="layoutDialog_Large" backColor="rgba(255, 255, 255, 1)" showCloseButton="false">
+  <Assignments>
+    <Assignment type="Content" baseContentRefId="dlgSafetySystemTop_content" areaRefId="areaMain" />
+    <Assignment type="Content" baseContentRefId="dlgSafetySystemBottom_content" areaRefId="areaBottom" />
+  </Assignments>
+</ddef:Dialog>

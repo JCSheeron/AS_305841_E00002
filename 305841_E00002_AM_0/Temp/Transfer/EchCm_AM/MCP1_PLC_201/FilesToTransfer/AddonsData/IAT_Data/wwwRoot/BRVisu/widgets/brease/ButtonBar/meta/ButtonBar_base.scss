@@ -1,0 +1,7 @@
+@import "mixins.scss";
+@mixin widgets_brease_ButtonBar_base {
+	@include elemWidth(200);
+	@include elemHeight(30);
+
+}
+

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_contentAckOPPara">
+    <EventBinding id="eventbinding_55">
+      <Source type="widgets.brease.ButtonBar.Event" event="SelectedIndexChanged" refId="SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara" />
+
+      <Operand name="operandSelectedIndex" datatype="ANY_INT">
+        <ReadTarget type="widgets.brease.ButtonBar.ReadAction" refId="SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara">
+          <Method type="widgets.brease.ButtonBar.Action.GetSelectedIndex" />
+        </ReadTarget>
+      </Operand>
+
+      <EventHandler condition="operandSelectedIndex = 0">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 1">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 2">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 3">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 4">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 5">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 6">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 7">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 8">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+      <EventHandler condition="operandSelectedIndex = 9">
+        <Action>
+          <Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaAck_Selected_Index">
+            <Method type="opcUa.NodeAction.SetValueNumber"><Parameter name="value" xsi:type="ANY_REAL" value="9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+
+    </EventBinding>
+  </Content>
+  <Content id="SfMP171_contentAckOPPara">
+    <EventBinding id="eventbinding_56">
+        <Source type="widgets.brease.TableItemImageList.Event" event="Click" refId="SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_AcknStatus" />
+
+        <EventHandler>
+          <Action>
+			<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SignalImageListOptionParaAck_Clicked">
+				<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+			</Target>
+          </Action>
+        </EventHandler>
+
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

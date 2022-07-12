@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 22 22"
+   xml:space="preserve"
+   width="22"
+   height="22"
+   class="br-symbol-library"
+   id="svg5"
+   sodipodi:docname="Arrow_Left_Asterisk_Left.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs9"><rect
+     x="-5.5566502"
+     y="5.8719211"
+     width="7.7635469"
+     height="11.82266"
+     id="rect24722" /></defs><sodipodi:namedview
+   id="namedview7"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="12.6875"
+   inkscape:cx="15.330049"
+   inkscape:cy="9.4187192"
+   inkscape:window-width="1700"
+   inkscape:window-height="881"
+   inkscape:window-x="2391"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg5"
+   width="31px" />
+
+<g
+   id="Ebene_1">
+</g>
+<path
+   style="fill:none;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="m 5.8750002,12.078125 3.8085939,3.177734 -3e-7,-3.177734 z"
+   id="path5213" /><g
+   id="g22716"
+   transform="matrix(0.90909088,0,0,0.90909088,1.0000005,1)"><g
+     id="Back"
+     transform="scale(0.6875)"
+     style="fill:#7da0a5;fill-opacity:1">
+	<path
+   id="Vor_3_"
+   style="fill:#7da0a5;fill-opacity:1;stroke-width:0.6875"
+   d="M 11,0 C 4.9259375,0 0,4.9245625 0,11 c 0,0.776939 0.08119393,1.53425 0.234375,2.265625 L 0.29492188,13.146484 2.75,14.537109 v -2.55664 h 3.0058594 l -0.828125,-0.691407 c -0.1904375,-0.158125 -0.1865313,-0.42 0.00391,-0.578124 L 10.693359,5.9003906 c 0.190438,-0.1601875 0.333985,-0.084812 0.333985,0.1640625 v 3.234375 h 4.99414 c 0.2475,0 0.50586,0.1567969 0.50586,0.4042969 v 2.708984 c 0,0.2475 -0.25836,0.496094 -0.50586,0.496094 h -4.99414 v 3.027344 c 0,0.249562 -0.141594,0.3215 -0.332032,0.164062 l -0.8105464,-0.675781 0.4492184,0.869141 -2.2304684,1.214843 2.2285154,1.222657 -1.5742185,3.041015 C 9.4817532,21.92142 10.231672,22 11,22 17.074063,22 22,17.076125 22,11 22,4.9245625 17.074063,0 11,0 Z M 6.2597656,12.400391 v 2.134765 l 1.5234375,-0.865234 z m 0,8.072265 v 0.455078 c 0.6656789,0.318496 1.3681316,0.571621 2.0996094,0.751954 z"
+   transform="scale(1.4545455)" />
+</g><g
+     id="Ebene_1-4">
+</g></g><path
+   id="rect880"
+   style="fill:#ffffff;fill-opacity:1;stroke-width:2"
+   d="m 10.892044,6.2874639 c -0.04843,-0.00246 -0.106955,0.023516 -0.171875,0.078125 L 5.4818881,10.738636 c -0.173122,0.14375 -0.175078,0.379687 -0.00195,0.523437 l 5.2441399,4.375 c 0.173125,0.143125 0.300781,0.07844 0.300781,-0.148437 V 12.73473 h 4.539063 c 0.225,-1e-6 0.460938,-0.226172 0.460938,-0.451172 V 9.820667 c 0,-0.225 -0.235938,-0.3671875 -0.460938,-0.3671875 H 11.024856 V 6.5120732 c 0,-0.1414064 -0.05209,-0.2204993 -0.132812,-0.2246093 z" /><text
+   xml:space="preserve"
+   id="text24720"
+   style="font-size:12px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect24722)"><tspan
+     x="-5.5566406"
+     y="28.3125"
+     id="tspan858">*</tspan></text><g
+   aria-label="*"
+   transform="matrix(0.90765448,0,0,0.94392243,11.426802,-6.0153553)"
+   id="text30138-6"
+   style="font-size:23.9998px;white-space:pre;fill:#a58c7d;fill-opacity:1;stroke:#000000;stroke-width:1.9643"><g
+     id="path85459-0"
+     style="fill:#a58c7d;fill-opacity:1"><path
+       style="color:#000000;-inkscape-font-specification:'sans-serif Bold';fill:#525252;fill-opacity:1;stroke:none;stroke-width:1.9643;-inkscape-stroke:none"
+       d="m -2.4733911,22.714115 -3.0077856,1.576808 3.0077856,1.585924 -0.6927021,1.285144 -3.0351292,-1.677068 v 3.135389 h -1.5494653 v -3.135389 l -3.0442433,1.677068 -0.692703,-1.285144 3.0442441,-1.585924 -3.0442441,-1.576808 0.692703,-1.285145 3.0442433,1.658839 V 19.95242 h 1.5494653 v 3.135389 l 3.0351292,-1.658839 z"
+       id="path86399" /></g></g><ellipse
+   style="fill:#000000;fill-opacity:0;stroke:none"
+   id="path85520"
+   cx="-2.0689654"
+   cy="18.344828"
+   rx="4.0394087"
+   ry="6.9556651" /></svg>

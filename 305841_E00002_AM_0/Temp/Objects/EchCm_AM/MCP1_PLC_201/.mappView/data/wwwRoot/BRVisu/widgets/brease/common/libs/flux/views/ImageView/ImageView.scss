@@ -1,0 +1,14 @@
+.ImageView {
+
+    height: 100%;
+
+    div{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &.helper{
+        display: inline-block;
+    }
+
+}

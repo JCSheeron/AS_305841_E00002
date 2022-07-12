@@ -1,0 +1,56 @@
+﻿@import "mixins.scss";
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader .imageDiv{
+@include pureBackgroundImage('../Media/SfMP11_SVG/SfMP11_error_sign.svg');
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseWindowClose{
+@include display(false);
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader div.innerHeader{
+@include text-alignment(left);
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader{
+	height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader .breaseWindowClose{
+	line-height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader .imageDiv{
+	min-width: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	line-height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader div.textDiv{
+	line-height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader div.innerHeader{
+	height: 45px;
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogErrorMsg'] {
+	.breaseDialogWindowHeader div.imageDiv{
+@include factor('max-width',45px, 2);
+	}
+}

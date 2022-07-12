@@ -1,0 +1,4 @@
+$(AS_PROJECT_PATH)/Logical/mappView/Resources/Texts/BoolTexts.tmx
+$(AS_PROJECT_PATH)/Logical/mappView/Resources/Texts/AxisState.tmx
+$(AS_PROJECT_PATH)/Logical/mappView/Resources/Texts/UnitTexts.tmx
+$(AS_PROJECT_PATH)/Logical/Project.language

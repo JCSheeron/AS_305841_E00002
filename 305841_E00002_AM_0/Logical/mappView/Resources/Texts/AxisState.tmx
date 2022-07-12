@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">IAT</prop>
+  </header>
+  <body>
+    <tu tuid="axisStatus.0">
+      <tuv xml:lang="en">
+        <seg>Disabled</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.1">
+      <tuv xml:lang="en">
+        <seg>Stopped</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.2">
+      <tuv xml:lang="en">
+        <seg>Homing</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.3">
+      <tuv xml:lang="en">
+        <seg>Stopping</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.4">
+      <tuv xml:lang="en">
+        <seg>Discrete Motion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.5">
+      <tuv xml:lang="en">
+        <seg>Continuous Motion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.6">
+      <tuv xml:lang="en">
+        <seg>Synchronized Motion</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.7">
+      <tuv xml:lang="en">
+        <seg>Error Stop</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.8">
+      <tuv xml:lang="en">
+        <seg>Startup</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisStatus.9">
+      <tuv xml:lang="en">
+        <seg>Invalid Configuration</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.0">
+      <tuv xml:lang="en">
+        <seg>Initializing</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.1">
+      <tuv xml:lang="en">
+        <seg>Ignored</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.2">
+      <tuv xml:lang="en">
+        <seg>Validity Check</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.3">
+      <tuv xml:lang="en">
+        <seg>Disabled</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.4">
+      <tuv xml:lang="en">
+        <seg>Enabled</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.5">
+      <tuv xml:lang="en">
+        <seg>Home Request</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.6">
+      <tuv xml:lang="en">
+        <seg>Homing</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.7">
+      <tuv xml:lang="en">
+        <seg>Homed</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.8">
+      <tuv xml:lang="en">
+        <seg>Init Endless Pos</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.9">
+      <tuv xml:lang="en">
+        <seg>Endless Pos Error</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.10">
+      <tuv xml:lang="en">
+        <seg>Error Stop</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.11">
+      <tuv xml:lang="en">
+        <seg>Reset Wait</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.12">
+      <tuv xml:lang="en">
+        <seg>Error Disable</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.13">
+      <tuv xml:lang="en">
+        <seg>Error Reset</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.20">
+      <tuv xml:lang="en">
+        <seg>Halt</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.21">
+      <tuv xml:lang="en">
+        <seg>Stop</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.22">
+      <tuv xml:lang="en">
+        <seg>Stop Reset</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.23">
+      <tuv xml:lang="en">
+        <seg>Halt Disable</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.31">
+      <tuv xml:lang="en">
+        <seg>Jogging</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.32">
+      <tuv xml:lang="en">
+        <seg>Jog Positive Limit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.33">
+      <tuv xml:lang="en">
+        <seg>Jog Negative Limit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.41">
+      <tuv xml:lang="en">
+        <seg>Moving Velocity</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.51">
+      <tuv xml:lang="en">
+        <seg>Moving Relative</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.61">
+      <tuv xml:lang="en">
+        <seg>Moving Absolute</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.71">
+      <tuv xml:lang="en">
+        <seg>Engaged as Slave</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="gamot_SmState.72">
+      <tuv xml:lang="en">
+        <seg>Disengaged as Slave</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Servus Welt!</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Bonjour tout le monde!</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.0">
+      <tuv xml:lang="en">
+        <seg>Dummy Axis</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.1">
+      <tuv xml:lang="en">
+        <seg>Spindle</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.2">
+      <tuv xml:lang="en">
+        <seg>Outter Eccentric</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.3">
+      <tuv xml:lang="en">
+        <seg>Inner Eccentric</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.4">
+      <tuv xml:lang="en">
+        <seg>Z Axis</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.5">
+      <tuv xml:lang="en">
+        <seg>X (Depth) Axis</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.6">
+      <tuv xml:lang="en">
+        <seg>Y Axis</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.7">
+      <tuv xml:lang="en">
+        <seg>Handwheel</seg>
+      </tuv>
+    </tu>
+    <tu tuid="axisName.8">
+      <tuv xml:lang="en">
+        <seg>CF VFD</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.0">
+      <tuv xml:lang="en">
+        <seg>Prep Sl Offset Pos.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.1">
+      <tuv xml:lang="en">
+        <seg>Sl to Offset Pos</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.2">
+      <tuv xml:lang="en">
+        <seg>Preparing Cam Coupling</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.3">
+      <tuv xml:lang="en">
+        <seg>Master To Offset Pos.</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.4">
+      <tuv xml:lang="en">
+        <seg>In Cam Motion</seg>
+      </tuv>
+    </tu>
+    <tu tuid="camStatus.5">
+      <tuv xml:lang="en">
+        <seg>At End Of Profile</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

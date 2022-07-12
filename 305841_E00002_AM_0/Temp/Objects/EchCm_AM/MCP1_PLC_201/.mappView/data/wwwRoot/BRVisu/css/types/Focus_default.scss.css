@@ -1,0 +1,15 @@
+.system_brease_Focus_style_default .breaseWidget:focus, .system_brease_Focus_style_default .focusWithin, .system_brease_Focus_style_default .breaseFocusable:focus {
+  outline-style: solid;
+}
+
+.system_brease_Focus_style_default .breaseWidget:focus, .system_brease_Focus_style_default .focusWithin, .system_brease_Focus_style_default .breaseFocusable:focus {
+  outline-color: #5E9ED6;
+}
+
+.system_brease_Focus_style_default .breaseWidget:focus, .system_brease_Focus_style_default .focusWithin, .system_brease_Focus_style_default .breaseFocusable:focus {
+  outline-width: 3px;
+}
+
+.system_brease_Focus_style_default .breaseWidget:focus, .system_brease_Focus_style_default .focusWithin, .system_brease_Focus_style_default .breaseFocusable:focus {
+  outline-offset: 2px;
+}

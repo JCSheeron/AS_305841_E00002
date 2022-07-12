@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="<%= data.name %>Restrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:<%= data.superClassName %>">
+			<% data.restrictions.forEach(function(attribute) { 
+				if(attribute.use === 'prohibited' || attribute.default === undefined){%>
+			<xs:attribute name="<%= attribute.name %>" use="<%= attribute.use %>" type="<%= attribute.type %>" />
+			<%  }else{ %>
+			<xs:attribute name="<%= attribute.name %>" use="<%= attribute.use %>" type="<%= attribute.type %>" default="<%= attribute.default %>" />
+			<%	} 
+			}) %>
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="<%= data.name %>">
+	<xs:complexContent>
+		<xs:extension base="iat:<%= data.name %>Restrict">
+			<% if(data.isContainerWidget === true || data.structuredProperties.length > 0 || data.arrayProperties.length > 0){ 
+			%><xs:all>
+				<% if(data.hasRequiredArrayProperties === true) { 
+				%><xs:element name="Properties" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:all><% 
+					} else if (data.structuredProperties.length > 0) { 
+				%><xs:element name="Properties" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:all>
+				<%  } else if(data.arrayProperties.length > 0) { 
+				%><xs:element name="Properties" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:all>
+				<% } 
+				   data.structuredProperties.forEach(function(structuredPropertie) { %>
+							<xs:element name="<%= structuredPropertie.name %>" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Element" minOccurs="<%= structuredPropertie.min %>" maxOccurs="<%= structuredPropertie.max %>">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:extension base="types:StructuredPropertyElement">
+							<% structuredPropertie.extensions.forEach(function(attribute) { 
+								 if(attribute.isArray !== true){ %>
+														<xs:attribute name="<%= attribute.name %>" use="<%= attribute.use %>" type="<%= attribute.type %>" <% if(attribute.default!==undefined){%>default="<%= attribute.default %>"<%} %> />
+								<% }
+							   }) %>
+													</xs:extension >
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+								<xs:unique name="<%= data.name %>.unique<%= structuredPropertie.name %>Id">
+									<xs:selector xpath="iat:Element"/>
+									<xs:field xpath="@id"/>
+								</xs:unique>
+							</xs:element>
+				   <%}) 
+				   data.arrayProperties.forEach(function(arrayAttribute) { %>
+							<xs:element name="<%= arrayAttribute.name %>" type="<%= arrayAttribute.type %>" minOccurs="<%= arrayAttribute.min %>" maxOccurs="<%= arrayAttribute.max %>"></xs:element>
+				<% }) 
+				   if(data.structuredProperties.length > 0 || data.arrayProperties.length > 0){ %>
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+				<% }
+				   if(data.isContainerWidget === true){ 
+				%>
+				<xs:element name="Widgets" type="iat:Widgets" minOccurs="1" maxOccurs="1">
+					<xs:unique name="<%= data.name %>.zIndex">
+						<xs:selector xpath="./iat:Widget"/>
+						<xs:field xpath="@zIndex"/>
+					</xs:unique>
+				</xs:element>
+				  <% } %>
+			</xs:all>
+			<% }
+			data.extensions.forEach(function(attribute) {
+			    if(attribute.isArray !== true){ 
+					if(attribute.use === 'required'){%>
+			<xs:attribute name="<%= attribute.name %>" use="<%= attribute.use %>" type="<%= attribute.type %>" />
+			<%		}else{%>
+			<xs:attribute name="<%= attribute.name %>" use="<%= attribute.use %>" type="<%= attribute.type %>" default="<%= attribute.default %>" />
+			<%		}
+				}
+		}) %>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

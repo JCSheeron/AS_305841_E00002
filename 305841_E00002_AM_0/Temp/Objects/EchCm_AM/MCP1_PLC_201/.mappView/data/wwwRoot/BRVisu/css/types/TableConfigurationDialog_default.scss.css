@@ -1,0 +1,139 @@
+.system_brease_TableConfigurationDialog_style_default {
+  border-radius: 0px;
+  background-color: #FFFFFF;
+  border-color: #333333;
+  border-bottom-width: 9px;
+  border-left-width: 9px;
+  border-right-width: 9px;
+  border-top-width: 0px !important;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.system_brease_TableConfigurationDialog_style_default .breaseWindowClose {
+  display: block;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  border-radius: 0px;
+}
+
+.system_brease_TableConfigurationDialog_style_default .generic-dialog-content-footer-container {
+  border-radius: 0px;
+}
+
+.system_brease_TableConfigurationDialog_style_default .generic-dialog-content-footer-container {
+  background-color: #FFFFFF;
+}
+
+.system_brease_TableConfigurationDialog_style_default .arrowLeft .breaseWindowArrow {
+  border-right-color: #333333;
+}
+
+.system_brease_TableConfigurationDialog_style_default .arrowRight .breaseWindowArrow {
+  border-left-color: #333333;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  margin-left: -9px !important;
+  margin-right: -9px !important;
+}
+
+.system_brease_TableConfigurationDialog_style_default header div {
+  color: #FFF;
+}
+
+.system_brease_TableConfigurationDialog_style_default header div {
+  font-family: Arial;
+}
+
+.system_brease_TableConfigurationDialog_style_default header div {
+  font-size: 16px;
+}
+
+.system_brease_TableConfigurationDialog_style_default header div {
+  font-weight: normal;
+}
+
+.system_brease_TableConfigurationDialog_style_default header div {
+  font-style: normal;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  background-color: #333;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  border-color: #333;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  border-width: 0px;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  border-style: none;
+}
+
+.system_brease_TableConfigurationDialog_style_default header {
+  height: 42px;
+}
+
+.system_brease_TableConfigurationDialog_style_default header .breaseWindowClose {
+  height: 42px;
+}
+
+.system_brease_TableConfigurationDialog_style_default header .breaseWindowClose {
+  line-height: 42px;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy.success span {
+  color: #008000;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy.fail span {
+  color: #FF0000;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+  font-family: Arial;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+  font-size: 14px;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+  font-weight: normal;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Label_style_default.policy span {
+  font-style: normal;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success svg {
+  fill: #008000;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success {
+  width: 16px;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.success {
+  height: 16px;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail svg {
+  fill: #FF0000;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail {
+  width: 16px;
+}
+
+.system_brease_TableConfigurationDialog_style_default.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail {
+  height: 16px;
+}

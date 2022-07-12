@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mappings>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisDetail.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisDetail.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisHome.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisHome.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisSetPosLimits.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisSetPosLimits.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisStatus.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GaMotAxisStatus.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GAMotTestWidget.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.GAMotLib.GAMotTestWidget.Action.SetVisible.value" type="BOOL"/>
+</Mappings>

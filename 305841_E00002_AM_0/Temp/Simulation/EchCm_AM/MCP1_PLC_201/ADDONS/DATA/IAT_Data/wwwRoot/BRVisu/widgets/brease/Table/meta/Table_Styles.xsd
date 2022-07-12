@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:sd="http://www.br-automation.com/iat2015/styles/engineering/v1" 
+	xmlns:wt="http://www.br-automation.com/iat2015/widgetTypes/v2" 
+	elementFormDefault="qualified">
+	<xs:complexType name="widgets.brease.Table">
+		<xs:complexContent>
+			<xs:extension base="sd:stylesBase">
+				<xs:attribute name="activeBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="activeBackGroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="mouseDownTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="mouseDownBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="mouseDownBackGroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="activeInputCellTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="activeInputCellInnerShadow" use="optional" type="wt:Shadow"></xs:attribute>
+				<xs:attribute name="activeInputCellBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="activeInputCellBackgroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="inputCellTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="inputCellInnerShadow" use="optional" type="wt:Shadow"></xs:attribute>
+				<xs:attribute name="inputCellBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="inputCellBackgroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="activeTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backColorEvenColumn" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backColorOddColumn" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backGroundGradientEvenColumn" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="backGroundGradientOddColumn" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="backColorEvenRow" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backColorOddRow" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="backGroundGradientEvenRow" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="backGroundGradientOddRow" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="backGroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="borderColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="borderStyle" use="optional" type="wt:BorderStyle"></xs:attribute>
+				<xs:attribute name="borderWidth" use="optional" type="wt:PixelValCollection"></xs:attribute>
+				<xs:attribute name="cellAlign" use="optional" type="wt:brease.enum.BackgroundPosition"></xs:attribute>
+				<xs:attribute name="cellBorderStyle" use="optional" type="wt:BorderStyle"></xs:attribute>
+				<xs:attribute name="cellBorderColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="cellBorderWidth" use="optional" type="wt:PixelValCollection"></xs:attribute>
+				<xs:attribute name="cellPadding" use="optional" type="wt:Padding"></xs:attribute>
+				<xs:attribute name="headerCellPadding" use="optional" type="wt:Padding"></xs:attribute>
+				<xs:attribute name="cornerRadius" use="optional" type="wt:PixelValCollection"></xs:attribute>
+				<xs:attribute name="disabledActiveTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledActiveBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledActiveBackGroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="disabledBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledBackGroundGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="disabledBackColorEvenRow" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledBackColorOddRow" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledBackColorEvenColumn" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledBackColorOddColumn" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledBorderColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledCellBorderColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledItemBorderColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledHeaderTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledHeaderBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="disabledHeaderGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="disabledTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="fontName" use="optional" type="wt:FontName"></xs:attribute>
+				<xs:attribute name="fontSize" use="optional" type="wt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerBackColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="headerGradient" use="optional" type="wt:Gradient"></xs:attribute>
+				<xs:attribute name="headerTextColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="headerFontSize" use="optional" type="wt:PixelVal"></xs:attribute>
+				<xs:attribute name="sortingButtonColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="sortingButtonActiveColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="textColor" use="optional" type="wt:Color"></xs:attribute>
+				<xs:attribute name="bold" use="optional" type="wt:Boolean"></xs:attribute>
+				<xs:attribute name="italic" use="optional" type="wt:Boolean"></xs:attribute>
+				<xs:attribute name="opacity" use="optional" type="wt:Opacity"></xs:attribute>
+				<xs:attribute name="shadow" use="optional" type="wt:Shadow"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

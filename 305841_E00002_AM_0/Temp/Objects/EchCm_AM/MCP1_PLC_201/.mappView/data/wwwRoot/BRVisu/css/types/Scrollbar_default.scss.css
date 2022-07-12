@@ -1,0 +1,63 @@
+.system_brease_Scrollbar_style_default .iScrollIndicator {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.system_brease_Scrollbar_style_default .iScrollVerticalScrollbar {
+  width: 7px;
+}
+
+.system_brease_Scrollbar_style_default .iScrollHorizontalScrollbar {
+  height: 7px;
+}
+
+.system_brease_Scrollbar_style_default .iScrollHorizontalScrollbar.iScrollBothScrollbars {
+  right: 9px;
+}
+
+.system_brease_Scrollbar_style_default .iScrollVerticalScrollbar.iScrollBothScrollbars {
+  bottom: 9px;
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar {
+  width: 7px;
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar {
+  height: 7px;
+}
+
+.system_brease_Scrollbar_style_default .iScrollIndicator {
+  border-width: 1px;
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar-thumb {
+  border-width: 1px;
+}
+
+.system_brease_Scrollbar_style_default .iScrollIndicator {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar-thumb {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.system_brease_Scrollbar_style_default .iScrollIndicator {
+  border-style: solid;
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar-thumb {
+  border-style: solid;
+}
+
+.system_brease_Scrollbar_style_default .iScrollIndicator {
+  border-radius: 3px;
+}
+
+.system_brease_Scrollbar_style_default .dataTables_scrollBody::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}

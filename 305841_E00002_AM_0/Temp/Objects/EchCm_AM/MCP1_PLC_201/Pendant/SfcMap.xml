@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Monitor>
+<InputFile>C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\PlcLogic\Pendant\fbEnabledAxis.sfc</InputFile>
+<OutputFile>C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Objects\EchCm_AM\MCP1_PLC_201\Pendant\fbEnabledAxis.sfc.o</OutputFile>
+<MainSFC>
+<STEP00002 NAME="Stp_Init" CYCLIC="3"/>
+<STEP00004 NAME="Stp_EnableWait" ENTRY="4"/>
+<TRANSITION00005 CYCLIC="5"/>
+<TRANSITION00006 CYCLIC="6"/>
+<STEP00007 NAME="Stp_NewSelAxis" ENTRY="7"/>
+<STEP00010 NAME="Stp_Setup" ENTRY="8"/>
+<TRANSITION00011 CYCLIC="9"/>
+<TRANSITION00012 CYCLIC="10"/>
+<STEP00013 NAME="Stp_Decouple" ENTRY="11"/>
+<TRANSITION00014 CYCLIC="12"/>
+<STEP00016 NAME="Stp_EngageSelAxis" ENTRY="13" CYCLIC="14"/>
+<TRANSITION00017 CYCLIC="15"/>
+<TRANSITION00018 CYCLIC="16"/>
+</MainSFC>
+<ProcessPb1 USED="FALSE" NR="0">
+</ProcessPb1>
+<ProcessPb2 USED="FALSE" NR="0">
+</ProcessPb2>
+<ProcessPb3 USED="FALSE" NR="0">
+</ProcessPb3>
+<ProcessPb4 USED="FALSE" NR="0">
+</ProcessPb4>
+<ProcessPb5 USED="FALSE" NR="0">
+</ProcessPb5>
+<ProcessPb6 USED="FALSE" NR="0">
+</ProcessPb6>
+<ProcessPb7 USED="FALSE" NR="0">
+</ProcessPb7>
+<ProcessPb8 USED="FALSE" NR="0">
+</ProcessPb8>
+<ProcessPb9 USED="FALSE" NR="0">
+</ProcessPb9>
+<SetZeroSeq USED="FALSE" NR="0">
+</SetZeroSeq>
+</Monitor>

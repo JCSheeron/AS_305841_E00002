@@ -1,0 +1,2103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingListDefinition xmlns="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisNumber_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].AxisNo" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].AxisNo" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].AxisNo" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].AxisNo" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].AxisNo" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].AxisNo" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].AxisNo" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].AxisNo" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].AxisNo" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].AxisNo" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisNumber_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].AxisNo" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].AxisNo" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].AxisNo" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].AxisNo" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].AxisNo" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].AxisNo" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].AxisNo" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].AxisNo" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].AxisNo" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].AxisNo" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisPos_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Position" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Position" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Position" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Position" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Position" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Position" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Position" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Position" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Position" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Position" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisPos_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Position" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Position" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Position" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Position" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Position" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Position" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Position" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Position" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Position" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Position" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisVel_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Velocity" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Velocity" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Velocity" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Velocity" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Velocity" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Velocity" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Velocity" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Velocity" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_AxisVel_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Velocity" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Velocity" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Velocity" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Velocity" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Velocity" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Velocity" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Velocity" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Velocity" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CalculatedPos1_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CalculatedPosition1" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CalculatedPosition1" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CalculatedPosition1" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CalculatedPosition1" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CalculatedPosition1" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CalculatedPosition1" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CalculatedPosition1" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CalculatedPos1_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CalculatedPosition1" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CalculatedPosition1" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CalculatedPosition1" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsReadyToPowerOn_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsReadyToPowerOn" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsReadyToPowerOn" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsReadyToPowerOn_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsReadyToPowerOn" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsReadyToPowerOn" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsReadyToPowerOn" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsHomed_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsHomed" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsHomed" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsHomed" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsHomed" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsHomed" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsHomed" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsHomed" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsHomed" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsHomed" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsHomed" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsHomed_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsHomed" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsHomed" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsHomed" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsHomed" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsHomed" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsHomed" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsHomed" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsHomed" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsHomed" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsHomed" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsPoweredOn_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsPoweredOn" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsPoweredOn" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsPoweredOn" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsPoweredOn" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsPoweredOn" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsPoweredOn" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsPoweredOn" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsPoweredOn" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsPoweredOn" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsPoweredOn" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsPoweredOn_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsPoweredOn" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsPoweredOn" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsPoweredOn" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsPoweredOn" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsPoweredOn" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsPoweredOn" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsPoweredOn" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsPoweredOn" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsPoweredOn" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsPoweredOn" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsBrakeManRel_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsBrakeManuallyReleased" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsBrakeManuallyReleased" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsBrakeManRel_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsBrakeManuallyReleased" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsBrakeManuallyReleased" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsMoveActive_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsMoveActive" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsMoveActive" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsMoveActive" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsMoveActive" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsMoveActive" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsMoveActive" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsMoveActive" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsMoveActive" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsMoveActive" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsMoveActive" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsMoveActive_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsMoveActive" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsMoveActive" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsMoveActive" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsMoveActive" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsMoveActive" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsMoveActive" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsMoveActive" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsMoveActive" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsMoveActive" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsMoveActive" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsInPosition_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsInPosition" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsInPosition" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsInPosition" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsInPosition" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsInPosition" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsInPosition" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsInPosition" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsInPosition" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsInPosition" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsInPosition" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsInPosition_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsInPosition" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsInPosition" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsInPosition" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsInPosition" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsInPosition" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsInPosition" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsInPosition" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsInPosition" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsInPosition" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsInPosition" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsMoveDone_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsMoveDone" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsMoveDone" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsMoveDone" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsMoveDone" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsMoveDone" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsMoveDone" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsMoveDone" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsMoveDone" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsMoveDone" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsMoveDone" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsMoveDone_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsMoveDone" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsMoveDone" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsMoveDone" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsMoveDone" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsMoveDone" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsMoveDone" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsMoveDone" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsMoveDone" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsMoveDone" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsMoveDone" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsStopped_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsStopped" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsStopped" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsStopped" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsStopped" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsStopped" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsStopped" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsStopped" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsStopped" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsStopped" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsStopped" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsStopped_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsStopped" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsStopped" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsStopped" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsStopped" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsStopped" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsStopped" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsStopped" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsStopped" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsStopped" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsStopped" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_PlcOpenState_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.PlcOpenState" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.PlcOpenState" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.PlcOpenState" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.PlcOpenState" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.PlcOpenState" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.PlcOpenState" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.PlcOpenState" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.PlcOpenState" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.PlcOpenState" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.PlcOpenState" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_PlcOpenState_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.PlcOpenState" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.PlcOpenState" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.PlcOpenState" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.PlcOpenState" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.PlcOpenState" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.PlcOpenState" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.PlcOpenState" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.PlcOpenState" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.PlcOpenState" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.PlcOpenState" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesSMState_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].SMState" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].SMState" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].SMState" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].SMState" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].SMState" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].SMState" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].SMState" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].SMState" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].SMState" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].SMState" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesSMState_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].SMState" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].SMState" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].SMState" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].SMState" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].SMState" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].SMState" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].SMState" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].SMState" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].SMState" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].SMState" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_SlaveAxisNumber_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].CouplingParameters.SlaveAxisNo" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].CouplingParameters.SlaveAxisNo" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_SlaveAxisNumber_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].CouplingParameters.SlaveAxisNo" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].CouplingParameters.SlaveAxisNo" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearInComp_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInCompensation" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInCompensation" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInCompensation" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInCompensation" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInCompensation" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInCompensation" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInCompensation" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInCompensation" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearInComp_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInCompensation" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInCompensation" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsGearInCompensation" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearInSync_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInSync" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInSync" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInSync" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInSync" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInSync" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInSync" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInSync" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInSync" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInSync" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsGearInSync" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearInSync_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsGearInSync" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsGearInSync" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsGearInSync" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsGearInSync" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsGearInSync" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsGearInSync" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsGearInSync" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsGearInSync" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsGearInSync" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsGearInSync" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetStarted_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftStarted" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetStarted_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftStarted" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetDone_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftAttained" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsGearOffsetDone_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCoordOffsetShiftAttained" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CoordActualOffsetShift_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CoordActualOffsetShift" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CoordActualOffsetShift" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CoordActualOffsetShift_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CoordActualOffsetShift" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsCamInSync_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamInSync" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamInSync" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamInSync" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamInSync" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamInSync" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamInSync" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamInSync" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamInSync" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamInSync" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCamInSync" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsCamInSync_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamInSync" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamInSync" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamInSync" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamInSync" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamInSync" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamInSync" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamInSync" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamInSync" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamInSync" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCamInSync" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsCamEndOfProfile_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamEndOfProfile" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamEndOfProfile" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_IsCamEndOfProfile_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.IsCamEndOfProfile" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.IsCamEndOfProfile" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.IsCamEndOfProfile" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CamStatus_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CamStatus" attribute="value" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CamStatus" attribute="value" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CamStatus" attribute="value" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CamStatus" attribute="value" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CamStatus" attribute="value" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CamStatus" attribute="value" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CamStatus" attribute="value" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CamStatus" attribute="value" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CamStatus" attribute="value" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CamStatus" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_CamStatus_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CamStatus" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CamStatus" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CamStatus" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CamStatus" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CamStatus" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CamStatus" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CamStatus" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CamStatus" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CamStatus" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CamStatus" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="cmpwid_posUnits_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svLinPosUnits" attribute="value" />
+      <Element index="1" refId="svRevPosUnits" attribute="value" />
+      <Element index="2" refId="svAngPosUnits" attribute="value" />
+      <Element index="3" refId="svAngPosUnits" attribute="value" />
+      <Element index="4" refId="svLinPosUnits" attribute="value" />
+      <Element index="5" refId="svLinPosUnits" attribute="value" />
+      <Element index="6" refId="svLinPosUnits" attribute="value" />
+      <Element index="7" refId="svAngPosUnits" attribute="value" />
+      <Element index="8" refId="svRevPosUnits" attribute="value" />
+      <Default refId="svLinPosUnits" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="cmpwid_velUnits_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svLinVelUnits" attribute="value" />
+      <Element index="1" refId="svRevVelUnits" attribute="value" />
+      <Element index="2" refId="svAngVelUnits" attribute="value" />
+      <Element index="3" refId="svAngVelUnits" attribute="value" />
+      <Element index="4" refId="svLinVelUnits" attribute="value" />
+      <Element index="5" refId="svLinVelUnits" attribute="value" />
+      <Element index="6" refId="svLinVelUnits" attribute="value" />
+      <Element index="7" refId="svAngVelUnits" attribute="value" />
+      <Element index="8" refId="svRevVelUnits" attribute="value" />
+      <Default refId="svLinVelUnits" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="cmpwid_accelUnits_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svLinAccelUnits" attribute="value" />
+      <Element index="1" refId="svRevAccelUnits" attribute="value" />
+      <Element index="2" refId="svAngAccelUnits" attribute="value" />
+      <Element index="3" refId="svAngAccelUnits" attribute="value" />
+      <Element index="4" refId="svLinAccelUnits" attribute="value" />
+      <Element index="5" refId="svLinAccelUnits" attribute="value" />
+      <Element index="6" refId="svLinAccelUnits" attribute="value" />
+      <Element index="7" refId="svAngAccelUnits" attribute="value" />
+      <Element index="8" refId="svRevAccelUnits" attribute="value" />
+      <Default refId="svLinAccelUnits" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="cmpwid_jerkUnits_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svLinJerkUnits" attribute="value" />
+      <Element index="1" refId="svRevJerkUnits" attribute="value" />
+      <Element index="2" refId="svAngJerkUnits" attribute="value" />
+      <Element index="3" refId="svAngJerkUnits" attribute="value" />
+      <Element index="4" refId="svLinJerkUnits" attribute="value" />
+      <Element index="5" refId="svLinJerkUnits" attribute="value" />
+      <Element index="6" refId="svLinJerkUnits" attribute="value" />
+      <Element index="7" refId="svAngJerkUnits" attribute="value" />
+      <Element index="8" refId="svRevJerkUnits" attribute="value" />
+      <Default refId="svLinJerkUnits" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDesignation_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDesignation" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].moveDesignation" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].moveDesignation" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].moveDesignation" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].moveDesignation" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].moveDesignation" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].moveDesignation" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].moveDesignation" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].moveDesignation" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDesignation" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDesignation_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDesignation" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].moveDesignation" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].moveDesignation" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].moveDesignation" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].moveDesignation" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].moveDesignation" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].moveDesignation" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].moveDesignation" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].moveDesignation" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDesignation" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirection_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].direction" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].direction" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].direction" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].direction" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].direction" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].direction" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].direction" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].direction" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].direction" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].direction" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirection_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].direction" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].direction" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].direction" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].direction" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].direction" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].direction" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].direction" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].direction" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].direction" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].direction" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionPosEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionPosEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionPosEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionPosEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionPosEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionPosEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionPosEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionPosEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionPosEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionPosEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionPosEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionPosEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionPosEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionPosEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionPosEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionPosEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionPosEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionPosEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionPosEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionPosEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionPosEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionPosEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionNegEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionNegEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionNegEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionNegEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionNegEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionNegEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionNegEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionNegEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionNegEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionNegEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionNegEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionNegEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionNegEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionNegEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionNegEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionNegEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionNegEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionNegEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionNegEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionNegEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionNegEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionNegEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionShortestEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionShortestEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionShortestEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionShortestEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionShortestEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionShortestEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionShortestEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionShortestEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionShortestEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionShortestEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionShortestEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDirectionShortestEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].directionShortestEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].directionShortestEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].directionShortestEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].directionShortestEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].directionShortestEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].directionShortestEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].directionShortestEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].directionShortestEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].directionShortestEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].directionShortestEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDistanceEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDistanceEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].moveDistanceEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].moveDistanceEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].moveDistanceEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].moveDistanceEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].moveDistanceEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].moveDistanceEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].moveDistanceEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].moveDistanceEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDistanceEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMoveDistanceEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDistanceEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].moveDistanceEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].moveDistanceEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].moveDistanceEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].moveDistanceEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].moveDistanceEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].moveDistanceEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].moveDistanceEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].moveDistanceEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].moveDistanceEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMovePositionEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].movePositionEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].movePositionEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].movePositionEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].movePositionEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].movePositionEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].movePositionEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].movePositionEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].movePositionEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].movePositionEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].movePositionEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqMovePositionEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].movePositionEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].movePositionEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].movePositionEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].movePositionEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].movePositionEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].movePositionEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].movePositionEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].movePositionEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].movePositionEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].movePositionEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisGearInEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].gearInEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].gearInEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].gearInEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].gearInEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].gearInEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].gearInEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].gearInEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].gearInEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisGearInEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].gearInEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].gearInEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].gearInEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].gearInEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].gearInEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].gearInEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].gearInEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].gearInEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].gearInEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqShiftEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].shiftEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].shiftEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].shiftEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].shiftEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].shiftEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].shiftEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].shiftEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].shiftEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisReqShiftEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].shiftEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].shiftEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].shiftEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].shiftEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].shiftEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].shiftEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].shiftEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].shiftEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].shiftEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisCamInEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].camInEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].camInEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].camInEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].camInEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].camInEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].camInEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].camInEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].camInEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisCamInEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].camInEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].camInEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].camInEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].camInEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].camInEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].camInEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].camInEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].camInEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].camInEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisDisengageEnable_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].disengageEnable" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].disengageEnable" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].disengageEnable" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].disengageEnable" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].disengageEnable" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].disengageEnable" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].disengageEnable" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].disengageEnable" attribute="value" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_manAxisDisengageEnable_list_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiMachineAxisReqs[1].disengageEnable" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiMachineAxisReqs[2].disengageEnable" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiMachineAxisReqs[3].disengageEnable" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiMachineAxisReqs[4].disengageEnable" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiMachineAxisReqs[5].disengageEnable" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiMachineAxisReqs[6].disengageEnable" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiMachineAxisReqs[7].disengageEnable" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiMachineAxisReqs[8].disengageEnable" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiMachineAxisReqs[0].disengageEnable" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘPositionΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Position" attribute="node" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Position" attribute="node" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Position" attribute="node" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Position" attribute="node" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Position" attribute="node" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Position" attribute="node" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Position" attribute="node" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Position" attribute="node" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Position" attribute="node" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Position" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘPositionΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Position" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Position" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Position" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Position" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Position" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Position" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Position" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Position" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Position" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Position" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘVelocityΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="node" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Velocity" attribute="node" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Velocity" attribute="node" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Velocity" attribute="node" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Velocity" attribute="node" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Velocity" attribute="node" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Velocity" attribute="node" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Velocity" attribute="node" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Velocity" attribute="node" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘVelocityΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.Velocity" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.Velocity" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.Velocity" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.Velocity" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.Velocity" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.Velocity" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.Velocity" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.Velocity" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.Velocity" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘCoordActualOffsetShiftΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CoordActualOffsetShift" attribute="node" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CoordActualOffsetShift" attribute="node" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesStatus_listΘCoordActualOffsetShiftΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:axes[1].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:axes[2].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:axes[3].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:axes[4].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:axes[5].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:axes[6].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:axes[7].Status.CoordActualOffsetShift" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:axes[8].Status.CoordActualOffsetShift" attribute="editable" />
+      <Default refId="::AsGlobalPV:axes[0].Status.CoordActualOffsetShift" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesPositionLimits_listΘPositionLimitPosΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitPos" attribute="node" />
+      <Element index="1" refId="::AsGlobalPV:gr_AxisPositionLimits[1].PositionLimitPos" attribute="node" />
+      <Element index="2" refId="::AsGlobalPV:gr_AxisPositionLimits[2].PositionLimitPos" attribute="node" />
+      <Element index="3" refId="::AsGlobalPV:gr_AxisPositionLimits[3].PositionLimitPos" attribute="node" />
+      <Element index="4" refId="::AsGlobalPV:gr_AxisPositionLimits[4].PositionLimitPos" attribute="node" />
+      <Element index="5" refId="::AsGlobalPV:gr_AxisPositionLimits[5].PositionLimitPos" attribute="node" />
+      <Element index="6" refId="::AsGlobalPV:gr_AxisPositionLimits[6].PositionLimitPos" attribute="node" />
+      <Element index="7" refId="::AsGlobalPV:gr_AxisPositionLimits[7].PositionLimitPos" attribute="node" />
+      <Element index="8" refId="::AsGlobalPV:gr_AxisPositionLimits[8].PositionLimitPos" attribute="node" />
+      <Default refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitPos" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesPositionLimits_listΘPositionLimitPosΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitPos" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:gr_AxisPositionLimits[1].PositionLimitPos" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:gr_AxisPositionLimits[2].PositionLimitPos" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:gr_AxisPositionLimits[3].PositionLimitPos" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:gr_AxisPositionLimits[4].PositionLimitPos" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:gr_AxisPositionLimits[5].PositionLimitPos" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:gr_AxisPositionLimits[6].PositionLimitPos" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:gr_AxisPositionLimits[7].PositionLimitPos" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:gr_AxisPositionLimits[8].PositionLimitPos" attribute="editable" />
+      <Default refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitPos" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesPositionLimits_listΘPositionLimitNegΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitNeg" attribute="node" />
+      <Element index="1" refId="::AsGlobalPV:gr_AxisPositionLimits[1].PositionLimitNeg" attribute="node" />
+      <Element index="2" refId="::AsGlobalPV:gr_AxisPositionLimits[2].PositionLimitNeg" attribute="node" />
+      <Element index="3" refId="::AsGlobalPV:gr_AxisPositionLimits[3].PositionLimitNeg" attribute="node" />
+      <Element index="4" refId="::AsGlobalPV:gr_AxisPositionLimits[4].PositionLimitNeg" attribute="node" />
+      <Element index="5" refId="::AsGlobalPV:gr_AxisPositionLimits[5].PositionLimitNeg" attribute="node" />
+      <Element index="6" refId="::AsGlobalPV:gr_AxisPositionLimits[6].PositionLimitNeg" attribute="node" />
+      <Element index="7" refId="::AsGlobalPV:gr_AxisPositionLimits[7].PositionLimitNeg" attribute="node" />
+      <Element index="8" refId="::AsGlobalPV:gr_AxisPositionLimits[8].PositionLimitNeg" attribute="node" />
+      <Default refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitNeg" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_axesPositionLimits_listΘPositionLimitNegΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitNeg" attribute="editable" />
+      <Element index="1" refId="::AsGlobalPV:gr_AxisPositionLimits[1].PositionLimitNeg" attribute="editable" />
+      <Element index="2" refId="::AsGlobalPV:gr_AxisPositionLimits[2].PositionLimitNeg" attribute="editable" />
+      <Element index="3" refId="::AsGlobalPV:gr_AxisPositionLimits[3].PositionLimitNeg" attribute="editable" />
+      <Element index="4" refId="::AsGlobalPV:gr_AxisPositionLimits[4].PositionLimitNeg" attribute="editable" />
+      <Element index="5" refId="::AsGlobalPV:gr_AxisPositionLimits[5].PositionLimitNeg" attribute="editable" />
+      <Element index="6" refId="::AsGlobalPV:gr_AxisPositionLimits[6].PositionLimitNeg" attribute="editable" />
+      <Element index="7" refId="::AsGlobalPV:gr_AxisPositionLimits[7].PositionLimitNeg" attribute="editable" />
+      <Element index="8" refId="::AsGlobalPV:gr_AxisPositionLimits[8].PositionLimitNeg" attribute="editable" />
+      <Default refId="::AsGlobalPV:gr_AxisPositionLimits[0].PositionLimitNeg" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetZeroReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetZeroReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetZeroReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetZeroReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetZeroReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetZeroReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetZeroReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetZeroReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetZeroReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetZeroReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetZeroReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetZeroReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetZeroReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetZeroReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetZeroReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetZeroReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetZeroReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetZeroReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetZeroReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetZeroReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetZeroReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetZeroReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetOffsetReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetOffsetReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetOffsetReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetOffsetReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetOffsetReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetOffsetReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetOffsetReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetOffsetReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetOffsetReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetOffsetReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetOffsetReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetOffsetReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetOffsetReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetOffsetReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetOffsetReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetOffsetReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetOffsetReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetOffsetReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetOffsetReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetOffsetReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetOffsetReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetOffsetReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetPosReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetPosReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetPosReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetPosReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetPosReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetPosReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetPosReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetPosReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetPosReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetPosReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetPosReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomeSetPosReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetPosReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homeSetPosReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homeSetPosReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homeSetPosReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homeSetPosReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homeSetPosReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homeSetPosReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homeSetPosReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homeSetPosReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homeSetPosReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomePositionΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homePosition" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homePosition" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homePosition" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homePosition" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homePosition" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homePosition" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homePosition" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homePosition" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homePosition" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homePosition" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhomePositionΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].homePosition" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].homePosition" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].homePosition" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].homePosition" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].homePosition" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].homePosition" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].homePosition" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].homePosition" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].homePosition" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].homePosition" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitPosΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].positionLimits.PositionLimitPos" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].positionLimits.PositionLimitPos" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitPos" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitPosΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].positionLimits.PositionLimitPos" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].positionLimits.PositionLimitPos" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitPos" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitNegΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].positionLimits.PositionLimitNeg" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].positionLimits.PositionLimitNeg" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitNeg" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitNegΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].positionLimits.PositionLimitNeg" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].positionLimits.PositionLimitNeg" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘsetPositionLimitsReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].setPositionLimitsReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].setPositionLimitsReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].setPositionLimitsReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].setPositionLimitsReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].setPositionLimitsReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].setPositionLimitsReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].setPositionLimitsReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].setPositionLimitsReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].setPositionLimitsReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].setPositionLimitsReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘsetPositionLimitsReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].setPositionLimitsReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].setPositionLimitsReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].setPositionLimitsReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].setPositionLimitsReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].setPositionLimitsReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].setPositionLimitsReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].setPositionLimitsReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].setPositionLimitsReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].setPositionLimitsReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].setPositionLimitsReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘmoveReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].moveReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].moveReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].moveReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].moveReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].moveReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].moveReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].moveReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].moveReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].moveReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].moveReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘmoveReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].moveReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].moveReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].moveReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].moveReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].moveReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].moveReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].moveReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].moveReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].moveReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].moveReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhaltReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].haltReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].haltReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].haltReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].haltReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].haltReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].haltReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].haltReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].haltReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].haltReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].haltReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘhaltReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].haltReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].haltReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].haltReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].haltReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].haltReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].haltReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].haltReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].haltReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].haltReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].haltReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘstopReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].stopReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].stopReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].stopReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].stopReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].stopReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].stopReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].stopReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].stopReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘstopReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].stopReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].stopReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].stopReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].stopReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].stopReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].stopReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].stopReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].stopReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘenableReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].enableReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].enableReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].enableReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].enableReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].enableReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].enableReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].enableReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].enableReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].enableReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].enableReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘenableReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].enableReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].enableReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].enableReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].enableReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].enableReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].enableReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].enableReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].enableReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].enableReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].enableReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdisableReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].disableReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].disableReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].disableReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].disableReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].disableReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].disableReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].disableReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].disableReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].disableReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].disableReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdisableReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].disableReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].disableReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].disableReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].disableReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].disableReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].disableReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].disableReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].disableReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].disableReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].disableReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘmanBrakeRelReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].manBrakeRelReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].manBrakeRelReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].manBrakeRelReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].manBrakeRelReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].manBrakeRelReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].manBrakeRelReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].manBrakeRelReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].manBrakeRelReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].manBrakeRelReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].manBrakeRelReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘmanBrakeRelReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].manBrakeRelReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].manBrakeRelReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].manBrakeRelReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].manBrakeRelReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].manBrakeRelReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].manBrakeRelReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].manBrakeRelReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].manBrakeRelReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].manBrakeRelReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].manBrakeRelReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘclearManBrakeRelReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].clearManBrakeRelReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].clearManBrakeRelReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].clearManBrakeRelReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].clearManBrakeRelReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].clearManBrakeRelReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].clearManBrakeRelReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].clearManBrakeRelReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].clearManBrakeRelReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].clearManBrakeRelReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].clearManBrakeRelReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘclearManBrakeRelReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].clearManBrakeRelReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].clearManBrakeRelReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].clearManBrakeRelReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].clearManBrakeRelReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].clearManBrakeRelReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].clearManBrakeRelReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].clearManBrakeRelReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].clearManBrakeRelReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].clearManBrakeRelReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].clearManBrakeRelReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘstopResetReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopResetReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].stopResetReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].stopResetReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].stopResetReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].stopResetReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].stopResetReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].stopResetReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].stopResetReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].stopResetReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopResetReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘstopResetReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopResetReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].stopResetReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].stopResetReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].stopResetReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].stopResetReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].stopResetReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].stopResetReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].stopResetReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].stopResetReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].stopResetReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdriveResetReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].driveResetReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].driveResetReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].driveResetReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].driveResetReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].driveResetReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].driveResetReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].driveResetReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].driveResetReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].driveResetReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].driveResetReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdriveResetReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].driveResetReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].driveResetReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].driveResetReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].driveResetReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].driveResetReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].driveResetReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].driveResetReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].driveResetReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].driveResetReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].driveResetReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearInReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearInReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearInReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearInReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearInReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearInReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearInReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearInReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearInReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearInReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearInReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearInReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearInReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearInReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearInReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearInReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearInReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearInReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearInReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearInReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearInReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearInReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘcamInReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].camInReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].camInReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].camInReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].camInReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].camInReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].camInReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].camInReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].camInReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].camInReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].camInReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘcamInReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].camInReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].camInReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].camInReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].camInReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].camInReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].camInReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].camInReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].camInReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].camInReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].camInReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdisengageSlaveReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].disengageSlaveReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].disengageSlaveReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].disengageSlaveReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].disengageSlaveReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].disengageSlaveReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].disengageSlaveReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].disengageSlaveReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].disengageSlaveReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].disengageSlaveReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].disengageSlaveReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘdisengageSlaveReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].disengageSlaveReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].disengageSlaveReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].disengageSlaveReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].disengageSlaveReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].disengageSlaveReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].disengageSlaveReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].disengageSlaveReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].disengageSlaveReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].disengageSlaveReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].disengageSlaveReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘoffsetShiftReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].offsetShiftReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].offsetShiftReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].offsetShiftReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].offsetShiftReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].offsetShiftReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].offsetShiftReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].offsetShiftReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].offsetShiftReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘoffsetShiftReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].offsetShiftReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].offsetShiftReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].offsetShiftReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].offsetShiftReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].offsetShiftReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].offsetShiftReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].offsetShiftReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].offsetShiftReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘoffsetShiftToMasterPosReqΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].offsetShiftToMasterPosReq" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].offsetShiftToMasterPosReq" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftToMasterPosReq" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘoffsetShiftToMasterPosReqΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].offsetShiftToMasterPosReq" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].offsetShiftToMasterPosReq" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].offsetShiftToMasterPosReq" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftOverMasterDistanceΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftOverMasterDistance" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftOverMasterDistance" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftOverMasterDistance" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftOverMasterDistance" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftOverMasterDistance" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftOverMasterDistance" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftOverMasterDistance" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftOverMasterDistance" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftOverMasterDistance" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftOverMasterDistance" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftOverMasterDistanceΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftOverMasterDistance" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftOverMasterDistance" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftOverMasterDistance" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftOverMasterDistance" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftOverMasterDistance" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftOverMasterDistance" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftOverMasterDistance" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftOverMasterDistance" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftOverMasterDistance" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftOverMasterDistance" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftTypeΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftType" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftType" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftType" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftType" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftType" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftType" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftType" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftType" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftType" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftType" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftTypeΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftType" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftType" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftType" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftType" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftType" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftType" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftType" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftType" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftType" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftType" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘPositionΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Position" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Position" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Position" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Position" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Position" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Position" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Position" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Position" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Position" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Position" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘPositionΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Position" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Position" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Position" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Position" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Position" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Position" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Position" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Position" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Position" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Position" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘDistanceΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Distance" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Distance" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Distance" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Distance" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Distance" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Distance" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Distance" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Distance" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Distance" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Distance" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘDistanceΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Distance" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Distance" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Distance" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Distance" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Distance" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Distance" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Distance" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Distance" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Distance" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Distance" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘVelocityΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Velocity" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Velocity" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Velocity" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Velocity" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Velocity" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Velocity" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Velocity" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Velocity" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Velocity" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Velocity" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘVelocityΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Velocity" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Velocity" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Velocity" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Velocity" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Velocity" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Velocity" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Velocity" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Velocity" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Velocity" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Velocity" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘAccelerationΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Acceleration" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Acceleration" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Acceleration" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Acceleration" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Acceleration" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Acceleration" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Acceleration" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Acceleration" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Acceleration" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Acceleration" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘAccelerationΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Acceleration" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Acceleration" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Acceleration" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Acceleration" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Acceleration" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Acceleration" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Acceleration" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Acceleration" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Acceleration" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Acceleration" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘDecelerationΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Deceleration" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Deceleration" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Deceleration" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Deceleration" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Deceleration" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Deceleration" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Deceleration" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Deceleration" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Deceleration" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Deceleration" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘDecelerationΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].Deceleration" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].Deceleration" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].Deceleration" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].Deceleration" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].Deceleration" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].Deceleration" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].Deceleration" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].Deceleration" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].Deceleration" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].Deceleration" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘMaxJerkΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].MaxJerk" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].MaxJerk" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].MaxJerk" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].MaxJerk" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].MaxJerk" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].MaxJerk" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].MaxJerk" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].MaxJerk" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].MaxJerk" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].MaxJerk" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘMaxJerkΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].MaxJerk" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].MaxJerk" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].MaxJerk" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].MaxJerk" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].MaxJerk" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].MaxJerk" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].MaxJerk" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].MaxJerk" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].MaxJerk" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].MaxJerk" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearRatioNumeratorΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioNumerator" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearRatioNumerator" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearRatioNumerator" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearRatioNumerator" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearRatioNumerator" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearRatioNumerator" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearRatioNumerator" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearRatioNumerator" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearRatioNumerator" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioNumerator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearRatioNumeratorΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioNumerator" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearRatioNumerator" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearRatioNumerator" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearRatioNumerator" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearRatioNumerator" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearRatioNumerator" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearRatioNumerator" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearRatioNumerator" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearRatioNumerator" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioNumerator" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearRatioDenominatorΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioDenominator" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearRatioDenominator" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearRatioDenominator" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearRatioDenominator" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearRatioDenominator" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearRatioDenominator" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearRatioDenominator" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearRatioDenominator" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearRatioDenominator" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioDenominator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘgearRatioDenominatorΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioDenominator" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].gearRatioDenominator" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].gearRatioDenominator" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].gearRatioDenominator" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].gearRatioDenominator" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].gearRatioDenominator" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].gearRatioDenominator" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].gearRatioDenominator" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].gearRatioDenominator" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].gearRatioDenominator" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftDistanceΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftDistance" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftDistance" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftDistance" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftDistance" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftDistance" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftDistance" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftDistance" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftDistance" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftDistance" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftDistance" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftDistanceΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftDistance" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftDistance" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftDistance" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftDistance" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftDistance" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftDistance" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftDistance" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftDistance" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftDistance" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftDistance" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftProfileDistanceΘnode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftProfileDistance" attribute="node" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftProfileDistance" attribute="node" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftProfileDistance" attribute="node" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftProfileDistance" attribute="node" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftProfileDistance" attribute="node" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftProfileDistance" attribute="node" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftProfileDistance" attribute="node" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftProfileDistance" attribute="node" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftProfileDistance" attribute="node" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftProfileDistance" attribute="node" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘshiftProfileDistanceΘnode_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftProfileDistance" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].shiftProfileDistance" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].shiftProfileDistance" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].shiftProfileDistance" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].shiftProfileDistance" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].shiftProfileDistance" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].shiftProfileDistance" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].shiftProfileDistance" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].shiftProfileDistance" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].shiftProfileDistance" attribute="editable" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘcamIdΘvalue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].camId" attribute="value" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].camId" attribute="value" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].camId" attribute="value" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].camId" attribute="value" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].camId" attribute="value" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].camId" attribute="value" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].camId" attribute="value" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].camId" attribute="value" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].camId" attribute="value" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].camId" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="opcUa" id="cmpwid_libraryAxisReq_listΘcamIdΘvalue_editable_id" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="::OmSafeDev:hmiLibraryAxisReqs[0].camId" attribute="editable" />
+      <Element index="1" refId="::OmSafeDev:hmiLibraryAxisReqs[1].camId" attribute="editable" />
+      <Element index="2" refId="::OmSafeDev:hmiLibraryAxisReqs[2].camId" attribute="editable" />
+      <Element index="3" refId="::OmSafeDev:hmiLibraryAxisReqs[3].camId" attribute="editable" />
+      <Element index="4" refId="::OmSafeDev:hmiLibraryAxisReqs[4].camId" attribute="editable" />
+      <Element index="5" refId="::OmSafeDev:hmiLibraryAxisReqs[5].camId" attribute="editable" />
+      <Element index="6" refId="::OmSafeDev:hmiLibraryAxisReqs[6].camId" attribute="editable" />
+      <Element index="7" refId="::OmSafeDev:hmiLibraryAxisReqs[7].camId" attribute="editable" />
+      <Element index="8" refId="::OmSafeDev:hmiLibraryAxisReqs[8].camId" attribute="editable" />
+      <Default refId="::OmSafeDev:hmiLibraryAxisReqs[0].camId" attribute="editable" />
+    </List>
+  </Session>
+</BindingListDefinition>

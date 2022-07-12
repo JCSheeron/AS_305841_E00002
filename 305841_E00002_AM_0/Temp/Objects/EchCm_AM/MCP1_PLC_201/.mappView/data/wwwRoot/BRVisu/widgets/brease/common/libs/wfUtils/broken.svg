@@ -1,0 +1,19 @@
+<svg width="20" height="23" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+  <line stroke="#b2b2b2" y2="23" x2="0.75" y1="-0.069449" x1="0.75" stroke-width="1.5" />
+  <line stroke="#666666" y2="22.25" x2="0" y1="22.25" x1="23" stroke-width="1.5" />
+  <line y2="16.808505" x2="22.521265" y1="3.787241" x1="22.521265"  stroke-width="1.5" stroke="#666666" />
+  <line y2="23" x2="19.25" y1="5.202132" x1="19.25"  stroke-width="1.5" stroke="#666666" />
+  <rect stroke="#00bf00" height="3.339856" width="15.40424" y="17.436729" x="2.297881" stroke-width="1.5" fill="#00bf00"/>
+  <rect stroke="#97c9fc" height="7.914511" width="14.553177" y="8.01064" x="2.808519" stroke-width="2.5" fill="#97c9fc"/>
+  <rect stroke="#97c9fc" height="3.489358" width="8.51063" y="2.563837" x="2.808518" stroke-width="2.5" fill="#97c9fc"/>
+  <ellipse stroke="#ffffff" ry="0.309735" rx="1.548673" cy="5.615045" cx="5.840707"  stroke-width="2" />
+  <ellipse stroke="#00bf00" ry="2.964602" rx="7.743362" cy="16.676991" cx="10.088495" stroke-width="1.5" fill="#00bf00"/>
+  <line y2="25.039822" x2="7.743362" y1="12.207965" x1="21.814158" stroke-width="3.5" stroke="#ffffff" />
+  <line y2="6.013275" x2="19.690264" y1="0.349558" x1="12.964601" stroke-width="1.5" stroke="#666666" />
+  <line y2="0.792036" x2="13.672565" y1="0.615045" x1="0" stroke-width="1.5" stroke="#b2b2b2" />
+  <line stroke="#666666" y2="6.89823" x2="13.053096" y1="-0.09292" x1="12.964601" stroke-width="1.5" />
+  <line stroke="#666666" y2="6.278761" x2="12.610619" y1="6.190266" x1="19.867255" stroke-width="1.5" />
+
+</svg>

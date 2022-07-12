@@ -1,0 +1,91 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_seq-label {
+@include widgets_brease_Label_base; 
+span {
+	font-family: Arial;
+}
+	font-size: 22px;
+& span {
+	color: #000000;
+}
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+	margin: 5px;
+span {
+	padding: 0px;
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_seq-numeric-in {
+@include widgets_brease_NumericInput_base; 
+input {
+	font-size: 36px;
+}
+	margin: 5px;
+.breaseNumericInput_unit {
+	font-size: 24px;
+}
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) input {
+	color: #555555;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/TextInput/meta/TextInput_base";
+.widgets_brease_TextInput_style_ParameterForm {
+@include widgets_brease_TextInput_base; 
+&:not(.disabled):not(.active) {
+	background-color: transparent;
+}
+	padding: 0;
+	margin: 2px 0px 2px 10px;
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_ParameterForm {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) {
+	background-color: transparent;
+}
+	padding: 0;
+	margin: 2px 0px 2px 10px;
+
+}

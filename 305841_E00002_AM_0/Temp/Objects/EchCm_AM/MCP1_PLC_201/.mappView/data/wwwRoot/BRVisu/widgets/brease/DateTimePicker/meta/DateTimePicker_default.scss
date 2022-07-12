@@ -1,0 +1,168 @@
+@import "mixins.scss";
+@mixin widgets_brease_DateTimePicker_base {
+	@include elemWidth(296);
+	@include elemHeight(360);
+	@include border-radius(0px);
+header {
+	@include border-top-radius(0px);
+}
+.dateTimePickerBody .dateTimePickerControl {
+	@include border-bottom-radius(0px-9px);
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter {
+	@include border-bottom-right-radius(0px-9px);
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset {
+	@include border-bottom-left-radius(0px-9px);
+}
+header {
+	@include backGroundGradient('');
+}
+	border-color: #333333;
+header {
+	background-color: #333333;
+}
+&.arrowLeft .breaseWindowArrow {
+	border-right-color: #333333;
+}
+&.arrowRight .breaseWindowArrow {
+	border-left-color: #333333;
+}
+&.arrowTop .breaseWindowArrow {
+	border-bottom-color: #333333;
+}
+&.arrowBottom .breaseWindowArrow {
+	border-top-color: #333333;
+}
+.dateTimePickerBody button {
+	color: #000000;
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	color: #000000;
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	color: #000000;
+}
+	opacity: 1;
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	font-family: Arial;
+}
+.dateTimePickerBody button {
+	font-family: Arial;
+}
+	@include box-shadow(none);
+.dateTimePickerBody .dateTimePickerButtons {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody button {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerControl {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerButtons button {
+	border-bottom-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active {
+	background-color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	background-color: #FFFFFF;
+}
+header {
+	background-color: #000000;
+}
+	@include backGroundGradient();
+.dateTimePickerBody {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerButtons {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody button {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .space {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerButtons .dtfragment {
+	@include borderImageGradient('');
+}
+.dateTimePickerBody .dateTimePickerButtons button {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerHeadings .actDate {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter {
+	border-left-width: 1px;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset {
+	border-right-width: 1px;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter {
+	border-left-style: solid;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset {
+	border-right-style: solid;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter {
+	border-left-color: #333;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset {
+	border-right-color: #333;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active {
+	background-color: #FF8800;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active {
+	background-color: #FF8800;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active {
+	color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active {
+	color: #FFFFFF;
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter:not(.active) {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset:not(.active) {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active {
+	@include backGroundGradient('');
+}
+.dateTimePickerBody .dateTimePickerButtons button {
+	border-bottom-color: #d4d4d4;
+}
+.dateTimePickerBody .dateTimePickerButtons .marker {
+	background-color: #FF8800;
+}
+
+}
+
+.widgets_brease_DateTimePicker_style_default {
+@include widgets_brease_DateTimePicker_base 
+}

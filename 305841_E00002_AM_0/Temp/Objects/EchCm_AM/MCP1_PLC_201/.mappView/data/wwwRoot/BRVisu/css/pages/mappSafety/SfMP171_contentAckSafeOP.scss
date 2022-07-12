@@ -1,0 +1,146 @@
+﻿@import "mixins.scss";
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+	@include elemTop(300);
+}
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+	@include elemLeft(138);
+}
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+	@include elemAutoWidth(180);
+}
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+		z-index: 0;
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	@include elemTop(20);
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	@include elemLeft(8);
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	@include elemWidth(435);
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	@include elemHeight(200);
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+		z-index: 1;
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	&.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override){
+		padding: 10px;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+	&.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override){
+		padding: 10px;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_TableItemSafeOPProject {
+		z-index: 0;
+}
+#SfMP171_contentAckSafeOP_SfMP171_TableItemCRC {
+		z-index: 1;
+}
+#SfMP171_contentAckSafeOP_SfMP171_TableItemTimeStamp {
+		z-index: 2;
+}
+#SfMP171_contentAckSafeOP_SfMP171_TableItemUser {
+		z-index: 3;
+}
+#SfMP171_contentAckSafeOP_SfMP171_OPAckDialog {
+		z-index: 2;
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	@include elemTop(250);
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	@include elemLeft(10);
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	@include elemAutoWidth(140);
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	@include elemAutoHeight(45);
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+		z-index: 3;
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+		border-width: 1px;
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+		border-style: solid;
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	&:before{
+		border-style: solid;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	&:after{
+		border-style: solid;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+		font-size: 12px;
+}
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include elemTop(250);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include elemLeft(150);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include elemAutoWidth(290);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include elemAutoHeight(45);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+		z-index: 4;
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+		border-width: 1px;
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+		background-color: rgba(255, 255, 0, 0.8);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+		border-style: solid;
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	&:before{
+		border-style: solid;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	&:after{
+		border-style: solid;
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	& span{
+		color: rgba(64, 64, 64, 1);
+	}
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include text-alignment-all('left');
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+		font-size: 10px;
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+	span{
+		padding: 4px 10px 4px 5px;
+	}
+}

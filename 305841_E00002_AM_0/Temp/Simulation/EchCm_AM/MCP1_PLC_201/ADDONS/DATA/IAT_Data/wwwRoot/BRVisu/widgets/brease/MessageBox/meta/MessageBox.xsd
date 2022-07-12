@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.MessageBoxRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="600" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="800" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.MessageBox">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.MessageBoxRestrict">
+			<xs:attribute name="autoRaise" use="optional" type="types:brease.enum.AutoRaise" default="enabled" />
+			<xs:attribute name="position" use="optional" type="types:Object" default="{&apos;horizontal&apos;:&apos;center&apos;, &apos;vertical&apos;:&apos;middle&apos;}" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

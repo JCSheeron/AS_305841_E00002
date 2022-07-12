@@ -1,0 +1,99 @@
+@import "mixins.scss";
+@mixin widgets_brease_LinearGauge_base {
+	@include elemWidth(380);
+	@include elemHeight(60);
+	background-color: transparent;
+	@include backGroundGradient('');
+	border-color: #000000;
+	border-width: 2px;
+	border-style: none;
+.axis path {
+	stroke: #000000;
+}
+.axis path {
+	stroke-width: 1px;
+}
+.axis line {
+	stroke: #000000;
+}
+.axis line {
+	stroke-width: 1px;
+}
+.axisMinorTicks line {
+	stroke: #DCDCDC;
+}
+.axisMinorTicks line {
+	stroke-width: 1px;
+}
+.axis text {
+	font-size: 12px;
+}
+.axis text {
+	font-family: Arial;
+}
+.axis text {
+	fill: #000000;
+}
+.unit {
+	font-size: 12px;
+}
+.pointer {
+	fill: #ff8800;
+}
+.pointer {
+	stroke-width: 1px;
+}
+.pointer {
+	stroke: #000000;
+}
+.scaleArea1 {
+	fill: #99ccff;
+}
+.scaleArea1 {
+	stroke-width: 1px;
+}
+.scaleArea1 {
+	stroke: #000000;
+}
+.scaleArea2 {
+	fill: #99ff99;
+}
+.scaleArea2 {
+	stroke-width: 1px;
+}
+.scaleArea2 {
+	stroke: #000000;
+}
+.scaleArea3 {
+	fill: #47d147;
+}
+.scaleArea3 {
+	stroke-width: 1px;
+}
+.scaleArea3 {
+	stroke: #000000;
+}
+.scaleArea4 {
+	fill: #ffcc66;
+}
+.scaleArea4 {
+	stroke-width: 1px;
+}
+.scaleArea4 {
+	stroke: #000000;
+}
+.scaleArea5 {
+	fill: #ff704d;
+}
+.scaleArea5 {
+	stroke-width: 1px;
+}
+.scaleArea5 {
+	stroke: #000000;
+}
+
+}
+
+.widgets_brease_LinearGauge_style_default {
+@include widgets_brease_LinearGauge_base 
+}

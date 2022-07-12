@@ -1,0 +1,28 @@
+@import '../../../../../../../css/libs/mixins.scss';
+
+.ListView {
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &.Container {
+        border-style: solid;
+        border-width: 0px;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+        &.invisible {
+            display: none;
+        }
+        &.disabled {
+        }
+    }
+
+    &.List {
+        height: auto;
+        width: auto;
+        &.disabled {
+        }
+    }
+}

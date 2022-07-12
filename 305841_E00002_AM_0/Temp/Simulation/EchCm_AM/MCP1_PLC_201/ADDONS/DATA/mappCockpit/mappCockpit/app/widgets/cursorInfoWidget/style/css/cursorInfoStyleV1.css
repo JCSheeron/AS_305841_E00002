@@ -1,0 +1,54 @@
+/* indeterminate state styling */
+.e-chk-indeter {
+  border-radius: 3px;
+}
+
+.e-chk-indeter:hover {
+  background-color: #f2f2f4
+}
+
+.e-chk-indeter span:before{
+  content: '\23AF'!important;
+  text-align: center;
+  text-indent: 0px !important;
+  top: -1px !important;
+  position: absolute !important;
+
+}
+
+/* active state styling */
+.e-chk-act {
+  border-radius: 3px;
+}
+
+.e-chk-act:hover {
+  background-color: #f2f2f4
+}
+
+/* inactive state styling */
+.e-chk-inact {
+  border-radius: 3px;
+}
+
+.e-chk-inact:hover {
+  background-color: #f2f2f4
+}
+
+
+.e-chk-image {
+  color: #000000 !important;
+}
+
+/*Center the checkbox*/
+.cursorInfoWidget.e-chkbox-wrap.e-check-small {
+  position: relative;
+  display: flex !important;
+  justify-content: center;
+  top: -3px;
+}
+
+
+
+
+
+

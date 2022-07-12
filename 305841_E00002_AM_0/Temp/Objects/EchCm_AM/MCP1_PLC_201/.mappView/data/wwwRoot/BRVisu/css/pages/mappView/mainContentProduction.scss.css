@@ -1,0 +1,395 @@
+#mainContentProduction_grpBoxCycle {
+  top: 30px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxCycle {
+  left: 40px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxCycle {
+  width: 560px;
+}
+
+#mainContentProduction_grpBoxCycle {
+  height: 475px;
+}
+
+#mainContentProduction_grpBoxCycle {
+  z-index: 0;
+}
+
+#mainContentProduction_grpBoxStatus {
+  top: 8px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxStatus {
+  left: 384px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxStatus {
+  width: 156px;
+}
+
+#mainContentProduction_grpBoxStatus {
+  height: 202px;
+}
+
+#mainContentProduction_grpBoxStatus {
+  z-index: 0;
+}
+
+#mainContentProduction_lblStatusIdle {
+  height: 30px;
+}
+
+#mainContentProduction_lblStatusIdle {
+  top: 8px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusIdle {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusIdle {
+  width: 115px;
+}
+
+#mainContentProduction_lblStatusIdle {
+  z-index: 0;
+}
+
+#mainContentProduction_lblStatusInCycle {
+  height: 30px;
+}
+
+#mainContentProduction_lblStatusInCycle {
+  top: 46px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusInCycle {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusInCycle {
+  width: 115px;
+}
+
+#mainContentProduction_lblStatusInCycle {
+  z-index: 1;
+}
+
+#mainContentProduction_lblStatusStopping {
+  height: 30px;
+}
+
+#mainContentProduction_lblStatusStopping {
+  top: 123px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusStopping {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusStopping {
+  width: 115px;
+}
+
+#mainContentProduction_lblStatusStopping {
+  z-index: 2;
+}
+
+#mainContentProduction_lblStatusInCycleHold {
+  height: 30px;
+}
+
+#mainContentProduction_lblStatusInCycleHold {
+  top: 85px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusInCycleHold {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_lblStatusInCycleHold {
+  width: 126px;
+}
+
+#mainContentProduction_lblStatusInCycleHold {
+  z-index: 3;
+}
+
+#mainContentProduction_grpBoxControl {
+  top: 8px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxControl {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxControl {
+  width: 346px;
+}
+
+#mainContentProduction_grpBoxControl {
+  height: 202px;
+}
+
+#mainContentProduction_grpBoxControl {
+  z-index: 1;
+}
+
+#mainContentProduction_pbCycleStart {
+  width: 100px;
+}
+
+#mainContentProduction_pbCycleStart {
+  top: 13px;
+  position: absolute;
+}
+
+#mainContentProduction_pbCycleStart {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_pbCycleStart {
+  height: 52px;
+}
+
+#mainContentProduction_pbCycleStart {
+  z-index: 0;
+}
+
+#mainContentProduction_pbCycleStop {
+  width: 100px;
+}
+
+#mainContentProduction_pbCycleStop {
+  top: 88px;
+  position: absolute;
+}
+
+#mainContentProduction_pbCycleStop {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_pbCycleStop {
+  height: 52px;
+}
+
+#mainContentProduction_pbCycleStop {
+  z-index: 1;
+}
+
+#mainContentProduction_rdoBtnGrpCycleControl {
+  top: 18px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnGrpCycleControl {
+  left: 149px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnGrpCycleControl {
+  width: 180px;
+}
+
+#mainContentProduction_rdoBtnGrpCycleControl {
+  height: 112px;
+}
+
+#mainContentProduction_rdoBtnGrpCycleControl {
+  z-index: 2;
+}
+
+#mainContentProduction_rdoBtnContinuous {
+  top: 0px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnContinuous {
+  left: 10px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnContinuous {
+  width: 140px;
+}
+
+#mainContentProduction_rdoBtnContinuous {
+  height: 35px;
+}
+
+#mainContentProduction_rdoBtnContinuous {
+  z-index: 0;
+}
+
+#mainContentProduction_rdoBtnSingleCycle {
+  top: 35px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnSingleCycle {
+  left: 10px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnSingleCycle {
+  width: 140px;
+}
+
+#mainContentProduction_rdoBtnSingleCycle {
+  height: 35px;
+}
+
+#mainContentProduction_rdoBtnSingleCycle {
+  z-index: 1;
+}
+
+#mainContentProduction_rdoBtnStepped {
+  top: 70px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnStepped {
+  left: 10px;
+  position: absolute;
+}
+
+#mainContentProduction_rdoBtnStepped {
+  width: 140px;
+}
+
+#mainContentProduction_rdoBtnStepped {
+  height: 35px;
+}
+
+#mainContentProduction_rdoBtnStepped {
+  z-index: 2;
+}
+
+#mainContentProduction_grpBoxOptions {
+  top: 223px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxOptions {
+  left: 19px;
+  position: absolute;
+}
+
+#mainContentProduction_grpBoxOptions {
+  width: 341px;
+}
+
+#mainContentProduction_grpBoxOptions {
+  height: 192px;
+}
+
+#mainContentProduction_grpBoxOptions {
+  z-index: 2;
+}
+
+#mainContentProduction_chkBoxCfOff {
+  height: 30px;
+}
+
+#mainContentProduction_chkBoxCfOff {
+  top: 13px;
+  position: absolute;
+}
+
+#mainContentProduction_chkBoxCfOff {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentProduction_chkBoxCfOff {
+  width: 211px;
+}
+
+#mainContentProduction_chkBoxCfOff {
+  z-index: 0;
+}
+
+#mainContentProduction_chkBoxSingleCycleInclZ {
+  height: 30px;
+}
+
+#mainContentProduction_chkBoxSingleCycleInclZ {
+  top: 53px;
+  position: absolute;
+}
+
+#mainContentProduction_chkBoxSingleCycleInclZ {
+  left: 39px;
+  position: absolute;
+}
+
+#mainContentProduction_chkBoxSingleCycleInclZ {
+  width: 211px;
+}
+
+#mainContentProduction_chkBoxSingleCycleInclZ {
+  z-index: 1;
+}
+
+#mainContentProduction_pbResetAxes {
+  width: 100px;
+}
+
+#mainContentProduction_pbResetAxes {
+  top: 263px;
+  position: absolute;
+}
+
+#mainContentProduction_pbResetAxes {
+  left: 414px;
+  position: absolute;
+}
+
+#mainContentProduction_pbResetAxes {
+  height: 42px;
+}
+
+#mainContentProduction_pbResetAxes {
+  z-index: 3;
+}
+
+#mainContentProduction_gprBoxPermits {
+  top: 30px;
+  position: absolute;
+}
+
+#mainContentProduction_gprBoxPermits {
+  left: 660px;
+  position: absolute;
+}
+
+#mainContentProduction_gprBoxPermits {
+  width: 250px;
+}
+
+#mainContentProduction_gprBoxPermits {
+  height: 310px;
+}
+
+#mainContentProduction_gprBoxPermits {
+  z-index: 1;
+}

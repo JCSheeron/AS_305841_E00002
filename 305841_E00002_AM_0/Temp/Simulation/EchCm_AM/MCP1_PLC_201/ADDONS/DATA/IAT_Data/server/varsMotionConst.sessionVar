@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDefinition xmlns="http://www.br-automation.com/iat2014/session/runtime/v1">
+  <Session>
+    <Variable name="svAD_UNKNOWN" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_DUMMY" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_SPINDLE" xsi:type="ANY_INT" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_OUTER_ECCENTRIC" xsi:type="ANY_INT" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_INNER_ECCENTRIC" xsi:type="ANY_INT" value="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_Z" xsi:type="ANY_INT" value="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_X" xsi:type="ANY_INT" value="5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_Y" xsi:type="ANY_INT" value="6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_HANDWHEEL" xsi:type="ANY_INT" value="7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svAD_CF_VFD" xsi:type="ANY_INT" value="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svDIR_POSITIVE" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svDIR_NEGATIVE" xsi:type="ANY_INT" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svDIR_CURRENT" xsi:type="ANY_INT" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svDIR_SHORTEST_WAY" xsi:type="ANY_INT" value="3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_NO_MOVE_COMMANDED" xsi:type="ANY_INT" value="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_JOG_VELOCITY_UP_FWD" xsi:type="ANY_INT" value="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_JOG_VELOCITY_DOWN_REV" xsi:type="ANY_INT" value="2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_JOG_LIMIT_UP_FWD" xsi:type="ANY_INT" value="4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_JOG_LIMIT_DOWN_REV" xsi:type="ANY_INT" value="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_VELOCITY" xsi:type="ANY_INT" value="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_RELATIVE" xsi:type="ANY_INT" value="32" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_ABSOLUTE" xsi:type="ANY_INT" value="64" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="svGAMOT_MD_COORDINATED" xsi:type="ANY_INT" value="128" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+</VariableDefinition>

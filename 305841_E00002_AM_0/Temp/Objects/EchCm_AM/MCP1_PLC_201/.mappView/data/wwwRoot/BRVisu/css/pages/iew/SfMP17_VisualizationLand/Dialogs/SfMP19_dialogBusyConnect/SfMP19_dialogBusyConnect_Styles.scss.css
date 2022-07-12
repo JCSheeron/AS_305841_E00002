@@ -1,0 +1,8 @@
+div[data-brease-dialogId='SfMP193_dialogBusyConnect'] .breaseDialogWindowHeader div.innerHeader {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+div[data-brease-dialogId='SfMP193_dialogBusyConnect'] .breaseWindowClose {
+  display: none;
+}

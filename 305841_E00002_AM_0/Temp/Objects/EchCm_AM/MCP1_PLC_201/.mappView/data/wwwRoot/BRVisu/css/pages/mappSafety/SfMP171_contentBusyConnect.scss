@@ -1,0 +1,37 @@
+﻿@import "mixins.scss";
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+	@include elemTop(20);
+}
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+	@include elemLeft(40);
+}
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+	@include elemAutoWidth(220);
+}
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+		z-index: 0;
+}
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+	@include text-alignment-all('center');
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+	@include elemTop(48);
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+	@include elemLeft(40);
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+	@include elemWidth(220);
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+	@include elemHeight(20);
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+		z-index: 1;
+}
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+		border-width: 0px;
+}

@@ -1,0 +1,147 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-outer: #5B7C70;
+$default-text-color: #333;
+$default-background: #FFF;
+
+$active-border-outer: $active-color;
+$active-border-inner: #CB6000;
+$active-text-color: #333;
+$active-background: #FFF;
+
+$disabled-border-outer: #C8C8C8;
+$disabled-border-inner: #FFF;
+$disabled-text-color: #C8C8C8;
+$disbled-background: #F1F1F1;
+
+
+.breaseTabItem.tabItem {
+    @include box-sizing(border-box);
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    border: 2px solid $default-border-outer;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: $default-text-color;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    @include displayFlexBox(true);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    text-align: center;
+    @include flex(0 1 auto);
+    border-left: none;
+    background-color: #DBDBDB;
+
+    span {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        pointer-events: none;
+        margin: 0;
+        padding: 0;
+        @include flex(0 1 auto);
+    }
+
+    img,svg {
+        display: inline-block;
+        vertical-align: middle;
+        pointer-events: none;
+        padding: 0;
+        margin: 0;
+        @include flex(none);
+    }
+
+    &.contentAlign-left {
+        @include justify-content(start);
+        text-align: left;
+    }
+
+    &.contentAlign-center {
+        @include justify-content(center);
+        text-align: center;
+    }
+
+    &.contentAlign-right {
+        @include justify-content(end);
+        text-align: right;
+    }
+
+    &.image-left {
+		img,svg{
+			margin: 0 10px 0 0;
+		}  
+    }
+
+    &.image-right {
+		img,svg{
+			margin: 0 0 0 10px;
+		}
+        
+    }
+
+    &.image-top {
+        @include flex-direction(column);
+
+        img,svg {
+            margin: 0 0 5px 0;
+        }
+    }
+
+    &.image-bottom {
+        @include flex-direction(column);
+
+        img,svg {
+            margin: 5px 0 0 0;
+        }
+    }
+
+    &.ellipsis span {
+        @include text-overflow(ellipsis);
+    }
+
+    &.multiLine span {
+        white-space: pre;
+    }
+
+    &.wordWrap span {
+        white-space: pre-wrap;
+    }
+
+
+    &.active {
+        border-bottom: none;
+        border-top: 4px solid #FD7B01;
+        @include flex(0 0 auto);
+        background-color: $active-background;
+        border-radius: 0px;
+        border-color: #FD7B01 #5B7C70 #5B7C70 #5B7C70;
+    }
+}
+
+.breaseTabItemContainer {
+	/*top :30px;*/
+    width: inherit;
+    height: inherit;
+   	left: 0;
+	right:0;
+	bottom:0;
+    @include displayFlexBox(false);
+    position:relative !important; 
+	@include flex(1 1 auto);
+
+    >.container {
+	    width: 100%;
+	    /*height: 100%;*/
+        position: relative;
+        overflow: hidden;
+    }
+}

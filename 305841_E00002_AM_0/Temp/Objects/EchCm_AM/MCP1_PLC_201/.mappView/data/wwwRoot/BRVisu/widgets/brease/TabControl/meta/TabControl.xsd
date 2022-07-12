@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.TabControlRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="150" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="250" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.TabControl">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.TabControlRestrict">
+			<xs:all>
+				<xs:element name="Widgets" type="iat:Widgets" minOccurs="1" maxOccurs="1">
+					<xs:unique name="widgets.brease.TabControl.zIndex">
+						<xs:selector xpath="./iat:Widget"/>
+						<xs:field xpath="@zIndex"/>
+					</xs:unique>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="selectedIndex" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="tabPosition" use="optional" type="types:brease.enum.TabPosition" default="top" />
+			<xs:attribute name="headerBackColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="none" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="2px" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="borderColor" use="optional" type="types:ColorCollection" default="#5B7C70" />
+			<xs:attribute name="padding" use="optional" type="types:Padding" default="0px" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

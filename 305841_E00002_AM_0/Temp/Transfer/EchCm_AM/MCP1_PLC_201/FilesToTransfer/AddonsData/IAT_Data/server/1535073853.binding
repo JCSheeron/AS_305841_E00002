@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisName" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘlblTitle" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘnumOutPosAct" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘnumInSetOffset" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘhomeSetZeroReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘpbSetZero" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘhomeSetOffsetReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘpbSetOffset" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘhomeSetPosReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘpbSetInPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘhomePositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘnumInSetOffset" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesStatus_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘnumOutPosAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘtxtOutIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgHomeTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsHomed" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="dlgHomeTop_content_GaMotAxisHome1ΘtxtOutIsHomed" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

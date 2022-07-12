@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Focus xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+	
+    <StyleProperty name="outlineStyle" type="BorderStyle" default="solid" category="Appearance">
+      <StyleElement selector=".breaseWidget:focus, .focusWithin, .breaseFocusable:focus" attribute="outline-style"></StyleElement>
+      <Description>
+        Style of the Border of the widget
+        Possible Values: solid, dotted, none, dashed, double, groove
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="outlineColor" category="Appearance" type="Color" default="#5E9ED6">
+      <StyleElement selector=".breaseWidget:focus, .focusWithin, .breaseFocusable:focus" attribute="outline-color"></StyleElement>
+      <Description>
+        usage (Syntax like CSS):
+        - HEX Color code: #FFFFFF
+        - rgba Component syntax: rgba(100,100,100,255)
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="outlineWidth" type="PixelVal" default="3px" category="Appearance">
+      <StyleElement selector=".breaseWidget:focus, .focusWithin, .breaseFocusable:focus" attribute="outline-width"></StyleElement>
+      <Description>
+        usage (Syntax like CSS) single Value for all directions e.g. 2px
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="outlineOffset" category="Layout" type="StrictSignedPixelVal" default="2px">
+      <StyleElement selector=".breaseWidget:focus, .focusWithin, .breaseFocusable:focus" attribute="outline-offset"></StyleElement>
+      <Description>
+        The offset property sets the amount of space between an outline and the edge or border of an element.
+      </Description>
+    </StyleProperty>
+	
+  </StyleProperties>
+
+</Focus>

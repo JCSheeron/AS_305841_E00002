@@ -1,0 +1,16 @@
+﻿@import "mixins.scss";
+#dlgHomeBottom_content_btnClose {
+	@include elemAutoWidth(100);
+}
+#dlgHomeBottom_content_btnClose {
+	@include elemTop(10);
+}
+#dlgHomeBottom_content_btnClose {
+	@include elemLeft(150);
+}
+#dlgHomeBottom_content_btnClose {
+	@include elemAutoHeight(40);
+}
+#dlgHomeBottom_content_btnClose {
+		z-index: 0;
+}

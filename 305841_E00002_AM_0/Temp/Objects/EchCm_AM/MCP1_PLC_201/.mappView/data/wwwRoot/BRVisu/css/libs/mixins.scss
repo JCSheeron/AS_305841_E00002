@@ -1,0 +1,938 @@
+@mixin user-select($value) {
+    -webkit-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+}
+
+@mixin disable-user-drag() {
+    -webkit-user-drag: none;
+    -moz-user-drag: -moz-none;
+}
+
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+}
+
+@mixin text-overflow($value) {
+    text-overflow: $value;
+}
+
+// Box sizing
+@mixin box-sizing($value) {
+    box-sizing: $value;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+// Transitions
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+    -moz-transition-delay: $transition-delay;
+    -o-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+
+@mixin svgcolordelete($color) {
+    $noHash: str-slice($color, 2);
+    background-image: url('data:image/svg+xml;utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"   viewBox="0 0 94 56"  width="70px" height="50px" >   <path id="icon-delete" fill="%23#{$noHash}" stroke="%23#{$noHash}" d="m57.822478,31.539939l-20.180475,0q2.287266,3.014843 3.279082,6.40951l-1.457366,0q-2.833769,-4.842734 -7.873839,-7.002978l0,-1.163201q5.04007,-2.160244 7.873839,-7.002978l1.457366,0q-0.991815,3.418401 -3.279082,6.433245l20.180475,0l0,2.326403l0,-0.000001z"/></svg>');
+}
+
+@mixin svgcolorenter($color) {
+    $noHash: str-slice($color, 2);
+    background-image: url('data:image/svg+xml;utf-8,<svg width="78" height="110" xmlns="http://www.w3.org/2000/svg"><path fill="%23#{$noHash}" stroke="%23#{$noHash}"  id="icon-enter" d="m44.085156,56.988635l-8.949694,0q1.719921,3.318738 2.465737,7.055583l-1.095881,0q-2.13088,-5.330878 -5.920798,-7.708872l0,-1.280452q3.789919,-2.377994 5.920798,-7.708872l1.095881,0q-0.745817,3.762972 -2.465737,7.08171l7.442855,0l0,-18.84099l1.506839,0l0,21.401894l0,-0.000001z"></path> </svg>');
+}
+
+// Gradients
+
+@mixin vertical-gradient($start, $color1, $alpha1, $color2, $alpha2) {
+    @if ($start == top) {
+        background-image: linear-gradient(to bottom, $color1 $alpha1, $color2 $alpha2); // Standard, IE10
+    }
+    @else if ($start == bottom) {
+        background-image: linear-gradient(to top, $color1 $alpha1, $color2 $alpha2); // Standard, IE10
+    }
+
+    background-image: -moz-linear-gradient($start, $color1 $alpha1, $color2 $alpha2);
+    background-image: -webkit-linear-gradient($start, $color1 $alpha1, $color2 $alpha2);
+}
+
+
+@mixin horizontal-gradient($start, $color1, $alpha1, $color2, $alpha2) {
+    @if ($start == left) {
+        background-image: linear-gradient(to right, $color1 $alpha1, $color2 $alpha2); // Standard, IE10
+    }
+    @else if ($start == right) {
+        background-image: linear-gradient(to left, $color1 $alpha1, $color2 $alpha2); // Standard, IE10
+    }
+
+    background-image: -moz-linear-gradient($start, $color1 $alpha1, $color2 $alpha2);
+    background-image: -webkit-linear-gradient($start, $color1 $alpha1, $color2 $alpha2);
+}
+
+
+@mixin radial-gradient($start, $color1, $alpha1, $color2, $alpha2) {
+    background-image: -moz-radial-gradient($start, $color1 $alpha1, $color2 $alpha2);
+    background-image: -webkit-radial-gradient($start, $color1 $alpha1, $color2 $alpha2);
+    background-image: radial-gradient($start, $color1 $alpha1, $color2 $alpha2);
+}
+
+@mixin horizontal-3part-gradient($start, $color1, $pos1, $color2, $pos2, $color3) {
+    @if ($start == left) {
+        background-image: linear-gradient(to right, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2); // Standard, IE10
+    }
+    @else if ($start == right) {
+        background-image: linear-gradient(to left, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2); // Standard, IE10
+    }
+
+    background-image: -moz-linear-gradient($start, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2);
+    background-image: -webkit-linear-gradient($start, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2);
+}
+
+@mixin vertical-3part-gradient($start, $color1, $pos1, $color2, $pos2, $color3) {
+    @if ($start == top) {
+        background-image: linear-gradient(to bottom, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2); // Standard, IE10
+    }
+    @else if ($start == bottom) {
+        background-image: linear-gradient(to top, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2); // Standard, IE10
+    }
+
+    background-image: -moz-linear-gradient($start, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2);
+    background-image: -webkit-linear-gradient($start, $color1 $pos1, $color2 $pos1, $color2 $pos2, $color3 $pos2);
+}
+
+
+// Transformations
+@mixin rotate($degrees) {
+    transform: rotate($degrees);
+}
+
+@mixin scale($ratio) {
+    -webkit-transform: scale($ratio);
+    -ms-transform: scale($ratio);
+    -o-transform: scale($ratio);
+    transform: scale($ratio);
+}
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin skew($x, $y) {
+    -webkit-transform: skew($x, $y);
+    -ms-transform: skewX($x) skewY($y); // See https://github.com/twitter/bootstrap/issues/4885
+    -o-transform: skew($x, $y);
+    transform: skew($x, $y);
+    -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+// Single Corner Border Radius
+@mixin border-top-left-radius($radius) {
+    @if (length($radius) == 1) and ($radius > 0) {
+        border-top-left-radius: $radius;
+    }
+    @else if (length($radius) == 2) and (nth($radius, 1) > 0) {
+        border-top-left-radius: nth($radius, 1);
+    }
+    @else if (length($radius) == 4) and (nth($radius, 1) > 0) {
+        border-top-left-radius: nth($radius, 1);
+    }
+    @else {
+        border-top-left-radius: 0;
+    }
+}
+
+@mixin border-top-right-radius($radius) {
+    @if (length($radius) == 1) and ($radius > 0) {
+        border-top-right-radius: $radius;
+    }
+    @else if (length($radius) == 2) and (nth($radius, 1) > 0) {
+        border-top-right-radius: nth($radius, 1);
+    }
+    @else if (length($radius) == 4) and (nth($radius, 2) > 0) {
+        border-top-right-radius: nth($radius, 2);
+    }
+    @else {
+        border-top-right-radius: 0;
+    }
+}
+
+@mixin border-bottom-right-radius($radius) {
+    @if (length($radius) == 1) and ($radius > 0) {
+        border-bottom-right-radius: $radius;
+    }
+    @else if (length($radius) == 2) and (nth($radius, 1) > 0) {
+        border-bottom-right-radius: nth($radius, 1);
+    }
+    @else if (length($radius) == 4) and (nth($radius, 3) > 0) {
+        border-bottom-right-radius: nth($radius, 3);
+    }
+    @else {
+        border-bottom-right-radius: 0;
+    }
+}
+
+@mixin border-bottom-left-radius($radius) {
+    @if (length($radius) == 1) and ($radius > 0) {
+        border-bottom-left-radius: $radius;
+    }
+    @else if (length($radius) == 2) and (nth($radius, 1) > 0) {
+        border-bottom-left-radius: nth($radius, 1);
+    }
+    @else if (length($radius) == 4) and (nth($radius, 4) > 0) {
+        border-bottom-left-radius: nth($radius, 3);
+    }
+    @else {
+        border-bottom-left-radius: 0;
+    }
+}
+
+
+// Single Side Border Radius
+@mixin border-top-radius($radius) {
+    @include border-top-right-radius($radius);
+    @include border-top-left-radius($radius);
+}
+
+@mixin border-right-radius($radius) {
+    @include border-top-right-radius($radius);
+    @include border-bottom-right-radius($radius);
+}
+
+@mixin border-bottom-radius($radius) {
+    @include border-bottom-right-radius($radius);
+    @include border-bottom-left-radius($radius);
+}
+
+@mixin border-left-radius($radius) {
+    @include border-top-left-radius($radius);
+    @include border-bottom-left-radius($radius);
+}
+
+
+// flex boxes
+
+@mixin displayFlexBox($inline) {
+    @if $inline == true {
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-box;
+        display: inline-flex;
+    }
+    @else {
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+
+@mixin justify-content($align) {
+    @if ($align == center) or ($align == space-between) {
+        justify-content: $align;
+    }
+    @else if ($align == end) or ($align == start) {
+        justify-content: flex-#{$align};
+    }
+}
+
+
+@mixin text-alignment($align) {
+    @if ($align == left) {
+        @include justify-content(start);
+        text-align: left;
+    }
+    @else if ($align == center) {
+        @include justify-content(center);
+        text-align: center;
+    }
+    @else if ($align == right) {
+        @include justify-content(end);
+        text-align: right;
+    }
+}
+
+
+
+@mixin writing-mode($mode) {
+    @if ($mode == vertical) {
+        -webkit-writing-mode: vertical-rl;
+        -moz-writing-mode: vertical-rl;
+        -ms-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+    }
+    @else if ($mode == horizontal) {
+        -webkit-writing-mode: horizontal-tb;
+        -moz-writing-mode: horizontal-tb;
+        -ms-writing-mode: horizontal-tb;
+        writing-mode: horizontal-tb;
+    }
+}
+
+@mixin flexDirection($dir) {
+    @if ($dir == horizontal) {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    @else if ($dir == vertical) {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@mixin flex-direction($dir) {
+    @if ($dir == row) {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    @else if ($dir == row-reverse) {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+    @else if ($dir == column) {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    @else if ($dir == column-revers) {
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+
+@mixin flex($args) {
+    -ms-flex: $args;
+    flex: $args;
+}
+
+@mixin align-items($align) {
+    @if ($align == center or $align == initial or $align == stretch or $align == baseline or $align == inherit) {
+        -ms-flex-align: $align;
+        align-items: $align;
+    }
+    @else if ($align == start or $align == end) {
+        -ms-flex-align: $align;
+        align-items: flex-#{$align};
+    }
+}
+
+
+@mixin align-content($align-content) {
+    -webkit-align-content: $align-content;
+    -ms-align-content: $align-content;
+    align-content: $align-content;
+}
+
+@mixin align-self($align) {
+    -webkit-align-self: $align;
+    -ms-flex-item-align: $align;
+    align-self: $align;
+}
+
+@mixin flex-wrap($wrap) {
+    @if ($wrap == nowrap) {
+        -webkit-flex-wrap: $wrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: $wrap;
+    }
+    @else if ($wrap != nowrap) {
+        -webkit-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+        flex-wrap: $wrap;
+    }
+}
+
+
+@mixin font-weight-bold($value) {
+    @if ($value == true) {
+        font-weight: bold;
+    }
+    @else if ($value == false) {
+        font-weight: normal;
+    }
+}
+
+@mixin font-style-italic($value) {
+    @if ($value == true) {
+        font-style: italic;
+    }
+    @else if ($value == false) {
+        font-style: normal;
+    }
+}
+
+
+@mixin text-decoration-underline($value) {
+    @if ($value == true) {
+        text-decoration: underline;
+    }
+}
+
+@mixin backGroundImage($value) {
+    @if ($value != 'none') and ($value != '../none') and ($value != '') and ($value != '../') and ($value != 'initial') {
+        background: url(quote($value)) round;
+    }
+}
+
+@mixin backGroundGradient($value: null) {
+    @if ($value != 'initial') and ($value != '') {
+        background-image: #{$value};
+    }
+}
+
+@mixin borderImageGradient($value: null) {
+    @if ($value != 'initial') and ($value != '') {
+        border-image: #{$value};
+    }
+}
+
+@mixin pureBackgroundImage($value) {
+    @if ($value != 'none') and ($value != '../none') and ($value != '') and ($value != '../') and ($value != 'initial') {
+        background-image: url($value);
+    }
+}
+
+@mixin combinedBackground($url, $gradient) {
+    @if ($url != 'none') and ($url != '../none') and ($url != '') and ($url != '../') and ($url != 'initial') and ($gradient != 'initial') and ($gradient != '') {
+        background-image: url($url), #{$gradient};
+    }
+}
+
+@mixin backgroundSize($value) {
+    @if ($value == fill) {
+        background-size: 100% 100%;
+    }
+    @else {
+        background-size: $value;
+    }
+}
+
+@mixin active-background-color($color) {
+    $alphaVal: alpha($color);
+
+    @if ($alphaVal != 0) {
+        background-color: $color;
+    }
+}
+
+@mixin active-background-color-important($color) {
+    $alphaVal: alpha($color);
+
+    @if ($alphaVal != 0) {
+        background-color: $color !important;
+    }
+}
+
+@mixin active-color($color:null) {
+    @if(($color != null) and ($color != 'transparent')) {
+
+        $alphaVal: alpha($color);
+    
+        @if ($alphaVal != 0) {
+            color: $color !important;
+        }
+    }
+}
+
+@mixin static($value) {
+}
+
+@mixin pixelVal($attribute, $value) {
+    #{$attribute}: #{$value + px};
+}
+
+@mixin elemWidth($value) {
+    @if (unitless($value)) {
+        width: round($value) + px;
+    }
+    @else {
+        width: $value;
+    }
+}
+
+@mixin elemHeight($value) {
+    @if (unitless($value)) {
+        height: round($value) + px;
+    }
+    @else {
+        height: $value;
+    }
+}
+
+
+@mixin elemMinHeight($value) {
+    @if (unitless($value)) {
+        min-height: round($value) + px;
+    }
+    @else {
+        min-height: $value;
+    }
+}
+
+@mixin elemMaxHeight($value) {
+    @if ($value == 0) {
+        max-height: none;
+    }
+    @else if (unitless($value)) {
+        max-height: round($value) + px;
+    }
+    @else {
+        max-height: $value;
+    }
+}
+
+@mixin elemMinWidth($value) {
+    @if (unitless($value)) {
+        min-width: round($value) + px;
+    }
+    @else {
+        min-width: $value;
+    }
+}
+
+@mixin elemMaxWidth($value) {
+    @if ($value == 0) {
+        max-width: none;
+    }
+    @else if (unitless($value)) {
+        max-width: round($value) + px;
+    }
+    @else {
+        max-width: $value;
+    }
+}
+
+@mixin elemAutoWidth($value) {
+    @if ($value == auto) {
+        width: $value;
+    }
+    @else if (unitless($value)) {
+        width: round($value) + px;
+    }
+    @else {
+        width: $value;
+    }
+}
+
+@mixin elemAutoHeight($value) {
+    @if ($value == auto) {
+        height: $value;
+    }
+    @else if (unitless($value)) {
+        height: round($value) + px;
+    }
+    @else {
+        height: $value;
+    }
+}
+
+@mixin padding($value, $factor, $unit) {
+    padding: $value*$factor + $unit;
+}
+
+@mixin elemTop($value) {
+    top: #{$value + px};
+    position: absolute;
+}
+
+@mixin elemLeft($value) {
+    left: #{$value + px};
+    position: absolute;
+}
+
+@mixin position($pos,$value) {
+    @if ($pos == 'left') {
+        left: $value;
+    }
+    @else if ($pos == 'right') {
+        right: $value;
+    }
+    @else if ($pos == 'top') {
+        top: $value;
+    }
+    @else if ($pos == 'bottom') {
+        bottom: $value;
+    }
+}
+
+@mixin visible($value) {
+    @if ($value == false) {
+        visibility: hidden;
+    }
+}
+
+@mixin borderStyle ($value) {
+    @if ($value != null and $value != '') {
+        border-style: $value;
+    }
+}
+
+@mixin display ($value, $attr: null) {
+    @if ($value == false) {
+        display: none;
+    }
+    @else if ($value == true) {
+        @if($attr != null) {
+            @if ($attr == 'flex') {
+                @include displayFlexBox(false);
+            }
+            @else {
+                display: $attr;
+            }
+        }
+        @else {
+            display: block;
+        }
+    }
+}
+
+@mixin flex-position($pos) {
+    @if ($pos == 'center center') {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    @else if ($pos== 'center bottom') {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: flex-end;
+        align-items: flex-end;
+    }
+
+    @else if ($pos== 'center top') {
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+    }
+
+    @else if ($pos== 'left bottom') {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: flex-end;
+        align-items: flex-end;
+    }
+
+    @else if ($pos== 'left center') {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    @else if ($pos== 'left top') {
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+        justify-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+    }
+
+    @else if ($pos== 'right bottom') {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: flex-end;
+        justify-content: flex-end;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: flex-end;
+        align-items: flex-end;
+    }
+
+    @else if ($pos== 'right center') {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: flex-end;
+        justify-content: flex-end;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    @else if ($pos== 'right top') {
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: flex-end;
+        justify-content: flex-end;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@mixin text-position($pos) {
+    @if ($pos== 'center center') {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    @else if ($pos== 'center bottom') {
+        vertical-align: bottom;
+        text-align: center;
+    }
+
+    @else if ($pos== 'center top') {
+        vertical-align: top;
+        text-align: center;
+    }
+
+    @else if ($pos== 'left bottom') {
+        vertical-align: bottom;
+        text-align: left;
+    }
+
+    @else if ($pos== 'left center') {
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    @else if ($pos== 'left top') {
+        vertical-align: top;
+        text-align: left;
+    }
+
+    @else if ($pos== 'right bottom') {
+        vertical-align: bottom;
+        text-align: right;
+    }
+
+    @else if ($pos== 'right center') {
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    @else if ($pos== 'right top') {
+        vertical-align: top;
+        text-align: right;
+    }
+}
+
+@mixin elemFlexBasis($value) {
+    @if (unitless($value)) {
+        flex-basis: round($value) + px;
+    }
+    @else {
+        flex-basis: $value;
+    }
+}
+
+@mixin SVGFactorBorder($value, $factor) {
+    stroke-width: $value*$factor;
+}
+
+@mixin factor($attribute, $value, $factor) {
+    #{$attribute}: $value*$factor;
+}
+
+@mixin imageWidth($value) {
+    @if ($value == 0) {
+    }
+    @else if (unitless($value)) {
+        width: round($value) + px;
+    }
+    @else {
+        width: $value;
+    }
+}
+
+@mixin imageHeight($value) {
+    @if ($value == 0) {
+    }
+    @else if (unitless($value)) {
+        height: round($value) + px;
+    }
+    @else {
+        height: $value;
+    }
+}
+
+@mixin backgroundOpacity($value) {
+    background-color: rgba(255, 255, 255, $value);
+}
+
+@mixin importantTextColor($value) {
+    color: $value !important;
+}
+
+@mixin importantBackColor($value) {
+    background-color: $value !important;
+}
+
+@mixin importantPureBackgroundImage($value) {
+    @if ($value != 'none') and ($value != '../none') and ($value != '') and ($value != '../') and ($value != 'initial') {
+        background-image: url($value) !important;
+    }
+}
+
+@mixin importantBoldText($value) {
+    @if ($value == true) {
+        font-weight: bold !important;
+    }
+    @else if ($value == false) {
+        font-weight: normal !important;
+    }
+}
+
+@mixin importantItalicText($value) {
+    @if ($value == true) {
+        font-style: italic !important;
+    }
+    @else if ($value == false) {
+        font-style: normal !important;
+    }
+}
+
+@mixin text-alignment-all($align) {
+    @if ($align == 'left') {
+        @include justify-content(start);
+        text-align: left;
+        @include align-items(center);
+    }
+    @else if ($align == 'left top') {
+        @include justify-content(start);
+        text-align: left;
+        @include align-items(start);
+    }
+    @else if ($align == 'left bottom') {
+        @include justify-content(start);
+        text-align: left;
+        @include align-items(end);
+    }
+    @else if ($align == 'right') {
+        @include justify-content(end);
+        text-align: right;
+        @include align-items(center);
+    }
+    @else if ($align == 'right top') {
+        @include justify-content(end);
+        text-align: right;
+        @include align-items(start);
+    }
+    @else if ($align == 'right bottom') {
+        @include justify-content(end);
+        text-align: right;
+        @include align-items(end);
+    }
+    @else if ($align == 'center') {
+        @include justify-content(center);
+        text-align: center;
+        @include align-items(center);
+    }
+    @else if ($align == 'center top') {
+        @include justify-content(center);
+        text-align: center;
+        @include align-items(start);
+    }
+    @else if ($align == 'center bottom') {
+        @include justify-content(center);
+        text-align: center;
+        @include align-items(end);
+    }
+}
+
+@mixin image-align($align) {
+    @if ($align== 'center bottom') {
+        margin-bottom: 0;
+    }
+    @else if ($align== 'center top') {
+        margin-top: 0;
+    }
+    @else if ($align== 'left bottom') {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    @else if ($align== 'left center') {
+        margin-left: 0;
+    }
+    @else if ($align== 'left top') {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    @else if ($align == 'right bottom') {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    @else if ($align == 'right center') {
+        margin-right: 0;
+    }
+    @else if ($align == 'right top') {
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+
+@mixin importantGradient($value: null) {
+    @if ($value != null and $value != '') {
+        @include backGroundGradient($value !important);
+    }
+}
+
+@mixin importantBorderColor($value) {
+    border-color: $value !important;
+}
+
+@mixin rowHeight($value) {
+    @if ($value == 0) {
+    }
+    @else if (unitless($value)) {
+        height: round($value) + px;
+    }
+    @else {
+        height: $value;
+    }
+}
+
+@mixin borderColorLeft($value) {
+    border-left-color: $value;
+}
+
+@mixin borderColorRight($value) {
+    border-right-color: $value;
+}
+
+@mixin borderColorTop($value) {
+    border-top-color: $value;
+}
+
+@mixin borderColorBottom($value) {
+    border-bottom-color: $value;
+}
+
+
+@mixin reverseMargin ($value) {
+    margin-left: -$value !important;
+    margin-right: -$value !important;
+}
+
+@mixin static-top-border ($value) {
+    border-top-width: 0px !important;
+}

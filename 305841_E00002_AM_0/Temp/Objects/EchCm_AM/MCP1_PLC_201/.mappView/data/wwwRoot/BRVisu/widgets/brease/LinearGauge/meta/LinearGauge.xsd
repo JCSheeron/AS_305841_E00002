@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.LinearGaugeRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="60" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="380" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.LinearGauge">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.LinearGaugeRestrict">
+			<xs:attribute name="areasPadding" use="optional" type="types:UInteger" default="3" />
+			<xs:attribute name="areasSize" use="optional" type="types:UInteger" default="10" />
+			<xs:attribute name="axisPadding" use="optional" type="types:UInteger" default="0" />
+			<xs:attribute name="format" use="optional" type="types:brease.config.MeasurementSystemFormat" default="{&apos;metric&apos;:{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial-us&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }}" />
+			<xs:attribute name="majorTicks" use="optional" type="types:UInteger" default="9" />
+			<xs:attribute name="maxValue" use="optional" type="types:Number" default="100" />
+			<xs:attribute name="minValue" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="minorTicks" use="optional" type="types:UInteger" default="4" />
+			<xs:attribute name="node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="orientation" use="optional" type="types:brease.enum.Orientation" default="LeftToRight" />
+			<xs:attribute name="pointerPadding" use="optional" type="types:UInteger" default="0" />
+			<xs:attribute name="pointerSize" use="optional" type="types:UInteger" default="15" />
+			<xs:attribute name="scaleArea0" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="scaleArea0Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="scaleArea1" use="optional" type="types:Number" default="20" />
+			<xs:attribute name="scaleArea1Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="scaleArea2" use="optional" type="types:Number" default="40" />
+			<xs:attribute name="scaleArea2Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="scaleArea3" use="optional" type="types:Number" default="60" />
+			<xs:attribute name="scaleArea3Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="scaleArea4" use="optional" type="types:Number" default="80" />
+			<xs:attribute name="scaleArea4Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="scaleArea5" use="optional" type="types:Number" default="100" />
+			<xs:attribute name="scaleArea5Node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="showPointer" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="showUnit" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="unit" use="optional" type="types:brease.config.MeasurementSystemUnit" default="" />
+			<xs:attribute name="value" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="borderColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelVal" default="2px" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="none" />
+			<xs:attribute name="scaleColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="scaleWidth" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="majorTicksColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="majorTicksWidth" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="minorTicksColor" use="optional" type="types:Color" default="#DCDCDC" />
+			<xs:attribute name="minorTicksWidth" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="scaleFontSize" use="optional" type="types:PixelVal" default="12px" />
+			<xs:attribute name="scaleFontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="scaleTextColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="unitFontSize" use="optional" type="types:PixelVal" default="12px" />
+			<xs:attribute name="pointerBackColor" use="optional" type="types:Color" default="#ff8800" />
+			<xs:attribute name="pointerBorderWidth" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="pointerBorderColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="backColorScaleArea1" use="optional" type="types:Color" default="#99ccff" />
+			<xs:attribute name="borderWidthArea1" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="borderColorArea1" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="backColorScaleArea2" use="optional" type="types:Color" default="#99ff99" />
+			<xs:attribute name="borderWidthArea2" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="borderColorArea2" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="backColorScaleArea3" use="optional" type="types:Color" default="#47d147" />
+			<xs:attribute name="borderWidthArea3" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="borderColorArea3" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="backColorScaleArea4" use="optional" type="types:Color" default="#ffcc66" />
+			<xs:attribute name="borderWidthArea4" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="borderColorArea4" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="backColorScaleArea5" use="optional" type="types:Color" default="#ff704d" />
+			<xs:attribute name="borderWidthArea5" use="optional" type="types:PixelVal" default="1px" />
+			<xs:attribute name="borderColorArea5" use="optional" type="types:Color" default="#000000" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

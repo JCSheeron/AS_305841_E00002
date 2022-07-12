@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventsActionsDefinitions xmlns="http://www.br-automation.com/iat2019/eventactiondefinition"
+						xmlns:w1="http://www.br-automation.com/iat2014/widget">
+  <EventsActionsDefinition name="mappSystem">
+    <MethodGroups>
+      <MethodGroup name="mpalarmxcore">
+        <Methods>
+          <w1:Method name="GetRootCause" read="false"><!-- currently it's no read action in XSD -->
+            <w1:Description>Sets the "value" attribute of a variable to a Boolean value.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="eventId" type="Numeric" index="0" required="true">
+                <w1:Description>ID of the alarm to get diagnostic data.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+			<w1:Result type="DYNAMIC" />
+          </w1:Method>
+        </Methods>
+      </MethodGroup>
+    </MethodGroups>
+  </EventsActionsDefinition>
+</EventsActionsDefinitions>

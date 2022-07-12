@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="brease.core.BaseWidget" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+  <PropertyGroups>
+    <PropertyGroup name="Size" type="String" category="Layout">
+      <Description>outer height and width of widget</Description>
+    </PropertyGroup>
+    <PropertyGroup name="Position" type="String" category="Layout">
+      <Description>top and left of widget</Description>
+    </PropertyGroup>
+  </PropertyGroups>
+
+  <StyleProperties>
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Size" groupOrder="1">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Size" groupOrder="2">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+      <StyleElement attribute="@include elemTop($value)"></StyleElement>
+      <Description>absolute position measured from top boundary of parent container</Description>
+    </StyleProperty>
+    <StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+      <StyleElement attribute="@include elemLeft($value)"></StyleElement>
+      <Description>absolute position measured from left boundary of parent container</Description>
+    </StyleProperty>
+    <StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+      <StyleElement attribute="z-index"></StyleElement>
+      <Description>
+        <![CDATA[
+        The zIndex property specifies the z-order of a widget and its childs.<br/>
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>
+        The zIndex must be unique within a content.<br/>
+        ]]>
+      </Description>
+    </StyleProperty>
+  </StyleProperties>
+  
+</StyleInformation>

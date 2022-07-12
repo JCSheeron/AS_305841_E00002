@@ -1,0 +1,9 @@
+$(AS_PROJECT_PATH)/logical/plclogic/logic.var
+$(AS_PROJECT_PATH)/logical/libraries/gaprocio/gaprocio.typ
+$(AS_PROJECT_PATH)/logical/global.typ
+$(AS_PROJECT_PATH)/logical/plclogic/logic.typ
+$(AS_PROJECT_PATH)/logical/libraries/standard/standard.fun
+$(AS_PROJECT_PATH)/logical/libraries/gampmotion/types.typ
+$(AS_PROJECT_PATH)/logical/plclogic/omsafedev/omsafedev.var
+$(AS_PROJECT_PATH)/logical/plclogic/procinputs/procinputs.var
+$(AS_PROJECT_PATH)/logical/plclogic/prodcycle/prodcycle.var

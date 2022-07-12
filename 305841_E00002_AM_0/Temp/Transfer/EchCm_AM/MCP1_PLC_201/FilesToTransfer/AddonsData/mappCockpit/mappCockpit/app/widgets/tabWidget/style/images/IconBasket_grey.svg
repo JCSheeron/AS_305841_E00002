@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 15.38 20"
+   version="1.1"
+   id="svg3787"
+   sodipodi:docname="IconBasket_grey.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata3793">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>basket</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3791" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3789"
+     showgrid="false"
+     inkscape:zoom="33.37544"
+     inkscape:cx="8.365888"
+     inkscape:cy="7.5321023"
+     inkscape:window-x="1922"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3787" />
+  <title
+     id="title3778">basket</title>
+  <g
+     id="5f5bfd2f-423c-465a-b547-b739ff213c5a"
+     data-name="Ebene 2"
+     style="fill:#808080">
+    <g
+       id="132dd536-05c7-4542-b6f7-c38e9b4fe058"
+       data-name="trace analyse"
+       style="fill:#808080">
+      <g
+         id="34b0bad1-d478-4a09-a6de-1776802e5827"
+         data-name="Basket"
+         style="fill:#808080">
+        <path
+           d="M15,3.08H10.77V1.54A1.54,1.54,0,0,0,9.23,0H6.15A1.54,1.54,0,0,0,4.62,1.54V3.08H.38A.36.36,0,0,0,0,3.46v.77a.36.36,0,0,0,.38.39H15a.36.36,0,0,0,.38-.39V3.46A.36.36,0,0,0,15,3.08Zm-8.81,0,0-1.54H9.23V3.08Z"
+           style="fill:#808080"
+           id="path3780" />
+        <path
+           d="M14.08,5.38H1.15c-.3,0-.38.16-.38.39v14a.4.4,0,0,0,.38.27H14.08c.3,0,.54-.15.54-.38V5.69C14.62,5.46,14.38,5.38,14.08,5.38ZM4.62,17.31a.36.36,0,0,1-.39.38H3.46a.36.36,0,0,1-.38-.38V8.08a.36.36,0,0,1,.38-.39h.77a.37.37,0,0,1,.39.39Zm3.84,0a.36.36,0,0,1-.38.38H7.31a.36.36,0,0,1-.39-.38V8.08a.37.37,0,0,1,.39-.39h.77a.36.36,0,0,1,.38.39Zm3.85,0a.36.36,0,0,1-.39.38h-.77a.36.36,0,0,1-.38-.38V8.08a.36.36,0,0,1,.38-.39h.77a.37.37,0,0,1,.39.39Z"
+           style="fill:#808080"
+           id="path3782" />
+      </g>
+    </g>
+  </g>
+</svg>

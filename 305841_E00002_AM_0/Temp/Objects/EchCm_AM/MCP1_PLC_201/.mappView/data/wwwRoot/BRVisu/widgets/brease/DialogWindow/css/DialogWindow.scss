@@ -1,0 +1,106 @@
+@import '../../../../css/libs/mixins.scss';
+
+$border-outer-color: #333;
+$text-color: #3E3E47;
+
+.breaseWindow {
+    &.breaseDialogWindow {
+        background-color: transparent;
+        width: 880px;
+        @include box-sizing(border-box);
+        border-left: none;
+        border-bottom: none;
+        border-right: none;
+        border-top: none;
+    }
+
+    header.breaseDialogWindowHeader .breaseWindowClose {
+        right: 0px;
+    }
+
+    .breaseDialogWindowHeader {
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        @include displayFlexBox(false);
+        @include flex-direction(row);
+        @include flex-wrap(nowrap);
+        justify-content: flex-start;
+        align-content: stretch;
+        @include align-items(flex-start);
+
+        div.innerHeader {
+            padding: 0;
+            margin-right: 0;
+            @include flex(1 1 auto);
+            order: 0;
+            align-self: auto;
+            position: relative;
+            @include displayFlexBox(false);
+            @include flex-direction(row);
+            @include flex-wrap(nowrap);
+            @include align-items(stretch);
+            @include box-sizing(border-box);
+
+            .textDiv {
+                display: inline-block;
+                box-sizing: content-box;
+                @include flex(0 1 auto);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                pointer-events: none;
+                margin: 0 0 0 5px;
+                padding: 0;
+                height: 100%;
+            }
+
+            .imageDiv {
+                display: inline-block;
+                box-sizing: content-box;
+                @include flex(0 0 auto);
+                background-repeat: no-repeat;
+                background-position: center right;
+                margin: 0 3px 0 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .imageDiv img.dummyImage {
+                display: inline-block;
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.breaseWindow.breaseDialogWindow {
+    .breaseDialogWindowContentBox {
+        @include box-sizing(content-box);
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+
+        > .errorText {
+            padding: 35px 0 0 35px;
+            height: 100%;
+            width: 400px;
+            background-color: #fff;
+            color: #000;
+            @include box-sizing(border-box);
+        }
+    }
+
+    .breaseWindowClose {
+        order: 0;
+        @include flex(0 1 auto);
+        align-self: auto;
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            color: #333;
+        }
+    }
+}

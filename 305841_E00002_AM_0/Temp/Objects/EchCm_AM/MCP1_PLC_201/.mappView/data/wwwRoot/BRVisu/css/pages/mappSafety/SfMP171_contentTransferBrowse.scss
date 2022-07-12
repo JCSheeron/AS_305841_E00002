@@ -1,0 +1,194 @@
+﻿@import "mixins.scss";
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+	@include elemTop(380);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+	@include elemLeft(10);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+	@include elemAutoWidth(110);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK {
+		z-index: 0;
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+	@include elemAutoWidth(100);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+	@include elemTop(380);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+	@include elemLeft(305);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel {
+		z-index: 1;
+}
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+	&.DropDownBoxView{
+	@include elemHeight(30);
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+	@include elemTop(10);
+}
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+	@include elemLeft(160);
+}
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+	&.DropDownBoxView{
+	@include elemWidth(120);
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget {
+		z-index: 2;
+}
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+	@include elemTop(10);
+}
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+	@include elemLeft(20);
+}
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+	@include elemAutoWidth(140);
+}
+#SfMP171_contentTransferBrowse_SfMP171_labelTransferDialogStorage {
+		z-index: 3;
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	@include elemTop(45);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	@include elemLeft(10);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	@include elemWidth(395);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	@include elemHeight(155);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+		z-index: 4;
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	> .header span{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeApplication {
+	> .header{
+	height: 14px + 20px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+	@include elemTop(0);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+	@include elemLeft(0);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+	@include elemWidth(395);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+	@include elemHeight(120);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+		z-index: 0;
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeAppl {
+	.tableCells tbody tr td:not(.override){
+		font-size: 14px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeDesignerProject {
+		z-index: 0;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemCRC {
+		z-index: 1;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemTimeStamp {
+		z-index: 2;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemUser {
+		z-index: 3;
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	@include elemTop(200);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	@include elemLeft(10);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	@include elemWidth(395);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	@include elemHeight(165);
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+		z-index: 5;
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	> .header span{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_GroupBoxSafeCommissioning {
+	> .header{
+	height: 14px + 20px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+	@include elemTop(0);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+	@include elemLeft(0);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+	@include elemWidth(395);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+	@include elemHeight(120);
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+		z-index: 5;
+}
+#SfMP171_contentTransferBrowse_SfMP171_tableShowSafeOP {
+	.tableCells tbody tr td:not(.override){
+		font-size: 14px;
+	}
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPName {
+		z-index: 0;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPCRC {
+		z-index: 1;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPTimeStamp {
+		z-index: 2;
+}
+#SfMP171_contentTransferBrowse_SfMP171_TableItemSafeOPUser {
+		z-index: 3;
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+	@include elemTop(380);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+	@include elemLeft(140);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+	@include elemAutoWidth(145);
+}
+#SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm {
+		z-index: 6;
+}

@@ -1,0 +1,45 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/GroupBox/meta/GroupBox_base";
+.widgets_brease_GroupBox_style_transparent {
+@include widgets_brease_GroupBox_base; 
+	border-width: 0px;
+> .header {
+	border-width: 0px;
+}
+	background-color: transparent;
+> .header span {
+	font-size: 16px;
+}
+> .header {
+height: 16px + 20px;
+}
+
+}
+@import "../../../../widgets/brease/GroupBox/meta/GroupBox_base";
+.widgets_brease_GroupBox_style_GroupBox1 {
+@include widgets_brease_GroupBox_base; 
+> .header {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+> .header span {
+	font-size: 16px;
+}
+> .header {
+height: 16px + 20px;
+}
+> .header span {
+	color: #474747;
+}
+@include border-radius(8px 8px 0px 0px);
+	border-width: 1px;
+> .header {
+	border-width: 1px;
+}
+	background-color: transparent;
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+> .header {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+
+}

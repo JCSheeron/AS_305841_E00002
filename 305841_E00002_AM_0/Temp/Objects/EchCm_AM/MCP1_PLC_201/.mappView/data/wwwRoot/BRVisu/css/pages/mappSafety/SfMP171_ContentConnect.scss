@@ -1,0 +1,285 @@
+﻿@import "mixins.scss";
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+	@include elemTop(140);
+}
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+	@include elemLeft(126);
+}
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+	@include elemAutoWidth(110);
+}
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+	@include elemAutoHeight(40);
+}
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+		z-index: 7;
+}
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+		padding: 5px 3px;
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+	@include elemTop(140);
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+	@include elemLeft(246);
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+	@include elemAutoWidth(110);
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+	@include elemAutoHeight(40);
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+		z-index: 9;
+}
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+		padding: 5px 3px;
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+	@include elemTop(120);
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+	@include elemLeft(5);
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+	@include elemAutoWidth(120);
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+	@include elemAutoHeight(15);
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+		z-index: 0;
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+		font-size: 10px;
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+		margin: 2px;
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+	@include elemTop(120);
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+	@include elemLeft(5);
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+	@include elemAutoWidth(140);
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+	@include elemAutoHeight(15);
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+		z-index: 1;
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+		font-size: 10px;
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+		margin: 2px;
+}
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+	@include elemTop(140);
+}
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+	@include elemLeft(6);
+}
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+	@include elemAutoWidth(110);
+}
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+	@include elemAutoHeight(40);
+}
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+		z-index: 8;
+}
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+	@include elemTop(140);
+}
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+	@include elemLeft(366);
+}
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+	@include elemAutoWidth(110);
+}
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+	@include elemAutoHeight(40);
+}
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+		z-index: 10;
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+	@include elemTop(462);
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+	@include elemLeft(4);
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+	@include elemWidth(16);
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+	@include elemHeight(16);
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+		z-index: 2;
+}
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+		border-width: 0px;
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+	@include elemTop(462);
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+	@include elemLeft(20);
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+	@include elemAutoWidth(40);
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+	@include elemAutoHeight(16);
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+		z-index: 3;
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+	@include text-alignment-all('left');
+}
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+		font-size: 12px;
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include elemTop(462);
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include elemLeft(60);
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include elemAutoWidth(240);
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include elemAutoHeight(16);
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+		z-index: 4;
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include text-alignment-all('left');
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+		font-size: 12px;
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	@include font-weight-bold(false);
+}
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+	span{
+		padding: 0px 0px 0px 0px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+	@include elemTop(440);
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+	@include elemLeft(0);
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+	@include elemWidth(480);
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+	@include elemHeight(40);
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+		z-index: 6;
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+		border-style: none;
+}
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+		background-color: rgba(230, 230, 230, 1);
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+	@include elemTop(370);
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+	@include elemLeft(10);
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+	@include elemWidth(460);
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+	@include elemHeight(10);
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+		z-index: 5;
+}
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+	.pb-label-text{
+		font-size: 10px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	@include elemTop(190);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	@include elemLeft(5);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	@include elemWidth(470);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	@include elemHeight(173);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+		z-index: 11;
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	> .header span{
+		font-size: 12px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	> .header{
+	height: 12px + 20px;
+	}
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+	> .header{
+	@include text-alignment(left);
+	}
+}
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+		opacity: 1;
+}
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+	@include elemTop(0);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+	@include elemLeft(-1);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+	@include elemWidth(470);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+	@include elemHeight(143);
+}
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+		z-index: 0;
+}
+#SfMP171_ContentConnect_SfMP171_TableItemSafeDomain {
+		z-index: 0;
+}
+#SfMP171_ContentConnect_SfMP171_TableItemName {
+		z-index: 1;
+}
+#SfMP171_ContentConnect_SfMP171_TableItemProjectname {
+		z-index: 2;
+}

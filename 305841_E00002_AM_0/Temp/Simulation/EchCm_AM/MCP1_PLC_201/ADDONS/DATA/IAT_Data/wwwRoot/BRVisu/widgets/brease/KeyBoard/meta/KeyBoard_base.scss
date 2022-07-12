@@ -1,0 +1,156 @@
+@import "mixins.scss";
+@mixin widgets_brease_KeyBoard_base {
+	@include elemWidth(957);
+	@include elemHeight(473);
+	@include border-radius(0px);
+.keyBoardHeader {
+	@include border-top-left-radius(0px);
+}
+.keyBoardHeader {
+	@include border-top-right-radius(0px);
+}
+.keyBoardBody {
+	@include border-bottom-left-radius(0px);
+}
+.keyBoardBody {
+	@include border-bottom-right-radius(0px);
+}
+.keyBoardBody {
+	background-color: #333333;
+}
+.keyBoardHeader {
+	@include backGroundGradient('');
+}
+.keyBoardBody {
+	@include backGroundGradient('');
+}
+	border-color: #333333;
+header {
+	background-color: #333333;
+}
+.dropdown {
+	color: #000000;
+}
+.keyBoardButtons button {
+	color: #000000;
+}
+.keyBoardButtons button sub {
+	color: #000000;
+}
+.keyBoardButtons button svg {
+	fill: #000000;
+}
+.keyBoardBody button .icon-shift {
+	background-color: #000000;
+}
+.keyBoardBody button .icon-shift:after {
+	border-bottom-color: #000000;
+}
+.dropdown .button.active {
+	background-color: #FF8800;
+}
+.dropdown .button.selected {
+	background-color: #FF8800;
+}
+.keyBoardBody button.active {
+	background-color: #FF8800;
+}
+.keyBoardBody button.selected {
+	background-color: #FF8800;
+}
+.keyBoardBody button.active .icon-delete {
+	color: #FF8800;
+}
+.keyBoardBody button.selected .icon-delete {
+	color: #FF8800;
+}
+.dropdown {
+	background-color: #FFFFFF;
+}
+.keyBoardBody button {
+	background-color: #FFFFFF;
+}
+.dropdown .dropdownlist div.selected {
+	color: #FFFFFF;
+}
+.keyBoardBody button.active {
+	color: #FFFFFF;
+}
+.keyBoardBody button.selected {
+	color: #FFFFFF;
+}
+.keyBoardBody button.active sub {
+	color: #FFFFFF;
+}
+.keyBoardBody button.selected sub {
+	color: #FFFFFF;
+}
+.keyBoardBody button.active svg {
+	fill: #FFFFFF;
+}
+.keyBoardBody button.selected svg {
+	fill: #FFFFFF;
+}
+.keyBoardBody button.active .icon-shift {
+	background-color: #FFFFFF;
+}
+.keyBoardBody button.selected .icon-shift {
+	background-color: #FFFFFF;
+}
+.keyBoardBody button.active .icon-shift:after {
+	border-bottom-color: #FFFFFF;
+}
+.keyBoardBody button.selected .icon-shift:after {
+	border-bottom-color: #FFFFFF;
+}
+	opacity: 1;
+	font-family: Arial;
+.dropdown {
+	font-family: Arial;
+}
+button {
+	font-family: Arial;
+}
+button sub {
+	font-family: Arial;
+}
+input {
+	font-family: Arial;
+}
+div {
+	font-family: Arial;
+}
+	@include box-shadow(none);
+.dropdown {
+	@include backGroundGradient('');
+}
+.keyBoardBody button:not(.active):not(.selected) {
+	@include backGroundGradient('');
+}
+.dropdown .dropdownlist div.selected {
+	@include backGroundGradient('');
+}
+.keyBoardBody button.active {
+	@include backGroundGradient('');
+}
+.keyBoardBody button.selected {
+	@include backGroundGradient('');
+}
+.pluginList {
+	background-color: #333333;
+}
+.pluginList {
+	@include backGroundGradient('');
+}
+.pluginList {
+	border-color: #fff;
+}
+.pluginList div {
+	border-left-color: #fff;
+}
+.pluginList div {
+	color: #fff;
+}
+
+}
+

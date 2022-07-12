@@ -1,0 +1,55 @@
+@import "mixins.scss";
+#GaSafetyDeviceStatus_lblDevice {
+	@include elemTop(5);
+}
+#GaSafetyDeviceStatus_lblDevice {
+	@include elemLeft(85);
+}
+#GaSafetyDeviceStatus_lblDevice {
+	@include elemAutoWidth(135);
+}
+#GaSafetyDeviceStatus_lblDevice {
+	@include elemAutoHeight(15);
+}
+#GaSafetyDeviceStatus_lblDevice {
+		z-index: 0;
+}
+#GaSafetyDeviceStatus_lblDevice {
+	@include text-alignment-all('center');
+}
+#GaSafetyDeviceStatus_txtOutActive {
+	@include elemTop(5);
+}
+#GaSafetyDeviceStatus_txtOutActive {
+	@include elemLeft(0);
+}
+#GaSafetyDeviceStatus_txtOutActive {
+	@include elemAutoWidth(95);
+}
+#GaSafetyDeviceStatus_txtOutActive {
+	@include elemAutoHeight(15);
+}
+#GaSafetyDeviceStatus_txtOutActive {
+		z-index: 1;
+}
+#GaSafetyDeviceStatus_txtOutActive {
+	@include text-alignment-all('center');
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+	@include elemTop(5);
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+	@include elemLeft(225);
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+	@include elemAutoWidth(60);
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+	@include elemAutoHeight(15);
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+		z-index: 2;
+}
+#GaSafetyDeviceStatus_txtOutStatus {
+	@include text-alignment-all('center');
+}

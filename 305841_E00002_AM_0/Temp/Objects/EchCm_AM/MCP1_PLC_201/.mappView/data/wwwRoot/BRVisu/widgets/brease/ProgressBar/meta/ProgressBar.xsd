@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.ProgressBarRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="25" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="400" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.ProgressBar">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.ProgressBarRestrict">
+			<xs:attribute name="barAnimation" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="labelPosition" use="optional" type="types:brease.enum.Position" default="right" />
+			<xs:attribute name="labelSize" use="optional" type="types:Size" default="30" />
+			<xs:attribute name="maxValue" use="optional" type="types:Number" default="100" />
+			<xs:attribute name="minValue" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="orientation" use="optional" type="types:brease.enum.Orientation" default="LeftToRight" />
+			<xs:attribute name="showLabel" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="stripedProgressBar" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="transitionTime" use="optional" type="types:UInteger" default="500" />
+			<xs:attribute name="value" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="maxHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="maxWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="padding" use="optional" type="types:Padding" default="0px" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+			<xs:attribute name="shadow" use="optional" type="types:Shadow" default="none" />
+			<xs:attribute name="barBorderStyle" use="optional" type="types:BorderStyle" default="none" />
+			<xs:attribute name="barBorderWidth" use="optional" type="types:PixelValCollection" default="1px" />
+			<xs:attribute name="barBorderColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="barCornerRadius" use="optional" type="types:PixelValCollection" default="20px" />
+			<xs:attribute name="barBackColor" use="optional" type="types:Color" default="#E0E0E0" />
+			<xs:attribute name="barBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="barColor" use="optional" type="types:Color" default="#FF8800" />
+			<xs:attribute name="barGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="1px" />
+			<xs:attribute name="borderColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="4px" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="transparent" />
+			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="fontSize" use="optional" type="types:PixelVal" default="12px" />
+			<xs:attribute name="fontColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="bold" use="optional" type="types:Boolean" default="false" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.11.2.75"?>
+<ConfigurationOptions
+  Name="EchCm_AM"
+  Target="SG4"
+  GccVersion="6.3.0"
+  SaveSourceOnTarget="false"
+  ActivateSdm="true"
+  WebServer="true"
+  ARMSimulation="False"
+  ArVersion="B4.92">
+  <ModuleMemoryData>
+    <Module
+      Name=""
+      Memory="13312" />
+  </ModuleMemoryData>
+  <Memories
+    PermanentAnalogMemory="0"
+    PermanentDigitalMemory="9216"
+    VolatileMemory="69630" />
+</ConfigurationOptions>

@@ -1,0 +1,72 @@
+@import "mixins.scss";
+@mixin widgets_brease_ProgressBar_base {
+	@include elemWidth(400);
+	@include elemHeight(25);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	opacity: 1;
+.pb-outer-area {
+	padding: 0px;
+}
+	margin: 0px;
+	@include box-shadow(none);
+.pb-bar-container {
+	border-style: none;
+}
+.pb-bar-container {
+	border-width: 1px;
+}
+.pb-bar-container {
+	border-color: #000000;
+}
+.pb-bar-container {
+	@include border-radius(20px);
+}
+.pb-bar-container {
+	background-color: #E0E0E0;
+}
+.pb-bar-container {
+	@include backGroundGradient('');
+}
+.pb-progress {
+	background-color: #FF8800;
+}
+.pb-progress {
+	@include backGroundGradient('');
+}
+.pb-outer-area {
+	border-style: solid;
+}
+.pb-outer-area {
+	border-width: 1px;
+}
+.pb-outer-area {
+	border-color: #000000;
+}
+	@include border-radius(4px);
+.pb-outer-area {
+	@include border-radius(4px);
+}
+.pb-outer-area {
+	background-color: transparent;
+}
+.pb-label-text {
+	font-family: Arial;
+}
+.pb-label-text {
+	font-size: 12px;
+}
+.pb-label-text {
+	color: #000000;
+}
+.pb-label-text {
+	@include font-weight-bold(false);
+}
+
+}
+
+.widgets_brease_ProgressBar_style_default {
+@include widgets_brease_ProgressBar_base 
+}

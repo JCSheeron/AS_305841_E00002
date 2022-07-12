@@ -1,0 +1,600 @@
+@import "mixins.scss";
+@mixin widgets_brease_Table_base {
+	@include elemWidth(400);
+	@include elemHeight(300);
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput) {
+	background-color: #FF8800;
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput) {
+	background-color: #FF8800;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput) {
+	@include active-background-color(#FF8800);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput) {
+	@include active-background-color(#FF8800);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput) {
+	@include active-background-color(#FF8800);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput) {
+	@include active-background-color(#FF8800);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td:not(.override):not(.activeInput):not(img):not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.selected:not(.override):not(.activeInput):not(img):not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.override:not(.activeInput):not(img):not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.selected.override:not(.activeInput):not(img):not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.override:not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown.override:not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown.override:not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td:not(.override):not(.disabled):not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	@include active-color(transparent);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.mousedown.override:not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown.override:not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown.override:not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected) {
+	@include active-background-color-important(transparent);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown:not(.selected):not(.disabled) td:not(.override):not(.disabled):not(.activeInput):not(img) {
+	@include importantGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr:not(.selected):not(.disabled) td.mousedown:not(.override):not(.disabled):not(.activeInput):not(img) {
+	@include importantGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown:not(.selected):not(.disabled) td.override:not(.activeInput):not(.disabled):not(img) {
+	@include importantGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr:not(.selected):not(.disabled) td.mousedown.override:not(.activeInput):not(.disabled):not(img) {
+	@include importantGradient('');
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	color: #333333;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled:not(.selected)) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	box-shadow: inset none;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	background-color: #FFFFFF;;
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	background-color: #FFFFFF;;
+}
+&:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.override:not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td:not(.override):not(.disabled):not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override):not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override):not(.activeInput):not(.disabled) {
+	color: #FFFFFF;
+}
+&:not(.disabled) {
+	background-color: transparent;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.selected):not(.disabled):not(.odd):not(.even):not(.override) {
+	background-color: #EAEAEA;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.even:not(.selected):not(.disabled):not(.override) {
+	background-color: #EAEAEA;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.selected):not(.disabled):not(.odd):not(.even):not(.override) {
+	background-color: #FCFCFC;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.odd:not(.selected):not(.disabled):not(.override) {
+	background-color: #FCFCFC;
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.selected):not(.disabled):not(.odd):not(.even):not(.override):not(.mousedown) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.even:not(.selected):not(.disabled):not(.override):not(.mousedown) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.selected):not(.disabled):not(.even):not(.odd):not(.override):not(.mousedown) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td.odd:not(.selected):not(.disabled):not(.override):not(.mousedown) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.even:not(.disabled):not(.override) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.odd:not(.disabled):not(.override) {
+	background-color: #FCFCFC;
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.even:not(.disabled):not(.override):not(.selected) > td:not(.disabled):not(.override) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.odd:not(.disabled):not(.override):not(.selected) > td:not(.disabled):not(.override) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) {
+	border-color: #C8C8C8;
+}
+	border-style: none;
+	border-width: 0px;
+.tableCells tbody tr td:not(.override) {
+	@include text-position('center center');
+}
+.tableCells tbody tr td:not(.override) > img {
+	@include image-align('center center');
+}
+.tableHeader > .headerElement:not(.override) {
+	@include flex-position('center center');
+}
+.tableHeader > .headerElement:not(.override) > span {
+	@include text-position('center center');
+}
+.tableCells tbody tr td:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollBody.horizontalOrientation .tableCells tbody tr:first-child td:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollBody.verticalOrientation .tableCells tbody tr td:first-child:not(.override) {
+	border-style: solid;
+}
+.tableHeader div:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollHead.verticalOrientation .tableHeader div:first-child:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollHead.horizontalOrientation .tableHeader div:first-child:not(.override) {
+	border-style: solid;
+}
+.dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override) {
+	border-style: solid;
+}
+.tableCells tbody tr td:not(.override) {
+	border-color: #C8C8C8;
+}
+.tableHeader div:not(.override) {
+	border-color: #C8C8C8;
+}
+.tableCells tbody tr td:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollBody.horizontalOrientation .tableCells tbody tr:first-child td:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollBody.verticalOrientation .tableCells tbody tr td:first-child:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.tableHeader div:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollHead div {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollHead.verticalOrientation .tableHeader div:first-child:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollHead.horizontalOrientation .tableHeader div:first-child:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+.dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override) {
+	border-width: 0px 0px 1px 1px;
+}
+&.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+	padding: 0px;
+}
+&.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+	padding: 0px;
+}
+&.breaseTable .dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override) {
+	padding: 0px;
+}
+&.breaseTable .dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override) {
+	padding: 0px;
+}
+	@include border-radius(0px);
+&.disabled .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override):not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override):not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override).disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override).disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override).disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override.disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override.disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override.disabled:not(.activeInput) {
+	@include importantTextColor(#FFFFFF);
+}
+&.disabled .verticalOrientation .tableCells tbody tr.even td.selected {
+	@include active-background-color(#C7C7C7);
+}
+&.disabled .verticalOrientation .tableCells tbody tr.odd  td.selected {
+	@include active-background-color(#C7C7C7);
+}
+&.verticalOrientation .tableCells tbody tr.even.selected.disabled {
+	@include active-background-color(#C7C7C7);
+}
+&.verticalOrientation .tableCells tbody tr.odd.selected.disabled {
+	@include active-background-color(#C7C7C7);
+}
+.verticalOrientation .tableCells tbody tr.even td.selected:not(.override).disabled {
+	@include active-background-color(#C7C7C7);
+}
+.verticalOrientation .tableCells tbody tr.odd td.selected:not(.override).disabled {
+	@include active-background-color(#C7C7C7);
+}
+.verticalOrientation .tableCells tbody tr.even td.selected.override.disabled {
+	@include active-background-color(#C7C7C7);
+}
+.verticalOrientation .tableCells tbody tr.odd td.selected.override.disabled {
+	@include active-background-color(#C7C7C7);
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override) {
+	background-color: #C7C7C7;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override) {
+	background-color: #C7C7C7;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override {
+	background-color: #C7C7C7;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override {
+	background-color: #C7C7C7;
+}
+.horizontalOrientation .tableCells tbody tr.even td.selected:not(.override).disabled {
+	background-color: #C7C7C7;
+}
+.horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override).disabled {
+	background-color: #C7C7C7;
+}
+.horizontalOrientation .tableCells tbody tr.even td.selected.override.disabled {
+	background-color: #C7C7C7;
+}
+.horizontalOrientation .tableCells tbody tr.odd td.selected.override.disabled {
+	background-color: #C7C7C7;
+}
+&.disabled .tableCells tbody tr.selected:not(.override) {
+	@include backGroundGradient('');
+}
+&.disabled .tableCells tbody tr td.selected:not(.override) {
+	@include backGroundGradient('');
+}
+&.disabled .tableCells tbody tr.selected.override {
+	@include backGroundGradient('');
+}
+&.disabled .tableCells tbody tr td.selected.override {
+	@include backGroundGradient('');
+}
+& .tableCells tbody tr.selected.disabled {
+	@include backGroundGradient('');
+}
+& .tableCells tbody tr td.selected.disabled {
+	@include backGroundGradient('');
+}
+&.disabled {
+	background-color: transparent;
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&.disabled .verticalOrientation .tableCells tbody tr.even td:not(.override) {
+	background-color: #EAEAEA;
+}
+&.disabled .verticalOrientation .tableCells tbody tr.even {
+	background-color: #EAEAEA;
+}
+.verticalOrientation .tableCells tbody tr.even td:not(.override).disabled {
+	background-color: #EAEAEA;
+}
+& .verticalOrientation .tableCells tbody tr.even.override.disabled {
+	background-color: #EAEAEA;
+}
+&.disabled .verticalOrientation .tableCells tbody tr.odd td:not(.override) {
+	background-color: #FFFFFF;
+}
+&.disabled .verticalOrientation .tableCells tbody tr.odd {
+	background-color: #FFFFFF;
+}
+.verticalOrientation .tableCells tbody tr.odd td:not(.override).disabled {
+	background-color: #FFFFFF;
+}
+.verticalOrientation .tableCells tbody tr.odd.disabled.override {
+	background-color: #FFFFFF;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.override) {
+	background-color: #EAEAEA;
+}
+ .horizontalOrientation .tableCells tbody tr td:nth-child(even).disabled:not([input=true]):not(.override):not(.selected) {
+	background-color: #EAEAEA;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).override {
+	background-color: #EAEAEA;
+}
+ .horizontalOrientation .tableCells tbody tr td:nth-child(even).disabled:not([input=true]).override:not(.selected) {
+	background-color: #EAEAEA;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.override) {
+	background-color: #FFFFFF;
+}
+.horizontalOrientation .tableCells tbody tr td:nth-child(odd).disabled:not([input=true]):not(.override):not(.selected) {
+	background-color: #FFFFFF;
+}
+&.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).override {
+	background-color: #FFFFFF;
+}
+.horizontalOrientation .tableCells tbody tr td:nth-child(odd).disabled:not([input=true]).override:not(.selected) {
+	background-color: #FFFFFF;
+}
+&.disabled {
+	border-color: #C8C8C8;
+}
+&:not(.disabled) .tableCells tbody tr td.disabled {
+	border-color: #C8C8C8;
+}
+&.disabled .tableCells tbody tr td {
+	border-color: #C8C8C8;
+}
+&.disabled .tableHeader div {
+	border-color: #C8C8C8;
+}
+&.breaseTable .verticalOrientation .tableCells tbody tr td.nextItemDisabled {
+	border-right-color: #C8C8C8;
+}
+&.breaseTable .horizontalOrientation .tableCells tbody tr td.nextItemDisabled {
+	border-bottom-color: #C8C8C8;
+}
+&.breaseTable .tableCells tbody tr td.disabled {
+	border-color: #C8C8C8;
+}
+&.breaseTable .tableHeader div.disabled {
+	border-color: #C8C8C8;
+}
+&.breaseTable .horizontalOrientation .tableHeader div.nextItemDisabled {
+	border-bottom-color: #C8C8C8;
+}
+&.breaseTable .verticalOrientation .tableHeader div.nextItemDisabled {
+	border-right-color: #C8C8C8;
+}
+&.disabled .tableHeader>.headerElement.override > span {
+	@include importantTextColor(#C8C8C8);
+}
+&.disabled .tableHeader>.headerElement > span {
+	@include importantTextColor(#C8C8C8);
+}
+.tableHeader div:not(.override).disabled > span {
+	color: #C8C8C8;
+}
+.tableHeader div.override.disabled > span {
+	color: #C8C8C8;
+}
+&.disabled .tableHeader>.headerElement.override {
+	@include importantBackColor(#FCFCFC);
+}
+&.disabled .tableHeader>.headerElement {
+	@include importantBackColor(#FCFCFC);
+}
+.tableHeader>.headerElement:not(.override).disabled {
+	background-color: #FCFCFC;
+}
+.tableHeader>.headerElement.override.disabled {
+	background-color: #FCFCFC;
+}
+&.disabled .tableHeader>.headerElement.override {
+	@include importantGradient();
+}
+&.disabled .tableHeader>.headerElement {
+	@include importantGradient();
+}
+.tableHeader>.headerElement:not(.override).disabled {
+	@include backGroundGradient('');
+}
+.tableHeader>.headerElement.override.disabled {
+	@include backGroundGradient('');
+}
+&.disabled .tableCells td:not(.override) {
+	@include importantTextColor(#C8C8C8);
+}
+&.disabled .tableCells td.override {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.odd td:not(.override):not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.even td:not(.override):not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.odd td.override:not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .verticalOrientation .tableCells tbody tr.even td.override:not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td:not(.override):not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td:not(.override):not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.override:not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.override:not(.selected).disabled {
+	@include importantTextColor(#C8C8C8);
+}
+.tableHeader div {
+	font-family: Arial;
+}
+.tableCells tbody tr td {
+	font-family: Arial;
+}
+.tableCells tbody tr td:not(.override) {
+	font-size: 14px;
+}
+&:not(.disabled) .tableHeader>.headerElement:not(.override):not(.disabled) {
+	background-color: #FCFCFC;
+}
+&:not(.disabled) .tableHeader>.headerElement:not(.override):not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled)> .container > .dataTables_wrapper > .dataTables_scrollHead > .tableHeader > .headerElement:not(.override):not(.disabled) > span {
+	color: #333333;
+}
+.tableHeader div:not(.override) {
+	font-size: 14px;
+}
+svg > g > path.unselected {
+	fill: #ececec;
+}
+svg > g > path.selected {
+	fill: #5f8dd3;
+}
+&:not(.disabled) .tableCells td:not(.selected):not(.override):not(.disabled):not([input=true]) {
+	color: #333333;
+}
+.tableHeader div:not(.override) {
+	@include font-weight-bold(false);
+}
+.tableCells tbody tr td:not(.override) {
+	@include font-weight-bold(false);
+}
+.tableHeader div:not(.override) {
+	@include font-style-italic(false);
+}
+.tableCells tbody tr td:not(.override) {
+	@include font-style-italic(false);
+}
+	opacity: 1;
+	@include box-shadow(none);
+
+}
+

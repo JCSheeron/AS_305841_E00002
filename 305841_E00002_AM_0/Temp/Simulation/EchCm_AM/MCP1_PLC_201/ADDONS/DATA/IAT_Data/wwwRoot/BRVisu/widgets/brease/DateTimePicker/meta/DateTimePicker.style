@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.DateTimePicker" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+  <StyleProperties>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="296" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="360" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <StyleElement selector="header" attribute="@include border-top-radius($value)"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl" attribute="@include border-bottom-radius($value-9px)"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter" attribute="@include border-bottom-right-radius($value-9px)"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset" attribute="@include border-bottom-left-radius($value-9px)"></StyleElement>
+      <Description>corner radius of the edge of DateTimePicker</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="headerGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="header" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>color gradient of header</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333333">
+      <StyleElement attribute="border-color"></StyleElement>
+      <StyleElement selector="header" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowLeft .breaseWindowArrow" attribute="border-right-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowRight .breaseWindowArrow" attribute="border-left-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowTop .breaseWindowArrow" attribute="border-bottom-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowBottom .breaseWindowArrow" attribute="border-top-color"></StyleElement>
+      <Description>border color of DateTimePicker including header and arrow</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+      <StyleElement selector=".dateTimePickerBody button" attribute="color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="color"></StyleElement>
+      <Description>text color for whole DateTimePicker</Description>
+    </StyleProperty>
+
+    <StyleProperty name="valueTextColor" category="Appearance" type="Color" default="#000000">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="color"></StyleElement>
+      <Description>text color of value display</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+      <Description>opacity of whole DateTimePicker</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="fontName" category="Appearance" type="FontName" default="Arial">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="font-family"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody button" attribute="font-family"></StyleElement>
+      <Description>font name for whole DateTimePicker</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+      <Description>shadow of whole DateTimePicker</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody button" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons button" attribute="border-bottom-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active" attribute="background-color"></StyleElement>
+      <Description>background color of DateTimePicker except the header</Description>
+    </StyleProperty>
+
+    <StyleProperty name="valueBackColor" category="Appearance" type="Color" default="#FFFFFF">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="background-color"></StyleElement>
+      <Description>back color of value display</Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBackColor" category="Appearance" type="Color" default="#000000">
+      <StyleElement selector="header" attribute="background-color"></StyleElement>
+      <Description>text color for header of DateTimePicker</Description>
+    </StyleProperty>
+
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement attribute="@include backGroundGradient($value)"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody button" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .space" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons .dtfragment" attribute="@include borderImageGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons button" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>background gradient of DateTimePicker except the header</Description>
+    </StyleProperty>
+
+    <StyleProperty name="valueBackGroundGradient" category="Appearance" type="Gradient" default="">
+       <StyleElement selector=".dateTimePickerBody .dateTimePickerHeadings .actDate" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>color gradient of value display</Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonEnterResetBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter" attribute="border-left-width"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset" attribute="border-right-width"></StyleElement>
+      <Description>color gradient of value display</Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonEnterResetBorderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter" attribute="border-left-style"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset" attribute="border-right-style"></StyleElement>
+      <Description>color gradient of value display</Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonEnterResetBorderColor" category="Appearance" type="Color" default="#333">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter" attribute="border-left-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset" attribute="border-right-color"></StyleElement>
+      <Description>color gradient of value display</Description>
+    </StyleProperty>
+   
+    <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#FF8800">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active" attribute="background-color"></StyleElement>
+      <Description>background color of enter and reset button in pressed state</Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#FFFFFF">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active" attribute="color"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active" attribute="color"></StyleElement>
+      <Description>text color of enter and reset button in pressed state</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter:not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset:not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>background gradient of enter and reset button</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="buttonMouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerEnter.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerControl .dateTimePickerReset.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>background gradient of enter and reset button in mousedown state</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="lineColor" category="Appearance" type="Color" default="#d4d4d4">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons button" attribute="border-bottom-color"></StyleElement>        
+      <Description>color of separating lines between wheel values</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="activeLineColor" category="Appearance" type="Color" default="#FF8800">
+      <StyleElement selector=".dateTimePickerBody .dateTimePickerButtons .marker" attribute="background-color"></StyleElement>
+      <Description>color of separating lines above and below selected wheel values</Description>
+    </StyleProperty>
+
+  </StyleProperties>
+</StyleInformation>

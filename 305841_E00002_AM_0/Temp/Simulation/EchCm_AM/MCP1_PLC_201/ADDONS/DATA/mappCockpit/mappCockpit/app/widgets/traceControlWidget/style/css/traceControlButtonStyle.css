@@ -1,0 +1,61 @@
+/* trace control trace state => TODO: use textfield instead of button*/
+.traceStateButton {
+    background-color: var(--main-grey-dark2) !important;
+    padding:1px 5px;
+    
+    border: 0px !important; 
+    font-size: 12px !important;
+    font-family: var(--main-font) !important;
+    font-weight: Normal;
+    cursor : default;
+}
+
+.traceStateButton:hover {
+    background-color: var(--main-grey-dark2) !important;
+}
+
+.traceStateButton:active {
+    background-color: var(--main-grey-dark2) !important;
+}
+
+/* definition of the trace control button for the trace control widget*/
+.traceControlButton {
+    background-color: var(--main-grey-dark2) !important;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 2px solid var(--main-grey-dark1) !important; 
+    font-size: 12px !important;
+    font-family: var(--main-font);
+    font-weight: Normal;
+    color: white !important;
+    cursor: pointer;
+}
+
+.traceControlButton:hover {
+    background-color: var(--main-grey-dark2) !important;
+}
+
+.traceControlButton:active {
+    background-color: var(--main-grey-dark1) !important;
+}
+
+/* definition of the deactivated trace control button for the trace control widget*/
+.traceControlButtonDeactivated {
+    background-color: var(--main-grey-dark2) !important;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 2px solid var(--main-grey-dark1) !important; 
+    font-size: 12px !important;
+    font-family: var(--main-font);
+    font-weight: Normal;
+    color: var(--main-grey-dark1)  !important;
+    cursor: default;
+}
+
+.traceControlButtonDeactivated:hover {
+    background-color: var(--main-grey-dark2) !important;
+}
+
+.traceControlButtonDeactivated:active {
+    background-color: var(--main-grey-dark2) !important;
+}

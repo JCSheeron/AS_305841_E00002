@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_ContentModuleXCHG">
+    <EventBinding id="eventbinding_40">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentModuleXCHG_SfMP171_btnNewSNAckn" /> 
+			
+			<Operand name="OperandPageId" datatype="ANY_STRING">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_currentPageID">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_AckExchange">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler condition="OperandPageId = &quot;SfMP171_ModuleXCHGLandpage&quot;">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.Navigate"><Parameter name="pageId" xsi:type="ANY_STRING" value="SfMP171_ConnectLandpage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler condition="OperandPageId = &quot;SfMP171_ModuleXCHGPortpage&quot;">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.Navigate"><Parameter name="pageId" xsi:type="ANY_STRING" value="SfMP171_ConnectPortpage" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentModuleXCHG">
+    <EventBinding id="eventbinding_41">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnExSN" event="ValueChanged" />
+      
+			<Operand name="operandBool" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnExSN">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+      
+			<Operand name="OperandTxt" datatype="ANY_STRING">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="::Program:testtxtButtonAckSN_FW">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+      
+			<EventHandler condition="newValue">
+				<Action>
+					<Target type="widgets.brease.Button.Action" refId="SfMP171_ContentModuleXCHG_SfMP171_btnNewSNAckn">
+						<Method type="widgets.brease.Button.Action.SetText"><Parameter name="text" xsi:type="ANY_STRING" value="=OperandTxt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="keepKey" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler condition="NOT newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_EnableBtnAckExchange">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

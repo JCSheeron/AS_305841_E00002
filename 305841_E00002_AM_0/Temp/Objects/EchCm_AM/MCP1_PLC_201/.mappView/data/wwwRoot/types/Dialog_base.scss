@@ -1,0 +1,72 @@
+@import "mixins.scss";
+@mixin system_brease_Dialog_base {
+.breaseDialogWindowHeader div.innerHeader {
+	@include text-alignment(center);
+}
+.breaseDialogWindowHeader {
+	height: 42px;
+}
+.breaseDialogWindowHeader .breaseWindowClose {
+	height: 42px;
+}
+.breaseDialogWindowHeader .breaseWindowClose {
+	line-height: 42px;
+}
+.breaseDialogWindowHeader .imageDiv {
+	min-width: 42px;
+}
+.breaseDialogWindowHeader div.innerHeader {
+	line-height: 42px;
+}
+.breaseDialogWindowHeader div.textDiv {
+	line-height: 42px;
+}
+.breaseDialogWindowHeader div.innerHeader {
+	height: 42px;
+}
+.breaseDialogWindowHeader div.imageDiv {
+	@include factor('max-width',42px, 2);
+}
+.breaseDialogWindowContentBox > .breaseLayout {
+	background-color: #ebebeb;
+}
+.breaseDialogWindowContentBox {
+	border-width: 2px;
+}
+	@include border-radius(0px);
+.breaseDialogWindowContentBox {
+	@include border-bottom-right-radius(0px);
+}
+.breaseDialogWindowContentBox {
+	@include border-bottom-left-radius(0px);
+}
+.breaseDialogWindowHeader {
+	@include border-radius(0px);
+}
+.breaseDialogWindowContentBox {
+	border-color: #5B7C70;
+}
+.breaseDialogWindowContentBox {
+	border-style: solid;
+}
+.breaseDialogWindowHeader {
+	background-color: #DBDBDB;
+}
+.breaseDialogWindowHeader {
+	border-color: #5B7C70;
+}
+.breaseDialogWindowHeader {
+	border-width: 2px 2px 0 2px;
+}
+.breaseDialogWindowHeader {
+	border-style: solid;
+}
+.breaseDialogWindowHeader .textDiv {
+	color: #000000;
+}
+.breaseDialogWindowHeader .textDiv {
+	font-size: 12px;
+}
+
+}
+

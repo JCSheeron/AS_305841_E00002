@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="VariablesPackage" PackageType="VariablesPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">varsConst.svar</Object>
+    <Object Type="File">varsMotionConst.svar</Object>
+    <Object Type="File">varsStyles.svar</Object>
+    <Object Type="File">varsDlgSafetySystem.svar</Object>
+    <Object Type="File">varsOperatingMode.svar</Object>
+    <Object Type="File">varsWorkSetup.svar</Object>
+    <Object Type="File">varsCuttingHead.svar</Object>
+    <Object Type="File">varsCuttingFluid.svar</Object>
+    <Object Type="File">varsZAxisStatus.svar</Object>
+    <Object Type="File">varsAxisDetail.svar</Object>
+  </Objects>
+</Package>

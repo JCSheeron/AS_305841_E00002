@@ -1,0 +1,1738 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_transparent {
+@include widgets_brease_Button_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&:not(.active):not(.checked) {
+	border-width: 0px;
+}
+&.disabled {
+	border-width: 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px;
+}
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_Command {
+@include widgets_brease_Button_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_Command1 {
+@include widgets_brease_Button_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_Operate {
+@include widgets_brease_Button_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_Operate1 {
+@include widgets_brease_Button_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/Button/meta/Button_base";
+.widgets_brease_Button_style_defaultSmall {
+@include widgets_brease_Button_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/NavigationButton/meta/NavigationButton_base";
+.widgets_brease_NavigationButton_style_transparent {
+@include widgets_brease_NavigationButton_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&:not(.active):not(.checked) {
+	border-width: 0px;
+}
+&.disabled {
+	border-width: 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.active):not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px;
+}
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_transparent {
+@include widgets_brease_ToggleButton_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&:not(.active):not(.checked) {
+	border-width: 0px;
+}
+&.disabled {
+	border-width: 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.active):not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px;
+}
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_Command {
+@include widgets_brease_ToggleButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_Command1 {
+@include widgets_brease_ToggleButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_Operate {
+@include widgets_brease_ToggleButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_Operate1 {
+@include widgets_brease_ToggleButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/ToggleButton/meta/ToggleButton_base";
+.widgets_brease_ToggleButton_style_defaultSmall {
+@include widgets_brease_ToggleButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.checked:not(.disabled):not(.active) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_transparent {
+@include widgets_brease_PushButton_base; 
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&:not(.active):not(.checked) {
+	border-width: 0px;
+}
+&.disabled {
+	border-width: 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px;
+}
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_Command {
+@include widgets_brease_PushButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(255, 113, 0, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_Command1 {
+@include widgets_brease_PushButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #FFFFFF;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.active.checked:not(.disabled) span {
+	color: #474747;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_Operate {
+@include widgets_brease_PushButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_Operate1 {
+@include widgets_brease_PushButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 8px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/PushButton/meta/PushButton_base";
+.widgets_brease_PushButton_style_defaultSmall {
+@include widgets_brease_PushButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+@include font-weight-bold(true);
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FFFFFF;
+}
+&.active.checked:not(.disabled) span {
+	color: #FFFFFF;
+}
+@include border-radius(8px);
+&:not(.active):not(.checked) {
+	border-width: 0px 0px 0px 0px;
+}
+&.disabled {
+	border-width: 0px 0px 0px 0px;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 0px 0px 0px 0px;
+}
+&.checked:not(.disabled) {
+	border-width: 0px 0px 0px 0px;
+}
+&:not(.disabled):not(.active):not(.checked) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.active:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.checked:not(.disabled) {
+@include backGroundGradient('linear-gradient(to bottom, #4A4A4A 0%,#7C7C7C 100%)');
+}
+&.disabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.active {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&.disabled.checked {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+&:not(.active):not(.checked) {
+@include box-shadow(5px 5px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.active {
+@include box-shadow(5px 5px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.disabled.checked {
+@include box-shadow(5px 5px 14px 0px rgba(62, 79, 92, 0.75));
+}
+&.active:not(.disabled):not(.editMode) {
+@include box-shadow(2px 2px 4px 0px rgba(62, 79, 92, 0.75));
+}
+&.checked:not(.disabled) {
+@include box-shadow(2px 2px 4px 0px rgba(62, 79, 92, 0.75));
+}
+
+}
+@import "../../../../widgets/brease/RadioButton/meta/RadioButton_base";
+.widgets_brease_RadioButton_style_Caption {
+@include widgets_brease_RadioButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.checked:not(.disabled) span {
+	color: #474747;
+}
+&.disabled {
+	border-color: #CCCCCC;
+}
+&.disabled.checked {
+	border-color: #CCCCCC;
+}
+&.disabled.active {
+	border-color: #CCCCCC;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+span {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/RadioButton/meta/RadioButton_base";
+.widgets_brease_RadioButton_style_Large {
+@include widgets_brease_RadioButton_base; 
+span {
+	font-size: 20px;
+}
+span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.checked:not(.disabled) span {
+	color: #474747;
+}
+&.disabled {
+	border-color: #CCCCCC;
+}
+&.disabled.checked {
+	border-color: #CCCCCC;
+}
+&.disabled.active {
+	border-color: #CCCCCC;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+span {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/RadioButton/meta/RadioButton_base";
+.widgets_brease_RadioButton_style_Selected {
+@include widgets_brease_RadioButton_base; 
+span {
+	font-size: 16px;
+}
+span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FF8A00;
+}
+&.checked:not(.disabled) span {
+	color: #FF8A00;
+}
+&.disabled {
+	border-color: #CCCCCC;
+}
+&.disabled.checked {
+	border-color: #CCCCCC;
+}
+&.disabled.active {
+	border-color: #CCCCCC;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+span {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/CheckBox/meta/CheckBox_base";
+.widgets_brease_CheckBox_style_Caption {
+@include widgets_brease_CheckBox_base; 
+	border-style: none;
+span {
+	font-size: 16px;
+}
+&:not(.disabled) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.checked:not(.disabled) span {
+	color: #474747;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: transparent;
+}
+&.disabled span {
+	color: #CCCCCC;
+}
+&.disabled.checked span {
+	border-color: #CCCCCC;
+}
+&.disabled.active span {
+	border-color: #CCCCCC;
+}
+span {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/CheckBox/meta/CheckBox_base";
+.widgets_brease_CheckBox_style_Large {
+@include widgets_brease_CheckBox_base; 
+	border-style: none;
+span {
+	font-size: 20px;
+}
+&:not(.disabled) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #474747;
+}
+&.checked:not(.disabled) span {
+	color: #474747;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: transparent;
+}
+&.disabled span {
+	color: #CCCCCC;
+}
+&.disabled.checked span {
+	border-color: #CCCCCC;
+}
+&.disabled.active span {
+	border-color: #CCCCCC;
+}
+span {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/CheckBox/meta/CheckBox_base";
+.widgets_brease_CheckBox_style_Selected {
+@include widgets_brease_CheckBox_base; 
+	border-style: none;
+span {
+	font-size: 16px;
+}
+&:not(.disabled) span {
+	color: #474747;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #FF8A00;
+}
+&.checked:not(.disabled) span {
+	color: #FF8A00;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: transparent;
+}
+&.disabled span {
+	color: #CCCCCC;
+}
+&.disabled.checked span {
+	border-color: #CCCCCC;
+}
+&.disabled.active span {
+	border-color: #CCCCCC;
+}
+span {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/DropDownBox/meta/DropDownBox_base";
+.widgets_brease_DropDownBox_style_ListRight {
+@include widgets_brease_DropDownBox_base; 
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected) {
+	color: #474747;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+& > .ItemView.itemDisabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+& > .ItemView.itemSelected:not(.itemDisabled) > .TextView.textSelected {
+	color: #FFFFFF;
+}
+&.DropDownBoxView {
+@include border-radius(5px);
+}
+& > .ItemView {
+@include border-radius(5px);
+}
+& > .ListView.Container {
+@include border-radius(5px);
+}
+& > .ListView.Container > .ListView.List > .ItemView:not(.itemSelected) {
+	background-color: #C6C6C6;
+}
+& > .ItemView:not(.itemSelected) {
+	border-width: 0px 5px 0px 0px;
+}
+& > .ItemView.itemSelected {
+	border-width: 0px 2px 0px 0px;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+	border-color: #A899A0 #FF8A00 #5F5F5F #A899A0;
+}
+& > .ListView.Container {
+	border-color: #A899A0 #FF8A00 #5F5F5F #A899A0;
+}
+& > .ItemView.itemSelected:not(.itemDisabled) {
+	border-color: #FFA947 #FD7B01 #FD7B01 #FFA947;
+}
+& > .ListView.Container > .ListView.List > .ItemView > .TextView.textSelected {
+	color: #FFFFFF;
+}
+& > .ListView.Container > .ListView.List > .ItemView.itemSelected {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+& > .ListView.Container {
+	border-width: 0px;
+}
+& .TextView {
+@include text-alignment(left);
+}
+& .TextView {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/DropDownBox/meta/DropDownBox_base";
+.widgets_brease_DropDownBox_style_ListLeft {
+@include widgets_brease_DropDownBox_base; 
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected) {
+	color: #474747;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+& > .ItemView.itemDisabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+& > .ItemView.itemSelected:not(.itemDisabled) > .TextView.textSelected {
+	color: #FFFFFF;
+}
+&.DropDownBoxView {
+@include border-radius(5px);
+}
+& > .ItemView {
+@include border-radius(5px);
+}
+& > .ListView.Container {
+@include border-radius(5px);
+}
+& > .ListView.Container > .ListView.List > .ItemView:not(.itemSelected) {
+	background-color: #C6C6C6;
+}
+& > .ItemView:not(.itemSelected) {
+	border-width: 0px 0px 0px 5px;
+}
+& > .ItemView.itemSelected {
+	border-width: 0px 0px 0px 2px;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+	border-color: #A899A0 #FF8A00 #5F5F5F #FF8A00;
+}
+& > .ListView.Container {
+	border-color: #A899A0 #FF8A00 #5F5F5F #FF8A00;
+}
+& > .ItemView.itemSelected:not(.itemDisabled) {
+	border-color: #FFA947 #FD7B01 #FD7B01 #FD7B01;
+}
+& > .ListView.Container > .ListView.List > .ItemView > .TextView.textSelected {
+	color: #FFFFFF;
+}
+& > .ListView.Container > .ListView.List > .ItemView.itemSelected {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+& > .ListView.Container {
+	border-width: 0px;
+}
+& .TextView {
+@include text-alignment(left);
+}
+& .TextView {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/DropDownBox/meta/DropDownBox_base";
+.widgets_brease_DropDownBox_style_ListBottom {
+@include widgets_brease_DropDownBox_base; 
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected) {
+	color: #474747;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+& > .ItemView.itemDisabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+& > .ItemView.itemSelected:not(.itemDisabled) > .TextView.textSelected {
+	color: #FFFFFF;
+}
+&.DropDownBoxView {
+@include border-radius(5px);
+}
+& > .ItemView {
+@include border-radius(5px);
+}
+& > .ListView.Container {
+@include border-radius(5px);
+}
+& > .ListView.Container > .ListView.List > .ItemView:not(.itemSelected) {
+	background-color: #C6C6C6;
+}
+& > .ItemView:not(.itemSelected) {
+	border-width: 0px 0px 4px 0px;
+}
+& > .ItemView.itemSelected {
+	border-width: 0px 0px 2px 0px;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+	border-color: #A899A0 #FF8A00 #FF8A00 #A899A0;
+}
+& > .ListView.Container {
+	border-color: #A899A0 #FF8A00 #FF8A00 #A899A0;
+}
+& > .ItemView.itemSelected:not(.itemDisabled) {
+	border-color: #FFA947 #FD7B01 #FD7B01 #FFA947;
+}
+& > .ListView.Container > .ListView.List > .ItemView > .TextView.textSelected {
+	color: #FFFFFF;
+}
+& > .ListView.Container > .ListView.List > .ItemView.itemSelected {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+& > .ListView.Container {
+	border-width: 0px;
+}
+& .TextView {
+@include text-alignment(left);
+}
+& .TextView {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/DropDownBox/meta/DropDownBox_base";
+.widgets_brease_DropDownBox_style_ListTop {
+@include widgets_brease_DropDownBox_base; 
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected) {
+	color: #474747;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+& > .ItemView.itemDisabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+& > .ItemView.itemSelected:not(.itemDisabled) > .TextView.textSelected {
+	color: #FFFFFF;
+}
+&.DropDownBoxView {
+@include border-radius(5px);
+}
+& > .ItemView {
+@include border-radius(5px);
+}
+& > .ListView.Container {
+@include border-radius(5px);
+}
+& > .ListView.Container > .ListView.List > .ItemView:not(.itemSelected) {
+	background-color: #C6C6C6;
+}
+& > .ItemView:not(.itemSelected) {
+	border-width: 4px 0px 0px 0px;
+}
+& > .ItemView.itemSelected {
+	border-width: 3px 0px 0px 0px;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+	border-color: #FF8A00 #FF8A00 #FF8A00 #A899A0;
+}
+& > .ListView.Container {
+	border-color: #FF8A00 #FF8A00 #FF8A00 #A899A0;
+}
+& > .ItemView.itemSelected:not(.itemDisabled) {
+	border-color: #FD7B01 #FD7B01 #FD7B01 #FFA947;
+}
+& > .ListView.Container > .ListView.List > .ItemView > .TextView.textSelected {
+	color: #FFFFFF;
+}
+& > .ListView.Container > .ListView.List > .ItemView.itemSelected {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+& > .ListView.Container {
+	border-width: 0px;
+}
+& .TextView {
+@include text-alignment(left);
+}
+& .TextView {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/TabItem/meta/TabItem_base";
+.widgets_brease_TabItem_style_TabItem1 {
+@include widgets_brease_TabItem_base; 
+&.tabItem:not(.active) span {
+	color: #474747;
+}
+&.tabItem span {
+	font-size: 16px;
+}
+&.tabItem:not(.active) {
+@include border-radius(8px 8px 0px 0px);
+}
+&.tabItem:not(.active) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+&.tabItem.active {
+@include backGroundGradient('linear-gradient(to bottom, #66CCFF 0%,#52A3CC 100%)');
+}
+&.tabItem:not(.active) {
+	border-width: 0px 1px 1px 0px;
+}
+&.tabItem.active {
+	border-width: 0px 1px 1px 0px;
+}
+&.tabItem:not(.active) {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+&.tabItem.active {
+	border-color: #66CCFF #52A3CC #52A3CC #66CCFF;
+}
+&.tabItem.active span {
+	color: #FFFFFF;
+}
+
+}

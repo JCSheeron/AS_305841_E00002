@@ -1,0 +1,668 @@
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  width: 45px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  height: 20px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  z-index: 0;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+  font-weight: bold;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName span {
+  text-decoration: underline;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName span {
+  padding: 0px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  top: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  height: 20px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  z-index: 1;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+  font-weight: bold;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription span {
+  text-decoration: underline;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription span {
+  padding: 0px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+  top: 115px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+  left: 15px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+  width: 385px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+  height: 205px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+  z-index: 2;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara .tableCells tbody tr td:not(.override) {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name {
+  z-index: 0;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name:not(.headerElement):not(.disabled).override {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name:not(.headerElement).override.disabled {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type {
+  z-index: 1;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type:not(.headerElement):not(.disabled).override {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type:not(.headerElement).override.disabled {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value {
+  z-index: 2;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value:not(.headerElement):not(.disabled).override {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value:not(.headerElement).override.disabled {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description {
+  z-index: 3;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description:not(.headerElement):not(.disabled).override {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description:not(.headerElement).override.disabled {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+  top: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+  left: 15px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+  width: 385px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+  height: 35px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+  z-index: 3;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  z-index: 0;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  z-index: 1;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  z-index: 2;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  z-index: 3;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  z-index: 4;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  z-index: 5;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  z-index: 6;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  z-index: 7;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  z-index: 8;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  left: 1px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  width: 120px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  z-index: 9;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 span {
+  font-size: 12px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+  padding: 3px 3px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  left: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  width: 320px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  z-index: 4;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+  font-weight: normal;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName span {
+  padding: 0px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  top: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  left: 120px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  width: 280px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  height: 45px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  z-index: 5;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+  font-weight: normal;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription span {
+  padding: 0px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+  top: 380px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+  left: 15px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+  width: 160px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+  z-index: 6;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+  top: 380px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+  left: 275px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+  width: 130px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+  z-index: 7;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara.DropDownBoxView {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+  top: 340px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+  left: 160px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara.DropDownBoxView {
+  width: 139px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+  z-index: 9;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara .TextView {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara_listBoxWrapper .TextView {
+  font-size: 14px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+  height: 30px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+  top: 340px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+  left: 160px;
+  position: absolute;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+  width: 139px;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+  z-index: 8;
+}
+
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara input {
+  justify-content: center;
+  text-align: center;
+}

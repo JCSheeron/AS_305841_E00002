@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="mainContentProduction">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStart" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbCycleStart" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStart" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbCycleStart" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStop" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbCycleStop" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiReqCycleStop" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbCycleStop" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiSubMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_rdoBtnGrpCycleControl" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.HmiSubMode" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_rdoBtnGrpCycleControl" attribute="editable::selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycle" attribute="value" /><List refId="LabelSytleActiveStyle1" /></Source>
+      <Target xsi:type="brease" refId="mainContentProduction_lblStatusInCycle" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycleHold" attribute="value" /><List refId="LabelSytleActiveStyle1" /></Source>
+      <Target xsi:type="brease" refId="mainContentProduction_lblStatusInCycleHold" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isStopping" attribute="value" /><List refId="LabelSytleActiveStyle1" /></Source>
+      <Target xsi:type="brease" refId="mainContentProduction_lblStatusStopping" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isInCycle" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isCycleIdle" attribute="InA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.isStopping" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isCycleIdle" attribute="InB" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isCycleIdle" attribute="result" /><List refId="LabelSytleActiveStyle1" /></Source>
+      <Target xsi:type="brease" refId="mainContentProduction_lblStatusIdle" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.ShutOffCfBeforeUnload" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_chkBoxCfOff" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.ShutOffCfBeforeUnload" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_chkBoxCfOff" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.SingleCycleInclZIndex" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_chkBoxSingleCycleInclZ" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.SingleCycleInclZIndex" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_chkBoxSingleCycleInclZ" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentProduction">
+    <Binding mode="oneWayToSource">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.reqAxesReset" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbResetAxes" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:hmiProcessReqs.reqAxesReset" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentProduction_pbResetAxes" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

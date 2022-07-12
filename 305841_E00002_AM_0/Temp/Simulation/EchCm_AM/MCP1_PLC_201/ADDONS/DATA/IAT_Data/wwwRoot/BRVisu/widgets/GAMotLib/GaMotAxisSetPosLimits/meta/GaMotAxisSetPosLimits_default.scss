@@ -1,0 +1,11 @@
+@import "mixins.scss";
+@mixin widgets_GAMotLib_GaMotAxisSetPosLimits_base {
+	@include elemWidth(400);
+	@include elemHeight(340);
+	margin: 0px;
+
+}
+
+.widgets_GAMotLib_GaMotAxisSetPosLimits_style_default {
+@include widgets_GAMotLib_GaMotAxisSetPosLimits_base 
+}

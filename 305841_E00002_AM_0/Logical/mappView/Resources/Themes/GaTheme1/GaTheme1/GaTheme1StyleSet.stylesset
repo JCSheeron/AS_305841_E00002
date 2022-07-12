@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StylesSet id="GaTheme1StyleSet" xmlns="http://www.br-automation.com/iat2015/stylesset/engineering/v1">
+  <Styles refId="GaTheme1defaultStyles" />
+	<Styles refId="GaTheme1systemStyles" />
+	<Styles refId="GaTheme1buttonStyles" />
+	<Styles refId="GaTheme1commonStyles" />
+	<Styles refId="GaTheme1containerStyles" />
+	<Styles refId="GaTheme1labelTextsStyles" />
+	<Styles refId="GaTheme1numericStyles" />
+	<Styles refId="GaTheme1graphicStyles" />
+	<Styles refId="GaTheme1chartStyles" />
+	<Styles refId="GaTheme1sequencerStyles" />
+  <Styles refId="GaTheme1ListStyles" />
+  <Styles refId="GaModLabelTextStyles" />
+  <Styles refId="GaModButtonStyles" />
+  <Styles refId="GaModPushbuttonStyles" />
+</StylesSet>

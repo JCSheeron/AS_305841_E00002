@@ -1,0 +1,9 @@
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.fun
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.typ
+$(AS_PROJECT_PATH)/Logical/Libraries/standard/standard.fun
+$(AS_PROJECT_PATH)/Logical/PlcLogic/ProcInputs/ProcInputs.var
+$(AS_PROJECT_PATH)/Logical/PlcLogic/Logic.var
+$(AS_PROJECT_PATH)/Logical/Global.typ
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/Cpu.per
+$(AS_PROJECT_PATH)/Logical/Global.var
+$(AS_PROJECT_PATH)/Logical/Libraries/GAMpMotion/Constants.var

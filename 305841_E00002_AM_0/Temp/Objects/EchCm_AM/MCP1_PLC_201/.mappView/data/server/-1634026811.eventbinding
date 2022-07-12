@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_ContentTransfer">
+    <EventBinding id="eventbinding_21">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentTransfer_SfMP171_btnTransferBrowse" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferBrowsedialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="headerText" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_headerTransferBrowse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnBrowseTransfer">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentTransferBrowse">
+    <EventBinding id="eventbinding_22">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentTransferBrowse_SfMP171_btnBrowseOK" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferBrowsedialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler>
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BrowseSafeAppApplied">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentTransferBrowse">
+    <EventBinding id="eventbinding_23">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentTransferBrowse_SfMP171_btnBrowseCancel" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferBrowsedialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentTransfer">
+    <EventBinding id="SfMP12_ContentTransfer.btnResetSD.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentTransfer_SfMP171_btnResetSD" />
+
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="YesNo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionSafeReboot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionSafeReboot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Warning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+
+					<Result>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ResetSD">
+									<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentTransfer">
+    <EventBinding id="SfMP12_ContentTransfer.btnFormatSKEY.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentTransfer_SfMP171_btnFormatSKEY" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="YesNo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionSafeKeyFormat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionSafeKeyFormatOne" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Warning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+
+					<Result>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target type="clientSystem.Action">
+									<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="YesNo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionSafeKeyFormat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionSafeKeyFormatTwo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Warning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+								</Target>
+
+								<Result>
+									<ResultHandler condition="result = 1">
+										<Action>
+											<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Reset_ClearSD">
+												<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+											</Target>
+										</Action>
+									</ResultHandler>
+								</Result>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentTransfer">
+    <EventBinding id="SfMP12_ContentTransfer.btnTransferData.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentTransfer_SfMP171_btnTransferData" />
+
+			<Operand name="operandAppNameEmpty" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableSafeAppActive_AppName_Empty">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="NOT operandAppNameEmpty">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="YesNo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionTransferData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionTransferData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Question" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+
+					<Result>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferData">
+									<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="operandAppNameEmpty">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionTransferData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionTransferDataEmpty" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Information" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+
+					<Result>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferData">
+									<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="eventbinding_24">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferDialog" event="ValueChanged" />
+
+			<Operand name="operandBool" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferDialog">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Parallel>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferMsgdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_TransferDialogOpen">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+			<!--<EventHandler condition="NOT operandBool" >
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="SfMP193_dialogTransferMsgdialog" />
+					</Target>
+				</Action>
+			</EventHandler>-->
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_25">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferDialog" event="ValueChanged" />
+			<Operand datatype="BOOL" name="OperandSessionTransfer">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_TransferDialogOpen">
+				<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand datatype="BOOL" name="operandBool">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferDialog">
+				<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="NOT operandBool AND OperandSessionTransfer">
+				<Parallel>
+					<Action>
+						<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferMsgdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_TransferDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_26">
+			<Source type="session.Event" refId="SfMP182_sessionvar_isTransferDialogOpen" event="ValueChanged" />
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogTransferMsgdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isTransferDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Content id="SfMP171_contentTransferBrowse">
+    <EventBinding id="eventbinding_27">
+			<Source type="widgets.brease.DropDownBox.Event" event="SelectedIndexChanged" refId="SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget" />
+
+			<Operand name="operandSelectedValue" datatype="ANY_INT">
+				<ReadTarget type="widgets.brease.DropDownBox.ReadAction" refId="SfMP171_contentTransferBrowse_SfMP171_dropDownSelectBrowseTarget">
+					<Method type="widgets.brease.DropDownBox.Action.GetSelectedIndex" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="operandSelectedValue = 0">
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Browse_Target_CPU">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="operandSelectedValue &lt;&gt; 0">
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Browse_Target_CPU">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="operandSelectedValue = 1">
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Browse_Target_USB">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="operandSelectedValue &lt;&gt; 1">
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Browse_Target_USB">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Content>
+  <Visualization>
+    <EventBinding id="eventbinding_28">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyBrowseFiles" event="ValueChanged" />
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandBool" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyBrowseFiles">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Parallel>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogBusyBrowseFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_BusyBrowseFilesDialogOpen">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+			<!--<EventHandler condition="NOT operandBool" >
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="SfMP193_dialogBusyBrowseFiles" />
+					</Target>
+				</Action>
+			</EventHandler>-->
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_29">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyBrowseFiles" event="ValueChanged" />	
+			<Operand datatype="BOOL" name="OperandSessionBusyBrowseFilesDialog">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_BusyBrowseFilesDialogOpen">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand datatype="BOOL" name="operandBool">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyBrowseFiles">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="NOT operandBool AND OperandSessionBusyBrowseFilesDialog">
+				<Parallel>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogBusyBrowseFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_BusyBrowseFilesDialogOpen">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_30">
+			<Source type="session.Event" refId="SfMP182_sessionvar_isBusyBrowseFilesDialogOpen" event="ValueChanged" />
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogBusyBrowseFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isBusyBrowseFilesDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Content id="SfMP171_contentTransferBrowse">
+    <EventBinding id="eventbinding_31">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentTransferBrowse_SfMP171_btnBrowseEditComm" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogEditOPPara" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <EventBinding id="eventbinding_32">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogEditOPPara" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

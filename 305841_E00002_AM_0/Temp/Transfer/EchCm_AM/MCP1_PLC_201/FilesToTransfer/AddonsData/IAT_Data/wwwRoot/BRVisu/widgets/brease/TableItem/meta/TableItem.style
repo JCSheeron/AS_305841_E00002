@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.TableItem" xmlns="http://www.br-automation.com/iat2014/widgetStyles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <StyleProperties>
+    <StyleProperty name="width" type="Size" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="top" type="Integer" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="left" type="Integer" not_styleable="true" hide="true">
+    </StyleProperty>
+
+    <!-- NON ACTIVE INPUT CELL -->    
+    <StyleProperty name="backColorOdd" type="Color" category="Appearance" default="transparent">
+      <StyleElement selector="&amp;:not(.disabled).odd.override:not(.selected)" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the table
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="backColorEven" type="Color" category="Appearance" default="transparent">
+      <StyleElement selector="&amp;:not(.disabled).even.override:not(.selected)" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the table
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="backgroundGradientEven" type="Gradient" category="Appearance" default="">
+      <StyleElement selector="&amp;:not(.disabled).even.override:not(.selected)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient for even table entries in column direction
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="backgroundGradientOdd" type="Gradient" category="Appearance" default="">
+      <StyleElement selector="&amp;:not(.disabled).odd.override:not(.selected)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient for even table entries in column direction
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBackColor" type="Color" category="Appearance" default="#FCFCFC">
+      <StyleElement selector="&amp;.headerElement.override:not(.disabled)" attribute="@include importantBackColor($value)"></StyleElement>
+      <Description>
+        Text color for selected entries
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerGradient" type="Gradient" category="Appearance" default="">
+      <StyleElement selector="&amp;.headerElement.override:not(.disabled)" attribute="@include importantGradient($value)"></StyleElement>
+      <Description>
+        Background gradient for table header
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerTextColor" type="Color" category="Appearance" default="#333333">
+      <StyleElement selector="&amp;.headerElement.override:not(.disabled) > span" attribute="@include importantTextColor($value)"></StyleElement>
+      <Description>
+        Sets the header text color
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerFontSize" type="PixelVal" default="14px" category="Font" >
+      <StyleElement selector="&amp;.headerElement.override > span" attribute="font-size"></StyleElement>
+      <Description>
+        Fontsize of the header text
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerBold" type="Boolean" default="false" category="Font" >
+      <StyleElement selector="&amp;.headerElement.override > span" attribute="@include importantBoldText($value)"></StyleElement>
+      <Description>
+        If true header text is bold
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="headerItalic" type="Boolean" default="false" category="Font" >
+      <StyleElement selector="&amp;.headerElement.override > span" attribute="@include importantItalicText($value)"></StyleElement>
+      <Description>
+        If true header text is italic
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="sortingButtonColor" category="Appearance" type="Color" default="#ececec" >
+      <StyleElement selector="svg > g > path.unselected" attribute="fill"></StyleElement>
+      <Description>Color of the arrow that is not the sorted way</Description>
+    </StyleProperty>
+    <StyleProperty name="sortingButtonActiveColor" category="Appearance" type="Color" default="#5f8dd3" >
+      <StyleElement selector="svg > g > path.selected" attribute="fill"></StyleElement>
+      <Description>Color of the arrow that is the sorted way</Description>
+    </StyleProperty>
+
+    <StyleProperty name="textColorOdd" type="Color" category="Appearance" default="#333333">
+      <StyleElement selector="&amp;:not(.disabled):not(.selected):not(.headerElement).override.odd" attribute="color"></StyleElement>
+      <Description>
+        Sets the text color
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="textColorEven" type="Color" category="Appearance" default="#333333">
+      <StyleElement selector="&amp;:not(.disabled):not(.selected):not(.headerElement).override.even" attribute="color"></StyleElement>
+      <Description>
+        Sets the text color
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="bold" type="Boolean" default="false" category="Font">
+      <StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="@include importantBoldText($value)"></StyleElement>
+      <StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="@include importantBoldText($value)"></StyleElement>
+      <Description>
+        If **true** font style is bold
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="italic" type="Boolean" default="false" category="Font">
+      <StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="@include importantItalicText($value)"></StyleElement>
+      <StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="@include importantItalicText($value)"></StyleElement>
+      <Description>
+        If **true** font style is italic
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font" >
+      <StyleElement selector="&amp;:not(.headerElement):not(.disabled).override" attribute="font-size"></StyleElement>
+      <StyleElement selector="&amp;:not(.headerElement).override.disabled" attribute="font-size"></StyleElement>
+      <Description>
+        Fontsize of the text
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="cellAlign" type="brease.enum.BackgroundPosition" default="center center" category="Appearance">
+      <StyleElement selector="&amp;:not(.headerElement).override" attribute="@include text-position('$value')"></StyleElement>
+      <StyleElement selector="&amp;:not(.headerElement) >img .override" attribute="@include image-align('$value')"></StyleElement>
+      <StyleElement selector="&amp;.headerElement.override" attribute="@include flex-position('$value')"></StyleElement>
+      <StyleElement selector="&amp;.headerElement.override > span " attribute="@include text-position('$value')"></StyleElement>
+      <Description>
+        Alignment of the text in a cell
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="cellBorderStyle" type="BorderStyle" category="Appearance" default="solid">
+      <StyleElement selector="&amp;.override" attribute="border-style"></StyleElement>
+      <StyleElement selector="&amp;.headerElement .override" attribute="border-style"></StyleElement>
+      <Description>
+        Style of the cell borders
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="cellBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+      <StyleElement selector="&amp;.override" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.headerElement.override" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of each cell. For further information, please see its type
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="cellBorderWidth" type="PixelValCollection" category="Appearance" default="0px 0px 1px 1px">
+      <StyleElement selector="&amp;.override" attribute="border-width"></StyleElement>
+      <StyleElement selector="&amp;.headerElement.override" attribute="border-width"></StyleElement>
+        <Description>
+          Sets the border width of each cell. For further information, please see its type
+        </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="cellPadding" category="Layout" type="Padding" default="0px">
+      <StyleElement selector="&amp;.override:not(.headerElement)" attribute="padding"></StyleElement>
+      <Description>
+        Padding of table cells.
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="headerCellPadding" category="Layout" type="Padding" default="0px">
+      <StyleElement selector="&amp;.headerElement.override" attribute="padding"></StyleElement>
+      <Description>
+        Padding of the header cells.
+      </Description>
+    </StyleProperty>
+
+  </StyleProperties>
+</StyleInformation>
+
+
+

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">Localization/Units/User</prop>
+  </header>
+  <body>
+    <tu tuid="4669744.Name">
+      <note>GA0 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>degrees per second³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669744.Sym">
+      <tuv xml:lang="en">
+        <seg>°/s³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669744.Desc">
+      <tuv xml:lang="en">
+        <seg>jerk (accel/sec) in degrees</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669745.Name">
+      <note>GA1 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>revolutions per minute per second</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669745.Sym">
+      <tuv xml:lang="en">
+        <seg>rpm/s</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669745.Desc">
+      <tuv xml:lang="en">
+        <seg>accel (vel/sec) for rpm</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669746.Name">
+      <note>GA2 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>revolutions per minute per second²</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669746.Sym">
+      <tuv xml:lang="en">
+        <seg>rpm/s²</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669746.Desc">
+      <tuv xml:lang="en">
+        <seg>jerk (accel/sec) for rpm</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669747.Name">
+      <note>GA3 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>revolutions per second²</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669747.Sym">
+      <tuv xml:lang="en">
+        <seg>rev/s²</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669747.Desc">
+      <tuv xml:lang="en">
+        <seg>accel (vel/sec) for rev/sec</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669748.Name">
+      <note>GA4 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>revolutions per second³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669748.Sym">
+      <tuv xml:lang="en">
+        <seg>rev/s³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669748.Desc">
+      <tuv xml:lang="en">
+        <seg>jerk (accel/sec) for rev/sec</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669749.Name">
+      <note>GA5 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>millimeters per second³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669749.Sym">
+      <tuv xml:lang="en">
+        <seg>mm/s³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669749.Desc">
+      <tuv xml:lang="en">
+        <seg>jerk (accel/sec) for mm</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669750.Name">
+      <note>GA6 Custom Unit</note>
+      <tuv xml:lang="en">
+        <seg>inches per second³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669750.Sym">
+      <tuv xml:lang="en">
+        <seg>in/s³</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669750.Desc">
+      <tuv xml:lang="en">
+        <seg>jerk (accel/sec) for inches</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669751.Name">
+      <tuv xml:lang="en">
+        <seg>Pounds Per Square Inch</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669751.Sym">
+      <tuv xml:lang="en">
+        <seg>psi</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4669751.Desc">
+      <tuv xml:lang="en">
+        <seg>pounds/in² using psi as a symbol
+</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

@@ -1,0 +1,10 @@
+@import "mixins.scss";
+@mixin system_widgets_KeyBoard_base {
+	@include elemWidth(957);
+	@include elemHeight(473);
+
+}
+
+.system_widgets_KeyBoard_style_default {
+@include system_widgets_KeyBoard_base 
+}

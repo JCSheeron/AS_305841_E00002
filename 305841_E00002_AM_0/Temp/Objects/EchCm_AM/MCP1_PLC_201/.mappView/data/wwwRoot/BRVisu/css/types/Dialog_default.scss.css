@@ -1,0 +1,92 @@
+.system_brease_Dialog_style_default {
+  border-radius: 0px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader div.innerHeader {
+  justify-content: center;
+  text-align: center;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader .breaseWindowClose {
+  height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader .breaseWindowClose {
+  line-height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader .imageDiv {
+  min-width: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader div.innerHeader {
+  line-height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader div.textDiv {
+  line-height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader div.innerHeader {
+  height: 42px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader div.imageDiv {
+  max-width: 84px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox > .breaseLayout {
+  background-color: #ebebeb;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox {
+  border-width: 2px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox {
+  border-bottom-right-radius: 0;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox {
+  border-bottom-left-radius: 0;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  border-radius: 0px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox {
+  border-color: #5B7C70;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowContentBox {
+  border-style: solid;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  background-color: #DBDBDB;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  border-color: #5B7C70;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  border-width: 2px 2px 0 2px;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader {
+  border-style: solid;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader .textDiv {
+  color: #000000;
+}
+
+.system_brease_Dialog_style_default .breaseDialogWindowHeader .textDiv {
+  font-size: 12px;
+}

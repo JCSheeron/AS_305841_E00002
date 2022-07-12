@@ -1,0 +1,5 @@
+$(AS_PROJECT_PATH)/Logical/Libraries/standard/standard.fun
+$(AS_PROJECT_PATH)/Logical/PlcLogic/Logic.var
+$(AS_PROJECT_PATH)/Logical/Libraries/GAProcIO/GAProcIO.typ
+$(AS_PROJECT_PATH)/Logical/PlcLogic/Logic.typ
+$(AS_PROJECT_PATH)/Logical/PlcLogic/Annunc/Annunc.var

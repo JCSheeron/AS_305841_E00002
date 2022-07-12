@@ -1,0 +1,11 @@
+@import "mixins.scss";
+@mixin system_brease_Selection_base {
+.breaseWidget input::selection {
+	background: #5E9ED6;
+}
+.breaseWidget input::selection {
+	color: #FFFFFF;
+}
+
+}
+

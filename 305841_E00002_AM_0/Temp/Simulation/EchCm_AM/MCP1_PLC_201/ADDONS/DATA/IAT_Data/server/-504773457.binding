@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_tableConnect" attribute="selectedRow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_RowConnectionListTable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ShowInfoConnectLabel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_labelInfoConnect" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ShowConnectLabel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_labelConnect" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableTableConnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_tableConnect" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableBtnConnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_btnConnect" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowBtnConnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_btnConnect" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowProgressReadConfig" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ProgressConnectReadConfig" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_StatusSDConnected" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_btnSDDisconnect" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_StatusSDConnected" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_btnDetails" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowBtnDisconnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_btnSDDisconnect" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_SafeDomainID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemSafeDomain" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding><Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_SafeDomainID" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemSafeDomain" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_HWName" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemName" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding><Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_HWName" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemName" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_Project" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemProjectname" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding><Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableConnectList_Project" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_TableItemProjectname" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TxtRootConnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_txtOutputRootConnect" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentConnect">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SvgConnectionStatePath" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentConnect_SfMP171_paperConnectionState" attribute="svgFilePath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+</BindingDefinition>

@@ -1,0 +1,523 @@
+﻿@import "mixins.scss";
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include elemTop(10);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include elemLeft(20);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include elemAutoWidth(45);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include elemAutoHeight(20);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+		z-index: 0;
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+		font-size: 14px;
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	span{
+	@include text-decoration-underline(true);
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaFileName {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include elemTop(40);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include elemLeft(20);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include elemAutoHeight(20);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+		z-index: 1;
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+		font-size: 14px;
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	span{
+	@include text-decoration-underline(true);
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_labelEditOPParaDescription {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+	@include elemTop(115);
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+	@include elemLeft(15);
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+	@include elemWidth(385);
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+	@include elemHeight(205);
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+		z-index: 2;
+}
+#SfMP171_contentEditOPPara_SfMP171_TableEditOPPara {
+	.tableCells tbody tr td:not(.override){
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name {
+		z-index: 0;
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type {
+		z-index: 1;
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value {
+		z-index: 2;
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description {
+		z-index: 3;
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+	@include elemTop(80);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+	@include elemLeft(15);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+	@include elemWidth(385);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+	@include elemHeight(35);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnBarGroupEditOPPara {
+		z-index: 3;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+		z-index: 0;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+		z-index: 1;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+		z-index: 2;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+		z-index: 3;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+		z-index: 4;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+		z-index: 5;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+		z-index: 6;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+		z-index: 7;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+		z-index: 8;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+	@include elemTop(0);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+	@include elemLeft(1);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+		z-index: 9;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10 {
+		padding: 3px 3px;
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include elemTop(10);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include elemLeft(80);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include elemAutoWidth(320);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+		z-index: 4;
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+		font-size: 14px;
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	@include font-weight-bold(false);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaFileName {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include elemTop(40);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include elemLeft(120);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include elemAutoWidth(280);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include elemAutoHeight(45);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+		z-index: 5;
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+		font-size: 14px;
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	@include font-weight-bold(false);
+}
+#SfMP171_contentEditOPPara_SfMP171_txtEditOPParaDescription {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+	@include elemTop(380);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+	@include elemLeft(15);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+	@include elemAutoWidth(160);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnEditOPParaSave {
+		z-index: 6;
+}
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+	@include elemTop(380);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+	@include elemLeft(275);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+	@include elemAutoWidth(130);
+}
+#SfMP171_contentEditOPPara_SfMP171_btnCancelEditOPPara {
+		z-index: 7;
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+	&.DropDownBoxView{
+	@include elemHeight(30);
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+	@include elemTop(340);
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+	@include elemLeft(160);
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+	&.DropDownBoxView{
+	@include elemWidth(139);
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+		z-index: 9;
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara {
+	& .TextView{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara_listBoxWrapper {
+	& .TextView{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+	@include elemTop(340);
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+	@include elemLeft(160);
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+	@include elemAutoWidth(139);
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+		z-index: 8;
+}
+#SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara {
+	input{
+	@include text-alignment(center);
+	}
+}

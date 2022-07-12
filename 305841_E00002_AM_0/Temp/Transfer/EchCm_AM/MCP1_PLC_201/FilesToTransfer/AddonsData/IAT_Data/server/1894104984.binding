@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisName" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘlblTitle" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumOutPosLimitPos" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumOutPosLimitNeg" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumInPosLimitPos" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumInPosLimitNeg" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitPosΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumInPosLimitPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘpositionLimits.PositionLimitNegΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumInPosLimitNeg" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘsetPositionLimitsReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘpbSetLimits" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesPositionLimits_listΘPositionLimitPosΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumOutPosLimitPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="dlgSetPosLimitsTop_content">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesPositionLimits_listΘPositionLimitNegΘnode" /></Source>
+      <Target xsi:type="brease" refId="dlgSetPosLimitsTop_content_GaMotAxisSetPosLimits1ΘnumOutPosLimitNeg" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

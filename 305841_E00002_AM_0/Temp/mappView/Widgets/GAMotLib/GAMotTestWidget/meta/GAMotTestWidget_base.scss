@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin widgets_GAMotLib_GAMotTestWidget_base {
+	@include elemWidth(325);
+	@include elemHeight(225);
+	margin: 0px;
+
+}
+

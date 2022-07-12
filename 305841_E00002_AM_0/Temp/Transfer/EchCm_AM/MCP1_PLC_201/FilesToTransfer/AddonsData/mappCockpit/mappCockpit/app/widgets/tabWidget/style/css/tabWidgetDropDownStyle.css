@@ -1,0 +1,113 @@
+/* ID and Class names are set in ts file dropDownCSSClassNameProvider.ts.css */
+
+.DropDownListStyle {
+    background-color: var(--main-black);
+}
+
+.DropDownListStyle ul li:hover {
+    background-color: var(--main-black);
+}
+
+.DropDownListStyle ul li {
+    background-color: var(--main-black);
+}
+
+.DropDownItemImg {
+    width:17px;
+    float:left;
+    margin-right: 5px; 
+    margin-top: 2px; 
+    margin-left: -5px;
+}
+
+.DropDownItemText {
+    color:grey;
+    font-family: var(--main-font);
+    font-size: 12px;
+    display: inline-flex;
+;}
+
+.DropDownItemText:hover {
+    color: var(--main-white);
+    cursor: pointer;
+}
+
+.ListItemDeleteButton {
+    float:right;
+    border: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 3px;
+    margin-top: 1px;
+    background-image: url("../images/IconBasket_grey.svg") !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px 16px !important;
+    background-color: var(--main-black) !important;
+}
+
+.ListItemDeleteButton:hover {
+    background-image: url("../images/IconBasket.svg") !important;
+    cursor: pointer;
+}
+
+.DropDownWrapper {
+    float: right;
+    width: 48px !important;
+    height: 47px !important;
+    background-color: var(--main-black) !important;
+    border-left: 3px grey solid !important;
+}
+
+.HideDropDownWrapper {
+    display: none;
+}
+
+/*Manipulates SF class*/
+.DropDownWrapper .e-box {
+    border: 0px !important;
+    border-color: unset !important;
+}
+
+/*Manipulates SF class*/
+.DropDownWrapper .e-select {
+    width: 100%;
+    color: grey !important;
+    background-color: var(--main-black) !important;
+    border: 0px !important;
+    border-color: unset !important;
+}
+
+/*Manipulates SF class*/
+.DropDownWrapper .e-select:hover {
+    color: var(--main-white) !important;
+    cursor: pointer;
+}
+
+.DropDownFooterCloseAll {
+    background-color: var(--main-black) !important;
+    color: grey !important;
+    font-family: var(--main-font) !important;
+    font-size: 12px !important;
+    border: 0px !important;
+    width: 48%;
+}
+
+.DropDownFooterCloseAll:hover {
+    color: var(--main-white) !important;
+    cursor: pointer;
+}
+
+.DropDownFooterCloseAllOther {
+    background-color: var(--main-black) !important;
+    color: grey !important;
+    font-family: var(--main-font) !important;
+    font-size: 12px !important;
+    border: 0px !important;
+    border-left: 1px grey solid !important;
+    width: 48%;
+}
+
+.DropDownFooterCloseAllOther:hover {
+    color: var(--main-white) !important;
+    cursor: pointer;
+}

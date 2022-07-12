@@ -1,0 +1,7 @@
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/Eccentrics/axCfgInE.axis
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/Eccentrics/axCfgOutE.axis
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/Eccentrics/CamFeature.axisfeature
+$(AS_TEMP_PATH)/Includes/AS_TempDecl/EchCm_AM/GlobalComponents/McElements.var
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/axCfgSpin.axis
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/axCfgZ.axis
+$(AS_PROJECT_PATH)/Physical/EchCm_AM/MCP1_PLC_201/mappMotion/axCfgCfPmp.axis

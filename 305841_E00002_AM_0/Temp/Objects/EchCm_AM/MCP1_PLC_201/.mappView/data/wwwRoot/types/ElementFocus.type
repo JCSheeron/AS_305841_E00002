@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ElementFocus xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+	
+    <StyleProperty name="outlineStyle" type="BorderStyle" default="solid" category="Appearance">
+      <StyleElement selector=".elementFocus" attribute="outline-style"></StyleElement>
+      <Description>
+        Style of the outline of the focused element inside a focused widget. 
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="outlineColor" category="Appearance" type="Color" default="#5E9ED6">
+      <StyleElement selector=".elementFocus" attribute="outline-color"></StyleElement>
+      <Description>
+        Color of the outline of the focused element inside a focused widget. 
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="outlineWidth" type="PixelVal" default="2px" category="Appearance">
+      <StyleElement selector=".elementFocus" attribute="outline-width"></StyleElement>
+      <Description>
+        Width of the outline of the focused element inside a focused widget. 
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="outlineOffset" category="Layout" type="StrictSignedPixelVal" default="-2px">
+      <StyleElement selector=".elementFocus" attribute="outline-offset"></StyleElement>
+      <Description>
+        Offset of the outline of the focused element inside a focused widget. 
+        The offset property sets the amount of space between an outline and the edge or border of an element.
+      </Description>
+    </StyleProperty>
+	
+  </StyleProperties>
+
+</ElementFocus>

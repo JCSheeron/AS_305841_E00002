@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.LinearGauge">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>licensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/BaseWidget.js</File>
+				<File>widgets/brease/LinearGauge/libs/Config.js</File>
+				<File>brease/datatype/Node.js</File>
+				<File>brease/core/Utils.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/MeasurementSystemDependency.js</File>
+				<File>widgets/brease/LinearGauge/libs/Renderer.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/LinearGauge/LinearGauge.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Chart</Category>
+			<Category name="Category">Numeric</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Zeigerinstrument</Description>
+			<Description name="de">Zeigt einen numerischen Wert in einem Zeigerinstrument mit optionaler Skala an</Description>
+			<Description name="en">Displays a numeric value in a linear gauge with an optional scale</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.LinearGauge</Class>
+			<Class level="1">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetValue" read="false">
+				<Description>Sets value</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="areasPadding" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="3">
+				<Description>Specifies the padding between the areas and the scale</Description>
+			</Property>
+			<Property name="areasSize" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="10">
+				<Description>Specifies the size for the areas: height for horizontal oriented widgets and
+width for vertical oriented widgets				</Description>
+			</Property>
+			<Property name="axisPadding" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="0">
+				<Description>Specifies the offset between the axis and the outer border of the widget</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="format" type="brease.config.MeasurementSystemFormat" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="{&apos;metric&apos;:{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial-us&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }}">
+				<Description>NumberFormat for every measurement system.</Description>
+			</Property>
+			<Property name="majorTicks" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="9">
+				<Description>Number of major Ticks.</Description>
+			</Property>
+			<Property name="maxValue" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="100">
+				<Description>Maximum value for gauge pointer to display.</Description>
+			</Property>
+			<Property name="minValue" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>Minimum value for gauge pointer to display.</Description>
+			</Property>
+			<Property name="minorTicks" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="4">
+				<Description>Number of minor Ticks.</Description>
+			</Property>
+			<Property name="node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Display value with unit and limits.</Description>
+			</Property>
+			<Property name="orientation" type="brease.enum.Orientation" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="LeftToRight">
+				<Description>Orientation of the widget</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="pointerPadding" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="0">
+				<Description>Specifies the padding between the pointer and the scale</Description>
+			</Property>
+			<Property name="pointerSize" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="15">
+				<Description>Specifies the size of the default pointer</Description>
+			</Property>
+			<Property name="scaleArea0" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea0Node" category="Data" defaultValue="0">
+				<Description>Start of first scale area. A scale area is shown as a background color behind the minor
+and major ticks. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea0Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Start of first scale area. A scale area is shown as a background color behind the minor
+and major ticks. Include unit and limits.				</Description>
+			</Property>
+			<Property name="scaleArea1" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea1Node" category="Data" defaultValue="20">
+				<Description>End of first scale area. A scale area is shown as a background color behind the minor and
+major ticks. This value is also used as start of the second scale area. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea1Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>End of first scale area. A scale area is shown as a background color behind the minor and
+major ticks. This value is also used as start of the second scale area. Include unit and limits.				</Description>
+			</Property>
+			<Property name="scaleArea2" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea2Node" category="Data" defaultValue="40">
+				<Description>End of second scale area. A scale area is shown as a background color behind the minor
+and major ticks. This value is also used as start of the third scale area. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea2Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>End of second scale area. A scale area is shown as a background color behind the minor
+and major ticks. This value is also used as start of the third scale area. Include unit and limits.				</Description>
+			</Property>
+			<Property name="scaleArea3" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea3Node" category="Data" defaultValue="60">
+				<Description>End of third scale area. A scale area is shown as a background color behind the minor and
+major ticks. This value is also used as start of the fourth scale area. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea3Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>End of third scale area. A scale area is shown as a background color behind the minor and
+major ticks. This value is also used as start of the fourth scale area. Include unit and limits.				</Description>
+			</Property>
+			<Property name="scaleArea4" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea4Node" category="Data" defaultValue="80">
+				<Description>End of fourth scale area. A scale area is shown as a background color behind the minor
+and major ticks. This value is also used as start of the fifth scale area. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea4Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>End of fourth scale area. A scale area is shown as a background color behind the minor
+and major ticks. This value is also used as start of the fifth scale area. Include unit and limits.				</Description>
+			</Property>
+			<Property name="scaleArea5" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="scaleArea5Node" category="Data" defaultValue="100">
+				<Description>End of fifth scale area. A scale area is shown as a background color behind the minor and
+major ticks. Defined in value.				</Description>
+			</Property>
+			<Property name="scaleArea5Node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>End of fifth scale area. A scale area is shown as a background color behind the minor and
+major ticks. Include unit and limits.				</Description>
+			</Property>
+			<Property name="showPointer" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Determines if the pointer is displayed.</Description>
+			</Property>
+			<Property name="showUnit" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>Determines if the unit is displayed.</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="unit" type="brease.config.MeasurementSystemUnit" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Unit code for every measurement system.</Description>
+			</Property>
+			<Property name="value" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="node" category="Data" defaultValue="0">
+				<Description>Value for the pointer.</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.LinearGauge" category="Layout" groupRefId="Size" groupOrder="1" default="380">
+				<StyleElement attribute="@include elemWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.LinearGauge" category="Layout" groupRefId="Size" groupOrder="2" default="60">
+				<StyleElement attribute="@include elemHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" type="Color" groupRefId="container" groupOrder="1" default="transparent">
+				<StyleElement attribute="background-color"/>
+				<Description>Sets the background color of the main container</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" groupRefId="container" groupOrder="2" type="Gradient" default="">
+				<StyleElement attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient of the main container</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" type="Color" groupRefId="container" groupOrder="3" default="#000000">
+				<StyleElement attribute="border-color"/>
+				<Description>Sets the border color of the main container</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" type="PixelVal" groupRefId="container" groupOrder="4" default="2px">
+				<StyleElement attribute="border-width"/>
+				<Description>Sets the border width of the main container</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" groupRefId="container" groupOrder="5" default="none">
+				<StyleElement attribute="border-style"/>
+				<Description>Sets the border style of the main container</Description>
+			</StyleProperty>
+			<StyleProperty name="scaleColor" type="Color" groupRefId="scale" groupOrder="1" default="#000000">
+				<StyleElement selector=".axis path" attribute="stroke"/>
+				<Description>Color for the main scale</Description>
+			</StyleProperty>
+			<StyleProperty name="scaleWidth" type="PixelVal" groupRefId="scale" groupOrder="2" default="1px">
+				<StyleElement selector=".axis path" attribute="stroke-width"/>
+				<Description>Width for the main scale</Description>
+			</StyleProperty>
+			<StyleProperty name="majorTicksColor" type="Color" groupRefId="scale" groupOrder="3" default="#000000">
+				<StyleElement selector=".axis line" attribute="stroke"/>
+				<Description>Color for the majorTicks</Description>
+			</StyleProperty>
+			<StyleProperty name="majorTicksWidth" type="PixelVal" groupRefId="scale" groupOrder="4" default="1px">
+				<StyleElement selector=".axis line" attribute="stroke-width"/>
+				<Description>Width for the majorTicks</Description>
+			</StyleProperty>
+			<StyleProperty name="minorTicksColor" type="Color" groupRefId="scale" groupOrder="5" default="#DCDCDC">
+				<StyleElement selector=".axisMinorTicks line" attribute="stroke"/>
+				<Description>Color for the minorTicks</Description>
+			</StyleProperty>
+			<StyleProperty name="minorTicksWidth" type="PixelVal" groupRefId="scale" groupOrder="6" default="1px">
+				<StyleElement selector=".axisMinorTicks line" attribute="stroke-width"/>
+				<Description>Width for the minorTicks</Description>
+			</StyleProperty>
+			<StyleProperty name="scaleFontSize" type="PixelVal" groupRefId="scale" groupOrder="7" default="12px">
+				<StyleElement selector=".axis text" attribute="font-size"/>
+				<Description>Font size for the numbers in the scale</Description>
+			</StyleProperty>
+			<StyleProperty name="scaleFontName" type="FontName" groupRefId="scale" groupOrder="8" default="Arial">
+				<StyleElement selector=".axis text" attribute="font-family"/>
+				<Description>Font name for the numbers in the scale</Description>
+			</StyleProperty>
+			<StyleProperty name="scaleTextColor" type="Color" groupRefId="scale" groupOrder="9" default="#000000">
+				<StyleElement selector=".axis text" attribute="fill"/>
+				<Description>Text color for the numbers in the scale</Description>
+			</StyleProperty>
+			<StyleProperty name="unitFontSize" type="PixelVal" category="Behavior" default="12px">
+				<StyleElement selector=".unit" attribute="font-size"/>
+				<Description>Font size for the unit text</Description>
+			</StyleProperty>
+			<StyleProperty name="pointerBackColor" type="Color" groupRefId="pointer" groupOrder="1" default="#ff8800">
+				<StyleElement selector=".pointer" attribute="fill"/>
+				<Description>Fill color for the pointer</Description>
+			</StyleProperty>
+			<StyleProperty name="pointerBorderWidth" type="PixelVal" groupRefId="pointer" groupOrder="2" default="1px">
+				<StyleElement selector=".pointer" attribute="stroke-width"/>
+				<Description>Width for the pointer border</Description>
+			</StyleProperty>
+			<StyleProperty name="pointerBorderColor" type="Color" groupRefId="pointer" groupOrder="3" default="#000000">
+				<StyleElement selector=".pointer" attribute="stroke"/>
+				<Description>Color for the pointer border</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorScaleArea1" type="Color" groupRefId="area1" groupOrder="1" default="#99ccff">
+				<StyleElement selector=".scaleArea1" attribute="fill"/>
+				<Description>Fill color for the area</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidthArea1" type="PixelVal" groupRefId="area1" groupOrder="2" default="1px">
+				<StyleElement selector=".scaleArea1" attribute="stroke-width"/>
+				<Description>Width for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColorArea1" type="Color" groupRefId="area1" groupOrder="3" default="#000000">
+				<StyleElement selector=".scaleArea1" attribute="stroke"/>
+				<Description>Color for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorScaleArea2" type="Color" groupRefId="area2" groupOrder="1" default="#99ff99">
+				<StyleElement selector=".scaleArea2" attribute="fill"/>
+				<Description>Fill color for the area</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidthArea2" type="PixelVal" groupRefId="area2" groupOrder="2" default="1px">
+				<StyleElement selector=".scaleArea2" attribute="stroke-width"/>
+				<Description>Width for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColorArea2" type="Color" groupRefId="area2" groupOrder="3" default="#000000">
+				<StyleElement selector=".scaleArea2" attribute="stroke"/>
+				<Description>Color for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorScaleArea3" type="Color" groupRefId="area3" groupOrder="1" default="#47d147">
+				<StyleElement selector=".scaleArea3" attribute="fill"/>
+				<Description>Fill color for the area</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidthArea3" type="PixelVal" groupRefId="area3" groupOrder="2" default="1px">
+				<StyleElement selector=".scaleArea3" attribute="stroke-width"/>
+				<Description>Width for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColorArea3" type="Color" groupRefId="area3" groupOrder="3" default="#000000">
+				<StyleElement selector=".scaleArea3" attribute="stroke"/>
+				<Description>Color for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorScaleArea4" type="Color" groupRefId="area4" groupOrder="1" default="#ffcc66">
+				<StyleElement selector=".scaleArea4" attribute="fill"/>
+				<Description>Fill color for the area</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidthArea4" type="PixelVal" groupRefId="area4" groupOrder="2" default="1px">
+				<StyleElement selector=".scaleArea4" attribute="stroke-width"/>
+				<Description>Width for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColorArea4" type="Color" groupRefId="area4" groupOrder="3" default="#000000">
+				<StyleElement selector=".scaleArea4" attribute="stroke"/>
+				<Description>Color for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorScaleArea5" type="Color" groupRefId="area5" groupOrder="1" default="#ff704d">
+				<StyleElement selector=".scaleArea5" attribute="fill"/>
+				<Description>Fill color for the area</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidthArea5" type="PixelVal" groupRefId="area5" groupOrder="2" default="1px">
+				<StyleElement selector=".scaleArea5" attribute="stroke-width"/>
+				<Description>Width for the area border</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColorArea5" type="Color" groupRefId="area5" groupOrder="3" default="#000000">
+				<StyleElement selector=".scaleArea5" attribute="stroke"/>
+				<Description>Color for the area border</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="container" type="String" category="Appearance">
+				<Description>Stylable properties for the container</Description>
+			</PropertyGroup>
+			<PropertyGroup name="scale" type="String" category="Appearance">
+				<Description>Stylable properties for the scale</Description>
+			</PropertyGroup>
+			<PropertyGroup name="pointer" type="String" category="Appearance">
+				<Description>Stylable properties for pointer</Description>
+			</PropertyGroup>
+			<PropertyGroup name="area1" type="String" category="Appearance">
+				<Description>Stylable properties for the area 1</Description>
+			</PropertyGroup>
+			<PropertyGroup name="area2" type="String" category="Appearance">
+				<Description>Stylable properties for the area 2</Description>
+			</PropertyGroup>
+			<PropertyGroup name="area3" type="String" category="Appearance">
+				<Description>Stylable properties for the area 3</Description>
+			</PropertyGroup>
+			<PropertyGroup name="area4" type="String" category="Appearance">
+				<Description>Stylable properties for the area 4</Description>
+			</PropertyGroup>
+			<PropertyGroup name="area5" type="String" category="Appearance">
+				<Description>Stylable properties for the area 5</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

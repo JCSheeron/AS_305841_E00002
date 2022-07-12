@@ -1,0 +1,43 @@
+.dragDropContainer{
+    position: relative;
+    height: 144px;
+    width: 250px;
+    float: left;
+    margin: 0px;
+    /*background-color: rgba(0,255,0, 0.5);*/
+}
+
+.dragDropIconContainer{
+    position: relative;
+    height: 48px;
+    width: 96px;
+    left: 0px;
+    margin: 0px;
+    /*background-color: rgba(255,0,0, 0.5);*/
+}
+
+.dragDropTextContainer {
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    height: 96px;
+    width: 250px;
+    /*background-color: rgba(0,0,255, 0.5);*/
+}
+
+.dragDropIcon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 48px;
+    width: 96px;
+}
+
+.dragDropText {
+    position: relative;
+    left: 0px;
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: bold;
+}
+

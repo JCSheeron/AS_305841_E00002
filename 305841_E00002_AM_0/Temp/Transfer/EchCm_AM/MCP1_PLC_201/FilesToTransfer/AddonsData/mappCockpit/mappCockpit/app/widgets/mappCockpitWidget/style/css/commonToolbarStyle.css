@@ -1,0 +1,17 @@
+
+.e-toolbar{
+    background-color: var(--main-grey-dark1);
+}
+
+.e-toolbar>.e-horizontal .e-active{
+    background-color: var(--main-orange);
+    border-color:  var(--main-orange);
+}
+
+.e-toolbar>.e-horizontal .e-hover{
+    background-color:var(--main-orange);
+}
+
+.e-toolbar > .e-horizontal.e-separator{
+    border-right: 1px solid white;
+}

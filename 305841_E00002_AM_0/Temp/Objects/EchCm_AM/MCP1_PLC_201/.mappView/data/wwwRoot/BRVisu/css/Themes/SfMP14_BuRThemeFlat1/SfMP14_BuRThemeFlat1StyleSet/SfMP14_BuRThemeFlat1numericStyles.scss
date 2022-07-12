@@ -1,0 +1,323 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_Input {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #ffffff;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #ffffff;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #ff8800;
+}
+&.active:not(.disabled) {
+	border-color: #d6d6d6;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #646464;
+}
+&.active:not(.disabled) {
+	background-color: #d6d6d6;
+}
+&.active:not(.disabled) input {
+	color: #ff8800;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #ff8800;
+}
+input {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_InputLarge {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #ffffff;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #ffffff;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #ff8800;
+}
+&.active:not(.disabled) {
+	border-color: #d6d6d6;
+}
+input {
+	font-size: 32px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #646464;
+}
+&.active:not(.disabled) {
+	background-color: #d6d6d6;
+}
+&.active:not(.disabled) input {
+	color: #ff8800;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #ff8800;
+}
+input {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_InputCommand {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #646464;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #646464;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #d7d7d7;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 2px 2px;
+}
+&.active:not(.disabled) {
+	border-color: #646464;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFF;
+}
+&.active:not(.disabled) {
+	background-color: #646464;
+}
+&.active:not(.disabled) input {
+	color: #FFF;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #FFF;
+}
+input {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_Output {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #646464;
+}
+span.breaseNumericOutput_unit {
+	color: #646464;
+}
+	border-width: 0px;
+input {
+	font-size: 20px;
+}
+	background-color: transparent;
+input {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_OutputLarge {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #646464;
+}
+span.breaseNumericOutput_unit {
+	color: #646464;
+}
+	border-width: 0px;
+input {
+	font-size: 32px;
+}
+	background-color: transparent;
+input {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_Overview {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #646464;
+}
+span.breaseNumericOutput_unit {
+	color: #646464;
+}
+	border-width: 0px;
+input {
+	font-size: 72px;
+}
+input {
+@include font-weight-bold(false);
+}
+	background-color: transparent;
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_Input {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #646464;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #ff8800;
+}
+&:not(.disabled).active {
+	border-color: #d6d6d6;
+}
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #d6d6d6;
+}
+&:not(.disabled).active {
+	background-color: #d6d6d6;
+}
+&:not(.disabled).active input {
+	color: #ff8800;
+}
+input {
+@include font-weight-bold(false);
+}
+input {
+@include text-alignment(center);
+}
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_InputLarge {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #646464;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #ff8800;
+}
+&:not(.disabled).active {
+	border-color: #d6d6d6;
+}
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #d6d6d6;
+}
+&:not(.disabled).active {
+	background-color: #d6d6d6;
+}
+&:not(.disabled).active input {
+	color: #ff8800;
+}
+input {
+@include font-weight-bold(false);
+}
+input {
+@include text-alignment(center);
+}
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_InputCommand {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #646464;
+}
+&:not(.active):not(.disabled) {
+	border-width: 0px 0px 0px 6px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #d6d6d6;
+}
+&:not(.disabled).active {
+	border-color: #646464;
+}
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFF;
+}
+&:not(.disabled).active {
+	background-color: #646464;
+}
+&:not(.disabled).active input {
+	color: #FFF;
+}
+input {
+@include font-weight-bold(false);
+}
+input {
+@include text-alignment(center);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_FavoriteWatch {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #FFFFFF;
+}
+span.breaseNumericOutput_unit {
+	color: #FFFFFF;
+}
+	border-width: 0px;
+input {
+	font-size: 16px;
+}
+	background-color: transparent;
+input {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_FavoriteWatch {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 1px;
+}
+@include border-radius(5px);
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+input {
+@include font-weight-bold(true);
+}
+
+}

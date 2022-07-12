@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brease.TabItemRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
+			<xs:attribute name="left" use="optional" type="types:Integer" />
+			<xs:attribute name="top" use="prohibited" type="types:Integer" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="30" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="100" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brease.TabItem">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brease.TabItemRestrict">
+			<xs:all>
+				<xs:element name="Widgets" type="iat:Widgets" minOccurs="1" maxOccurs="1">
+					<xs:unique name="widgets.brease.TabItem.zIndex">
+						<xs:selector xpath="./iat:Widget"/>
+						<xs:field xpath="@zIndex"/>
+					</xs:unique>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="ellipsis" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="image" use="optional" type="types:ImagePath" default="" />
+			<xs:attribute name="imageAlign" use="optional" type="types:brease.enum.ImageAlign" default="left" />
+			<xs:attribute name="mouseDownImage" use="optional" type="types:ImagePath" default="" />
+			<xs:attribute name="multiLine" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="text" use="optional" type="types:String" default="" />
+			<xs:attribute name="useSVGStyling" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="wordWrap" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="imageHeight" use="optional" type="types:ImageSize" default="0" />
+			<xs:attribute name="imageWidth" use="optional" type="types:ImageSize" default="0" />
+			<xs:attribute name="imageColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="mouseDownImageColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="2px" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="5px 5px 0px 0px" />
+			<xs:attribute name="borderColor" use="optional" type="types:ColorCollection" default="#5B7C70" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="#DBDBDB" />
+			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="textColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="activeBorderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="activeBorderWidth" use="optional" type="types:PixelValCollection" default="4px 2px 0px 2px" />
+			<xs:attribute name="activeCornerRadius" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="activeBorderColor" use="optional" type="types:ColorCollection" default="#FD7B01 #5B7C70 #5B7C70 #5B7C70" />
+			<xs:attribute name="activeBackColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="activeBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="activeTextColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="textAlign" use="optional" type="types:brease.enum.TextAlign" default="center" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="fontSize" use="optional" type="types:PixelVal" default="12px" />
+			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="bold" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+			<xs:attribute name="padding" use="optional" type="types:Padding" default="0px 10px" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_AxisNumber_list" /></Source>
+      <Target xsi:type="variable" refId="svAxisNumber" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisNumber" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snAxisNameInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsReadyToPowerOn_list" /></Source>
+      <Target xsi:type="variable" refId="svIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsHomed_list" /></Source>
+      <Target xsi:type="variable" refId="svIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsPoweredOn_list" /></Source>
+      <Target xsi:type="variable" refId="svIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsBrakeManRel_list" /></Source>
+      <Target xsi:type="variable" refId="svIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsMoveActive_list" /></Source>
+      <Target xsi:type="variable" refId="svIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsInPosition_list" /></Source>
+      <Target xsi:type="variable" refId="svIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsMoveDone_list" /></Source>
+      <Target xsi:type="variable" refId="svIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsStopped_list" /></Source>
+      <Target xsi:type="variable" refId="svIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_PlcOpenState_list" /></Source>
+      <Target xsi:type="variable" refId="svAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesSMState_list" /></Source>
+      <Target xsi:type="variable" refId="svAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_SlaveAxisNumber_list" /></Source>
+      <Target xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snSlaveAxisNameInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsGearInComp_list" /></Source>
+      <Target xsi:type="variable" refId="svIsGearInComp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsGearInComp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsGearInComp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsGearInSync_list" /></Source>
+      <Target xsi:type="variable" refId="svIsGearInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsGearInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsGearInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsGearOffsetStarted_list" /></Source>
+      <Target xsi:type="variable" refId="svIsGearOffsetStarted" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsGearOffsetStarted" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsGearOffsetStarted" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsGearOffsetDone_list" /></Source>
+      <Target xsi:type="variable" refId="svIsGearOffsetDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsGearOffsetDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsGearOffsetDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsCamInSync_list" /></Source>
+      <Target xsi:type="variable" refId="svIsCamInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsCamInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsCamInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_IsCamEndOfProfile_list" /></Source>
+      <Target xsi:type="variable" refId="svIsCamEndOfProfile" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svIsCamEndOfProfile" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snIsCamEndOfProfile" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_PlcOpenState_list" /></Source>
+      <Target xsi:type="variable" refId="svSlaveAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svSlaveAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snSlaveAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_axesSMState_list" /></Source>
+      <Target xsi:type="variable" refId="svSlaveAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svSlaveAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snSlaveAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_CamStatus_list" /></Source>
+      <Target xsi:type="variable" refId="svCamStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svCamStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snCamStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snAxisNameInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘlblAxisStatus1" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisHasSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘgrpBoxSlaveStatus" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svAxisHasSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘgrpBoxSlaveControl" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesStatus_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesStatus_listΘVelocityΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutVelAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesStatus_listΘCoordActualOffsetShiftΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutOffsetAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesPositionLimits_listΘPositionLimitPosΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosLimitPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_axesPositionLimits_listΘPositionLimitNegΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosLimitNeg" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘmoveReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbStart" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘhaltReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbHalt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘstopReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbStop" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘenableReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbEnable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘdisableReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbDisable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘmanBrakeRelReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbManBrakeRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘclearManBrakeRelReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbClearManBrakeRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘstopResetReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbStopReset" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘdriveResetReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbDriveReset" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘgearInReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbGearInSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘcamInReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbCamInSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘdisengageSlaveReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbDisengageSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘoffsetShiftReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbOffsetSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘoffsetShiftToMasterPosReqΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbToMasterPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘshiftOverMasterDistanceΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘchkBoxOverMasterDist" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWayToSource">
+      <Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘshiftTypeΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpShiftType" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInPosMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘDistanceΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInDistMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘVelocityΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInVelMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘAccelerationΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInAccelMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘDecelerationΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInDecelMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘMaxJerkΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInJerkMoveParam" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘgearRatioNumeratorΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInRatioNumerator" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘgearRatioDenominatorΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInRatioDenominator" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘshiftDistanceΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInSlaveOffsetAmt" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘshiftProfileDistanceΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInMasterDistance" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_libraryAxisReq_listΘcamIdΘvalue" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInCamId" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutRdyForPwr" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsReadyToPowerOn" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutRdyForPwr" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsHomed" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsHomed" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsPoweredOn" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsPoweredOn" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsBrakeManRel" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsBrakeManRel" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsMoveActive" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsMoveActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsAtPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsAtPosition" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsAtPos" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsMoveDone" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsMoveDone" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsStopped" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsStopped" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisStatusInt" attribute="value" /><List refId="ServoStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutState" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisStateInt" attribute="value" /><List refId="ServoSmStateGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutState" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snSlaveAxisNameInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘlblSlaveAxisStatus1" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snSlaveAxisNameInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘlblSlaveAxisStatus2" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosActSlave" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_posUnits_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutOffsetAct" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_velUnits_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutVelActSlave" attribute="unit" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_AxisPos_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosActSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_AxisPos_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutPosActSlave" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_AxisVel_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutVelActSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_AxisVel_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutVelActSlave" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_CalculatedPos1_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutOffsetFromMaster" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisNumber" attribute="value" /><List refId="cmpwid_CalculatedPos1_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumOutOffsetFromMaster" attribute="editable::value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsGearInComp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearInComp" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsGearInComp" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearInComp" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsGearInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsGearInSync" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearInSync" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsGearOffsetStarted" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearOffsetStarted" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsGearOffsetStarted" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearOffsetStarted" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsGearOffsetDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearOffsetDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsGearOffsetDone" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsGearOffsetDone" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCamInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsCamInSync" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsCamInSync" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsCamInSync" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snIsCamEndOfProfile" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsCamEndOfProfile" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svIsCamEndOfProfile" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutIsCamEndOfProfile" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snSlaveAxisStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStatusSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisStatusInt" attribute="value" /><List refId="ServoStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStatusSlave" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snSlaveAxisStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStateSlave" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svSlaveAxisStateInt" attribute="value" /><List refId="ServoSmStateGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutStateSlave" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snCamStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutCamStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svCamStatusInt" attribute="value" /><List refId="CamStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘtxtOutCamStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svDirPosText" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svDirNegText" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirNeg" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDesignation_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpMoveType" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDesignation_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpMoveType" attribute="editable::selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirection_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpMoveDir" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirection_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpMoveDir" attribute="editable::selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionPosEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirPos" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionPosEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirPos" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionNegEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirNeg" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionNegEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirNeg" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionShortestEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirShortest" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDirectionShortestEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnDirShortest" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDistanceEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInDistMoveParam" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMoveDistanceEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInDistMoveParam" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMovePositionEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInPosMoveParam" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqMovePositionEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInPosMoveParam" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisGearInEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbGearInSlave" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisGearInEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbGearInSlave" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInSlaveOffsetAmt" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInSlaveOffsetAmt" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInMasterDistance" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘnumInMasterDistance" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbOffsetSlave" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbOffsetSlave" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbToMasterPos" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbToMasterPos" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpShiftType" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘrdoBtnGrpShiftType" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘchkBoxOverMasterDist" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisReqShiftEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘchkBoxOverMasterDist" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisCamInEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbCamInSlave" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisCamInEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbCamInSlave" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisDisengageEnable_list" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbDisengageSlave" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAxisSelected" attribute="value" /><List refId="cmpwid_manAxisDisengageEnable_list_editable_id" /></Source>
+      <Target xsi:type="brease" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbDisengageSlave" attribute="editable::enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

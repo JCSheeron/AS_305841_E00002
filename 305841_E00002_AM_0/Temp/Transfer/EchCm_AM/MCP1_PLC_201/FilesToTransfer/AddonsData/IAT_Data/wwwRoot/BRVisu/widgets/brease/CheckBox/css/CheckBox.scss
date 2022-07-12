@@ -1,0 +1,150 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$check-color: #000;
+$border: #333;
+$disabled-border: #ccc;
+$active-border: $active-color;
+$disbled-background: #F1F1F1;
+
+.breaseCheckBox {
+    @include user-select(none);
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    font-weight: normal;
+    position: relative;
+    @include justify-content(start);
+
+    &.image-right {
+        @include justify-content(end);
+
+        .checkbox {
+            margin-left: 10px;
+            margin-right: 0px;
+        }
+    }
+
+    &.image-top {
+        @include flex-direction(column);
+
+        .checkbox {
+            margin: 0 0 5px 0;
+        }
+    }
+
+    &.image-bottom {
+        @include flex-direction(column);
+
+        .checkbox {
+            margin: 5px 0 0 0;
+        }
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: normal;
+        width: 100%;
+    }
+
+    div.checkbox {
+        width: 40px;
+        display: inline-block;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $border;
+        background-color: #FFF;
+        @include box-sizing(border-box);
+        margin: 0 10px 0 0;
+        @include flex(none);
+
+        &::after {
+            opacity: 0;
+            margin: 0 0 0 15%;
+            font-size: 85%;
+            content: "\2714";
+            position: relative;
+            bottom: 5%;
+            color: #000;
+        }
+    }
+
+    &.checked {
+
+        div.checkbox {
+            border-style: solid;
+            border-width: 1px;
+            border-color: $border;
+            background-color: #FFF;
+
+            &::after {
+                opacity: 1;
+                color: #000;
+            }
+        }
+
+        &.active {
+
+            div.checkbox {
+                border-style: solid;
+                border-width: 1px;
+                border-color: $active-border;
+                background-color: #FFF;
+            }
+        }
+    }
+
+    &.active {
+
+        div.checkbox {
+            border-style: solid;
+            border-width: 1px;
+            border-color: $active-border;
+            background-color: #FFF;
+        }
+    }
+
+
+    &.disabled, &[disabled] {
+
+        div.checkbox {
+            border-style: solid;
+            border-width: 1px;
+            border-color: $disabled-border;
+
+            &::after {
+                opacity: 0;
+            }
+        }
+
+
+        &.checked {
+
+
+            div.checkbox {
+                background-color: $disbled-background;
+
+                &::after {
+                    opacity: 0.28;
+                    color: #000;
+                }
+            }
+        }
+
+        &.active {
+
+            div.checkbox {
+                border-style: solid;
+                border-width: 1px;
+                border-color: $disabled-border;
+                background-color: $disbled-background;
+            }
+        }
+    }
+
+    &.disabled {
+        img {
+            opacity: 1;
+        }
+    }
+}

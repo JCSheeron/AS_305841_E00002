@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_1_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_2_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_3_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_4_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_5_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_6_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_7_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_8_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_9_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_10_Visible" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_1_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_1" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_2_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_2" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_3_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_3" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_4_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_4" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_5_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_5" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_6_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_6" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_7_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_7" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_8_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_8" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_9_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_9" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnGroupOptionParaEdit_10_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_btnEditOPParaGroup_10" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Name" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Name" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Name" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Type" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Type" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Type" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Value" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Value" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Value" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Description" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description" attribute="stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TableOptionParaEdit_Description" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableItemEditSOP_Element_Description" attribute="editable::stringValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_TableEditOPPara" attribute="selectedRow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_RowOptionParaEditTable" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_DropDownOptionParaEdit_ItemCollection" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara" attribute="dataProvider" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Show_DropDownOptionParaEdit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Show_NumericInputOptionParaEdit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_DropDownIndexOptionParaEdit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara" attribute="selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_DropDownIndexOptionParaEdit" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara" attribute="editable::selectedIndex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="twoWay">
+      <Source xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_dropDownEditOPPara" attribute="selectedValue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_DropDownValueOptionParaEdit" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="twoWay">
+      <Source xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_NumericInputOptionParaEdit_Value" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="SfMP171_contentEditOPPara">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_NumericInputOptionParaEdit_NodeCollection" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_NumericInputOptionParaEdit_NodeCollection" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="SfMP171_contentEditOPPara_SfMP171_numericInputEditOPPara" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

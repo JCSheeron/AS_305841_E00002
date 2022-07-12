@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventsActionsDefinitions xmlns="http://www.br-automation.com/iat2019/eventactiondefinition"
+						xmlns:w1="http://www.br-automation.com/iat2014/widget">
+  <EventsActionsDefinition name="opcUa">
+    <MethodGroups>
+      <MethodGroup name="NodeAction">
+        <Methods>
+          <AdvancedMethod name="SetValueBool" read="false">
+            <w1:Description>Sets the "value" attribute of a node OpcUa to a Boolean value.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="XSBoolean" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>Boolean</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="ToggleValueBool" read="false">
+            <w1:Description>Switches node OpcUa attribute "value" to its opposite Boolean value. </w1:Description>
+            <FilterInfo>Boolean</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueNumber" read="false">
+            <w1:Description>Sets node OpcUa attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="Numeric" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>Int16,Int32,LINT,Byte,SByte,UInt16,UInt32,ULINT,Float,Double,LWORD,Enumeration</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="AddValue" read="false">
+            <w1:Description>Adds a value to the current value of node OpcUa attribute "value". </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="Numeric" index="0" required="true">
+                <w1:Description>The value to be added</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>Int16,Int32,LINT,Byte,SByte,UInt16,UInt32,ULINT,Float,Double,LWORD</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueString" read="false">
+            <w1:Description>Sets node OpcUa attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="String" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>String</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetValueDateTime" read="false">
+            <w1:Description>Sets node OpcUa attribute "value" to a value. </w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="DateTime" index="0" required="true">
+                <w1:Description>Value to be set</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <FilterInfo>DateTime</FilterInfo>
+          </AdvancedMethod>
+          <AdvancedMethod name="GetValue" read="true">
+            <w1:Description>Provides the value of attribute "value" for the referenced object</w1:Description>
+            <w1:Arguments />
+            <FilterInfo>Int16,Int32,LINT,Byte,SByte,UInt16,UInt32,ULINT,Float,Double,LWORD,String,DateTime,Boolean,Enumeration</FilterInfo>
+	    <w1:Result type="DYNAMIC" />
+          </AdvancedMethod>
+        </Methods>
+      </MethodGroup>
+      <MethodGroup name="SystemAction">
+        <Methods>
+          <AdvancedMethod name="GetServerStatus" read="true">
+            <w1:Description>Returns the current state of an OPC UA server connection as an enumeration value.</w1:Description>
+            <w1:Arguments />
+            <FilterInfo>Int16,Int32,LINT,Byte,SByte,UInt16,UInt32,ULINT,LWORD</FilterInfo>
+            <w1:Result type="ANY_INT" />
+          </AdvancedMethod>
+        </Methods>
+      </MethodGroup>
+    </MethodGroups>
+    <w1:Events>
+      <w1:Event name="ValueChanged">
+        <w1:Description>triggered if the value of the variable changes.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="newValue" type="String" index="0" required="true">
+            <w1:Description>The new, changed value.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="oldValue" type="String" index="1" required="true">
+            <w1:Description>The old value before the change.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+    </w1:Events>
+  </EventsActionsDefinition>
+  
+  <EventsActionsDefinition name="opcUaSystem">
+    <w1:Events>
+      <w1:Event name="Connected">
+        <w1:Description>Fired when the OPC UA server has connected.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="serverAlias" type="String" index="0" required="true">
+            <w1:Description>The serverAlias of the affected OPC UA server connection. An empty string represents the default OPC UA server.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="timestamp" type="String" index="1" required="true">
+            <w1:Description>Connection time in UTC.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="Disconnected">
+        <w1:Description>Fired when the OPC UA server has disconnected.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="serverAlias" type="String" index="0" required="true">
+            <w1:Description>The serverAlias of the affected OPC UA server connection. An empty string represents the default OPC UA server.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="timestamp" type="String" index="1" required="true">
+            <w1:Description>Connection time in UTC.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+    </w1:Events>
+  </EventsActionsDefinition>
+</EventsActionsDefinitions>

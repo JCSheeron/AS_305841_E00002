@@ -1,0 +1,46 @@
+@import "mixins.scss";
+@mixin widgets_brease_NumericOutput_base {
+	@include elemAutoWidth(100);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-width: 2px;
+	@include border-radius(0px);
+	background-color: #FFFFFF;
+	@include backGroundGradient('');
+	border-color: #555555;
+	border-style: solid;
+input {
+	color: #000000;
+}
+span.breaseNumericOutput_unit {
+	color: #000000;
+}
+input {
+	@include text-alignment(right);
+}
+	opacity: 1;
+input {
+	font-family: Arial;
+}
+input {
+	font-size: 20px;
+}
+.breaseNumericOutput_unit {
+	font-size: 14px;
+}
+	@include rotate(0deg);
+input {
+	@include font-weight-bold(true);
+}
+input {
+	@include font-style-italic(false);
+}
+	@include box-shadow(none);
+	padding: 0 15px 0 15px;
+	margin: 0px;
+
+}
+

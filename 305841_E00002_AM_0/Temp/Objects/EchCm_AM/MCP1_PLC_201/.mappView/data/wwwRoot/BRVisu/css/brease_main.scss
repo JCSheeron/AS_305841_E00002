@@ -1,0 +1,232 @@
+@import "libs/variables.scss";
+@import "libs/mixins.scss";
+@import "libs/helper.scss";
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-size: 0;
+    font-family: $app-font;
+    cursor: default;
+    @include user-select(none);
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.system_brease_Focus_style_default {
+    // focusWithin is used when widget child element (input) gets focused
+    // breaseFocusable is used if a non widget element should get focus style
+    .breaseWidget:focus, .focusWithin, .breaseFocusable:focus {
+        outline: 3px solid #5E9ED6;
+        outline-offset: 2px;
+    }
+}
+
+.system_brease_Selection_style_default {
+    .breaseWidget input::selection {
+        background: #5E9ED6;
+        color: #FFFFFF;
+    }
+}
+
+// A&P 512290: disable 300ms delay
+.breaseWidget {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+.classCompoundWidget {
+    overflow: hidden;
+}
+
+body > div {
+    font-size: 12px;
+}
+
+// A&P 529385: position:absolute - nested elements cannot overlap
+// A&P 550410: z-index:0 - elements in DOM after appContainer can overlap without z-index
+#appContainer {
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+
+/* Styled scrollbars */
+
+.iScrollHorizontalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    height: 7px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.iScrollHorizontalScrollbar.iScrollBothScrollbars {
+    right: 8px;
+}
+
+.iScrollVerticalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    width: 7px;
+    bottom: 1px;
+    top: 1px;
+    right: 1px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+    bottom: 8px;
+}
+
+.iScrollIndicator {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    box-sizing: border-box;
+    // fix for 714960 scrollbar drawn behind canvas chrome stacking bug 
+    will-change: top;
+}
+
+.iScrollHorizontalScrollbar .iScrollIndicator {
+    height: 100%;
+}
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+    width: 100%;
+}
+
+.startupProgressBarWrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.startupProgressBar {
+    width: 100%;
+    height: 30px;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+}
+
+.breaseTooltipWrapper {
+    position: absolute;
+    width: auto;
+    height: 0;
+	pointer-events:none;
+
+    .breaseTooltip {
+        display: inline-block;
+		pointer-events:all;
+    }
+}
+
+.tooltip-arrow {
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    width: 20px;
+    height: 10px;
+    margin-left: -10px;
+    display: inline-block;
+    pointer-events: all;
+
+    .tooltip-arrow-border {
+        border: 10px solid transparent;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
+
+    .tooltip-arrow-background {
+        border: 10px solid transparent;
+        left: 0;
+        top: -1px;
+        pointer-events: none;
+    }
+
+    .tooltip-arrow-background,
+    .tooltip-arrow-border {
+        height: 0;
+        position: absolute;
+        width: 0;
+    }
+
+    &.ontop {
+        position: absolute;
+        top: -10px;
+        transform: rotate(180deg);
+    }
+}
+
+.breaseTooltipIndicator {
+    min-width: 36px;
+    min-height: 36px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .breaseTooltipIndicatorInner {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm2.54,25.87a.65.65,0,0,1-.65.65h-4a.65.65,0,0,1-.65-.65V21.93a.66.66,0,0,1,.65-.66h4a.66.66,0,0,1,.65.66Zm1.18-10.09A3.22,3.22,0,0,0,18,19a.33.33,0,0,1-.33.33H14.37c-.09,0-.33-.25-.33-.34V17.61a4.65,4.65,0,0,1,2.31-3.76c.12-.08,1.28-.84,1.28-1.89A1.47,1.47,0,0,0,16,10.48a1.92,1.92,0,0,0-2.15,2,.34.34,0,0,1-.33.32H10a.33.33,0,0,1-.23-.12.32.32,0,0,1-.09-.25C9.9,8.85,12.21,6.82,16,6.82c2.91,0,6.05,1.57,6.05,5C22.09,14.18,21.56,14.62,19.72,15.78Z" fill="%231d1d1b"/><rect x="13.29" y="21.27" width="5.25" height="5.25" rx=".65" ry=".65" fill="%23fff"/><path d="M19.72,15.78A3.22,3.22,0,0,0,18,19a.33.33,0,0,1-.33.33H14.37c-.09,0-.33-.25-.33-.34V17.61a4.65,4.65,0,0,1,2.31-3.76c.12-.08,1.28-.84,1.28-1.89A1.47,1.47,0,0,0,16,10.48a1.92,1.92,0,0,0-2.15,2,.34.34,0,0,1-.33.32H10a.33.33,0,0,1-.23-.12.32.32,0,0,1-.09-.25C9.9,8.85,12.21,6.82,16,6.82c2.91,0,6.05,1.57,6.05,5C22.09,14.18,21.56,14.62,19.72,15.78Z" fill="%23fff"/></svg>');
+    }
+}
+
+.breaseDialogWindow.system_brease_Dialog_style_dialogWindowError {
+
+    .breaseDialogWindowContentBox > .breaseLayout {
+        background-color: #ebebeb;
+    }
+
+    @include border-radius(0px);
+
+    .breaseDialogWindowContentBox {
+        border-width: 2px;
+        @include border-bottom-right-radius(0px);
+        @include border-bottom-left-radius(0px);
+        border-color: #5B7C70;
+        border-style: solid;
+    }
+
+    .breaseDialogWindowHeader {
+        height: 42px;
+        @include border-radius(0px);
+        background-color: #DBDBDB;
+        border-color: #5B7C70;
+        border-width: 2px 2px 0 2px;
+        border-style: solid;
+        .textDiv {
+            color: #000000;
+            font-size: 12px;
+        }
+        .breaseWindowClose {
+            height: 42px;
+            line-height: 42px;
+            display:block;
+        }
+    }
+}

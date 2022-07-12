@@ -1,0 +1,512 @@
+﻿@import "mixins.scss";
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include elemTop(10);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include elemLeft(20);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include elemAutoWidth(45);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include elemAutoHeight(20);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+		z-index: 0;
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+		font-size: 14px;
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	span{
+	@include text-decoration-underline(true);
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaFileName {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include elemTop(40);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include elemLeft(20);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include elemAutoHeight(20);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+		z-index: 1;
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+		font-size: 14px;
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	@include font-weight-bold(true);
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	span{
+	@include text-decoration-underline(true);
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_labelAckOPParaDescription {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+	@include elemTop(155);
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+	@include elemLeft(15);
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+	@include elemWidth(385);
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+	@include elemHeight(205);
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+		z-index: 2;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableAckOPPara {
+	.tableCells tbody tr td:not(.override){
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Name {
+		z-index: 0;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Name {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Name {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Type {
+		z-index: 1;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Type {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Type {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Value {
+		z-index: 2;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Value {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Value {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Description {
+		z-index: 3;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Description {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_Description {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_AcknStatus {
+		z-index: 4;
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_AcknStatus {
+	&:not(.headerElement):not(.disabled).override{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_TableItemAckSOP_Element_AcknStatus {
+	&:not(.headerElement).override.disabled{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara {
+	@include elemTop(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara {
+	@include elemLeft(15);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara {
+	@include elemWidth(385);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara {
+	@include elemHeight(42);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnBarGroupAckOPPara {
+		z-index: 3;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+		z-index: 0;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_1 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+		z-index: 1;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_2 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+		z-index: 2;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_3 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+		z-index: 3;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_4 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+		z-index: 4;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_5 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+		z-index: 5;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_6 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+		z-index: 6;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_7 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+		z-index: 7;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_8 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+		z-index: 8;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_9 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+	@include elemTop(0);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+	@include elemLeft(1);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+	@include elemAutoWidth(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+		z-index: 9;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+	span{
+		font-size: 12px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPParaGroup_10 {
+		padding: 3px 3px;
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include elemTop(10);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include elemLeft(80);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include elemAutoWidth(320);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include elemAutoHeight(25);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+		z-index: 4;
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+		font-size: 14px;
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	@include font-weight-bold(false);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaFileName {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include elemTop(40);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include elemLeft(120);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include elemAutoWidth(280);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include elemAutoHeight(40);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+		z-index: 5;
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include text-alignment-all('left top');
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+		font-size: 14px;
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	@include font-weight-bold(false);
+}
+#SfMP171_contentAckOPPara_SfMP171_txtAckOPParaDescription {
+	span{
+		padding: 0px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPPara {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPPara {
+	@include elemTop(380);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPPara {
+	@include elemLeft(15);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPPara {
+	@include elemAutoWidth(160);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnAckOPPara {
+		z-index: 6;
+}
+#SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara {
+	@include elemTop(380);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara {
+	@include elemLeft(270);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara {
+	@include elemAutoWidth(130);
+}
+#SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara {
+		z-index: 7;
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	@include elemTop(80);
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	@include elemLeft(20);
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	@include elemAutoWidth(340);
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	@include elemAutoHeight(25);
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+		z-index: 8;
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	span{
+		font-size: 14px;
+	}
+}
+#SfMP171_contentAckOPPara_SfMP171_checkBoxAckOPParaShowNotAck {
+	span{
+	@include font-style-italic(true);
+	}
+}

@@ -1,0 +1,45 @@
+:root {
+    --main-black: #242424;
+    --main-white: #FFFFFF;
+    
+    --main-orange: #FF8800;
+    --main-orange-yellow: #F5A22D;
+    --special-orange-yellow-light: #FFD030; /* should only be used in rare cases, as it is not part of the main colors */
+    --main-orange-red: #FF6E00;
+    --main-red-dark: #531E00;
+   
+
+    --main-grey-dark2: #525252;
+    --main-grey-dark1: #808080;
+    --main-grey: #C4C4C4;
+    --main-grey-light1: #E5E5E5;
+    --main-grey-light2: #FEFEFE;
+    --main-blue-dark2: #19282D;
+    --main-blue-dark1: #2D4B5A;
+    --main-blue: #55787D;
+    --main-blue-light1: #7DA0A5;
+    --main-blue-light2: #D0E2F3;
+
+
+    /* Color for selected elements in tree grids, tables, ... */
+    --main-selection-background-color: var(--main-blue-light2);
+
+    /* Cursor colors */
+    --main-cursor1-color: var(--main-grey-dark1);
+    --main-cursor1-active-color: var(--main-black);
+    --main-cursor1-hover-color: var(--main-grey);
+    --main-cursor2-color: var(--main-orange-yellow);
+    --main-cursor2-active-color: var(--main-orange-red);
+    --main-cursor2-hover-color: var(--special-orange-yellow-light);
+
+
+    /* Main navigation colors and other styles */
+    --main-border-color: var(--main-grey-dark1);
+    --navigation-background-color: var(--main-black);
+    --navigation-highlight-color: var(--main-orange);
+    --navigation-hover-color: var(--main-white);
+    --navigation-bar-width: 48px;
+
+    /* Main font */
+    --main-font: "Verdana Regular";
+}

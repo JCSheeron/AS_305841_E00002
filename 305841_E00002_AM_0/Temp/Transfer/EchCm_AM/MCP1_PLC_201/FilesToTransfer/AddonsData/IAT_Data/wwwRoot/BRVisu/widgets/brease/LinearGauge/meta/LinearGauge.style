@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.LinearGauge" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <PropertyGroups>
+    <PropertyGroup name="container" type="String" category="Appearance">
+      <Description>Stylable properties for the container</Description>
+    </PropertyGroup>
+    <PropertyGroup name="scale" type="String" category="Appearance">
+      <Description>Stylable properties for the scale</Description>
+    </PropertyGroup>
+    <PropertyGroup name="pointer" type="String" category="Appearance">
+      <Description>Stylable properties for pointer</Description>
+    </PropertyGroup>
+    <PropertyGroup name="area1" type="String" category="Appearance">
+      <Description>Stylable properties for the area 1</Description>
+    </PropertyGroup>
+    <PropertyGroup name="area2" type="String" category="Appearance">
+      <Description>Stylable properties for the area 2</Description>
+    </PropertyGroup>
+    <PropertyGroup name="area3" type="String" category="Appearance">
+      <Description>Stylable properties for the area 3</Description>
+    </PropertyGroup>
+    <PropertyGroup name="area4" type="String" category="Appearance">
+      <Description>Stylable properties for the area 4</Description>
+    </PropertyGroup>
+    <PropertyGroup name="area5" type="String" category="Appearance">
+      <Description>Stylable properties for the area 5</Description>
+    </PropertyGroup>
+  </PropertyGroups>
+  
+  <StyleProperties>
+
+    <StyleProperty name="width" type="Size" default="380" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" default="60" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR THE MAIN CONTAINER -->
+
+    <StyleProperty name="backColor" type="Color" groupRefId="container" groupOrder="1" default="transparent" >
+      <StyleElement attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the main container
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="backGroundGradient" groupRefId="container" groupOrder="2" type="Gradient" default="">
+      <StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient of the main container
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColor" type="Color" groupRefId="container" groupOrder="3" default="#000000">
+      <StyleElement attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the main container
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidth" type="PixelVal" groupRefId="container" groupOrder="4" default="2px">
+      <StyleElement attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the main container
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderStyle" type="BorderStyle" groupRefId="container" groupOrder="5" default="none">
+      <StyleElement attribute="border-style"></StyleElement>
+      <Description>
+        Sets the border style of the main container
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR SCALE -->
+
+    <StyleProperty name="scaleColor" type="Color" groupRefId="scale" groupOrder="1" default="#000000">
+      <StyleElement selector=".axis path" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the main scale
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="scaleWidth" type="PixelVal" groupRefId="scale" groupOrder="2" default="1px">
+      <StyleElement selector=".axis path" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the main scale
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="majorTicksColor" type="Color" groupRefId="scale" groupOrder="3" default="#000000">
+      <StyleElement selector=".axis line" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the majorTicks
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="majorTicksWidth" type="PixelVal" groupRefId="scale" groupOrder="4" default="1px">
+      <StyleElement selector=".axis line" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the majorTicks
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="minorTicksColor" type="Color" groupRefId="scale" groupOrder="5" default="#DCDCDC">
+      <StyleElement selector=".axisMinorTicks line" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the minorTicks
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="minorTicksWidth" type="PixelVal" groupRefId="scale" groupOrder="6" default="1px">
+      <StyleElement selector=".axisMinorTicks line" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the minorTicks
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="scaleFontSize" type="PixelVal" groupRefId="scale" groupOrder="7" default="12px">
+      <StyleElement selector=".axis text" attribute="font-size"></StyleElement>
+      <Description>
+        Font size for the numbers in the scale
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="scaleFontName" type="FontName" groupRefId="scale" groupOrder="8" default="Arial">
+      <StyleElement selector=".axis text" attribute="font-family"></StyleElement>
+      <Description>
+        Font name for the numbers in the scale
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="scaleTextColor" type="Color" groupRefId="scale" groupOrder="9" default="#000000">
+      <StyleElement selector=".axis text" attribute="fill"></StyleElement>
+      <Description>
+        Text color for the numbers in the scale
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="unitFontSize" type="PixelVal" category="Behavior" default="12px">
+      <StyleElement selector=".unit" attribute="font-size"></StyleElement>
+      <Description>
+        Font size for the unit text
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR POINTER -->
+
+    <StyleProperty name="pointerBackColor" type="Color" groupRefId="pointer" groupOrder="1" default="#ff8800">
+      <StyleElement selector=".pointer" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the pointer
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="pointerBorderWidth" type="PixelVal" groupRefId="pointer" groupOrder="2" default="1px">
+      <StyleElement selector=".pointer" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the pointer border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="pointerBorderColor" type="Color" groupRefId="pointer" groupOrder="3" default="#000000">
+      <StyleElement selector=".pointer" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the pointer border
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR AREA 1 -->
+
+    <StyleProperty name="backColorScaleArea1" type="Color" groupRefId="area1" groupOrder="1" default="#99ccff">
+      <StyleElement selector=".scaleArea1" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidthArea1" type="PixelVal" groupRefId="area1" groupOrder="2" default="1px">
+      <StyleElement selector=".scaleArea1" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the area border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColorArea1" type="Color" groupRefId="area1" groupOrder="3" default="#000000">
+      <StyleElement selector=".scaleArea1" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the area border
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR AREA 2 -->
+
+    <StyleProperty name="backColorScaleArea2" type="Color" groupRefId="area2" groupOrder="1" default="#99ff99">
+      <StyleElement selector=".scaleArea2" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidthArea2" type="PixelVal" groupRefId="area2" groupOrder="2" default="1px">
+      <StyleElement selector=".scaleArea2" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the area border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColorArea2" type="Color" groupRefId="area2" groupOrder="3" default="#000000">
+      <StyleElement selector=".scaleArea2" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the area border
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR AREA 3 -->
+
+    <StyleProperty name="backColorScaleArea3" type="Color" groupRefId="area3" groupOrder="1" default="#47d147">
+      <StyleElement selector=".scaleArea3" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidthArea3" type="PixelVal" groupRefId="area3" groupOrder="2" default="1px">
+      <StyleElement selector=".scaleArea3" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the area border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColorArea3" type="Color" groupRefId="area3" groupOrder="3" default="#000000">
+      <StyleElement selector=".scaleArea3" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the area border
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR AREA 4 -->
+
+    <StyleProperty name="backColorScaleArea4" type="Color" groupRefId="area4" groupOrder="1" default="#ffcc66">
+      <StyleElement selector=".scaleArea4" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidthArea4" type="PixelVal" groupRefId="area4" groupOrder="2" default="1px">
+      <StyleElement selector=".scaleArea4" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the area border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColorArea4" type="Color" groupRefId="area4" groupOrder="3" default="#000000">
+      <StyleElement selector=".scaleArea4" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the area border
+      </Description>
+    </StyleProperty>
+
+    <!-- STYLE OPTIONS FOR AREA 5 -->
+
+    <StyleProperty name="backColorScaleArea5" type="Color" groupRefId="area5" groupOrder="1" default="#ff704d">
+      <StyleElement selector=".scaleArea5" attribute="fill"></StyleElement>
+      <Description>
+        Fill color for the area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidthArea5" type="PixelVal" groupRefId="area5" groupOrder="2" default="1px">
+      <StyleElement selector=".scaleArea5" attribute="stroke-width"></StyleElement>
+      <Description>
+        Width for the area border
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColorArea5" type="Color" groupRefId="area5" groupOrder="3" default="#000000">
+      <StyleElement selector=".scaleArea5" attribute="stroke"></StyleElement>
+      <Description>
+        Color for the area border
+      </Description>
+    </StyleProperty>
+    
+  </StyleProperties>
+</StyleInformation>

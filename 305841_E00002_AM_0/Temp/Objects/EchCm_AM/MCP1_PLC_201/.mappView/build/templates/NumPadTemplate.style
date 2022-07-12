@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="__WIDGET_NAME__" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <StyleProperties>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="__WIDTH__" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="__HEIGHT__" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+    <!-- whole widget -->
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGround" category="Appearance" type="ImagePath" default="">
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="shadow" type="Shadow" default="none">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowLeft .breaseWindowArrow" attribute="border-right-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowRight .breaseWindowArrow" attribute="border-left-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowTop .breaseWindowArrow" attribute="border-bottom-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowBottom .breaseWindowArrow" attribute="border-top-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="9px">
+      <StyleElement attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderStyle" category="Appearance" type="String" default="solid">
+      <StyleElement attribute="@include borderStyle($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#000" >
+      <StyleElement attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontName" type="FontName" default="Arial">
+      <StyleElement attribute="font-family"></StyleElement>
+      <StyleElement selector="button span" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontSize" category="Font" type="PixelVal" default="14px" >
+      <StyleElement attribute="font-size"></StyleElement>
+    </StyleProperty>
+
+    <!-- buttons -->
+    <StyleProperty name="buttonBorderColor" category="Appearance" type="ColorCollection" default="#555555" >
+      <StyleElement selector="button" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownBorderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement selector="button.active" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBorderWidth" category="Appearance" type="PixelValCollection" default="1px 1px 1px 1px">
+      <StyleElement selector="button" attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBorderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <StyleElement selector="button" attribute="border-style"></StyleElement>
+      <StyleElement selector="button.active" attribute="border-style"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector="button" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownBackColor" category="Appearance" type="Color" default="#FFA800" >
+      <StyleElement selector="button.active" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector="button:not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector="button.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBackGround" category="Appearance" type="ImagePath" default="" >
+      <StyleElement selector="button:not(.active)" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownBackGround" category="Appearance" type="ImagePath" default="" >
+      <StyleElement selector="button.active" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonShadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement selector="button" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="button.active" attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownShadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement selector="button.active" attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="button span" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="button.active span" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector="button" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonFontSize" category="Font" type="PixelVal" default="20px" >
+      <StyleElement selector="button span" attribute="font-size"></StyleElement>
+    </StyleProperty>
+
+    <!-- enter button -->
+    <StyleProperty name="enterBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=enter]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="enterMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=enter]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- delete button -->
+    <StyleProperty name="deleteBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=delete]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="deleteMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=delete]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- close button -->
+    <StyleProperty name="closeBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=close]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="closeMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=close]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- sign button -->
+    <StyleProperty name="signBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=sign]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="signMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=sign]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- comma button -->
+    <StyleProperty name="commaBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=comma]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="commaMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=comma]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- clear button -->
+    <StyleProperty name="clearBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div[data-action=clear]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="clearMouseDownBackgroundImage" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="div.active[data-action=clear]" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+
+    <!-- slider -->
+    <StyleProperty name="sliderForeColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="background-color"></StyleElement>
+      <Description>sliderThumbColor</Description>
+    </StyleProperty>
+    <StyleProperty name="sliderForeGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>sliderThumbGradient</Description>
+    </StyleProperty>
+    <StyleProperty name="sliderThumbBorderColor" category="Appearance" type="Color" default="#555">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderThumbBorderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="border-style"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderThumbBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderOutputBackColor" category="Appearance" type="Color" default="transparent">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output" attribute="background-color"></StyleElement>
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output:after" attribute="border-top-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTextColor" category="Appearance" type="Color" default="#333" >
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderFontSize" category="Font" type="PixelVal" default="16px" >
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderErrorColor" category="Appearance" type="Color" default="#cc0000">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span.error" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTrackColor" category="Appearance" type="Color" default="#c8c8c8" >
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_track .numpadSlider_track_inner" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTrackGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_track .numpadSlider_track_inner" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderMajorTickColor" category="Appearance" type="Color" default="#333" >
+      <StyleElement selector=".breaseNumpadSlider .axisElement .majorTickAxis .tick line" attribute="stroke"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderMinorTickColor" category="Appearance" type="Color" default="#aaa" >
+      <StyleElement selector=".breaseNumpadSlider .axisElement .minorTickAxis .tick line" attribute="stroke"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTickValueColor" category="Appearance" type="Color" default="#333" >
+      <StyleElement selector=".breaseNumpadSlider .axisElement .majorTickAxis .tick text" attribute="fill"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTickValueFontSize" category="Font" type="PixelVal" default="12px" >
+      <StyleElement selector=".breaseNumpadSlider .axisElement .majorTickAxis .tick text" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderTickValueFontName" category="Font" type="FontName" default="Arial" >
+      <StyleElement selector=".breaseNumpadSlider .axisElement .majorTickAxis .tick text" attribute="font-family"></StyleElement>
+    </StyleProperty>
+
+    <!-- value -->
+    <StyleProperty name="valueBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueBorderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueBorderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="border-style"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueFontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueFontSize" category="Font" type="PixelVal" default="18px" >
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueTextAlign" category="Appearance" type="brease.enum.TextAlign" default="left">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="@include text-alignment($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueShadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valuePadding" category="Appearance" type="PixelValCollection" default="0px 12px">
+      <StyleElement selector=".breaseNumpadNumericValue" attribute="padding"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="valueErrorColor" category="Appearance" type="Color" default="#cc0000">
+      <StyleElement selector=".breaseNumpadNumericValue.error" attribute="color"></StyleElement>
+    </StyleProperty>
+
+    <!-- min-value -->
+    <StyleProperty name="minValueFontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".minValue" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="minValueFontSize" category="Font" type="PixelVal" default="14px" >
+      <StyleElement selector=".minValue" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="minValueTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".minValue" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="minValueTextAlign" category="Appearance" type="brease.enum.TextAlign" default="left">
+      <StyleElement selector=".minValue" attribute="@include text-alignment($value)"></StyleElement>
+    </StyleProperty>
+
+    <!-- max-value -->
+    <StyleProperty name="maxValueFontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".maxValue" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="maxValueFontSize" category="Font" type="PixelVal" default="14px" >
+      <StyleElement selector=".maxValue" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="maxValueTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".maxValue" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="maxValueTextAlign" category="Appearance" type="brease.enum.TextAlign" default="right">
+      <StyleElement selector=".maxValue" attribute="@include text-alignment($value)"></StyleElement>
+    </StyleProperty>
+
+    <!-- header -->
+    <StyleProperty name="headerBackColor" category="Appearance" type="Color" default="#333333" >
+      <StyleElement selector="header" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="header" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerTextColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector="header.breaseNumpadHeader label" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerFontSize" category="Font" type="PixelVal" default="18px" >
+      <StyleElement selector="header.breaseNumpadHeader label" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector="header" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+
+    <!-- UnitInfo -->
+    <StyleProperty name="unitInfoBackColor" category="Appearance" type="Color" default="transparent" >
+      <StyleElement selector=".unitInfo" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector=".unitInfo" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoBorderColor" category="Appearance" type="ColorCollection" default="#333" >
+      <StyleElement selector=".unitInfo" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoBorderStyle" category="Appearance" type="BorderStyle" default="none">
+      <StyleElement selector=".unitInfo" attribute="border-style"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoBorderWidth" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".unitInfo" attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoFontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".unitInfo" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoFontSize" category="Font" type="PixelVal" default="14px" >
+      <StyleElement selector=".unitInfo" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoTextColor" category="Appearance" type="Color" default="#000" >
+      <StyleElement selector=".unitInfo" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoErrorColor" category="Appearance" type="Color" default="#cc0000">
+      <StyleElement selector=".unitInfo.error" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".unitInfo" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoShadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement selector=".unitInfo" attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="unitInfoPadding" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".unitInfo" attribute="padding"></StyleElement>
+    </StyleProperty>
+
+  </StyleProperties>
+</StyleInformation>

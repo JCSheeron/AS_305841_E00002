@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export IN_WINDOW.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="4.37963in" height="1.74409in"
+		viewBox="0 0 315.333 125.575" xml:space="preserve" color-interpolation-filters="sRGB" class="st13">
+	<v:documentProperties v:langID="1033" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#d7d700;fill-opacity:0.37;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st2 {fill:#ff8800;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st3 {stroke:#c4c4c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st4 {marker-end:url(#mrkr13-21);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2}
+		.st5 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.32258064516129}
+		.st6 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st7 {fill:#000000;font-family:Arial;font-size:1.00001em}
+		.st8 {fill:#525252;font-family:Verdana;font-size:0.75em}
+		.st9 {stroke:#808080;stroke-dasharray:5.04,3.6,0,3.6;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st10 {stroke:#808080;stroke-dasharray:5.04,3.6;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st11 {stroke:#525252;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st12 {stroke:#55787d;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend13">
+			<path d="M 3 1 L 0 0 L 3 -1 L 3 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr13-21" class="st5" v:arrowType="13" v:arrowSize="2" v:setback="9.3" refX="-9.3" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(-3.1,-3.1) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="9"
+				v:shadowOffsetY="-9"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="shape847-1" v:mID="847" v:groupContext="shape" transform="translate(57.1043,-74.1259)">
+			<title>Rechteck.555</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="102.897" width="104.769" height="22.6772" class="st1"/>
+		</g>
+		<g id="shape848-3" v:mID="848" v:groupContext="shape" transform="translate(57.0381,-17.433)">
+			<title>Rechteck.539</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="114.236" width="18.4346" height="11.3386" class="st2"/>
+		</g>
+		<g id="shape849-5" v:mID="849" v:groupContext="shape" transform="translate(115.364,-17.433)">
+			<title>Rechteck.540</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="114.236" width="19.5388" height="11.3386" class="st2"/>
+		</g>
+		<g id="shape850-7" v:mID="850" v:groupContext="shape" transform="translate(-9.86603,108.142) rotate(-90)">
+			<title>Y Axis.535</title>
+			<path d="M0 125.57 L56.69 125.57" class="st3"/>
+		</g>
+		<g id="shape851-10" v:mID="851" v:groupContext="shape" transform="translate(8.96412,108.142) rotate(-90)">
+			<title>Y Axis.536</title>
+			<path d="M0 125.57 L79.37 125.57" class="st3"/>
+		</g>
+		<g id="shape852-13" v:mID="852" v:groupContext="shape" transform="translate(-50.5141,108.142) rotate(-90)">
+			<title>Y Axis.537</title>
+			<path d="M0 125.57 L56.69 125.57" class="st3"/>
+		</g>
+		<g id="shape853-16" v:mID="853" v:groupContext="shape" transform="translate(51.4161,-51.4487)">
+			<title>Tabelle.853</title>
+			<path d="M0 125.57 L110.64 125.57" class="st4"/>
+		</g>
+		<g id="shape854-22" v:mID="854" v:groupContext="shape" transform="translate(173.211,-45.7794)">
+			<title>Tabelle.854</title>
+			<desc>t</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:verticalAlign="0"/>
+			<v:textRect cx="5.66929" cy="119.905" width="11.34" height="11.3386"/>
+			<rect x="0" y="114.236" width="11.3386" height="11.3386" class="st6"/>
+			<text x="0" y="125.04" class="st7" v:langID="1033"><v:paragraph/><v:tabList/>t</text>		</g>
+		<g id="shape855-25" v:mID="855" v:groupContext="shape" transform="translate(-68.5056,79.7952) rotate(-90)">
+			<title>Y Axis.543</title>
+			<path d="M0 125.57 L56.87 125.57" class="st4"/>
+		</g>
+		<g id="shape856-30" v:mID="856" v:groupContext="shape" transform="translate(0.36,-79.7952)">
+			<title>Tabelle.856</title>
+			<desc>Threshold</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="26.9291" cy="119.575" width="53.86" height="12"/>
+			<rect x="0" y="113.575" width="53.8583" height="12" class="st6"/>
+			<text x="4.75" y="122.27" class="st8" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Threshold</text>		</g>
+		<g id="shape857-33" v:mID="857" v:groupContext="shape" v:layerMember="0" transform="translate(53.0844,-92.5511)">
+			<title>Dynamischer Verbinder.546</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 132.66 L108.79 132.66" class="st9"/>
+		</g>
+		<g id="shape858-36" v:mID="858" v:groupContext="shape" v:layerMember="0" transform="translate(57.0854,-89.7164)">
+			<title>Dynamischer Verbinder.547</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 118.49 L104.79 118.49" class="st10"/>
+		</g>
+		<g id="shape859-39" v:mID="859" v:groupContext="shape" v:layerMember="0" transform="translate(57.0854,-67.0393)">
+			<title>Dynamischer Verbinder.548</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 118.49 L104.79 118.49" class="st10"/>
+		</g>
+		<g id="shape860-42" v:mID="860" v:groupContext="shape" transform="translate(172.043,-84.803)">
+			<title>Tabelle.860</title>
+			<desc>Window</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="22.3937" cy="119.575" width="44.79" height="12"/>
+			<rect x="0" y="113.575" width="44.7874" height="12" class="st6"/>
+			<text x="4.64" y="122.27" class="st8" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Window</text>		</g>
+		<g id="shape861-45" v:mID="861" v:groupContext="shape" transform="translate(168.736,-85.4645)">
+			<title>Rechte geschweifte Klammer.550</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 125.57 A6.18589 1.89751 -180 0 0 2.31 124.44 L2.31 119.91 L4.62 119.91 L2.31 119.91 L2.31 115.37 A6.18589
+						 1.89751 -180 0 0 0 114.24" class="st11"/>
+		</g>
+		<g id="shape862-48" v:mID="862" v:groupContext="shape" transform="translate(168.736,-74.1259)">
+			<title>Rechte geschweifte Klammer.551</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 125.57 A6.18589 1.89751 -180 0 0 2.31 124.44 L2.31 119.91 L4.62 119.91 L2.31 119.91 L2.31 115.37 A6.18589
+						 1.89751 -180 0 0 0 114.24" class="st11"/>
+		</g>
+		<g id="shape863-51" v:mID="863" v:groupContext="shape" transform="translate(51.4161,-17.433)">
+			<title>Tabelle.863</title>
+			<path d="M0 125.57 L110.64 125.57" class="st4"/>
+		</g>
+		<g id="shape864-56" v:mID="864" v:groupContext="shape" transform="translate(-68.4892,113.811) rotate(-90)">
+			<title>Y Axis.553</title>
+			<path d="M0 125.57 L17.19 125.57" class="st4"/>
+		</g>
+		<g id="shape865-61" v:mID="865" v:groupContext="shape" transform="translate(173.211,-11.7637)">
+			<title>Tabelle.865</title>
+			<desc>t</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:verticalAlign="0"/>
+			<v:textRect cx="5.66929" cy="119.905" width="11.34" height="11.3386"/>
+			<rect x="0" y="114.236" width="11.3386" height="11.3386" class="st6"/>
+			<text x="0" y="125.04" class="st7" v:langID="1033"><v:paragraph/><v:tabList/>t</text>		</g>
+		<g id="shape866-64" v:mID="866" v:groupContext="shape" v:layerMember="0" transform="translate(57.0381,-91.1338)">
+			<title>Dynamischer Verbinder.556</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 125.57 C23.53 144.85 33.48 166.05 42.79 162.41 C54.47 157.85 65.15 114.24 99.17 110.83" class="st12"/>
+		</g>
+		<g id="shape867-67" v:mID="867" v:groupContext="shape" transform="translate(172.043,-73.4645)">
+			<title>Tabelle.867</title>
+			<desc>Window</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="22.3937" cy="119.575" width="44.79" height="12"/>
+			<rect x="0" y="113.575" width="44.7874" height="12" class="st6"/>
+			<text x="4.64" y="122.27" class="st8" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Window</text>		</g>
+		<g id="shape868-70" v:mID="868" v:groupContext="shape" transform="translate(192.15,-17.433)">
+			<title>Rechteck.590</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="114.236" width="5.66929" height="11.3386" class="st2"/>
+		</g>
+		<g id="shape869-72" v:mID="869" v:groupContext="shape" transform="translate(197.82,-17.433)">
+			<title>Tabelle.869</title>
+			<desc>Trigger condition is true</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="58.5768" cy="119.905" width="117.16" height="11.3386"/>
+			<rect x="0" y="114.236" width="117.154" height="11.3386" class="st6"/>
+			<text x="4.34" y="122.61" class="st8" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Trigger condition is true</text>		</g>
+	</g>
+</svg>

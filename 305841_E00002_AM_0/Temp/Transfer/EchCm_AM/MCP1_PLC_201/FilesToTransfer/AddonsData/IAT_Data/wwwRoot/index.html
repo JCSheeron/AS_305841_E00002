@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <base href="/BRVisu/" />
+    <style>
+        #connectionFailedMsgBox {
+            z-index:100;
+            position:fixed; 
+            padding:0px;
+            margin:0px; 
+            background-color:rgba(0,0,0,0.18); 
+            top:0; 
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        #connectionFailedMsgBox div {
+            position:absolute; 
+            padding:20px; 
+            width:400px; 
+            margin-left:-220px;
+            color:red; 
+            background-color:white;
+            font-size:20px;
+            left:50%;
+            top:50%;
+            text-align:center;
+            white-space:pre-wrap;
+        }
+    </style>
+    <script>
+        window._tryReconnect = function() {
+            var tryReconnect = function () {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if(xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 0) {
+                            window.setTimeout(tryReconnect, 3000);
+                        } else {
+                            location.reload();
+                        }
+                    }
+                };
+                xhr.open('GET', window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + window.location.pathname);
+                xhr.send();
+            };
+            window.setTimeout(tryReconnect, 1000);
+        };
+        window.addEventListener('error', function (e) {
+            if (e instanceof ErrorEvent || e.srcElement.nodeName !== 'SCRIPT') {
+                return;
+            }
+            window._connectionErrorHandler();
+        }, true);
+
+        window._connectionErrorHandler = function(enableInDebug, msg) {
+            if ((!enableInDebug && /debug=true/.test(window.location)) || /autoReconnect=false/.test(window.location)) return;
+
+            window._connectionErrorHandler = function () {};
+            var nodes = document.body.childNodes;
+            for(var i = 0; i < nodes.length; i++) {
+                if (nodes[i].nodeName.toLowerCase() == 'div') {
+                    nodes[i].style.display = 'none';
+                }
+            }
+            var msgBoxElem = document.createElement('div');
+            msgBoxElem.setAttribute('id', 'connectionFailedMsgBox');
+            var msgBoxTextElem = document.createElement('div');
+            if (msg) {
+                msgBoxTextElem.innerHTML = msg;
+            } else {
+                msgBoxTextElem.innerHTML = 'Server connection lost,<br/> trying to reconnect ...';
+            }
+            msgBoxElem.appendChild(msgBoxTextElem);
+            document.body.appendChild(msgBoxElem);
+            
+            window._tryReconnect();
+        }
+    </script>
+    <script>
+        (function () {
+            var loadScript = function (src, onLoad) {
+                var script = document.createElement('script'); 
+                script.src = src;
+                document.head.appendChild(script);
+                script.onload = onLoad;
+            };
+            if (/devtool=true/.test(window.location)) {
+                loadScript('libs/eruda/eruda.js', function () {
+                    eruda.init({tool: ['console', 'elements', 'network', 'resources', 'info']});
+                    eruda.position({x: 5, y: 5});
+                    loadScript('libs/eruda/eruda-timing.js', function () {
+                        eruda.add(window.erudaTiming);
+                    });
+                    loadScript('libs/eruda/eruda-dom.js', function () {
+                        eruda.add(window.erudaDom);
+                    });
+                });
+            }
+        })();
+    </script>
+    <script src="libs/platform.js"></script>
+    <title>mapp View</title>
+</head>
+
+<body>
+    <div id="splashscreen"></div>
+    <div id="appContainer"></div>
+    <script src="bootstrapper.min.js" id="bootstrapper"></script>
+</body>
+</html>

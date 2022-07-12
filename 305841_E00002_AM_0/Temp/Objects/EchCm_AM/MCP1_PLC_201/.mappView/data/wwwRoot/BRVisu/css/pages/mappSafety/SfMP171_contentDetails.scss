@@ -1,0 +1,176 @@
+﻿@import "mixins.scss";
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+	@include elemTop(10);
+}
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+	@include elemLeft(10);
+}
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+	@include elemWidth(430);
+}
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+	@include elemHeight(330);
+}
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+		z-index: 0;
+}
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(100);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails {
+		z-index: 0;
+}
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab {
+	&.tabItem{
+		padding: 0px;
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	@include elemTop(20);
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	@include elemLeft(10);
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	@include elemWidth(410);
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	@include elemHeight(90);
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+		z-index: 0;
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput){
+		background-color: rgba(192, 192, 192, 1);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput){
+		background-color: rgba(192, 192, 192, 1);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_TableItem1 {
+		z-index: 0;
+}
+#SfMP171_contentDetails_SfMP171_TableItem2 {
+		z-index: 1;
+}
+#SfMP171_contentDetails_SfMP171_TableItem3 {
+		z-index: 2;
+}
+#SfMP171_contentDetails_SfMP171_TableItem4 {
+		z-index: 3;
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	@include elemTop(140);
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	@include elemLeft(10);
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	@include elemWidth(410);
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	@include elemHeight(109);
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+		z-index: 1;
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput){
+		background-color: rgba(192, 192, 192, 1);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput){
+		background-color: rgba(192, 192, 192, 1);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+	&:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput){
+	@include active-background-color(rgba(192, 192, 192, 1));
+	}
+}
+#SfMP171_contentDetails_SfMP171_TableItem5 {
+		z-index: 0;
+}
+#SfMP171_contentDetails_SfMP171_TableItem6 {
+		z-index: 1;
+}
+#SfMP171_contentDetails_SfMP171_TableItem7 {
+		z-index: 2;
+}
+#SfMP171_contentDetails_SfMP171_TableItem8 {
+		z-index: 3;
+}
+#SfMP171_contentDetails_SfMP171_tabItemHWTree_breaseTabItemTab {
+	&.tabItem{
+	@include elemWidth(100);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tabItemHWTree_breaseTabItemTab {
+	&.tabItem{
+	@include elemHeight(30);
+	}
+}
+#SfMP171_contentDetails_SfMP171_tabItemHWTree {
+		z-index: 1;
+}
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+	@include elemTop(10);
+}
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+	@include elemLeft(30);
+}
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+	@include elemWidth(200);
+}
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+	@include elemHeight(270);
+}
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+		z-index: 0;
+}

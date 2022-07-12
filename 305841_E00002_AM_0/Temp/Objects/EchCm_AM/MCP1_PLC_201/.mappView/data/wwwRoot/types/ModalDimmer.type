@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModalDimmer xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="rgba(0,0,0,0.3)">
+      <Description>background-color of ModalDimmmer</Description>
+      <StyleElement selector=".breaseModalDimmer.active" attribute="background-color" />
+    </StyleProperty>
+  
+  </StyleProperties>
+
+</ModalDimmer>

@@ -1,0 +1,12 @@
+grunt keyboard_create:"C\:/dev/examples/Widget.alphapad":"C\:/IAT/Trunk/Source/Components/buildTests/out":"C\:/IAT/Trunk/Source/Components/data/wwwRoot/BRVisu":testLibrary:"C\:/IAT/Trunk/Source/Studio/XMLValidation/transformations"
+
+grunt keyboard_create:"C\:/dev/examples/Widget.numpad":"C\:/IAT/Trunk/Source/Components/buildTests/out":"C\:/IAT/Trunk/Source/Components/data/wwwRoot/BRVisu":testLibrary:"C\:/IAT/Trunk/Source/Studio/XMLValidation/transformations"
+
+
+grunt keyboard_create:"C\:/projects/AS-4.5/Trunk/WidgetTests/Logical/mappView/Widgets/keyboards/NumericKeyboard/Widget.numpad":"C\:/projects/AS-4.5/Trunk/WidgetTests/Temp/mappView/Widgets":"C\:/IAT/Trunk/Source/Components/data/wwwRoot/BRVisu":keyboards:"C\:/IAT/Trunk/Source/Studio/XMLValidation/transformations"
+
+grunt derived_library:keyboards:"C\:/projects/AS-4.5/Trunk/WidgetTests/Temp/mappView/Widgets":"C\:/IAT/Trunk/Source/Components/data/wwwRoot/BRVisu"
+
+
+
+grunt keyboard_create:"C\:/projects/AS-4.5\Trunk/CustomKeyboards2/Logical/mappView/Widgets/keyboards/DefaultNumPad/Widget.numpad":"C\:/IAT/Trunk/Source/Components/buildTests/out":"C\:/IAT/Trunk/Source/Components/data/wwwRoot/BRVisu":testWidgets:"C\:/IAT/Trunk/Source/Components/jsBuild/transformation"

@@ -1,0 +1,159 @@
+@import "mixins.scss";
+@mixin widgets_brease_CheckBox_base {
+	@include elemAutoWidth(150);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-style: none;
+	border-width: 0px;
+	@include border-radius(0px);
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: #F1F1F1;
+}
+&:not(.disabled) {
+	@include backGroundGradient('');
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&.active:not(.disabled):not(.editMode) {
+	@include backGroundGradient('');
+}
+&.checked:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) {
+	@include pureBackgroundImage('../');
+}
+&:not(.disabled):not(.active):not(.checked) {
+	border-color: #333;
+}
+&.disabled {
+	border-color: #CCCCCC;
+}
+&.disabled.checked {
+	border-color: #CCCCCC;
+}
+&.disabled.active {
+	border-color: #CCCCCC;
+}
+&:not(.disabled) span {
+	color: #333;
+}
+&.disabled span {
+	color: #989898;
+}
+&.disabled.checked span {
+	border-color: #989898;
+}
+&.disabled.active span {
+	border-color: #989898;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: #FF8800;
+}
+&.checked:not(.disabled) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 2px;
+}
+&.checked:not(.disabled) {
+	border-width: 2px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #333333;
+}
+&.checked:not(.disabled) span {
+	color: #333333;
+}
+span {
+	text-align: left;
+}
+	opacity: 1;
+	@include rotate(0deg);
+span {
+	font-size: 12px;
+}
+span {
+	font-family: Arial;
+}
+span {
+	@include font-weight-bold(true);
+}
+span {
+	@include font-style-italic(false);
+}
+	padding: 0px;
+	margin: 0px;
+&:not(.active):not(.checked) {
+	@include box-shadow(none);
+}
+&.disabled.active {
+	@include box-shadow(none);
+}
+&.disabled.checked {
+	@include box-shadow(none);
+}
+&.active:not(.disabled):not(.editMode) {
+	@include box-shadow(none);
+}
+&.checked {
+	@include box-shadow(none);
+}
+&.disabled.checked {
+	@include box-shadow(none);
+}
+&.checked:not(.disabled):not(.active) span {
+	color: #000000;
+}
+&.disabled.checked:not(.active) span {
+	color: #000000;
+}
+&:not(.disabled):not(.active) .checkbox {
+	background-color: #FFF;
+}
+&.disabled .checkbox {
+	background-color: #FFF;
+}
+&.disabled.checked .checkbox {
+	background-color: #FFF;
+}
+&.disabled.active .checkbox {
+	background-color: #FFF;
+}
+&.active:not(.disabled):not(.editMode) .checkbox {
+	background-color: #FFF;
+}
+&.checked:not(.disabled) .checkbox {
+	background-color: #FFF;
+}
+&:not(.disabled):not(.checked) svg {
+	fill: #000000;
+}
+&.checked:not(.disabled) svg {
+	fill: #000000;
+}
+&.disabled:not(.checked) svg {
+	fill: #000000;
+}
+&.checked.disabled svg {
+	fill: #000000;
+}
+&.active:not(.disabled):not(.editMode) .checkbox {
+	border-color: #F80;
+}
+
+}
+

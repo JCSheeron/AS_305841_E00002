@@ -1,0 +1,392 @@
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  left: 126px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  width: 110px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  height: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  z-index: 7;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnDetails {
+  padding: 5px 3px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  left: 246px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  width: 110px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  height: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  z-index: 9;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnCreateReport {
+  padding: 5px 3px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  top: 120px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  left: 5px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  width: 120px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  height: 15px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  z-index: 0;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  font-size: 10px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect span {
+  padding: 0px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelConnect {
+  margin: 2px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  top: 120px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  left: 5px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  width: 140px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  height: 15px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  z-index: 1;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  font-size: 10px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect span {
+  padding: 0px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelInfoConnect {
+  margin: 2px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+  left: 6px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+  width: 110px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+  height: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnConnect {
+  z-index: 8;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+  left: 366px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+  width: 110px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+  height: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_btnSDDisconnect {
+  z-index: 10;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  top: 462px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  left: 4px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  width: 16px;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  height: 16px;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  z-index: 2;
+}
+
+#SfMP171_ContentConnect_SfMP171_paperConnectionState {
+  border-width: 0px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  top: 462px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  left: 20px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  width: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  height: 16px;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  z-index: 3;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#SfMP171_ContentConnect_SfMP171_labelRootConnect {
+  font-size: 12px;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  top: 462px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  left: 60px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  width: 240px;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  height: 16px;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  z-index: 4;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  font-size: 12px;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect {
+  font-weight: normal;
+}
+
+#SfMP171_ContentConnect_SfMP171_txtOutputRootConnect span {
+  padding: 0px 0px 0px 0px;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  top: 440px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  left: 0px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  width: 480px;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  height: 40px;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  z-index: 6;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  border-style: none;
+}
+
+#SfMP171_ContentConnect_SfMP171_coverTextRectangle {
+  background-color: #e6e6e6;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+  top: 370px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+  width: 460px;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+  height: 10px;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig {
+  z-index: 5;
+}
+
+#SfMP171_ContentConnect_SfMP171_ProgressBarConnectLoadConfig .pb-label-text {
+  font-size: 10px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  top: 190px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  left: 5px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  width: 470px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  height: 173px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  z-index: 11;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox > .header span {
+  font-size: 12px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox > .header {
+  height: 32px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox > .header {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnectDescriptionBox {
+  opacity: 1;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+  top: 0px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+  left: -1px;
+  position: absolute;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+  width: 470px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+  height: 143px;
+}
+
+#SfMP171_ContentConnect_SfMP171_tableConnect {
+  z-index: 0;
+}
+
+#SfMP171_ContentConnect_SfMP171_TableItemSafeDomain {
+  z-index: 0;
+}
+
+#SfMP171_ContentConnect_SfMP171_TableItemName {
+  z-index: 1;
+}
+
+#SfMP171_ContentConnect_SfMP171_TableItemProjectname {
+  z-index: 2;
+}

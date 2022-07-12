@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExpressionTypeSet id="expressionTypes1" xmlns="http://www.br-automation.com/iat2016/expressionType/v1">
+  <ExpressionTypes>
+    <!-- ANDing of two bools -->
+    <ExpressionType name="InA_AND_InB" datatype="BOOL">
+      <Operands>
+        <Operand name="InA" datatype="BOOL" />
+        <Operand name="InB" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        InA AND InB
+      </Operation>
+    </ExpressionType>
+    <!-- ORing of two bools -->
+    <ExpressionType name="InA_OR_InB" datatype="BOOL">
+      <Operands>
+        <Operand name="InA" datatype="BOOL" />
+        <Operand name="InB" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        InA OR InB
+      </Operation>
+    </ExpressionType>
+    <!-- Two bools false -->
+    <ExpressionType name="InA_AND_InB_False" datatype="BOOL">
+      <Operands>
+        <Operand name="InA" datatype="BOOL" />
+        <Operand name="InB" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        NOT (InA OR InB)
+      </Operation>
+    </ExpressionType>
+    <!-- Integer + 1 -->
+    <ExpressionType name="IntPlusOne" datatype="ANY_INT">
+      <Operands>
+        <Operand name="InA" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        InA + 1
+      </Operation>
+    </ExpressionType>
+    <!-- Integer is Zero and Condition Met -->
+    <ExpressionType name="IntIsZero" datatype="BOOL">
+      <Operands>
+        <Operand name="Time" datatype="ANY_INT" />
+        <Operand name="InA" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        (Time = 0) AND InA
+      </Operation>
+    </ExpressionType>
+    <!-- See if an axis is selected (return true if it is.
+    Return true if the axis value matches the check value.
+    -->
+    <ExpressionType name="isAxisSelected" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </ExpressionType>
+    <!-- See if a mode is selected (return true if it is).
+    Provide a mask so sub-modes still show as true if the check value is a parent mode.
+    For example, if the mode selected is Production Single Step, 41h, this is sill a production mode.
+    To see if we are in Production Mode or not, 
+    Mode Selected = 41h, and the Parent Mode is what we are checking against.
+    Return ModeSelected AND ParentMode = ParentMode. This will be true if the mode selected is 
+    the parent mode, or if mode selected is a parent sub-mode.
+    -->
+    <ExpressionType name="isModeParentSelected" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        <!-- (ModeSelected AND ParentMode) &lt;&gt; 0 -->
+        ModeSelected = ParentMode
+      </Operation>
+    </ExpressionType>
+    <!-- See if a sub mode is selected (return true if it is.
+    Return true if the mode selected value matches the check value.
+    -->
+    <ExpressionType name="isSubModeSelected" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        ModeSelected = CheckValue
+      </Operation>
+    </ExpressionType>
+  </ExpressionTypes>
+</ExpressionTypeSet>

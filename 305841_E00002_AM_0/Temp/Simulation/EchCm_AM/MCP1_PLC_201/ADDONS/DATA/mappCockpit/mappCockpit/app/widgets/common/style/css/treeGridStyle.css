@@ -1,0 +1,44 @@
+/* Sets the font color of a deactivated cell */
+.treeCellDisabled {
+    color: rgba(128, 128, 128, 0.5);
+}
+
+/* Sets the font color of a highlighted deactivated cell */
+.e-rowcell.e-selectionbackground.e-active.treeCellDisabled{
+    color: rgba(128, 128, 128, 0.5);
+}
+
+.e-treegrid .e-gridheader {
+    background-color: var(--main-grey-dark1);
+}
+
+.e-gridheader .e-headercell { /* tree grid header color and size */
+    background-color: var(--main-grey-dark1);
+    min-height: 100%;
+    height: 30px;
+    border-bottom-color: var(--main-grey);
+}
+
+.e-treegrid .e-headercelldiv { /* treegrid headercell font styles*/
+    color: white;
+}    
+
+.e-treegrid .e-treegridtoolbar{  /* treegrid toolbar header */
+    background-color: var(--main-grey-dark1) !important;
+}
+
+/* selected rows in treegrid */
+.e-treegrid .e-selectionbackground{
+    background-color: var(--main-selection-background-color);
+    color: black;
+}
+
+.e-treegrid .e-selectingcell {
+    background-color: var(--main-selection-background-color);
+    color: black;
+}
+
+/* define the styling of toolbar text to not be black when hovering for all treegrid widgets */
+.e-treegrid .e-tooltxt.e-hover > span {
+    color: unset;
+}

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.br-automation.com/iat2014/widget" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://www.br-automation.com/iat2014/widget" elementFormDefault="qualified">
+  <xs:include schemaLocation="widget.xsd"/>
+  <xs:include schemaLocation="../../data/wwwRoot/BRVisu/schema/widgetTypes/WidgetTypes.xsd"/>
+</xs:schema>

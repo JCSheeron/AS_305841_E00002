@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDepth" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDepth" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDepth" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passOffsetAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassOffsetAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passOffsetAngle" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassOffsetAngle" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutActualOffset" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:axes[3].Status.CalculatedPosition1" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutActualOffset" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.depthAdjAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutDepthAdjAngle" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.depthAdjAngle" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutDepthAdjAngle" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.startOfPassPosition" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutStartOfPassPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.startOfPassPosition" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutStartOfPassPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.endOfPassPosition" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutEndOfPassPos" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.endOfPassPosition" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutEndOfPassPos" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistance" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDistance" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistance" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDistance" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistanceTraveled" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDistanceTraveled" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding><Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::ProdCycle:partMotion.passDistanceTraveled" attribute="editable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_numOutPassDistanceTraveled" attribute="editable::node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsReadyToPowerOn_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsHomed_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsPoweredOn_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsBrakeManRel_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsMoveActive_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsInPosition_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsMoveDone_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsStopped_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_PlcOpenState_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesSMState_list" /></Source>
+      <Target xsi:type="variable" refId="svOutEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOutEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snOutEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsReadyToPowerOn_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsHomed_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsPoweredOn_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsBrakeManRel_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsMoveActive_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsInPosition_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsMoveDone_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_IsStopped_list" /></Source>
+      <Target xsi:type="variable" refId="svInEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_PlcOpenState_list" /></Source>
+      <Target xsi:type="variable" refId="svInEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesSMState_list" /></Source>
+      <Target xsi:type="variable" refId="svInEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Session>
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svInEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="snippet" refId="snInEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Session>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesStatus_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘnumOutPosAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_OUTER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesStatus_listΘVelocityΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘnumOutVelAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutRdyForPwr" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsReadyToPowerOn" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutRdyForPwr" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsHomed" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsHomed" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsPoweredOn" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsPoweredOn" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsBrakeManRel" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsBrakeManRel" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsMoveActive" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsMoveActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsAtPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsAtPosition" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsAtPos" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsMoveDone" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsMoveDone" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEIsStopped" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutIsStopped" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEStatusInt" attribute="value" /><List refId="ServoStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snOutEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutState" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svOutEStateInt" attribute="value" /><List refId="ServoSmStateGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_OutEAxisStatusΘtxtOutState" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesStatus_listΘPositionΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘnumOutPosAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="twoWay">
+      <Source mode="twoWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svAD_INNER_ECCENTRIC" attribute="value" /><List refId="cmpwid_axesStatus_listΘVelocityΘnode" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘnumOutVelAct" attribute="node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsReadyToPowerOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutRdyForPwr" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsReadyToPowerOn" attribute="value" /><List refId="TextStyleHiGoodLoBad1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutRdyForPwr" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsHomed" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsHomed" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsHomed" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsPoweredOn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsPoweredOn" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsPoweredOn" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsBrakeManRel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsBrakeManRel" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsBrakeManRel" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsMoveActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsMoveActive" attribute="value" /><List refId="TextStyleLoGoodHiWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsMoveActive" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsAtPosition" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsAtPos" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsAtPosition" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsAtPos" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsMoveDone" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsMoveDone" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsMoveDone" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsStopped" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEIsStopped" attribute="value" /><List refId="TextStyleHiGoodLoWarn1" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutIsStopped" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEStatusInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutStatus" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEStatusInt" attribute="value" /><List refId="ServoStatusGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutStatus" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source xsi:type="snippet" refId="snInEStateInt" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutState" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="mainContentCuttingHead">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="svInEStateInt" attribute="value" /><List refId="ServoSmStateGoodBadText" /></Source>
+      <Target xsi:type="brease" refId="mainContentCuttingHead_InEAxisStatusΘtxtOutState" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_ContentNavLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableBtnNavTransfer" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentNavLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableBtnExchange" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentNavLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableBtnNavCompletion" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+</BindingDefinition>

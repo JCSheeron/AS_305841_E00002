@@ -1,0 +1,72 @@
+* {box-sizing: border-box}
+/* Style the tab */
+.mainNavigation {
+    float: left;
+    background-color: var(--navigation-background-color);
+    width: var(--navigation-bar-width);
+    height: 100%;
+    border-right: 3px solid var(--main-border-color);
+}
+
+/* Style the buttons inside the tab */
+.mainNavigation button {
+    display: block;
+    background-color: inherit;
+    color: var(--main-border-color);
+    padding: 0px 0px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-filter: grayscale(100);
+    filter: grayscale(100);
+    padding-bottom: 2px;
+    top: 0px;
+}
+
+/* Change background color of buttons on hover */
+.mainNavigation button:hover {
+    color: var(--navigation-hover-color);
+}
+
+/* Create an active/current "tab button" class */
+.mainNavigation button.active {
+    color: var(--navigation-highlight-color);
+    -webkit-filter: none;
+    filter: none;
+}
+
+.mainNavigation button img{
+    -webkit-filter: contrast(1);
+    filter: contrast(1);
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    width: calc(100% - var(--navigation-bar-width));
+    height: 100%;
+}
+
+.rightHandSideBarButton{
+    position: absolute;
+    left: var(--tabWidgetFlexTabAreaWidth);
+    width: 54px !important;
+    height: 50px !important;
+    border-left: 3px gray solid !important;
+    border-bottom: 3px gray solid !important;
+}
+
+rightHandSideBarButton active{
+    background-color: var(--main-orange);
+}
+
+.absoluteTab{
+    position: absolute;
+    top:50px;
+    left:48px;
+    z-index: 1;
+    background-color: white;
+}

@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Config Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../Help/styles.css">
+  </head>
+  <body onload="DomcatInitialize()">
+    <script language="javascript" src="../../../../../../AS/Glossary/glossary.js" type="text/javascript"></script>
+    <script language="javascript" src="../../../../../../AS/Domcat/Domcat.js" type="text/javascript"></script>
+<div class="container">
+<h1>ConfigDocumentation</h1>
+<div>
+ <div><h2>Properties</h2></div>
+<table class="parameter_tab">
+<thead>
+<tr>
+<th class="parameter_tab">Name</th>
+<th class="parameter_tab">Description</th>
+<th class="parameter_tab">Properties</th>
+</tr>
+ </thead>
+<tbody>
+<tr id="brease.config.DateFormat">
+<td class="parameter_tab"><a name="brease.config.DateFormat"></a>brease.config.DateFormat</td>
+<td class="parameter_tab"><p>Either a format string (e.g. "HH:mm") or a pattern ("F").</p>
+
+<p>
+Read more about <a href="../../FAQ/FormatDate.html">Date Formats</a> in FAQ.</p>
+</td>
+<td class="parameter_tab"><ul></ul></td>
+</tr>
+<tr id="brease.config.MeasurementSystemFormat">
+<td class="parameter_tab"><a name="brease.config.MeasurementSystemFormat"></a>brease.config.MeasurementSystemFormat</td>
+<td class="parameter_tab"><p><a href="#brease.config.NumberFormat" rel="brease.config.NumberFormat" class="docClass">brease.config.NumberFormat</a> for every measurement system.</p>
+
+<p>Example:</p>
+
+<pre><code>  {'metric':{ 'decimalPlaces': 2, 'minimumIntegerDigits':2 }, 
+  'imperial':{ 'decimalPlaces': 3, 'minimumIntegerDigits':1 }, 
+  'imperial-us':{ 'decimalPlaces': 1, 'minimumIntegerDigits':1 }}
+</code></pre>
+</td>
+<td class="parameter_tab"><ul></ul></td>
+</tr>
+<tr id="brease.config.MeasurementSystemUnit">
+<td class="parameter_tab"><a name="brease.config.MeasurementSystemUnit"></a>brease.config.MeasurementSystemUnit</td>
+<td class="parameter_tab"><p><a href="#brease.config.UnitCode" rel="brease.config.UnitCode" class="docClass">brease.config.UnitCode</a> for every measurement system.</p>
+
+<p>Example:</p>
+
+<pre><code>  {'metric': 'GRM','imperial': 'ONZ','imperial-us': 'ONZ'}
+</code></pre>
+
+<p>Unit codes are CEFACT Common Codes.</p>
+</td>
+<td class="parameter_tab"><ul><li>imperial: brease.config.UnitCode
+</li><li>imperial-us: brease.config.UnitCode
+</li><li>metric: brease.config.UnitCode
+</li></ul></td>
+</tr>
+<tr id="brease.config.NumberFormat">
+<td class="parameter_tab"><a name="brease.config.NumberFormat"></a>brease.config.NumberFormat</td>
+<td class="parameter_tab"><p>NumberFormat object in string notation:
+e.g.</p>
+
+<pre><code>  { 'decimalPlaces': 2, 'minimumIntegerDigits':2 }
+</code></pre>
+</td>
+<td class="parameter_tab"><ul><li>decimalPlaces: Integer<p>The number of fraction digits to use.<br/>
+0 &lt;= decimalPlaces &lt;= 20</p>
+</li><li>maximumIntegerDigits: Integer<p>The maximum number of integer digits to use. For higher numbers display mode switches to normalized scientific notation.<br/>
+maximumIntegerDigits >= 1.</p>
+</li><li>minimumIntegerDigits: Integer<p>The minimum number of integer digits to use.<br/>
+minimumIntegerDigits >= 1.</p>
+</li></ul></td>
+</tr>
+<tr id="brease.config.SortFunctions">
+<td class="parameter_tab"><a name="brease.config.SortFunctions"></a>brease.config.SortFunctions</td>
+<td class="parameter_tab">
+</td>
+<td class="parameter_tab"><ul><li>date: String<p>Sort function for dates</p>
+</li><li>int: String<p>Sort function for integers</p>
+</li><li>number: String<p>Sort function for numbers</p>
+</li><li>string: String<p>Sort function for strings</p>
+</li><li>string-ins: String<p>Sort function for strings; case insensitive</p>
+</li></ul></td>
+</tr>
+<tr id="brease.config.UnitCode">
+<td class="parameter_tab"><a name="brease.config.UnitCode"></a>brease.config.UnitCode</td>
+<td class="parameter_tab"><p>CEFACT Common Code of a unit<br/>
+e.g.</p>
+
+<pre><code>  CMT         (for cm)
+  KGM         (for kg)
+  WTT         (for W)
+</code></pre>
+
+<p>See <a href="../../../../unitsystem/units.htm">available units</a> and <a href="../../firstproject/page_shownode.html">unit guideline</a>.</p>
+</td>
+<td class="parameter_tab"><ul></ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

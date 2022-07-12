@@ -1,0 +1,1052 @@
+<?xml version="1.0"?>
+<?AutomationRuntimeIOSystem Version = 2.5.0.7?>
+<ChannelConfiguration xmlns="http://www.br-automation.com/AR/IO">
+  <Module ID="$root" Hardware="X20CP3586" HardwareModuleName="MCP1_PLC_201" ModuleID="44">
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/HW" Address="0" Direction="IN" Type="UDINT" Sig_St_Udint="1" ChannelType="SerialNumber" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/HW" Address="1" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="ModuleID" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="J4.25" Ext="/HW" Address="15" Direction="IN" Type="UINT" ChannelType="HardwareVariant" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="J4.25" Ext="/HW" Address="16" Direction="IN" Type="UINT" ChannelType="FirmwareVersion" />
+    <Channel ID="StorageWear" Description="Wear level of storage medium in percent" FromVersion="A4.90" Ext="/HW" Address="17" Direction="IN" Type="UINT" Sig_Ana_0percent_100percent_genuine="1" ChannelType="GenericFuncCall" Function="storageDpWear" CyclicUpdate="1" />
+    <Channel ID="ModeSwitch" Description="Mode switch" Ext="/HW" Address="2" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Mode" />
+    <Channel ID="BatteryStatusCPU" Description="Battery status CPU (0 = battery low or missing, 1 = battery ok,)" Ext="/HW" Address="3" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Battery" BatteryDetectionMethod="1" Ordinal="2" />
+    <Channel ID="TemperatureCPU" Description="Temperature CPU [1/10C]" Ext="/HW" Address="4" Direction="IN" Type="UINT" Sig_Temp_CpuTemp="1" ChannelType="Temp" Ordinal="1" />
+    <Channel ID="TemperatureENV" Description="Temperature cooling plate [1/10C]" Ext="/HW" Address="5" Direction="IN" Type="UINT" Sig_Temp_CpuTemp="1" ChannelType="Temp" Ordinal="2" />
+    <Channel ID="SystemTime" Description="System time at the start of the current task cycle [µs]" Ext="/HW" Address="9" Direction="IN" Type="DINT" Sig_St_Dint="1" ChannelType="SystemTime" />
+    <Channel ID="StatusInput01" Description="I/O power supply warning (0 = DC OK)" Ext="/HW" Address="8" Direction="IN" Type="BOOL" Sig_St_Bool="1" ChannelType="StatusInput" Ordinal="2" />
+    <Channel ID="SupplyCurrent" Description="Bus current 0.1 A  X2X Link IF6" FromVersion="A4.51" Ext="/HW" Address="11" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="StatusInput" Ordinal="3" />
+    <Channel ID="SupplyVoltage" Description="Bus voltage 0.1 V  X2X Link IF6" FromVersion="A4.51" Ext="/HW" Address="12" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="StatusInput" Ordinal="4" />
+    <Channel ID="IF2.NodeSwitch" Description="Node switch" Ext="/HW" Address="6" Direction="IN" Type="USINT" Sig_St_Byte="1" ChannelType="Node" Device="PCI.IF2" />
+    <Channel ID="IF3.LinkOk" Description="Link state" Ext="/INFO" Address="0x8000001A" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.OutputDMAMargin" Description="Margin to output cycle deadline in microseconds" Ext="/INFO" Address="0x8000000C" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.NodeNumber" Description="Node number currently in use (255 = invalid)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF3.CycleOk" Description="Indication for proper cyclic operation (1 = operational)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.SyncOk" Description="Indication for a synchronized POWERLINK-system (1 = synchronized)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF3.TimeSeconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Seconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.TimeNanoseconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Nanoseconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.NettimeSoC" Description="Network time extracted from current SoC-Frame [µs] (RelativeTime in POWERLINK V2)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.NettimeOffset" Description="Network time offset to local system time [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF3.CycleCount" Description="Overall number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.FailedCycleCount" Description="Number of failed bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleTimeViolationCount" Description="Number of cycle time violations" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleIdleTime" Description="Unoccupied time during one POWERLINK cycle [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF3.CycleCongestionCount" Description="allways 0, available for legacy projects" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF6.CycleCount" Description="Number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.BreakCount" Description="Number of bus cycles with set break signal" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.Nettime" Description="Timestamp when the current input frame was started  [µs]" FromVersion="I2.90" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncErrorCount" Description="Number of failed synchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncSramErrorCount" Description="Number of memory access errors within synchronous frame (overflow/underrun)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncBusyErrorCount" Description="Number of not sent synchronous frames (sender not ready)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncNoRxErrorCount" Description="Number of not received synchronous frames (timeout)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncFormatErrorCount" Description="Number of faulty synchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncPendingErrorCount" Description="Number of synchronous frames which could not be sent because of receiving a frame" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncErrorCount" Description="Number of failed asynchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncSramErrorCount" Description="Number of memory access errors within asynchronous frame (overflow/underrun)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncBusyErrorCount" Description="Number of not sent asynchronous frames (sender not ready)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncNoRxErrorCount" Description="Number of not received asynchronous frames (timeout)" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFormatErrorCount" Description="Number of faulty asynchronous frames" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncPendingErrorCount" Description="Number of asynchronous frames which could not be sent because of receiving a frame" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.DMALateOutputErrorCount" Description="Number of cycles when DMA for cyclic outputs was too late" FromVersion="G2.93" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.NrOfStationsMax" Description="Number of max. stations" FromVersion="A3.08" Ext="/INFO" Address="0x80000113" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.NrOfStationsConfigured" Description="Number of configured stations" FromVersion="A3.08" Ext="/INFO" Address="0x80000114" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationAtBusEnd" Description="Station at end of bus" FromVersion="A3.08" Ext="/INFO" Address="0x80000115" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationAtBusEndChangeTime" Description="Time of last change at station on end of bus" FromVersion="A3.08" Ext="/INFO" Address="0xC0000115" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.StationPastOutFrameError" Description="First station which recognizes output frame error" FromVersion="A3.08" Ext="/INFO" Address="0x80000116" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationPastOutFrameErrorChangeTime" Description="Time of last change of channel StationPastOutFrameError" FromVersion="A3.08" Ext="/INFO" Address="0xC0000116" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.StationPastInFrameError" Description="First station which recognizes input frame error" FromVersion="A3.08" Ext="/INFO" Address="0x80000117" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF6.StationPastInFrameErrorChangeTime" Description="Time of last change of channel StationPastInFrameError" FromVersion="A3.08" Ext="/INFO" Address="0xC0000117" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" />
+    <Channel ID="IF6.SyncInFrameSize" Description="Size of synchronous input frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x80000118" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.SyncOutFrameSize" Description="Size of synchronous output frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x80000119" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFrameSize" Description="Size of asynchronous frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011A" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.AsyncFrameSpareSize" Description="Size reserve within asynchronous frame [Bytes]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011B" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF6.BusLengthConfigured" Description="Configured bus length [m]" FromVersion="A3.08" Ext="/INFO" Address="0x8000011C" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+  </Module>
+  <Module ID="IF2.ST1" Hardware="6PPT50.121E-16B" HardwareModuleName="OWS1_OIT1" ModuleID="54">
+    <Channel ID="OPCUAconnectionOK" Description="Module status (1 = module present)" FromVersion="A4.51" Ext="/OK" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+  </Module>
+  <Module ID="IF3.ST12" Hardware="8BVI0055HCDS.000-1" HardwareModuleName="AM2_PLK12" ModuleID="20">
+    <Channel ID="CyclicParameterRequest_AX_1" Description="" Ext="/DYNAMIC" Address="0x00012020" Direction="OUT" Type="OCTET[12]" ArConfig="copy" />
+    <Channel ID="CyclicDataToDrive_AX_1" Description="" Ext="/DYNAMIC" Address="0x00022020" Direction="OUT" Type="OCTET[20]" ArConfig="copy" />
+    <Channel ID="CyclicParameterRequest_AX_2" Description="" Ext="/DYNAMIC" Address="0x00012021" Direction="OUT" Type="OCTET[12]" ArConfig="copy" />
+    <Channel ID="CyclicDataToDrive_AX_2" Description="" Ext="/DYNAMIC" Address="0x00022021" Direction="OUT" Type="OCTET[20]" ArConfig="Copy" />
+    <Channel ID="CyclicParameterResponse_AX_1" Description="" Ext="/DYNAMIC" Address="0x00012030" Direction="IN" Type="OCTET[12]" ArConfig="copy" />
+    <Channel ID="CyclicStatusBitsResponse_AX_1" Description="" Ext="/DYNAMIC" Address="0x00022030" Direction="IN" Type="OCTET[4]" ArConfig="copy" />
+    <Channel ID="CyclicMonitorData_AX_1" Description="" Ext="/DYNAMIC" Address="0x00032030" Direction="IN" Type="OCTET[16]" ArConfig="copy" />
+    <Channel ID="CycUserFromDrive_AX_1" Description="" Ext="/DYNAMIC" Address="0x00042030" Direction="IN" Type="OCTET[20]" ArConfig="copy" />
+    <Channel ID="MA1CYCSEND_AX_1" Description="" Ext="/DYNAMIC" Address="0x00052030" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+    <Channel ID="MA2CYCSEND_AX_1" Description="" Ext="/DYNAMIC" Address="0x00062030" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+    <Channel ID="MA3CYCSEND_AX_1" Description="" Ext="/DYNAMIC" Address="0x00072030" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+    <Channel ID="CyclicParameterResponse_AX_2" Description="" Ext="/DYNAMIC" Address="0x00012031" Direction="IN" Type="OCTET[12]" ArConfig="copy" />
+    <Channel ID="CyclicStatusBitsResponse_AX_2" Description="" Ext="/DYNAMIC" Address="0x00022031" Direction="IN" Type="OCTET[4]" ArConfig="copy" />
+    <Channel ID="CyclicMonitorData_AX_2" Description="" Ext="/DYNAMIC" Address="0x00032031" Direction="IN" Type="OCTET[16]" ArConfig="copy" />
+    <Channel ID="CycUserFromDrive_AX_2" Description="" Ext="/DYNAMIC" Address="0x00042031" Direction="IN" Type="OCTET[20]" ArConfig="copy" />
+    <Channel ID="MA1CYCSEND_AX_2" Description="" Ext="/DYNAMIC" Address="0x00052031" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+    <Channel ID="MA2CYCSEND_AX_2" Description="" Ext="/DYNAMIC" Address="0x00062031" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+    <Channel ID="MA3CYCSEND_AX_2" Description="" Ext="/DYNAMIC" Address="0x00072031" Direction="IN" Type="OCTET[8]" ArConfig="copy" />
+  </Module>
+  <Module ID="IF3.ST12.SS2" Hardware="8BVSV2SAFE1-1" HardwareModuleName="AM1Enc_Z_SM12" ModuleID="7">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="AX1_StatusNotErrorFunc" Description="Functional Fail Safe status bit (FALSE = functional error) Axis 1" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x01" IsStateChannel="true" />
+    <Channel ID="AX1_StatusOperational" Description="Function block of axis 1 is in state operational" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSTO" Description="STO status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSBC" Description="SBC status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSS1" Description="SS1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusNotErrorEnc" Description="Encoder error status bit (FALSE = Encoder error)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSTO1" Description="STO1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDC" Description="SDC status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSOS" Description="SOS status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x02" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSS2" Description="SS2 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLA" Description="SLA status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS1" Description="SLS1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS2" Description="SLS2 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS3" Description="SLS3 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS4" Description="SLS4 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDI_Pos" Description="SDI_Pos status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x03" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDI_Neg" Description="SDI_Neg status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLI" Description="SLI status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusAllReqActive" Description="All requested safety functions are active" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusHoming" Description="Safe position valid bit (TRUE = valid)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusRequestHomingOK" Description="Status Homing request" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLP" Description="SLP status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSMP" Description="SMP status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusRSPValid" Description="RSP Valid Bit" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSetPosAlive" Description="Alive testing of setposition is valid" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_SafePOSITION_4Byte" Description="Safe position" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="8" Direction="IN" Type="DINT" SODIndex="0x6100" SODSubIndex="0x05" />
+    <Channel ID="AX1_SafeSPEED_4Byte" Description="Safe speed" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="12" Direction="IN" Type="DINT" SODIndex="0x6100" SODSubIndex="0x06" />
+  </Module>
+  <Module ID="IF3.ST12.SS1" Hardware="8BVSV2SAFE1-1" HardwareModuleName="AM1Enc_Spin_SM11" ModuleID="4">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="AX1_StatusNotErrorFunc" Description="Functional Fail Safe status bit (FALSE = functional error) Axis 1" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x01" IsStateChannel="true" />
+    <Channel ID="AX1_StatusOperational" Description="Function block of axis 1 is in state operational" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSTO" Description="STO status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSBC" Description="SBC status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSS1" Description="SS1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusNotErrorEnc" Description="Encoder error status bit (FALSE = Encoder error)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSTO1" Description="STO1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDC" Description="SDC status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="4" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSOS" Description="SOS status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x02" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSS2" Description="SS2 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLA" Description="SLA status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS1" Description="SLS1 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS2" Description="SLS2 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS3" Description="SLS3 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLS4" Description="SLS4 status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="5" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDI_Pos" Description="SDI_Pos status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="0" Direction="IN" Type="BOOL" SODIndex="0x6100" SODSubIndex="0x03" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSDI_Neg" Description="SDI_Neg status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLI" Description="SLI status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusAllReqActive" Description="All requested safety functions are active" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="6" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusHoming" Description="Safe position valid bit (TRUE = valid)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="1" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusRequestHomingOK" Description="Status Homing request" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="2" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSLP" Description="SLP status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="3" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSMP" Description="SMP status bit (TRUE = active)" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="4" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusRSPValid" Description="RSP Valid Bit" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="6" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_StatusSetPosAlive" Description="Alive testing of setposition is valid" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="7" BitOffset="7" Direction="IN" Type="BOOL" IsStateChannel="true" />
+    <Channel ID="AX1_SafePOSITION_4Byte" Description="Safe position" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="8" Direction="IN" Type="DINT" SODIndex="0x6100" SODSubIndex="0x05" />
+    <Channel ID="AX1_SafeSPEED_4Byte" Description="Safe speed" Safe="true" Disabled="true" Ext="/SUB=SafeIN" Address="12" Direction="IN" Type="DINT" SODIndex="0x6100" SODSubIndex="0x06" />
+  </Module>
+  <Module ID="IF3.ST13" Hardware="8I66xxxxxxx.0P-xxx" HardwareModuleName="VFD1_PLK13" ModuleID="181">
+    <Channel ID="ModuleOk" Description="Module status (1: communication card present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number (communication card)" Ext="/INFO" Address="0x00041018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID (communication card)" Ext="/INFO" Address="0x00021018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="0x00031018" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="0x000DFFF0" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="EthRxLost" Description="Number of lost Rx-Frames" Ext="/DYNAMIC" Address="0x00005033" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOversize" Description="Number of received oversized frames &gt; 1500 Bytes" Ext="/DYNAMIC" Address="0x00005034" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxCRCError" Description="Number of Rx-Frames with wrong CRC" Ext="/DYNAMIC" Address="0x00005035" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOverflow" Description="Number of lost Rx-Frames due to performance shortage on CN" Ext="/DYNAMIC" Address="0x00005036" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthTxCollision" Description="Number of collisions on ethernet while CN sending" Ext="/DYNAMIC" Address="0x00005037" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthPhy1LinkOk" Description="Link of interface 1 is active" Ext="/SUB=EthLinkOk" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy1LinkLoss" Description="Increments each time when link of physical interface 1 is lost" Ext="/DYNAMIC" Address="0x00005031" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="EthPhy2LinkOk" Description="Link of interface 2 is active" Ext="/SUB=EthLinkOk" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy2LinkLoss" Description="Increments each time when link of physical interface 2 is lost" Ext="/DYNAMIC" Address="0x00005032" Direction="IN" Type="UINT" Sig_St_Dint="1" />
+    <Channel ID="ACPi_SerialNumber" Description="Serial number (ACPi)" Ext="/INFO" Address="0x00025010" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ACPi_ModuleID" Description="Module ID (ACPi)" Ext="/INFO" Address="0x00015010" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="HMIS_Input" Description="HMIS: Device specific status code" Ext="/DYNAMIC" Address="0x00292002" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="LFT_Input" Description="LFT: Device specific error code (last recorded fault)" Ext="/DYNAMIC" Address="0x00162029" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="ErrorCode_I603F" Description="ERRD (DS402): Standardized error code (last recorded fault)" Ext="/DYNAMIC" Address="0x0000603F" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusWord_I6041" Description="ETAD (DS402): Actual status word" Ext="/DYNAMIC" Address="0x00006041" Direction="IN" Type="UINT" Sig_St_Word="1" />
+    <Channel ID="ETAD_Input_rtso" Description="ETAD (DS402): Ready to switch on" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_so" Description="ETAD (DS402): Switched on" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_oe" Description="ETAD (DS402): Operation enabled" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_f" Description="ETAD (DS402): Fault (1: error present)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_ve" Description="ETAD (DS402): Voltage enabled" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_qs" Description="ETAD (DS402): Quick stop CAUTION: low-active" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_sod" Description="ETAD (DS402): Switch on disabled" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_w" Description="ETAD (DS402): Warning (1: alarm present)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_rm" Description="ETAD (DS402): Remote (1: drive is controlled remotely e.g. by PLC)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="9" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_tr" Description="ETAD (DS402): Reference value or target reached (steady state)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="10" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_ila" Description="ETAD (DS402): Internal limit active (setpoint is adapted by SMI, LSP or SMA, HSP)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="11" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_ms14" Description="ETAD (DS402): Manufacturer specific (STOP forced by stop key on handheld)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="14" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="ETAD_Input_ms15" Description="ETAD (DS402): Manufacturer specific (rotation in backward direction)" Ext="/SUB=ETAD_Input_BOOL" Address="0" BitOffset="15" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="VlVelocityDemand_I6043" Description="FROD (DS402): Speed reference after ramp [rpm] (value for PWM control)" Ext="/DYNAMIC" Address="0x00006043" Direction="IN" Type="INT" Sig_St_Int="1" />
+    <Channel ID="VlVelocityActualValue_I6044" Description="RFRD (DS402): Actual speed value [rpm] (encoderless estimation)" Ext="/DYNAMIC" Address="0x00006044" Direction="IN" Type="INT" Sig_St_Int="1" />
+  </Module>
+  <Module ID="IF6.ST1" Hardware="X20DI4371" HardwareModuleName="IOR00SL01" ModuleID="38" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1=module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="IF6.ST2" Hardware="X20SO6300" HardwareModuleName="IOR00SL02" ModuleID="41">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK01" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK02" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK03" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK04" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK05" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK06" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="PhysicalStateOutput01" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+    <Channel ID="PhysicalStateOutput02" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+    <Channel ID="PhysicalStateOutput03" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+    <Channel ID="PhysicalStateOutput04" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+    <Channel ID="PhysicalStateOutput05" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+    <Channel ID="PhysicalStateOutput06" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi1" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-06" />
+  </Module>
+  <Module ID="SS1" Hardware="X20IF1082-2" HardwareModuleName="PLK240-2" ModuleID="102">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Sig_St_Bool="1" Type="BOOL" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/HW" Address="0" Direction="IN" Type="UDINT" Sig_St_Udint="1" ChannelType="HWTree" AliasName="Serial_Number" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/HW" Address="1" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" AliasName="Modno" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/HW" Address="2" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/HW" Address="3" Direction="IN" Type="UINT" Sig_St_Uint="1" ChannelType="HWTree" />
+    <Channel ID="IF1.NodeSwitch" Description="Selected node switch value" Ext="/INFO" Address="0x80000019" Direction="IN" Type="USINT" Sig_St_Byte="1" />
+    <Channel ID="IF1.LinkOk01" Description="Link state interface 1" Ext="/INFO" Address="0x8000001A" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.LinkOk02" Description="Link state interface 2" Ext="/INFO" Address="0x8000001A" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.NodeNumber" Description="Node number currently in use (255 = invalid)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="IF1.CycleOk" Description="Indication for proper cyclic operation (1 = operational)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.SyncOk" Description="Indication for a synchronized POWERLINK-system (1 = synchronized)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="IF1.TimeSeconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Seconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.TimeNanoseconds" Description="Absolute time extracted from current SoC-Frame (NetTime in POWERLINK V2) - Nanoseconds" FromVersion="M2.90" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.NettimeSoC" Description="Network time extracted from current SoC-Frame [µs] (RelativeTime in POWERLINK V2)" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF1.NettimeOffset" Description="Network time offset to local system time [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="IF1.CycleCount" Description="Overall number of bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.FailedCycleCount" Description="Number of failed bus cycles" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleTimeViolationCount" Description="Number of cycle time violations" FromVersion="I2.85" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleIdleTime" Description="Unoccupied time during one POWERLINK cycle [µs]" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="IF1.CycleCongestionCount" Description="allways 0, available for legacy projects" FromVersion="B2.87" Ext="/INFO" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+  </Module>
+  <Module ID="SS1.IF1.ST1" Hardware="X20BC8083" HardwareModuleName="BC_PLK1" ModuleID="30" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" FromVersion="C2.87" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="EthRxLost" Description="Number of lost Rx-Frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000402" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOversize" Description="Number of received oversized frames &gt; 1500 Bytes" FromVersion="C2.87" Ext="/INFO" Address="0x80000403" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxCRCError" Description="Number of Rx-Frames with wrong CRC" FromVersion="C2.87" Ext="/INFO" Address="0x80000404" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOverflow" Description="Number of lost Rx-Frames due to performance shortage on BC" FromVersion="C2.87" Ext="/INFO" Address="0x80000405" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthTxCollision" Description="Number of collisions on ethernet while BC sending" FromVersion="C2.87" Ext="/INFO" Address="0x80000406" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthPhy1LinkOk" Description="Link of interface 1 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy1LinkLoss" Description="Increments each time when link of physical interface 1 is lost" FromVersion="C2.87" Ext="/INFO" Address="0x80000410" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy2LinkOk" Description="Link of interface 2 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy2LinkLoss" Description="Increments each time when link of physical interface 2 is lost" FromVersion="C2.87" Ext="/INFO" Address="0x80000411" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy3Plugged" Description="Phy of interface 3 plugged" FromVersion="A2.94" Ext="/INFO" Address="0x80000416" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy3LinkOk" Description="Link of interface 3 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy3LinkLoss" Description="Increments each time when link of physical interface 3 is lost" Ext="/INFO" Address="0x80000412" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy4Plugged" Description="Phy of interface 4 plugged" FromVersion="A2.94" Ext="/INFO" Address="0x80000416" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy4LinkOk" Description="Link of interface 4 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy4LinkLoss" Description="Increments each time when link of physical interface 4 is lost" Ext="/INFO" Address="0x80000413" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy5Plugged" Description="Phy of interface 5 plugged" FromVersion="A2.94" Ext="/INFO" Address="0x80000416" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy5LinkOk" Description="Link of interface 5 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy5LinkLoss" Description="Increments each time when link of physical interface 5 is lost" FromVersion="P2.90" Ext="/INFO" Address="0x80000414" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy6Plugged" Description="Phy of interface 6 plugged" FromVersion="A2.94" Ext="/INFO" Address="0x80000416" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy6LinkOk" Description="Link of interface 6 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy6LinkLoss" Description="Increments each time when link of physical interface 6 is lost" FromVersion="P2.90" Ext="/INFO" Address="0x80000415" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="Nettime" Description="Nettime of cycle receiving the Poll Response of the station" FromVersion="I4.02" Ext="/INFO" Address="0x80000450" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+  </Module>
+  <Module ID="SS1.IF1.ST1" Hardware="X20BB81" HardwareModuleName="RIO_OWS1_PLK1" ModuleID="161">
+    <Channel ID="IF1.CycleCount" Description="Number of bus cycles" FromVersion="C2.87" Ext="/INFO" Address="0x80000100" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.BreakCount" Description="Number of bus cycles with set break signal" FromVersion="C2.87" Ext="/INFO" Address="0x80000101" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncErrorCount" Description="Number of failed synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000102" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncBusyErrorCount" Description="Number of not sent synchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x80000105" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncNoRxErrorCount" Description="Number of not received synchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x80000106" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncFormatErrorCount" Description="Number of faulty synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000107" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncPendingErrorCount" Description="Number of synchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x80000108" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncErrorCount" Description="Number of failed asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000103" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncBusyErrorCount" Description="Number of not sent asynchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010A" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncNoRxErrorCount" Description="Number of not received asynchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010B" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFormatErrorCount" Description="Number of faulty asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x8000010C" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncPendingErrorCount" Description="Number of asynchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x8000010D" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleLostWhileOperational" Description="Hardware configuration changed: module disconnected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010E" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleNewWhileOperational" Description="Hardware configuration changed: new module detected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010F" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEnd" Description="Station at end of bus" FromVersion="J4.08" Ext="/INFO" Address="0x80000115" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEndChangeTime" Description="Time of last change at station on end of bus" FromVersion="J4.08" Ext="/INFO" Address="0xC0000115" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameError" Description="First station which recognizes output frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000116" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameErrorChangeTime" Description="Time of last change of channel StationPastOutFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000116" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameError" Description="First station which recognizes input frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000117" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameErrorChangeTime" Description="Time of last change of channel StationPastInFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000117" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsMax" Description="Number of max. stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000113" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsConfigured" Description="Number of configured stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000114" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.SyncInFrameSize" Description="Size of synchronous input frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000118" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncOutFrameSize" Description="Size of synchronous output frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000119" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSize" Description="Size of asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011A" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSpareSize" Description="Size reserve within asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011B" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.BusLengthConfigured" Description="Configured bus length [m]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011C" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST2" Hardware="X20DI6371" HardwareModuleName="PLK1_IOR01SL02" ModuleID="57" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput05" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput06" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST3" Hardware="X20DI6371" HardwareModuleName="PLK1_IOR01SL03" ModuleID="60" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput05" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput06" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST4" Hardware="X20DI6371" HardwareModuleName="PLK1_IOR01SL04" ModuleID="63" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput05" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput06" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST5" Hardware="X20DS1119" HardwareModuleName="PLK1_IOR01SL05" ModuleID="66" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" />
+    <Channel ID="StaleData" Description="Data not from latest cycle" Ext="/OK" Address="0" BitOffset="1" Direction="IN" Type="BOOL" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SDCLifeCount" Description="SDC life count" Address="0x02ab" Direction="IN" Type="SINT" Sig_St_Sint="1" />
+    <Channel ID="ProtocolError" Description="Number of protocol errors" Address="0x0223" Direction="IN" Type="USINT" />
+    <Channel ID="ProtocolSequenceViolation" Description="Number of sequence violations" Address="0x0227" Direction="IN" Type="USINT" />
+    <Channel ID="CounterReset" Description="Clear counter" Address="0x1809" BitOffset="0" Direction="OUT" Type="BOOL" />
+    <Channel ID="CounterValue01" Description="Current counter value" Address="0x18c4" Direction="IN" Type="DINT" />
+    <Channel ID="PowerSupply01" Description="Status encoder supply 24 VDC (0 = DC OK)" Address="0x034b" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="PowerSupply02" Description="Status encoder supply 5 VDC (0 = DC OK)" Address="0x034b" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST6" Hardware="X20SLX410" HardwareModuleName="SafetyController_R01SL06" ModuleID="166">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SLXioCycle" Description="" Ext="/MULTIPLEXED /INFOCHANNEL=TransferDuration" Address="0" Direction="IN" Type="UDINT" />
+    <Channel ID="SafeDigitalInput01" Description="24 VDC, sink" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeDigitalInput02" Description="24 VDC, sink" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeDigitalInput03" Description="24 VDC, sink" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeDigitalInput04" Description="24 VDC, sink" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeTwoChannelInput0102" Description="Dual-channel evaluation channel 1/2" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeTwoChannelInput0304" Description="Dual-channel evaluation channel 3/4" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeInputOK01" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeInputOK02" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="0" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeInputOK03" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeInputOK04" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeTwoChannelOK0102" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="SafeTwoChannelOK0304" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=MFWslxIN" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" SafetyOption="3" />
+    <Channel ID="BOOL10001" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10002" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10003" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10004" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10005" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10006" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10007" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10008" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10009" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10010" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10011" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10012" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10013" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10014" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10015" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10016" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10017" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10018" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10019" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10020" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10021" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10022" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10023" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL10024" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="OUT" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00001" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00002" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00003" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00004" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00005" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00006" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00007" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00008" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00009" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00010" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00011" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00012" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00013" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00014" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00015" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00016" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00017" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00018" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00019" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00020" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00021" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00022" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00023" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="BOOL00024" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="BOOL" Sig_St_Bool="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="UINT0001" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="UINT" Sig_St_Uint="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="UINT0002" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="UINT" Sig_St_Uint="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="UINT0003" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="UINT" Sig_St_Uint="1" Inverted="true" Group="CPU_SafeLOGIC" />
+    <Channel ID="UINT0004" Description="" CrossLink="true" Ext="/DYNAMIC /MULTIPLEXED" Direction="IN" Type="UINT" Sig_St_Uint="1" Inverted="true" Group="CPU_SafeLOGIC" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST7" Hardware="X20DO6322" HardwareModuleName="PLK1_IOR01SL07" ModuleID="69" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalOutput01" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="0" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput02" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="1" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput03" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="2" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput04" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="3" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput05" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="4" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput06" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="5" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="StatusDigitalOutput01" Description="Status digital output 01 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput02" Description="Status digital output 02 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput03" Description="Status digital output 03 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput04" Description="Status digital output 04 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput05" Description="Status digital output 05 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput06" Description="Status digital output 06 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST8" Hardware="X20DO6322" HardwareModuleName="PLK1_IOR01SL08" ModuleID="72" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalOutput01" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="0" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput02" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="1" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput03" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="2" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput04" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="3" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput05" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="4" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput06" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="5" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="StatusDigitalOutput01" Description="Status digital output 01 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput02" Description="Status digital output 02 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput03" Description="Status digital output 03 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput04" Description="Status digital output 04 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput05" Description="Status digital output 05 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput06" Description="Status digital output 06 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST11" Hardware="X20PS3300" HardwareModuleName="PLK1_IOR01SL11" ModuleID="81" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusInput01" Description="Bus power supply warning (1 = over current &gt;2.3 A or low voltage &lt;4.7 V)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusInput02" Description="I/O power supply warning (0 = DC OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SupplyCurrent" Description="Bus current 0.1 A" Ext="/FIXED" Address="2" Direction="IN" Type="USINT" Sig_Ana_SupplyCurrent="1" />
+    <Channel ID="SupplyVoltage" Description="Bus voltage 0.1 V" Ext="/FIXED" Address="3" Direction="IN" Type="USINT" Sig_Ana_SupplyVoltage="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST12" Hardware="X20DI6371" HardwareModuleName="PLK1_IOR01SL12" ModuleID="84" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput05" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput06" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST13" Hardware="X20DO6322" HardwareModuleName="PLK1_IOR01SL13" ModuleID="87" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalOutput01" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="0" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput02" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="1" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput03" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="2" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput04" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="3" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput05" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="4" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="DigitalOutput06" Description="24 VDC / 0.5 A, source" Ext="/FIXED" Address="0" BitOffset="5" Direction="OUT" Type="BOOL" Sig_Dig_05A_24VDC="1" />
+    <Channel ID="StatusDigitalOutput01" Description="Status digital output 01 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput02" Description="Status digital output 02 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput03" Description="Status digital output 03 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput04" Description="Status digital output 04 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput05" Description="Status digital output 05 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusDigitalOutput06" Description="Status digital output 06 (0 = OK)" Ext="/FIXED" Address="1" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST16" Hardware="X20SI4100" HardwareModuleName="PLK1_IOR01SL16" ModuleID="96">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput01" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput02" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput03" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput04" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0102" Description="Dual-channel evaluation channel 1/2" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0304" Description="Dual-channel evaluation channel 3/4" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK01" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK02" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK03" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK04" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0102" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0304" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST17" Hardware="X20SI4100" HardwareModuleName="PLK1_IOR01SL17" ModuleID="99">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput01" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput02" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput03" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput04" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0102" Description="Dual-channel evaluation channel 1/2" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0304" Description="Dual-channel evaluation channel 3/4" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK01" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK02" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK03" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK04" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0102" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0304" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST1.IF1.ST1" Hardware="X20PS9400a" HardwareModuleName="PS_PLK1" ModuleID="150" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusInput01" Description="Bus power supply warning (1 = over current &gt;2.3 A or low voltage &lt;4.7 V)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusInput02" Description="I/O power supply warning (0 = DC OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SupplyCurrent" Description="Bus current 0.1 A" Ext="/FIXED" Address="2" Direction="IN" Type="USINT" Sig_Ana_SupplyCurrent="1" />
+    <Channel ID="SupplyVoltage" Description="Bus voltage 0.1 V" Ext="/FIXED" Address="3" Direction="IN" Type="USINT" Sig_Ana_SupplyVoltage="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2" Hardware="X20BC1083" HardwareModuleName="BC_PLK2" ModuleID="34">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" FromVersion="C2.87" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="EthRxLost" Description="Number of lost Rx-Frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000402" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOversize" Description="Number of received oversized frames &gt; 1500 Bytes" FromVersion="C2.87" Ext="/INFO" Address="0x80000403" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxCRCError" Description="Number of Rx-Frames with wrong CRC" FromVersion="C2.87" Ext="/INFO" Address="0x80000404" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthRxOverflow" Description="Number of lost Rx-Frames due to performance shortage on BC" FromVersion="C2.87" Ext="/INFO" Address="0x80000405" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthTxCollision" Description="Number of collisions on ethernet while BC sending" FromVersion="C2.87" Ext="/INFO" Address="0x80000406" Direction="IN" Type="DINT" Sig_St_Dint="1" />
+    <Channel ID="EthPhy1LinkOk" Description="Link of interface 1 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy1LinkLoss" Description="Increments each time when link of physical interface 1 is lost" FromVersion="C2.87" Ext="/INFO" Address="0x80000410" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="EthPhy2LinkOk" Description="Link of interface 2 is active" FromVersion="A2.94" Ext="/INFO" Address="0x80000417" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="EthPhy2LinkLoss" Description="Increments each time when link of physical interface 2 is lost" FromVersion="C2.87" Ext="/INFO" Address="0x80000411" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+    <Channel ID="Nettime" Description="Nettime of cycle receiving the Poll Response of the station" FromVersion="I4.02" Ext="/INFO" Address="0x80000450" Direction="IN" Type="DINT" Sig_Counter_Dint="1" />
+  </Module>
+  <Module ID="SS1.IF1.ST2" Hardware="X20BB81" HardwareModuleName="RIO_JB1_PLK2" ModuleID="156">
+    <Channel ID="IF1.CycleCount" Description="Number of bus cycles" FromVersion="C2.87" Ext="/INFO" Address="0x80000100" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.BreakCount" Description="Number of bus cycles with set break signal" FromVersion="C2.87" Ext="/INFO" Address="0x80000101" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncErrorCount" Description="Number of failed synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000102" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncBusyErrorCount" Description="Number of not sent synchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x80000105" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncNoRxErrorCount" Description="Number of not received synchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x80000106" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncFormatErrorCount" Description="Number of faulty synchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000107" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncPendingErrorCount" Description="Number of synchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x80000108" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncErrorCount" Description="Number of failed asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x80000103" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncBusyErrorCount" Description="Number of not sent asynchronous frames (sender not ready)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010A" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncNoRxErrorCount" Description="Number of not received asynchronous frames (timeout)" FromVersion="C2.87" Ext="/INFO" Address="0x8000010B" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFormatErrorCount" Description="Number of faulty asynchronous frames" FromVersion="C2.87" Ext="/INFO" Address="0x8000010C" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncPendingErrorCount" Description="Number of asynchronous frames which could not be sent because of receiving a frame" FromVersion="C2.87" Ext="/INFO" Address="0x8000010D" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleLostWhileOperational" Description="Hardware configuration changed: module disconnected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010E" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.ModuleNewWhileOperational" Description="Hardware configuration changed: new module detected while operational" FromVersion="C2.87" Ext="/INFO" Address="0x8000010F" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEnd" Description="Station at end of bus" FromVersion="J4.08" Ext="/INFO" Address="0x80000115" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationAtBusEndChangeTime" Description="Time of last change at station on end of bus" FromVersion="J4.08" Ext="/INFO" Address="0xC0000115" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameError" Description="First station which recognizes output frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000116" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationPastOutFrameErrorChangeTime" Description="Time of last change of channel StationPastOutFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000116" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameError" Description="First station which recognizes input frame error" FromVersion="J4.08" Ext="/INFO" Address="0x80000117" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.StationPastInFrameErrorChangeTime" Description="Time of last change of channel StationPastInFrameError" FromVersion="J4.08" Ext="/INFO" Address="0xC0000117" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsMax" Description="Number of max. stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000113" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.NrOfStationsConfigured" Description="Number of configured stations" FromVersion="J4.08" Ext="/INFO" Address="0x80000114" Direction="IN" Type="USINT" Sig_St_Usint="" Resource="IF1" />
+    <Channel ID="IF1.SyncInFrameSize" Description="Size of synchronous input frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000118" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.SyncOutFrameSize" Description="Size of synchronous output frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x80000119" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSize" Description="Size of asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011A" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.AsyncFrameSpareSize" Description="Size reserve within asynchronous frame [Bytes]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011B" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+    <Channel ID="IF1.BusLengthConfigured" Description="Configured bus length [m]" FromVersion="J4.08" Ext="/INFO" Address="0x8000011C" Direction="IN" Type="DINT" Sig_St_Dint="1" Resource="IF1" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST2" Hardware="X20DI4371" HardwareModuleName="PLK2_IOR02SL02" ModuleID="106" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1=module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST3" Hardware="X20DI4371" HardwareModuleName="PLK2_IOR02SL03" ModuleID="109" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1=module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="DigitalInput01" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput02" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput03" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="DigitalInput04" Description="24 VDC, 0.1 to 25 ms switching delay, sink" Ext="/FIXED" Address="1" BitOffset="3" Direction="IN" Type="BOOL" Sig_Dig_24VDC="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST4" Hardware="X20AI4632-1" HardwareModuleName="PLK2_IOR02SL04" ModuleID="112" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StaleData" Description="Data not from latest cycle" FromVersion="A3.08" Ext="/OK" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="ConvertionCycle" Description="Status convertion cycle (0 = OK)" Ext="/PSEUDOCYCLIC" Address="641" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SyncStatus" Description="Status syncronization (0 = OK)" Ext="/PSEUDOCYCLIC" Address="641" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="AnalogInput01" Description="±11 V / 0 to 22 mA, resolution 16 bit" Address="0" Direction="IN" Type="INT" MSB="16" Sig_Ana_0mA_p22mA="1" Sig_Ana_0mA_p20mA_22mA="1" Sig_Ana_p4mA_p22mA="1" Sig_Ana_p4mA_p20mA_22mA="1" />
+    <Channel ID="Channel01OK" Description="Status channel 01 (0 = OK)" Ext="/PSEUDOCYCLIC" Address="641" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="AnalogInput02" Description="±11 V / 0 to 22 mA, resolution 16 bit" Address="4" Direction="IN" Type="INT" MSB="16" Sig_Ana_0mA_p22mA="1" Sig_Ana_0mA_p20mA_22mA="1" Sig_Ana_p4mA_p22mA="1" Sig_Ana_p4mA_p20mA_22mA="1" />
+    <Channel ID="Channel02OK" Description="Status channel 02 (0 = OK)" Ext="/PSEUDOCYCLIC" Address="641" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST5" Hardware="X20DS438A" HardwareModuleName="PLK2_IOR02SL05" ModuleID="115" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StaleData" Description="Data not from latest cycle" Ext="/OK" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="ChannelStatus01" Description="Operational state IO-Link interface 1" Address="0x0021" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="InputData01_1" Description="Input process data 1, Channel 1" Ext="/PSEUDOCYCLIC" Address="0x1102" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="ChannelStatus02" Description="Operational state IO-Link interface 2" Address="0x0031" Direction="IN" Type="USINT" Sig_St_Usint="1" />
+    <Channel ID="InputData02_1" Description="Input process data 1, Channel 2" Ext="/PSEUDOCYCLIC" Address="0x1502" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST6" Hardware="X20PD2113" HardwareModuleName="PLK2_IOR02SL06" ModuleID="122" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusFuse" Description="Status of fuse (0 = OK)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusPowerSupply" Description="Power supply warning (0 = DC OK)" Ext="/FIXED" Address="1" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST9" Hardware="X20PS3300" HardwareModuleName="PLK2_IOR02SL09" ModuleID="131" Disabled="1" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusInput01" Description="Bus power supply warning (1 = over current &gt;2.3 A or low voltage &lt;4.7 V)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusInput02" Description="I/O power supply warning (0 = DC OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SupplyCurrent" Description="Bus current 0.1 A" Ext="/FIXED" Address="2" Direction="IN" Type="USINT" Sig_Ana_SupplyCurrent="1" />
+    <Channel ID="SupplyVoltage" Description="Bus voltage 0.1 V" Ext="/FIXED" Address="3" Direction="IN" Type="USINT" Sig_Ana_SupplyVoltage="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST12" Hardware="X20SI4100" HardwareModuleName="PLK2_IOR02SL12" ModuleID="140">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput01" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput02" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput03" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeDigitalInput04" Description="24 VDC, sink" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0102" Description="Dual-channel evaluation channel 1/2" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelInput0304" Description="Dual-channel evaluation channel 3/4" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK01" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK02" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK03" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeInputOK04" Description="Status digital input (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0102" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeTwoChannelOK0304" Description="Status dual-channel evaluation (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="5" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST13" Hardware="X20SO4120" HardwareModuleName="PLK2_IOR02SL13" ModuleID="143">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="SafeModuleOK" Description="Safe Connection is acknowledged by the SN" Ext="/SUB=SafeIN" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK01" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK02" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK03" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SafeOutputOK04" Description="Status digital output (1=OK)" Safe="true" Ext="/SUB=SafeIN" Address="4" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="PhysicalStateOutput01" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="PhysicalStateOutput02" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="1" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="PhysicalStateOutput03" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="PhysicalStateOutput04" Description="Read back value of channel" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="3" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="CurrentOK01" Description="TRUE if current is between 50 mA and 2 A" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="4" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="CurrentOK02" Description="TRUE if current is between 50 mA and 2 A" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="5" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="CurrentOK03" Description="TRUE if current is between 50 mA and 2 A" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="6" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="CurrentOK04" Description="TRUE if current is between 50 mA and 2 A" CrossLink="true" Ext="/SUB=PDOi" Address="0" BitOffset="7" Direction="IN" Type="BOOL" Sig_St_Bool="1" Group="Output 01-04" />
+    <Channel ID="FBOutputState0102" Description="Status of start interlock on error(channels 1 and 2)" Address="0x1509" Direction="IN" Type="USINT" />
+    <Channel ID="FBOutputState0304" Description="Status of start interlock on error(channels 3 and 4)" Address="0x150B" Direction="IN" Type="USINT" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+  <Module ID="SS1.IF1.ST2.IF1.ST1" Hardware="X20PS9400a" HardwareModuleName="PS_PLK2" ModuleID="153" Simulatable="true">
+    <Channel ID="ModuleOk" Description="Module status (1 = module present)" Ext="/OK" Address="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="SerialNumber" Description="Serial number" FromVersion="A3.08" Ext="/INFO" Address="4" Direction="IN" Type="UDINT" Sig_St_Udint="1" />
+    <Channel ID="ModuleID" Description="Module ID" FromVersion="A3.08" Ext="/INFO" Address="10" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="HardwareVariant" Description="Hardware variant" FromVersion="A3.08" Ext="/INFO" Address="12" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="FirmwareVersion" Description="Firmware version" FromVersion="A3.08" Ext="/INFO" Address="14" Direction="IN" Type="UINT" Sig_St_Uint="1" />
+    <Channel ID="StatusInput01" Description="Bus power supply warning (1 = over current &gt;2.3 A or low voltage &lt;4.7 V)" Ext="/FIXED" Address="1" BitOffset="0" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="StatusInput02" Description="I/O power supply warning (0 = DC OK)" Ext="/FIXED" Address="1" BitOffset="2" Direction="IN" Type="BOOL" Sig_St_Bool="1" />
+    <Channel ID="BusModuleId" Description="Module ID of bus module" FromVersion="A4.81" Ext="/INFO" Address="0x80000180" Direction="IN" Type="UINT" Sig_St_Uint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperation" Description="Status of module" FromVersion="A4.81" Ext="/INFO" Address="0x80000181" Direction="IN" Type="USINT" Sig_St_Usint="1" Diagnose="/DIAG" />
+    <Channel ID="ModeOfOperationChangeTime" Description="Time of last change of channel ModeOfOperation" FromVersion="A4.81" Ext="/INFO" Address="0xC0000181" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResets" Description="Number of resets of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000182" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfResetsChangeTime" Description="Time of last change of channel NrOfResets" FromVersion="A4.81" Ext="/INFO" Address="0xC0000182" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInits" Description="Number of inits of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000183" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfInitsChangeTime" Description="Time of last change of channel NrOfInits" FromVersion="A4.81" Ext="/INFO" Address="0xC0000183" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdates" Description="Number of FW updates of the station" FromVersion="A4.81" Ext="/INFO" Address="0x80000184" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="NrOfFwUpdatesChangeTime" Description="Time of last change of channel NrOfFwUpdates" FromVersion="A4.81" Ext="/INFO" Address="0xC0000184" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoComm" Description="Number of missing answers from IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000185" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleNoCommChangeTime" Description="Time of last change of channel ModuleNoComm" FromVersion="A4.81" Ext="/INFO" Address="0xC0000185" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommError" Description="Number of communication errors to IO processor on IO module" FromVersion="A4.81" Ext="/INFO" Address="0x80000186" Direction="IN" Type="DINT" Sig_St_Dint="1" Diagnose="/DIAG" />
+    <Channel ID="ModuleCommErrorChangeTime" Description="Time of last change of channel ModuleCommError" FromVersion="A4.81" Ext="/INFO" Address="0xC0000186" Direction="IN" Type="DATE_AND_TIME" Sig_St_Dt="1" Diagnose="/DIAG" />
+  </Module>
+</ChannelConfiguration>

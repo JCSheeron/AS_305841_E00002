@@ -1,0 +1,11 @@
+﻿@import "mixins.scss";
+div[data-brease-dialogId='dlgSafetySystem'] {
+	.breaseDialogWindowContentBox > .breaseLayout{
+	background-color: rgba(255, 255, 255, 1);
+	}
+}
+div[data-brease-dialogId='dlgSafetySystem'] {
+	.breaseWindowClose{
+@include display(false);
+	}
+}

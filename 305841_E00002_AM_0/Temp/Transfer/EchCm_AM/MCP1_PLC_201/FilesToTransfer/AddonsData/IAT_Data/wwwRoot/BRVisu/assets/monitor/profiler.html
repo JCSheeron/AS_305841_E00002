@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>mapp View Profiler</title>
+    <script src="/BRVisu/assets/performance/FileSaver.js"></script>
+    <script src="/BRVisu/jquery.js"></script>
+
+    <style>
+        body {
+            padding: 12px;
+            background-color: #d2e6ff;
+        }
+
+        #entryTable {
+            border-collapse: collapse;
+            margin: 8px 0;
+            background-color: #fff;
+        }
+
+            #entryTable td, #entryTable th {
+                border: 1px solid #ddd;
+                padding: 4px 10px;
+            }
+
+                #entryTable td.btn {
+                    border: none;
+                    padding: 0px 4px;
+                }
+
+        .dataTable {
+            border-collapse: collapse;
+            background-color: #fff;
+            float: left;
+        }
+
+            .dataTable td, .dataTable th {
+                border: 1px solid #ddd;
+                padding: 2px 10px;
+            }
+
+        td.visuId {
+            vertical-align: top;
+        }
+
+        #ausgabe p {
+            font-family: monospace;
+            margin: 2px 0;
+        }
+
+        button, input {
+            padding: 4px 6px;
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        input[type=checkbox] {
+            transform: scale(3);
+            padding: 10px;
+            margin: 0 12px;
+        }
+    </style>
+    <script>
+
+        const STATE = {
+            0: 'start',
+            1: 'finish'
+        };
+
+        var profiler = {
+
+            start: function () {
+                this.loadData();
+                _setReferrerParams();
+                $('body').on('click', 'button', this.buttonHandler);
+
+                var info = "";
+                info += '<p>userAgent:' + navigator.userAgent + '</p>';
+                info += '<p>platform:' + navigator.platform + ', cookieEnabled:' + navigator.cookieEnabled + '</p>';
+                info += '<p>time:' + new Date() + '</p>';
+                $('#ausgabe').append(info);
+            },
+
+            loadData: function () {
+                this.data = localStorage.breaseMonitor;
+                if (this.data === undefined) {
+                    this.data = {};
+                }
+                else {
+                    this.data = JSON.parse(this.data);
+                }
+                //console.log(this.data);
+                this.renderStorage();
+
+            },
+
+            navigate: function (e) {
+                var visuId = $('#inVisuId').val(),
+                    debug = document.getElementById('inDebug').checked,
+                    watchdog = document.getElementById('inWatchdog').checked,
+                    monitor = document.getElementById('inMonitor').checked;
+
+                var url = "/index.html?visuId=" + visuId + ((watchdog) ? "&watchdog=0" : "") + "&debug=" + debug + "&monitor=" + monitor;
+                document.location.href = url;
+            },
+
+            buttonHandler: function (e) {
+                var btn = $(e.target);
+                //console.log(btn.data('action'), btn.data('visu'), btn.data('date'));
+                switch (btn.data('action')) {
+                    case 'show':
+                        profiler.showData(btn.data('visu'), btn.data('date'));
+                        break;
+                    case 'compare':
+                        profiler.compareData(btn.data('visu'), btn.data('date'));
+                        break;
+                    case 'remove':
+                        profiler.deleteData(btn.data('visu'), btn.data('date'));
+                        break;
+                    case 'refresh':
+                        profiler.loadData();
+                        break;
+
+                    case 'refreshLoc':
+                        document.location.reload();
+                        break;
+
+                    case 'toTop':
+                        window.scrollTo(0, 0);
+                        break;
+
+                    case 'toBottom':
+                        window.scrollTo(0, document.body.scrollHeight);
+                        break;
+
+                    case 'navigate':
+                        profiler.navigate();
+                        break;
+
+                    case 'saveData':
+                        profiler.saveData();
+                        break;
+
+                    case 'loadFileData':
+                        profiler.loadFileData();
+                        break;
+                }
+            },
+            deleteData: function (visuId, date) {
+                if (profiler.data[visuId] !== undefined) {
+                    profiler.data[visuId][date] = undefined;
+                }
+                localStorage.setItem('breaseMonitor', JSON.stringify(profiler.data));
+                this.renderStorage();
+            },
+
+            compareData: function (visuId, date) {
+
+                var data = profiler.data[visuId][date],
+                    events = data.events,
+                    actData = profiler.actData,
+                    actEvents = actData.events,
+                        eve, compare, body = '', elapsed = 0;
+
+                if (actData) {
+
+                    for (var i = 0; i < actEvents.length; i += 1) {
+                        eve = actEvents[i];
+                        compare = _findRelated(eve, events);
+                        elapsed = 0;
+                        if (compare) {
+                            if (compare.state === "finish" || compare.state === 1) {
+                                var start = _findStart(events, i, compare.type);
+                                if (start && start.time) {
+                                    elapsed = compare.time - start.time;
+                                }
+                            }
+                            body += '<tr><td>' + compare.time.toFixed(2) + '</td><td>' + compare.type + '</td><td>' + ((compare.state !== undefined) ? _renderState(compare.state) : '') + '</td><td>' + ((elapsed > 0) ? elapsed.toFixed(2) : '') + '</td></tr>';
+                        } else {
+                            body += '<tr><td></td><td></td><td></td></tr>';
+                        }
+                    }
+                    $('#dataTable2 tbody').html(body);
+                }
+            },
+
+            showData: function (visuId, date) {
+                var data = profiler.data[visuId][date],
+                    events = data.events, eve, elapsed = 0;
+
+                profiler.actData = data;
+                console.log(data);
+                var body = '';
+                for (var i = 0; i < events.length; i += 1) {
+                    eve = events[i];
+                    elapsed = 0;
+                    if (eve.state === "finish" || eve.state === 1) {
+                        var start = _findStart(events, i, eve.type);
+                        if (start && start.time) {
+                            elapsed = eve.time - start.time;
+                        }
+                    }
+                    body += '<tr><td>' + eve.time.toFixed(2) + '</td><td>' + eve.type + '</td><td>' + ((eve.state !== undefined) ? _renderState(eve.state) : '') + '</td><td>' + ((elapsed > 0) ? elapsed.toFixed(2) : '') + '</td></tr>';
+                }
+
+                $('#dataTable1 tbody').html(body);
+            },
+
+            saveData: function () {
+                var dataSave = JSON.stringify(this.data);
+                var blob = new Blob([dataSave], { type: "application/json" });
+                var now = new Date(),
+                    savedate = now.getFullYear() + '-' + _format(now.getMonth() + 1) + '-' + _format(now.getDate()) + 'T' + _format(now.getHours()) + ':' + _format(now.getMinutes()) + ':' + _format(now.getSeconds());
+
+                saveAs(blob, savedate + '_' + navigator.platform + "_profile.json");
+            },
+
+            loadFileData: function () {
+                var files = $('#fileHandler')[0].files;
+                if (files.length > 0) {
+                    var reader = new FileReader();
+                    reader.onload = function (theFile) {
+                        profiler.data = JSON.parse(theFile.target.result);
+                        console.log(profiler.data);
+                        profiler.renderStorage();
+                    };
+                    reader.readAsText(files[0]);
+
+
+                }
+
+                else {
+                    console.log("no File")
+                }
+            },
+
+            renderStorage: function () {
+                var body = '',
+                    entries = '',
+                    count = 0,
+                    data, row1 = '', row = '';
+                for (var visuId in this.data) {
+
+                    var visu = this.data[visuId],
+                        count = 0, entries = '';
+
+                    for (var date in visu) {
+                        data = visu[date];
+                        if (data) {
+                            row = '<td>' + date + '</td><td>' + data.debug + '</td><td>' + data.watchdog + '</td><td>' + ((data.mappView !== undefined) ? data.mappView : '') + '</td><td class="btn"><button data-action="show" data-visu="' + visuId + '" data-date="' + date + '">show</button></td>' +/*<td class="btn"><button data-action="compare" data-visu="' + visuId + '" data-date="' + date + '">compare</button></td>*/'<td class="btn"><button data-action="remove" data-visu="' + visuId + '" data-date="' + date + '">remove</button></td></tr>';
+                            if (count === 0) {
+                                row1 = row;
+                            } else {
+                                entries += '<tr>' + row;
+                            }
+                            count += 1;
+                        }
+                    }
+                    body += '<tr><td rowspan="' + count + '" class="visuId">' + visuId + '</td>' + row1 + entries;
+                }
+                $('#entryTable tbody').html(body);
+            }
+        }
+
+        function _format(n) {
+            return ((n < 10) ? '0' : '') + n;
+        }
+
+        function _renderState(state) {
+            if (state === 0 || state === 1) {
+                return STATE[state];
+            } else {
+                return state;
+            }
+        }
+
+        function _findStart(events, index, type) {
+            var start, eve;
+            for (var i = index; i >= 0; i -= 1) {
+                eve = events[i];
+                if (eve.type === type && (eve.state === "start" || eve.state === 0)) {
+                    start = eve;
+                    break;
+                }
+            }
+            return start;
+        }
+
+        function _findRelated(eve, events) {
+            var related, item;
+            for (var i = 0; i < events.length; i += 1) {
+                item = events[i];
+                if (item.type === eve.type && item.state === eve.state) {
+                    related = item;
+                    break;
+                }
+            }
+            return related;
+        }
+
+        function extract(key,from) {
+            var result = from.substring(from.indexOf(key) + key.length+1);
+            if (result.indexOf('&') !== -1) {
+                result = result.substring(0, result.indexOf('&'));
+            }
+            return result;
+        }
+
+        function _setReferrerParams() {
+            var visuId,debug,
+                referrer=document.referrer;
+            if (referrer.indexOf('visuId') !== -1) {
+                visuId = extract('visuId',referrer);
+            }
+            if (referrer.indexOf('visuid') !== -1) {
+                visuId = extract('visuid', referrer);
+            }
+            if (visuId) { $('#inVisuId').val(visuId); }
+            if (referrer.indexOf('debug') !== -1) {
+                debug = extract('debug', referrer);
+            }
+            if (debug === 'true') {
+                $('#inDebug').prop( "checked", true );
+            } else {
+                $('#inDebug').prop("checked", false);
+            }
+
+        }
+        $(document).ready(profiler.start.bind(profiler));
+
+    </script>
+</head>
+<body>
+
+    <div id="appContainer">
+        <header class="clearfix">
+            <h2>mapp View Profiler</h2>
+            <input type="text" value="Visu" id="inVisuId" />
+            <input type="checkbox" id="inMonitor" checked="checked" /><label for="inMonitor" class="big">monitor</label>
+            <input type="checkbox" id="inDebug" checked="checked" /><label for="inDebug" class="big">debug</label>
+            <input type="checkbox" id="inWatchdog" /><label for="inWatchdog" class="big">watchdog=0</label>
+            <button data-action="navigate">open Visu</button>
+        </header>
+        <section id="ausgabe"></section>
+        <section class="content">
+            <div id="menu">
+                <button data-action="refresh">load local data</button>
+                <button data-action="refreshLoc">reload page</button>
+                <button data-action="saveData">save data to file</button>
+                <button data-action="loadFileData">load data from file</button>
+                <input id="fileHandler" type="file" />
+            </div>
+
+
+
+            <div id="data">
+
+                <table id="entryTable">
+                    <thead>
+                        <tr>
+                            <th>visuId</th>
+                            <th>time</th>
+                            <th>debug</th>
+                            <th>watchdog</th>
+                            <th>mappView</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p><button data-action="toBottom">to bottom</button></p>
+                <div>
+                    <table id="dataTable1" class="dataTable">
+                        <thead>
+                            <tr>
+                                <th>time</th>
+                                <th>type</th>
+                                <th>state</th>
+                                <th>elapsed</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <!--<table id="dataTable2" class="dataTable">
+                        <thead>
+                            <tr>
+                                <th>time</th>
+                                <th>type</th>
+                                <th>state</th>
+                                <th>elapsed</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>-->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+    </div>
+    <p style="clear:both;"><button data-action="toTop">to top</button></p>
+
+
+</body>
+</html>

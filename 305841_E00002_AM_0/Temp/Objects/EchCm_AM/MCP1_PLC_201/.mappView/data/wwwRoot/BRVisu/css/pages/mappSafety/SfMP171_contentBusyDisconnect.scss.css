@@ -1,0 +1,54 @@
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  height: 30px;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  top: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  left: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  width: 220px;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  z-index: 0;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_labelDisconnecting {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  top: 48px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  left: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  width: 220px;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  height: 20px;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  z-index: 1;
+}
+
+#SfMP171_contentBusyDisconnect_SfMP171_paperLoadingLineInverse {
+  border-width: 0px;
+}

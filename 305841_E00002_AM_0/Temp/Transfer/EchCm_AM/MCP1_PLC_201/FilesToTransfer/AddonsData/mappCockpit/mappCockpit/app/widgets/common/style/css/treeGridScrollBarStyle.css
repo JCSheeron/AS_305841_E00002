@@ -1,0 +1,32 @@
+/* define the backgorund-color of the scrollbar button inside the treegrid */
+.e-vup {
+    background-color: #fafafa !important;
+}
+
+.e-vdown {
+    background-color: #fafafa !important;
+}
+
+.e-hdown {
+    background-color: #fafafa !important;
+}
+
+.e-hup {
+    background-color: #fafafa !important;
+}
+
+.e-vup:hover {
+    background-color: #86cbea !important; 
+}
+
+.e-vdown:hover {
+    background-color: #86cbea !important;
+}
+
+.e-hdown:hover {
+    background-color: #86cbea !important;
+}
+
+.e-hup:hover {
+    background-color: #86cbea !important; 
+}

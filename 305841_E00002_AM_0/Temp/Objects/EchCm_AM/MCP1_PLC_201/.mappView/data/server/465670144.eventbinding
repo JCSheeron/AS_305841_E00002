@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Visualization>
+    <EventBinding id="eventbinding_49">
+			<Source type="session.Event" refId="SfMP182_sessionvar_LoggedInID" event="ValueChanged" />
+
+			<Operand name="OperandSysID" datatype="ANY_INT">
+				<ReadTarget type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.slotId">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue = -1">
+				<Parallel>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_isLoggedIn">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.Logout" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+			<EventHandler condition="newValue &lt;&gt; OperandSysID AND newValue &lt;&gt; -1">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isLoggedIn">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_50">
+			<Source type="session.Event" refId="SfMP182_sessionvar_isSessionActive" event="ValueChanged" />
+
+			<Operand name="operandBusyDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyMsg">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandBusyConnectDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyConnect">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandBusyDisconnectDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyDisconnect">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandBusyBrowseFilesDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogBusyBrowseFiles">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandTransferDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_TransferDialog">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<Operand name="operandErrorDialog" datatype="BOOL">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_OpenDialogCriticalError">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND operandBusyDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isBusyDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND operandBusyConnectDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isBusyConnectDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND operandBusyDisconnectDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isBusyDisconnectDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND operandBusyBrowseFilesDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isBusyBrowseFilesDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND operandTransferDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isTransferDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue AND operandErrorDialog">
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_isErrorDialogOpen">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_51">
+			<Source type="session.Event" refId="SfMP182_sessionvar_LoggedInID" event="ValueChanged" />
+
+			<Operand name="operandSafetyRoleTag" datatype="ANY_INT">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SafetyRoleTag">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- fix definition of safety role of - Application Engineer -->
+			<Operand name="operandSafetyRoleTag_ApplicationEngineer" datatype="ANY_INT">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SafetyRoleTag_ApplicationEngineer">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<!-- fix definition of safety role of - Service Machine Operator -->
+			<Operand name="operandSafetyRole_ServiceMachineOperator" datatype="ANY_INT">
+				<ReadTarget type="opcUa.NodeAction.Read" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SafetyRoleTag_ServiceMachineOperator">
+					<Method type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="operandSafetyRoleTag = operandSafetyRoleTag_ApplicationEngineer">
+				<Parallel>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+			<EventHandler condition="operandSafetyRoleTag = operandSafetyRole_ServiceMachineOperator">
+				<Parallel>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_52">
+			<Source type="session.Event" refId="SfMP182_sessionvar_UserHasAccess" event="ValueChanged" />
+
+			<EventHandler condition="NOT newValue">
+				<Parallel>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_App_Engineer">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					<Action>
+						<Target type="session.VariableAction" refId="SfMP182_sessionvar_safetyRoleTag_Machine_Operator">
+							<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+		</EventBinding>
+  </Visualization>
+</EventBindingDefinition>

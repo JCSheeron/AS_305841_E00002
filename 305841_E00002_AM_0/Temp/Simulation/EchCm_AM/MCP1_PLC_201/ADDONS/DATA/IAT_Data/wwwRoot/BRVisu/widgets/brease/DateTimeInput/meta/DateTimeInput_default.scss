@@ -1,0 +1,67 @@
+@import "mixins.scss";
+@mixin widgets_brease_DateTimeInput_base {
+	@include elemWidth(250);
+	@include elemHeight(30);
+&:not(.disabled):not(.active) {
+	border-width: 2px 6px 2px 2px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 6px 2px 2px;
+}
+&.disabled {
+	border-width: 2px 6px 2px 2px;
+}
+	@include border-radius(0px);
+&:not(.active):not(.disabled) {
+	background-color: #FFFFFF;
+}
+&.disabled {
+	background-color: #F1F1F1;
+}
+&:not(.disabled) {
+	@include backGroundGradient('');
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&:not(.active):not(.disabled) {
+	border-color: #555555;
+}
+&.disabled {
+	border-color: #C8C8C8;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	background-color: #F1F1F1;
+}
+&.active:not(.disabled) span {
+	color: #000000;
+}
+	border-style: solid;
+&.active {
+	border-style: solid;
+}
+&:not(.active):not(.disabled) span {
+	color: #000000;
+}
+&.disabled span {
+	color: #C8C8C8;
+}
+	@include text-alignment(right);
+	opacity: 1;
+	font-family: Arial;
+	font-size: 16px;
+	@include rotate(0deg);
+	@include font-weight-bold(true);
+	@include font-style-italic(false);
+	padding: 0 15px 0 15px;
+	margin: 0px;
+	@include box-shadow(none);
+
+}
+
+.widgets_brease_DateTimeInput_style_default {
+@include widgets_brease_DateTimeInput_base 
+}

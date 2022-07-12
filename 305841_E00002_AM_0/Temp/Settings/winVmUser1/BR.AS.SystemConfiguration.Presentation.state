@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<State Top="0" Left="0" Width="0" Height="0" WindowState="Normal" xmlns="http://br-automation.co.at/AS/State">
+  <TreeView ID="BR.AS.SystemConfiguration.Presentation-C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Physical\EchCm_AM\MCP1_PLC_201\TextSystem\TC.textconfig" EditColumn="0" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="100" Position="0" />
+      <Column Index="1" Width="366" Position="1" />
+      <Column Index="2" Width="0" Position="2" />
+      <Column Index="3" Width="100" Position="3" />
+      <Column Index="4" Width="0" Position="4" />
+    </Columns>
+    <ExpandedNodes>
+      <ExpandedNode Row="0" />
+      <ExpandedNode Row="1" />
+      <ExpandedNode Row="4" />
+      <ExpandedNode Row="7" />
+    </ExpandedNodes>
+    <SelectedNodes />
+    <ZoomIndices />
+  </TreeView>
+  <Versatile ID="BR.AS.SystemConfiguration.Presentation-EditorState-C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Physical\EchCm_AM\MCP1_PLC_201\TextSystem\TC.textconfig">
+    <Property Name="advancedparametervisibility" Value="False" />
+  </Versatile>
+  <TreeView ID="BR.AS.SystemConfiguration.Presentation-AM1Enc1_OutE" EditColumn="0" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="213" Position="0" />
+      <Column Index="1" Width="326" Position="1" />
+      <Column Index="2" Width="100" Position="2" />
+      <Column Index="3" Width="100" Position="3" />
+      <Column Index="4" Width="0" Position="4" />
+    </Columns>
+    <ExpandedNodes>
+      <ExpandedNode Row="0" />
+      <ExpandedNode Row="1" />
+    </ExpandedNodes>
+    <SelectedNodes />
+    <ZoomIndices />
+  </TreeView>
+  <Versatile ID="BR.AS.SystemConfiguration.Presentation-EditorState-AM1Enc1_OutE">
+    <Property Name="advancedparametervisibility" Value="False" />
+  </Versatile>
+</State>

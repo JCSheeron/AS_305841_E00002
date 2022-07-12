@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.KeyBoard" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+  <StyleProperties>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="957" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="473" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px" >
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <StyleElement selector = ".keyBoardHeader" attribute="@include border-top-left-radius($value)"></StyleElement>
+      <StyleElement selector = ".keyBoardHeader" attribute="@include border-top-right-radius($value)"></StyleElement>
+      <StyleElement selector = ".keyBoardBody" attribute="@include border-bottom-left-radius($value)"></StyleElement>
+      <StyleElement selector = ".keyBoardBody" attribute="@include border-bottom-right-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#333333" >
+      <StyleElement selector=".keyBoardBody" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".keyBoardHeader" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".keyBoardBody" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement attribute="border-color"></StyleElement>
+      <StyleElement selector="header" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".dropdown" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardButtons button" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardButtons button sub" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardButtons button svg" attribute="fill"></StyleElement>
+      <StyleElement selector=".keyBoardBody button .icon-shift" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button .icon-shift:after" attribute="border-bottom-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#FF8800">
+      <StyleElement selector=".dropdown .button.active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".dropdown .button.selected" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active .icon-delete" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected .icon-delete" attribute="color"></StyleElement>
+
+    </StyleProperty>
+    <StyleProperty name="buttonBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".dropdown" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#FFFFFF">
+      <StyleElement selector=".dropdown .dropdownlist div.selected" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active sub" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected sub" attribute="color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active svg" attribute="fill"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected svg" attribute="fill"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active .icon-shift" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected .icon-shift" attribute="background-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active .icon-shift:after" attribute="border-bottom-color"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected .icon-shift:after" attribute="border-bottom-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontName" category="Appearance" type="FontName" default="Arial">
+      <StyleElement attribute="font-family"></StyleElement>
+      <StyleElement selector=".dropdown" attribute="font-family"></StyleElement>
+      <StyleElement selector="button" attribute="font-family"></StyleElement>
+      <StyleElement selector="button sub" attribute="font-family"></StyleElement>
+      <StyleElement selector="input" attribute="font-family"></StyleElement>
+      <StyleElement selector="div" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".dropdown" attribute="@include backGroundGradient('$value')"/>
+      <StyleElement selector=".keyBoardBody button:not(.active):not(.selected)" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="buttonMouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".dropdown .dropdownlist div.selected" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector=".keyBoardBody button.selected" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="imeBackColor" category="Appearance" type="Color" default="#333333" >
+      <StyleElement selector=".pluginList" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="imeBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".pluginList" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="imeBorderColor" category="Appearance" type="ColorCollection" default="#fff" >
+      <StyleElement selector=".pluginList" attribute="border-color"></StyleElement>
+      <StyleElement selector=".pluginList div" attribute="border-left-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="imeTextColor" category="Appearance" type="Color" default="#fff" >
+      <StyleElement selector=".pluginList div" attribute="color"></StyleElement>
+    </StyleProperty>
+  </StyleProperties>
+</StyleInformation>

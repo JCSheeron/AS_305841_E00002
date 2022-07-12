@@ -1,0 +1,24 @@
+
+/* sets the style of a activated tree grid toolbar button */
+.toolbarButton:active{
+    cursor: pointer !important;
+}
+
+.toolbarButton:hover{
+    /* shows other mouse cursor on hover */
+    cursor: pointer !important;
+}
+
+/* sets the style of a deactivated tree grid toolbar button */
+.toolbarButtonDeactivated:active{
+    background-color: var(--main-grey-dark1) !important;
+    border: 1px solid var(--main-grey-dark1) !important; 
+    cursor: default !important;
+}
+
+/* sets the style of a deactivated tree grid toolbar button on hover */
+.toolbarButtonDeactivated:hover{
+    background-color: var(--main-grey-dark1) !important;
+    border: 1px solid var(--main-grey-dark1) !important; 
+    cursor: default !important;
+}

@@ -1,0 +1,1063 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>widgets.brease.ProgressBar Documentation</title>
+    <link href="../../../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>.true {color:#00aa00;font-weight:bold;}.false {color:#aaa;font-weight:normal;}</style>
+  </head>
+  <body>
+<div class="panel-heading"><h3>widgets.brease.ProgressBar</h3></div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Widget Description</h3></div>
+<table class="table table-bordered parameter_tab">
+<tbody>
+<tr>
+<td class="parameter_tab"><strong>short: </strong>Balkenanzeige</td>
+</tr>
+<tr>
+<td class="parameter_tab"><strong>de: </strong>Zeigt einen numerischen Wert als Balken an</td>
+</tr>
+<tr>
+<td class="parameter_tab"><strong>en: </strong>Displays a numeric value as a bar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Properties</h3></div>
+<table class="table table-bordered parameter_tab">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">category</th>
+<th class="parameter_tab">type</th>
+<th class="parameter_tab">defaultValue</th>
+<th class="parameter_tab">bindable</th>
+<th class="parameter_tab">readOnly</th>
+<th class="parameter_tab">required</th>
+<th class="parameter_tab">localizable</th>
+<th class="parameter_tab">editableBinding</th>
+<th class="parameter_tab">projectable</th>
+<th class="parameter_tab">cssProp (<small>has no setter and getter in JS</small>)</th>
+<th class="parameter_tab">groupRefId</th>
+<th class="parameter_tab">groupOrder</th>
+<th class="parameter_tab">nodeRefId (<small>for linking node and value</small>)</th>
+<th class="parameter_tab">deprecated</th>
+<th class="parameter_tab">typeRefId (<small>for StyleReference</small>)</th>
+<th class="parameter_tab">subtype (<small>for MpComIdentReference</small>)</th>
+</tr>
+ </thead>
+<tbody>
+<tr>
+<td class="parameter_tab">barAnimation</td>
+<td class="parameter_tab">Set to TRUE to enable animation of the progress bar when styled as "striped"</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">enable</td>
+<td class="parameter_tab">Initial option to enable widget.
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">labelPosition</td>
+<td class="parameter_tab">Location of the output label text-field. Possible values: right, left, middle, center, top, bottom</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab"><a target="_blank" href="../../../../../breaseDoku/out/template.html#!/api/brease.enum.Position">brease.enum.Position</a></td>
+<td class="parameter_tab">right</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">Label</td>
+<td class="parameter_tab">2</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">labelSize</td>
+<td class="parameter_tab">Width of unit area.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">30</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">Label</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">maxValue</td>
+<td class="parameter_tab">Maximum value for the bound variable.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Number</td>
+<td class="parameter_tab">100</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">minValue</td>
+<td class="parameter_tab">Minimum value for the bound variable.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Number</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">node</td>
+<td class="parameter_tab">Display value with unit and limits.</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab"><a target="_blank" href="../../../../../breaseDoku/out/template.html#!/api/brease.datatype.Node">brease.datatype.Node</a></td>
+<td class="parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">orientation</td>
+<td class="parameter_tab">Orientation of widget</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab"><a target="_blank" href="../../../../../breaseDoku/out/template.html#!/api/brease.enum.Orientation">brease.enum.Orientation</a></td>
+<td class="parameter_tab">LeftToRight</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">permissionOperate</td>
+<td class="parameter_tab">restricts operability to users, which have given roles
+</td>
+<td class="parameter_tab">Accessibility</td>
+<td class="parameter_tab">RoleCollection</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">permissionView</td>
+<td class="parameter_tab">restricts visibility to users, which have given roles
+</td>
+<td class="parameter_tab">Accessibility</td>
+<td class="parameter_tab">RoleCollection</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">showLabel</td>
+<td class="parameter_tab">Controls the visibility of the percentage label text-field.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">Label</td>
+<td class="parameter_tab">1</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">stripedProgressBar</td>
+<td class="parameter_tab">Applies a striped styling to the progress bar.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">Bar</td>
+<td class="parameter_tab">6</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">style</td>
+<td class="parameter_tab">reference to a style for this widget type
+</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">StyleReference</td>
+<td class="parameter_tab">default</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">tabIndex</td>
+<td class="parameter_tab">sets if a widget should have autofocus enabled (0), the order of the focus (>0),
+or if autofocus should be disabled (-1)
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">-1</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">tooltip</td>
+<td class="parameter_tab">reference to a tooltip for a widget
+</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">String</td>
+<td class="parameter_tab"></td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">transitionTime</td>
+<td class="parameter_tab">Defines the time (in ms) used for the transition to a new bar value</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">500</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">value</td>
+<td class="parameter_tab">Initial visible value of widget as a number</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab">Number</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">node</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">visible</td>
+<td class="parameter_tab">change visibility
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">maxHeight</td>
+<td class="parameter_tab">maximum outer height of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">minHeight</td>
+<td class="parameter_tab">minimum outer height of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">maxWidth</td>
+<td class="parameter_tab">maximum outer width of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">minWidth</td>
+<td class="parameter_tab">minimum outer width of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">zIndex</td>
+<td class="parameter_tab">The zIndex property specifies the z-order of a widget and its childs.<br/>
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>
+        The zIndex must be unique within a content.<br/></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">left</td>
+<td class="parameter_tab">absolute position measured from left boundary of parent container</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">top</td>
+<td class="parameter_tab">absolute position measured from top boundary of parent container</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">height</td>
+<td class="parameter_tab">Outer height of widget, in pixels</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">25</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">width</td>
+<td class="parameter_tab">Outer width of widget, in pixels</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">400</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Styleable Properties</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">type</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">opacity</td>
+<td class="parameter_tab">Opacity</td>
+<td class="parameter_tab"><p>Opacity of the widget: 1 - opaque, 0 - fully transparent.</p>
+</td>
+<td class="parameter_tab" >1</td>
+</tr>
+<tr>
+<td class="parameter_tab">padding</td>
+<td class="parameter_tab">Padding</td>
+<td class="parameter_tab"><p>Internal padding for the ProgressBar widget.</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">margin</td>
+<td class="parameter_tab">Margin</td>
+<td class="parameter_tab"><p>Outer margin of the ProgressBar widget.</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">shadow</td>
+<td class="parameter_tab">Shadow</td>
+<td class="parameter_tab"><p>Shadow of the widget - see css &quot;box-shadow&quot; for more information.</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+<tr>
+<td class="parameter_tab">barBorderStyle</td>
+<td class="parameter_tab">BorderStyle</td>
+<td class="parameter_tab"><p>Sets the style of the Border of the widget. Check css &quot;border-style&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+<tr>
+<td class="parameter_tab">barBorderWidth</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the width of the border. Check css &quot;border-width&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >1px</td>
+</tr>
+<tr>
+<td class="parameter_tab">barBorderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color for the bar. Check css &quot;border-color&quot; property for more information.</p>
+</td>
+<td class="parameter_tab"  style="background-color:#000000;color:white;">#000000</td>
+</tr>
+<tr>
+<td class="parameter_tab">barCornerRadius</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the radius of the widget rounded corners. Check css &quot;border-radius&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >20px</td>
+</tr>
+<tr>
+<td class="parameter_tab">barBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the background color of the bar element of the widget.</p>
+</td>
+<td class="parameter_tab"  style="background-color:#E0E0E0;color:black;">#E0E0E0</td>
+</tr>
+<tr>
+<td class="parameter_tab">barBackGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Defines a gradient for the background of the progress bar.</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">barColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the fore color of the bar element of the widget.</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FF8800;color:black;">#FF8800</td>
+</tr>
+<tr>
+<td class="parameter_tab">barGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Defines a gradient background for the progress bar portion.</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">borderStyle</td>
+<td class="parameter_tab">BorderStyle</td>
+<td class="parameter_tab"><p>Sets the style of the outer border of the widget. Check css &quot;border-style&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >solid</td>
+</tr>
+<tr>
+<td class="parameter_tab">borderWidth</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the width of the outer border of the widget. Check css &quot;border-width&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >1px</td>
+</tr>
+<tr>
+<td class="parameter_tab">borderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color for the outer area of the widget.</p>
+</td>
+<td class="parameter_tab"  style="background-color:#000000;color:white;">#000000</td>
+</tr>
+<tr>
+<td class="parameter_tab">cornerRadius</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the radius of the widget corners. Check css &quot;border-radius&quot; property for more information.</p>
+</td>
+<td class="parameter_tab" >4px</td>
+</tr>
+<tr>
+<td class="parameter_tab">backColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the background color of the outer widget container.</p>
+</td>
+<td class="parameter_tab" >transparent</td>
+</tr>
+<tr>
+<td class="parameter_tab">fontName</td>
+<td class="parameter_tab">FontName</td>
+<td class="parameter_tab"><p>Font name for the ProgressBar text fields.</p>
+</td>
+<td class="parameter_tab" >Arial</td>
+</tr>
+<tr>
+<td class="parameter_tab">fontSize</td>
+<td class="parameter_tab">PixelVal</td>
+<td class="parameter_tab"><p>Font size of the ProgressBar text fields, in pixels.</p>
+</td>
+<td class="parameter_tab" >12px</td>
+</tr>
+<tr>
+<td class="parameter_tab">fontColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the color of the text.</p>
+</td>
+<td class="parameter_tab"  style="background-color:#000000;color:white;">#000000</td>
+</tr>
+<tr>
+<td class="parameter_tab">bold</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab"><p>If TRUE, font style is configured as bold.</p>
+</td>
+<td class="parameter_tab" >false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Events</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">Click</td>
+<td class="parameter_tab">Fired when element is clicked on.
+</td>
+<td class="parameter_tab"><ul>
+<li>origin: String
+<p>id of widget that triggered this event
+
+
+
+</p>
+</li>
+<li>horizontalPos: String
+<p>horizontal position of click in pixel i.e '10px'
+
+
+
+</p>
+</li>
+<li>verticalPos: String
+<p>vertical position of click in pixel i.e '10px'
+
+
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">DisabledClick</td>
+<td class="parameter_tab">Fired when disabled element is clicked on.
+</td>
+<td class="parameter_tab"><ul>
+<li>origin: String
+<p>id of widget that triggered this event
+
+</p>
+</li>
+<li>hasPermission: Boolean
+<p>defines if the state is caused due to missing roles of the current user
+
+</p>
+</li>
+<li>horizontalPos: String
+<p>horizontal position of click in pixel i.e '10px'
+
+</p>
+</li>
+<li>verticalPos: String
+<p>vertical position of click in pixel i.e '10px'
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">EnableChanged</td>
+<td class="parameter_tab">Fired when operability of the widget changes.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>operability
+
+
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">FocusIn</td>
+<td class="parameter_tab">Fired when the widgets gets focus
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">FocusOut</td>
+<td class="parameter_tab">Fired when the widgets lost focus
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">MaxValueReached</td>
+<td class="parameter_tab">Fired once when maximum value is reached.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>value reflects the state of the "value" property >= maxValue.
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">MinValueReached</td>
+<td class="parameter_tab">Fired once when minimum value is reached.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>value reflects the state of the "value" property &lt;= minValue.
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">OnDragEnter</td>
+<td class="parameter_tab">Fired when element has onDragEnter.
+</td>
+<td class="parameter_tab"><ul>
+<li>contentId: String
+<p>content id of the widget that has been entering the droppable widget
+</p>
+</li>
+<li>widgetId: String
+<p>id of the widget that has been entering the droppable widget
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">OnDragLeave</td>
+<td class="parameter_tab">Fired when element has OnDragLeave.
+</td>
+<td class="parameter_tab"><ul>
+<li>contentId: String
+<p>content id of the widget that has been leaving the droppable widget
+</p>
+</li>
+<li>widgetId: String
+<p>id of the widget that has been leaving the droppable widget
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">OnDrop</td>
+<td class="parameter_tab">Fired when element has OnDrop.
+</td>
+<td class="parameter_tab"><ul>
+<li>contentId: String
+<p>content id of the widget that has been dropped on the droppable widget
+</p>
+</li>
+<li>widgetId: String
+<p>id of the widget that has been dropped on the droppable widget
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">VisibleChanged</td>
+<td class="parameter_tab">Fired when the visibility of the widget changes.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>visibility
+
+
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Actions</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">arguments</th>
+<th class="parameter_tab">result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">Focus</td>
+<td class="parameter_tab">Sets focus on the widget element, if it can be focused and keyboardOperation=true
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetEnable</td>
+<td class="parameter_tab">Sets the state of property «enable»
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetMaxValue</td>
+<td class="parameter_tab">sets the maximum value of the ProgressBar number range
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Number
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetMinValue</td>
+<td class="parameter_tab">sets the mininum value of the ProgressBar number range
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Number
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetStyle</td>
+<td class="parameter_tab">
+</td>
+<td class="parameter_tab"><ul>
+<li>value: StyleReference
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetValue</td>
+<td class="parameter_tab">set the actual value
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Number
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetVisible</td>
+<td class="parameter_tab">Sets the state of property «visible»
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ShowTooltip</td>
+<td class="parameter_tab">
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

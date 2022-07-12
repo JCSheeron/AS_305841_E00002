@@ -1,0 +1,7 @@
+div[data-brease-dialogId='dlgSafetySystem'] .breaseDialogWindowContentBox > .breaseLayout {
+  background-color: white;
+}
+
+div[data-brease-dialogId='dlgSafetySystem'] .breaseWindowClose {
+  display: none;
+}

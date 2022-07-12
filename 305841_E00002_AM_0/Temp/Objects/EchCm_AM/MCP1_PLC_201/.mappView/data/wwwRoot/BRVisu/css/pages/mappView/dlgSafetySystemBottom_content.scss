@@ -1,0 +1,16 @@
+﻿@import "mixins.scss";
+#dlgSafetySystemBottom_content_btnClose {
+	@include elemAutoWidth(100);
+}
+#dlgSafetySystemBottom_content_btnClose {
+	@include elemTop(10);
+}
+#dlgSafetySystemBottom_content_btnClose {
+	@include elemLeft(310);
+}
+#dlgSafetySystemBottom_content_btnClose {
+	@include elemAutoHeight(40);
+}
+#dlgSafetySystemBottom_content_btnClose {
+		z-index: 0;
+}

@@ -1,0 +1,11 @@
+@import "mixins.scss";
+@mixin widgets_GAMotLib_GaMotAxisStatus_base {
+	@include elemWidth(390);
+	@include elemHeight(310);
+	margin: 0px;
+
+}
+
+.widgets_GAMotLib_GaMotAxisStatus_style_default {
+@include widgets_GAMotLib_GaMotAxisStatus_base 
+}

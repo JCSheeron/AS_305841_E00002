@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <mask id="maskMoon" x="0" y="0" width="32" height="32">
+            <rect x="0" y="0" width="32" height="32" fill="white"/>
+            <ellipse ry="16" rx="16" id="svg_3" cy="9.5" cx="9.5" fill-opacity="null" fill="black"/>
+        </mask>
+    </defs>
+    <g>
+        <title>background</title>
+        <!--<rect fill="#fff" id="canvas_background" height="34" width="34" y="-1" x="-1"/>-->
+    </g>
+    <g>
+        <title>Layer 1</title>
+        <ellipse ry="13.5" rx="13.5"  cy="17.5" cx="17.5"  fill-opacity="null" fill="white" mask= "url(#maskMoon)"/>
+        <text xml:space="preserve" text-anchor="start" font-family="Verdana" fill="white" font-size="16" font-weight="bold" id="svg_4" y="22" x="6.5">z</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Verdana" fill="white" font-size="11" font-weight="bold" id="svg_5" y="10" x="3">z</text>
+        <text xml:space="preserve" text-anchor="start" font-family="Verdana" fill="white" font-size="7" font-weight="bold" id="svg_6" y="6" x="11">z</text>
+    </g>
+</svg>

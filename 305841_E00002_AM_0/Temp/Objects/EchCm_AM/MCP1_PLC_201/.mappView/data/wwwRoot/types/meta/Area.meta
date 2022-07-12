@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Area xmlns="http://www.br-automation.com/iat2014/widget" >
+  <StyleProperties>
+    <StyleProperty name="width" type="Size" not_styleable="true" category="Layout" default="200" groupOrder="3">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of the area</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" category="Layout" default="200" groupOrder="4">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of the area</Description>
+    </StyleProperty>
+    <StyleProperty name="top" type="UInteger" not_styleable="true" default="0" category="Layout" groupOrder="1">
+      <StyleElement attribute="@include elemTop($value)"/>
+      <Description>absolute position measured from top boundary of parent container</Description>
+    </StyleProperty>
+    <StyleProperty name="left" type="UInteger" not_styleable="true" default="0" category="Layout" groupOrder="2">
+      <StyleElement attribute="@include elemLeft($value)"/>
+      <Description>absolute position measured from left boundary of parent container</Description>
+    </StyleProperty>
+  </StyleProperties>
+</Area>

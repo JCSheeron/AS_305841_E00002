@@ -1,0 +1,54 @@
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  height: 30px;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  top: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  left: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  width: 220px;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  z-index: 0;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_labelConnecting {
+  justify-content: center;
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  top: 48px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  left: 40px;
+  position: absolute;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  width: 220px;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  height: 20px;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  z-index: 1;
+}
+
+#SfMP171_contentBusyConnect_SfMP171_PaperBlackLoadingDots {
+  border-width: 0px;
+}

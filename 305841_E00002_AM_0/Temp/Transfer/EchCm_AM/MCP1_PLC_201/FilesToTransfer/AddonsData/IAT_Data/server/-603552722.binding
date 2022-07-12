@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Visualization>
+    <Binding mode="oneWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.OperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:operatingMode.ModeReqBits" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="variable" refId="svReqOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Visualization>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeEmoModeSel" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_EMO_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeEmoModeSel" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModeEmoModeSel" attribute="result" /><List refId="ButtonSelectionStyleRedIndicator" /></Source>
+      <Target xsi:type="brease" refId="contentStdTop_btnEmoMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeSafe" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_SAFE_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeSafe" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModeSafe" attribute="result" /><List refId="ButtonSelectionStyleGreenIndicator" /></Source>
+      <Target xsi:type="brease" refId="contentStdTop_btnSafeMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeManual" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_MANUAL_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeManual" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModeManual" attribute="result" /><List refId="ButtonSelectionStyleOrange" /></Source>
+      <Target xsi:type="brease" refId="contentStdTop_btnManualMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModePendant" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_PENDANT_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModePendant" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModePendant" attribute="result" /><List refId="ButtonSelectionStyleYellow" /></Source>
+      <Target xsi:type="brease" refId="contentStdTop_btnPendantMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOperatingMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeProduction" attribute="ModeSelected" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source xsi:type="variable" refId="svOM_PRODUCTION_MODE" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+      <Target xsi:type="expression" refId="isModeProduction" attribute="ParentMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+  <Content id="contentStdTop">
+    <Binding mode="oneWay">
+      <Source mode="oneWay" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="expression" refId="isModeProduction" attribute="result" /><List refId="ButtonSelectionStyleGreen" /></Source>
+      <Target xsi:type="brease" refId="contentStdTop_btnProductionMode" attribute="style" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+    </Binding>
+  </Content>
+</BindingDefinition>

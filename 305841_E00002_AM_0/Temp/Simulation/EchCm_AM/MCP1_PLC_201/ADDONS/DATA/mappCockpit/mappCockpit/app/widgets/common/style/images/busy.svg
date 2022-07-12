@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="120"
+   height="120"
+   viewBox="0 0 120 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="busy.svg"
+   style="margin:auto">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4"
+     inkscape:cx="104.40038"
+     inkscape:cy="27.145287"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg8"
+     showgrid="false"
+     units="px"
+     objecttolerance="5"
+     gridtolerance="5"
+     guidetolerance="5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       dotted="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style
+     id="style5">
+            .progress-style{
+                transform-origin: center;
+                animation: progress 2s infinite ;        
+            }
+
+            .progress-style-outer{
+                transform-origin: center;
+                animation: slowRotation 4.5s infinite linear; 
+            }
+
+            @keyframes slowRotation{
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes progress {
+                0% {
+                    stroke-dashoffset: 339.292;
+                    transform: rotateX(0deg);
+                }
+                50% {
+                    stroke-dashoffset: 0;
+                    transform:  rotatex(0deg);
+
+                }
+                50.000000001% {
+                    stroke-dashoffset: 0;
+                    transform:  rotateX(180deg);
+                    
+                }
+                100% {
+                    stroke-dashoffset: 339.292;
+                    transform:  rotateX(180deg);
+                    
+                }
+            }
+        </style>
+  <g
+     class="progress-style-outer"
+     id="g11">
+    <circle
+       cx="60"
+       cy="60"
+       r="54"
+       id="circle7"
+       style="fill:none;stroke:#e6e6e6;stroke-width:12" />
+    <circle
+       class="progress-style"
+       cx="60"
+       cy="60"
+       r="54"
+       id="circle9"
+       style="fill:none;stroke:#f77a52;stroke-width:12;stroke-dasharray:339.292;stroke-dashoffset:50" />
+  </g>
+</svg>

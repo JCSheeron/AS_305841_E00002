@@ -1,0 +1,93 @@
+﻿@import "mixins.scss";
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+	@include elemTop(40);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+	@include elemLeft(20);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+	@include elemAutoWidth(280);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+	@include elemAutoHeight(65);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+		z-index: 0;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnConnectionPage {
+		padding: 0px 5px;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+	@include elemTop(120);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+	@include elemLeft(20);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+	@include elemAutoWidth(280);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+	@include elemAutoHeight(65);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+		z-index: 1;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnTransferPage {
+		padding: 0px 5px;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+	@include elemTop(200);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+	@include elemLeft(20);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+	@include elemAutoWidth(280);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+	@include elemAutoHeight(65);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+		z-index: 2;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnCompletionPage {
+		padding: 0px 5px;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+	@include elemTop(280);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+	@include elemLeft(20);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+	@include elemAutoWidth(280);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+	@include elemAutoHeight(65);
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+		z-index: 3;
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+	span{
+	@include font-weight-bold(true);
+	}
+}
+#SfMP171_ContentNavLand_SfMP171_NavbtnExchangePage {
+		padding: 0px 5px;
+}

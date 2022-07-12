@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gSafeDomain_1" Type="sfdomain">
+    <Group ID="DefaultSettings">
+      <Property ID="SafeDomain" Value="1" />
+      <Property ID="SafeLOGICName" Value="SafetyController_R01SL06" />
+      <Property ID="SafeLOGICProductId" Value="X20SLX410" />
+      <Property ID="SafeLOGICModulePath" Value="SS1.IF1.ST1.IF1.ST6" />
+      <Property ID="Password" Value="5f4dcc3b5aa765d61d8327deb882cf99" />
+      <Property ID="SafeProject" Value="safeApp1" />
+    </Group>
+  </Element>
+</Configuration>

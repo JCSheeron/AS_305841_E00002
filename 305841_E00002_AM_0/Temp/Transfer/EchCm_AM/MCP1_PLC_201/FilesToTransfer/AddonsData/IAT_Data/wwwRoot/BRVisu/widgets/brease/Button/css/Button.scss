@@ -1,0 +1,167 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-outer: #5B7C70;
+$default-text-color: #333;
+$default-background: #FFF;
+
+$active-border-outer: $active-color;
+$active-border-inner: #CB6000;
+$active-text-color: #333;
+$active-background: #FFF;
+
+$disabled-border-outer: #C8C8C8;
+$disabled-border-inner: #FFF;
+$disabled-text-color: #C8C8C8;
+$disbled-background: #F1F1F1;
+
+.breaseButton {
+    @include appearance(none);
+    @include box-sizing(border-box);
+    width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    background: $default-background;
+    border: 2px solid $default-border-outer;
+    font-family: Arial;
+    font-size: 12px;
+    color: $default-text-color;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    background-size: 100% 100%;
+    @include displayFlexBox(true);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    text-align: center;
+
+    span {
+		
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        pointer-events: none;
+        margin: 0;
+        padding: 0;
+        @include flex(0 1 auto);
+
+		&.down {
+			display: none;
+		}
+    }
+
+    img,svg {
+        display: inline-block;
+        vertical-align: middle;
+        pointer-events: none;
+        padding: 0;
+        margin: 0;
+        @include flex(none);
+    }
+
+    &.image-left  {
+        img,svg{
+            margin: 0 10px 0 0;
+        }
+    }
+
+    &.image-right {
+        img,svg{
+            margin: 0 0 0 10px;
+        }
+    }
+
+    &.image-top {
+        @include flex-direction(column);
+
+        img,svg{
+            margin: 0 0 5px 0;
+        }
+
+        span{
+            width: 100%;
+        }
+    }
+
+    &.image-bottom {
+        @include flex-direction(column);
+
+        img,svg{
+            margin: 5px 0 0 0;
+        }
+
+        span{
+            width: 100%;
+        }
+
+    }
+
+    &.ellipsis span {
+        @include text-overflow(ellipsis);
+    }
+
+    &.multiLine span {
+        white-space: pre;
+    }
+
+    &.breakWord span {
+        white-space: pre-line;
+        word-wrap: break-word;
+    }
+
+    &.wordWrap span {
+        white-space: pre-wrap;
+    }
+
+    &:focus, &.focus {
+        outline: none;
+    }
+
+    &.active, &.checked {
+        
+        .text {
+            color: $active-text-color;
+        }
+
+		span.up {
+			display: none;
+		}
+
+        span.up:only-of-type {
+			display: block;
+		}
+
+		span.down {
+			display: block;
+		}
+    }
+
+    &.disabled {
+        
+
+        span {
+            color: #989898;
+        }
+
+		span.up {
+			display: block;
+		}
+
+		span.down {
+			display: none;
+		}
+
+        img{
+            opacity: 0.5;
+        }
+
+        &.active, &.checked {
+            .text {
+                color: $disabled-text-color;
+            }
+        }
+    }
+}

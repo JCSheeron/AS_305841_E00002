@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.Rectangle" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties >
+    <StyleProperty name="width" type="Size" not_styleable="true" default="100">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="100">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+		<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid" >
+			<StyleElement attribute="border-style"></StyleElement>
+      <Description>Sets the style of the border of the widget</Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="1px" >
+			<StyleElement attribute="border-width"></StyleElement>
+      <Description>
+        Sets the width of the border. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the widget rounded corners. For further information, please check its type
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="lineColor" category="Appearance" type="ColorCollection" default="#000000">
+			<StyleElement attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="#FF8800" >
+			<StyleElement attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+      <Description>
+        Sets the opacity of the widget
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+			<StyleElement attribute="@include rotate($value)"></StyleElement>
+      <Description>
+        Sets the rotation of the widget with respect to its center. Positive values for clockwise direction
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+      <Description>
+        Sets the margin around the widget. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+			<StyleElement attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        Sets the shadow effect of the widget. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Sets the background color of the widget as gradient. For further information, please check CSS Gradients
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="lineGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement attribute="@include borderImageGradient('$value')"></StyleElement>
+      <Description>
+        Sets the border color of the widget as gradient. For further information, please check CSS Gradients
+      </Description>
+		</StyleProperty>
+	</StyleProperties>
+</StyleInformation>
+	
+	
+

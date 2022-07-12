@@ -1,0 +1,58 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+.breaseToggleButton {
+
+    span {
+        &.down {
+			display: none;
+		}
+        &.up:only-of-type {
+            display: block;
+        }
+    }
+    
+    &.checked {
+        &:not(.active) {
+            span.up {
+                display: none;
+            }
+            span.up:only-of-type {
+                display: block;
+            }
+            span.down {
+                display: block;
+            }
+        }
+        &.active { 
+            span.up {
+                display: none;
+            }
+            span.up:only-of-type {
+                display: block;
+            }
+            span.down {
+                display: block;
+            }
+        }
+    }
+    
+    &:not(.checked) {
+        &:not(.active) {
+            span.down {
+                display: none;
+            }
+            span.up {
+                display: block;
+            }
+        }
+        &.active {
+            span.down {
+                display: none;
+            }
+            span.up {
+                display: block;
+            }
+        }
+    }
+}

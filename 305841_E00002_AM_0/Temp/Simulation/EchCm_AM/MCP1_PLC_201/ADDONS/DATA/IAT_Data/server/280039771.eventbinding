@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="mainContentAxisDetail">
+    <EventBinding id="axisDetail.GaMotAxisDetail1.HomeDialogClick">
+      <Source type="widgets.brease.PushButton.Event" event="Click" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbHomeDlg" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="dlgHome" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+  <Content id="mainContentAxisDetail">
+    <EventBinding id="axisDetail.GaMotAxisDetail1.SetPosLimitsDialogClick">
+      <Source type="widgets.brease.PushButton.Event" event="Click" refId="mainContentAxisDetail_GaMotAxisDetail1ΘpbSetPosLimitsDlg" />
+      <EventHandler>
+        <Action>
+          <Target type="clientSystem.Action">
+            <Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="dlgSetPosLimits" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Content>
+</EventBindingDefinition>

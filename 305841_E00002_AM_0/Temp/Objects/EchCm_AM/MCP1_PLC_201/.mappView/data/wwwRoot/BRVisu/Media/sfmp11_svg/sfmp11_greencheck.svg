@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 38 38"
+   style="enable-background:new 0 0 38 38;"
+   xml:space="preserve"
+   width="38px"
+   height="38px"
+   sodipodi:docname="SfMP11_greenCheck.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"><metadata
+   id="metadata12"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs10"><filter
+     inkscape:collect="always"
+     style="color-interpolation-filters:sRGB"
+     id="filter4544"
+     x="-0.06"
+     width="1.12"
+     y="-0.06"
+     height="1.12"><feGaussianBlur
+       inkscape:collect="always"
+       stdDeviation="0.9"
+       id="feGaussianBlur4546" /></filter></defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview8"
+   showgrid="false"
+   inkscape:zoom="6.2105263"
+   inkscape:cx="-1.0466102"
+   inkscape:cy="19"
+   inkscape:window-x="1912"
+   inkscape:window-y="106"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<circle
+   style="fill:#f2f2f2;stroke-width:1.06466174;filter:url(#filter4544)"
+   id="path3717"
+   cx="19.16102"
+   cy="19.254236"
+   r="18" /><g
+   id="surface1_4_"
+   transform="matrix(0.7016625,0,0,0.7016625,2.1685742,2.1685742)">
+	<path
+   style="fill:#4caf50"
+   d="M 44,24 C 44,35.045 35.045,44 24,44 12.955,44 4,35.045 4,24 4,12.955 12.955,4 24,4 35.045,4 44,12.955 44,24 Z"
+   id="path2"
+   inkscape:connector-curvature="0" />
+	<path
+   style="fill:#ccff90"
+   d="M 34.602,14.602 21,28.199 15.398,22.601 12.601,25.398 21,33.801 37.398,17.399 Z"
+   id="path4"
+   inkscape:connector-curvature="0" />  
+</g>
+</svg>

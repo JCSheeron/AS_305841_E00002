@@ -1,0 +1,26 @@
+@import "mixins.scss";
+@mixin widgets_brease_Image_base {
+	@include elemAutoWidth(150);
+	@include elemAutoHeight(100);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	background-color: transparent;
+	border-style: none;
+	border-width: 2px;
+	border-color: #333;
+	@include border-radius(0px);
+	opacity: 1;
+	@include rotate(0deg);
+	margin: 0px;
+	@include box-shadow(none);
+& > .ImageView > svg {
+	fill: #000000;
+}
+
+}
+
+.widgets_brease_Image_style_default {
+@include widgets_brease_Image_base 
+}

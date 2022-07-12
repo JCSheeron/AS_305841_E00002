@@ -1,0 +1,143 @@
+/* motionPad theme for G-code languages */
+
+.ace-motionPadTheme .ace_gutter {
+  background: #e8e8e8;
+  color: #AAA;
+}
+
+.ace-motionPadTheme  {
+  background: #fff;
+  color: #000;
+}
+
+.ace-motionPadTheme.ace-debugging {
+    background-color: #D3D3D3;
+    color: #000;
+}
+
+/* Comments, block-numbers */
+.ace-motionPadTheme .ace_comment {
+  color: #998;
+  font-style: italic;
+}
+
+/* Strings */
+.ace-motionPadTheme .ace_string.ace_start,
+.ace-motionPadTheme .ace_string.ace_end,
+.ace-motionPadTheme .ace_string {
+  color: #D14;
+}
+
+/* Numerical constants */
+.ace-motionPadTheme .ace_constant.ace_numeric {  
+  color: #F0F;
+}
+
+/* Axis names and G-code arguments */
+.ace-motionPadTheme .ace_variable.ace_parameter {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Arithmetic operators */
+.ace-motionPadTheme .ace_keyword.ace_operator{
+    font-weight: bold;
+}
+
+/* Control keywords */
+.ace-motionPadTheme .ace_keyword.ace_control  {
+  font-weight: bold;
+  color: #0000FF;
+}
+
+/* Miscellaneous keywords */
+.ace-motionPadTheme .ace_keyword.ace_other {
+  font-weight: bold;
+  /*color: #0000FF;*/
+}
+
+/* Commands - G-codes, M-functions and Technology functions */
+.ace-motionPadTheme .ace_support.ace_function {
+  color: #0000FF;
+}
+
+/* Data types */
+.ace-motionPadTheme .ace_support.ace_type {  
+  color: #070;
+  font-weight: bold;
+}
+
+/* Constants (MC_X, MC_NAME_P1, ...) */
+.ace-motionPadTheme .ace_support.ace_constant {
+  font-weight: bold;
+}
+
+/* System variables ($WFRAME, $RAD, ... ) */
+.ace-motionPadTheme .ace_support.ace_variable {
+  font-weight: bold;
+}
+
+/* Parentheses */
+.ace-motionPadTheme .ace_paren {
+  font-weight: bold;
+}
+
+.ace-motionPadTheme .ace_cursor {
+  color: black;
+}
+
+.ace-motionPadTheme.ace_focus .ace_marker-layer .ace_active-line {
+  background: rgb(255, 255, 204);
+}
+.ace-motionPadTheme .ace_marker-layer .ace_active-line {
+  background: rgb(245, 245, 245);
+}
+
+.ace-motionPadTheme .ace_marker-layer .ace_selection {
+  background: rgb(181, 213, 255);
+}
+
+.ace-motionPadTheme.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px white;
+}
+
+/* bold keywords cause cursor issues for some fonts */
+/* this disables bold style for editor and keeps for static highlighter */
+.ace-motionPadTheme.ace_nobold .ace_line > span {
+    font-weight: normal !important;
+}
+
+.ace-motionPadTheme .ace_marker-layer .ace_step {
+  background: rgb(252, 255, 0);
+}
+
+.ace-motionPadTheme .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-motionPadTheme .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-motionPadTheme .ace_gutter-active-line {
+    background-color : rgba(0, 0, 0, 0.07);
+}
+
+.ace-motionPadTheme .ace_marker-layer .ace_selected-word {
+  background: rgb(250, 250, 255);
+  border: 1px solid rgb(200, 200, 250);
+}
+
+.ace-motionPadTheme .ace_invisible {
+  color: #BFBFBF
+}
+
+.ace-motionPadTheme .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-motionPadTheme .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}

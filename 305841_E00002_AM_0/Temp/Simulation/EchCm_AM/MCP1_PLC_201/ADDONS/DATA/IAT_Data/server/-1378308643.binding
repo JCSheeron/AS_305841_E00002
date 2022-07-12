@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnSFProj" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknAppl" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnAckOptPara" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknOPPara" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnAckSN" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknSN" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnFinishSetupMode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnSetupModeFinish" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnAcknSafeCommOP" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknSafeCommOP" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ShowBtnAckSafeOption" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknSafeCommOP" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Visible_GreenMark_AckSafeProject" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_CheckmarkAckSafeApp" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Visible_GreenMark_AckSafeOP" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_CheckmarkAckSafeOPT" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Visible_GreenMark_AckSafeNode" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_CheckmarkAckSafeNode" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Visible_GreenMark_FinishSetup" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentSetupMode_SfMP171_CheckmarkFinishSetup" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+</BindingDefinition>

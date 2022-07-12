@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dialog xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+
+    <StyleProperty name="backGround" type="ImagePath" category="StyleProperty">
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="brease.enum.SizeMode" category="StyleProperty">
+      <StyleElement attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#ebebeb">
+      <StyleElement attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient">
+      <StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+
+  </StyleProperties>
+</Dialog>

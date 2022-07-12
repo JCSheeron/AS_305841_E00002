@@ -1,0 +1,71 @@
+@import '../../../../css/libs/mixins.scss';
+
+$default-bg-color: transparent;
+
+$text-color: #000000;
+
+.breaseLabel {
+    background: $default-bg-color;
+    height: 30px;
+    width: 80px;
+    position: relative;
+    font-size: 14px;
+    color: $text-color;
+    white-space: nowrap;
+    @include box-sizing(border-box);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    vertical-align: middle;
+
+    @include displayFlexBox(true);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+
+    span {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        pointer-events: none;
+        margin: 0px;
+        padding: 0px 15px 0px 15px;
+        @include flex(0 0 auto);
+    }
+
+    &.ellipsis > span {
+        @include text-overflow(ellipsis);
+        @include flex(0 1 auto);
+    }
+        
+    &.multiLine > span {
+        white-space: pre;
+    }
+
+    // AG: display inline-block is neccessary because IScroll can not scroll to the top of content
+    //      when content is centered
+    &.multiLine.scrollable { 
+        display: inline-block;
+    }
+    &.breakWord.scrollable {
+        @include align-items(start);
+    }
+    &.wordWrap.scrollable {
+        display: inline-block;
+    }
+    // AG: breakWord class definition must be above wordWrap class, 
+    // because word wrap should override white-space property of breakWord, if both are active
+    &.breakWord > span {
+        white-space: pre-line;
+        word-wrap: break-word;
+        @include flex(0 1 auto);
+    }
+
+    &.wordWrap > span {
+        white-space: pre-wrap;
+        @include flex(0 1 auto);
+    }
+
+
+
+}

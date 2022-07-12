@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MessageBox xmlns="http://www.br-automation.com/iat2014/widget" >
+  <StyleProperties>
+
+    <StyleProperty name="cornerRadius" type="PixelValCollection" default="0px" >
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="border-radius"/>
+      <StyleElement selector=".messageBoxFooter" attribute="border-radius"/>
+      <Description>
+        corner radius of entire MessageBox
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="opacity" type="Opacity" >
+      <StyleElement attribute="opacity"></StyleElement>
+      <Description>
+        opacity of entire MessageBox
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="shadow" type="Shadow">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        shadow of entire MessageBox
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="margin" category="Layout" type="Margin">
+      <StyleElement attribute="margin"></StyleElement>
+      <Description>
+        margin of entire MessageBox
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidth" type="PixelValCollection" default="5px">
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="border-width"></StyleElement>
+      <Description>
+        border width of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="backColor" type="Color" default="#FFF">
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="background-color"></StyleElement>
+      <Description>
+        background color of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColor" type="ColorCollection" default="#333">
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="border-color"></StyleElement>
+      <Description>
+        border color of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderStyle" type="BorderStyle" default="solid">
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="border-style"></StyleElement>
+      <Description>
+        border style of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="textColor" type="Color" default="#333">
+      <StyleElement selector=".breaseMessageBoxContentBox div.content" attribute="color"></StyleElement>
+      <Description>
+        text color of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="fontName" type="FontName">
+      <StyleElement selector=".breaseMessageBoxContentBox div.content" attribute="font-family"></StyleElement>
+      <Description>
+        font-name of the text of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="fontSize" type="PixelVal" default="12px">
+      <StyleElement selector=".breaseMessageBoxContentBox div.content" attribute="font-size"></StyleElement>
+      <Description>
+        font-size of the text of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="padding" type="Padding">
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="padding"></StyleElement>
+      <Description>
+        padding of content area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="bold" type="Boolean" default="false">
+      <StyleElement selector=".breaseMessageBoxContentBox div.content" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>
+        If **true** font style is bold (content area)
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="italic" type="Boolean" >
+      <StyleElement selector=".breaseMessageBoxContentBox div.content" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>
+        If **true** font style is italic (content area)
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" >
+      <StyleElement selector=".breaseMessageBoxContentBox" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>
+        alignment of the text (content area)
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBackColor" type="Color" default="#333">
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="background-color"></StyleElement>
+      <StyleElement selector=".messageBoxFooter" attribute="background-color"></StyleElement>
+      <Description>
+        background color of header area and button area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerGradient" category="Appearance" type="Gradient">
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="background-image"></StyleElement>
+      <Description>
+        background as a gradient of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBorderWidth" type="PixelValCollection" default="0px">
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="border-width"></StyleElement>
+      <Description>
+        border width of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBorderColor" type="ColorCollection" default="#333">
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="border-color"></StyleElement>
+      <Description>
+        border color of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBorderStyle" type="BorderStyle">
+      <StyleElement selector=".breaseMessageBoxHeader" attribute="border-style"></StyleElement>
+      <Description>
+        border style of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerTextColor" type="Color">
+      <StyleElement selector="&amp;.breaseMessageBox.breaseWindow header.breaseMessageBoxHeader > div" attribute="color"></StyleElement>
+      <Description>
+        text color of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerFontName" type="FontName">
+      <StyleElement selector="&amp;.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div" attribute="font-family"></StyleElement>
+      <Description>
+        font-name of the text of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerFontSize" type="PixelVal">
+      <StyleElement selector="&amp;.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div" attribute="font-size"></StyleElement>
+      <Description>
+        font-size of the text of header area
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerBold" type="Boolean" default="true">
+      <StyleElement selector="&amp;.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>
+        If **true** font style is bold (header area)
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="headerItalic" type="Boolean" >
+      <StyleElement selector="&amp;.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>
+        If **true** font style is italic (header area)
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconError" type="ImagePath">
+      <StyleElement selector=".icon.error" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Error
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconAsterisk" type="ImagePath">
+      <StyleElement selector=".icon.asterisk" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Asterisk
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconExclamation" type="ImagePath">
+      <StyleElement selector=".icon.exclamation" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Exclamation
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconHand" type="ImagePath">
+      <StyleElement selector=".icon.hand" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Hand
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconInformation" type="ImagePath">
+      <StyleElement selector=".icon.information" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Information
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconQuestion" type="ImagePath">
+      <StyleElement selector=".icon.question" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Question
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconStop" type="ImagePath">
+      <StyleElement selector=".icon.stop" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Stop
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="iconWarning" type="ImagePath">
+      <StyleElement selector=".icon.warning" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for type Warning
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBorderStyle" type="BorderStyle" category="Appearance">
+      <StyleElement selector=".messageBoxButton" attribute="border-style"></StyleElement>
+      <StyleElement selector=".messageBoxButton.active" attribute="border-style"></StyleElement>
+      <StyleElement selector=".messageBoxButton:active" attribute="border-style"></StyleElement>
+      <StyleElement selector=".messageBoxButton.checked" attribute="border-style"></StyleElement>
+      <StyleElement selector=".messageBoxButton.disabled" attribute="border-style"></StyleElement>
+      <Description>
+        border style for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="buttonCornerRadius" type="PixelValCollection" category="Appearance" >
+      <StyleElement selector=".messageBoxButton" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        corner radius for MessageBox buttons
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonFontSize" category="Appearance.Font" type="PixelVal">
+      <StyleElement selector=".messageBoxButton span" attribute="font-size"></StyleElement>
+      <Description>
+        font-size for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="buttonFontName" category="Appearance.Font" type="FontName">
+      <StyleElement selector=".messageBoxButton span" attribute="font-family"></StyleElement>
+      <Description>
+        font-name for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="buttonBorderWidth" type="PixelValCollection" category="Appearance" default="2px">
+      <StyleElement selector=".messageBoxButton" attribute="border-width"></StyleElement>
+      <Description>
+        border width for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownButtonBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode):active" attribute="border-width"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).active" attribute="border-width"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).checked" attribute="border-width"></StyleElement>
+      <Description>
+        border width for MessageBox buttons in mousedown state
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBorderColor" type="ColorCollection" default="#5B7C70">
+      <StyleElement selector=".messageBoxButton" attribute="border-color"></StyleElement>
+      <Description>
+        border color for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownButtonBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" >
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode):active" attribute="border-color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).active" attribute="border-color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).checked" attribute="border-color"></StyleElement>
+      <Description>
+        border color for MessageBox buttons in mousedown state
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="buttonBackColor" category="Appearance" type="Color" default="#DBDBDB">
+      <StyleElement selector=".messageBoxButton" attribute="background-color"></StyleElement>
+      <Description>
+        background color for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownButtonBackColor" category="Appearance" type="Color" default="#DBDBDB" >
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode):active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).active" attribute="background-color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).checked" attribute="background-color"></StyleElement>
+      <Description>
+        background color for MessageBox buttons in mousedown state
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" >
+      <StyleElement selector=".messageBoxButton" attribute="background-image"></StyleElement>
+      <Description>
+        background gradient for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownButtonBackGroundGradient" category="Appearance" type="Gradient" >
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode):active" attribute="background-image"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).active" attribute="background-image"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).checked" attribute="background-image"></StyleElement>
+      <Description>
+        background gradient for MessageBox buttons in mousedown state
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="buttonTextColor" category="Appearance" type="Color" default="#000">
+      <StyleElement selector=".messageBoxButton span" attribute="color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled) span" attribute="color"></StyleElement>
+      <StyleElement selector=".messageBoxButton.disabled span" attribute="color"></StyleElement>
+      <Description>
+        text color for MessageBox buttons
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownButtonTextColor" category="Appearance" type="Color" default="#000">
+
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode):active span" attribute="color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).active span" attribute="color"></StyleElement>
+      <StyleElement selector=".messageBoxButton:not(.disabled):not(.editMode).checked span" attribute="color"></StyleElement>
+      <Description>
+        text color for MessageBox buttons in mousedown state
+      </Description>
+    </StyleProperty>
+
+  </StyleProperties>
+</MessageBox>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.button" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+	<StyleProperties>
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" default="100">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="30">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+      <StyleElement attribute="@include elemMinWidth($value)"></StyleElement>
+      <Description>minimum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+      <StyleElement attribute="@include elemMaxWidth($value)"></StyleElement>
+      <Description>maximum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5"> 
+      <StyleElement attribute="@include elemMinHeight($value)"></StyleElement>
+      <Description>minimum outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+      <StyleElement attribute="@include elemMaxHeight($value)"></StyleElement>
+      <Description>maximum outer height of widget</Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+      <StyleElement selector="img" attribute="@include imageWidth($value)"></StyleElement>
+      <StyleElement selector="svg" attribute="@include imageWidth($value)"></StyleElement>
+      <Description>width of the image</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+      <StyleElement selector="img" attribute="@include imageHeight($value)"></StyleElement>
+      <StyleElement selector="svg" attribute="@include imageHeight($value)"></StyleElement>
+      <Description>height of the image</Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;:not(.active):not(.disabled):not(.checked) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+
+    <StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.active svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.disabled svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    
+		<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid">
+			<StyleElement attribute="border-style"></StyleElement>
+			<StyleElement selector="&amp;.active" attribute="border-style"></StyleElement>
+			<StyleElement selector="&amp;.checked" attribute="border-style"></StyleElement>
+      <StyleElement selector="&amp;.disabled" attribute="border-style"></StyleElement>
+			<Description>
+				Style of the Border of the widget
+			</Description>
+		</StyleProperty>    
+		<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="2px">
+			<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="border-width"></StyleElement>
+      <StyleElement selector="&amp;.disabled" attribute="border-width"></StyleElement>
+			<Description>
+        Sets the width of the border. For further information, please check its type
+			</Description>
+		</StyleProperty>   
+		<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+			<StyleElement attribute="@include border-radius($value)"></StyleElement>
+			<Description>
+        Sets the radius of the widget rounded corners. For further information, please check its type
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color
+			</Description>
+		</StyleProperty>    
+		<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+			<StyleElement selector="&amp;.disabled" attribute="background-color"></StyleElement>
+			<StyleElement selector="&amp;.disabled.active" attribute="background-color"></StyleElement>
+			<StyleElement selector="&amp;.disabled.checked" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color when disabled
+			</Description>
+		</StyleProperty>    
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>    
+    <StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>   
+    <StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;.active:not(.disabled)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient when widget is clicked
+      </Description>
+    </StyleProperty>    
+    <StyleProperty name="backGround" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="&amp;:not(.disabled)" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+      <Description>
+        Sets the path for an image as background
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF">
+			<StyleElement selector="&amp;.disabled" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;.disabled.active" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;.disabled.checked" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the color of the border when disabled
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked) span" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the text when enabled
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898" >
+			<StyleElement selector="&amp;.disabled span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.disabled.active span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.disabled:checked span" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the text when disabled
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"></StyleElement>
+			<Description>
+				border color when widget is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-width"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-width"></StyleElement>
+			<Description>
+				border width when widget is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#DBDBDB" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="background-color"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color"></StyleElement>
+			<Description>
+				back color when widget is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode) span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.active.checked:not(.disabled) span" attribute="color"></StyleElement>
+			<Description>
+				text color when widget is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" >
+			<StyleElement attribute="@include text-alignment($value)"></StyleElement>
+			<Description>
+				Alignment of the text
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+			<StyleElement attribute="@include rotate($value)"></StyleElement>
+			<Description>
+				Rotation of widget.
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+			<StyleElement selector="span" attribute="font-size"></StyleElement>
+			<Description>
+				Fontsize of the text in pixel
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+			<StyleElement selector="span" attribute="font-family"></StyleElement>
+			<Description>
+				Fontname of the text
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="bold" category="Font" type="Boolean" default="false">
+			<StyleElement selector="span" attribute="@include font-weight-bold($value)"></StyleElement>
+			<Description>
+				If *true* font style is bold
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+			<StyleElement selector="span" attribute="@include font-style-italic($value)"></StyleElement>
+			<Description>
+				If *true* font style is italic
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="padding" category="Layout" type="Padding" default="0px 10px">
+			<StyleElement attribute="padding"></StyleElement>
+			<Description>
+				Padding of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Margin of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+			<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"></StyleElement>
+			<Description>
+				Shadow of the Widget
+			</Description>
+		</StyleProperty>
+    <StyleProperty name="mouseDownShadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        Shadow of the Widget when widget clicked
+      </Description>
+    </StyleProperty>
+    
+	</StyleProperties>
+</StyleInformation>

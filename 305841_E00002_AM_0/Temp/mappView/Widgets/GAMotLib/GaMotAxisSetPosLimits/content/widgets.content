@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Content id="GaMotAxisSetPosLimits" width="400" height="340" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.GroupBox" id="grpBoxAxisSetLimits" top="25" left="20" width="355" height="285" zIndex="0" cornerRadius="8px 8px 0px 0px">
+      <Widgets>
+        <Widget xsi:type="widgets.GAGeneralLib.TitleLabelBindable" id="lblTitle" top="-5" left="-1" width="355" height="35" zIndex="0" value="Axis Title"/>
+        <Widget width="100" xsi:type="widgets.brease.PushButton" id="pbSetLimits" top="209" left="124" height="40" zIndex="1" multiLine="true" text="Set\nLimits"/>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosLimitPos" top="84" left="44" width="120" height="15" zIndex="2" unitAlign="right" textAlign="center"/>
+        <Widget xsi:type="widgets.brease.Label" id="lblPosLimitPos" top="54" left="34" width="130" height="22" zIndex="3" text="Positive Limit" textAlign="center" bold="true"/>
+        <Widget xsi:type="widgets.brease.NumericOutput" id="numOutPosLimitNeg" top="84" left="199" width="120" height="15" zIndex="4" unitAlign="right" textAlign="center"/>
+        <Widget xsi:type="widgets.brease.Label" id="lblPosLimitNeg" top="54" left="189" width="130" height="22" zIndex="5" text="Negative Limit" textAlign="center" bold="true"/>
+        <Widget height="30" xsi:type="widgets.brease.NumericInput" id="numInPosLimitPos" top="129" left="45" width="120" zIndex="6"/>
+        <Widget height="30" xsi:type="widgets.brease.NumericInput" id="numInPosLimitNeg" top="129" left="189" width="120" zIndex="7"/>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

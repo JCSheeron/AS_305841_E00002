@@ -1,0 +1,195 @@
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+  width: 430px;
+}
+
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+  height: 330px;
+}
+
+#SfMP171_contentDetails_SfMP171_TabControlTableConnect {
+  z-index: 0;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab.tabItem {
+  width: 100px;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab.tabItem {
+  height: 30px;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails {
+  z-index: 0;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemConnectDetails_breaseTabItemTab.tabItem {
+  padding: 0px;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+  top: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+  width: 410px;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+  height: 90px;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl {
+  z-index: 0;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnectShowAppl:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem1 {
+  z-index: 0;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem2 {
+  z-index: 1;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem3 {
+  z-index: 2;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem4 {
+  z-index: 3;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+  top: 140px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+  width: 410px;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+  height: 109px;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp {
+  z-index: 1;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_tableConnetShowMOp:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput) {
+  background-color: silver;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem5 {
+  z-index: 0;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem6 {
+  z-index: 1;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem7 {
+  z-index: 2;
+}
+
+#SfMP171_contentDetails_SfMP171_TableItem8 {
+  z-index: 3;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemHWTree_breaseTabItemTab.tabItem {
+  width: 100px;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemHWTree_breaseTabItemTab.tabItem {
+  height: 30px;
+}
+
+#SfMP171_contentDetails_SfMP171_tabItemHWTree {
+  z-index: 1;
+}
+
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+  top: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+  left: 30px;
+  position: absolute;
+}
+
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+  width: 200px;
+}
+
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+  height: 270px;
+}
+
+#SfMP171_contentDetails_SfMP171_paperHWTreeConnect {
+  z-index: 0;
+}

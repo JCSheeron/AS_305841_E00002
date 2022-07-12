@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.LoginInfo" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties>
+
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" default="120">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="30">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    
+	</StyleProperties>
+</StyleInformation>

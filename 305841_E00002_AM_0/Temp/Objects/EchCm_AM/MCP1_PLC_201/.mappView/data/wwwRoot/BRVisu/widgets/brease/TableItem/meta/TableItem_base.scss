@@ -1,0 +1,101 @@
+@import "mixins.scss";
+@mixin widgets_brease_TableItem_base {
+&:not(.disabled).odd.override:not(.selected) {
+	background-color: transparent;
+}
+&:not(.disabled).even.override:not(.selected) {
+	background-color: transparent;
+}
+&:not(.disabled).even.override:not(.selected) {
+	@include backGroundGradient('');
+}
+&:not(.disabled).odd.override:not(.selected) {
+	@include backGroundGradient('');
+}
+&.headerElement.override:not(.disabled) {
+	@include importantBackColor(#FCFCFC);
+}
+&.headerElement.override:not(.disabled) {
+	@include importantGradient();
+}
+&.headerElement.override:not(.disabled) > span {
+	@include importantTextColor(#333333);
+}
+&.headerElement.override > span {
+	font-size: 14px;
+}
+&.headerElement.override > span {
+	@include importantBoldText(false);
+}
+&.headerElement.override > span {
+	@include importantItalicText(false);
+}
+svg > g > path.unselected {
+	fill: #ececec;
+}
+svg > g > path.selected {
+	fill: #5f8dd3;
+}
+&:not(.disabled):not(.selected):not(.headerElement).override.odd {
+	color: #333333;
+}
+&:not(.disabled):not(.selected):not(.headerElement).override.even {
+	color: #333333;
+}
+&:not(.headerElement):not(.disabled).override {
+	@include importantBoldText(false);
+}
+&:not(.headerElement).override.disabled {
+	@include importantBoldText(false);
+}
+&:not(.headerElement):not(.disabled).override {
+	@include importantItalicText(false);
+}
+&:not(.headerElement).override.disabled {
+	@include importantItalicText(false);
+}
+&:not(.headerElement):not(.disabled).override {
+	font-size: 14px;
+}
+&:not(.headerElement).override.disabled {
+	font-size: 14px;
+}
+&:not(.headerElement).override {
+	@include text-position('center center');
+}
+&:not(.headerElement) >img .override {
+	@include image-align('center center');
+}
+&.headerElement.override {
+	@include flex-position('center center');
+}
+&.headerElement.override > span  {
+	@include text-position('center center');
+}
+&.override {
+	border-style: solid;
+}
+&.headerElement .override {
+	border-style: solid;
+}
+&.override {
+	border-color: #C8C8C8;
+}
+&.headerElement.override {
+	border-color: #C8C8C8;
+}
+&.override {
+	border-width: 0px 0px 1px 1px;
+}
+&.headerElement.override {
+	border-width: 0px 0px 1px 1px;
+}
+&.override:not(.headerElement) {
+	padding: 0px;
+}
+&.headerElement.override {
+	padding: 0px;
+}
+
+}
+

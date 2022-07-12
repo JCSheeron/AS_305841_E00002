@@ -1,0 +1,144 @@
+@import '../../../../css/libs/variables';
+@import '../../../../css/libs/mixins';
+$dimmer: rgba(0,0,0,0.3);
+
+$border-outer-color: #333;
+$text-color: #3E3E47;
+$btn-active-color: $active-color;
+
+.breaseModalDimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &.active {
+        background-color: $dimmer;
+    }
+
+    display: none;
+}
+
+
+.breaseWindow {
+    position: absolute;
+    display: none;
+    @include user-select(none);
+    @include box-sizing(border-box);
+    background: #FFF;
+    border-left: 9px solid $border-outer-color;
+    border-bottom: 9px solid $border-outer-color;
+    border-right: 9px solid $border-outer-color;
+    
+    .breaseWindowArrow {
+        position: absolute;
+        z-index: 1001;
+    }
+
+    &.arrowLeft {
+
+        .breaseWindowArrow {
+            top: 28px;
+            left: -21px;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-right: 12px solid $border-outer-color;
+            border-bottom: 12px solid transparent;
+        }
+    }
+
+    &.arrowRight {
+
+        .breaseWindowArrow {
+            top: 28px;
+            right: -21px;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-left: 12px solid $border-outer-color;
+            border-bottom: 12px solid transparent;
+        }
+    }
+
+    &.arrowTop {
+        .breaseWindowArrow {
+            top: -12px;
+            left: 50%;
+            margin-left:-12px;
+            width: 0;
+            height: 0;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid $border-outer-color;
+            border-left: 12px solid transparent;
+        }
+    }
+
+    &.arrowBottom {
+        .breaseWindowArrow {
+            bottom: -21px;
+            left: 50%;
+            margin-left:-12px;
+            width: 0;
+            height: 0;
+            border-right: 12px solid transparent;
+            border-top: 12px solid $border-outer-color;
+            border-left: 12px solid transparent;
+        }
+    }
+
+    >header {
+        height: 42px;
+        display: block;
+        background-color: $border-outer-color;
+        padding: 0;
+        @include box-sizing(border-box);
+    }
+
+        >header div {
+            margin-right: 5px;
+            color: #fff;
+            padding: 0 40px 0 8px;
+            line-height: 42px;
+            overflow: hidden;
+            @include text-overflow(ellipsis);
+            white-space: nowrap;
+        }
+
+    div.contentBox {
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
+    div.content {
+        background-color: #fff;
+        padding: 20px;
+        font-size: 14px;
+        color: $text-color;
+        white-space: pre-wrap;
+    }
+
+    .breaseWindowClose {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: -9px;
+        width: 47px;
+        height: 42px;
+        line-height: 42px;
+        color: #FFF;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+
+        &:after {
+            content: "\00D7";
+            color: #FFF;
+            border: none;
+            font-size: 30px;
+        }
+    }
+}

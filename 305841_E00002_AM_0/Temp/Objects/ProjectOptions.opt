@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.11.2.75"?>
+<ProjectOptions
+  IecNamingConventions="true"
+  IecKeywordsAsStructureMembers="false"
+  IecExtendedConstants="true"
+  LogicalDirectory="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Logical\"
+  TempDirectory="C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\"
+  AutomationStudioVersion="4.11.2.75"
+  AutomationStudioEdition="Standard"
+  BuildCrossReference="false"
+  ActiveConfiguration="EchCm_AM"
+  CreateAnsiCDeclarations="false" />

@@ -1,0 +1,239 @@
+@import '../../../../css/libs/variables';
+@import '../../../../css/libs/mixins';
+
+$border-outer-color: #333;
+$text-color: "#3E3E47";
+$slider-color: $active-color;
+$btn-active-color: $active-color;
+$errorColor: #ff0000;
+
+$outwidth: 58px;
+
+.breaseNumPad.breaseWindow {
+
+    &.widgets_brease_NumPad_style_slider_invisible {
+        .breaseNumpadSliderWrapper {
+            display: none
+        }
+    }
+
+    .numpadHeader {
+        margin-left: -9px;
+        margin-right: -8px;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
+    .numpadWrapper {
+        overflow: hidden;
+    }
+}
+
+.numpad {
+    background: #FFF;
+    display: block;
+
+    button {
+        @include appearance(none);
+        @include box-sizing(border-box);
+        background: none;
+        border: none;
+        display: block;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .breaseNumPadTop {
+        position: relative;
+        border-bottom: 1px solid $border-outer-color;
+    }
+
+    .breaseNumpadSliderWrapper {
+        position: relative;
+        height: 120px;
+    }
+
+    .minValueBox {
+        padding-left: 10px;
+        position: absolute;
+        top: 70px;
+        width: 150px;
+        text-align: left;
+    }
+
+    .maxValueBox {
+        padding-right: 10px;
+        position: absolute;
+        top: 70px;
+        width: 150px;
+        text-align: right;
+        right: 0;
+    }
+
+    .minValue, .maxValue {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 120%;
+        color: unquote($text-color);
+        display: block;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 120%;
+        color: unquote($text-color);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .breaseNumpadNumericValueOutterWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 0;
+
+        .breaseNumpadNumericValueInnerWrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 0 10px;
+            padding: 10px;
+
+            .breaseNumpadNumericValue {
+                width: 100%;
+                font-size: 18px;
+
+                &.error {
+                    color: $errorColor !important;
+                }
+            }
+        }
+
+        .minValueBox, .maxValueBox {
+            position: relative;
+            top: 0;
+            width: auto;
+            flex: 1;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    }
+
+    @import '../../../../system/widgets/NumPad/libs/NumPadSlider.scss';
+
+    .breaseNumpadSlider {
+        top: 68px;
+        width: 160px;
+
+        .numpadSlider_track {
+            width: 160px;
+
+            .numpadSlider_track_inner {
+                width: 160px;
+            }
+        }
+    }
+
+    .breaseNumPadButtons {
+        position: relative;
+
+        button {
+            width: 84px;
+            height: 60px;
+            border-right: 1px solid $border-outer-color;
+            border-bottom: 1px solid $border-outer-color;
+            float: left;
+            text-align: center;
+            line-height: 58px;
+            font-size: 20px;
+
+            &.active {
+                background: $btn-active-color;
+                color: #FFF;
+            }
+
+            &:nth-child(4n+4) {
+                border-right: none;
+            }
+
+            &[data-value="0"] {
+                width: 168px;
+                border-right: 1px solid #555555;
+            }
+
+            &[data-value="-1"] {
+                font-size: 25px;
+            }
+
+            &[data-value="0"],
+            &[data-action="comma"],
+            &[data-action="enter"] {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+%btnBgImages {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.breaseNumPadDelete {
+    @extend %btnBgImages;
+
+    &.active {
+        @extend %btnBgImages;
+    }
+}
+
+.breaseNumPadDeleteIcon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 60px;
+    pointer-events: none;
+    @include svgcolordelete($text-color);
+}
+
+.breaseNumPadEnter {
+    height: 120px;
+    width: 84px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-right: none;
+    font-size: 35px;
+    @extend %btnBgImages;
+
+    &.active {
+        @extend %btnBgImages;
+    }
+
+    .icon-enter {
+        display: inline-block;
+    }
+}
+
+.breaseNumPadEnterIcon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 120px;
+    pointer-events: none;
+    @include svgcolorenter($text-color);
+}
+
+.clearfix {
+    clear: both;
+}
+
+.numpad.solidBtnBorder .breaseNumPadButtons button {
+    border: 1px solid;
+}

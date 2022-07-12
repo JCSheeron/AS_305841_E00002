@@ -1,0 +1,23 @@
+.ImageView {
+    overflow: hidden;
+    pointer-events: none;
+
+    &.ImageIndicator {
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+        width: 30%;
+
+        &.orientation-right {
+            order: 0;
+        }
+
+        &.orientation-left {
+            order: 1;
+        }
+
+        img,svg {
+            height: 50%;
+        }
+    }
+}

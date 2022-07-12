@@ -1,0 +1,35 @@
+.e-splitter .e-splitbar.e-v-bar{  /* vertical splitter settings */
+    border-color: var(--main-grey-dark1);
+    background-color: var(--main-grey);
+    /*height: 9px;*/
+}
+
+.e-splitter .e-splitbar.e-v-bar:hover{ /* vertical splitter settings on hover */
+    background-color: var(--main-orange);
+}
+
+.e-splitter .e-splitbar.e-v-bar:active{
+    background-color: var(--main-orange);
+}
+
+.e-splitter .e-splitbar.e-h-bar{  /* horizontal splitter settings */
+    border-color: var(--main-grey-dark1);
+    background-color: var(--main-grey);
+    /*width: 9px;*/
+}
+
+.e-splitter .e-splitbar.e-h-bar:hover{ /* horizontal splitter settings on hover */
+    background-color: var(--main-orange);
+}
+
+.e-splitter .e-splitbar.e-h-bar:active{
+    background-color: var(--main-orange);
+}
+
+.e-splitter { /* splitter settings*/
+    border-width: 0px;
+}
+
+.e-splitter .e-hover.e-splitbar.e-split-divider, e-splitter e-splitbar.e-split-divider:hover{
+    background-color: var(--main-orange);
+}

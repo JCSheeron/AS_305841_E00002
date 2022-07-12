@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="eventbinding_33">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknSN" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSNdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentAckSN">
+    <EventBinding id="eventbinding_34">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentAckSN_SfMP171_btnSNAckApply" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSNdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+        
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnAckSN">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SNAcknowledged">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="contentConnect.btnSetupModeFinish.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentSetupMode_SfMP171_btnSetupModeFinish" />
+      
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderDialogMsgSetupModeWarning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtDialogMsgSetupModeWarning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Warning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="style" xsi:type="ANY_STRING" value="safetyWarning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+					
+					<Result>
+						<ResultHandler condition="result = 4">
+							<Action>
+								<Target type="clientSystem.Action">
+									<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="YesNo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtHeaderQuestionFinishSetupMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtQuestionFinishSetupMode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Warning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+								</Target>
+
+          
+								<Result>
+									<ResultHandler condition="result = 1">
+										<Action>
+											<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_FinishSetupMode">
+												<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+											</Target>
+										</Action>
+									</ResultHandler>
+								</Result>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+	  
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="eventbinding_35">
+			<Source type="widgets.brease.Button.Event" event="DisabledClick" refId="SfMP171_ContentSetupMode_SfMP171_btnSetupModeFinish" />
+			
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler condition="OperandSessionIsLoggedIn">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtDialogFinishSetupModeDisabled" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Information" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="contentConnect.btnAcknAppl.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknAppl" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSafeAppdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler> 
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnOpenAckAppl">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentAckSafeApp">
+    <EventBinding id="eventbinding_36">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentAckSafeApp_SfMP171_btnAcknApplOK" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSafeAppdialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+      
+			<EventHandler> 
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_AckSafeAppProject">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+        
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="contentConnect.btnAcknSafeCommOP.Click">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknSafeCommOP" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSafeOP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+			<EventHandler> 
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BtnOpenDialogAckComm">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentAckSafeOP">
+    <EventBinding id="eventbinding_37">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target type="clientSystem.Action">
+							<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogAckSafeOP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_EnableBtnAcknSafeCommOP">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+					
+					<Action>
+						<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_SafeCommOPAck">
+							<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_ContentSetupMode">
+    <EventBinding id="eventbinding_38">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_ContentSetupMode_SfMP171_btnAcknOPPara" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.OpenDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogAckOPPara" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="horizontalPos" xsi:type="ANY_STRING" value="center" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="verticalPos" xsi:type="ANY_STRING" value="middle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="mode" xsi:type="ANY_STRING" value="modal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+			
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentAckOPPara">
+    <EventBinding id="eventbinding_39">
+			<Source type="widgets.brease.Button.Event" event="Click" refId="SfMP171_contentAckOPPara_SfMP171_btnCancelAckOPPara" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP19_dialogAckOPPara" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

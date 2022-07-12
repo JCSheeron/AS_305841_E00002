@@ -1,0 +1,93 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-color: #555555;
+$active-border-color: $active-color;
+$disabled-border-color: #C8C8C8;
+$default-bg-color: #F7F7FF;
+$active-bg-color: #F7F7FF;
+$disabled-bg-color: #F1F1F1;
+
+$text-color: #333;
+$disabled-text-color: #C8C8C8;
+$unit-color: #333;
+
+.breaseTextInput {
+    background: $default-bg-color;
+    border-top: 2px solid $default-border-color;
+    border-right: 6px solid $default-border-color;
+    border-bottom: 2px solid $default-border-color;
+    border-left: 2px solid $default-border-color;
+    width:120px;
+    padding: 0 15px 0 15px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+	@include box-sizing(border-box);
+
+    input {
+        @include appearance(none);
+        font-size: 18px;
+        color: $text-color;
+        text-align: left;
+        border: none;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        pointer-events: none;
+
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.keyboard {
+            pointer-events: all;
+            @include user-select(text);
+        }
+
+        &::placeholder {
+            color:    #C8C8C8;
+        }
+
+        &::-webkit-input-placeholder {
+            color:    #C8C8C8;
+        }
+        
+    }
+
+    
+
+    &.editMode {
+        input.keyboard {
+            pointer-events: none;
+            @include user-select(none);
+        }
+    }
+
+    &.ellipsis input {
+        @include text-overflow(ellipsis);
+    }
+
+    &:focus, &.active {
+        outline: none;
+        background: $active-bg-color;
+		border-color: $active-border-color;
+		border-width: 3px 6px 2px 2px;
+    }
+
+    &.disabled, &[disabled] {
+        background: $disabled-bg-color;
+		border-width: 3px 6px 2px 2px;
+        border-color: $disabled-border-color;
+
+        input {
+            color: $disabled-text-color;
+        }
+    }
+}

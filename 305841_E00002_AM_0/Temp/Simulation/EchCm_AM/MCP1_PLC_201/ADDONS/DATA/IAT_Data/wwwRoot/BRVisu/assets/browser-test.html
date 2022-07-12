@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>B&R Browser Test</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            padding: 20px;
+            background-color: white;
+            color: black;
+            font-size: 13px;
+        }
+
+        table {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ededed;
+            white-space: nowrap;
+            padding: 4px 0;
+            line-height: 15px;
+        }
+
+        tr.optional td {
+            background-color: #efefef;
+        }
+
+        td.label {
+            padding: 4px 6px;
+        }
+
+        td.ok {
+            color: green;
+            text-align: center;
+        }
+
+        td.fail {
+            color: #cc0000;
+            text-align: center;
+            font-family: 'Comic Sans MS', sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
+    <script src="/BRVisu/jquery.js"></script>
+    <script src="js/feature-test.js"></script>
+    <script>
+        var testSuite = {
+
+            tests: [
+                { label: 'data-* attributes', test: 'dataAttributes' },
+                { label: 'defineProperty', test: 'defineProperty' },
+                { label: 'JSON', test: 'json' },
+                { label: 'cookies', test: 'cookies' },
+                { test: 'hashchange', label: 'hash change' },
+                { test: 'xhr2', label: 'XMLHttpRequest Level 2' },
+                { test: 'unicode', label: 'unicode' },
+                { test: 'websockets', label: 'websockets' },
+                { test: 'video', label: 'HTML5 video' },
+                { test: 'performance', label: 'performance' },
+            ],
+
+            start: function () {
+                testSuite.setResult(featureTest[testSuite.tests[0].test](), 0);
+            },
+
+            setResult: function (success, index) {
+                var item = testSuite.tests[index];
+                console.log(JSON.stringify({ success: success, item: item }));
+                console.log(success);
+                
+                console.log('--------------------------');
+                $('#result').append('<tr><td class="label">' + item.label + '</td><td class="' + ((success) ? "ok" : "fail") + '">' + ((success) ? "&#x2714;" : "x") + '</td></tr>');
+
+                if (testSuite.tests[index + 1] !== undefined) {
+
+                        window.setTimeout(function () {
+                            testSuite.setResult(featureTest[testSuite.tests[index + 1].test](), index + 1);
+                        }, 0);
+
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            $('#userAgent').html(navigator.userAgent);
+            testSuite.start();
+        });
+    </script>
+</head>
+<body>
+    <div><strong>your browser: </strong><span id="userAgent"></span></div>
+    <br /><br />
+    <table id="result" data-test="test">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th style="width:40px;"></th>
+            </tr>
+        </thead>
+    </table>
+    <br /><br />
+
+</body>
+</html>

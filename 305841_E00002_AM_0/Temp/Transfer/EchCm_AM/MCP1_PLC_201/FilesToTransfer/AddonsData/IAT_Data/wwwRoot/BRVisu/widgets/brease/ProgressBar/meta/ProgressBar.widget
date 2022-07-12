@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.ProgressBar">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>licensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/BaseWidget.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>widgets/brease/ProgressBar/libs/Config.js</File>
+				<File>widgets/brease/common/libs/BoxLayout.js</File>
+				<File>brease/datatype/Node.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/ProgressBar/ProgressBar.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Numeric</Category>
+			<Category name="IO">Output</Category>
+			<Category name="IO">Analog</Category>
+			<Category name="Appliance">Graphic</Category>
+			<Category name="Performance">Low</Category>
+			<Category name="Performance">Medium</Category>
+			<Category name="Performance">High</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Balkenanzeige</Description>
+			<Description name="de">Zeigt einen numerischen Wert als Balken an</Description>
+			<Description name="en">Displays a numeric value as a bar</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.ProgressBar</Class>
+			<Class level="1">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetMaxValue" read="false">
+				<Description>sets the maximum value of the ProgressBar number range</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetMinValue" read="false">
+				<Description>sets the mininum value of the ProgressBar number range</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetValue" read="false">
+				<Description>set the actual value</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="MaxValueReached">
+				<Description>Fired once when maximum value is reached.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>value reflects the state of the &quot;value&quot; property &gt;= maxValue.</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="MinValueReached">
+				<Description>Fired once when minimum value is reached.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>value reflects the state of the &quot;value&quot; property &amp;lt;= minValue.</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="barAnimation" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>Set to TRUE to enable animation of the progress bar when styled as &quot;striped&quot;</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="labelPosition" type="brease.enum.Position" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="2" groupRefId="Label" category="Appearance" defaultValue="right">
+				<Description>Location of the output label text-field. Possible values: right, left, middle, center, top, bottom</Description>
+			</Property>
+			<Property name="labelSize" type="Size" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupRefId="Label" category="Appearance" defaultValue="30">
+				<Description>Width of unit area.</Description>
+			</Property>
+			<Property name="maxValue" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="100">
+				<Description>Maximum value for the bound variable.</Description>
+			</Property>
+			<Property name="minValue" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>Minimum value for the bound variable.</Description>
+			</Property>
+			<Property name="node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Display value with unit and limits.</Description>
+			</Property>
+			<Property name="orientation" type="brease.enum.Orientation" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="LeftToRight">
+				<Description>Orientation of widget</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="showLabel" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="1" groupRefId="Label" category="Appearance" defaultValue="true">
+				<Description>Controls the visibility of the percentage label text-field.</Description>
+			</Property>
+			<Property name="stripedProgressBar" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="6" groupRefId="Bar" category="Appearance" defaultValue="false">
+				<Description>Applies a striped styling to the progress bar.</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="transitionTime" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="500">
+				<Description>Defines the time (in ms) used for the transition to a new bar value</Description>
+			</Property>
+			<Property name="value" type="Number" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" nodeRefId="node" category="Data" defaultValue="0">
+				<Description>Initial visible value of widget as a number</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.ProgressBar" category="Layout" groupRefId="Size" groupOrder="1" default="400">
+				<StyleElement attribute="@include elemWidth($value)"/>
+				<Description>Outer width of widget, in pixels</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.ProgressBar" category="Layout" groupRefId="Size" groupOrder="2" default="25">
+				<StyleElement attribute="@include elemHeight($value)"/>
+				<Description>Outer height of widget, in pixels</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+				<StyleElement attribute="@include elemMinWidth($value)"/>
+				<Description>minimum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+				<StyleElement attribute="@include elemMaxWidth($value)"/>
+				<Description>maximum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+				<StyleElement attribute="@include elemMinHeight($value)"/>
+				<Description>minimum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+				<StyleElement attribute="@include elemMaxHeight($value)"/>
+				<Description>maximum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+				<StyleElement attribute="opacity"/>
+				<Description>Opacity of the widget: 1 - opaque, 0 - fully transparent.</Description>
+			</StyleProperty>
+			<StyleProperty name="padding" category="Layout" type="Padding" default="0px">
+				<StyleElement selector=".pb-outer-area" attribute="padding"/>
+				<Description>Internal padding for the ProgressBar widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+				<StyleElement attribute="margin"/>
+				<Description>Outer margin of the ProgressBar widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement attribute="@include box-shadow($value)"/>
+				<Description>Shadow of the widget - see css &quot;box-shadow&quot; for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="barBorderStyle" type="BorderStyle" category="Appearance" default="none" groupRefId="Bar" groupOrder="1">
+				<StyleElement selector=".pb-bar-container" attribute="border-style"/>
+				<Description>Sets the style of the Border of the widget. Check css &quot;border-style&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="barBorderWidth" type="PixelValCollection" category="Appearance" default="1px" groupRefId="Bar" groupOrder="2">
+				<StyleElement selector=".pb-bar-container" attribute="border-width"/>
+				<Description>Sets the width of the border. Check css &quot;border-width&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="barBorderColor" category="Appearance" type="Color" default="#000000" groupRefId="Bar" groupOrder="3">
+				<StyleElement selector=".pb-bar-container" attribute="border-color"/>
+				<Description>Sets the border color for the bar. Check css &quot;border-color&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="barCornerRadius" type="PixelValCollection" category="Appearance" default="20px" groupRefId="Bar" groupOrder="4">
+				<StyleElement selector=".pb-bar-container" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget rounded corners. Check css &quot;border-radius&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="barBackColor" category="Appearance" type="Color" default="#E0E0E0" groupRefId="Bar" groupOrder="5">
+				<StyleElement selector=".pb-bar-container" attribute="background-color"/>
+				<Description>Sets the background color of the bar element of the widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="barBackGroundGradient" category="Appearance" type="Gradient" default="" groupRefId="Bar" groupOrder="6">
+				<StyleElement selector=".pb-bar-container" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Defines a gradient for the background of the progress bar.</Description>
+			</StyleProperty>
+			<StyleProperty name="barColor" category="Appearance" type="Color" default="#FF8800" groupRefId="Bar" groupOrder="7">
+				<StyleElement selector=".pb-progress" attribute="background-color"/>
+				<Description>Sets the fore color of the bar element of the widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="barGradient" category="Appearance" type="Gradient" default="" groupRefId="Bar" groupOrder="8">
+				<StyleElement selector=".pb-progress" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Defines a gradient background for the progress bar portion.</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid" groupRefId="OuterArea" groupOrder="1">
+				<StyleElement selector=".pb-outer-area" attribute="border-style"/>
+				<Description>Sets the style of the outer border of the widget. Check css &quot;border-style&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="1px" groupRefId="OuterArea" groupOrder="2">
+				<StyleElement selector=".pb-outer-area" attribute="border-width"/>
+				<Description>Sets the width of the outer border of the widget. Check css &quot;border-width&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="Color" default="#000000" groupRefId="OuterArea" groupOrder="3">
+				<StyleElement selector=".pb-outer-area" attribute="border-color"/>
+				<Description>Sets the border color for the outer area of the widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="4px" groupRefId="OuterArea" groupOrder="4">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<StyleElement selector=".pb-outer-area" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget corners. Check css &quot;border-radius&quot; property for more information.</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="transparent" groupRefId="OuterArea" groupOrder="5">
+				<StyleElement selector=".pb-outer-area" attribute="background-color"/>
+				<Description>Sets the background color of the outer widget container.</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+				<StyleElement selector=".pb-label-text" attribute="font-family"/>
+				<Description>Font name for the ProgressBar text fields.</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+				<StyleElement selector=".pb-label-text" attribute="font-size"/>
+				<Description>Font size of the ProgressBar text fields, in pixels.</Description>
+			</StyleProperty>
+			<StyleProperty name="fontColor" category="Font" type="Color" default="#000000">
+				<StyleElement selector=".pb-label-text" attribute="color"/>
+				<Description>Sets the color of the text.</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" category="Font" type="Boolean" default="false">
+				<StyleElement selector=".pb-label-text" attribute="@include font-weight-bold($value)"/>
+				<Description>If TRUE, font style is configured as bold.</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Bar" type="String" category="Appearance">
+				<Description>Styling of the bar element of the ProgressBar widget.</Description>
+			</PropertyGroup>
+			<PropertyGroup name="OuterArea" type="String" category="Appearance">
+				<Description>Styling of the outer border element of the ProgressBar widget.</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Label" type="String" category="Appearance">
+				<Description>Properties of the value label.</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

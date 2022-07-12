@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tooltip xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+
+    <StyleProperty name="backGround" type="ImagePath" category="StyleProperty">
+      <Description>Background image</Description>
+      <StyleElement selector=".breaseTooltip" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+	
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#333333">
+      <StyleElement selector=".breaseTooltip" attribute="background-color"></StyleElement>
+      <StyleElement selector=".tooltip-arrow .tooltip-arrow-background" attribute="border-top-color"></StyleElement>
+      <Description>
+        usage (Syntax like CSS):
+        - HEX Color code: #FFFFFF
+        - rgba Component syntax: rgba(100,100,100,255)
+        - transparent
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient">
+      <Description>Background gradient for the Tootip</Description>
+      <StyleElement selector=".breaseTooltip" attribute="background-image"></StyleElement>
+    </StyleProperty>
+	
+    <StyleProperty name="borderWidth" type="PixelValCollection" default="1px" category="Appearance">
+      <StyleElement selector=".breaseTooltip" attribute="border-width"></StyleElement>
+      <Description>
+        usage (Syntax like CSS):
+        - single Value for all directions e.g. 2px
+        - seperate Value for each direction e.g. 1px 2px 3px 4px
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#ebebeb">
+      <StyleElement selector=".breaseTooltip" attribute="border-color"></StyleElement>
+      <StyleElement selector=".tooltip-arrow .tooltip-arrow-border" attribute="border-top-color"></StyleElement>
+      <Description>
+        usage (Syntax like CSS):
+        - single Value for all directions e.g. #FFF
+        - seperate Value for each direction e.g. #FFF #333 #FFF #333
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="borderStyle" type="BorderStyle" default="solid" category="Appearance">
+      <StyleElement selector=".breaseTooltip" attribute="border-style"></StyleElement>
+      <Description>
+        Style of the Border of the widget
+        Possible Values: solid, dotted, none, dashed, double, groove
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="6px">
+      <StyleElement selector=".breaseTooltip" attribute="@include border-radius($value)"/>
+    </StyleProperty>
+	
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#ffffff">
+      <StyleElement selector=".breaseTooltip .breaseTooltipText" attribute="color"></StyleElement>
+      <Description>
+        usage (Syntax like CSS):
+        - HEX Color code: #FFFFFF
+        - rgba Component syntax: rgba(100,100,100,255)
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="bold" category="Appearance.Font" type="Boolean">
+      <StyleElement selector=".breaseTooltip .breaseTooltipText" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>
+        If **true** font style is bold
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="italic" category="Appearance.Font" type="Boolean">
+      <StyleElement selector=".breaseTooltip .breaseTooltipText" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>
+        If **true** font style is italic
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="padding" category="Layout" type="Padding" default="10px">
+      <StyleElement selector=".breaseTooltip" attribute="padding"></StyleElement>
+      <Description>
+        padding of Tooltip
+      </Description>
+    </StyleProperty>    
+	
+    <StyleProperty name="opacity" category="Appearance" type="Opacity">
+      <StyleElement selector=".breaseTooltip" attribute="opacity"></StyleElement>
+      <Description>
+        Opacity of the widget
+        0 = 0% invisible
+        1 = 100%
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="shadow" type="Shadow" category="Appearance">
+      <StyleElement selector=".breaseTooltip" attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        Shadow of the Widget
+        usage (Syntax like CSS):
+        - h-shadow v-shadow [blur] [spread] color e.g. 10px 10px 5px #888888
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="fontName" category="Appearance.Font" type="FontName">
+      <StyleElement selector=".breaseTooltip .breaseTooltipText" attribute="font-family"></StyleElement>
+      <Description>
+        Fontname of the text.
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="fontSize" category="Appearance.Font" type="PixelVal" default="12px">
+      <StyleElement selector=".breaseTooltip .breaseTooltipText" attribute="font-size"></StyleElement>
+      <Description>
+        Fontsize of the text in pixel. e.g 24px
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="showArrow" type="Boolean" category="StyleProperty" default="true">
+      <Description>visibilty of arrow</Description>
+      <StyleElement selector=".tooltip-arrow" attribute="@include display($value)"></StyleElement>
+    </StyleProperty>
+  
+    <StyleProperty name="indicatorImage" type="ImagePath">
+      <StyleElement selector=".breaseTooltipIndicatorInner" attribute="background-image: url('../$value') !important"></StyleElement>
+      <Description>
+        Icon for tooltip indicator
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="indicatorHeight" type="PixelVal" default="20px">
+      <StyleElement selector=".breaseTooltipIndicatorInner" attribute="height"></StyleElement>
+      <Description>
+        height of indicator
+      </Description>
+    </StyleProperty>
+	
+    <StyleProperty name="indicatorWidth" type="PixelVal" default="20px">
+      <StyleElement selector=".breaseTooltipIndicatorInner" attribute="width"></StyleElement>
+      <Description>
+        width of indicator
+      </Description>
+    </StyleProperty>	
+	
+  </StyleProperties>
+
+</Tooltip>

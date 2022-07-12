@@ -1,0 +1,325 @@
+﻿@import "mixins.scss";
+@import "../../../../../types/Page_base";
+.system_brease_Page_style_default {
+@include system_brease_Page_base; 
+@include pureBackgroundImage('../#e6e6e6');
+
+}
+@import "../../../../../types/Dialog_base";
+.system_brease_Dialog_style_default {
+@include system_brease_Dialog_base; 
+.breaseDialogWindowContentBox > .breaseLayout {
+	background-color: #ffffff;
+}
+.breaseDialogWindowHeader .textDiv {
+	font-size: 16px;
+}
+.breaseDialogWindowHeader {
+	height: 30px;
+}
+.breaseDialogWindowHeader .breaseWindowClose {
+	height: 30px;
+}
+.breaseDialogWindowHeader .breaseWindowClose {
+	line-height: 30px;
+}
+.breaseDialogWindowHeader .imageDiv {
+	min-width: 30px;
+}
+.breaseDialogWindowHeader div.innerHeader {
+	line-height: 30px;
+}
+.breaseDialogWindowHeader div.textDiv {
+	line-height: 30px;
+}
+.breaseDialogWindowHeader div.innerHeader {
+	height: 30px;
+}
+.breaseDialogWindowHeader div.imageDiv {
+@include factor('max-width',30px, 2);
+}
+.breaseDialogWindowHeader .textDiv {
+	color: #646464;
+}
+@include border-radius(0px 0px 0px 0px);
+.breaseDialogWindowContentBox {
+@include border-bottom-right-radius(0px 0px 0px 0px);
+}
+.breaseDialogWindowContentBox {
+@include border-bottom-left-radius(0px 0px 0px 0px);
+}
+.breaseDialogWindowHeader {
+@include border-radius(0px 0px 0px 0px);
+}
+.breaseDialogWindowHeader {
+	border-width: 0px;
+}
+.breaseDialogWindowContentBox {
+	border-width: 0px;
+}
+.breaseDialogWindowContentBox {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+
+}
+@import "../../../../../types/MessageBox_base";
+.system_brease_MessageBox_style_default {
+@include system_brease_MessageBox_base; 
+.breaseMessageBoxContentBox {
+	background-color: #e6e6e6;
+}
+.breaseMessageBoxContentBox {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+.breaseMessageBoxHeader {
+	border-color: #646464;
+}
+&.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+@include font-weight-bold(false);
+}
+&.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+	font-size: 22px;
+}
+.breaseMessageBoxHeader {
+	border-style: none;
+}
+.breaseMessageBoxHeader {
+	background-color: #d6d6d6;
+}
+.messageBoxFooter {
+	background-color: #d6d6d6;
+}
+&.breaseMessageBox.breaseWindow header.breaseMessageBoxHeader > div {
+	color: #646464;
+}
+.breaseMessageBoxContentBox div.content {
+	font-size: 20px;
+}
+.breaseMessageBoxContentBox div.content {
+	color: #646464;
+}
+.breaseMessageBoxHeader {
+	border-radius: 0px;
+}
+.messageBoxFooter {
+	border-radius: 0px;
+}
+.breaseMessageBoxContentBox {
+	border-width: 0px;
+}
+.messageBoxButton {
+	border-style: none;
+}
+.messageBoxButton.active {
+	border-style: none;
+}
+.messageBoxButton:active {
+	border-style: none;
+}
+.messageBoxButton.checked {
+	border-style: none;
+}
+.messageBoxButton.disabled {
+	border-style: none;
+}
+.messageBoxButton {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-color: #646464;
+}
+.messageBoxButton {
+	background-color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	background-color: #ff8800;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	background-color: #ff8800;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	background-color: #ff8800;
+}
+.messageBoxButton span {
+	color: #646464;
+}
+.messageBoxButton:not(.disabled) span {
+	color: #646464;
+}
+.messageBoxButton.disabled span {
+	color: #646464;
+}
+.messageBoxButton span {
+	font-size: 14px;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active span {
+	color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active span {
+	color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked span {
+	color: #ffffff;
+}
+
+}
+@import "../../../../../types/Area_base";
+.system_brease_Area_style_default {
+@include system_brease_Area_base; 
+	background-color: #e6e6e6;
+
+}
+@import "../../../../../types/Scrollbar_base";
+.system_brease_Scrollbar_style_default {
+@include system_brease_Scrollbar_base; 
+.iScrollIndicator {
+	background-color: rgba(0,0,0,0.5);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,0.5);
+}
+.iScrollIndicator {
+	border-color: rgba(255,255,255,0.9);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-color: rgba(255,255,255,0.9);
+}
+
+}
+@import "../../../../../types/MessageBox_base";
+.system_brease_MessageBox_style_safetyWarning {
+@include system_brease_MessageBox_base; 
+.breaseMessageBoxContentBox {
+	background-color: #f8ff47;
+}
+.breaseMessageBoxContentBox {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+.breaseMessageBoxHeader {
+	border-color: #646464;
+}
+&.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+@include font-weight-bold(false);
+}
+&.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+	font-size: 22px;
+}
+.breaseMessageBoxHeader {
+	border-style: none;
+}
+.breaseMessageBoxHeader {
+	background-color: #d6d6d6;
+}
+.messageBoxFooter {
+	background-color: #d6d6d6;
+}
+&.breaseMessageBox.breaseWindow header.breaseMessageBoxHeader > div {
+	color: #646464;
+}
+.breaseMessageBoxContentBox div.content {
+	font-size: 20px;
+}
+.breaseMessageBoxContentBox div.content {
+	color: #646464;
+}
+.breaseMessageBoxHeader {
+	border-radius: 0px;
+}
+.messageBoxFooter {
+	border-radius: 0px;
+}
+.breaseMessageBoxContentBox {
+	border-width: 0px;
+}
+.messageBoxButton {
+	border-style: none;
+}
+.messageBoxButton.active {
+	border-style: none;
+}
+.messageBoxButton:active {
+	border-style: none;
+}
+.messageBoxButton.checked {
+	border-style: none;
+}
+.messageBoxButton.disabled {
+	border-style: none;
+}
+.messageBoxButton {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-width: 0 6px 0 0;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	border-color: #646464;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	border-color: #646464;
+}
+.messageBoxButton {
+	background-color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active {
+	background-color: #ff8800;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active {
+	background-color: #ff8800;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked {
+	background-color: #ff8800;
+}
+.messageBoxButton span {
+	color: #646464;
+}
+.messageBoxButton:not(.disabled) span {
+	color: #646464;
+}
+.messageBoxButton.disabled span {
+	color: #646464;
+}
+.messageBoxButton span {
+	font-size: 14px;
+}
+.messageBoxButton:not(.disabled):not(.editMode):active span {
+	color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode).active span {
+	color: #ffffff;
+}
+.messageBoxButton:not(.disabled):not(.editMode).checked span {
+	color: #ffffff;
+}
+
+}
+@import "../../../../../types/Area_base";
+.system_brease_Area_style_transparent {
+@include system_brease_Area_base; 
+	background-color: transparent;
+
+}

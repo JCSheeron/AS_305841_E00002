@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin system_brease_ModalDimmer_base {
+.breaseModalDimmer.active {
+	background-color: rgba(0,0,0,0.3);
+}
+
+}
+

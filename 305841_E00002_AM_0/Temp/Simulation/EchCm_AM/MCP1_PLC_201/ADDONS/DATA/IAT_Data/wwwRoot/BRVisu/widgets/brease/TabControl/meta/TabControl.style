@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.TabControl" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties>
+    <StyleProperty name="width" type="Size" not_styleable="true" default="250">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="150">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+		<StyleProperty name="headerBackColor" category="Appearance" type="Color" default="transparent" >
+			<StyleElement selector="> .tabbar" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the header where the tabs are displayed
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="transparent" >
+			<StyleElement selector="> .tabItemContainer" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the area below the header
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="none" >
+			<StyleElement selector="> .tabItemContainer" attribute="border-style"></StyleElement>
+      <Description>
+        Sets the border style of the area below the header
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+			<StyleElement selector="> .tabItemContainer" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the area below the header
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement selector="> .tabItemContainer" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the rounder corners of the area below the header
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+			<StyleElement selector="> .tabItemContainer" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the area below the header
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="padding" category="Layout" type="Padding" default="0px">
+			<StyleElement selector="> .tabItemContainer" attribute="padding"></StyleElement>
+			<Description>
+				Padding of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Margin of the Widget
+			</Description>
+		</StyleProperty>
+	</StyleProperties>
+</StyleInformation>

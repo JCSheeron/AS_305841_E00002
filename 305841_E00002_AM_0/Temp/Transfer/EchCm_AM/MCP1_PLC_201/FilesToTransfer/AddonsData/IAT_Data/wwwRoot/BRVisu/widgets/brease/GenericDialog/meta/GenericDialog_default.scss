@@ -1,0 +1,40 @@
+@import "mixins.scss";
+@mixin widgets_brease_GenericDialog_base {
+	@include elemWidth(400);
+	@include elemHeight(200);
+	@include border-radius(0px);
+header {
+	@include border-radius(0px);
+}
+.generic-dialog-content-footer-container {
+	@include border-radius(0px);
+}
+.generic-dialog-content-footer-container {
+	background-color: #FFFFFF;
+}
+	background-color: #FFFFFF;
+.generic-dialog-content-footer-container {
+	@include backGroundGradient('');
+}
+	@include backGroundGradient('');
+header {
+	@include backGroundGradient('');
+}
+	border-color: #333333;
+header {
+	background-color: #333333;
+}
+&.arrowLeft .breaseWindowArrow {
+	border-right-color: #333333;
+}
+&.arrowRight .breaseWindowArrow {
+	border-left-color: #333333;
+}
+	opacity: 1;
+	@include box-shadow(none);
+
+}
+
+.widgets_brease_GenericDialog_style_default {
+@include widgets_brease_GenericDialog_base 
+}

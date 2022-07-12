@@ -1,0 +1,72 @@
+﻿@import '../../../../../../../css/libs/mixins.scss';
+
+
+   output {
+        @include displayFlexBox(true);
+        @include flex-direction(column);
+        @include align-items(center);
+        @include flex-wrap(nowrap);
+        @include justify-content(center);
+        @include box-sizing(border-box);
+        z-index: 5;
+        position: absolute;
+        background-color: #F1F1F1;
+        text-align: center;
+        color: #333;
+        border-radius: 5px;
+		padding: 5px;
+		&.ellipsis {
+			span {
+				text-overflow: ellipsis;
+			}
+		}
+
+        span {
+			width: 100%;
+            overflow: hidden;
+            text-overflow: clip;
+            display: block;
+			z-Index: 1;
+        }
+
+		&.horizontal{
+			.arrowOutput {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent !important;
+                border-right: 5px solid transparent !important;
+                border-top: 6px solid #F1F1F1;
+                position: absolute;
+                bottom: -6px;
+                left: 50%;
+                transform: translateX(-50%);
+				z-Index: 0;
+            }
+            transform: translateX(-50%);
+		}
+
+		&.vertical{
+			.arrowOutput{
+                content: '';
+                width: 0;
+                height: 0;
+                border-bottom: 5px solid transparent !important;
+                border-top: 5px solid transparent !important; 
+                border-left: 6px solid #F1F1F1;
+                position: absolute;
+                right: -5px;
+				top: 50%;
+                transform: translateY(-50%);
+				z-Index: 0;
+            }
+			transform: translateY(-50%);
+		}
+    }
+
+ 
+
+
+
+
+    

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.Window" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<StyleProperties>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="800" category="Layout">
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="600" category="Layout">
+    </StyleProperty>
+    
+  </StyleProperties>
+</StyleInformation>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        .pulse-me{
+        animation: pulse 2s infinite;
+        animation-timing-function: linear;
+        transform-origin: center;
+        --normalSize: 1;
+        --pulsedSize: 0.8;
+        }
+        
+        @keyframes pulse{
+            0% { transform: scale(var(--normalSize)); }
+            30% { transform: scale(var(--normalSize)); }
+            40% { transform: scale(var(--pulsedSize)); }
+            50% { transform: scale(var(--normalSize)); }
+            100% { transform: scale(var(--normalSize)); }
+        }
+    </style>
+    
+    <title>record icon</title>
+    <g>
+        <title>background</title>
+        <!--<rect fill="none" id="canvas_background" height="32" width="32"/>-->
+    </g>
+    <g >
+        <title>record circles</title>
+        <ellipse ry="14" rx="14" id="svg_1" cy="16" cx="16" stroke-width="1.5" stroke="white" fill="none"/>
+        <ellipse class="pulse-me" stroke="none" ry="9.2" rx="9.2" id="svg_3" cy="16" cx="16" stroke-opacity="null" stroke-width="1.5" fill="white"/>
+    </g>
+</svg>
+

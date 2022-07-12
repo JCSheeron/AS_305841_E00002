@@ -1,0 +1,10 @@
+@import "mixins.scss";
+@mixin system_widgets_NumPad_base {
+	@include elemWidth(354);
+	@include elemHeight(411);
+
+}
+
+.system_widgets_NumPad_style_default {
+@include system_widgets_NumPad_base 
+}

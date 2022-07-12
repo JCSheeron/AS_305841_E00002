@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin widgets_brease_DialogWindow_base {
+
+}
+
+.widgets_brease_DialogWindow_style_default {
+@include widgets_brease_DialogWindow_base 
+}

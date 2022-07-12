@@ -1,0 +1,1652 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>widgets.brease.Table Documentation</title>
+    <link href="../../../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>.true {color:#00aa00;font-weight:bold;}.false {color:#aaa;font-weight:normal;}</style>
+  </head>
+  <body>
+<div class="panel-heading"><h3>widgets.brease.Table</h3></div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Widget Description</h3></div>
+<table class="table table-bordered parameter_tab">
+<tbody>
+<tr>
+<td class="parameter_tab"><strong>short: </strong>Darstellung von Daten in einer Tabelle</td>
+</tr>
+<tr>
+<td class="parameter_tab"><strong>de: </strong>Darstellung von Daten in einer Tabelle</td>
+</tr>
+<tr>
+<td class="parameter_tab"><strong>en: </strong>Displays data in a table</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Properties</h3></div>
+<table class="table table-bordered parameter_tab">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">category</th>
+<th class="parameter_tab">type</th>
+<th class="parameter_tab">defaultValue</th>
+<th class="parameter_tab">bindable</th>
+<th class="parameter_tab">readOnly</th>
+<th class="parameter_tab">required</th>
+<th class="parameter_tab">localizable</th>
+<th class="parameter_tab">editableBinding</th>
+<th class="parameter_tab">projectable</th>
+<th class="parameter_tab">cssProp (<small>has no setter and getter in JS</small>)</th>
+<th class="parameter_tab">groupRefId</th>
+<th class="parameter_tab">groupOrder</th>
+<th class="parameter_tab">nodeRefId (<small>for linking node and value</small>)</th>
+<th class="parameter_tab">deprecated</th>
+<th class="parameter_tab">typeRefId (<small>for StyleReference</small>)</th>
+<th class="parameter_tab">subtype (<small>for MpComIdentReference</small>)</th>
+</tr>
+ </thead>
+<tbody>
+<tr>
+<td class="parameter_tab">busyIndicatorDelay</td>
+<td class="parameter_tab">delay time for busy indicator [ms]</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">columnWidth</td>
+<td class="parameter_tab">Width of columns.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">100</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">CellSize</td>
+<td class="parameter_tab">2</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">dataOrientation</td>
+<td class="parameter_tab">A dataset is either placed horizontally or vertically.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab"><a target="_blank" href="../../../../../breaseDoku/out/template.html#!/api/brease.enum.Direction">brease.enum.Direction</a></td>
+<td class="parameter_tab">vertical</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ellipsis</td>
+<td class="parameter_tab">If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">enable</td>
+<td class="parameter_tab">Initial option to enable widget.
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">filterConfiguration</td>
+<td class="parameter_tab">Configuration for filtering entires in the table</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab">String</td>
+<td class="parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">headerSize</td>
+<td class="parameter_tab">Height of rows.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">initRefreshRate</td>
+<td class="parameter_tab">Refresh rate of the rebuild of the table, at init and changes for properties.
+Needs to be increased the more items are used but also at the rate of which
+properties are updated.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">maxHeight</td>
+<td class="parameter_tab">Maximum height the Table can grow, when not set to zero</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">multiLine</td>
+<td class="parameter_tab">If true, more than one line is possible. Text will wrap when necessary (wordWrap=true) or at line breaks (\n).
+If false, text will never wrap to the next line. The text continues on the same line.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">offsetColumn</td>
+<td class="parameter_tab">Index of first viewed column entry.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">offsetRow</td>
+<td class="parameter_tab">Index of first viewed row entry.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">permissionOperate</td>
+<td class="parameter_tab">restricts operability to users, which have given roles
+</td>
+<td class="parameter_tab">Accessibility</td>
+<td class="parameter_tab">RoleCollection</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">permissionView</td>
+<td class="parameter_tab">restricts visibility to users, which have given roles
+</td>
+<td class="parameter_tab">Accessibility</td>
+<td class="parameter_tab">RoleCollection</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">refreshRate</td>
+<td class="parameter_tab">Refresh rate of how often continuously updated variables are shown in the table.
+Recommanded values for the T50:
+1000 cells: 1000 ms (with stopRefreshAtScroll = true)
+ 500 cells: 700 ms (with stopRefreshAtScroll = true)
+ 500 cells: 1000 ms (with stopRefreshAtScroll = false)
+&lt;250 cells: 400 ms (with stopRefreshAtScroll = true)</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">600</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">rowHeight</td>
+<td class="parameter_tab">Height of rows.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">30</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">CellSize</td>
+<td class="parameter_tab">1</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">scrollLinkXRefId</td>
+<td class="parameter_tab">Reference to a second Table widget that should be synchronized for horizontal scrolling</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">WidgetReference</td>
+<td class="parameter_tab"></td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">ScrollSynchronization</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">scrollLinkYRefId</td>
+<td class="parameter_tab">Reference to a second Table widget that should be synchronized for vertical scrolling</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">WidgetReference</td>
+<td class="parameter_tab"></td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab">ScrollSynchronization</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">selectedColumn</td>
+<td class="parameter_tab">Index of selected column.</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">selectedRow</td>
+<td class="parameter_tab">Index of selected row.</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">0</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">selection</td>
+<td class="parameter_tab">If true, the user can select data entries.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">showHeader</td>
+<td class="parameter_tab">Show/Hide header</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">showScrollbars</td>
+<td class="parameter_tab">Show/Hide scrollbars</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">showSortingButton</td>
+<td class="parameter_tab">If true,  by clicking on a columns header will be availabe. The table will only sort on the
+currently selected header. The header can be sorted in descending order (one click), ascending order
+(one more click) or returned to normal state (one more click); given that you started in normal state.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">stopRefreshAtScroll</td>
+<td class="parameter_tab">If set to true this parameter will stop the table from continuously updating the table while scrolling. This makes for a better
+user experience, especially in the T50 and low end targets where it takes some time to reinstantiate all DOM elements - which
+will interrupt the scrolling.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">style</td>
+<td class="parameter_tab">reference to a style for this widget type
+</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">StyleReference</td>
+<td class="parameter_tab">default</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">tabIndex</td>
+<td class="parameter_tab">sets if a widget should have autofocus enabled (0), the order of the focus (>0),
+or if autofocus should be disabled (-1)
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">-1</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">tableConfiguration</td>
+<td class="parameter_tab">Configuration for the visibility and/or disabling of table rows and columns.
+Use it like:
+Visible:
+   "{
+   'specRows': [
+       {'index':0,'visible': true},
+       {'index':2,'visible': false},
+       {'index':4,'visible': true}
+               ],
+   'specColumns':  [
+      {'index':5, 'visible': true},
+      {'index':8, 'visible': false},
+      {'index':10,'visible': true}
+      ]
+  }"
+
+Disable:
+   "{
+   'specRows': [
+       {'index':0,'disable': true},
+       {'index':2,'disable': false},
+       {'index':4,'disable': true}
+               ],
+   'specColumns':  [
+      {'index':5, 'disable': true},
+      {'index':8, 'disable': false},
+      {'index':10,'disable': true}
+     ]
+  }"
+ Both:
+   "{
+  'specRows': [
+       {'index':0,'visible': true, 'disable': true},
+       {'index':2,'visible': true,'disable': false},
+       {'index':4,'visible': false, 'disable': true}
+      ],
+   'specColumns':  [
+      {'index':5, 'visible': true, 'disable': true},
+      {'index':8, 'visible': true, 'disable': false},
+      {'index':10,'visible': false, 'disable': true}
+      ]
+   }"</td>
+<td class="parameter_tab">Data</td>
+<td class="parameter_tab">String</td>
+<td class="parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">tooltip</td>
+<td class="parameter_tab">reference to a tooltip for a widget
+</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">String</td>
+<td class="parameter_tab"></td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">useTableStyling</td>
+<td class="parameter_tab">If false, styling can be set on the individual columns on their repsective TableItem/TableItemImageList.</td>
+<td class="parameter_tab">Appearance</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">visible</td>
+<td class="parameter_tab">change visibility
+</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">wordWrap</td>
+<td class="parameter_tab">If true, text will wrap when necessary.</td>
+<td class="parameter_tab">Behavior</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">zIndex</td>
+<td class="parameter_tab">The zIndex property specifies the z-order of a widget and its childs.<br/>
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>
+        The zIndex must be unique within a content.<br/></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">UInteger</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="true parameter_tab">true</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">left</td>
+<td class="parameter_tab">absolute position measured from left boundary of parent container</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">top</td>
+<td class="parameter_tab">absolute position measured from top boundary of parent container</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Integer</td>
+<td class="parameter_tab">no defaultValue<br/>defined</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">height</td>
+<td class="parameter_tab">outer height of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">300</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">width</td>
+<td class="parameter_tab">outer width of widget</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab">Size</td>
+<td class="parameter_tab">400</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab">false</td>
+<td class="false parameter_tab"></td>
+<td class="false parameter_tab"></td>
+<td class="true parameter_tab">true</td>
+<td class="true parameter_tab">true</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Styleable Properties</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">type</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">activeBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for selected table entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FF8800;color:black;">#FF8800</td>
+</tr>
+<tr>
+<td class="parameter_tab">activeBackGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for selected table entries</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">mouseDownTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Text color for selected entries</p>
+</td>
+<td class="parameter_tab" >transparent</td>
+</tr>
+<tr>
+<td class="parameter_tab">mouseDownBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for mouse down event on table entries</p>
+</td>
+<td class="parameter_tab" >transparent</td>
+</tr>
+<tr>
+<td class="parameter_tab">mouseDownBackGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Backcolor for mouse down event on table entries</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">activeInputCellTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the color of the text in the cell while writing in</p>
+</td>
+<td class="parameter_tab"  style="background-color:#333333;color:white;">#333333</td>
+</tr>
+<tr>
+<td class="parameter_tab">activeInputCellInnerShadow</td>
+<td class="parameter_tab">Shadow</td>
+<td class="parameter_tab"><p>Hint: you can also use this property as inner border: e.g. &quot;0 0 0 5px #B5B5B5&quot;</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+<tr>
+<td class="parameter_tab">activeInputCellBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">activeInputCellBackgroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for input cells.</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">inputCellTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the text color displayed in the cell while writing in</p>
+</td>
+<td class="parameter_tab"  style="background-color:#333333;color:white;">#333333</td>
+</tr>
+<tr>
+<td class="parameter_tab">inputCellInnerShadow</td>
+<td class="parameter_tab">Shadow</td>
+<td class="parameter_tab"><p>Hint: you can also use this property as inner border: e.g. &quot;0 0 0 5px #B5B5B5&quot;</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+<tr>
+<td class="parameter_tab">inputCellBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">inputCellBackgroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for input cells.</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">activeTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Text color for selected entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">backColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the background color of the table</p>
+</td>
+<td class="parameter_tab" >transparent</td>
+</tr>
+<tr>
+<td class="parameter_tab">backColorEvenColumn</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#EAEAEA;color:black;">#EAEAEA</td>
+</tr>
+<tr>
+<td class="parameter_tab">backColorOddColumn</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for odd table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FCFCFC;color:black;">#FCFCFC</td>
+</tr>
+<tr>
+<td class="parameter_tab">backGroundGradientEvenColumn</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient for even table entries in column direction</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">backGroundGradientOddColumn</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient for even table entries in column direction</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">backColorEvenRow</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in row direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">backColorOddRow</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for odd table entries in row direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FCFCFC;color:black;">#FCFCFC</td>
+</tr>
+<tr>
+<td class="parameter_tab">backGroundGradientEvenRow</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient for even table entries in row direction</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">backGroundGradientOddRow</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient for even table entries in row direction</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">backGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">borderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color of the widget. For further information, please see its type</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">borderStyle</td>
+<td class="parameter_tab">BorderStyle</td>
+<td class="parameter_tab"><p>Style of the Border of the widget</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+<tr>
+<td class="parameter_tab">borderWidth</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the border width of the widget. For further information, please see its type</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">cellAlign</td>
+<td class="parameter_tab">brease.enum.BackgroundPosition</td>
+<td class="parameter_tab"><p>Alignment of the text in a cell</p>
+</td>
+<td class="parameter_tab" >center center</td>
+</tr>
+<tr>
+<td class="parameter_tab">cellBorderStyle</td>
+<td class="parameter_tab">BorderStyle</td>
+<td class="parameter_tab"><p>Style of the cell borders</p>
+</td>
+<td class="parameter_tab" >solid</td>
+</tr>
+<tr>
+<td class="parameter_tab">cellBorderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color of each cell. For further information, please see its type</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">cellBorderWidth</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the border width of each cell. For further information, please see its type</p>
+</td>
+<td class="parameter_tab" >0px 0px 1px 1px</td>
+</tr>
+<tr>
+<td class="parameter_tab">cellPadding</td>
+<td class="parameter_tab">Padding</td>
+<td class="parameter_tab"><p>Padding of table cells.</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">headerCellPadding</td>
+<td class="parameter_tab">Padding</td>
+<td class="parameter_tab"><p>Padding of the header cells.</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">cornerRadius</td>
+<td class="parameter_tab">PixelValCollection</td>
+<td class="parameter_tab"><p>Sets the radius of the widget rounded corners. For further information, please see its type</p>
+</td>
+<td class="parameter_tab" >0px</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledActiveTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Text color for selected entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledActiveBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for selected table entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C7C7C7;color:black;">#C7C7C7</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledActiveBackGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for selected table entries</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the background color of the widget when disabled</p>
+</td>
+<td class="parameter_tab" >transparent</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackGroundGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background as a gradient</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackColorEvenRow</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in row direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#EAEAEA;color:black;">#EAEAEA</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackColorOddRow</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for odd table entries in row direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackColorEvenColumn</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for even table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#EAEAEA;color:black;">#EAEAEA</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBackColorOddColumn</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Backcolor for odd table entries in column direction</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FFFFFF;color:black;">#FFFFFF</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledBorderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color of the widget when disabled. For further information, please see its type</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledCellBorderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the border color of each cell when disabled. For further information, please see its type</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledItemBorderColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Border color of a disabled item (can be row or column - depends on the configuration)</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledHeaderTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the header text color when the widget is disabled</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledHeaderBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Text color for selected entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FCFCFC;color:black;">#FCFCFC</td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledHeaderGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for table header</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">disabledTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the text color when the widget is disabled</p>
+</td>
+<td class="parameter_tab"  style="background-color:#C8C8C8;color:black;">#C8C8C8</td>
+</tr>
+<tr>
+<td class="parameter_tab">fontName</td>
+<td class="parameter_tab">FontName</td>
+<td class="parameter_tab"><p>Fontname of the text</p>
+</td>
+<td class="parameter_tab" >Arial</td>
+</tr>
+<tr>
+<td class="parameter_tab">fontSize</td>
+<td class="parameter_tab">PixelVal</td>
+<td class="parameter_tab"><p>Fontsize of the header text</p>
+</td>
+<td class="parameter_tab" >14px</td>
+</tr>
+<tr>
+<td class="parameter_tab">headerBackColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Text color for selected entries</p>
+</td>
+<td class="parameter_tab"  style="background-color:#FCFCFC;color:black;">#FCFCFC</td>
+</tr>
+<tr>
+<td class="parameter_tab">headerGradient</td>
+<td class="parameter_tab">Gradient</td>
+<td class="parameter_tab"><p>Background gradient for table header</p>
+</td>
+<td class="parameter_tab" ></td>
+</tr>
+<tr>
+<td class="parameter_tab">headerTextColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the header text color</p>
+</td>
+<td class="parameter_tab"  style="background-color:#333333;color:white;">#333333</td>
+</tr>
+<tr>
+<td class="parameter_tab">headerFontSize</td>
+<td class="parameter_tab">PixelVal</td>
+<td class="parameter_tab"><p>Fontsize of the header text</p>
+</td>
+<td class="parameter_tab" >14px</td>
+</tr>
+<tr>
+<td class="parameter_tab">sortingButtonColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Color of the arrow that is not the sorted way</p>
+</td>
+<td class="parameter_tab"  style="background-color:#ececec;color:black;">#ececec</td>
+</tr>
+<tr>
+<td class="parameter_tab">sortingButtonActiveColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Color of the arrow that is the sorted way</p>
+</td>
+<td class="parameter_tab"  style="background-color:#5f8dd3;color:black;">#5f8dd3</td>
+</tr>
+<tr>
+<td class="parameter_tab">textColor</td>
+<td class="parameter_tab">Color</td>
+<td class="parameter_tab"><p>Sets the text color</p>
+</td>
+<td class="parameter_tab"  style="background-color:#333333;color:white;">#333333</td>
+</tr>
+<tr>
+<td class="parameter_tab">bold</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab"><p>If <strong>true</strong> font style is bold</p>
+</td>
+<td class="parameter_tab" >false</td>
+</tr>
+<tr>
+<td class="parameter_tab">italic</td>
+<td class="parameter_tab">Boolean</td>
+<td class="parameter_tab"><p>If <strong>true</strong> font style is italic</p>
+</td>
+<td class="parameter_tab" >false</td>
+</tr>
+<tr>
+<td class="parameter_tab">opacity</td>
+<td class="parameter_tab">Opacity</td>
+<td class="parameter_tab"><p>Opacity of the widget</p>
+</td>
+<td class="parameter_tab" >1</td>
+</tr>
+<tr>
+<td class="parameter_tab">shadow</td>
+<td class="parameter_tab">Shadow</td>
+<td class="parameter_tab"><p>Shadow of the Widget</p>
+</td>
+<td class="parameter_tab" >none</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Events</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">Click</td>
+<td class="parameter_tab">Fired when element is clicked on.
+</td>
+<td class="parameter_tab"><ul>
+<li>origin: String
+<p>id of widget that triggered this event
+</p>
+</li>
+<li>horizontalPos: String
+<p>horizontal position of click in pixel i.e '10px'
+</p>
+</li>
+<li>verticalPos: String
+<p>vertical position of click in pixel i.e '10px'
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">DisabledClick</td>
+<td class="parameter_tab">Fired when disabled element is clicked on.
+</td>
+<td class="parameter_tab"><ul>
+<li>origin: String
+<p>id of widget that triggered this event
+
+</p>
+</li>
+<li>hasPermission: Boolean
+<p>defines if the state is caused due to missing roles of the current user
+
+</p>
+</li>
+<li>horizontalPos: String
+<p>horizontal position of click in pixel i.e '10px'
+
+</p>
+</li>
+<li>verticalPos: String
+<p>vertical position of click in pixel i.e '10px'
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">EnableChanged</td>
+<td class="parameter_tab">Fired when operability of the widget changes.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>operability
+
+
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="parameter_tab">FocusIn</td>
+<td class="parameter_tab">Fired when the widgets gets focus
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">FocusOut</td>
+<td class="parameter_tab">Fired when the widgets lost focus
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ValueChanged</td>
+<td class="parameter_tab">Triggered when any value in the table is changed
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">VisibleChanged</td>
+<td class="parameter_tab">Fired when the visibility of the widget changes.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>visibility
+
+
+
+</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Actions</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th class="parameter_tab">name</th>
+<th class="parameter_tab">description</th>
+<th class="parameter_tab">arguments</th>
+<th class="parameter_tab">result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="parameter_tab">Focus</td>
+<td class="parameter_tab">Sets focus on the widget element, if it can be focused and keyboardOperation=true
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">OpenConfiguration</td>
+<td class="parameter_tab">Open the filter part of the configuration dialogue
+</td>
+<td class="parameter_tab"><ul>
+<li>type: TableConfigurationType
+<p>(Supported types: Filtering)
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollPageDown</td>
+<td class="parameter_tab">Scroll one page down
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollPageLeft</td>
+<td class="parameter_tab">Scroll one page left
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollPageRight</td>
+<td class="parameter_tab">Scroll one page right
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollPageUp</td>
+<td class="parameter_tab">Scroll one page up
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollStepDown</td>
+<td class="parameter_tab">Scroll one step down
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollStepLeft</td>
+<td class="parameter_tab">Scroll one step left
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollStepRight</td>
+<td class="parameter_tab">Scroll one step right
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollStepUp</td>
+<td class="parameter_tab">Scroll one step up
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollToHorizontal</td>
+<td class="parameter_tab">Scroll to horizontal column
+</td>
+<td class="parameter_tab"><ul>
+<li>value: UInteger
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ScrollToVertical</td>
+<td class="parameter_tab">Scroll to vertical row
+</td>
+<td class="parameter_tab"><ul>
+<li>value: UInteger
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetColumnVisibility</td>
+<td class="parameter_tab">Set the visibility for a certain column.
+</td>
+<td class="parameter_tab"><ul>
+<li>index: Integer
+<p>
+</p>
+</li>
+<li>visible: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetEnable</td>
+<td class="parameter_tab">Sets the state of property «enable»
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetRowVisibility</td>
+<td class="parameter_tab">Set the visibility for a certain row.
+</td>
+<td class="parameter_tab"><ul>
+<li>index: Integer
+<p>
+</p>
+</li>
+<li>visible: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetSelectedColumn</td>
+<td class="parameter_tab">Sets selectedColumn
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Integer
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetSelectedRow</td>
+<td class="parameter_tab">Sets selectedRow
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Integer
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetStyle</td>
+<td class="parameter_tab">This function sets the style of the widget by calling the superclass
+and then processing this in the widget.
+</td>
+<td class="parameter_tab"><ul>
+<li>value: StyleReference
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">SetVisible</td>
+<td class="parameter_tab">Sets the state of property «visible»
+</td>
+<td class="parameter_tab"><ul>
+<li>value: Boolean
+<p>
+</p>
+</li>
+</ul>
+</td>
+<td class="parameter_tab"></td>
+</tr>
+<tr>
+<td class="parameter_tab">ShowTooltip</td>
+<td class="parameter_tab">
+</td>
+<td class="parameter_tab"></td>
+<td class="parameter_tab"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

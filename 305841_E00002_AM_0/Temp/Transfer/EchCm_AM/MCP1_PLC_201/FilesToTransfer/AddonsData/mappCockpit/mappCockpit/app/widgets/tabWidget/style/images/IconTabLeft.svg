@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 53.14147 76.862178"
+   version="1.1"
+   id="svg3755"
+   sodipodi:docname="IconTabLeft.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   width="53.141468"
+   height="76.862175">
+  <metadata
+     id="metadata3759">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>tab_symbol2</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3757"
+     showgrid="false"
+     inkscape:zoom="11.046134"
+     inkscape:cx="17.43618"
+     inkscape:cy="42.130352"
+     inkscape:window-x="1922"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="85d988c2-4085-4cb4-b7ab-9821a1c68109"
+     inkscape:pagecheckerboard="true" />
+  <defs
+     id="defs3740">
+    <clipPath
+       id="70fdda2d-4852-4327-944c-02e7dd135e65">
+      <path
+         d="m 49.59,18.59 h -21 v 44 h 21 v -11 a 10,10 0 1 1 0,-20 z"
+         style="fill:none"
+         id="path3737"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <title
+     id="title3742">tab_symbol2</title>
+  <g
+     id="b1a21a26-a385-4562-a0f7-3a17ec587ffb"
+     data-name="Ebene 2"
+     transform="matrix(1.9458863,0,0,1.7468676,-55.632889,-32.474269)"
+     style="fill:#ffffff">
+    <g
+       id="41be81f4-0c02-45d0-a122-bd10b12eadac"
+       data-name="trace analyse"
+       style="fill:#ffffff;stroke:#ffffff">
+      <g
+         id="85d988c2-4085-4cb4-b7ab-9821a1c68109"
+         data-name="tab"
+         style="fill:#ffffff;stroke:#ffffff">
+        <path
+           d="m 49.59,45.59 a 4,4 0 1 0 -4,-4 4,4 0 0 0 4,4 z"
+           style="fill:#ffffff;stroke:#ffffff"
+           id="path3744"
+           inkscape:connector-curvature="0" />
+        <path
+           d="m 49.59,47.59 a 6,6 0 1 0 -6,-6 6,6 0 0 0 6,6 z"
+           style="fill:none;stroke:#ffffff;stroke-width:0.60000002px;stroke-miterlimit:10"
+           id="path3746"
+           inkscape:connector-curvature="0" />
+        <g
+           clip-path="url(#70fdda2d-4852-4327-944c-02e7dd135e65)"
+           id="g3750"
+           style="fill:#ffffff;stroke:#ffffff">
+          <path
+             d="m 76,34.94 -41,41 m 36.71,-45.24 -41,41 m 36.76,-45.24 -41,41 m 36.76,-45.25 -41,41 M 59,18 18,59 m 36.74,-45.27 -41,41 M 50.5,9.49 l -41,41 m 36.76,-45.25 -41,41 M 42,1 1,42"
+             style="fill:#ffffff;stroke:#ffffff;stroke-width:2px;stroke-linecap:round"
+             id="path3748"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

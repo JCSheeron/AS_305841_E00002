@@ -1,0 +1,45 @@
+/* define the styling of the icons for all treegrid widgets (e.g. expand, collapse, ...) */
+.e-treegrid .treegridexpand {
+    background-image: url(../images/tree/groupOpened.svg);
+    background-repeat: no-repeat;
+    background-position-y: 4px;
+    width: 10px;
+    height: 16px;
+    margin: auto;
+    float: left;
+    margin-left:6px;
+    margin-top:2px;
+}
+
+.e-treegrid .treegridcollapse {
+    background-image: url(../images/tree/groupClosed.svg);
+    background-repeat: no-repeat;
+    background-position-y: 4px;
+    width: 10px;
+    height: 16px;
+    margin: auto;
+    float: left;
+    margin-left:6px;
+    margin-top:2px;
+}
+
+.treeGridRowIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 24px;
+}
+
+.e-treegrid .treegridexpand:before {
+    content: none;
+}
+
+.e-treegrid .treegridcollapse:before {
+    content: none;
+}
+
+.e-treegrid .treegridcollapse:after,
+.e-treegrid .treegridexpand:after {
+    opacity: 0;
+}

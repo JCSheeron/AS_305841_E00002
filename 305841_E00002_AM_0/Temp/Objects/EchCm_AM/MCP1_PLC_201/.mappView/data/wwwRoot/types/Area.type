@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Area xmlns="http://www.br-automation.com/iat2014/widget" >
+  <Properties>
+    <Property name="styleRefId" type="StyleReference" initOnly="true" readOnly="false" required="false" projectable="true" defaultValue="default" />
+  </Properties>
+  <StyleProperties>
+
+    <StyleProperty name="backColor" category="Appearance" type="Color">
+      <StyleElement attribute="background-color"/>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient">
+      <StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="backGround" type="ImagePath" category="StyleProperty">
+      <Description>background image</Description>
+      <StyleElement attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sizeMode" type="SizeMode" default="fill" category="StyleProperty">
+      <Description>size mode of background image </Description>
+      <StyleElement attribute="@include backgroundSize($value)"></StyleElement>
+    </StyleProperty>
+
+  </StyleProperties>
+</Area>

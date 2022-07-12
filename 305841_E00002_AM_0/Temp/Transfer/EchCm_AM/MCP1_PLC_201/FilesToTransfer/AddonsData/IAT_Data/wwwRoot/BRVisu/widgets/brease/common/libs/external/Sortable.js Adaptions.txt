@@ -1,0 +1,3 @@
+﻿In the Sortable.js library where made some adaptions that the functionality fits to the desired behavior of WidgetFactory.
+The related lines are 647 until 652 AND line 837
+All the changed are marked by: "Commented by Pammi" or "Changed by Pammi"

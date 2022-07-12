@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingDefinition xmlns="http://www.br-automation.com/iat2014/eventbinding/runtime/v2">
+  <Visualization>
+    <EventBinding id="eventbinding_44">
+			<Source type="clientSystem.Event" event="DisabledClick" />
+			<EventHandler condition="contentId=&quot;SfMP171_ContentHeaderLand&quot;">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="Login" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtUserInUseMsgDialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Information" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_45">
+			<Source type="clientSystem.Event" event="DisabledClick" />
+			<EventHandler condition="contentId=&quot;SfMP171_ContentHeaderPort&quot;">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="Login" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtUserInUseMsgDialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Information" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Visualization>
+    <EventBinding id="eventbinding_46">
+			<Source type="opcUa.Event" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_UserNotAccess" event="ValueChanged" />
+
+			<Operand name="OperandSessionIsLoggedIn" datatype="BOOL">
+				<ReadTarget type="session.VariableAction.Read" refId="SfMP182_sessionvar_isLoggedIn">
+					<Method type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="newValue AND OperandSessionIsLoggedIn">
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.ShowMessageBox"><Parameter name="type" xsi:type="ANY_STRING" value="OK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="header" xsi:type="ANY_STRING" value="Login" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="message" xsi:type="ANY_STRING" value="$BR/IAT/mappSafety/SfMP137_txtDialogLoginUserNotAccess" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><Parameter name="icon" xsi:type="ANY_STRING" value="Information" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="newValue">
+				<Action>
+					<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_UserNotAccess">
+						<Method type="opcUa.NodeAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Visualization>
+  <Content id="SfMP171_contentLogin">
+    <EventBinding id="eventbinding_47">
+			<Source type="widgets.brease.TextInput.Event" event="ValueChanged" refId="SfMP171_contentLogin_SfMP171_inputLoginUsername" />
+
+			<Operand name="OperandLoginUsername" datatype="ANY_STRING">
+				<ReadTarget type="widgets.brease.TextInput.ReadAction" refId="SfMP171_contentLogin_SfMP171_inputLoginUsername">
+					<Method type="widgets.brease.TextInput.Action.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_LoginUsername">
+								<Method type="opcUa.NodeAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="=OperandLoginUsername" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target type="widgets.brease.LoginButton.Action" refId="SfMP171_contentLogin_SfMP171_btnLogin">
+								<Method type="widgets.brease.LoginButton.Action.SetUserName"><Parameter name="userName" xsi:type="ANY_STRING" value="=OperandLoginUsername" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowLoginFailedMsg">
+								<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentLogin">
+    <EventBinding id="eventbinding_48">
+			<Source type="widgets.brease.Password.Event" event="ValueChanged" refId="SfMP171_contentLogin_SfMP171_inputLoginPassword" />
+
+			<Operand name="OperandLoginPassword" datatype="ANY_STRING">
+				<ReadTarget type="widgets.brease.Password.ReadAction" refId="SfMP171_contentLogin_SfMP171_inputLoginPassword">
+					<Method type="widgets.brease.Password.Action.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target type="opcUa.NodeAction" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_LoginPassword">
+								<Method type="opcUa.NodeAction.SetValueString"><Parameter name="value" xsi:type="ANY_STRING" value="=OperandLoginPassword" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target type="widgets.brease.LoginButton.Action" refId="SfMP171_contentLogin_SfMP171_btnLogin">
+								<Method type="widgets.brease.LoginButton.Action.SetPassword"><Parameter name="password" xsi:type="ANY_STRING" value="=OperandLoginPassword" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowLoginFailedMsg">
+								<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentLogin">
+    <EventBinding id="SfMP171_contentLogin.LoginButton.LoginSuccess">
+			<Source type="widgets.brease.LoginButton.Event" event="LoginSuccess" refId="SfMP171_contentLogin_SfMP171_btnLogin" />
+			<EventHandler>
+				<Action>
+					<Target type="clientSystem.Action">
+						<Method type="clientSystem.Action.CloseDialog"><Parameter name="dialogId" xsi:type="ANY_STRING" value="SfMP193_dialogLogindialog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+  <Content id="SfMP171_contentLogin">
+    <EventBinding id="SfMP171_contentLogin.LoginButton.AuthentificationFailed">
+			<Source type="widgets.brease.LoginButton.Event" event="AuthentificationFailed" refId="SfMP171_contentLogin_SfMP171_btnLogin" />
+			<EventHandler>
+				<Action>
+					<Target type="session.VariableAction" refId="SfMP182_sessionvar_ShowLoginFailedMsg">
+						<Method type="session.VariableAction.SetValueBool"><Parameter name="value" xsi:type="BOOL" value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /></Method>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+  </Content>
+</EventBindingDefinition>

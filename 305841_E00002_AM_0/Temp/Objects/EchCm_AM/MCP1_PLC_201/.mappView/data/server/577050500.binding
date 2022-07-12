@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.isValid*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_Client_Active" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_Client_Active" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_Client_Active" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_Client_Active" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_Client_Active" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_Client_Active" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_Client_Active" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_Client_Active" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_Client_Active" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_Client_Active" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_Client_Active" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_Client_Active" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_Client_Active" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_Client_Active" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_Client_Active" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_Client_Active" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.isValid" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.userId*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_UserID" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_UserID" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_UserID" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_UserID" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_UserID" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_UserID" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_UserID" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_UserID" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_UserID" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_UserID" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_UserID" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_UserID" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_UserID" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_UserID" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_UserID" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_UserID" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.userId" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.ipAddress*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_IPAddress" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_IPAddress" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_IPAddress" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_IPAddress" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_IPAddress" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_IPAddress" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_IPAddress" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_IPAddress" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_IPAddress" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_IPAddress" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_IPAddress" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_IPAddress" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_IPAddress" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_IPAddress" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_IPAddress" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_IPAddress" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.ipAddress" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.languageId*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_LanguageID" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_LanguageID" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_LanguageID" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_LanguageID" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_LanguageID" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_LanguageID" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_LanguageID" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_LanguageID" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_LanguageID" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_LanguageID" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_LanguageID" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_LanguageID" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_LanguageID" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_LanguageID" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_LanguageID" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_LanguageID" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.languageId" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.slotId*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_SlotID" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_SlotID" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_SlotID" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_SlotID" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_SlotID" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_SlotID" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_SlotID" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_SlotID" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_SlotID" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_SlotID" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_SlotID" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_SlotID" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_SlotID" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_SlotID" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_SlotID" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_SlotID" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWayToSource">
+			<Source mode="oneWayToSource" xsi:type="listElement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Selector xsi:type="variable" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+    <br:List xsi:type="br:opcUa" id="session*::SYSTEM:clientInfo.currentPageId*value" xmlns:br="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+    <br:Element index="0" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_1_CurrentPageID" attribute="value" />
+    <br:Element index="1" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_2_CurrentPageID" attribute="value" />
+    <br:Element index="2" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_3_CurrentPageID" attribute="value" />
+    <br:Element index="3" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_4_CurrentPageID" attribute="value" />
+    <br:Element index="4" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_5_CurrentPageID" attribute="value" />
+    <br:Element index="5" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_6_CurrentPageID" attribute="value" />
+    <br:Element index="6" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_7_CurrentPageID" attribute="value" />
+    <br:Element index="7" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_8_CurrentPageID" attribute="value" />
+    <br:Element index="8" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_9_CurrentPageID" attribute="value" />
+    <br:Element index="9" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_10_CurrentPageID" attribute="value" />
+    <br:Element index="10" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_11_CurrentPageID" attribute="value" />
+    <br:Element index="11" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_12_CurrentPageID" attribute="value" />
+    <br:Element index="12" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_13_CurrentPageID" attribute="value" />
+    <br:Element index="13" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_14_CurrentPageID" attribute="value" />
+    <br:Element index="14" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_15_CurrentPageID" attribute="value" />
+    <br:Element index="15" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_16_CurrentPageID" attribute="value" /></br:List></Source>
+			<Target xsi:type="variable" refId="::SYSTEM:clientInfo.currentPageId" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_LoggedIn_ID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="variable" refId="SfMP182_sessionvar_LoggedInID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Client_CurrentPageID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="variable" refId="SfMP182_sessionvar_currentPageID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_ActiveClientTracer" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="variable" refId="SfMP182_sessionvar_isSessionActive" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+  <Visualization>
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_UserHasAccess" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="variable" refId="SfMP182_sessionvar_UserHasAccess" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Visualization>
+</BindingDefinition>

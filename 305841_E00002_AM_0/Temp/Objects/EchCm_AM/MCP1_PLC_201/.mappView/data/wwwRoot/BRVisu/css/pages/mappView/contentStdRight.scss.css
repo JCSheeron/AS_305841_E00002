@@ -1,0 +1,201 @@
+#contentStdRight_NavBar_StdRight {
+  top: 10px;
+  position: absolute;
+}
+
+#contentStdRight_NavBar_StdRight {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_NavBar_StdRight {
+  width: 130px;
+}
+
+#contentStdRight_NavBar_StdRight {
+  height: 680px;
+}
+
+#contentStdRight_NavBar_StdRight {
+  z-index: 0;
+}
+
+#contentStdRight_btnWorkSummary {
+  top: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnWorkSummary {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnWorkSummary {
+  width: 110px;
+}
+
+#contentStdRight_btnWorkSummary {
+  height: 50px;
+}
+
+#contentStdRight_btnWorkSummary {
+  z-index: 0;
+}
+
+#contentStdRight_btnWorkSummary span {
+  font-weight: bold;
+}
+
+#contentStdRight_brnWorkSetup {
+  top: 80px;
+  position: absolute;
+}
+
+#contentStdRight_brnWorkSetup {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_brnWorkSetup {
+  width: 110px;
+}
+
+#contentStdRight_brnWorkSetup {
+  height: 50px;
+}
+
+#contentStdRight_brnWorkSetup {
+  z-index: 1;
+}
+
+#contentStdRight_btnZAxis {
+  top: 220px;
+  position: absolute;
+}
+
+#contentStdRight_btnZAxis {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnZAxis {
+  width: 110px;
+}
+
+#contentStdRight_btnZAxis {
+  height: 50px;
+}
+
+#contentStdRight_btnZAxis {
+  z-index: 2;
+}
+
+#contentStdRight_btnCuttingHead {
+  top: 290px;
+  position: absolute;
+}
+
+#contentStdRight_btnCuttingHead {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnCuttingHead {
+  width: 110px;
+}
+
+#contentStdRight_btnCuttingHead {
+  height: 50px;
+}
+
+#contentStdRight_btnCuttingHead {
+  z-index: 3;
+}
+
+#contentStdRight_btnSpindle {
+  top: 360px;
+  position: absolute;
+}
+
+#contentStdRight_btnSpindle {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnSpindle {
+  width: 110px;
+}
+
+#contentStdRight_btnSpindle {
+  height: 50px;
+}
+
+#contentStdRight_btnSpindle {
+  z-index: 4;
+}
+
+#contentStdRight_btnCuttingFluid {
+  top: 430px;
+  position: absolute;
+}
+
+#contentStdRight_btnCuttingFluid {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_btnCuttingFluid {
+  width: 110px;
+}
+
+#contentStdRight_btnCuttingFluid {
+  height: 50px;
+}
+
+#contentStdRight_btnCuttingFluid {
+  z-index: 5;
+}
+
+#contentStdRight_brnAxisDetails {
+  top: 500px;
+  position: absolute;
+}
+
+#contentStdRight_brnAxisDetails {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_brnAxisDetails {
+  width: 110px;
+}
+
+#contentStdRight_brnAxisDetails {
+  height: 50px;
+}
+
+#contentStdRight_brnAxisDetails {
+  z-index: 6;
+}
+
+#contentStdRight_brnProduction {
+  top: 150px;
+  position: absolute;
+}
+
+#contentStdRight_brnProduction {
+  left: 10px;
+  position: absolute;
+}
+
+#contentStdRight_brnProduction {
+  width: 110px;
+}
+
+#contentStdRight_brnProduction {
+  height: 50px;
+}
+
+#contentStdRight_brnProduction {
+  z-index: 7;
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="leftContentAxisDetail" height="700" width="110" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Button" id="btnSpindle" top="30" left="5" width="90" height="45" zIndex="0" text="Spindle" />
+    <Widget xsi:type="widgets.brease.Button" id="btnOutEcc" top="95" left="5" width="90" height="45" zIndex="1" breakWord="true" multiLine="true" text="Outer Ecc." />
+    <Widget xsi:type="widgets.brease.Button" id="btnInEcc" top="160" left="5" width="90" height="45" zIndex="2" breakWord="true" multiLine="true" text="Inner Ecc." />
+    <Widget xsi:type="widgets.brease.Button" id="btnZ" top="225" left="5" width="90" height="45" zIndex="3" breakWord="true" multiLine="true" text="Z" />
+    <Widget xsi:type="widgets.brease.Button" id="btnHandwheel" top="290" left="5" width="90" height="45" zIndex="4" breakWord="true" multiLine="true" text="Hand\nWheel" />
+    <Widget xsi:type="widgets.brease.Button" id="btnCfVfd" top="355" left="10" width="90" height="45" zIndex="5" breakWord="true" multiLine="true" text="CF\nPump" />
+  </Widgets>
+</Content>

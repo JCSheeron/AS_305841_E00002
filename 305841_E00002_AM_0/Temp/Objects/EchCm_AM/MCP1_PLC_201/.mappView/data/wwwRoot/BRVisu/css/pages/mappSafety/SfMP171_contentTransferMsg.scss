@@ -1,0 +1,67 @@
+﻿@import "mixins.scss";
+#SfMP171_contentTransferMsg_SfMP171_txtOutputTransferMsg {
+	@include elemTop(20);
+}
+#SfMP171_contentTransferMsg_SfMP171_txtOutputTransferMsg {
+	@include elemLeft(160);
+}
+#SfMP171_contentTransferMsg_SfMP171_txtOutputTransferMsg {
+	@include elemAutoWidth(280);
+}
+#SfMP171_contentTransferMsg_SfMP171_txtOutputTransferMsg {
+	@include elemAutoHeight(120);
+}
+#SfMP171_contentTransferMsg_SfMP171_txtOutputTransferMsg {
+		z-index: 0;
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+	@include elemTop(40);
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+	@include elemLeft(20);
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+	@include elemAutoWidth(130);
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+	@include elemAutoHeight(120);
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+		z-index: 1;
+}
+#SfMP171_contentTransferMsg_SfMP171_ImageTransferMsg {
+		border-width: 0px;
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+	@include elemTop(120);
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+	@include elemLeft(180);
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+	@include elemWidth(140);
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+	@include elemHeight(30);
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+		z-index: 2;
+}
+#SfMP171_contentTransferMsg_SfMP171_PaperTransfer {
+		border-width: 0px;
+}
+#SfMP171_contentTransferMsg_SfMP171_ProgressBarTransfer {
+	@include elemWidth(400);
+}
+#SfMP171_contentTransferMsg_SfMP171_ProgressBarTransfer {
+	@include elemTop(170);
+}
+#SfMP171_contentTransferMsg_SfMP171_ProgressBarTransfer {
+	@include elemLeft(20);
+}
+#SfMP171_contentTransferMsg_SfMP171_ProgressBarTransfer {
+	@include elemHeight(20);
+}
+#SfMP171_contentTransferMsg_SfMP171_ProgressBarTransfer {
+		z-index: 3;
+}

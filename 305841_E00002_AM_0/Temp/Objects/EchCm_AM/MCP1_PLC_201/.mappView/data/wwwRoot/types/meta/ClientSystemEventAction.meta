@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EventsActionsDefinitions xmlns="http://www.br-automation.com/iat2019/eventactiondefinition"
+						xmlns:w1="http://www.br-automation.com/iat2014/widget">
+  <EventsActionsDefinition name="clientSystem">
+    <MethodGroups>
+      <MethodGroup name="Action">
+        <Methods>
+          <AdvancedMethod name="OpenDialog" read="false">
+            <w1:Description>Sets the "value" attribute of a variable to a Boolean value.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="dialogId" type="DialogReference" index="0" required="true">
+                <w1:Description>ID of the dialog box to be opened.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="mode" type="brease.enum.DialogMode" index="0" required="false" defaultValue="modal">
+                <w1:Description>Modality of the dialog box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="horizontalPos" type="HPos" index="0" required="false" defaultValue="center">
+                <w1:Description>Horizontal position in reference to the HMI application.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="verticalPos" type="VPos" index="0" required="false" defaultValue="middle">
+                <w1:Description>Vertical position in reference to the HMI application.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="headerText" type="String" index="0" required="false" localizable="true" defaultValue="">
+                <w1:Description>Definition of a customized title as a string or text ID.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="autoClose" type="Boolean" index="0" required="false" defaultValue="false">
+                <w1:Description>Closes the dialog box by clicking outside of it.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="target" type="String" index="0" required="false" deprecated="true" defaultValue="">
+                <w1:Description>This argument is actually wrong and not supported by OpenDialog. For compatibility reasons it is not removed but marked as deprecated.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="autoRaise" type="brease.enum.AutoRaise" index="0" required="false" defaultValue="enabled">
+                <w1:Description>Defines the behavior of modifying the z-index when the user clicks on the dialog.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{dialogId}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="CloseDialog" read="false">
+            <w1:Description>This action closes a previously opened dialog box.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="dialogId" type="DialogReference" index="0" required="true">
+                <w1:Description>ID of the dialog box to be opened.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{dialogId}</ReferenceString>
+          </AdvancedMethod>
+          <w1:Method name="ShowMessageBox" read="false">
+            <w1:Description>This action displays a message box.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="type" type="brease.enum.MessageBoxType" index="0" required="true">
+                <w1:Description>Defines which buttons are shown in the button area of the message box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="message" type="String" index="0" required="true" localizable="true">
+                <w1:Description>Text to be shown in the main area of the message box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="header" type="String" index="0" required="true" localizable="true">
+                <w1:Description>Text to be shown in the header of the message box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="icon" type="brease.enum.MessageBoxIcon" index="0" required="false" defaultValue="None">
+                <w1:Description>Defines the icon to be shown in the main area of the message box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="style" type="StyleReference" index="0" required="false" defaultValue="default">
+                <w1:Description>The name of the style for the appearance.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Integer" />
+          </w1:Method>
+          <AdvancedMethod name="Navigate" read="false">
+            <w1:Description>This action switches to another page.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="pageId" type="PageReference" index="0" required="true">
+                <w1:Description>ID of the page that should be opened.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{pageId}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="LoadContentInArea" read="false">
+            <w1:Description>This action loads a piece of content to an area.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="contentId" type="ContentReference" index="0" required="true">
+                <w1:Description>ID of the piece of content that should be loaded.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="pageId" type="PageReference" index="1" required="true">
+                <w1:Description>ID of the page in which the area is referenced.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="areaId" type="AreaReference" index="2" required="true">
+                <w1:Description>ID of the area to which the piece of content should be loaded.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Boolean" />
+            <ReferenceString>{contentId} ➝ {pageId} ➝ {areaId}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="LoadContentInDialogArea" read="false">
+            <w1:Description>This action loads a piece of content to an area of a dialog.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="contentId" type="ContentReference" index="0" required="true">
+                <w1:Description>ID of the piece of content that should be loaded.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="dialogId" type="DialogReference" index="1" required="true">
+                <w1:Description>ID of the dialog in which the area is referenced.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="areaId" type="AreaReference" index="2" required="true">
+                <w1:Description>ID of the area to which the piece of content should be loaded.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Boolean" />
+            <ReferenceString>{contentId} ➝ {dialogId} ➝ {areaId}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="ChangeTheme" read="false">
+            <w1:Description>This action switches to another theme.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="theme" type="ThemeReference" index="0" required="true">
+                <w1:Description>ID of the theme that should be used.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{theme}</ReferenceString>
+          </AdvancedMethod>
+          <w1:Method name="Login" read="false">
+            <w1:Description>This action is used to log in a certain user.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="userName" type="String" index="0" required="true">
+                <w1:Description>Username</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="password" type="String" index="0" required="true">
+                <w1:Description>Password</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Boolean" />
+          </w1:Method>
+          <w1:Method name="Logout" read="false">
+            <w1:Description>This action logs out to the default user.</w1:Description>
+          </w1:Method>
+          <w1:Method name="OpenChangePasswordDialog" read="false">
+            <w1:Description>This action opens a dialog to allow the user to change password.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="userName" type="String" index="0" required="false" defaultValue="">
+                <w1:Description>User name. If not set, the user has to type in the userName.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="showPolicy" type="Boolean" index="1" required="false" defaultValue="false">
+                <w1:Description>Enable/disable the display of password policies in dialog.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+          </w1:Method>
+          <AdvancedMethod name="SetLanguage" read="false">
+            <w1:Description>This action switches the language.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="String" index="0" required="true">
+                <w1:Description>Language code of the language that should be set.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{value}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="SetMeasurementSystem" read="false">
+            <w1:Description>This action switches the unit system.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="brease.enum.MeasurementSystem" index="0" required="true">
+                <w1:Description>Unit system of the language that should be set.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{value}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="ScrollContent" read="false">
+            <w1:Description>This action is used for scrolling large content referenced in a smaller area of a layout.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="contentId" type="ContentReference" index="0" required="true">
+                <w1:Description>ID of the content that is to be scrolled.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="position" type="brease.enum.ScrollDirection" index="0" required="true">
+                <w1:Description>Position to which the content is be scrolled.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="duration" type="UInteger" index="0" required="false" defaultValue="0">
+                <w1:Description>Specifies the duration (in milliseconds) to allow smooth scrolling.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Boolean" />
+            <ReferenceString>{contentId} to {position}</ReferenceString>
+          </AdvancedMethod>
+          <AdvancedMethod name="OpenDialogAtTarget" read="false">
+            <w1:Description>This action opens a specified dialog box positioned relative to a specified widget.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="dialogId" type="DialogReference" index="0" required="true">
+                <w1:Description>ID of the dialog box to be opened.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="mode" type="brease.enum.DialogMode" index="0" required="false" defaultValue="modeless">
+                <w1:Description>Modality of the dialog box.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="horizontalPos" type="brease.enum.HorizontalPosition" index="0" required="false" defaultValue="right">
+                <w1:Description>Horizontal position in reference to the HMI application.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="verticalPos" type="brease.enum.VerticalPosition" index="0" required="false" defaultValue="top">
+                <w1:Description>Vertical position in reference to the HMI application.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="target" type="CombinedContentWidgetId" index="0" required="true">
+                <w1:Description>ID of the widget to be referenced.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="headerText" type="String" index="0" required="false" localizable="true" defaultValue="">
+                <w1:Description>Definition of a customized title as a string or text ID.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="autoClose" type="Boolean" index="0" required="false" defaultValue="false">
+                <w1:Description>Closes the dialog box by clicking outside of it.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="horizontalDialogAlignment" type="brease.enum.HorizontalPosition" index="0" required="false" defaultValue="left">
+                <w1:Description>Horizontal alignment of the dialog.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="verticalDialogAlignment" type="brease.enum.VerticalPosition" index="0" required="false" defaultValue="top">
+                <w1:Description>Vertical alignment of the dialog.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="autoRaise" type="brease.enum.AutoRaise" index="0" required="false" defaultValue="enabled">
+                <w1:Description>Defines the behavior of modifying the z-index when the user clicks on the dialog.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <ReferenceString>{dialogId} ➝ {target}</ReferenceString>
+          </AdvancedMethod>
+          <w1:Method name="ShowTooltips" read="false">
+            <w1:Description>This action enables or disables the tooltip mode for the visualization.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="value" type="Boolean" index="0" required="true">
+                <w1:Description>Enable/disable tooltip mode.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+          </w1:Method>
+          <w1:Method name="ChangePassword" read="false">
+            <w1:Description>This action changes to password of the defined user.</w1:Description>
+            <w1:Arguments>
+              <w1:Argument name="userName" type="String" index="0" required="false" defaultValue="">
+                <w1:Description>User name. If not set, the currently logged in user is used.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="oldPassword" type="String" index="0" required="true">
+                <w1:Description>Old password.</w1:Description>
+              </w1:Argument>
+              <w1:Argument name="newPassword" type="String" index="0" required="true">
+                <w1:Description>New password.</w1:Description>
+              </w1:Argument>
+            </w1:Arguments>
+            <w1:Result type="Integer" />
+          </w1:Method>
+          <w1:Method name="FocusNext" read="false">
+            <w1:Description>This action moves the focus to the next widget.</w1:Description>
+          </w1:Method>
+          <w1:Method name="FocusPrevious" read="false">
+            <w1:Description>This action moves the focus to the previous widget.</w1:Description>
+          </w1:Method>
+        </Methods>
+      </MethodGroup>
+    </MethodGroups>
+    <w1:Events>
+      <w1:Event name="KeyDown">
+        <w1:Description>Triggered when releasing a key.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="keyASCII" type="String" index="0" required="true">
+            <w1:Description>ASCII code for the character resulting from the keystroke.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="key" type="String" index="1" required="true">
+            <w1:Description>The character resulting from the keystroke</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="KeyUp">
+        <w1:Description>Triggered when pressing down on a key.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="keyASCII" type="String" index="0" required="true">
+            <w1:Description>ASCII code for the character resulting from the keystroke.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="key" type="String" index="1" required="true">
+            <w1:Description>The character resulting from the keystroke</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="KeyPress">
+        <w1:Description>Triggered after the completion of a keystroke.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="keyASCII" type="String" index="0" required="true">
+            <w1:Description>ASCII code for the character resulting from the keystroke.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="key" type="String" index="1" required="true">
+            <w1:Description>The character resulting from the keystroke</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="LoginSuccess">
+        <w1:Description>Fired when a login was successful.</w1:Description>
+        <w1:Arguments />
+      </w1:Event>
+      <w1:Event name="LoginFailed">
+        <w1:Description>Fired when a login failed.</w1:Description>
+        <w1:Arguments />
+      </w1:Event>
+      <w1:Event name="SystemSwipe">
+        <w1:Description>Triggered by the two-finger swipe gesture.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="direction" type="String" index="0" required="true">
+            <w1:Description>
+              The direction of the gesture. Possible values:
+              fromLeft
+              fromRight
+              fromTop
+              fromBottom
+            </w1:Description>
+          </w1:Argument>
+          <w1:Argument name="areaId" type="String" index="1" required="true">
+            <w1:Description>
+              ID of the area where the gesture was completely performed.
+              If the gesture is not started and ended in the same area, then the parameter is empty (empty string).
+            </w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="ContentLoaded">
+        <w1:Description>Fired when a content was loaded.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="contentId" type="String" index="0" required="true">
+            <w1:Description>ID of the content.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="visuId" type="String" index="1" required="true">
+            <w1:Description>ID of the HMI application that the content belongs to.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="DisabledClick">
+        <w1:Description>Triggered when the user wants to interact with an inactive widget.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="contentId" type="String" index="0" required="true">
+            <w1:Description>ID of the piece of content in which the widget was placed.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="widgetId" type="String" index="1" required="true">
+            <w1:Description>ID of the widget that sent the event.</w1:Description>
+          </w1:Argument>
+          <w1:Argument name="hasPermission" type="String" index="1" required="true">
+            <w1:Description>
+              Specifies whether the cause of the widget's disabled state is missing permissions from the logged-on user.
+
+              False: The user is not in the appropriate role and has no write permissions.
+              True: The user has no write access through an enable binding.
+            </w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="DialogOpened">
+        <w1:Description>Triggered after a dialog has opened and the content contained in it has been loaded.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="dialogId" type="String" index="0" required="true">
+            <w1:Description>Dialog box ID</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="DialogClosed">
+        <w1:Description>Triggered after a dialog has been closed.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="dialogId" type="String" index="0" required="true">
+            <w1:Description>Dialog box ID</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="TooltipModeActivated">
+        <w1:Description>Triggered when the tooltip mode is activated.</w1:Description>
+        <w1:Arguments />
+      </w1:Event>
+      <w1:Event name="TooltipModeDeactivated">
+        <w1:Description>Triggered when the tooltip mode is deactivated.</w1:Description>
+        <w1:Arguments />
+      </w1:Event>
+      <w1:Event name="LoggedOut">
+        <w1:Description>Triggered when the user was logged out by the system.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="userName" type="String" index="0" required="true">
+            <w1:Description>Logged out user.</w1:Description>
+          </w1:Argument>
+		  <w1:Argument name="reason" type="String" index="0" required="true">
+            <w1:Description>Reason of logout.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+      <w1:Event name="PasswordChangeRequired">
+        <w1:Description>Triggered when a login failed due to an expired password.</w1:Description>
+        <w1:Arguments>
+          <w1:Argument name="userName" type="String" index="0" required="true">
+            <w1:Description>User which requires a password change.</w1:Description>
+          </w1:Argument>
+        </w1:Arguments>
+      </w1:Event>
+    <w1:Event name="ChangePasswordDialogClosed">
+      <w1:Description>Triggered when a password change via the ChangePasswordDialog is finished.</w1:Description>
+      <w1:Arguments>
+        <w1:Argument name="userName" type="String" index="0" required="true">
+          <w1:Description>User for which the password change happened.</w1:Description>
+        </w1:Argument>
+        <w1:Argument name="result" type="Integer" index="0" required="true">
+          <w1:Description>Status with which the dialog was closed.</w1:Description>
+        </w1:Argument>
+      </w1:Arguments>
+    </w1:Event>
+    <w1:Event name="PasswordExpireNotification">
+      <w1:Description>Triggered at login or while a user is logged in, when the password expire notification time is reached.</w1:Description>
+      <w1:Arguments />
+    </w1:Event>
+    </w1:Events>
+    
+
+  </EventsActionsDefinition>
+</EventsActionsDefinitions>

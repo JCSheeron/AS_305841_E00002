@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brease.Table">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>licensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/ContainerWidget.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>widgets/brease/Table/libs/Renderer.js</File>
+				<File>widgets/brease/Table/libs/Model.js</File>
+				<File>brease/core/Utils.js</File>
+				<File>widgets/brease/Table/libs/Config.js</File>
+				<File>widgets/brease/Table/libs/Dialogue.js</File>
+				<File>widgets/brease/Table/libs/ConfigBuilder.js</File>
+				<File>widgets/brease/common/BusyIndicatorHandler/libs/BusyIndicatorHandler.js</File>
+				<File>brease/controller/libs/LogCode.js</File>
+				<File>widgets/brease/BusyIndicator/BusyIndicator.js</File>
+				<File>widgets/brease/TextInput/TextInput.js</File>
+				<File>widgets/brease/Label/Label.js</File>
+				<File>widgets/brease/NumericInput/NumericInput.js</File>
+				<File>widgets/brease/CheckBox/CheckBox.js</File>
+				<File>widgets/brease/DateTimeInput/DateTimeInput.js</File>
+				<File>widgets/brease/Image/Image.js</File>
+				<File>widgets/brease/Rectangle/Rectangle.js</File>
+				<File>widgets/brease/DropDownBox/DropDownBox.js</File>
+				<File>widgets/brease/GenericDialog/GenericDialog.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brease/Table/Table.js</Widget>
+				<Widget>widgets/brease/BusyIndicator/BusyIndicator.js</Widget>
+				<Widget>widgets/brease/TextInput/TextInput.js</Widget>
+				<Widget>widgets/brease/Label/Label.js</Widget>
+				<Widget>widgets/brease/NumericInput/NumericInput.js</Widget>
+				<Widget>widgets/brease/CheckBox/CheckBox.js</Widget>
+				<Widget>widgets/brease/DateTimeInput/DateTimeInput.js</Widget>
+				<Widget>widgets/brease/Image/Image.js</Widget>
+				<Widget>widgets/brease/Rectangle/Rectangle.js</Widget>
+				<Widget>widgets/brease/DropDownBox/DropDownBox.js</Widget>
+				<Widget>widgets/brease/GenericDialog/GenericDialog.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Data</Category>
+			<Category name="Category">Container</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Darstellung von Daten in einer Tabelle</Description>
+			<Description name="de">Darstellung von Daten in einer Tabelle</Description>
+			<Description name="en">Displays data in a table</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brease.Table</Class>
+			<Class level="1">brease.core.ContainerWidget</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+			<Child>widgets.brease.TableItem</Child>
+			<Child>widgets.brease.TableItemImageList</Child>
+			<Child>widgets.brease.TableItemDateTime</Child>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="OpenConfiguration" read="false">
+				<Description>Open the filter part of the configuration dialogue</Description>
+				<Arguments>
+					<Argument name="type" type="TableConfigurationType" index="0" required="true">
+						<Description>(Supported types: Filtering)</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="ScrollPageDown" read="false">
+				<Description>Scroll one page down</Description>
+			</Method>
+			<Method name="ScrollPageLeft" read="false">
+				<Description>Scroll one page left</Description>
+			</Method>
+			<Method name="ScrollPageRight" read="false">
+				<Description>Scroll one page right</Description>
+			</Method>
+			<Method name="ScrollPageUp" read="false">
+				<Description>Scroll one page up</Description>
+			</Method>
+			<Method name="ScrollStepDown" read="false">
+				<Description>Scroll one step down</Description>
+			</Method>
+			<Method name="ScrollStepLeft" read="false">
+				<Description>Scroll one step left</Description>
+			</Method>
+			<Method name="ScrollStepRight" read="false">
+				<Description>Scroll one step right</Description>
+			</Method>
+			<Method name="ScrollStepUp" read="false">
+				<Description>Scroll one step up</Description>
+			</Method>
+			<Method name="ScrollToHorizontal" read="false">
+				<Description>Scroll to horizontal column</Description>
+				<Arguments>
+					<Argument name="value" type="UInteger" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ScrollToVertical" read="false">
+				<Description>Scroll to vertical row</Description>
+				<Arguments>
+					<Argument name="value" type="UInteger" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetColumnVisibility" read="false">
+				<Description>Set the visibility for a certain column.</Description>
+				<Arguments>
+					<Argument name="index" type="Integer" index="0" required="true"/>
+					<Argument name="visible" type="Boolean" index="1" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetRowVisibility" read="false">
+				<Description>Set the visibility for a certain row.</Description>
+				<Arguments>
+					<Argument name="index" type="Integer" index="0" required="true"/>
+					<Argument name="visible" type="Boolean" index="1" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetSelectedColumn" read="false">
+				<Description>Sets selectedColumn</Description>
+				<Arguments>
+					<Argument name="value" type="Integer" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetSelectedRow" read="false">
+				<Description>Sets selectedRow</Description>
+				<Arguments>
+					<Argument name="value" type="Integer" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Description>This function sets the style of the widget by calling the superclass
+and then processing this in the widget.				</Description>
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="ValueChanged">
+				<Description>Triggered when any value in the table is changed</Description>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="busyIndicatorDelay" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>delay time for busy indicator [ms]</Description>
+			</Property>
+			<Property name="columnWidth" type="Size" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="2" groupRefId="CellSize" category="Appearance" defaultValue="100">
+				<Description>Width of columns.</Description>
+			</Property>
+			<Property name="dataOrientation" type="brease.enum.Direction" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="vertical">
+				<Description>A dataset is either placed horizontally or vertically.</Description>
+			</Property>
+			<Property name="ellipsis" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="filterConfiguration" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Configuration for filtering entires in the table</Description>
+			</Property>
+			<Property name="headerSize" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="0">
+				<Description>Height of rows.</Description>
+			</Property>
+			<Property name="initRefreshRate" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>Refresh rate of the rebuild of the table, at init and changes for properties.
+Needs to be increased the more items are used but also at the rate of which
+properties are updated.				</Description>
+			</Property>
+			<Property name="maxHeight" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="0">
+				<Description>Maximum height the Table can grow, when not set to zero</Description>
+			</Property>
+			<Property name="multiLine" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, more than one line is possible. Text will wrap when necessary (wordWrap=true) or at line breaks (\n).
+If false, text will never wrap to the next line. The text continues on the same line.				</Description>
+			</Property>
+			<Property name="offsetColumn" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Behavior" defaultValue="0">
+				<Description>Index of first viewed column entry.</Description>
+			</Property>
+			<Property name="offsetRow" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Behavior" defaultValue="0">
+				<Description>Index of first viewed row entry.</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="refreshRate" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="600">
+				<Description>Refresh rate of how often continuously updated variables are shown in the table.
+Recommanded values for the T50:
+1000 cells: 1000 ms (with stopRefreshAtScroll = true)
+ 500 cells: 700 ms (with stopRefreshAtScroll = true)
+ 500 cells: 1000 ms (with stopRefreshAtScroll = false)
+&amp;lt;250 cells: 400 ms (with stopRefreshAtScroll = true)				</Description>
+			</Property>
+			<Property name="rowHeight" type="Size" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupOrder="1" groupRefId="CellSize" category="Appearance" defaultValue="30">
+				<Description>Height of rows.</Description>
+			</Property>
+			<Property name="scrollLinkXRefId" type="WidgetReference" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupRefId="ScrollSynchronization" category="Behavior" defaultValue="">
+				<Description>Reference to a second Table widget that should be synchronized for horizontal scrolling</Description>
+			</Property>
+			<Property name="scrollLinkYRefId" type="WidgetReference" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" groupRefId="ScrollSynchronization" category="Behavior" defaultValue="">
+				<Description>Reference to a second Table widget that should be synchronized for vertical scrolling</Description>
+			</Property>
+			<Property name="selectedColumn" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="0">
+				<Description>Index of selected column.</Description>
+			</Property>
+			<Property name="selectedRow" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="0">
+				<Description>Index of selected row.</Description>
+			</Property>
+			<Property name="selection" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>If true, the user can select data entries.</Description>
+			</Property>
+			<Property name="showHeader" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="true">
+				<Description>Show/Hide header</Description>
+			</Property>
+			<Property name="showScrollbars" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Show/Hide scrollbars</Description>
+			</Property>
+			<Property name="showSortingButton" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true,  by clicking on a columns header will be availabe. The table will only sort on the
+currently selected header. The header can be sorted in descending order (one click), ascending order
+(one more click) or returned to normal state (one more click); given that you started in normal state.				</Description>
+			</Property>
+			<Property name="stopRefreshAtScroll" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If set to true this parameter will stop the table from continuously updating the table while scrolling. This makes for a better
+user experience, especially in the T50 and low end targets where it takes some time to reinstantiate all DOM elements - which
+will interrupt the scrolling.				</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tableConfiguration" type="String" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Data" defaultValue="">
+				<Description>Configuration for the visibility and/or disabling of table rows and columns.
+Use it like:
+Visible:
+   &quot;{
+   &apos;specRows&apos;: [
+       {&apos;index&apos;:0,&apos;visible&apos;: true},
+       {&apos;index&apos;:2,&apos;visible&apos;: false},
+       {&apos;index&apos;:4,&apos;visible&apos;: true}
+               ],
+   &apos;specColumns&apos;:  [
+      {&apos;index&apos;:5, &apos;visible&apos;: true},
+      {&apos;index&apos;:8, &apos;visible&apos;: false},
+      {&apos;index&apos;:10,&apos;visible&apos;: true}
+      ]
+  }&quot;
+
+Disable:
+   &quot;{
+   &apos;specRows&apos;: [
+       {&apos;index&apos;:0,&apos;disable&apos;: true},
+       {&apos;index&apos;:2,&apos;disable&apos;: false},
+       {&apos;index&apos;:4,&apos;disable&apos;: true}
+               ],
+   &apos;specColumns&apos;:  [
+      {&apos;index&apos;:5, &apos;disable&apos;: true},
+      {&apos;index&apos;:8, &apos;disable&apos;: false},
+      {&apos;index&apos;:10,&apos;disable&apos;: true}
+     ]
+  }&quot;
+ Both:
+   &quot;{
+  &apos;specRows&apos;: [
+       {&apos;index&apos;:0,&apos;visible&apos;: true, &apos;disable&apos;: true},
+       {&apos;index&apos;:2,&apos;visible&apos;: true,&apos;disable&apos;: false},
+       {&apos;index&apos;:4,&apos;visible&apos;: false, &apos;disable&apos;: true}
+      ],
+   &apos;specColumns&apos;:  [
+      {&apos;index&apos;:5, &apos;visible&apos;: true, &apos;disable&apos;: true},
+      {&apos;index&apos;:8, &apos;visible&apos;: true, &apos;disable&apos;: false},
+      {&apos;index&apos;:10,&apos;visible&apos;: false, &apos;disable&apos;: true}
+      ]
+   }&quot;				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="useTableStyling" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="true">
+				<Description>If false, styling can be set on the individual columns on their repsective TableItem/TableItemImageList.</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+			<Property name="wordWrap" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, text will wrap when necessary.</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.Table" category="Layout" groupRefId="Size" groupOrder="1" default="400">
+				<StyleElement attribute="@include elemWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.Table" category="Layout" groupRefId="Size" groupOrder="2" default="300">
+				<StyleElement attribute="@include elemHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackColor" type="Color" category="Appearance" default="#FF8800">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.disabled):not(.activeInput)" attribute="background-color"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.disabled):not(.activeInput)" attribute="background-color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.disabled):not(.activeInput)" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.disabled):not(.activeInput)" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.selected:not(.override):not(.disabled):not(.activeInput)" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override):not(.disabled):not(.activeInput)" attribute="@include active-background-color($value)"/>
+				<Description>Backcolor for selected table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td:not(.override):not(.activeInput):not(img):not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.selected:not(.override):not(.activeInput):not(img):not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.override:not(.activeInput):not(img):not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.selected.override:not(.activeInput):not(img):not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for selected table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownTextColor" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.override:not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown.override:not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown.override:not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td:not(.override):not(.disabled):not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="@include active-color($value)"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackColor" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.mousedown.override:not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).mousedown.override:not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).mousedown.override:not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.mousedown:not(.override):not(.disabled):not(.activeInput):not(.selected)" attribute="@include active-background-color-important($value)"/>
+				<Description>Backcolor for mouse down event on table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown:not(.selected):not(.disabled) td:not(.override):not(.disabled):not(.activeInput):not(img)" attribute="@include importantGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr:not(.selected):not(.disabled) td.mousedown:not(.override):not(.disabled):not(.activeInput):not(img)" attribute="@include importantGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.mousedown:not(.selected):not(.disabled) td.override:not(.activeInput):not(.disabled):not(img)" attribute="@include importantGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr:not(.selected):not(.disabled) td.mousedown.override:not(.activeInput):not(.disabled):not(img)" attribute="@include importantGradient(&apos;$value&apos;)"/>
+				<Description>Backcolor for mouse down event on table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="activeInputCellTextColor" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled)" attribute="color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled)" attribute="color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled)" attribute="color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled)" attribute="color: $value"/>
+				<Description>Sets the color of the text in the cell while writing in</Description>
+			</StyleProperty>
+			<StyleProperty name="activeInputCellInnerShadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled)" attribute="box-shadow: inset $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled)" attribute="box-shadow: inset $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled)" attribute="box-shadow: inset $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled)" attribute="box-shadow: inset $value"/>
+				<Description>Hint: you can also use this property as inner border: e.g. &quot;0 0 0 5px #B5B5B5&quot;</Description>
+			</StyleProperty>
+			<StyleProperty name="activeInputCellBackColor" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled)" attribute="background-color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled)" attribute="background-color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled)" attribute="background-color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled)" attribute="background-color: $value"/>
+				<Description>Backcolor for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="activeInputCellBackgroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.odd td[input=true].activeInput.selected:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.odd.selected td[input=true].activeInput.selected:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr.even td[input=true].activeInput.selected:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr.even.selected td[input=true].activeInput.selected:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for input cells.</Description>
+			</StyleProperty>
+			<StyleProperty name="inputCellTextColor" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="color: $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="color: $value"/>
+				<Description>Sets the text color displayed in the cell while writing in</Description>
+			</StyleProperty>
+			<StyleProperty name="inputCellInnerShadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled:not(.selected))" attribute="box-shadow: inset $value"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="box-shadow: inset $value"/>
+				<Description>Hint: you can also use this property as inner border: e.g. &quot;0 0 0 5px #B5B5B5&quot;</Description>
+			</StyleProperty>
+			<StyleProperty name="inputCellBackColor" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="background-color: $value;"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="background-color: $value;"/>
+				<Description>Backcolor for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="inputCellBackgroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled).breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td[input=true]:not(.override):not(.activeInput):not(.disabled):not(.selected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for input cells.</Description>
+			</StyleProperty>
+			<StyleProperty name="activeTextColor" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.override:not(.activeInput):not(.disabled)" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.activeInput):not(.disabled)" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.activeInput):not(.disabled)" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td:not(.override):not(.disabled):not(.activeInput):not(.disabled)" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override):not(.activeInput):not(.disabled)" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override):not(.activeInput):not(.disabled)" attribute="color"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;:not(.disabled)" attribute="background-color"/>
+				<Description>Sets the background color of the table</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorEvenColumn" type="Color" category="Appearance" default="#EAEAEA">
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.selected):not(.disabled):not(.odd):not(.even):not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.even:not(.selected):not(.disabled):not(.override)" attribute="background-color"/>
+				<Description>Backcolor for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorOddColumn" type="Color" category="Appearance" default="#FCFCFC">
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.selected):not(.disabled):not(.odd):not(.even):not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.odd:not(.selected):not(.disabled):not(.override)" attribute="background-color"/>
+				<Description>Backcolor for odd table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradientEvenColumn" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.selected):not(.disabled):not(.odd):not(.even):not(.override):not(.mousedown)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.even:not(.selected):not(.disabled):not(.override):not(.mousedown)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradientOddColumn" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.selected):not(.disabled):not(.even):not(.odd):not(.override):not(.mousedown)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td.odd:not(.selected):not(.disabled):not(.override):not(.mousedown)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorEvenRow" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.even:not(.disabled):not(.override)" attribute="background-color"/>
+				<Description>Backcolor for even table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backColorOddRow" type="Color" category="Appearance" default="#FCFCFC">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.odd:not(.disabled):not(.override)" attribute="background-color"/>
+				<Description>Backcolor for odd table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradientEvenRow" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.even:not(.disabled):not(.override):not(.selected) &gt; td:not(.disabled):not(.override)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradientOddRow" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.odd:not(.disabled):not(.override):not(.selected) &gt; td:not(.disabled):not(.override)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient for even table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;:not(.disabled)" attribute="border-color"/>
+				<Description>Sets the border color of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
+				<StyleElement attribute="border-style"/>
+				<Description>Style of the Border of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="0px">
+				<StyleElement attribute="border-width"/>
+				<Description>Sets the border width of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cellAlign" type="brease.enum.BackgroundPosition" default="center center" category="Appearance">
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="@include text-position(&apos;$value&apos;)"/>
+				<StyleElement selector=".tableCells tbody tr td:not(.override) &gt; img" attribute="@include image-align(&apos;$value&apos;)"/>
+				<StyleElement selector=".tableHeader &gt; .headerElement:not(.override)" attribute="@include flex-position(&apos;$value&apos;)"/>
+				<StyleElement selector=".tableHeader &gt; .headerElement:not(.override) &gt; span" attribute="@include text-position(&apos;$value&apos;)"/>
+				<Description>Alignment of the text in a cell</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderStyle" type="BorderStyle" category="Appearance" default="solid">
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollBody.horizontalOrientation .tableCells tbody tr:first-child td:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollBody.verticalOrientation .tableCells tbody tr td:first-child:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollHead.verticalOrientation .tableHeader div:first-child:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollHead.horizontalOrientation .tableHeader div:first-child:not(.override)" attribute="border-style"/>
+				<StyleElement selector=".dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override)" attribute="border-style"/>
+				<Description>Style of the cell borders</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="border-color"/>
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="border-color"/>
+				<Description>Sets the border color of each cell. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cellBorderWidth" type="PixelValCollection" category="Appearance" default="0px 0px 1px 1px">
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollBody.horizontalOrientation .tableCells tbody tr:first-child td:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollBody.verticalOrientation .tableCells tbody tr td:first-child:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollHead div" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollHead.verticalOrientation .tableHeader div:first-child:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollHead.horizontalOrientation .tableHeader div:first-child:not(.override)" attribute="border-width"/>
+				<StyleElement selector=".dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override)" attribute="border-width"/>
+				<Description>Sets the border width of each cell. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cellPadding" category="Layout" type="Padding" default="0px">
+				<StyleElement selector="&amp;.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override)" attribute="padding"/>
+				<StyleElement selector="&amp;.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override)" attribute="padding"/>
+				<Description>Padding of table cells.</Description>
+			</StyleProperty>
+			<StyleProperty name="headerCellPadding" category="Layout" type="Padding" default="0px">
+				<StyleElement selector="&amp;.breaseTable .dataTables_scrollHead.verticalOrientation .tableHeader div:not(.override)" attribute="padding"/>
+				<StyleElement selector="&amp;.breaseTable .dataTables_scrollHead.horizontalOrientation .tableHeader div:not(.override)" attribute="padding"/>
+				<Description>Padding of the header cells.</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget rounded corners. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledActiveTextColor" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override):not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override):not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override):not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.selected td.selected.override:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected:not(.override).disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override).disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override).disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.selected td.selected.override.disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override.disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override.disabled:not(.activeInput)" attribute="@include importantTextColor($value)"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledActiveBackColor" type="Color" category="Appearance" default="#C7C7C7">
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.even td.selected" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.odd  td.selected" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;.verticalOrientation .tableCells tbody tr.even.selected.disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;.verticalOrientation .tableCells tbody tr.odd.selected.disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.even td.selected:not(.override).disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.odd td.selected:not(.override).disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.even td.selected.override.disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.odd td.selected.override.disabled" attribute="@include active-background-color($value)"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected:not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected:not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).selected.override" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).selected.override" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr.even td.selected:not(.override).disabled" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr.odd td.selected:not(.override).disabled" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr.even td.selected.override.disabled" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr.odd td.selected.override.disabled" attribute="background-color"/>
+				<Description>Backcolor for selected table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledActiveBackGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;.disabled .tableCells tbody tr.selected:not(.override)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.disabled .tableCells tbody tr td.selected:not(.override)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.disabled .tableCells tbody tr.selected.override" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.disabled .tableCells tbody tr td.selected.override" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp; .tableCells tbody tr.selected.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp; .tableCells tbody tr td.selected.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for selected table entries</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColor" type="Color" category="Appearance" default="transparent">
+				<StyleElement selector="&amp;.disabled" attribute="background-color"/>
+				<Description>Sets the background color of the widget when disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColorEvenRow" type="Color" category="Appearance" default="#EAEAEA">
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.even td:not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.even" attribute="background-color"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.even td:not(.override).disabled" attribute="background-color"/>
+				<StyleElement selector="&amp; .verticalOrientation .tableCells tbody tr.even.override.disabled" attribute="background-color"/>
+				<Description>Backcolor for even table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColorOddRow" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.odd td:not(.override)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .verticalOrientation .tableCells tbody tr.odd" attribute="background-color"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.odd td:not(.override).disabled" attribute="background-color"/>
+				<StyleElement selector=".verticalOrientation .tableCells tbody tr.odd.disabled.override" attribute="background-color"/>
+				<Description>Backcolor for odd table entries in row direction</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColorEvenColumn" type="Color" category="Appearance" default="#EAEAEA">
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even):not(.override)" attribute="background-color"/>
+				<StyleElement selector=" .horizontalOrientation .tableCells tbody tr td:nth-child(even).disabled:not([input=true]):not(.override):not(.selected)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(even).override" attribute="background-color"/>
+				<StyleElement selector=" .horizontalOrientation .tableCells tbody tr td:nth-child(even).disabled:not([input=true]).override:not(.selected)" attribute="background-color"/>
+				<Description>Backcolor for even table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColorOddColumn" type="Color" category="Appearance" default="#FFFFFF">
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd):not(.override)" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr td:nth-child(odd).disabled:not([input=true]):not(.override):not(.selected)" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled .horizontalOrientation .tableCells tbody tr td:nth-child(odd).override" attribute="background-color"/>
+				<StyleElement selector=".horizontalOrientation .tableCells tbody tr td:nth-child(odd).disabled:not([input=true]).override:not(.selected)" attribute="background-color"/>
+				<Description>Backcolor for odd table entries in column direction</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;.disabled" attribute="border-color"/>
+				<Description>Sets the border color of the widget when disabled. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledCellBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;:not(.disabled) .tableCells tbody tr td.disabled" attribute="border-color"/>
+				<StyleElement selector="&amp;.disabled .tableCells tbody tr td" attribute="border-color"/>
+				<StyleElement selector="&amp;.disabled .tableHeader div" attribute="border-color"/>
+				<Description>Sets the border color of each cell when disabled. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledItemBorderColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;.breaseTable .verticalOrientation .tableCells tbody tr td.nextItemDisabled" attribute="border-right-color"/>
+				<StyleElement selector="&amp;.breaseTable .horizontalOrientation .tableCells tbody tr td.nextItemDisabled" attribute="border-bottom-color"/>
+				<StyleElement selector="&amp;.breaseTable .tableCells tbody tr td.disabled" attribute="border-color"/>
+				<StyleElement selector="&amp;.breaseTable .tableHeader div.disabled" attribute="border-color"/>
+				<StyleElement selector="&amp;.breaseTable .horizontalOrientation .tableHeader div.nextItemDisabled" attribute="border-bottom-color"/>
+				<StyleElement selector="&amp;.breaseTable .verticalOrientation .tableHeader div.nextItemDisabled" attribute="border-right-color"/>
+				<Description>Border color of a disabled item (can be row or column - depends on the configuration)</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledHeaderTextColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement.override &gt; span" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement &gt; span" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector=".tableHeader div:not(.override).disabled &gt; span" attribute="color"/>
+				<StyleElement selector=".tableHeader div.override.disabled &gt; span" attribute="color"/>
+				<Description>Sets the header text color when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledHeaderBackColor" type="Color" category="Appearance" default="#FCFCFC">
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement.override" attribute="@include importantBackColor($value)"/>
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement" attribute="@include importantBackColor($value)"/>
+				<StyleElement selector=".tableHeader&gt;.headerElement:not(.override).disabled" attribute="background-color"/>
+				<StyleElement selector=".tableHeader&gt;.headerElement.override.disabled" attribute="background-color"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledHeaderGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement.override" attribute="@include importantGradient($value)"/>
+				<StyleElement selector="&amp;.disabled .tableHeader&gt;.headerElement" attribute="@include importantGradient($value)"/>
+				<StyleElement selector=".tableHeader&gt;.headerElement:not(.override).disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector=".tableHeader&gt;.headerElement.override.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for table header</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledTextColor" type="Color" category="Appearance" default="#C8C8C8">
+				<StyleElement selector="&amp;.disabled .tableCells td:not(.override)" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;.disabled .tableCells td.override" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.odd td:not(.override):not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.even td:not(.override):not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.odd td.override:not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .verticalOrientation .tableCells tbody tr.even td.override:not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td:not(.override):not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td:not(.override):not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.odd td.override:not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<StyleElement selector="&amp;:not(.disabled) .horizontalOrientation .tableCells tbody tr.even td.override:not(.selected).disabled" attribute="@include importantTextColor($value)"/>
+				<Description>Sets the text color when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
+				<StyleElement selector=".tableHeader div" attribute="font-family"/>
+				<StyleElement selector=".tableCells tbody tr td" attribute="font-family"/>
+				<Description>Fontname of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" type="PixelVal" category="Font" default="14px">
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="font-size"/>
+				<Description>Fontsize of the header text</Description>
+			</StyleProperty>
+			<StyleProperty name="headerBackColor" type="Color" category="Appearance" default="#FCFCFC">
+				<StyleElement selector="&amp;:not(.disabled) .tableHeader&gt;.headerElement:not(.override):not(.disabled)" attribute="background-color"/>
+				<Description>Text color for selected entries</Description>
+			</StyleProperty>
+			<StyleProperty name="headerGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement selector="&amp;:not(.disabled) .tableHeader&gt;.headerElement:not(.override):not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background gradient for table header</Description>
+			</StyleProperty>
+			<StyleProperty name="headerTextColor" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled)&gt; .container &gt; .dataTables_wrapper &gt; .dataTables_scrollHead &gt; .tableHeader &gt; .headerElement:not(.override):not(.disabled) &gt; span" attribute="color"/>
+				<Description>Sets the header text color</Description>
+			</StyleProperty>
+			<StyleProperty name="headerFontSize" type="PixelVal" default="14px" category="Font">
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="font-size"/>
+				<Description>Fontsize of the header text</Description>
+			</StyleProperty>
+			<StyleProperty name="sortingButtonColor" category="Appearance" type="Color" default="#ececec">
+				<StyleElement selector="svg &gt; g &gt; path.unselected" attribute="fill"/>
+				<Description>Color of the arrow that is not the sorted way</Description>
+			</StyleProperty>
+			<StyleProperty name="sortingButtonActiveColor" category="Appearance" type="Color" default="#5f8dd3">
+				<StyleElement selector="svg &gt; g &gt; path.selected" attribute="fill"/>
+				<Description>Color of the arrow that is the sorted way</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" type="Color" category="Appearance" default="#333333">
+				<StyleElement selector="&amp;:not(.disabled) .tableCells td:not(.selected):not(.override):not(.disabled):not([input=true])" attribute="color"/>
+				<Description>Sets the text color</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" type="Boolean" default="false" category="Font">
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="@include font-weight-bold($value)"/>
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="@include font-weight-bold($value)"/>
+				<Description>If **true** font style is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" type="Boolean" default="false" category="Font">
+				<StyleElement selector=".tableHeader div:not(.override)" attribute="@include font-style-italic($value)"/>
+				<StyleElement selector=".tableCells tbody tr td:not(.override)" attribute="@include font-style-italic($value)"/>
+				<Description>If **true** font style is italic</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
+				<StyleElement attribute="opacity"/>
+				<Description>Opacity of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement attribute="@include box-shadow($value)"/>
+				<Description>Shadow of the Widget</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="CellSize" type="String" category="Appearance">
+				<Description>outer height and width of Cell</Description>
+			</PropertyGroup>
+			<PropertyGroup name="ScrollSynchronization" type="String" category="Behavior">
+				<Description>Synchronize scrolling in vertical and horizontal direction</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

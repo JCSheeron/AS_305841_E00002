@@ -1,0 +1,132 @@
+.system_brease_MessageBox_style_default .breaseMessageBoxHeader {
+  border-radius: 0px;
+}
+
+.system_brease_MessageBox_style_default .messageBoxFooter {
+  border-radius: 0px;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox {
+  border-width: 5px;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox {
+  background-color: #FFF;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox {
+  border-color: #333;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox {
+  border-style: solid;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox div.content {
+  color: #333;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox div.content {
+  font-size: 12px;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox div.content {
+  font-weight: normal;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxContentBox {
+  justify-content: center;
+  text-align: center;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxHeader {
+  background-color: #333;
+}
+
+.system_brease_MessageBox_style_default .messageBoxFooter {
+  background-color: #333;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxHeader {
+  border-width: 0px;
+}
+
+.system_brease_MessageBox_style_default .breaseMessageBoxHeader {
+  border-color: #333;
+}
+
+.system_brease_MessageBox_style_default.breaseMessageBox.breaseWindow .breaseMessageBoxHeader div {
+  font-weight: bold;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton {
+  border-width: 2px;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode):active {
+  border-width: 2px;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).active {
+  border-width: 2px;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).checked {
+  border-width: 2px;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton {
+  border-color: #5B7C70;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode):active {
+  border-color: #FD7B01;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).active {
+  border-color: #FD7B01;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).checked {
+  border-color: #FD7B01;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton {
+  background-color: #DBDBDB;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode):active {
+  background-color: #DBDBDB;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).active {
+  background-color: #DBDBDB;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).checked {
+  background-color: #DBDBDB;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton span {
+  color: #000;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled) span {
+  color: #000;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton.disabled span {
+  color: #000;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode):active span {
+  color: #000;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).active span {
+  color: #000;
+}
+
+.system_brease_MessageBox_style_default .messageBoxButton:not(.disabled):not(.editMode).checked span {
+  color: #000;
+}

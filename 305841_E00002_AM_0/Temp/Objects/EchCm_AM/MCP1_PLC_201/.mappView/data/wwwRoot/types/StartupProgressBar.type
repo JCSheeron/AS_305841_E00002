@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StartupProgressBar xmlns="http://www.br-automation.com/iat2014/widget" >
+
+  <StyleProperties>
+
+    <StyleProperty name="barBackColor" category="Appearance" type="Color" default="rgba(242,242,242,1)">
+      <Description>background-color of progressbar</Description>
+      <StyleElement attribute="background-color"/>
+    </StyleProperty>
+
+    <StyleProperty name="barColor" category="Appearance" type="Color" default="rgba(51,153,255,1)">
+      <Description>color of progressbar</Description>
+      <StyleElement selector=".startupProgressBar" attribute="background-color"/>
+    </StyleProperty>
+
+    <StyleProperty name="barCornerRadius" category="Appearance" type="PixelValCollection" default="999px">
+      <Description>border radius of progressbar</Description>
+      <StyleElement selector=".startupProgressBar" attribute="border-radius" />
+    </StyleProperty>
+
+    <StyleProperty name="barBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <Description>border width of progressbar</Description>
+      <StyleElement selector=".startupProgressBar" attribute="border-width" />
+    </StyleProperty>
+
+    <StyleProperty name="barBorderColor" category="Appearance" type="ColorCollection" default="rgba(0,0,0,1)">
+      <Description>border color of progressbar</Description>
+      <StyleElement selector=".startupProgressBar" attribute="border-color" />
+    </StyleProperty>
+
+    <StyleProperty name="barBorderStyle" category="Appearance" type="BorderStyle" default="solid">
+      <Description>border style of progressbar</Description>
+      <StyleElement selector=".startupProgressBar" attribute="border-style" />
+    </StyleProperty>
+
+    <StyleProperty name="labelPosition" type="brease.enum.TextAlign" category="Appearance" default="center">
+      <StyleElement selector=".preLoadingInfoWrapper .preLoadingInfo" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>
+        Alignment of the text:
+        - left
+        - center
+        - right
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="labelTextColor" category="Appearance" type="Color" default="rgba(0,0,0,1)">
+      <Description>textcolor of label at startup</Description>
+      <StyleElement selector=".preLoadingInfoWrapper .preLoadingInfo" attribute="color" />
+    </StyleProperty>
+
+    <StyleProperty name="fontSize" category="Appearance" type="PixelVal" default="14px">
+      <Description>fontsize of label at startup</Description>
+      <StyleElement selector=".preLoadingInfoWrapper .preLoadingInfo" attribute="font-size" />
+    </StyleProperty>
+
+  </StyleProperties>
+
+</StartupProgressBar>

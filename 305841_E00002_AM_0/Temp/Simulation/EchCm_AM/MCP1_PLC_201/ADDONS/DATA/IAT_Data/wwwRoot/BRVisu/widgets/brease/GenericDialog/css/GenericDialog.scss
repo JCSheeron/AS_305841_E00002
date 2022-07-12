@@ -1,0 +1,48 @@
+
+.breaseGenericDialog {
+
+
+    .generic-dialog-header {
+        margin-left: -9px;
+        margin-right: -8px;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    
+    .generic-dialog-content-footer-container {
+        background-color: rgba(255, 255, 255, 1);
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+
+        .contentBox {
+
+            background-color: rgba(255, 255, 255, 0);
+
+            div.content {
+                position: relative;
+                padding: 0px;
+                background-color: rgba(255, 255, 255, 0);
+
+                .generic-dialog {
+                    position: absolute;
+                }    
+            }   
+        }
+
+        .generic-dialog-footer {
+            padding: 20px;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            background-color: rgba(255, 255, 255, 0);
+            
+            .generic-dialog-footer-button{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }  
+
+}

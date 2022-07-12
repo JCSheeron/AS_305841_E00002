@@ -1,0 +1,435 @@
+﻿@import "mixins.scss";
+@import "../../../../../types/Page_base";
+.system_brease_Page_style_default {
+@include system_brease_Page_base; 
+
+}
+@import "../../../../../types/Dialog_base";
+.system_brease_Dialog_style_default {
+@include system_brease_Dialog_base; 
+.breaseDialogWindowHeader {
+	background-image: linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%);
+}
+.breaseDialogWindowHeader .textDiv {
+	font-size: 20px;
+}
+.breaseDialogWindowHeader .textDiv {
+	color: #474747;
+}
+@include border-radius(8px 8px 0px 0px);
+.breaseDialogWindowContentBox {
+@include border-bottom-right-radius(8px 8px 0px 0px);
+}
+.breaseDialogWindowContentBox {
+@include border-bottom-left-radius(8px 8px 0px 0px);
+}
+.breaseDialogWindowHeader {
+@include border-radius(8px 8px 0px 0px);
+}
+.breaseDialogWindowContentBox {
+	border-width: 1px;
+}
+.breaseDialogWindowContentBox {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+@include box-shadow(5px 5px 20px 0px rgba(62, 79, 92, 0.75));
+
+}
+@import "../../../../../types/MessageBox_base";
+.system_brease_MessageBox_style_default {
+@include system_brease_MessageBox_base; 
+.breaseMessageBoxHeader {
+	background-image: linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%);
+}
+.breaseMessageBoxContentBox div.content {
+	font-size: 20px;
+}
+.breaseMessageBoxContentBox div.content {
+	color: #474747;
+}
+.breaseMessageBoxHeader {
+	border-radius: 8px 8px 0px 0px;
+}
+.messageBoxFooter {
+	border-radius: 8px 8px 0px 0px;
+}
+.breaseMessageBoxContentBox {
+	border-width: 1px;
+}
+.breaseMessageBoxContentBox {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+@include box-shadow(5px 5px 20px 0px rgba(62, 79, 92, 0.75));
+
+}
+@import "../../../../../types/Area_base";
+.system_brease_Area_style_default {
+@include system_brease_Area_base; 
+	background-color: #ffffff;
+
+}
+@import "../../../../../types/Scrollbar_base";
+.system_brease_Scrollbar_style_default {
+@include system_brease_Scrollbar_base; 
+.iScrollIndicator {
+	background-color: rgba(77,77,77,0.5);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	background: rgba(77,77,77,0.5);
+}
+.iScrollIndicator {
+	border-color: rgba(214,214,214,0.9);
+}
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+	border-color: rgba(214,214,214,0.9);
+}
+
+}
+@import "../../../../../types/Tooltip_base";
+.system_brease_Tooltip_style_default {
+@include system_brease_Tooltip_base; 
+.tooltip-arrow {
+@include display(true);
+}
+.breaseTooltip .breaseTooltipText {
+	font-size: 14px;
+}
+.breaseTooltip {
+@include box-shadow(5px 5px 20px 0px rgba(62, 79, 92, 0.75));
+}
+.breaseTooltip {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+.tooltip-arrow .tooltip-arrow-border {
+	border-top-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+
+}
+@import "../../../../../types/TableConfigurationDialog_base";
+.system_brease_TableConfigurationDialog_style_default {
+@include system_brease_TableConfigurationDialog_base; 
+header {
+	background-image: linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%);
+}
+header div {
+	font-size: 20px;
+}
+header div {
+	color: #646464;
+}
+header {
+	border-width: 0px;
+}
+header {
+@include reverseMargin(0px);
+}
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+@include static-top-border(0px);
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+.arrowLeft .breaseWindowArrow {
+	border-right-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+.arrowRight .breaseWindowArrow {
+	border-left-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+@include border-radius(8px 8px 0px 0px);
+header {
+@include border-radius(8px 8px 0px 0px);
+}
+.generic-dialog-content-footer-container {
+@include border-radius(8px 8px 0px 0px);
+}
+@include box-shadow(5px 5px 20px 0px rgba(62, 79, 92, 0.75));
+&.breaseUserListGenericDialog .widgets_brease_Image_style_default.policy.fail svg {
+	fill: #FF0000;
+}
+
+}
+@import "../../../../../types/Area_base";
+.system_brease_Area_style_transparent {
+@include system_brease_Area_base; 
+	background-color: transparent;
+
+}
+@import "../../../../widgets/brease/Rectangle/meta/Rectangle_base";
+.widgets_brease_Rectangle_style_tableConfigurationDialogStyle {
+@include widgets_brease_Rectangle_base; 
+	border-color: #474747;
+
+}
+@import "../../../../widgets/brease/Image/meta/Image_base";
+.widgets_brease_Image_style_tableConfigurationDialogStyle {
+@include widgets_brease_Image_base; 
+& > .ImageView > svg {
+	fill: #474747;
+}
+
+}
+@import "../../../../widgets/brease/DropDownBox/meta/DropDownBox_base";
+.widgets_brease_DropDownBox_style_tableConfigurationDialogStyle {
+@include widgets_brease_DropDownBox_base; 
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+	font-size: 16px;
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& .TextView {
+@include font-weight-bold(true);
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) > .TextView:not(.textSelected) {
+	color: #474747;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+& > .ItemView.itemDisabled {
+@include backGroundGradient('linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%)');
+}
+& > .ItemView.itemSelected:not(.itemDisabled) > .TextView.textSelected {
+	color: #FFFFFF;
+}
+&.DropDownBoxView {
+@include border-radius(5px);
+}
+& > .ItemView {
+@include border-radius(5px);
+}
+& > .ListView.Container {
+@include border-radius(5px);
+}
+& > .ListView.Container > .ListView.List > .ItemView:not(.itemSelected) {
+	background-color: #C6C6C6;
+}
+& > .ItemView:not(.itemSelected) {
+	border-width: 0px 5px 0px 0px;
+}
+& > .ItemView.itemSelected {
+	border-width: 0px 2px 0px 0px;
+}
+& > .ItemView:not(.itemSelected):not(.itemDisabled) {
+	border-color: #A899A0 #FF8A00 #5F5F5F #A899A0;
+}
+& > .ListView.Container {
+	border-color: #A899A0 #FF8A00 #5F5F5F #A899A0;
+}
+& > .ItemView.itemSelected:not(.itemDisabled) {
+	border-color: #FFA947 #FD7B01 #FD7B01 #FFA947;
+}
+& > .ListView.Container > .ListView.List > .ItemView > .TextView.textSelected {
+	color: #FFFFFF;
+}
+& > .ListView.Container > .ListView.List > .ItemView.itemSelected {
+@include backGroundGradient('linear-gradient(to bottom, #FFAA4D 0%,#FF8500 100%)');
+}
+& > .ListView.Container {
+	border-width: 0px;
+}
+& .TextView {
+@include text-alignment(left);
+}
+& .TextView {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_tableConfigurationDialogStyle {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) input {
+	color: #555555;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/CheckBox/meta/CheckBox_base";
+.widgets_brease_CheckBox_style_tableConfigurationDialogStyle {
+@include widgets_brease_CheckBox_base; 
+	border-style: none;
+span {
+	font-size: 16px;
+}
+&:not(.disabled) span {
+	color: #474747;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: transparent;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: transparent;
+}
+&.checked:not(.disabled) {
+	background-color: transparent;
+}
+&.disabled {
+	background-color: transparent;
+}
+&.disabled span {
+	color: #CCCCCC;
+}
+&.disabled.checked span {
+	border-color: #CCCCCC;
+}
+&.disabled.active span {
+	border-color: #CCCCCC;
+}
+span {
+@include font-weight-bold(false);
+}
+
+}
+@import "../../../../widgets/brease/GroupBox/meta/GroupBox_base";
+.widgets_brease_GroupBox_style_tableConfigurationDialogStyle {
+@include widgets_brease_GroupBox_base; 
+> .header {
+@include backGroundGradient('linear-gradient(to bottom,#F7F7F7 0%,#C6C6C6 100%)');
+}
+	background-color: #FFFFFF;
+> .header span {
+	font-size: 16px;
+}
+> .header {
+height: 16px + 20px;
+}
+> .header span {
+	color: #474747;
+}
+@include border-radius(8px 8px 0px 0px);
+	border-width: 1px;
+> .header {
+	border-width: 1px;
+}
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+> .header {
+	border-color: #A899A0 #5F5F5F #5F5F5F #A899A0;
+}
+@include box-shadow(4px 4px 14px 0px rgba(62, 79, 92, 0.75));
+
+}
+@import "../../../../widgets/brease/TextInput/meta/TextInput_base";
+.widgets_brease_TextInput_style_tableConfigurationDialogStyle {
+@include widgets_brease_TextInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&:not(.disabled).active {
+	border-color: #FF8800;
+}
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+input {
+@include text-alignment(left);
+}
+
+}
+@import "../../../../widgets/brease/DateTimeInput/meta/DateTimeInput_base";
+.widgets_brease_DateTimeInput_style_tableConfigurationDialogStyle {
+@include widgets_brease_DateTimeInput_base; 
+&:not(.active):not(.disabled) span {
+	color: #474747;
+}
+&:not(.disabled):not(.active) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.active):not(.disabled) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+	font-size: 16px;
+&:not(.active):not(.disabled) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) span {
+	color: #555555;
+}
+@include font-weight-bold(true);
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+@include text-alignment(left);
+
+}
+@import "../../../../widgets/brease/Label/meta/Label_base";
+.widgets_brease_Label_style_tableConfigurationDialogStyle {
+@include widgets_brease_Label_base; 
+	font-size: 14px;
+& span {
+	color: #474747;
+}
+	background-color: transparent;
+	border-style: none;
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+span {
+	padding: 2px;
+}
+
+}

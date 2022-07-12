@@ -1,0 +1,148 @@
+VAR CONSTANT
+  (* Use constants to prevent accidental change *)
+  (* axis number is per eAXIS_DESIGNATION *)
+  (*
+  AD_UNKNOWN := 0,
+  AD_SPINDLE := 1,
+  AD_OUTER_ECCENTRIC := 2,
+  AD_INNER_ECCENTRIC := 3,
+  AD_Z := 4,
+  derrived axes
+  AD_X := 5,
+  AD_Y := 6,
+  AD_HANDWHEEL := 7,
+  AD_CF_VFD := 8
+  *)
+  (* Axis count is set in global so it can be used to define arrays *)
+  (* AXIS_COUNT : DINT := 8; *)
+  (* Set max axis velocity and accel/decel *)
+  (* TODO Verify *)
+  
+  (* motor rated max *)
+  (* AXIS_SPINDLE_MAX_VELOCITY : REAL := (6000.0 / 3.0) / 60.0; motor rated max, scaled into process velocity in rev/sec. 6000 rpm motor, 3:1 gearbox in rps *)
+  (* process max *)
+  AXIS_SPINDLE_MAX_VELOCITY : REAL := (300 / 60.0) * 3.0; (* process velocity in rev/sec. 300 rpm nominal cutting. 3x to allow up to 3x nominal *)
+  AXIS_SPINDLE_MAX_ACCEL : REAL := AXIS_SPINDLE_MAX_VELOCITY / 2.0; (* get to max in 2 sec *)
+  AXIS_SPINDLE_MAX_DECEL : REAL := AXIS_SPINDLE_MAX_VELOCITY * 4.0; (* allow faster stops *)
+  AXIS_SPINDLE_MEAS_RESOLUTION : REAL := 0.01; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
+
+  (* motor rated max *)
+  AXIS_OUTE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec *)
+  (* process max *)
+  (* AXIS_OUTE_MAX_VELOCITY : REAL := (((4.7 * 25.4) / (50.0 * 3.14159)) * 360.0 / 60.0) * 4.0; (* process max in deg/sec. 4.7 in/min converted to deg/sec. 4x to allow up to 4x nominal *)
+  AXIS_OUTE_MAX_ACCEL : REAL := AXIS_OUTE_MAX_VELOCITY / 1.0; (* get to max in 1 sec *)
+  AXIS_OUTE_MAX_DECEL : REAL := AXIS_OUTE_MAX_ACCEL * 4.0; (* allow faster stops *)
+  AXIS_OUTE_MEAS_RESOLUTION : REAL := 0.001; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
+  
+  (* motor rated max *)
+  AXIS_INE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec *)
+  (* AXIS_INE_MAX_VELOCITY : REAL := (((4.7 * 25.4) / (50.0 * 3.14159)) * 360.0 / 60.0) * 4.0;  process max in deg/sec. 4.7 in/min converted to deg/sec. 4x to allow up to 4x nominal *)
+  AXIS_INE_MAX_ACCEL : REAL := AXIS_INE_MAX_VELOCITY / 1.0; (* get to max in 1 sec *)
+  AXIS_INE_MAX_DECEL : REAL := AXIS_INE_MAX_ACCEL * 4.0; (* allow faster stops *)
+  AXIS_INE_MEAS_RESOLUTION : REAL := 0.001; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
+  
+  (* motor rated max *)
+  (* AXIS_Z_MAX_VELOCITY : REAL := (3000.0 / 60.0) * 5.0; 3000 rpm motor, 5:1 lead, mm/sec *)
+  (* limit due to need for mech adjustment *)
+  AXIS_Z_MAX_VELOCITY : REAL := 50.0;
+  AXIS_Z_MAX_ACCEL : REAL := AXIS_Z_MAX_VELOCITY / 2.0;
+  AXIS_Z_MAX_DECEL : REAL := AXIS_Z_MAX_VELOCITY * 4.0; (* allow faster stops *)
+  AXIS_Z_MEAS_RESOLUTION : REAL := 0.001; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
+  
+  AXIS_HW_MEAS_RESOLUTION : REAL := 0.01; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
+  
+  AXIS_CFVFD_MAX_VELOCITY : REAL := 450.0 / 60.0; (* RPS *)
+  AXIS_CFVFD_MAX_ACCEL : REAL := AXIS_CFVFD_MAX_VELOCITY; (* to max in 1 sec *)
+  AXIS_CFVFD_MAX_DECEL : REAL := AXIS_CFVFD_MAX_VELOCITY; (* from max in 1 sec *)
+  
+  (* Operating Mode *)
+  (* in increasing order of automation no motion -> manual -> production *)
+  (* requests are bit packed, so pick values for easy masking *)
+  (* Use constants instead of enum so word/bit operations are legal *)
+  OM_UNKNOWN : WORD             := 16#00;  (* all bits clear *)
+  OM_INITIAL : WORD             := 16#01;  (* bit 0 *)
+  OM_SAFE_MODE : WORD           := 16#02;  (* bit 1 *)
+  OM_EMO_MODE : WORD            := 16#04;  (* bit 2 *)
+  OM_CHECK_MODE : WORD          := 16#08;  (* bit 3 *)
+  OM_MANUAL_MODE : WORD         := 16#10;  (* bit 4 *)
+  OM_PENDANT_MODE : WORD        := 16#20;  (* bit 5 *)
+  OM_PRODUCTION_MODE : WORD     := 16#40;  (* bit 6 *)
+  (* sub modes *)
+  OM_PROD_SM_CONTINUOUS : WORD  := 16#40; (* bit 6. Run a continuous (normal) cycle *)
+  OM_PROD_SM_SINGLE : WORD      := 16#41; (* bits 6, 0. Run a single cycle *)
+  OM_PROD_SM_STEPPED : WORD     := 16#42; (* bits 6, 1. Run a stepped cycle *)
+  
+  (* Security Level *)
+  (* values should be in increasing levels of permsision *)
+  (* Anything above 1 should have some operating permission -- i.e. can leave safe mode *)
+  (* chose bits to allow easy masking and combinations *)
+  (* Use constants instead of enum so word/bit operations are legal *)
+  SL_UNKNOWN : WORD        := 16#0;  (* all bits clear *)
+  SL_GUEST : WORD          := 16#1;  (* bit 0 *)
+  SL_OPERATOR : WORD       := 16#2;  (* bit 1 *)
+  SL_SUPERVISOR : WORD     := 16#4;  (* bit 2 *)
+  SL_ENGINEER : WORD       := 16#8;  (* bit 3 *)
+  SL_SUPERUSER : WORD      := 16#10; (* bit 4 *)
+  
+  (* process tolerances *)
+  TOL_DEPTH_ZERO_DEG : LREAL := 0.002; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
+  TOL_ZINDEX  : LREAL := 0.1; (* Somewhat arbitrarily of 0.1mm TODO: determine proper value *)
+  
+END_VAR
+
+VAR
+  blink025Hz : BOOL; (* 0.25 Hz blink *)
+  blink050Hz : BOOL; (* 0.50 Hz blink *)
+  blink100Hz : BOOL; (* 1.00 Hz blink *)
+  
+  (* IO Module Health *)
+  ModStat_PLC_201 : sRioModuleHealth;
+  ModStat_OWS_PLK1 : sRioModuleHealth;
+  ModStat_JB1_PLK2 : sRioModuleHealth;
+
+  (* array of axis structures *)
+  axes : ARRAY[0..AXIS_COUNT] OF sMot_Axis; (* element 0 is used as a dummy axis -- an address to reference that is not an axis *)
+
+  (* cutting fluid VFD *)
+  cfVfd: sCuttingFluidVfd;
+
+  (* global axis commands *)
+  gMotionCommands : sMot_GlobalCommands; (*command structure for global command*)
+  
+  (* Operating Mode and security level *)
+  operatingMode : sOperatingMode;
+  
+  (* cycle permissives *)
+  cyclePermissives : sCyclePermissives;
+
+  (* OWS Pendant *)
+  owsPendant : sPendant;
+  
+  (* HMI process specific requests *)
+  hmiProcessReqs : sHmiProcessReqs; (* process specific reqs *)
+
+  (* analog inputs *)
+	AI_FT_CFFlow : sAnalogInput;
+	AI_LT_CFTankLevel : sAnalogInput;
+	AI_PT_CFPumpOutlet : sAnalogInput;
+  AI_PT_CFFilterOutlet : sAnalogInput;
+  AI_DP_CFFilter : sAnalogInput;  (* virtual input derrived from 2 PTs *)
+
+  (* digital inputs *)
+	DI_LSL_CFTank : sDigitalInput;
+	DI_ZS_CFTankLocator : sDigitalInput;
+  DI_JI_480VACOk : sDigitalInput;
+  (* digital outputs *)
+  (* pb lamps *)
+  DO_PB_OWSGreen : BOOL;
+  DO_PB_OWSRed : BOOL;
+  (* pilot lights *)
+  DO_PL_OWSGreen : BOOL;
+  DO_PL_OWSAmber : BOOL;
+  DO_PL_OWSRed : BOOL;
+  (* becon *)
+  DO_PL_OWSBeconRed : BOOL;
+	DO_PL_OWSBeconAmber : BOOL;
+  DO_PL_OWSBeconGreen : BOOL;
+  
+END_VAR

@@ -1,0 +1,332 @@
+﻿@import "mixins.scss";
+#mainContentZAxis_grpBoxSoc {
+	@include elemTop(20);
+}
+#mainContentZAxis_grpBoxSoc {
+	@include elemLeft(20);
+}
+#mainContentZAxis_grpBoxSoc {
+	@include elemWidth(300);
+}
+#mainContentZAxis_grpBoxSoc {
+	@include elemHeight(195);
+}
+#mainContentZAxis_grpBoxSoc {
+		z-index: 0;
+}
+#mainContentZAxis_grpBoxSoc {
+	> .header span{
+		font-size: 16px;
+	}
+}
+#mainContentZAxis_grpBoxSoc {
+	> .header{
+	height: 16px + 20px;
+	}
+}
+#mainContentZAxis_numInSocSpecifiedPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_numInSocSpecifiedPos {
+	@include elemTop(39);
+}
+#mainContentZAxis_numInSocSpecifiedPos {
+	@include elemLeft(149);
+}
+#mainContentZAxis_numInSocSpecifiedPos {
+	@include elemAutoWidth(141);
+}
+#mainContentZAxis_numInSocSpecifiedPos {
+		z-index: 0;
+}
+#mainContentZAxis_lblSocPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_lblSocPos {
+	@include elemTop(4);
+}
+#mainContentZAxis_lblSocPos {
+	@include elemLeft(9);
+}
+#mainContentZAxis_lblSocPos {
+	@include elemAutoWidth(161);
+}
+#mainContentZAxis_lblSocPos {
+		z-index: 1;
+}
+#mainContentZAxis_numOutSocPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_numOutSocPos {
+	@include elemTop(4);
+}
+#mainContentZAxis_numOutSocPos {
+	@include elemLeft(149);
+}
+#mainContentZAxis_numOutSocPos {
+	@include elemAutoWidth(141);
+}
+#mainContentZAxis_numOutSocPos {
+		z-index: 2;
+}
+#mainContentZAxis_pbSocUseCurrent {
+	@include elemTop(79);
+}
+#mainContentZAxis_pbSocUseCurrent {
+	@include elemLeft(14);
+}
+#mainContentZAxis_pbSocUseCurrent {
+	@include elemAutoWidth(126);
+}
+#mainContentZAxis_pbSocUseCurrent {
+	@include elemAutoHeight(46);
+}
+#mainContentZAxis_pbSocUseCurrent {
+		z-index: 3;
+}
+#mainContentZAxis_pbSocUseSpecified {
+	@include elemTop(79);
+}
+#mainContentZAxis_pbSocUseSpecified {
+	@include elemLeft(154);
+}
+#mainContentZAxis_pbSocUseSpecified {
+	@include elemAutoWidth(131);
+}
+#mainContentZAxis_pbSocUseSpecified {
+	@include elemAutoHeight(46);
+}
+#mainContentZAxis_pbSocUseSpecified {
+		z-index: 4;
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	@include elemTop(240);
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	@include elemLeft(20);
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	@include elemWidth(510);
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	@include elemHeight(290);
+}
+#mainContentZAxis_grpBoxAxisCommands {
+		z-index: 1;
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	> .header span{
+		font-size: 16px;
+	}
+}
+#mainContentZAxis_grpBoxAxisCommands {
+	> .header{
+	height: 16px + 20px;
+	}
+}
+#mainContentZAxis_pbReqFullUp {
+	@include elemTop(13);
+}
+#mainContentZAxis_pbReqFullUp {
+	@include elemLeft(14);
+}
+#mainContentZAxis_pbReqFullUp {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqFullUp {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqFullUp {
+		z-index: 0;
+}
+#mainContentZAxis_pbReqFullDown {
+	@include elemTop(193);
+}
+#mainContentZAxis_pbReqFullDown {
+	@include elemLeft(9);
+}
+#mainContentZAxis_pbReqFullDown {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqFullDown {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqFullDown {
+		z-index: 1;
+}
+#mainContentZAxis_pbReqLUnL {
+	@include elemTop(13);
+}
+#mainContentZAxis_pbReqLUnL {
+	@include elemLeft(349);
+}
+#mainContentZAxis_pbReqLUnL {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqLUnL {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqLUnL {
+		z-index: 2;
+}
+#mainContentZAxis_pbReqSoc {
+	@include elemTop(183);
+}
+#mainContentZAxis_pbReqSoc {
+	@include elemLeft(344);
+}
+#mainContentZAxis_pbReqSoc {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqSoc {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqSoc {
+		z-index: 3;
+}
+#mainContentZAxis_pbReqIndexUp {
+	@include elemTop(73);
+}
+#mainContentZAxis_pbReqIndexUp {
+	@include elemLeft(89);
+}
+#mainContentZAxis_pbReqIndexUp {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqIndexUp {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqIndexUp {
+		z-index: 4;
+}
+#mainContentZAxis_pbReqIndexDown {
+	@include elemTop(133);
+}
+#mainContentZAxis_pbReqIndexDown {
+	@include elemLeft(94);
+}
+#mainContentZAxis_pbReqIndexDown {
+	@include elemAutoWidth(125);
+}
+#mainContentZAxis_pbReqIndexDown {
+	@include elemAutoHeight(45);
+}
+#mainContentZAxis_pbReqIndexDown {
+		z-index: 5;
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	@include elemTop(20);
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	@include elemLeft(335);
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	@include elemWidth(300);
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	@include elemHeight(195);
+}
+#mainContentZAxis_grpBoxLUnLPos {
+		z-index: 2;
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	> .header span{
+		font-size: 16px;
+	}
+}
+#mainContentZAxis_grpBoxLUnLPos {
+	> .header{
+	height: 16px + 20px;
+	}
+}
+#mainContentZAxis_numInLUnLSpecifiedPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_numInLUnLSpecifiedPos {
+	@include elemTop(39);
+}
+#mainContentZAxis_numInLUnLSpecifiedPos {
+	@include elemLeft(149);
+}
+#mainContentZAxis_numInLUnLSpecifiedPos {
+	@include elemAutoWidth(141);
+}
+#mainContentZAxis_numInLUnLSpecifiedPos {
+		z-index: 0;
+}
+#mainContentZAxis_lblLUnLPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_lblLUnLPos {
+	@include elemTop(4);
+}
+#mainContentZAxis_lblLUnLPos {
+	@include elemLeft(9);
+}
+#mainContentZAxis_lblLUnLPos {
+	@include elemAutoWidth(161);
+}
+#mainContentZAxis_lblLUnLPos {
+		z-index: 1;
+}
+#mainContentZAxis_numOutLUnLPos {
+	@include elemAutoHeight(30);
+}
+#mainContentZAxis_numOutLUnLPos {
+	@include elemTop(4);
+}
+#mainContentZAxis_numOutLUnLPos {
+	@include elemLeft(149);
+}
+#mainContentZAxis_numOutLUnLPos {
+	@include elemAutoWidth(141);
+}
+#mainContentZAxis_numOutLUnLPos {
+		z-index: 2;
+}
+#mainContentZAxis_pbLUnLUseCurrent {
+	@include elemTop(79);
+}
+#mainContentZAxis_pbLUnLUseCurrent {
+	@include elemLeft(14);
+}
+#mainContentZAxis_pbLUnLUseCurrent {
+	@include elemAutoWidth(126);
+}
+#mainContentZAxis_pbLUnLUseCurrent {
+	@include elemAutoHeight(46);
+}
+#mainContentZAxis_pbLUnLUseCurrent {
+		z-index: 3;
+}
+#mainContentZAxis_pbLUnLUseSpecified {
+	@include elemTop(79);
+}
+#mainContentZAxis_pbLUnLUseSpecified {
+	@include elemLeft(154);
+}
+#mainContentZAxis_pbLUnLUseSpecified {
+	@include elemAutoWidth(131);
+}
+#mainContentZAxis_pbLUnLUseSpecified {
+	@include elemAutoHeight(46);
+}
+#mainContentZAxis_pbLUnLUseSpecified {
+		z-index: 4;
+}
+#mainContentZAxis_ZAxisStatus {
+	@include elemWidth(390);
+}
+#mainContentZAxis_ZAxisStatus {
+	@include elemHeight(310);
+}
+#mainContentZAxis_ZAxisStatus {
+	@include elemTop(240);
+}
+#mainContentZAxis_ZAxisStatus {
+	@include elemLeft(570);
+}
+#mainContentZAxis_ZAxisStatus {
+		z-index: 3;
+}
+#mainContentZAxis_ZAxisStatusΘlblAxisStatus{top:0px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblAxisStatus{left:0px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblAxisStatus{width:370px}#mainContentZAxis_ZAxisStatusΘlblAxisStatus{height:295px}#mainContentZAxis_ZAxisStatusΘlblAxisStatus{z-index:0}#mainContentZAxis_ZAxisStatusΘlblRdyForPower{top:47px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblRdyForPower{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblRdyForPower{width:125px}#mainContentZAxis_ZAxisStatusΘlblRdyForPower{height:15px}#mainContentZAxis_ZAxisStatusΘlblRdyForPower{z-index:0}#mainContentZAxis_ZAxisStatusΘlblRdyForPower span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblIsHomed{top:69px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsHomed{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsHomed{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsHomed{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsHomed{z-index:1}#mainContentZAxis_ZAxisStatusΘlblIsHomed span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblIsAtPos{top:158px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsAtPos{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsAtPos{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsAtPos{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsAtPos{z-index:2}#mainContentZAxis_ZAxisStatusΘlblIsAtPos span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive{top:136px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive{z-index:3}#mainContentZAxis_ZAxisStatusΘlblIsMoveActive span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone{top:180px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone{z-index:4}#mainContentZAxis_ZAxisStatusΘlblIsMoveDone span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblIsStopped{top:202px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsStopped{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsStopped{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsStopped{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsStopped{z-index:5}#mainContentZAxis_ZAxisStatusΘlblIsStopped span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblStatus{top:232px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblStatus{left:233px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblStatus{width:60px}#mainContentZAxis_ZAxisStatusΘlblStatus{height:15px}#mainContentZAxis_ZAxisStatusΘlblStatus{z-index:6}#mainContentZAxis_ZAxisStatusΘlblStatus span{padding:0px}#mainContentZAxis_ZAxisStatusΘlblState{top:257px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblState{left:233px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblState{width:60px}#mainContentZAxis_ZAxisStatusΘlblState{height:15px}#mainContentZAxis_ZAxisStatusΘlblState{z-index:7}#mainContentZAxis_ZAxisStatusΘlblState span{padding:0px}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{top:232px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{left:4px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{width:228px}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{height:15px}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{z-index:8}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutStatus{justify-content:flex-end;text-align:right;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutState{top:257px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutState{left:4px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutState{width:228px}#mainContentZAxis_ZAxisStatusΘtxtOutState{height:15px}#mainContentZAxis_ZAxisStatusΘtxtOutState{z-index:9}#mainContentZAxis_ZAxisStatusΘtxtOutState{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutState{justify-content:flex-end;text-align:right;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{top:44px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{z-index:10}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutRdyForPwr{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{top:67px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{z-index:11}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsHomed{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{top:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{z-index:12}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveActive{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{top:157px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{z-index:13}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsAtPos{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{top:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{z-index:14}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsMoveDone{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{top:202px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{z-index:15}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsStopped{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘnumOutPosAct{top:132px;position:absolute}#mainContentZAxis_ZAxisStatusΘnumOutPosAct{left:9px;position:absolute}#mainContentZAxis_ZAxisStatusΘnumOutPosAct{width:120px}#mainContentZAxis_ZAxisStatusΘnumOutPosAct{height:15px}#mainContentZAxis_ZAxisStatusΘnumOutPosAct{z-index:16}#mainContentZAxis_ZAxisStatusΘnumOutPosAct input{justify-content:center;text-align:center}#mainContentZAxis_ZAxisStatusΘnumOutVelAct{top:187px;position:absolute}#mainContentZAxis_ZAxisStatusΘnumOutVelAct{left:9px;position:absolute}#mainContentZAxis_ZAxisStatusΘnumOutVelAct{width:120px}#mainContentZAxis_ZAxisStatusΘnumOutVelAct{height:15px}#mainContentZAxis_ZAxisStatusΘnumOutVelAct{z-index:17}#mainContentZAxis_ZAxisStatusΘnumOutVelAct input{justify-content:center;text-align:center}#mainContentZAxis_ZAxisStatusΘlblPosAct{width:80px}#mainContentZAxis_ZAxisStatusΘlblPosAct{top:107px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblPosAct{left:29px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblPosAct{height:15px}#mainContentZAxis_ZAxisStatusΘlblPosAct{z-index:18}#mainContentZAxis_ZAxisStatusΘlblPosAct{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘlblVelAct{width:80px}#mainContentZAxis_ZAxisStatusΘlblVelAct{top:162px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblVelAct{left:29px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblVelAct{height:15px}#mainContentZAxis_ZAxisStatusΘlblVelAct{z-index:19}#mainContentZAxis_ZAxisStatusΘlblVelAct{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn{top:91px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn{width:125px}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn{z-index:20}#mainContentZAxis_ZAxisStatusΘlblIsPoweredOn span{padding:0px}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{top:89px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{z-index:21}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsPoweredOn{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel{top:113px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel{left:179px;position:absolute}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel{width:151px}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel{height:15px}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel{z-index:22}#mainContentZAxis_ZAxisStatusΘlblIsBrakeManRel span{padding:0px}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{top:112px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{left:134px;position:absolute}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{width:30px}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{height:20px}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{z-index:23}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{background-color:rgba(255,255,255,0)}#mainContentZAxis_ZAxisStatusΘtxtOutIsBrakeManRel{justify-content:center;text-align:center;-ms-flex-align:center;align-items:center}#mainContentZAxis_ZAxisStatusΘgrpBoxLabel{top:-1px;position:absolute}#mainContentZAxis_ZAxisStatusΘgrpBoxLabel{left:-1px;position:absolute}#mainContentZAxis_ZAxisStatusΘgrpBoxLabel{width:370px}#mainContentZAxis_ZAxisStatusΘgrpBoxLabel{height:36px}#mainContentZAxis_ZAxisStatusΘgrpBoxLabel{z-index:24}

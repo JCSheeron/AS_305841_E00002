@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2390"
+   sodipodi:docname="containsChanges.svg"
+   viewBox="0 0 24 16"
+   sodipodi:version="0.32"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   width="24"
+   height="16">
+  <title
+     id="title2">Group contains an edited parameter</title>
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     guidetolerance="10"
+     pagecolor="#ffffff"
+     gridtolerance="10000"
+     inkscape:window-height="1017"
+     inkscape:zoom="44.8"
+     objecttolerance="10"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="14.754398"
+     inkscape:cy="7.3948535"
+     inkscape:window-y="-8"
+     inkscape:window-x="1912"
+     inkscape:window-width="1920"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px"
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="1" />
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(-21.913,-16.984)">
+    <g
+       id="g2387"
+       style="fill:#808080;stroke:none;stroke-opacity:1;fill-opacity:1"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/mgsmith/Desktop/warning.png"
+       transform="matrix(0.1054388,0,0,0.10543881,29.125575,17.461272)"
+       inkscape:export-xdpi="90">
+      <path
+         id="path2389"
+         d="m 12.473,121.08 c -0.914,1.76 -1.991,3.41 -1.991,5.34 l 0.009,0.81 c 0,4.17 3.266,6.69 7.02,6.69 h 121.32 c 3.76,0 6.99,-3.12 6.99,-7.29 l -0.04,-0.81 c 0,-1.94 -0.95,-3.62 -1.99,-5.35 L 83.707,12.69 C 81.052,9.7442 76.748,9.7442 74.093,12.694 l -61.619,108.39 z"
+         style="fill:#808080;stroke:none;stroke-width:6.8314;stroke-opacity:1;fill-opacity:1"
+         sodipodi:nodetypes="ccccccccccc" />
+    </g>
+    <circle
+       id="path2393"
+       style="fill:#fffffe;stroke-width:0.125514;fill-opacity:1"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/mgsmith/Desktop/warning.png"
+       inkscape:export-xdpi="90"
+       cx="37.516785"
+       cy="29.092531"
+       r="1.0093395" />
+    <path
+       id="path2395"
+       style="fill:#fffffe;stroke-width:0.231525;fill-opacity:1"
+       d="m 37.510252,22.079964 c 0.396603,0 1.011996,0.316032 1.011996,0.708467 l -0.296121,4.078313 c 0,0.392434 -0.319272,0.708466 -0.715875,0.708466 -0.396602,0 -0.715643,-0.316032 -0.715643,-0.708466 l -0.345668,-4.078313 c 0,-0.392435 0.664709,-0.708467 1.061311,-0.708467 z"
+       inkscape:export-ydpi="90"
+       sodipodi:nodetypes="cccsccc"
+       inkscape:export-filename="/home/mgsmith/Desktop/warning.png"
+       inkscape:export-xdpi="90" />
+  </g>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>warning icon</dc:title>
+        <dc:date>2010-03-03T13:31:08</dc:date>
+        <dc:description>A very simple warning icon that can be scaled down fairly small and still be recognizable.</dc:description>
+        <dc:source>https://openclipart.org/detail/29833/warning-icon-by-matthewgarysmith</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>matthewgarysmith</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>warning</rdf:li>
+            <rdf:li>yellow</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

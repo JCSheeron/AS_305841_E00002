@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.NumPad" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+  <StyleProperties>
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="354" category="Layout">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="411" category="Layout">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+    </StyleProperty>
+    
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <StyleElement selector = ".numpadHeader" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".numpad" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".numpad" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="headerGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".numpadHeader" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement attribute="border-color"></StyleElement>
+      <StyleElement selector="header" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowLeft .breaseWindowArrow" attribute="border-right-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowRight .breaseWindowArrow" attribute="border-left-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowTop .breaseWindowArrow" attribute="border-bottom-color"></StyleElement>
+      <StyleElement selector="&amp;.arrowBottom .breaseWindowArrow" attribute="border-top-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".breaseNumPadButtons button" attribute="color"></StyleElement>
+      <StyleElement selector=".maxValueBox .maxValue" attribute="color"></StyleElement>
+      <StyleElement selector=".maxValueBox label" attribute="color"></StyleElement>
+      <StyleElement selector=".minValueBox .minValue" attribute="color"></StyleElement>
+      <StyleElement selector=".minValueBox label" attribute="color"></StyleElement>
+      <StyleElement selector=".breaseNumPadDeleteIcon" attribute="@include svgcolordelete('$value')"></StyleElement>
+      <StyleElement selector=".breaseNumPadEnterIcon" attribute="@include svgcolorenter('$value')"></StyleElement>
+      
+    </StyleProperty>
+    <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#FFA800" >
+      <StyleElement selector=".breaseNumPadButtons button.active" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".breaseNumPadButtons button.active" attribute="color"></StyleElement>
+      <StyleElement selector=".breaseNumPadButtons button.active .breaseNumPadDeleteIcon" attribute="@include svgcolordelete('$value')"></StyleElement>
+      <StyleElement selector=".breaseNumPadButtons button.active .breaseNumPadEnterIcon" attribute="@include svgcolorenter('$value')"></StyleElement>
+    </StyleProperty>
+    
+    <StyleProperty name="buttonBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector=".breaseNumPadButtons button:not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      
+    </StyleProperty>
+    <StyleProperty name="buttonCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".breaseNumPadButtons button" attribute="@include border-radius($value)"></StyleElement>
+    </StyleProperty>    
+    <StyleProperty name="buttonMouseDownBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector=".breaseNumPadButtons button.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="buttonMouseDownBorderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement selector=".solidBtnBorder .breaseNumPadButtons button.active" attribute="border-color"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".breaseNumPadButtons button" attribute="background-color"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="buttonMargin" category="Appearance" type="PixelValCollection" default="0px 0px 0px 0px" >
+      <StyleElement selector=".breaseNumPadButtons button" attribute="margin"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBorderColor" category="Appearance" type="ColorCollection" default="#555555" >
+      <StyleElement selector=".breaseNumPadButtons button" attribute="border-color"></StyleElement>
+      <StyleElement selector=".solidBtnBorder .breaseNumPadButtons button" attribute="border-color"></StyleElement>
+      <StyleElement selector=".breaseNumPadButtons button[data-value='0']" attribute="border-right-color"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="buttonBorderWidth" category="Appearance" type="PixelValCollection" default="1px 1px 1px 1px">
+      <StyleElement selector=".breaseNumPadButtons button" attribute="border-width"></StyleElement>
+      <StyleElement selector=".solidBtnBorder .breaseNumPadButtons button" attribute="border-width"></StyleElement>
+      <StyleElement selector=".breaseNumPadButtons button[data-value='0']" attribute="border-width"></StyleElement>
+    </StyleProperty>  
+
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontName" type="FontName" default="Arial">
+      <StyleElement attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="shadow" type="Shadow" default="none">
+      <StyleElement attribute="@include box-shadow($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderForeColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderForeGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob" attribute="@include backGroundGradient('$value')"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="sliderOutputBackColor" category="Appearance" type="Color" default="transparent">
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output" attribute="background-color"></StyleElement>
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output:after" attribute="border-top-color"></StyleElement>
+    </StyleProperty>
+
+    <StyleProperty name="valueBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the numericValue
+      </Description>      
+    </StyleProperty>
+    
+    <StyleProperty name="valueBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>      
+    </StyleProperty>
+    
+    <StyleProperty name="valueBorderColor" category="Appearance" type="ColorCollection" default="#333333" >
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the numericValue. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="valueBorderStyle" category="Appearance" type="BorderStyle" default="none">
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-style"></StyleElement>
+      <Description>Sets the border style of the numericValue</Description>
+    </StyleProperty>   
+
+    <StyleProperty name="valueBorderWidth" category="Appearance" type="PixelValCollection" default="1px">
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the numericValue. For further information, please see its type
+      </Description>
+    </StyleProperty>    
+
+    <StyleProperty name="valueCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the numericValue rounded corners. For further information, please see its type
+      </Description>      
+    </StyleProperty>
+
+    <StyleProperty name="valueFontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="font-family"></StyleElement>
+      <Description>
+        Sets the font name of the displayed text in the numericValue output
+      </Description>
+    </StyleProperty>    
+
+    <StyleProperty name="valueFontSize" category="Font" type="PixelVal" default="18px" >
+      <StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="font-size"></StyleElement>
+      <Description>
+        Sets the font size of the displayed text in the numericValue output
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="valueTextAlign" category="Appearance" type="brease.enum.TextAlign" default="left">
+      <StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>
+        Aligns the value text
+      </Description>
+    </StyleProperty>    
+
+    <StyleProperty name="valueTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector=".numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue" attribute="color"></StyleElement>
+      <StyleElement selector=".breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span" attribute="color"></StyleElement>
+      <Description>
+        Sets the color of the displayed text
+      </Description>
+    </StyleProperty>    
+
+    <StyleProperty name="valueShadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement selector=".breaseNumpadNumericValueInnerWrapper" attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        Sets the shadow effect of the widget. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="showSlider" category="Appearance" type="Boolean" default="true">
+      <StyleElement selector=".breaseNumpadNumericValueOutterWrapper" attribute="@include display(if($value, false, true), 'flex')"></StyleElement>
+      <Description>
+        If **false** numericValue is shown
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="showMinMax" category="Appearance" type="Boolean" default="true" >
+      <StyleElement selector=".minValueBox" attribute="@include display($value)"></StyleElement>
+      <StyleElement selector=".maxValueBox" attribute="@include display($value)"></StyleElement>
+      <Description>
+        If **true** minMax value is shown
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageDeleteBackground" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector=".breaseNumPadDeleteIcon" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+      <Description>
+        Sets the backgroundimage of the delete icon
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownImageDeleteBackground" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="button.breaseNumPadDelete.active .breaseNumPadDeleteIcon" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+      
+      <Description>
+        Sets the backgroundimage of the delete icon when mouse down
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageEnterBackground" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector=".breaseNumPadEnterIcon" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+      <Description>
+        Sets the backgroundimage of the Enter icon
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownImageEnterBackground" category="Appearance" type="ImagePath" default="">
+      <StyleElement selector="button.breaseNumPadEnter.active .breaseNumPadEnterIcon" attribute="@include pureBackgroundImage('../$value')"></StyleElement>
+      <Description>
+        Sets the backgroundimage of the Enter icon when mouse down
+      </Description>
+    </StyleProperty>
+    
+  </StyleProperties>
+</StyleInformation>

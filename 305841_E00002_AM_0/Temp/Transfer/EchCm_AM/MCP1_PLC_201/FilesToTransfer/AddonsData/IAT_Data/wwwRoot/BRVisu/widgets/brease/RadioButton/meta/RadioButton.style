@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.RadioButton" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <StyleProperties>
+
+      <StyleProperty name="width" type="AutoSize" not_styleable="true" default="150">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="30">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="none">
+      <StyleElement attribute="border-style"></StyleElement>
+      <Description>border style of the Widget</Description>
+    </StyleProperty>
+    <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement attribute="border-width"></StyleElement>
+      <Description>borderWidth of the Widget</Description>
+    </StyleProperty>
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <Description>cornerRadius of the Widget</Description>
+    </StyleProperty>
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="transparent">
+      <StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="background-color"></StyleElement>
+      <Description>backColor of the Widget when enabled</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1">
+      <StyleElement selector="&amp;.disabled" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active" attribute="background-color"></StyleElement>
+      <Description>backColor of the Widget when disabled</Description>
+    </StyleProperty>
+    <StyleProperty name="foreColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked) .radiobutton" attribute="background-color"></StyleElement>
+      <Description>Color of the RadioArea of the Widget when enabled</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledForeColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector="&amp;.disabled .radiobutton" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked .radiobutton" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active .radiobutton" attribute="background-color"></StyleElement>
+      <Description>Color of the RadioArea of the Widget when disabled</Description>
+    </StyleProperty>
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+      <StyleElement selector="&amp;:not(.disabled):not(.checked):not(.active)" attribute="border-color"></StyleElement>
+      <Description>BorderColor of the Widget</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF">
+      <StyleElement selector="&amp;.disabled" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active" attribute="border-color"></StyleElement>
+      <Description>borderColor of the Widget when disabled (transparent, hex-code, text)</Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-width"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-width"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="transparent">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="mouseDownForeColor" category="Appearance" type="Color" default="#FFF">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode) .radiobutton" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled) .radiobutton" attribute="background-color"></StyleElement>
+      <Description>Color of the RadioArea of the Widget when mouse down</Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode) span" attribute="color"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled) span" attribute="color"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#333" >
+      <StyleElement selector="span" attribute="color"></StyleElement>
+      <Description>
+        Sets the color of the displayed text
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898">
+      <StyleElement selector="&amp;.disabled span" attribute="color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked span" attribute="color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active span" attribute="color"></StyleElement>
+      <Description>text Color of the Widget when disabled</Description>
+    </StyleProperty>
+    <StyleProperty name="padding" category="Layout" type="Padding" default="0px">
+      <StyleElement attribute="padding"></StyleElement>
+      <Description>
+        Padding of the Widget
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="left" >
+			<StyleElement selector="span" attribute="text-align"></StyleElement>
+			<Description>
+				Alignment of the text
+			</Description>
+		</StyleProperty>
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+      <StyleElement attribute="opacity"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+      <StyleElement attribute="@include rotate($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px" >
+      <StyleElement selector="span" attribute="font-size"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector="span" attribute="font-family"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="bold" category="Font" type="Boolean" default="true">
+      <StyleElement selector="span" attribute="@include font-weight-bold($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="italic" category="Font" type="Boolean" default="false">
+      <StyleElement selector="span" attribute="@include font-style-italic($value)"></StyleElement>
+    </StyleProperty>
+    <StyleProperty name="uncheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;:not(.disabled):not(.checked) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is unchecked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="checkedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked:not(.disabled) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is checked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledUncheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.disabled:not(.checked) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is unchecked and disabled - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked.disabled svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is checked and disabled - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="checkedBackColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBackColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="checkedBorderColor" not_styleable="true" hide="true" category="Appearance" type="ColorCollection">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBorderColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="checkedBackGroundGradient" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBackGroundGradient" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="imageWidth" type="ImageSize" hide="true">
+    </StyleProperty>
+    <StyleProperty name="imageHeight" type="ImageSize" hide="true">
+    </StyleProperty>
+    <StyleProperty name="imageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="mouseDownImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="checkedImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="disabledImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedImageColor" type="Color" hide="true">
+    </StyleProperty>
+  </StyleProperties>
+</StyleInformation>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=3.0?>
+<Transfer xmlns="http://br-automation.co.at/AS/Transfer">
+  <OperatingSystem Version="B4.92"/>
+  <Hardware Target="SG4"/>
+  <Operation Delete="CrCamTbl.br"/>
+  <Operation Delete="OmSafeDev.br"/>
+  <Operation Delete="CuttingFlu.br"/>
+  <Operation Delete="AxEnable.br"/>
+  <Operation Delete="axCfVfdSM.br"/>
+  <Operation Delete="axHwSM.br"/>
+  <Operation Delete="axZSM.br"/>
+  <Operation Delete="axInESM.br"/>
+  <Operation Delete="axOutESM.br"/>
+  <Operation Delete="axSpinSM.br"/>
+  <Operation Delete="ProcInputs.br"/>
+  <Operation Delete="Pendant.br"/>
+  <Operation Delete="Annunc.br"/>
+  <Operation Delete="ProdCycle.br"/>
+  <Operation Delete="SfDomVis.br"/>
+  <Operation Delete="McDS402Ax.br"/>
+  <Operation Delete="CoTrace.br"/>
+  <Operation Delete="MpAlarmX.br"/>
+  <Operation Delete="GAConvert.br"/>
+  <Operation Delete="McPureVAx.br"/>
+  <Operation Delete="SfDomain.br"/>
+  <Operation Delete="McProfGen.br"/>
+  <Operation Delete="mvLoader.br"/>
+  <Operation Delete="MTLookUp.br"/>
+  <Operation Delete="MpRecipe.br"/>
+  <Operation Delete="MpAxis.br"/>
+  <Operation Delete="GAMpMotion.br"/>
+  <Operation Delete="GAProcIO.br"/>
+  <Operation Delete="GAMath.br"/>
+  <Operation Delete="MpSfDomMgr.br"/>
+  <Operation Delete="aruser.br"/>
+  <Operation Delete="asiodiag.br"/>
+  <Operation Delete="SfDomDrv.br"/>
+  <Operation Delete="asusb.br"/>
+  <Operation Delete="astcp.br"/>
+  <Operation Delete="brsystem.br"/>
+  <Operation Delete="asioacc.br"/>
+  <Operation Delete="AsZip.br"/>
+  <Operation Delete="dataobj.br"/>
+  <Operation Delete="MpBase.br"/>
+  <Operation Delete="sys_lib.br"/>
+  <Operation Delete="asieccon.br"/>
+  <Operation Delete="arssl.br"/>
+  <Operation Delete="McAcpAx.br"/>
+  <Operation Delete="McAxis.br"/>
+  <Operation Delete="McAcpDrv.br"/>
+  <Operation Delete="McBase.br"/>
+  <Operation Delete="arflatprv.br"/>
+  <Operation Delete="arcoal.br"/>
+  <Operation Delete="asepl.br"/>
+  <Operation Delete="FileIO.br"/>
+  <Operation Delete="astime.br"/>
+  <Operation Download="ashwd.br" Memory="SystemROM"/>
+  <Operation Download="asfw.br" Memory="SystemROM"/>
+  <Operation Download="asiol1.br" Memory="UserROM"/>
+  <Operation Download="arconfig.br" Memory="SystemROM"/>
+  <Operation Download="sysconf.br" Memory="SystemROM"/>
+  <Operation Restart="warm"/>
+  <Operation Download="McAcpSim.br" Memory="UserROM"/>
+  <Operation Download="powerlnk.br" Memory="UserROM"/>
+  <Operation Download="McDriveLog.br" Memory="UserROM"/>
+  <Operation Download="arsvcreg.br" Memory="UserROM"/>
+  <Operation Download="runtime.br" Memory="UserROM"/>
+  <Operation Download="astime.br" Memory="UserROM"/>
+  <Operation Download="FileIO.br" Memory="UserROM"/>
+  <Operation Download="asepl.br" Memory="UserROM"/>
+  <Operation Download="arcoal.br" Memory="UserROM"/>
+  <Operation Download="arflatprv.br" Memory="UserROM"/>
+  <Operation Download="McBase.br" Memory="UserROM"/>
+  <Operation Download="McAcpDrv.br" Memory="UserROM"/>
+  <Operation Download="McAxis.br" Memory="UserROM"/>
+  <Operation Download="McAcpAx.br" Memory="UserROM"/>
+  <Operation Download="McAcpSys.br" Memory="UserROM"/>
+  <Operation Download="axSpindleP.br" Memory="UserROM"/>
+  <Operation Download="axOutEPara.br" Memory="UserROM"/>
+  <Operation Download="axInEParam.br" Memory="UserROM"/>
+  <Operation Download="axZParamTa.br" Memory="UserROM"/>
+  <Operation Restart="warm"/>
+  <Operation Download="arssl.br" Memory="UserROM"/>
+  <Operation Download="asieccon.br" Memory="UserROM"/>
+  <Operation Download="standard.br" Memory="UserROM"/>
+  <Operation Download="AsBrStr.br" Memory="UserROM"/>
+  <Operation Download="sys_lib.br" Memory="UserROM"/>
+  <Operation Download="MpBase.br" Memory="UserROM"/>
+  <Operation Download="dataobj.br" Memory="UserROM"/>
+  <Operation Download="AsZip.br" Memory="UserROM"/>
+  <Operation Download="asioacc.br" Memory="UserROM"/>
+  <Operation Download="brsystem.br" Memory="UserROM"/>
+  <Operation Download="astcp.br" Memory="UserROM"/>
+  <Operation Download="asusb.br" Memory="UserROM"/>
+  <Operation Download="SfDomDrv.br" Memory="UserROM"/>
+  <Operation Download="asiodiag.br" Memory="UserROM"/>
+  <Operation Download="aruser.br" Memory="UserROM"/>
+  <Operation Download="MpSfDomMgr.br" Memory="UserROM"/>
+  <Operation Download="GAMath.br" Memory="UserROM"/>
+  <Operation Download="GAProcIO.br" Memory="UserROM"/>
+  <Operation Download="GAMpMotion.br" Memory="UserROM"/>
+  <Operation Download="MpAxis.br" Memory="UserROM"/>
+  <Operation Download="MpRecipe.br" Memory="UserROM"/>
+  <Operation Download="MTLookUp.br" Memory="UserROM"/>
+  <Operation Download="udbdef.br" Memory="UserROM"/>
+  <Operation Download="mvLoader.br" Memory="UserROM"/>
+  <Operation Download="TCData.br" Memory="SystemROM"/>
+  <Operation Download="FWRules.br" Memory="UserROM"/>
+  <Operation Download="McProfGen.br" Memory="UserROM"/>
+  <Operation Download="mCoWebSc.br" Memory="UserROM"/>
+  <Operation Download="TCLang.br" Memory="UserROM"/>
+  <Operation Download="OpcUaSrv.br" Memory="UserROM"/>
+  <Operation Download="DataObject.br" Memory="UserROM"/>
+  <Operation Download="Settings.br" Memory="UserROM"/>
+  <Operation Download="iomap.br" Memory="UserROM"/>
+  <Operation Download="axCfgZ.br" Memory="UserROM"/>
+  <Operation Download="Role.br" Memory="UserROM"/>
+  <Operation Download="ashwac.br" Memory="UserROM"/>
+  <Operation Download="Config.br" Memory="UserROM"/>
+  <Operation Download="axCfgInE.br" Memory="UserROM"/>
+  <Operation Download="axCfgSpin.br" Memory="UserROM"/>
+  <Operation Download="axCfgOutE.br" Memory="UserROM"/>
+  <Operation Download="Anonymous.br" Memory="UserROM"/>
+  <Operation Download="User.br" Memory="UserROM"/>
+  <Operation Download="cockpit1.br" Memory="UserROM"/>
+  <Operation Download="TC.br" Memory="UserROM"/>
+  <Operation Download="vAxHwCfg.br" Memory="UserROM"/>
+  <Operation Download="vAxHw.br" Memory="UserROM"/>
+  <Operation Download="axCfgCfPmp.br" Memory="UserROM"/>
+  <Operation Download="CamFeature.br" Memory="UserROM"/>
+  <Operation Download="camlist1.br" Memory="UserROM"/>
+  <Operation Download="mappConfig.br" Memory="UserROM"/>
+  <Operation Download="angleLu.br" Memory="UserROM"/>
+  <Operation Download="SfDomain.br" Memory="UserROM"/>
+  <Operation Download="McPureVAx.br" Memory="UserROM"/>
+  <Operation Download="GAConvert.br" Memory="UserROM"/>
+  <Operation Download="MpAlarmX.br" Memory="UserROM"/>
+  <Operation Download="AsBrMath.br" Memory="UserROM"/>
+  <Operation Download="CoTrace.br" Memory="UserROM"/>
+  <Operation Download="McDS402Ax.br" Memory="UserROM"/>
+  <Operation Download="SfDomVis.br" Memory="UserROM"/>
+  <Operation Download="Cam1P.br" Memory="UserROM"/>
+  <Operation Download="Cam1P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam2P.br" Memory="UserROM"/>
+  <Operation Download="Cam2P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam3P.br" Memory="UserROM"/>
+  <Operation Download="Cam3P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam4P.br" Memory="UserROM"/>
+  <Operation Download="Cam4P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam5P.br" Memory="UserROM"/>
+  <Operation Download="Cam5P_Fp.br" Memory="UserROM"/>
+  <Operation Download="Cam6P.br" Memory="UserROM"/>
+  <Operation Download="Cam6P_Fp.br" Memory="UserROM"/>
+  <Operation Download="ProdCycle.br" Memory="UserROM"/>
+  <Operation Download="Annunc.br" Memory="UserROM"/>
+  <Operation Download="Pendant.br" Memory="UserROM"/>
+  <Operation Download="ProcInputs.br" Memory="UserROM"/>
+  <Operation Download="axSpinSM.br" Memory="UserROM"/>
+  <Operation Download="axOutESM.br" Memory="UserROM"/>
+  <Operation Download="axInESM.br" Memory="UserROM"/>
+  <Operation Download="axZSM.br" Memory="UserROM"/>
+  <Operation Download="axHwSM.br" Memory="UserROM"/>
+  <Operation Download="axCfVfdSM.br" Memory="UserROM"/>
+  <Operation Download="AxEnable.br" Memory="UserROM"/>
+  <Operation Download="CuttingFlu.br" Memory="UserROM"/>
+  <Operation Download="OmSafeDev.br" Memory="UserROM"/>
+  <Operation Download="CrCamTbl.br" Memory="UserROM"/>
+</Transfer>

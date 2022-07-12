@@ -1,0 +1,5 @@
+VAR
+	tmr025Hz : TON; (* 0.25 Hz timer *)
+	tmr050Hz : TON; (* 0.50 Hz timer *)
+	tmr100Hz : TON; (* 1 Hz timer *)
+END_VAR

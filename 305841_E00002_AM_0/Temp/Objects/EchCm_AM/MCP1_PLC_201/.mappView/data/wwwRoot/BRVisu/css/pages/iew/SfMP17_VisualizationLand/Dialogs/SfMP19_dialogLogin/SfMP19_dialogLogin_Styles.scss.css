@@ -1,0 +1,8 @@
+div[data-brease-dialogId='SfMP193_dialogLogindialog'] .breaseDialogWindowHeader .imageDiv {
+  background-image: url("../Media/SfMP11_SVG/SfMP11_User.svg");
+}
+
+div[data-brease-dialogId='SfMP193_dialogLogindialog'] .breaseDialogWindowHeader div.innerHeader {
+  justify-content: flex-start;
+  text-align: left;
+}

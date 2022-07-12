@@ -1,0 +1,13 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+ <title>record icon</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="32" width="32"/>
+ </g>
+ <g>
+  <title>record circles</title>
+  <ellipse ry="14" rx="14" id="svg_1" cy="16" cx="16" stroke-width="1.5" stroke="#FFFFFF" fill="none"/>
+  <ellipse ry="9.2" rx="9.2" id="svg_3" cy="16" cx="16" stroke-opacity="null" stroke-width="1.5" stroke="#FFFFFF" fill="#FFFFFF"/>
+ </g>
+</svg>

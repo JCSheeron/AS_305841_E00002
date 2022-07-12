@@ -1,0 +1,9 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="32" width="32" y="0" x="0"/>
+  <g display="none" id="canvasGrid">
+  </g>
+ </g>
+</svg>

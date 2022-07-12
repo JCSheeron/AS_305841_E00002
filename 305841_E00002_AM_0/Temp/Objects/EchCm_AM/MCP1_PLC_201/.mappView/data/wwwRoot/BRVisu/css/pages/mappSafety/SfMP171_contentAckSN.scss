@@ -1,0 +1,52 @@
+﻿@import "mixins.scss";
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+	@include elemTop(300);
+}
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+	@include elemLeft(140);
+}
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+	@include elemAutoWidth(180);
+}
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+		z-index: 0;
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+	@include elemTop(80);
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+	@include elemLeft(55);
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+	@include elemAutoWidth(345);
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+		z-index: 1;
+}
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+	@include backGroundGradient('linear-gradient(45deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%)');
+}
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+	@include elemAutoHeight(30);
+}
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+	@include elemTop(80);
+}
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+	@include elemLeft(315);
+}
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+	@include elemAutoWidth(80);
+}
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+		z-index: 2;
+}
+#SfMP171_contentAckSN_SfMP171_AckSNDialog {
+		z-index: 3;
+}

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExpressionDefinition xmlns="http://www.br-automation.com/iat2016/expression/runtime/v2">
+  <Content id="contentStdTop">
+    <Expression refId="isModeEmoModeSel" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Expression refId="isModeEmoSafety" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="contentStdTop">
+    <Expression refId="isModeSafe" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="contentStdTop">
+    <Expression refId="isModeManual" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="contentStdTop">
+    <Expression refId="isModePendant" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="contentStdTop">
+    <Expression refId="isModeProduction" datatype="BOOL">
+      <Operands>
+        <Operand name="ModeSelected" datatype="ANY_INT" />
+        <Operand name="ParentMode" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        
+        ModeSelected = ParentMode
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxSpindle" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxOutEcc" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxInEcc" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxZ" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxHandwheel" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="leftContentAxisDetail">
+    <Expression refId="isAxCfVfd" datatype="BOOL">
+      <Operands>
+        <Operand name="AxisValue" datatype="ANY_INT" />
+        <Operand name="CheckValue" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        AxisValue = CheckValue
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="dlgSafetySystemTop_content">
+    <Expression refId="isEmoResetAllowed" datatype="BOOL">
+      <Operands>
+        <Operand name="Time" datatype="ANY_INT" />
+        <Operand name="InA" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        (Time = 0) AND InA
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="mainContentWorkSetup">
+    <Expression refId="passSelect_exp" datatype="ANY_INT">
+      <Operands>
+        <Operand name="InA" datatype="ANY_INT" />
+      </Operands>
+      <Operation>
+        InA + 1
+      </Operation>
+    </Expression>
+  </Content>
+  <Content id="mainContentProduction">
+    <Expression refId="isCycleIdle" datatype="BOOL">
+      <Operands>
+        <Operand name="InA" datatype="BOOL" />
+        <Operand name="InB" datatype="BOOL" />
+      </Operands>
+      <Operation>
+        NOT (InA OR InB)
+      </Operation>
+    </Expression>
+  </Content>
+</ExpressionDefinition>

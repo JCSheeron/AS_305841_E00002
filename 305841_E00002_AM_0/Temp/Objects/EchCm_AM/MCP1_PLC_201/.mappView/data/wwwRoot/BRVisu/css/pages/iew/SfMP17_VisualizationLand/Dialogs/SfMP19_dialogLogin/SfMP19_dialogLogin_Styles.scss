@@ -1,0 +1,11 @@
+﻿@import "mixins.scss";
+div[data-brease-dialogId='SfMP193_dialogLogindialog'] {
+	.breaseDialogWindowHeader .imageDiv{
+@include pureBackgroundImage('../Media/SfMP11_SVG/SfMP11_User.svg');
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogLogindialog'] {
+	.breaseDialogWindowHeader div.innerHeader{
+@include text-alignment(left);
+	}
+}

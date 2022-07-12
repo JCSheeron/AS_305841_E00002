@@ -1,0 +1,61 @@
+@import '../../../../css/libs/mixins.scss';
+
+.breaseButtonBar {
+    display: inline-block;
+    overflow: hidden;
+
+    > .container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    .container {
+
+        .breaseButton {
+            &:hover {
+                z-index: 500;
+            }
+        }
+    }
+
+
+    &.horizontal {
+        .container {
+            @include flex-wrap(nowrap);
+            @include displayFlexBox(true);
+            @include align-items(start);
+            @include flex-direction(row);
+        }
+
+        > .container {
+            position: absolute;
+
+            div {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &.vertical {
+        @include displayFlexBox(false);
+        > .container {
+            div {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &.editMode {
+        .container {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &.disabled {
+        .breaseButton {
+            pointer-events: none;
+        }
+    }
+}

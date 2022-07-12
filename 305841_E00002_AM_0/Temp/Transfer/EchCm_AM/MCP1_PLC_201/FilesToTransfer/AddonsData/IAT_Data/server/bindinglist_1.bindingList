@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingListDefinition xmlns="http://www.br-automation.com/iat2015/bindingList/runtime/v2">
+  <Session>
+    <List xsi:type="variable" id="ServoStatusGoodBadText" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svTextOutputWarn" attribute="value" />
+      <Element index="1" refId="svTextOutputGood" attribute="value" />
+      <Element index="2" refId="svTextOutputGood" attribute="value" />
+      <Element index="3" refId="svTextOutputWarn" attribute="value" />
+      <Element index="4" refId="svTextOutputGood" attribute="value" />
+      <Element index="5" refId="svTextOutputGood" attribute="value" />
+      <Element index="6" refId="svTextOutputGood" attribute="value" />
+      <Element index="7" refId="svTextOutputBad" attribute="value" />
+      <Element index="8" refId="svTextOutputWarn" attribute="value" />
+      <Element index="9" refId="svTextOutputBad" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ServoSmStateGoodBadText" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svTextOutputWarn" attribute="value" />
+      <Element index="1" refId="svTextOutputBad" attribute="value" />
+      <Element index="2" refId="svTextOutputWarn" attribute="value" />
+      <Element index="3" refId="svTextOutputWarn" attribute="value" />
+      <Element index="4" refId="svTextOutputGood" attribute="value" />
+      <Element index="5" refId="svTextOutputWarn" attribute="value" />
+      <Element index="6" refId="svTextOutputWarn" attribute="value" />
+      <Element index="7" refId="svTextOutputWarn" attribute="value" />
+      <Element index="8" refId="svTextOutputWarn" attribute="value" />
+      <Element index="9" refId="svTextOutputBad" attribute="value" />
+      <Element index="10" refId="svTextOutputBad" attribute="value" />
+      <Element index="11" refId="svTextOutputBad" attribute="value" />
+      <Element index="12" refId="svTextOutputBad" attribute="value" />
+      <Element index="13" refId="svTextOutputBad" attribute="value" />
+      <Element index="20" refId="svTextOutputGood" attribute="value" />
+      <Element index="21" refId="svTextOutputGood" attribute="value" />
+      <Element index="22" refId="svTextOutputWarn" attribute="value" />
+      <Element index="23" refId="svTextOutputWarn" attribute="value" />
+      <Element index="31" refId="svTextOutputGood" attribute="value" />
+      <Element index="32" refId="svTextOutputGood" attribute="value" />
+      <Element index="33" refId="svTextOutputGood" attribute="value" />
+      <Element index="41" refId="svTextOutputGood" attribute="value" />
+      <Element index="51" refId="svTextOutputGood" attribute="value" />
+      <Element index="61" refId="svTextOutputGood" attribute="value" />
+      <Element index="71" refId="svTextOutputGood" attribute="value" />
+      <Element index="72" refId="svTextOutputGood" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="CamStatusGoodBadText" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="0" refId="svTextOutputGood" attribute="value" />
+      <Element index="1" refId="svTextOutputGood" attribute="value" />
+      <Element index="2" refId="svTextOutputGood" attribute="value" />
+      <Element index="3" refId="svTextOutputGood" attribute="value" />
+      <Element index="4" refId="svTextOutputGood" attribute="value" />
+      <Element index="5" refId="svTextOutputGood" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleHiGoodLoBad1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputBad" attribute="value" />
+      <Element index="true" refId="svTextOutputGood" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleHiGoodLoWarn1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputWarn" attribute="value" />
+      <Element index="true" refId="svTextOutputGood" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleLoGoodHiBad1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputGood" attribute="value" />
+      <Element index="true" refId="svTextOutputBad" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleLoGoodHiWarn1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputGood" attribute="value" />
+      <Element index="true" refId="svTextOutputWarn" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleHiGoodLoGood1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputGood" attribute="value" />
+      <Element index="true" refId="svTextOutputGood" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleHiBadLoBad1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputBad" attribute="value" />
+      <Element index="true" refId="svTextOutputBad" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="TextStyleHiWarnLoWarn1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svTextOutputWarn" attribute="value" />
+      <Element index="true" refId="svTextOutputWarn" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="LabelSytleActiveStyle1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svLabelInactive" attribute="value" />
+      <Element index="true" refId="svLabelActive" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyle1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelected1" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleBlue" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelectedBlue" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleBlueIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelectedIndicator" attribute="value" />
+      <Element index="true" refId="svButtonSelectedBlueIndicator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleGreen" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelectedGreen" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleGreenIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelectedIndicator" attribute="value" />
+      <Element index="true" refId="svButtonSelectedGreenIndicator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleYellow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelectedYellow" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleYellowIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelectedIndicator" attribute="value" />
+      <Element index="true" refId="svButtonSelectedYellowIndicator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleOrange" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelectedOrange" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleOrangeIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelectedIndicator" attribute="value" />
+      <Element index="true" refId="svButtonSelectedOrangeIndicator" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleRed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelected1" attribute="value" />
+      <Element index="true" refId="svButtonSelectedRed" attribute="value" />
+    </List>
+  </Session>
+  <Session>
+    <List xsi:type="variable" id="ButtonSelectionStyleRedIndicator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Element index="false" refId="svButtonNotSelectedIndicator" attribute="value" />
+      <Element index="true" refId="svButtonSelectedRedIndicator" attribute="value" />
+    </List>
+  </Session>
+</BindingListDefinition>

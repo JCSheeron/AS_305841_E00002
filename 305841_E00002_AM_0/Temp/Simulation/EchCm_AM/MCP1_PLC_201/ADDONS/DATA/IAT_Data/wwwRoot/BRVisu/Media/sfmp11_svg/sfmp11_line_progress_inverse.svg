@@ -1,0 +1,16 @@
+
+<svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  width="220" height="20" enable-background="new 0 0 0 0" xml:space="preserve">
+  <rect id="green-rectangle" width="80" height="10" x="0" y="0" fill="#ff8500">
+  
+  <animate 
+           attributeName="x" 
+           from="300"
+           to="-80" 
+           dur="2s"
+           begin="0s"
+           repeatCount="indefinite"
+		   fill="freeze"
+           id="rect-anim"/>
+           </rect>
+</svg>

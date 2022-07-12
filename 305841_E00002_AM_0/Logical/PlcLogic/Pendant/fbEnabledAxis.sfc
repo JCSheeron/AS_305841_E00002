@@ -1,0 +1,213 @@
+FUNCTION_BLOCK fbEnabledAxis
+<?AutomationStudio FileVersion="4.9"?>
+INITIAL_STEP Stp_Init:
+(* @LANGUAGE := 'st' *)
+// Set current step (debugging purposes)
+currentStep := STP_INIT;
+
+// Pointers in sfc that are used in transitions 
+// may be dereferenced before execution begins ...
+// so they need to point to something.
+// Might as well pick the pointer passed in
+axisSelected ACCESS _I_pAxisSelected;
+
+// Set the previous axis selection so as to force an update
+selAxisNoPrev := INVALID_SENTINEL;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+TRANSITION FROM Stp_Init TO Stp_EnableWait:=
+TRUE
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_EnableWait' *)
+STEP Stp_EnableWait:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set current step (debugging purposes)
+currentStep := STP_ENABLE_WAIT;
+
+// Get a snapshot of the axis selection so changes while processing are ignored, or at least
+// handled at a time our our chosing.
+// A pointer is used for access to prevent unnecessary copying of an axis structure (large)
+// when 1) only a few elements are needed, and 2) the selected, and therefore referenced axis
+// can change at any time. 
+ axisSelected ACCESS _I_pAxisSelected;
+END_ACTION
+TRANSITION pendant and ax enabled FROM Stp_EnableWait TO Stp_Setup:=
+(* @LANGUAGE := 'st' *)
+// Get on with it once pendant and axis is enabled and the
+// slave axis matches the selected axis, and the slave axis is okay to couple
+_I_PendantEnabled AND _I_AxEnabled AND
+axisSelected.AxisNo = _I_AxisHandwheel.CouplingParameters.SlaveAxisNo AND
+axisSelected.CouplingParameters.CouplingPermissive
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_Setup' *)
+TRANSITION new axis is selected FROM Stp_EnableWait TO Stp_NewSelAxis:=
+(* @LANGUAGE := 'st' *)
+// New axis is selected
+_I_Pendant.AxisSelection <> selAxisNoPrev
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_NewSelAxis' *)
+STEP Stp_NewSelAxis:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set current step
+currentStep := STP_NEW_AXIS_SEL;
+
+// Link selected axis to be a slave to the handwheel
+_I_AxisHandwheel.CouplingParameters.SlaveAxisNo := axisSelected.AxisNo;
+IF _I_AxisHandwheel.CouplingParameters.SlaveAxisNo = AD_SPINDLE THEN
+  ;
+  //_I_AxisHandwheel.SlaveAxisObj := gAxSpin;
+ELSIF _I_AxisHandwheel.CouplingParameters.SlaveAxisNo = AD_SPINDLE THEN
+;
+END_IF;
+
+
+END_ACTION
+TRANSITION FROM Stp_NewSelAxis TO Stp_EnableWait:=
+TRUE
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_EnableWait' *)
+STEP Stp_Setup:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set current step (debugging purposes)
+currentStep := STP_SETUP;
+
+// Reset the handwheel counter. This
+// guardes against rollover and allows 
+// starting from a predicted count.
+_I_Pendant.resetReqHandwheelCount := TRUE;
+
+// Home the virtual (handsheel) axis
+// The virtual axis gets homed using direct mode
+_I_AxisHandwheel.MoveParameters.HomeParams.Mode := mcHOMING_DIRECT;
+_I_AxisHandwheel.MoveParameters.HomeParams.Position := 0.0;
+_I_AxisHandwheel.Commands.HomeReq := TRUE;
+
+// If the selected axis is not homed, request the axis be homed in position
+IF NOT axisSelected.Status.IsHomed THEN
+  axisSelected.MoveParameters.HomeParams.Mode := mcHOMING_DIRECT;
+  axisSelected.MoveParameters.HomeParams.Position := axisSelected.Status.Position;
+  axisSelected.Commands.HomeReq := TRUE;
+END_IF;
+END_ACTION
+TRANSITION hw counter reset and axes homed FROM Stp_Setup TO Stp_EngageSelAxis:=
+(* @LANGUAGE := 'st' *)
+// Counter reset request should be handled (low) and
+// the selected axis and handwheel axis should both be homed
+NOT _I_Pendant.resetReqHandwheelCount AND
+NOT axisSelected.Commands.HomeReq AND
+NOT axisSelected.Commands.HomeCmd AND
+axisSelected.Status.IsHomed AND
+NOT _I_AxisHandwheel.Commands.HomeReq AND
+NOT _I_AxisHandwheel.Commands.HomeCmd AND
+_I_AxisHandwheel.Status.IsHomed AND
+// The axis selection should still be the same
+_I_Pendant.AxisSelection = selAxisNoPrev AND
+// and the slave axis coupling permissive should still be good
+axisSelected.CouplingParameters.CouplingPermissive
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_EngageSelAxis' *)
+TRANSITION pendant disabled or new axis seleted FROM Stp_Setup TO Stp_Decouple:=
+(* @LANGUAGE := 'st' *)
+// Pendant is disabled
+NOT _I_PendantEnabled OR
+// New axis is selected
+_I_Pendant.AxisSelection <> selAxisNoPrev OR
+// slave axis coupling permissive goes away
+NOT axisSelected.CouplingParameters.CouplingPermissive
+
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_Decouple' *)
+STEP Stp_Decouple:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set current step (debugging purposes)
+currentStep := STP_DECOUPLE;
+
+// Clear the gear in command, and halt the slave axis
+_I_AxisHandwheel.CouplingParameters.GearOutReq := TRUE;
+axisSelected.Commands.HaltReq := TRUE;
+END_ACTION
+TRANSITION decouple and halt req FROM Stp_Decouple TO Stp_EnableWait:=
+(* @LANGUAGE := 'st' *)
+// Make sure gear in command and halt req are clear, showing they've been at least seen
+NOT _I_AxisHandwheel.CouplingParameters.GearOutReq AND
+NOT axisSelected.Commands.HaltReq
+
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_EnableWait' *)
+STEP Stp_EngageSelAxis:
+(* @LANGUAGE := 'st' *)
+// Slave (selected axis) was geared in upon entry.
+
+// Update the gear ratio if the speed selection changes
+IF _I_Pendant.SpeedSelection <> selSpeedPrev THEN
+  // update the snapshot to detect future changes
+  selSpeedPrev := _I_Pendant.SpeedSelection;
+  // Now update the gear ratio
+  CalcGearRatioFb(_I_SlaveAxisDesignation := axisSelected.AxisNo, _I_SelectedSpeed := selSpeedPrev);
+  _I_Pendant.GearRatioNumerator := CalcGearRatioFb._O_RatioNumerator;
+  _I_Pendant.GearRatioDenominator := CalcGearRatioFb._O_RatioDenominator;
+END_IF;
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Set current step (debugging purposes)
+currentStep := STP_ENGAGE_SEL_AX;
+
+// At this point, both the handwheel and selected
+// axis should be homed, and the selected axis should be enabled.
+// The handwheel does not need to be (cannot be) enabled.
+// Time to engage the selected axis as a slave.
+
+// Snapshot the speed selection so changes can be detected
+selSpeedPrev := _I_Pendant.SpeedSelection;
+
+// Set the gear ratio based on the speed and axis selected
+CalcGearRatioFb(_I_SlaveAxisDesignation := axisSelected.AxisNo,_I_SelectedSpeed := selSpeedPrev);
+_I_Pendant.GearRatioNumerator := CalcGearRatioFb._O_RatioNumerator;
+_I_Pendant.GearRatioDenominator := CalcGearRatioFb._O_RatioDenominator;
+
+// Gear in the slave axis as long as the permissive is met
+_I_AxisHandwheel.CouplingParameters.GearInReq := axisSelected.CouplingParameters.CouplingPermissive;
+END_ACTION
+TRANSITION new axis is selected FROM Stp_EngageSelAxis TO Stp_Decouple:=
+(* @LANGUAGE := 'st' *)
+// New axis is selected
+_I_Pendant.AxisSelection <> selAxisNoPrev
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_Decouple' *)
+TRANSITION pendant or ax disabled FROM Stp_EngageSelAxis TO Stp_Decouple:=
+(* @LANGUAGE := 'st' *)
+// Pendant is disabled
+NOT _I_PendantEnabled OR
+// or the selected axis is no longer homed, or has lost coupling permissive, has lost the synchronized motion status
+(NOT axisSelected.Status.IsHomed OR NOT axisSelected.CouplingParameters.CouplingPermissive) OR // OR axisSelected.Status.PlcOpenState <> mcAXIS_SYNCHRONIZED_MOTION) OR
+// or selected axis is not enabled after request to do so has been processed -- this would usually be an alarm
+(NOT axisSelected.Commands.EnableReq AND NOT axisSelected.Status.IsPoweredOn)
+END_TRANSITION
+(* @SFCISJUMP := 'Stp_Decouple' *)
+END_FUNCTION_BLOCK

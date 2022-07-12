@@ -1,0 +1,86 @@
+
+<vdef:Visualization id="mappSAFETY" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+  <StartPage pageRefId="SfMP171_ConnectLandpage" />
+  <Pages>
+    <Page refId="SfMP171_ConnectLandpage" />
+    <Page refId="SfMP171_TransferLandpage" />
+    <Page refId="SfMP171_ModuleXCHGLandpage" />
+    <Page refId="SfMP171_SetupModeLandpage" />
+    <Page refId="SfMP171_ConnectPortpage" />
+    <Page refId="SfMP171_TransferPortpage" />
+    <Page refId="SfMP171_ModuleXCHGPortpage" />
+    <Page refId="SfMP171_SetupModePortpage" />
+  </Pages>
+  <Navigations>
+    <!--<Navigation refId="" />-->
+  </Navigations>
+  <BindingsSets>
+    <BindingsSet refId="-504773457" />
+    <BindingsSet refId="577050500" />
+    <BindingsSet refId="101149441" />
+    <BindingsSet refId="135210392" />
+    <BindingsSet refId="-1378308643" />
+    <BindingsSet refId="-1665422944" />
+    <BindingsSet refId="-1123596663" />
+    <BindingsSet refId="-237156385" />
+    <BindingsSet refId="-1188854829" />
+    <BindingsSet refId="179254715" />
+    <BindingsSet refId="-2114131354" />
+    <BindingsSet refId="1023910929" />
+  </BindingsSets>
+  <EventBindingsSets>
+    <EventBindingsSet refId="593551072" />
+    <EventBindingsSet refId="-1634026811" />
+    <EventBindingsSet refId="-1355725498" />
+    <EventBindingsSet refId="2135815872" />
+    <EventBindingsSet refId="-2014660516" />
+    <EventBindingsSet refId="-674592636" />
+    <EventBindingsSet refId="-1723501490" />
+    <EventBindingsSet refId="465670144" />
+    <EventBindingsSet refId="-243085360" />
+    <EventBindingsSet refId="-734241044" />
+    <EventBindingsSet refId="1501003399" />
+    <EventBindingsSet refId="1189300058" />
+  </EventBindingsSets>
+  <Dialogs>
+    <Dialog refId="SfMP193_dialogConnectDetailsdialog" />
+    <Dialog refId="SfMP193_dialogTransferBrowsedialog" />
+    <Dialog refId="SfMP193_dialogTransferMsgdialog" />
+    <Dialog refId="SfMP193_dialogLogindialog" />
+    <Dialog refId="SfMP193_dialogAckSNdialog" />
+    <Dialog refId="SfMP193_dialogAckSafeAppdialog" />
+    <Dialog refId="SfMP193_dialogBusyMsgdialog" />
+    <Dialog refId="SfMP193_dialogBusyConnect" />
+    <Dialog refId="SfMP193_dialogBusyDisconnect" />
+    <Dialog refId="SfMP193_dialogBusyBrowseFiles" />
+    <Dialog refId="SfMP193_dialogErrorMsg" />
+    <Dialog refId="SfMP193_dialogAckSafeOP" />
+    <Dialog refId="SfMP19_dialogAckOPPara" />
+    <Dialog refId="SfMP19_dialogEditOPPara" />
+    <Dialog refId="SfMP19_dialogProcess" />
+  </Dialogs>
+  <Contents>
+    <!--<Content refId="" />-->
+  </Contents>
+  <SnippetsSets>
+    <SnippetsSet refId="SfMP148_snippetLabel" />
+    <SnippetsSet refId="SfMP148_snippetMessagebox" />
+  </SnippetsSets>
+  <ExpressionsSets>
+    <!--<ExpressionsSet refId=""/>-->
+  </ExpressionsSets>
+  <VariablesSets>
+    <VariablesSet refId="SfMP182_sessionvar" />
+  </VariablesSets>
+  <StartTheme themeRefId="SfMP14_BuRThemeFlat1" />
+  <Themes>
+    <Theme refId="SfMP14_BuRThemeFlat1" />
+  </Themes>
+  <Configurations>
+    <Configuration key="activityCount" value="false" />
+    <Configuration key="zoom" value="true" />
+    <Configuration key="bootLogo" value="Media/1024mappSAFETY.png" />
+    <Configuration key="favicon" value="Media/32mappSAFETY.png" />
+    <Configuration key="bootColor" value="Transparent" />
+  </Configurations>
+</vdef:Visualization>

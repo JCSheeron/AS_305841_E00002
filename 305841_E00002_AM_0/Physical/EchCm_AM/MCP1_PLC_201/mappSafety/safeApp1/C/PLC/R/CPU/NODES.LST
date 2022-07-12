@@ -1,0 +1,6 @@
+TASKDIR	4	Tasks		SafePCOSctx_31	ctx
+TASK	5	TASK		SafePCOSctx_31	ctx
+PROGRAM	6	Main	Main	SafePCOSctx_31	ctx
+VAR_GLOBALS	4	Global_Variables	C\PLC\R\CPU\Global_Variables.VBB		
+VAR_GLOBALS	4	Exchange_Variables	C\PLC\R\CPU\Exchange_Variables.VBB		
+IO/CONFIGURATION	4	IO_Configuration	C\PLC\R\CPU\IOCONFIG.CNF		

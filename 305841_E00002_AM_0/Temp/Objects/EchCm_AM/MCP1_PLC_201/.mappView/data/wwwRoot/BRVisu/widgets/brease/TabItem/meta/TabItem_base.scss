@@ -1,0 +1,95 @@
+@import "mixins.scss";
+@mixin widgets_brease_TabItem_base {
+&.tabItem {
+	@include elemWidth(100);
+}
+&.tabItem {
+	@include elemHeight(30);
+}
+& > img {
+	@include imageWidth(0);
+}
+& > svg {
+	@include imageWidth(0);
+}
+& > img {
+	@include imageHeight(0);
+}
+& > svg {
+	@include imageHeight(0);
+}
+&:not(.active):not(.disabled) > svg {
+	fill: #000000;
+}
+&.active > svg {
+	fill: #000000;
+}
+&.tabItem:not(.active) {
+	border-style: solid;
+}
+&.tabItem:not(.active) {
+	border-width: 2px;
+}
+&.tabItem:not(.active) {
+	@include border-radius(5px 5px 0px 0px);
+}
+&.tabItem:not(.active) {
+	border-color: #5B7C70;
+}
+&.tabItem:not(.active) {
+	background-color: #DBDBDB;
+}
+&.tabItem:not(.active) {
+	@include backGroundGradient('');
+}
+&.tabItem:not(.active) span {
+	color: #000000;
+}
+&.tabItem.active {
+	border-style: solid;
+}
+&.tabItem.active {
+	border-width: 4px 2px 0px 2px;
+}
+&.tabItem.active {
+	@include border-radius(0px);
+}
+&.tabItem.active {
+	border-color: #FD7B01 #5B7C70 #5B7C70 #5B7C70;
+}
+&.tabItem.active {
+	background-color: #FFFFFF;
+}
+&.tabItem.active {
+	@include backGroundGradient('');
+}
+&.tabItem.active span {
+	color: #000000;
+}
+&.tabItem {
+	@include text-alignment(center);
+}
+&.tabItem {
+	opacity: 1;
+}
+&.tabItem span {
+	font-size: 12px;
+}
+&.tabItem span {
+	font-family: Arial;
+}
+&.tabItem span {
+	@include font-weight-bold(true);
+}
+&.tabItem span {
+	@include font-style-italic(false);
+}
+&.tabItem {
+	margin: 0px;
+}
+&.tabItem {
+	padding: 0px 10px;
+}
+
+}
+

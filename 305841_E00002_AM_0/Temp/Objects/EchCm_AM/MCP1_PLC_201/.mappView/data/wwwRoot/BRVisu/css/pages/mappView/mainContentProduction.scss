@@ -1,0 +1,271 @@
+﻿@import "mixins.scss";
+#mainContentProduction_grpBoxCycle {
+	@include elemTop(30);
+}
+#mainContentProduction_grpBoxCycle {
+	@include elemLeft(40);
+}
+#mainContentProduction_grpBoxCycle {
+	@include elemWidth(560);
+}
+#mainContentProduction_grpBoxCycle {
+	@include elemHeight(475);
+}
+#mainContentProduction_grpBoxCycle {
+		z-index: 0;
+}
+#mainContentProduction_grpBoxStatus {
+	@include elemTop(8);
+}
+#mainContentProduction_grpBoxStatus {
+	@include elemLeft(384);
+}
+#mainContentProduction_grpBoxStatus {
+	@include elemWidth(156);
+}
+#mainContentProduction_grpBoxStatus {
+	@include elemHeight(202);
+}
+#mainContentProduction_grpBoxStatus {
+		z-index: 0;
+}
+#mainContentProduction_lblStatusIdle {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_lblStatusIdle {
+	@include elemTop(8);
+}
+#mainContentProduction_lblStatusIdle {
+	@include elemLeft(19);
+}
+#mainContentProduction_lblStatusIdle {
+	@include elemAutoWidth(115);
+}
+#mainContentProduction_lblStatusIdle {
+		z-index: 0;
+}
+#mainContentProduction_lblStatusInCycle {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_lblStatusInCycle {
+	@include elemTop(46);
+}
+#mainContentProduction_lblStatusInCycle {
+	@include elemLeft(19);
+}
+#mainContentProduction_lblStatusInCycle {
+	@include elemAutoWidth(115);
+}
+#mainContentProduction_lblStatusInCycle {
+		z-index: 1;
+}
+#mainContentProduction_lblStatusStopping {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_lblStatusStopping {
+	@include elemTop(123);
+}
+#mainContentProduction_lblStatusStopping {
+	@include elemLeft(19);
+}
+#mainContentProduction_lblStatusStopping {
+	@include elemAutoWidth(115);
+}
+#mainContentProduction_lblStatusStopping {
+		z-index: 2;
+}
+#mainContentProduction_lblStatusInCycleHold {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_lblStatusInCycleHold {
+	@include elemTop(85);
+}
+#mainContentProduction_lblStatusInCycleHold {
+	@include elemLeft(19);
+}
+#mainContentProduction_lblStatusInCycleHold {
+	@include elemAutoWidth(126);
+}
+#mainContentProduction_lblStatusInCycleHold {
+		z-index: 3;
+}
+#mainContentProduction_grpBoxControl {
+	@include elemTop(8);
+}
+#mainContentProduction_grpBoxControl {
+	@include elemLeft(19);
+}
+#mainContentProduction_grpBoxControl {
+	@include elemWidth(346);
+}
+#mainContentProduction_grpBoxControl {
+	@include elemHeight(202);
+}
+#mainContentProduction_grpBoxControl {
+		z-index: 1;
+}
+#mainContentProduction_pbCycleStart {
+	@include elemAutoWidth(100);
+}
+#mainContentProduction_pbCycleStart {
+	@include elemTop(13);
+}
+#mainContentProduction_pbCycleStart {
+	@include elemLeft(19);
+}
+#mainContentProduction_pbCycleStart {
+	@include elemAutoHeight(52);
+}
+#mainContentProduction_pbCycleStart {
+		z-index: 0;
+}
+#mainContentProduction_pbCycleStop {
+	@include elemAutoWidth(100);
+}
+#mainContentProduction_pbCycleStop {
+	@include elemTop(88);
+}
+#mainContentProduction_pbCycleStop {
+	@include elemLeft(19);
+}
+#mainContentProduction_pbCycleStop {
+	@include elemAutoHeight(52);
+}
+#mainContentProduction_pbCycleStop {
+		z-index: 1;
+}
+#mainContentProduction_rdoBtnGrpCycleControl {
+	@include elemTop(18);
+}
+#mainContentProduction_rdoBtnGrpCycleControl {
+	@include elemLeft(149);
+}
+#mainContentProduction_rdoBtnGrpCycleControl {
+	@include elemWidth(180);
+}
+#mainContentProduction_rdoBtnGrpCycleControl {
+	@include elemHeight(112);
+}
+#mainContentProduction_rdoBtnGrpCycleControl {
+		z-index: 2;
+}
+#mainContentProduction_rdoBtnContinuous {
+	@include elemTop(0);
+}
+#mainContentProduction_rdoBtnContinuous {
+	@include elemLeft(10);
+}
+#mainContentProduction_rdoBtnContinuous {
+	@include elemAutoWidth(140);
+}
+#mainContentProduction_rdoBtnContinuous {
+	@include elemAutoHeight(35);
+}
+#mainContentProduction_rdoBtnContinuous {
+		z-index: 0;
+}
+#mainContentProduction_rdoBtnSingleCycle {
+	@include elemTop(35);
+}
+#mainContentProduction_rdoBtnSingleCycle {
+	@include elemLeft(10);
+}
+#mainContentProduction_rdoBtnSingleCycle {
+	@include elemAutoWidth(140);
+}
+#mainContentProduction_rdoBtnSingleCycle {
+	@include elemAutoHeight(35);
+}
+#mainContentProduction_rdoBtnSingleCycle {
+		z-index: 1;
+}
+#mainContentProduction_rdoBtnStepped {
+	@include elemTop(70);
+}
+#mainContentProduction_rdoBtnStepped {
+	@include elemLeft(10);
+}
+#mainContentProduction_rdoBtnStepped {
+	@include elemAutoWidth(140);
+}
+#mainContentProduction_rdoBtnStepped {
+	@include elemAutoHeight(35);
+}
+#mainContentProduction_rdoBtnStepped {
+		z-index: 2;
+}
+#mainContentProduction_grpBoxOptions {
+	@include elemTop(223);
+}
+#mainContentProduction_grpBoxOptions {
+	@include elemLeft(19);
+}
+#mainContentProduction_grpBoxOptions {
+	@include elemWidth(341);
+}
+#mainContentProduction_grpBoxOptions {
+	@include elemHeight(192);
+}
+#mainContentProduction_grpBoxOptions {
+		z-index: 2;
+}
+#mainContentProduction_chkBoxCfOff {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_chkBoxCfOff {
+	@include elemTop(13);
+}
+#mainContentProduction_chkBoxCfOff {
+	@include elemLeft(39);
+}
+#mainContentProduction_chkBoxCfOff {
+	@include elemAutoWidth(211);
+}
+#mainContentProduction_chkBoxCfOff {
+		z-index: 0;
+}
+#mainContentProduction_chkBoxSingleCycleInclZ {
+	@include elemAutoHeight(30);
+}
+#mainContentProduction_chkBoxSingleCycleInclZ {
+	@include elemTop(53);
+}
+#mainContentProduction_chkBoxSingleCycleInclZ {
+	@include elemLeft(39);
+}
+#mainContentProduction_chkBoxSingleCycleInclZ {
+	@include elemAutoWidth(211);
+}
+#mainContentProduction_chkBoxSingleCycleInclZ {
+		z-index: 1;
+}
+#mainContentProduction_pbResetAxes {
+	@include elemAutoWidth(100);
+}
+#mainContentProduction_pbResetAxes {
+	@include elemTop(263);
+}
+#mainContentProduction_pbResetAxes {
+	@include elemLeft(414);
+}
+#mainContentProduction_pbResetAxes {
+	@include elemAutoHeight(42);
+}
+#mainContentProduction_pbResetAxes {
+		z-index: 3;
+}
+#mainContentProduction_gprBoxPermits {
+	@include elemTop(30);
+}
+#mainContentProduction_gprBoxPermits {
+	@include elemLeft(660);
+}
+#mainContentProduction_gprBoxPermits {
+	@include elemWidth(250);
+}
+#mainContentProduction_gprBoxPermits {
+	@include elemHeight(310);
+}
+#mainContentProduction_gprBoxPermits {
+		z-index: 1;
+}

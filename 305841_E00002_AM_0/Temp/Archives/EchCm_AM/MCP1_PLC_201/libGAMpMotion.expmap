@@ -1,0 +1,18 @@
+{
+  global:
+    fbHomeAbsSeq;
+    fbProcessHmiAxisReq;
+    fbUpdateBasicParams;
+    fctCalcAbsHomeOffset;
+    fctCheckEqCamInParams;
+    fctCheckEqGearInParams;
+    fctCheckEqMoveParams;
+    fctCheckEqShiftParams;
+    fctClearMotionCommands;
+    fctClearMotionRequests;
+    fctCopyAxisStatus;
+    fctGetMpAxisInfo;
+    fctPackMpAxisBasicParams;
+  local:
+    *;
+ };

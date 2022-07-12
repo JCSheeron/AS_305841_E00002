@@ -1,0 +1,48 @@
+/* definition of the method execution button style*/
+.e-btn.e-select.e-disable.e-primary{
+    background-color: var(--main-grey-dark1);
+    color: white;
+    opacity: 1.0;
+    cursor: default;
+}
+
+.e-btn.e-select.e-disable.e-primary:hover{
+    background-color: var(--main-grey-dark1);
+    color: white;
+    opacity: 1.0;
+    cursor: default;
+}
+
+.e-btn.e-select.e-disable.e-primary:active{
+    background-color: var(--main-grey-dark1);
+    color: white;
+    opacity: 1.0;
+    cursor: default;
+}
+.e-btn.e-select.e-primary{
+    background-color: var(--main-blue-dark1) ;
+    color: white ;
+    cursor: pointer;
+}
+
+.e-btn.e-select.e-primary:hover{
+    background-color: var(--main-blue) ;
+    color: white ;
+    opacity: 1.0 ;
+    cursor: pointer;
+}
+
+.e-btn.e-select.e-primary:active{
+    background-color: var(--main-blue-light1) ;
+    color: white ;
+    opacity: 1.0 ; 
+    cursor: pointer;
+}
+
+.e-icon.e-mediaplay:before {
+    color: white;
+}
+
+.e-btn .e-btntxt, .e-tbtn.e-txt{
+    cursor: unset;
+}

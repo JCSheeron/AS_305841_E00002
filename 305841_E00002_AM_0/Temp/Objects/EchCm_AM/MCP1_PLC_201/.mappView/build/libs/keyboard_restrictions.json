@@ -1,0 +1,11 @@
+{
+    "AlphaPad":{
+        "Header":{"maxOccurs": 1},
+        "Value": {"minOccurs": 1, "maxOccurs": 1},
+        "IME": {"maxOccurs": 1},
+        "LayoutSelector": {"maxOccurs": 1}
+    },
+    "NumPad":{
+        "Header":{"maxOccurs": 1}
+    }
+}

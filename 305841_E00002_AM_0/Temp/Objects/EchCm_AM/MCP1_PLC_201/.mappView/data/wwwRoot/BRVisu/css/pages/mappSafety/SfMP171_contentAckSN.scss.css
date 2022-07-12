@@ -1,0 +1,73 @@
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+  height: 30px;
+}
+
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+  top: 300px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+  left: 140px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+  width: 180px;
+}
+
+#SfMP171_contentAckSN_SfMP171_btnSNAckApply {
+  z-index: 0;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  height: 30px;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  top: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  left: 55px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  width: 345px;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  z-index: 1;
+}
+
+#SfMP171_contentAckSN_SfMP171_tstExchangeNrSN {
+  background-image: linear-gradient(45deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+}
+
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+  height: 30px;
+}
+
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+  top: 80px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+  left: 315px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+  width: 80px;
+}
+
+#SfMP171_contentAckSN_SfMP171_numericOutExchangeNrSN {
+  z-index: 2;
+}
+
+#SfMP171_contentAckSN_SfMP171_AckSNDialog {
+  z-index: 3;
+}

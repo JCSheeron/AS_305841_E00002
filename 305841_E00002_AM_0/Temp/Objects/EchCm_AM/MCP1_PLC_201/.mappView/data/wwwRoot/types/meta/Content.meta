@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Content xmlns="http://www.br-automation.com/iat2014/widget" >
+  <StyleProperties>
+    <StyleProperty name="width" type="UInteger" not_styleable="true" category="Property" default="800">
+      <StyleElement attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="UInteger" not_styleable="true" category="Property" default="600">
+      <StyleElement attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+  </StyleProperties>
+</Content>

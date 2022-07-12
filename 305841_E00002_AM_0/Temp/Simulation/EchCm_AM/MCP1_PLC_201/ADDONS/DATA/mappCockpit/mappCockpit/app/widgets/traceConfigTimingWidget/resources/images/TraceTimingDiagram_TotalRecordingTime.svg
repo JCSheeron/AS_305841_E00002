@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export TraceTimingDiagram_TotalRecordingTime.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.06944in" height="2.49103in"
+		viewBox="0 0 437 179.354" xml:space="preserve" color-interpolation-filters="sRGB" class="st14">
+	<v:documentProperties v:langID="1033" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {marker-end:url(#mrkr13-6);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2}
+		.st2 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.32258064516129}
+		.st3 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st4 {fill:#000000;font-family:Arial;font-size:1.00001em}
+		.st5 {stroke:#000000;stroke-dasharray:8.4,6;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2}
+		.st6 {fill:#551e00;font-family:Verdana;font-size:0.75em}
+		.st7 {fill:#551e00;stroke:#551e00;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st8 {marker-end:url(#mrkr4-34);marker-start:url(#mrkr4-32);stroke:#525252;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st9 {fill:#525252;fill-opacity:1;stroke:#525252;stroke-opacity:1;stroke-width:0.22222222222222}
+		.st10 {fill:#525252;font-family:Verdana;font-size:0.75em}
+		.st11 {stroke:#55787d;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.16}
+		.st12 {marker-end:url(#mrkr10-100);marker-start:url(#mrkr4-32);stroke:#525252;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st13 {stroke:#808080;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st14 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend13">
+			<path d="M 3 1 L 0 0 L 3 -1 L 3 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr13-6" class="st2" v:arrowType="13" v:arrowSize="2" v:setback="9.3" refX="-9.3" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend13" transform="scale(-3.1,-3.1) "/>
+		</marker>
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-32" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="8.5" refX="8.5" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(4.5) "/>
+		</marker>
+		<marker id="mrkr4-34" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="9" refX="-9" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-4.5,-4.5) "/>
+		</marker>
+		<g id="lend10">
+			<path
+					d="M 0 0.75 C -0.414214 0.75 -0.75 0.414214 -0.75 0 -0.75 -0.414214 -0.414214 -0.75 0 -0.75 0.414214 -0.75 0.75 -0.414214 0.75 0 0.75 0.414214 0.414214 0.75 0 0.75 Z "
+					style="stroke:none"/>
+		</g>
+		<marker id="mrkr10-100" class="st9" v:arrowType="10" v:arrowSize="2" v:setback="3.375" refX="-3.375" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend10" transform="scale(-4.5,-4.5) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="9"
+				v:shadowOffsetY="-9"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="shape299-1" v:mID="299" v:groupContext="shape" transform="translate(34.055,-31.5276)">
+			<title>Tabelle.299</title>
+			<path d="M0 179.35 L380.02 179.35" class="st1"/>
+		</g>
+		<g id="shape300-7" v:mID="300" v:groupContext="shape" transform="translate(425.236,-14.5197)">
+			<title>Tabelle.300</title>
+			<desc>t</desc>
+			<v:textBlock v:margins="rect(0,0,0,0)" v:verticalAlign="0"/>
+			<v:textRect cx="5.66929" cy="173.685" width="11.34" height="11.3386"/>
+			<rect x="0" y="168.016" width="11.3386" height="11.3386" class="st3"/>
+			<text x="0" y="178.82" class="st4" v:langID="1033"><v:paragraph/><v:tabList/>t</text>		</g>
+		<g id="shape301-10" v:mID="301" v:groupContext="shape" transform="translate(-139.646,153.496) rotate(-90)">
+			<title>Y Axis.19</title>
+			<path d="M0 179.35 L130.57 179.35" class="st1"/>
+		</g>
+		<g id="shape302-15" v:mID="302" v:groupContext="shape" transform="translate(-139.63,159.165) rotate(-90)">
+			<title>Y Axis.15</title>
+		</g>
+		<g id="shape323-17" v:mID="323" v:groupContext="shape" transform="translate(343.803,12.808) rotate(90)">
+			<title>Dashed vertical line.58</title>
+			<path d="M0 179.35 L141.5 179.35" class="st5"/>
+		</g>
+		<g id="group333-20" transform="translate(147.441,-147.748)" v:mID="333" v:groupContext="group">
+			<title>Highlight dot</title>
+			<g id="shape334-21" v:mID="334" v:groupContext="shape" transform="translate(0,-2.83465)">
+				<title>Tabelle.334</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(0,0,0,0)"/>
+				<v:textRect cx="8.50394" cy="170.85" width="17.01" height="17.0079"/>
+				<rect x="0" y="162.346" width="17.0079" height="17.0079" class="st3"/>
+				<text x="5.64" y="173.55" class="st6" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>			</g>
+			<g id="shape335-24" v:mID="335" v:groupContext="shape" transform="translate(14.1732,-2.84217E-014)">
+				<title>Tabelle.335</title>
+				<ellipse cx="2.83465" cy="176.52" rx="2.83465" ry="2.83465" class="st7"/>
+			</g>
+		</g>
+		<g id="shape382-26" v:mID="382" v:groupContext="shape" v:layerMember="0" transform="translate(166.388,-109.48)">
+			<title>Dynamischer Verbinder</title>
+			<desc>Total recording time</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="68.5984" cy="172.268" width="102.64" height="29.6036"/>
+			<path d="M6.12 172.27 L6.48 172.27 L130.72 172.27" class="st8"/>
+			<text x="22.87" y="169.57" class="st10" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Total recording time<v:newlineChar/></text>		</g>
+		<g id="group383-36" transform="translate(39.7243,-71.2126)" v:mID="383" v:groupContext="group">
+			<title>Tabelle.383</title>
+			<g id="group327-37" transform="translate(102.047,0)" v:mID="327" v:groupContext="group">
+				<title>Tabelle.327</title>
+				<g id="shape328-38" v:mID="328" v:groupContext="shape">
+					<title>Digital value.57</title>
+					<path d="M0 179.35 L62.46 179.35 L62.46 156.68 L142.78 156.68" class="st11"/>
+				</g>
+				<g id="shape329-41" v:mID="329" v:groupContext="shape" transform="translate(249.449,0) scale(-1,1)">
+					<title>Digital value.322</title>
+					<path d="M0 179.35 L46.67 179.35 L46.67 156.68 L106.67 156.68" class="st11"/>
+				</g>
+			</g>
+			<g id="shape336-44" v:mID="336" v:groupContext="shape">
+				<title>Digital value.57</title>
+				<path d="M0 179.35 L53.33 179.35 L121.89 179.35" class="st11"/>
+			</g>
+			<g id="shape341-47" v:mID="341" v:groupContext="shape" transform="translate(317.48,-5.68434E-014)">
+				<title>Digital value.341</title>
+				<path d="M0 179.35 L22.32 179.35 L51.02 179.35" class="st11"/>
+			</g>
+		</g>
+		<g id="group384-50" transform="translate(39.7243,-31.5276)" v:mID="384" v:groupContext="group">
+			<title>Tabelle.384</title>
+			<g id="group326-51" transform="translate(28.3465,0)" v:mID="326" v:groupContext="group">
+				<title>Tabelle.326</title>
+				<g id="shape321-52" v:mID="321" v:groupContext="shape">
+					<title>Digital value.57</title>
+					<path d="M0 179.35 L62.46 179.35 L62.46 156.68 L142.78 156.68" class="st11"/>
+				</g>
+				<g id="shape322-55" v:mID="322" v:groupContext="shape" transform="translate(249.449,0) scale(-1,1)">
+					<title>Digital value.322</title>
+					<path d="M0 179.35 L46.67 179.35 L46.67 156.68 L106.67 156.68" class="st11"/>
+				</g>
+			</g>
+			<g id="shape339-58" v:mID="339" v:groupContext="shape" transform="translate(246.614,0)">
+				<title>Digital value.338</title>
+				<path d="M0 179.35 L53.33 179.35 L121.89 179.35" class="st11"/>
+			</g>
+			<g id="shape342-61" v:mID="342" v:groupContext="shape">
+				<title>Digital value.342</title>
+				<path d="M0 179.35 L25.18 179.35 L57.54 179.35" class="st11"/>
+			</g>
+		</g>
+		<g id="shape385-64" v:mID="385" v:groupContext="shape" v:layerMember="0" transform="translate(205.61,-69.7953)">
+			<title>Dynamischer Verbinder.385</title>
+			<desc>Total recording time</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="68.5984" cy="172.268" width="102.64" height="29.6036"/>
+			<path d="M6.12 172.27 L6.48 172.27 L130.72 172.27" class="st8"/>
+			<text x="22.87" y="169.57" class="st10" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Total recording time<v:newlineChar/></text>		</g>
+		<g id="shape386-72" v:mID="386" v:groupContext="shape" v:layerMember="0" transform="translate(132.264,-30.1103)">
+			<title>Dynamischer Verbinder.386</title>
+			<desc>Total recording time</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="68.5984" cy="172.268" width="127.95" height="29.6036"/>
+			<path d="M6.12 172.27 L6.48 172.27 L130.72 172.27" class="st8"/>
+			<text x="35.52" y="169.57" class="st10" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Total recording time<v:newlineChar/></text>		</g>
+		<g id="group390-80" transform="translate(39.7243,-110.898)" v:mID="390" v:groupContext="group">
+			<title>Tabelle.390</title>
+			<g id="shape331-81" v:mID="331" v:groupContext="shape" transform="translate(62.3622,-2.84217E-014)">
+				<title>Digital value.331</title>
+				<path d="M0 179.35 L62.46 179.35 L62.46 156.68 L142.78 156.68" class="st11"/>
+			</g>
+			<g id="shape332-84" v:mID="332" v:groupContext="shape" transform="translate(311.811,0) scale(-1,1)">
+				<title>Digital value.322</title>
+				<path d="M0 179.35 L46.67 179.35 L46.67 156.68 L106.67 156.68" class="st11"/>
+			</g>
+			<g id="shape337-87" v:mID="337" v:groupContext="shape">
+				<title>Digital value.337</title>
+				<path d="M0 179.35 L53.33 179.35 L121.89 179.35" class="st11"/>
+			</g>
+			<g id="shape340-90" v:mID="340" v:groupContext="shape" transform="translate(300.472,-2.84217E-014)">
+				<title>Digital value.340</title>
+				<path d="M0 179.35 L29.76 179.35 L68.03 179.35" class="st11"/>
+			</g>
+		</g>
+		<g id="shape391-93" v:mID="391" v:groupContext="shape" v:layerMember="0" transform="translate(131.968,-18.4492)">
+			<title>Dynamischer Verbinder.391</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M6.12 172.27 L6.48 172.27 L30.17 172.27" class="st12"/>
+		</g>
+		<g id="shape392-101" v:mID="392" v:groupContext="shape" v:layerMember="0" transform="translate(203.189,-75.4646)">
+			<title>Dynamischer Verbinder.392</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M-6.12 172.27 L-6.48 172.27 L-36.36 172.27" class="st12"/>
+		</g>
+		<g id="shape393-108" v:mID="393" v:groupContext="shape" transform="translate(35.7558,-90.9905)">
+			<title>Tabelle.393</title>
+			<desc>Positive trigger offset time</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="66.3307" cy="173.354" width="132.67" height="12"/>
+			<rect x="0" y="167.354" width="132.661" height="12" class="st3"/>
+			<text x="6.31" y="176.05" class="st10" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Positive trigger offset time</text>		</g>
+		<g id="shape398-111" v:mID="398" v:groupContext="shape" transform="translate(0.36,-8.38617)">
+			<title>Tabelle.398</title>
+			<desc>Negative trigger offset time</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)"/>
+			<v:textRect cx="74.8346" cy="173.354" width="149.67" height="12"/>
+			<rect x="0" y="167.354" width="149.669" height="12" class="st3"/>
+			<text x="12.29" y="176.05" class="st10" v:langID="3079"><v:paragraph v:horizAlign="1"/><v:tabList/>Negative trigger offset time</text>		</g>
+		<g id="group407-114" transform="translate(12.6609,-1.71339)" v:mID="407" v:groupContext="group">
+			<title>Tabelle.407</title>
+			<g id="shape399-115" v:mID="399" v:groupContext="shape" v:layerMember="0">
+				<title>Dynamischer Verbinder.399</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<path d="M0 172.27 L126.81 172.27" class="st13"/>
+			</g>
+			<g id="shape400-118" v:mID="400" v:groupContext="shape" v:layerMember="0" transform="translate(126.85,-7.1129)">
+				<title>Dynamischer Verbinder.400</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<path d="M0 179.35 L16.71 162.64" class="st13"/>
+			</g>
+		</g>
+		<g id="group408-121" transform="translate(41.587,-79.8684)" v:mID="408" v:groupContext="group">
+			<title>Tabelle.408</title>
+			<g id="shape405-122" v:mID="405" v:groupContext="shape" v:layerMember="0" transform="translate(138.199,0)">
+				<title>Dynamischer Verbinder.405</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<path d="M-2.68 176.67 L-11.49 167.86" class="st13"/>
+			</g>
+			<g id="shape406-125" v:mID="406" v:groupContext="shape" v:layerMember="0" transform="translate(4.79616E-014,-4.36333)">
+				<title>Dynamischer Verbinder.406</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<path d="M0 172.27 L126.81 172.27" class="st13"/>
+			</g>
+		</g>
+	</g>
+</svg>

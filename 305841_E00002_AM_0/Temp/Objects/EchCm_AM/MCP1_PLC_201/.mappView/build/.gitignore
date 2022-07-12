@@ -1,0 +1,5 @@
+﻿# Ignore all files in the sub-folder
+\.grunt
+\reports
+\node_modules
+\temp

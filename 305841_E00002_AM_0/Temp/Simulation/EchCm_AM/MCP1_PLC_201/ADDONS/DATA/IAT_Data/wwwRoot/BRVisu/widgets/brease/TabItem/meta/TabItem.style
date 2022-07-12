@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.TabItem" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties>
+    <StyleProperty name="width" type="Size" not_styleable="true" default="100">
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="Size" not_styleable="true" default="30">
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="top" type="Integer" not_styleable="true" hide="true">
+    </StyleProperty>
+    <StyleProperty name="left" type="Integer" not_styleable="true" category="Layout">
+      <Description>Applies an offset to the TabItem relative to its "nominal" position. For instance, if a space of 10px is desired between each 
+      TabItem within a TabControl, the following should be configured: First TabItem: left="0px" / Second TabItem: left="10px" / Third TabItem: left="20px" / ...</Description>
+    </StyleProperty>
+    <StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp; > img" attribute="@include imageWidth($value)"></StyleElement>
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp; > svg" attribute="@include imageWidth($value)"></StyleElement>
+      <Description>width of the image</Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp; > img" attribute="@include imageHeight($value)"></StyleElement>
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp; > svg" attribute="@include imageHeight($value)"></StyleElement>
+      <Description>height of the image</Description>
+    </StyleProperty>
+
+    <StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;:not(.active):not(.disabled) > svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+
+    <StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.active > svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    
+		<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-style"></StyleElement>
+      <Description>
+        Sets the border style of the tab. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the tab. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="5px 5px 0px 0px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the tab rounded corners. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Sets the background color of the tab as gradient. For further information, please see CSS Gradients
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active) span"  attribute="color"></StyleElement>
+      <Description>
+        Sets the color of the text displayed on the tab
+      </Description>
+		</StyleProperty>
+    <!--<StyleProperty name="textShadow" category="Appearance" type="Shadow" default="none" >
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem:not(.active) span"  attribute="text-shadow"></StyleElement>
+      <Description>
+        Sets the shadow of the text displayed on the tab
+      </Description>
+    </StyleProperty>-->
+		<StyleProperty name="activeBorderStyle" type="BorderStyle" category="Appearance" default="solid" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-style"></StyleElement>
+      <Description>
+        Sets the border style of the tab when it is selected. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeBorderWidth" category="Appearance" type="PixelValCollection" default="4px 2px 0px 2px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the tab when it is selected. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeCornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of rounded corners of the tab when selected. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01 #5B7C70 #5B7C70 #5B7C70" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the tab when it is selected
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#FFFFFF" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the tab when selected
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Sets the background color of the selected tab as gradients. For further information, please see CSS Gradients
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#000000">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active span"  attribute="color"></StyleElement>
+      <Description>
+        Sets the text color of the tab when selected
+      </Description>
+		</StyleProperty>
+    <!--<StyleProperty name="activeTextShadow" category="Appearance" type="Shadow" default="none">
+      <StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem.active span"  attribute="text-shadow"></StyleElement>
+      <Description>
+        Sets the text shadow of the tab when selected
+      </Description>
+    </StyleProperty>-->  
+		<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" >
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>
+        Sets the text alignment of the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="opacity"></StyleElement>
+      <Description>
+        Sets the opacity of the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="font-size"></StyleElement>
+      <Description>
+        Sets the font size of the text displayed on the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="font-family"></StyleElement>
+      <Description>
+        Sets the font name of the text displayed on the tab
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="bold" category="Font" type="Boolean" default="true">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>
+        If **true**, it sets the font style of the text displayed on the tab to bold
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem span" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>
+        If **true**, it sets the font style of the text displayed on the tab to italic
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="margin"></StyleElement>
+      <Description>
+        Sets a space around the tab. For further information, please see its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="padding" category="Layout" type="Padding" default="0px 10px">
+			<StyleElement idsuffix="_breaseTabItemTab" selector="&amp;.tabItem" attribute="padding"></StyleElement>
+      <Description>
+        Sets a space around the text displayed on the tab. For further information, please see its type
+      </Description>
+		</StyleProperty>
+	</StyleProperties>
+</StyleInformation>

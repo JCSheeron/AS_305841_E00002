@@ -1,0 +1,52 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-color: #555555;
+$active-border-color: $active-color;
+$disabled-border-color: #C8C8C8;
+$default-bg-color: #F7F7FF;
+$active-bg-color: #F7F7FF;
+$disabled-bg-color: #F1F1F1;
+
+$text-color: #333;
+$disabled-text-color: #C8C8C8;
+
+.breaseDateTimeInput {
+    white-space: pre;
+    @include box-sizing(border-box);
+    padding: 0 15px 0 15px;
+    overflow:hidden;
+    vertical-align: middle;
+    width: 120px;
+    height: 40px;
+    @include displayFlexBox(true);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+    background: $default-bg-color;
+    border-top: 2px solid $default-border-color;
+    border-right: 6px solid $default-border-color;
+    border-bottom: 2px solid $default-border-color;
+    border-left: 2px solid $default-border-color;
+
+    &:focus, &.active {
+        outline: none;
+        background: $active-bg-color;
+        border-top: 2px solid $active-border-color;
+        border-right: 6px solid $active-border-color;
+        border-bottom: 2px solid $active-border-color;
+        border-left: 2px solid $active-border-color;
+    }
+
+    &.disabled, &[disabled] {
+        background: $disabled-bg-color;
+        border-top: 2px solid $disabled-border-color;
+        border-right: 6px solid $disabled-border-color;
+        border-bottom: 2px solid $disabled-border-color;
+        border-left: 2px solid $disabled-border-color;
+
+        input {
+            color: $disabled-text-color;
+        }
+    }
+}

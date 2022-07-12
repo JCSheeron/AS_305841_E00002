@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="mappMotion" PackageType="mappMotion" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">mappConfig.mappmotioncfg</Object>
+    <Object Type="File">axCfgSpin.axis</Object>
+    <Object Type="File">axCfgZ.axis</Object>
+    <Object Type="Package">Eccentrics</Object>
+    <Object Type="Package">Handwheel</Object>
+    <Object Type="File">axCfgCfPmp.axis</Object>
+  </Objects>
+</Package>

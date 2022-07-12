@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDefinition xmlns="http://www.br-automation.com/iat2014/session/runtime/v1">
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.slotId" xsi:type="ANY_INT" value="0" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.isValid" xsi:type="BOOL" value="false" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.userId" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.ipAddress" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.activityCount" xsi:type="ANY_INT" value="0" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.languageId" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.measurementSystemId" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.connectionDateTime" xsi:type="DATE_AND_TIME" value="1970-01-01T00:00:00Z" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.screenResolution" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.browserResolution" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.userAgent" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.languages" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.cookieEnabled" xsi:type="BOOL" value="false" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.currentPageId" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.isMultiTouch" xsi:type="BOOL" value="false" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.operatingSystem" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.browser" xsi:type="ANY_STRING" value="" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Session>
+    <Variable name="::SYSTEM:clientInfo.passwordExpirationTime" xsi:type="ANY_INT" value="-1" readonly="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Session>
+  <Server>
+    <Variable name="::SYSTEM:server.maxClients" xsi:type="ANY_INT" value="10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+  </Server>
+</VariableDefinition>

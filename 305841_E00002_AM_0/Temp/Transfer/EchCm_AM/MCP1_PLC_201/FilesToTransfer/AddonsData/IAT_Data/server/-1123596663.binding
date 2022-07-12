@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingDefinition xmlns="http://www.br-automation.com/iat2014/binding/runtime/v1">
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Connect_SD_SafeDomainID" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_NumericOutputSDIDHeader" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BlinkRectanglePuls" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_RectangleAttentionMsgYellow" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SfMP148_snippetLabel_SnippetAttentionMsgHeader" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_attentionMSGText" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Connect_SD_HWName" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_txtHWName" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SfMP148_snippetLabel_SnippetSafeOSState" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_connectSD_OS_StatusText" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="twoWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_isLoggedIn" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_btnLoginHeader" attribute="enable" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_BlinkRectanglePuls" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_attentionMSGText" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="&quot;urn:B&amp;R/Diagnosis/mappCockpit&quot;|String|SfDomVis.OPC_Show_LabelConnectSafeDomainIDHeader" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_NumericOutputSDIDHeader" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowLoggedInAsLabel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_LabelLoggedin" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowLoggedInAsLabel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_LoginInfoUser" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowLoggedInAsLabel" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_btnLogout" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_ShowBtnLogin" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_btnLoginHeader" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="twoWay">
+			<Source xsi:type="variable" refId="SfMP182_sessionvar_EnableInfoTxtHeader" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_btnInfoTransfer" attribute="visible" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+  <Content id="SfMP171_ContentHeaderLand">
+    <Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SfMP148_snippetLabel_SnippetInfoTextHeader" attribute="value" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+			<Target xsi:type="brease" refId="SfMP171_ContentHeaderLand_SfMP171_btnInfoTransfer" attribute="text" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+		</Binding>
+  </Content>
+</BindingDefinition>

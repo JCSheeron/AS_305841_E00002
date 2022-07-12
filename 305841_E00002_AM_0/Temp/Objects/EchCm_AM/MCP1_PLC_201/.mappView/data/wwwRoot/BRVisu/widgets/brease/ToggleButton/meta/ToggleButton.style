@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.ToggleButton" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties>
+
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color of the widget
+			</Description>
+		</StyleProperty>
+
+    <StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+      <StyleElement selector="&amp;.disabled:not(.checked)" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color when disabled
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#DBDBDB" >
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="background-color"></StyleElement>
+      <Description>
+        back color when the widget is pressed
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB" >
+      <StyleElement selector="&amp;.checked:not(.active):not(.disabled)" attribute="background-color"></StyleElement>
+      <Description>
+        back color when the widget is checked
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked:not(.disabled):not(.active) span" attribute="color"></StyleElement>
+      <Description>
+        text color when the widget is checked
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="checkedImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked:not(.disabled):not(.active) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+
+		<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898" >
+			<StyleElement selector="&amp;.disabled:not(.checked) span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.disabled:not(.checked).active span" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the text when disabled
+			</Description>
+		</StyleProperty>
+    
+    <StyleProperty name="disabledCheckedTextColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.disabled.checked:not(.active) span" attribute="color"></StyleElement>
+      <Description>
+        text color when the widget is checked and disabled
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledCheckedImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.disabled.checked:not(.active) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70" >
+      <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the widget. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF">
+      <StyleElement selector="&amp;.disabled:not(.active):not(.checked)" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the color of the border when disabled
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-color"></StyleElement>
+			<Description>
+				border color when the widget is pressed
+			</Description>
+		</StyleProperty>
+
+    <StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" >
+      <StyleElement selector="&amp;.checked:not(.active):not(.disabled)" attribute="border-color"></StyleElement>
+      <Description>
+        border color when the widget is checked
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="mouseDownShadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="&amp;.checked" attribute="@include box-shadow($value)"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"></StyleElement>
+      <Description>
+        Shadow of the Widget when the widget clicked
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledCheckedBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+      <StyleElement selector="&amp;.disabled.checked" attribute="background-color"></StyleElement>
+      <Description>
+        back color when the widget is checked and disabled
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledCheckedBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" >
+      <StyleElement selector="&amp;.disabled.checked" attribute="border-color"></StyleElement>
+      <Description>
+        border color when the widget is checked and disabled
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="checkedBackGroundGradient" category="Appearance" type="Gradient" default="" >
+      <StyleElement selector="&amp;.checked:not(.disabled):not(.active)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="disabledCheckedBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>
+
+  </StyleProperties>
+</StyleInformation>

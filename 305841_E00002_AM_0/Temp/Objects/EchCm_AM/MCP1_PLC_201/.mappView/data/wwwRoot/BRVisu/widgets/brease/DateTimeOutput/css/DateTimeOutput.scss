@@ -1,0 +1,15 @@
+@import '../../../../css/libs/mixins.scss';
+
+.breaseDateTimeOutput {
+    white-space: pre;
+    @include box-sizing(border-box);
+    padding: 0 15px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 120px;
+    @include displayFlexBox(true);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+
+}

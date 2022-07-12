@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BuildReasons>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\iat_media.job._markerfile">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\iat_media.job" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\mappsafety.json._markerfile">
+    <BuildReason>Prerequiste "c:\users\winvmuser1\appdata\local\temp\msafetyvisu\configurationview\sdmp11_vil.vis" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\server\mappsafety.vis">
+    <BuildReason>Prerequiste "c:\users\winvmuser1\appdata\local\temp\msafetyvisu\configurationview\sdmp11_vil.vis" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\brvisu\css\themes\grunt.themescsso._markerfile">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\brvisu\release\gatheme1.min.css" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\procinputs.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\logical\plclogic\procinputs\action.st" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\mappsafety.json">
+    <BuildReason>Prerequiste "c:\users\winvmuser1\appdata\local\temp\msafetyvisu\configurationview\sdmp11_vil.vis" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\_bur_pvdef.st.o">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\procinputs.st.o" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\a.out">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\procinputs.st.o" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\procinputs.ox">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\a.out" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs.br">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs\procinputs.ox" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\grunt.breasecsso._markerfile">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\.mappview\data\wwwroot\brvisu\css\themes\grunt.themescsso._markerfile" differs.
+</BuildReason>
+  </Rule>
+  <Rule ID=".mappView_Build">
+    <BuildReason>Rule contains a phony target. </BuildReason>
+  </Rule>
+  <Rule ID=".mappView_IntegrationBuild">
+    <BuildReason>Rule contains a phony target. </BuildReason>
+  </Rule>
+  <Rule ID="#cpu_tp.mak">
+    <BuildReason>Rule is forced.</BuildReason>
+  </Rule>
+  <Rule ID="$(AS_PROJECT_PATH)\binaries\echcm_am\mcp1_plc_201\transfer.lst">
+    <BuildReason>Prerequiste "$(AS_PROJECT_PATH)\temp\objects\echcm_am\mcp1_plc_201\procinputs.br" differs.
+</BuildReason>
+  </Rule>
+</BuildReasons>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mappings>
+  <Mapping expressionRefId="bResultXOR1OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultOR1OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultOR2OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultORXOR1OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultG1OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultG2OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultK1OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultK2OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultK3OB" contentRefId="OB1content"/>
+  <Mapping expressionRefId="bResultK4OB" contentRefId="OB1content"/>
+  <!-- -->
+  <Mapping expressionRefId="bResultAND1OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultANDNOT1OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultNOT1OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultKG1OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultKG2OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultBF1OB" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultG1OBF" contentRefId="OB2content"/>
+  <Mapping expressionRefId="bResultG2OBF" contentRefId="OB2content"/>
+  <!-- BB2content not necessary, as we have "brease" binding which defines the scope -->
+</Mappings>

@@ -1,0 +1,8 @@
+VAR
+	gAxCfPmp : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\axCfgCfPmp.axis" #2"1" #3"1"*)
+	gAxInE : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\axCfgInE.axis" #2"1" #3"1"*)
+	gAxOutE : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\axCfgOutE.axis" #2"1" #3"1"*)
+	gAxSpin : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\axCfgSpin.axis" #2"1" #3"1"*)
+	gAxZ : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\axCfgZ.axis" #2"1" #3"1"*)
+	gvAxHw : {REDUND_UNREPLICABLE} McAxisType; (*#1"C:\engineering\echCorrugationMachine\305841_E00002_AM_Rev0\Physical\EchCm_P3\MCP1_PLC_201\mappMotion\Handwheel\vAxHw.axis" #2"1" #3"1"*)
+END_VAR

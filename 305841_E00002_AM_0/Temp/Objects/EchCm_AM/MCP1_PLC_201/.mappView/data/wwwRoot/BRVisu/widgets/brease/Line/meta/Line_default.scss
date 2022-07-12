@@ -1,0 +1,21 @@
+@import "mixins.scss";
+@mixin widgets_brease_Line_base {
+line {
+	stroke: #000000;
+}
+line {
+	stroke-width: 1px;
+}
+line {
+	stroke-linecap: butt;
+}
+line {
+	opacity: 1;
+}
+	margin: 0px;
+
+}
+
+.widgets_brease_Line_style_default {
+@include widgets_brease_Line_base 
+}

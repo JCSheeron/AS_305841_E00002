@@ -1,0 +1,151 @@
+.TopBar {
+    overflow: hidden;
+    background-color: var(--main-black);
+    margin-left: 0px;
+    height: 50px;
+    border-bottom: 3px solid #808080;
+}
+
+.TopBar li:hover{
+    cursor: pointer;
+}
+
+.tabWidgetButton {
+    background-color: inherit;
+	color: #808080;
+	float: left;
+    border-left: 0px solid #808080;
+    border-right: 0px solid #808080;
+    border-top: none;
+    border-bottom: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 17px;
+}
+
+.TopBarFlexTab{
+    border-right: 3px grey solid;
+}
+
+.topBarNavigationElement{
+    float: left;
+}
+
+
+.tabWidgetButton.topBarNavigationElement {
+    font-family: var(--main-font);
+    font-size: 12px;
+    border: 1px gray solid;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding:0px;
+    height:32px;
+    line-height: 32px;
+    color:  var(--main-white);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.topBarTab{
+    flex: 1 1 0;
+    max-width: 148px;
+}
+
+.TabBarTagDropdown{
+    background-color: inherit;
+    color: white;
+    border: 0px;
+}
+
+
+/* Change background color of buttons on hover */
+.tabWidgetButton:hover {
+    color: white;
+}
+
+/* Create an active/current tablink class */
+.TopBarTab.active {
+    color: white;
+    background-color:var(--navigation-highlight-color);
+    
+}
+.TopBarTab.active img {
+    -webkit-filter: contrast(1);
+    filter: contrast(1);
+    background-color: var(--navigation-highlight-color);
+}
+
+.TopBarTab:hover {
+    cursor : pointer;
+}
+.TopBarContent {
+    display: none;
+    position: relative;
+}
+
+.topBarFlexibleTabContainer{
+    float:left;
+    width: var(--tabWidgetFlexTabAreaWidth);
+    margin-left: -48px;
+    padding-left: 48px;
+}
+
+.topBarFlexibleTabContainer_flexBox{
+    width: calc(100% - 48px);
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.topBarTabContainerRight{
+    position: absolute;
+    right: 2px;
+    margin-right: 52px;
+    filter: none !important;
+    -webkit-filter: none !important;
+    float:right;
+    color:white;
+    font-size: 17px;
+    border-left: 3px solid #808080;
+    width: var(--tabWidgetRightTabAreaWidth)
+}
+
+.topBarTabContainerRight div div img{
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.topBarTabContainerLeft{
+    position: relative; 
+    z-index: 5;
+    float:left;
+    color:white;
+    font-size: 17px;
+    border-right: 3px solid #808080;
+    width: calc(var(--navigation-bar-width) + 3px);
+    
+}
+
+.topBarTabContainerLeft div div img{
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.icon48 img{
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    -webkit-filter: contrast(0);
+    filter: contrast(0);
+}
+
+.icon36 img{
+    width: 36px;
+    height: 48px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 1px;
+    -webkit-filter: contrast(0);
+    filter: contrast(0);
+}

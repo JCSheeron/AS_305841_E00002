@@ -1,0 +1,182 @@
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+  height: 30px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+  top: 300px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+  left: 138px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+  width: 180px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_btnAcknCommOK {
+  z-index: 0;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+  top: 20px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+  left: 8px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+  width: 435px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+  height: 200px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm {
+  z-index: 1;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm.breaseTable .horizontalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+  padding: 10px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_tableShowSafeComm.breaseTable .verticalOrientation .dataTables_scrollBody .tableCells tbody tr td:not(.override) {
+  padding: 10px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_TableItemSafeOPProject {
+  z-index: 0;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_TableItemCRC {
+  z-index: 1;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_TableItemTimeStamp {
+  z-index: 2;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_TableItemUser {
+  z-index: 3;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_OPAckDialog {
+  z-index: 2;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  top: 250px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  left: 10px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  width: 140px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  height: 45px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  z-index: 3;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  border-width: 1px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse:before {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse:after {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  font-size: 12px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_labelHOptionNotInUse {
+  font-weight: bold;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  top: 250px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  left: 150px;
+  position: absolute;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  width: 290px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  height: 45px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  z-index: 4;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  border-width: 1px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse:before {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse:after {
+  border-style: solid;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse span {
+  color: #404040;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  justify-content: flex-start;
+  text-align: left;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  font-size: 10px;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse {
+  font-weight: bold;
+}
+
+#SfMP171_contentAckSafeOP_SfMP171_txtOptionNotInUse span {
+  padding: 4px 10px 4px 5px;
+}

@@ -1,0 +1,9 @@
+{
+  global:
+    USINT2_TO_UINT;
+    USINT4_TO_UDINT;
+    UINT_TO_2USINT;
+    AxisIndex_To_ColPairIndex;
+  local:
+    *;
+ };

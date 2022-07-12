@@ -1,0 +1,20 @@
+/* definition of the header content of a widgets */
+.widgetHeader {
+    padding-top: 5px;
+    text-align: center;
+    background-color: var(--main-grey-dark2); 
+    font-size: 16px !important;
+    font-family: var(--main-font);
+    font-weight: Normal;
+    color: white;
+    white-space: nowrap;
+}
+
+/* definition of the footer content of a widgets */
+.widgetFooter {
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 12px !important;
+    font-family: var(--main-font);
+    font-weight: Normal; 
+}

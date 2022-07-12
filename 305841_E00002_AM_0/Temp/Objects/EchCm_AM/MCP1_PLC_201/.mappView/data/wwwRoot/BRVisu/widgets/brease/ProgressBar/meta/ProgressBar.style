@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.ProgressBar" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  >
+	<PropertyGroups>
+		<PropertyGroup name="Bar" type="String" category="Appearance">
+			<Description>Styling of the bar element of the ProgressBar widget.</Description>
+		</PropertyGroup>
+
+		<PropertyGroup name="OuterArea" type="String" category="Appearance">
+			<Description>Styling of the outer border element of the ProgressBar widget.</Description>
+		</PropertyGroup>
+
+		<PropertyGroup name="Label" type="String" category="Appearance">
+			<Description>Properties of the value label.</Description>
+		</PropertyGroup>	
+	</PropertyGroups>
+
+	<StyleProperties>
+    	<!-- GLOBAL WIDGET STYLEABLE PROPERTIES -->
+		<StyleProperty name="width" type="Size" not_styleable="true" default="400" category="Layout">
+		<StyleElement attribute="@include elemWidth($value)"></StyleElement>
+		<Description>Outer width of widget, in pixels</Description>
+		</StyleProperty>
+
+		<StyleProperty name="height" type="Size" not_styleable="true" default="25" category="Layout">
+		<StyleElement attribute="@include elemHeight($value)"></StyleElement>
+		<Description>Outer height of widget, in pixels</Description>
+		</StyleProperty>
+    
+    <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+      <StyleElement attribute="@include elemMinWidth($value)"></StyleElement>
+      <Description>minimum outer width of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+      <StyleElement attribute="@include elemMaxWidth($value)"></StyleElement>
+      <Description>maximum outer width of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+      <StyleElement attribute="@include elemMinHeight($value)"></StyleElement>
+      <Description>minimum outer height of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+      <StyleElement attribute="@include elemMaxHeight($value)"></StyleElement>
+      <Description>maximum outer height of widget</Description>
+    </StyleProperty>
+    
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the widget: 1 - opaque, 0 - fully transparent.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="padding" category="Layout" type="Padding" default="0px">
+			<StyleElement selector=".pb-outer-area" attribute="padding"></StyleElement>
+			<Description>
+				Internal padding for the ProgressBar widget.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Outer margin of the ProgressBar widget.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+			<StyleElement attribute="@include box-shadow($value)"></StyleElement>
+			<Description>
+				Shadow of the widget - see css "box-shadow" for more information.
+			</Description>
+		</StyleProperty>
+
+		<!-- PROPERTIES SPECIFIC TO PROGRESS BAR: Bar Area -->
+		<StyleProperty name="barBorderStyle" type="BorderStyle" category="Appearance" default="none" groupRefId="Bar" groupOrder="1">
+		<StyleElement selector=".pb-bar-container" attribute="border-style"></StyleElement>
+			<Description>
+			Sets the style of the Border of the widget. Check css "border-style" property for more information. 
+		</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barBorderWidth" type="PixelValCollection" category="Appearance" default="1px" groupRefId="Bar" groupOrder="2">
+		<StyleElement selector=".pb-bar-container" attribute="border-width"></StyleElement>
+			<Description>
+			Sets the width of the border. Check css "border-width" property for more information.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barBorderColor" category="Appearance" type="Color" default="#000000" groupRefId="Bar" groupOrder="3">
+			<StyleElement selector=".pb-bar-container" attribute="border-color"></StyleElement>
+			<Description>
+			Sets the border color for the bar. Check css "border-color" property for more information.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barCornerRadius" type="PixelValCollection" category="Appearance" default="20px" groupRefId="Bar" groupOrder="4">
+			<StyleElement selector=".pb-bar-container" attribute="@include border-radius($value)"></StyleElement>
+			<Description>
+			Sets the radius of the widget rounded corners. Check css "border-radius" property for more information.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barBackColor" category="Appearance" type="Color" default="#E0E0E0" groupRefId="Bar" groupOrder="5">
+			<StyleElement selector=".pb-bar-container" attribute="background-color"></StyleElement>
+			<Description>
+			Sets the background color of the bar element of the widget.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barBackGroundGradient" category="Appearance" type="Gradient" default="" groupRefId="Bar" groupOrder="6">
+			<StyleElement selector=".pb-bar-container" attribute="@include backGroundGradient('$value')"></StyleElement>
+			<Description>
+			Defines a gradient for the background of the progress bar.
+			</Description>
+		</StyleProperty>
+
+    <!-- PROPERTIES SPECIFIC TO PROGRESS BAR: Progress Bar -->
+		<StyleProperty name="barColor" category="Appearance" type="Color" default="#FF8800" groupRefId="Bar" groupOrder="7">
+			<StyleElement selector=".pb-progress" attribute="background-color"></StyleElement>
+			<Description>
+        	Sets the fore color of the bar element of the widget.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="barGradient" category="Appearance" type="Gradient" default="" groupRefId="Bar" groupOrder="8">
+			<StyleElement selector=".pb-progress" attribute="@include backGroundGradient('$value')"></StyleElement>
+			<Description>
+			Defines a gradient background for the progress bar portion.
+			</Description>
+		</StyleProperty>
+
+    <!-- PROPERTIES SPECIFIC TO PROGRESS BAR: Outer Area -->
+		<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid" groupRefId="OuterArea" groupOrder="1">
+			<StyleElement selector=".pb-outer-area" attribute="border-style"></StyleElement>
+		  	<Description>
+          	Sets the style of the outer border of the widget. Check css "border-style" property for more information. 
+      	  	</Description>
+		</StyleProperty>
+
+		<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="1px" groupRefId="OuterArea" groupOrder="2">
+		  	<StyleElement selector=".pb-outer-area" attribute="border-width"></StyleElement>
+			<Description>
+        	Sets the width of the outer border of the widget. Check css "border-width" property for more information.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="borderColor" category="Appearance" type="Color" default="#000000" groupRefId="OuterArea" groupOrder="3">
+			<StyleElement selector=".pb-outer-area" attribute="border-color"></StyleElement>
+			<Description>
+        	Sets the border color for the outer area of the widget.
+			</Description>
+		</StyleProperty>		
+
+		<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="4px" groupRefId="OuterArea" groupOrder="4">
+			<StyleElement attribute="@include border-radius($value)"></StyleElement>
+			<StyleElement selector=".pb-outer-area" attribute="@include border-radius($value)"></StyleElement>
+			<Description>
+        	Sets the radius of the widget corners. Check css "border-radius" property for more information.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="transparent" groupRefId="OuterArea" groupOrder="5">
+			<StyleElement selector=".pb-outer-area" attribute="background-color"></StyleElement>
+			<Description>
+        	Sets the background color of the outer widget container.
+			</Description>
+		</StyleProperty>
+
+    <!-- FONT PROPERTIES -->
+		<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+			<StyleElement selector=".pb-label-text" attribute="font-family"></StyleElement>
+			<Description>
+			Font name for the ProgressBar text fields.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+			<StyleElement selector=".pb-label-text" attribute="font-size"></StyleElement>
+			<Description>
+			Font size of the ProgressBar text fields, in pixels.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="fontColor" category="Font" type="Color" default="#000000">
+			<StyleElement selector=".pb-label-text" attribute="color"></StyleElement>
+			<Description>
+        	Sets the color of the text.
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="bold" category="Font" type="Boolean" default="false">
+			<StyleElement selector=".pb-label-text" attribute="@include font-weight-bold($value)"></StyleElement>
+			<Description>
+        	If TRUE, font style is configured as bold.
+			</Description>
+		</StyleProperty>    
+
+	</StyleProperties>
+</StyleInformation>
+	
+	
+

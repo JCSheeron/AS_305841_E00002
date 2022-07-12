@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.Image" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+									>
+	<StyleProperties >
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" default="150">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="100">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+    <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+      <StyleElement attribute="@include elemMinWidth($value)"></StyleElement>
+      <Description>minimum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+      <StyleElement attribute="@include elemMaxWidth($value)"></StyleElement>
+      <Description>maximum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+      <StyleElement attribute="@include elemMinHeight($value)"></StyleElement>
+      <Description>minimum outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+      <StyleElement attribute="@include elemMaxHeight($value)"></StyleElement>
+      <Description>maximum outer height of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="transparent" >
+      <StyleElement attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="none">
+			<StyleElement attribute="border-style"></StyleElement>
+			<Description>
+				Style of the Border of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+			<StyleElement attribute="border-width"></StyleElement>
+			<Description>
+        Sets the border width of the image. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333" >
+			<StyleElement attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color of the image. For further information, please check its type
+      </Description>
+		</StyleProperty>
+    <StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+      <StyleElement attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the widget rounded corners. For further information, please check its type
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+			<StyleElement attribute="@include rotate($value)"></StyleElement>
+			<Description>
+				Rotation of widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Margin of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+			<StyleElement attribute="@include box-shadow($value)"></StyleElement>
+			<Description>
+				Shadow of the Widget
+			</Description>
+		</StyleProperty>
+    <StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp; > .ImageView > svg" attribute="fill"></StyleElement>
+      <Description>Color of the image - only apply if a SVG image is used</Description>
+    </StyleProperty>
+  </StyleProperties>
+</StyleInformation>
+	
+	
+

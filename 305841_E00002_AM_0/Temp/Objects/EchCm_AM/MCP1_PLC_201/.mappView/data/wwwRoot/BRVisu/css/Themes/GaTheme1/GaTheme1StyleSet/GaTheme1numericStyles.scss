@@ -1,0 +1,337 @@
+﻿@import "mixins.scss";
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_Input {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) input {
+	color: #555555;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_InputLarge {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+input {
+	font-size: 32px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) input {
+	color: #555555;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_InputCommand {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #5196AF;
+}
+&.active:not(.disabled) {
+	border-color: #5196AF;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.active:not(.disabled) {
+	background-color: #EBEBEB;
+}
+&.active:not(.disabled) input {
+	color: #555555;
+}
+&.active:not(.disabled) span.breaseNumericInput_unit {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(81, 150, 175, 0.75));
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_Output {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #474747;
+}
+span.breaseNumericOutput_unit {
+	color: #474747;
+}
+	border-width: 1px;
+	border-color: #999999;
+input {
+	font-size: 20px;
+}
+@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+input {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_OutputLarge {
+@include widgets_brease_NumericOutput_base; 
+	border-width: 1px;
+	border-color: #999999;
+input {
+	color: #474747;
+}
+span.breaseNumericOutput_unit {
+	color: #474747;
+}
+input {
+	font-size: 32px;
+}
+@include backGroundGradient('linear-gradient(to bottom, rgba(235,235,235,0.5) 0%, rgba(235,235,235,0.5) 100%)');
+input {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_Overview {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #474747;
+}
+span.breaseNumericOutput_unit {
+	color: #474747;
+}
+	border-width: 0px;
+input {
+	font-size: 72px;
+}
+input {
+@include font-weight-bold(true);
+}
+	background-color: transparent;
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_Input {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&:not(.disabled).active {
+	border-color: #FF8800;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_InputLarge {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #FF8800;
+}
+&:not(.disabled).active {
+	border-color: #FF8800;
+}
+input {
+	font-size: 32px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(255, 113, 0, 0.75));
+
+}
+@import "../../../../widgets/brease/Password/meta/Password_base";
+.widgets_brease_Password_style_InputCommand {
+@include widgets_brease_Password_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 2px 1px 1px;
+}
+&:not(.disabled):not(.active) {
+	border-color: #5196AF;
+}
+&:not(.disabled).active {
+	border-color: #5196AF;
+}
+input {
+	font-size: 20px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&:not(.disabled).active {
+	background-color: #EBEBEB;
+}
+&:not(.disabled).active input {
+	color: #555555;
+}
+input {
+@include font-weight-bold(true);
+}
+@include box-shadow(4px 1px 3px 0px rgba(81, 150, 175, 0.75));
+
+}
+@import "../../../../widgets/brease/NumericOutput/meta/NumericOutput_base";
+.widgets_brease_NumericOutput_style_FavoriteWatch {
+@include widgets_brease_NumericOutput_base; 
+input {
+	color: #FFFFFF;
+}
+span.breaseNumericOutput_unit {
+	color: #FFFFFF;
+}
+	border-width: 0px;
+input {
+	font-size: 16px;
+}
+	background-color: transparent;
+input {
+@include font-weight-bold(true);
+}
+
+}
+@import "../../../../widgets/brease/NumericInput/meta/NumericInput_base";
+.widgets_brease_NumericInput_style_FavoriteWatch {
+@include widgets_brease_NumericInput_base; 
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
+	color: #000000;
+}
+&:not(.active):not(.disabled) {
+	border-width: 1px;
+}
+@include border-radius(5px);
+input {
+	font-size: 16px;
+}
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+input {
+@include font-weight-bold(true);
+}
+
+}

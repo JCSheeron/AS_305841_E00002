@@ -1,0 +1,8 @@
+@import "mixins.scss";
+@mixin brease_core_BaseWidget_base {
+
+}
+
+.brease_core_BaseWidget_style_default {
+@include brease_core_BaseWidget_base 
+}

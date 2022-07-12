@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+
+   <defs>
+      <clipPath id="cut-off-arrow">
+         <rect x="0" y="0" width="32" height="14"/>
+         <rect x="0" y="22" width="32" height="13"/>
+         <rect x="16" y="0" width="16" height="32"/>
+      </clipPath>
+   </defs>
+
+   <g clip-path="url(#cut-off-arrow)">
+      <title>Layer File</title>
+      <path d="M7 3 L20 3 L25 8 L25 29 L7 29 Z" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" fill="none" />
+
+      <path d="M20 3 L20 8 L25 8" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" fill="none" />
+   </g>
+   <g>
+      <title>Layer Arrow</title>
+      <polygon stroke="#FFFFFF" stroke-width="3" points="3,18 16,18 11,15 11,21 16,18 " fill="#FFFFFF" id="arrow" stroke-linejoin="round"/>
+   </g>
+</svg>

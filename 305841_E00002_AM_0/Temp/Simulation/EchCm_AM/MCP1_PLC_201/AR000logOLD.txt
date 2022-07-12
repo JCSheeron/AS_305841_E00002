@@ -1,0 +1,21 @@
+Tue Jun 21 16:43:42 2022
+COPYRIGHT (C) B&R Industrial Automation GmbH
+
+Tue Jun 21 16:43:42 2022
+No ARsim registration found!
+
+Tue Jun 21 16:43:42 2022
+InstanceName: 00000000bd4d586f
+
+Tue Jun 21 16:43:42 2022
+WorkingDirectory: C:\engineering\echCorrugationMachine\305841_E00002\305841_E00002_AM_0\Temp\Simulation\EchCm_AM\MCP1_PLC_201\
+
+Tue Jun 21 16:43:42 2022
+COMMAND_COLDSTART
+
+Tue Jun 21 16:43:45 2022
+Version: B4.92
+
+Tue Jun 21 19:07:56 2022
+COMMAND_TERMINATE
+

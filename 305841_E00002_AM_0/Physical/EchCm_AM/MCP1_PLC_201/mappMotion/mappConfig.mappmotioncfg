@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="MappMotionConfiguration" Type="mappmotioncfg">
+    <Group ID="Processing">
+      <Property ID="ProcessingTaskClass" Value="2" />
+    </Group>
+  </Element>
+</Configuration>

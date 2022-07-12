@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brease.checkbox" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+	<StyleProperties>
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" default="150">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="30">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+		<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="none">
+			<StyleElement selector="" attribute="border-style"></StyleElement>
+			<Description>
+				Style of the Border of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement selector="" attribute="border-width"></StyleElement>
+			<Description>
+        Sets the width of the border. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement selector="" attribute="@include border-radius($value)"></StyleElement>
+			<Description>
+        Sets the radius of the widget rounded corners. For further information, please check its type
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="transparent" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+			<StyleElement selector="&amp;.disabled" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color when disabled
+      </Description>
+		</StyleProperty>
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;:not(.disabled)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Background as a gradient when checkbox is clicked
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#333" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#CCCCCC" >
+			<StyleElement selector="&amp;.disabled" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the color of the border when disabled
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="textColor" category="Appearance" type="Color" default="#333" >
+			<StyleElement selector="&amp;:not(.disabled) span" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the text when enabled
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898" >
+			<StyleElement selector="&amp;.disabled span" attribute="color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked span" attribute="border-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active span" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the color of the text when disabled
+      </Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FF8800" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"></StyleElement>
+			<Description>
+				border color when checkbox is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="transparent" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="background-color"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color"></StyleElement>
+			<Description>
+				back color when checkbox is clicked
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#333333" >
+			<StyleElement selector="&amp;.active:not(.disabled):not(.editMode) span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.checked:not(.disabled) span" attribute="color"></StyleElement>
+			<Description>
+				text color when checkbox is clicked
+			</Description>
+		</StyleProperty>
+    <StyleProperty name="foreColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector="&amp;:not(.disabled):not(.active) .checkbox" attribute="background-color"></StyleElement>
+      <Description>
+        Color of the BoxArea of the Widget when enabled
+        </Description>
+    </StyleProperty>
+    <StyleProperty name="disabledForeColor" category="Appearance" type="Color" default="#FFF" >
+      <StyleElement selector="&amp;.disabled .checkbox" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.checked .checkbox" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.disabled.active .checkbox" attribute="background-color"></StyleElement>
+      <Description>
+        Color of the BoxArea of the Widget when disabled
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="mouseDownForeColor" category="Appearance" type="Color" default="#FFF">
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode) .checkbox" attribute="background-color"></StyleElement>
+      <StyleElement selector="&amp;.checked:not(.disabled) .checkbox" attribute="background-color"></StyleElement>
+      <Description>
+        Color of the RadioArea of the Widget when mouse down
+      </Description>
+    </StyleProperty>
+		<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="left" >
+			<StyleElement selector="span" attribute="text-align"></StyleElement>
+			<Description>
+				Alignment of the text
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+			<StyleElement attribute="@include rotate($value)"></StyleElement>
+			<Description>
+				Rotation of widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px" >
+			<StyleElement selector="span" attribute="font-size"></StyleElement>
+			<Description>
+				Fontsize of the text in pixel
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontName" type="FontName" category="Font" default="Arial">
+			<StyleElement selector="span" attribute="font-family"></StyleElement>
+			<Description>
+				Fontname of the text
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="bold" category="Font" type="Boolean" default="true">
+			<StyleElement selector="span" attribute="@include font-weight-bold($value)"></StyleElement>
+			<Description>
+				If **true** font style is bold
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+			<StyleElement selector="span" attribute="@include font-style-italic($value)"></StyleElement>
+			<Description>
+				If **true** font style is italic
+			</Description>
+		</StyleProperty>
+    <StyleProperty name="padding" category="Layout" type="Padding" default="0px">
+      <StyleElement attribute="padding"></StyleElement>
+      <Description>
+        Padding of the Widget
+      </Description>
+    </StyleProperty>
+    <StyleProperty name="uncheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;:not(.disabled):not(.checked) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is unchecked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="checkedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked:not(.disabled) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is checked - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledUncheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.disabled:not(.checked) svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is unchecked and disabled - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBoxImageColor" category="Appearance" type="Color" default="#000000" >
+      <StyleElement selector="&amp;.checked.disabled svg" attribute="fill"></StyleElement>
+      <Description>Color of the image box when is checked and disabled - only apply if a SVG image is used</Description>
+    </StyleProperty>
+    
+    
+    <StyleProperty name="mouseDownBoxBorderColor" category="Appearance" type="ColorCollection" default="#F80" >
+      <StyleElement selector="&amp;.active:not(.disabled):not(.editMode) .checkbox" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color
+      </Description>
+    </StyleProperty>
+    
+    <StyleProperty name="checkedBackColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBackColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="checkedBorderColor" not_styleable="true" hide="true" category="Appearance" type="ColorCollection">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBorderColor" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="checkedBackGroundGradient" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedBackGroundGradient" not_styleable="true" hide="true" category="Appearance" type="Color">
+    </StyleProperty>
+    <StyleProperty name="imageWidth" type="ImageSize" hide="true">
+    </StyleProperty>
+    <StyleProperty name="imageHeight" type="ImageSize" hide="true">
+    </StyleProperty>
+    <StyleProperty name="imageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="mouseDownImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="checkedImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="disabledImageColor" type="Color" hide="true">
+    </StyleProperty>
+    <StyleProperty name="disabledCheckedImageColor" type="Color" hide="true">
+    </StyleProperty>
+	</StyleProperties>
+</StyleInformation>

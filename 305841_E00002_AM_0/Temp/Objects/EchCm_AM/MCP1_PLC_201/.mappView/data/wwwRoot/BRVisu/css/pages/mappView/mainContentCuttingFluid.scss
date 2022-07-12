@@ -1,0 +1,421 @@
+﻿@import "mixins.scss";
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+	@include elemTop(55);
+}
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+	@include elemLeft(375);
+}
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+	@include elemWidth(410);
+}
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+	@include elemHeight(485);
+}
+#mainContentCuttingFluid_grpBoxPumpCtrl {
+		z-index: 0;
+}
+#mainContentCuttingFluid_numInRpm {
+	@include elemAutoHeight(30);
+}
+#mainContentCuttingFluid_numInRpm {
+	@include elemTop(53);
+}
+#mainContentCuttingFluid_numInRpm {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_numInRpm {
+	@include elemAutoWidth(145);
+}
+#mainContentCuttingFluid_numInRpm {
+		z-index: 0;
+}
+#mainContentCuttingFluid_lblRpmCmd {
+	@include elemAutoHeight(30);
+}
+#mainContentCuttingFluid_lblRpmCmd {
+	@include elemTop(23);
+}
+#mainContentCuttingFluid_lblRpmCmd {
+	@include elemLeft(40);
+}
+#mainContentCuttingFluid_lblRpmCmd {
+	@include elemAutoWidth(145);
+}
+#mainContentCuttingFluid_lblRpmCmd {
+		z-index: 1;
+}
+#mainContentCuttingFluid_lblRpmCmd {
+	@include text-alignment-all('center');
+}
+#mainContentCuttingFluid_numInPressure {
+	@include elemAutoHeight(30);
+}
+#mainContentCuttingFluid_numInPressure {
+	@include elemTop(53);
+}
+#mainContentCuttingFluid_numInPressure {
+	@include elemLeft(224);
+}
+#mainContentCuttingFluid_numInPressure {
+	@include elemAutoWidth(145);
+}
+#mainContentCuttingFluid_numInPressure {
+		z-index: 2;
+}
+#mainContentCuttingFluid_lblPressureCmd {
+	@include elemAutoHeight(30);
+}
+#mainContentCuttingFluid_lblPressureCmd {
+	@include elemTop(23);
+}
+#mainContentCuttingFluid_lblPressureCmd {
+	@include elemLeft(230);
+}
+#mainContentCuttingFluid_lblPressureCmd {
+	@include elemAutoWidth(135);
+}
+#mainContentCuttingFluid_lblPressureCmd {
+		z-index: 3;
+}
+#mainContentCuttingFluid_lblPressureCmd {
+	@include text-alignment-all('center');
+}
+#mainContentCuttingFluid_pbStart {
+	@include elemTop(253);
+}
+#mainContentCuttingFluid_pbStart {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_pbStart {
+	@include elemAutoWidth(116);
+}
+#mainContentCuttingFluid_pbStart {
+	@include elemAutoHeight(45);
+}
+#mainContentCuttingFluid_pbStart {
+		z-index: 4;
+}
+#mainContentCuttingFluid_pbHalt {
+	@include elemTop(253);
+}
+#mainContentCuttingFluid_pbHalt {
+	@include elemLeft(255);
+}
+#mainContentCuttingFluid_pbHalt {
+	@include elemAutoWidth(115);
+}
+#mainContentCuttingFluid_pbHalt {
+	@include elemAutoHeight(45);
+}
+#mainContentCuttingFluid_pbHalt {
+		z-index: 5;
+}
+#mainContentCuttingFluid_pbDriveReset {
+	@include elemTop(388);
+}
+#mainContentCuttingFluid_pbDriveReset {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_pbDriveReset {
+	@include elemAutoWidth(116);
+}
+#mainContentCuttingFluid_pbDriveReset {
+	@include elemAutoHeight(42);
+}
+#mainContentCuttingFluid_pbDriveReset {
+		z-index: 6;
+}
+#mainContentCuttingFluid_pbEnable {
+	@include elemTop(322);
+}
+#mainContentCuttingFluid_pbEnable {
+	@include elemLeft(254);
+}
+#mainContentCuttingFluid_pbEnable {
+	@include elemAutoWidth(116);
+}
+#mainContentCuttingFluid_pbEnable {
+	@include elemAutoHeight(42);
+}
+#mainContentCuttingFluid_pbEnable {
+		z-index: 7;
+}
+#mainContentCuttingFluid_pbDisable {
+	@include elemTop(388);
+}
+#mainContentCuttingFluid_pbDisable {
+	@include elemLeft(254);
+}
+#mainContentCuttingFluid_pbDisable {
+	@include elemAutoWidth(116);
+}
+#mainContentCuttingFluid_pbDisable {
+	@include elemAutoHeight(42);
+}
+#mainContentCuttingFluid_pbDisable {
+		z-index: 8;
+}
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+	@include elemAutoWidth(150);
+}
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+	@include elemAutoHeight(30);
+}
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+	@include elemTop(108);
+}
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+	@include elemLeft(224);
+}
+#mainContentCuttingFluid_chkBoxPressureCtrl {
+		z-index: 9;
+}
+#mainContentCuttingFluid_grpBoxStatus {
+	@include elemTop(55);
+}
+#mainContentCuttingFluid_grpBoxStatus {
+	@include elemLeft(20);
+}
+#mainContentCuttingFluid_grpBoxStatus {
+	@include elemWidth(330);
+}
+#mainContentCuttingFluid_grpBoxStatus {
+	@include elemHeight(485);
+}
+#mainContentCuttingFluid_grpBoxStatus {
+		z-index: 1;
+}
+#mainContentCuttingFluid_numOutRpmAct {
+	@include elemTop(63);
+}
+#mainContentCuttingFluid_numOutRpmAct {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_numOutRpmAct {
+	@include elemAutoWidth(120);
+}
+#mainContentCuttingFluid_numOutRpmAct {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_numOutRpmAct {
+		z-index: 0;
+}
+#mainContentCuttingFluid_numOutRpmAct {
+	input{
+	@include text-alignment(center);
+	}
+}
+#mainContentCuttingFluid_lblRpmAct {
+	@include elemTop(43);
+}
+#mainContentCuttingFluid_lblRpmAct {
+	@include elemLeft(29);
+}
+#mainContentCuttingFluid_lblRpmAct {
+	@include elemAutoWidth(130);
+}
+#mainContentCuttingFluid_lblRpmAct {
+	@include elemAutoHeight(22);
+}
+#mainContentCuttingFluid_lblRpmAct {
+		z-index: 1;
+}
+#mainContentCuttingFluid_lblRpmAct {
+	@include text-alignment-all('center');
+}
+#mainContentCuttingFluid_lblStatus {
+	@include elemTop(388);
+}
+#mainContentCuttingFluid_lblStatus {
+	@include elemLeft(238);
+}
+#mainContentCuttingFluid_lblStatus {
+	@include elemAutoWidth(60);
+}
+#mainContentCuttingFluid_lblStatus {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_lblStatus {
+		z-index: 2;
+}
+#mainContentCuttingFluid_lblStatus {
+	span{
+		padding: 0px;
+	}
+}
+#mainContentCuttingFluid_lblState {
+	@include elemTop(413);
+}
+#mainContentCuttingFluid_lblState {
+	@include elemLeft(238);
+}
+#mainContentCuttingFluid_lblState {
+	@include elemAutoWidth(60);
+}
+#mainContentCuttingFluid_lblState {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_lblState {
+		z-index: 3;
+}
+#mainContentCuttingFluid_lblState {
+	span{
+		padding: 0px;
+	}
+}
+#mainContentCuttingFluid_txtOutStatus {
+	@include elemTop(388);
+}
+#mainContentCuttingFluid_txtOutStatus {
+	@include elemLeft(29);
+}
+#mainContentCuttingFluid_txtOutStatus {
+	@include elemAutoWidth(207);
+}
+#mainContentCuttingFluid_txtOutStatus {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_txtOutStatus {
+		z-index: 4;
+}
+#mainContentCuttingFluid_txtOutStatus {
+		background-color: rgba(255, 255, 255, 0);
+}
+#mainContentCuttingFluid_txtOutStatus {
+	@include text-alignment-all('right');
+}
+#mainContentCuttingFluid_txtOutState {
+	@include elemTop(413);
+}
+#mainContentCuttingFluid_txtOutState {
+	@include elemLeft(29);
+}
+#mainContentCuttingFluid_txtOutState {
+	@include elemAutoWidth(207);
+}
+#mainContentCuttingFluid_txtOutState {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_txtOutState {
+		z-index: 5;
+}
+#mainContentCuttingFluid_txtOutState {
+		background-color: rgba(255, 255, 255, 0);
+}
+#mainContentCuttingFluid_txtOutState {
+	@include text-alignment-all('right');
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+	@include elemTop(128);
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+	@include elemAutoWidth(120);
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+		z-index: 6;
+}
+#mainContentCuttingFluid_numOutPtPumpOutlet {
+	input{
+	@include text-alignment(center);
+	}
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+	@include elemTop(108);
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+	@include elemLeft(29);
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+	@include elemAutoWidth(130);
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+	@include elemAutoHeight(22);
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+		z-index: 7;
+}
+#mainContentCuttingFluid_lblPtPumpOutlet {
+	@include text-alignment-all('center');
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+	@include elemTop(183);
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+	@include elemLeft(39);
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+	@include elemAutoWidth(120);
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+		z-index: 8;
+}
+#mainContentCuttingFluid_numOutPtFilterOutlet {
+	input{
+	@include text-alignment(center);
+	}
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+	@include elemTop(163);
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+	@include elemLeft(29);
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+	@include elemAutoWidth(130);
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+	@include elemAutoHeight(22);
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+		z-index: 9;
+}
+#mainContentCuttingFluid_lblPtFilterOutlet {
+	@include text-alignment-all('center');
+}
+#mainContentCuttingFluid_numOutDpFilter {
+	@include elemTop(148);
+}
+#mainContentCuttingFluid_numOutDpFilter {
+	@include elemLeft(174);
+}
+#mainContentCuttingFluid_numOutDpFilter {
+	@include elemAutoWidth(120);
+}
+#mainContentCuttingFluid_numOutDpFilter {
+	@include elemAutoHeight(15);
+}
+#mainContentCuttingFluid_numOutDpFilter {
+		z-index: 10;
+}
+#mainContentCuttingFluid_numOutDpFilter {
+	input{
+	@include text-alignment(center);
+	}
+}
+#mainContentCuttingFluid_lblDpFilter {
+	@include elemTop(128);
+}
+#mainContentCuttingFluid_lblDpFilter {
+	@include elemLeft(164);
+}
+#mainContentCuttingFluid_lblDpFilter {
+	@include elemAutoWidth(130);
+}
+#mainContentCuttingFluid_lblDpFilter {
+	@include elemAutoHeight(22);
+}
+#mainContentCuttingFluid_lblDpFilter {
+		z-index: 11;
+}
+#mainContentCuttingFluid_lblDpFilter {
+	@include text-alignment-all('center');
+}

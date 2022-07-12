@@ -1,0 +1,22 @@
+{
+  "name": "as-build",
+  "version": "5.15.0",
+  "description": "Brease and custom widget build for AS",
+  "license": "BundR",
+  "private": true,
+  "devDependencies": {
+    "a.require": "0.0.1",
+    "grunt": "1.0.1",
+    "grunt-cli": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-known-options": "^1.1.0",
+    "logfile-grunt": "*",
+    "md5": ">=2.1.0",
+    "node.extend": ">=1.0.10",
+    "xml2js": ">=0.4.9",
+    "grunt-contrib-concat": "*",
+    "grunt-sass": "3.1.0",
+    "node-sass": "5.0.0"
+  }
+}

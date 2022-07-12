@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.br-automation.com/iat2021/typeDefinition/v1"
+        xmlns:types="http://www.br-automation.com/iat2021/typeDefinition/v1" elementFormDefault="unqualified">
+
+     <xs:element name="TypeCheck" type="types:TypeCheck" ></xs:element>
+
+   <xs:complexType name="TypeCheck">
+	<xs:attribute name="value_WidgetId" type="types:WidgetId"/>
+	<xs:attribute name="value_String" type="types:String"/>
+	<xs:attribute name="value_Boolean" type="types:Boolean"/>
+	<xs:attribute name="value_Number" type="types:Number"/>
+	<xs:attribute name="value_Integer" type="types:Integer"/>
+	<xs:attribute name="value_Percentage" type="types:Percentage"/>
+	<xs:attribute name="value_DateTime" type="types:DateTime"/>
+	<xs:attribute name="value_Time" type="types:Time"/>
+	<xs:attribute name="value_brease.datatype.Notification" type="types:brease.datatype.Notification"/>
+	<xs:attribute name="value_brease.datatype.Node" type="types:brease.datatype.Node"/>
+	<xs:attribute name="value_brease.datatype.ArrayNode" type="types:brease.datatype.ArrayNode"/>
+	<xs:attribute name="value_Object" type="types:Object"/>
+	<xs:attribute name="value_Array" type="types:Array"/>
+	<xs:attribute name="value_IntegerList" type="types:IntegerList"/>
+	<xs:attribute name="value_StringList" type="types:StringList"/>
+	<xs:attribute name="value_Color" type="types:Color"/>
+	<xs:attribute name="value_ColorList" type="types:ColorList"/>
+	<xs:attribute name="value_ColorCollection" type="types:ColorCollection"/>
+	<xs:attribute name="value_PixelVal" type="types:PixelVal"/>
+	<xs:attribute name="value_StrictPixelVal" type="types:StrictPixelVal"/>
+	<xs:attribute name="value_StrictSignedPixelVal" type="types:StrictSignedPixelVal"/>
+	<xs:attribute name="value_HPos" type="types:HPos"/>
+	<xs:attribute name="value_VPos" type="types:VPos"/>
+	<xs:attribute name="value_PixelValCollection" type="types:PixelValCollection"/>
+	<xs:attribute name="value_Size" type="types:Size"/>
+	<xs:attribute name="value_AutoSize" type="types:AutoSize"/>
+	<xs:attribute name="value_Margin" type="types:Margin"/>
+	<xs:attribute name="value_Padding" type="types:Padding"/>
+	<xs:attribute name="value_Opacity" type="types:Opacity"/>
+	<xs:attribute name="value_Rotation" type="types:Rotation"/>
+	<xs:attribute name="value_ImagePath" type="types:ImagePath"/>
+	<xs:attribute name="value_FilePath" type="types:FilePath"/>
+	<xs:attribute name="value_ImageSize" type="types:ImageSize"/>
+	<xs:attribute name="value_FontName" type="types:FontName"/>
+	<xs:attribute name="value_Gradient" type="types:Gradient"/>
+	<xs:attribute name="value_Shadow" type="types:Shadow"/>
+	<xs:attribute name="value_BorderStyle" type="types:BorderStyle"/>
+	<xs:attribute name="value_LineCap" type="types:LineCap"/>
+	<xs:attribute name="value_WritingMode" type="types:WritingMode"/>
+	<xs:attribute name="value_RoleCollection" type="types:RoleCollection"/>
+	<xs:attribute name="value_StepItemStyleReferenceCollection" type="types:StepItemStyleReferenceCollection"/>
+	<xs:attribute name="value_ImageType" type="types:ImageType"/>
+	<xs:attribute name="value_StepItemSource" type="types:StepItemSource"/>
+	<xs:attribute name="value_MappTableConfigurationType" type="types:MappTableConfigurationType"/>
+	<xs:attribute name="value_TableConfigurationType" type="types:TableConfigurationType"/>
+	<xs:attribute name="value_RegEx" type="types:RegEx"/>
+	<xs:attribute name="value_GraphicCollection" type="types:GraphicCollection"/>
+	<xs:attribute name="value_ItemCollection" type="types:ItemCollection"/>
+	<xs:attribute name="value_ContentCollection" type="types:ContentCollection"/>
+	<xs:attribute name="value_DirectoryPath" type="types:DirectoryPath"/>
+	<xs:attribute name="value_PageReference" type="types:PageReference"/>
+	<xs:attribute name="value_ThemeReference" type="types:ThemeReference"/>
+	<xs:attribute name="value_DialogReference" type="types:DialogReference"/>
+	<xs:attribute name="value_NavigationReference" type="types:NavigationReference"/>
+	<xs:attribute name="value_StyleReference" type="types:StyleReference"/>
+	<xs:attribute name="value_AreaReference" type="types:AreaReference"/>
+	<xs:attribute name="value_ContentReference" type="types:ContentReference"/>
+	<xs:attribute name="value_LayoutReference" type="types:LayoutReference"/>
+	<xs:attribute name="value_WidgetReference" type="types:WidgetReference"/>
+	<xs:attribute name="value_MpComIdentType" type="types:MpComIdentType"/>
+	<xs:attribute name="value_MpComIdentReference" type="types:MpComIdentReference"/>
+	<xs:attribute name="value_PdfPath" type="types:PdfPath"/>
+	<xs:attribute name="value_VideoPath" type="types:VideoPath"/>
+	<xs:attribute name="value_brease.config.MeasurementSystemUnit" type="types:brease.config.MeasurementSystemUnit"/>
+	<xs:attribute name="value_brease.config.MeasurementSystemFormat" type="types:brease.config.MeasurementSystemFormat"/>
+	<xs:attribute name="value_UInteger" type="types:UInteger"/>
+	<xs:attribute name="value_Index" type="types:Index"/>
+	<xs:attribute name="value_UNumber" type="types:UNumber"/>
+	<xs:attribute name="value_ZoomType" type="types:ZoomType"/>
+	<xs:attribute name="value_Double" type="types:Double"/>
+	<xs:attribute name="value_XSBoolean" type="types:XSBoolean"/>
+	<xs:attribute name="value_IntervalType" type="types:IntervalType"/>
+	<xs:attribute name="value_Expression" type="types:Expression"/>
+	<xs:attribute name="value_PropertyCollectionReference" type="types:PropertyCollectionReference"/>
+	<xs:attribute name="value_brease.enum.AlarmHistoryItemType" type="types:brease.enum.AlarmHistoryItemType"/>
+	<xs:attribute name="value_brease.enum.AlarmListItemType" type="types:brease.enum.AlarmListItemType"/>
+	<xs:attribute name="value_brease.enum.AuditListItemType" type="types:brease.enum.AuditListItemType"/>
+	<xs:attribute name="value_brease.enum.AutoRaise" type="types:brease.enum.AutoRaise"/>
+	<xs:attribute name="value_brease.enum.BackgroundPosition" type="types:brease.enum.BackgroundPosition"/>
+	<xs:attribute name="value_brease.enum.CachePolicy" type="types:brease.enum.CachePolicy"/>
+	<xs:attribute name="value_brease.enum.ChartInterpolationType" type="types:brease.enum.ChartInterpolationType"/>
+	<xs:attribute name="value_brease.enum.ChartType" type="types:brease.enum.ChartType"/>
+	<xs:attribute name="value_brease.enum.ChartZoomType" type="types:brease.enum.ChartZoomType"/>
+	<xs:attribute name="value_brease.enum.ChildPositioning" type="types:brease.enum.ChildPositioning"/>
+	<xs:attribute name="value_brease.enum.CropToParent" type="types:brease.enum.CropToParent"/>
+	<xs:attribute name="value_brease.enum.CrossAlign" type="types:brease.enum.CrossAlign"/>
+	<xs:attribute name="value_brease.enum.Dependency" type="types:brease.enum.Dependency"/>
+	<xs:attribute name="value_brease.enum.DialogMode" type="types:brease.enum.DialogMode"/>
+	<xs:attribute name="value_brease.enum.Direction" type="types:brease.enum.Direction"/>
+	<xs:attribute name="value_brease.enum.Docking" type="types:brease.enum.Docking"/>
+	<xs:attribute name="value_brease.enum.DropDownDisplaySettings" type="types:brease.enum.DropDownDisplaySettings"/>
+	<xs:attribute name="value_brease.enum.ErrorCorrectionLevel" type="types:brease.enum.ErrorCorrectionLevel"/>
+	<xs:attribute name="value_brease.enum.EventLoggerCustomer" type="types:brease.enum.EventLoggerCustomer"/>
+	<xs:attribute name="value_brease.enum.EventLoggerFacility" type="types:brease.enum.EventLoggerFacility"/>
+	<xs:attribute name="value_brease.enum.EventLoggerId" type="types:brease.enum.EventLoggerId"/>
+	<xs:attribute name="value_brease.enum.EventLoggerSeverity" type="types:brease.enum.EventLoggerSeverity"/>
+	<xs:attribute name="value_brease.enum.EventLoggerVerboseLevel" type="types:brease.enum.EventLoggerVerboseLevel"/>
+	<xs:attribute name="value_brease.enum.Floating" type="types:brease.enum.Floating"/>
+	<xs:attribute name="value_brease.enum.GraphType" type="types:brease.enum.GraphType"/>
+	<xs:attribute name="value_brease.enum.HorizontalAlign" type="types:brease.enum.HorizontalAlign"/>
+	<xs:attribute name="value_brease.enum.HorizontalPosition" type="types:brease.enum.HorizontalPosition"/>
+	<xs:attribute name="value_brease.enum.ImageAlign" type="types:brease.enum.ImageAlign"/>
+	<xs:attribute name="value_brease.enum.ImagePosition" type="types:brease.enum.ImagePosition"/>
+	<xs:attribute name="value_brease.enum.IMEMode" type="types:brease.enum.IMEMode"/>
+	<xs:attribute name="value_brease.enum.InputType" type="types:brease.enum.InputType"/>
+	<xs:attribute name="value_brease.enum.InterpolationType" type="types:brease.enum.InterpolationType"/>
+	<xs:attribute name="value_brease.enum.KeyAction" type="types:brease.enum.KeyAction"/>
+	<xs:attribute name="value_brease.enum.LabelPosition" type="types:brease.enum.LabelPosition"/>
+	<xs:attribute name="value_brease.enum.LimitViolationPolicy" type="types:brease.enum.LimitViolationPolicy"/>
+	<xs:attribute name="value_brease.enum.LoadPolicy" type="types:brease.enum.LoadPolicy"/>
+	<xs:attribute name="value_brease.enum.MainAlign" type="types:brease.enum.MainAlign"/>
+	<xs:attribute name="value_brease.enum.MappTableConfigurationType" type="types:brease.enum.MappTableConfigurationType"/>
+	<xs:attribute name="value_brease.enum.mcProgramPhase" type="types:brease.enum.mcProgramPhase"/>
+	<xs:attribute name="value_brease.enum.MeasurementSystem" type="types:brease.enum.MeasurementSystem"/>
+	<xs:attribute name="value_brease.enum.MessageBoxIcon" type="types:brease.enum.MessageBoxIcon"/>
+	<xs:attribute name="value_brease.enum.MessageBoxState" type="types:brease.enum.MessageBoxState"/>
+	<xs:attribute name="value_brease.enum.MessageBoxType" type="types:brease.enum.MessageBoxType"/>
+	<xs:attribute name="value_brease.enum.MpUserXError" type="types:brease.enum.MpUserXError"/>
+	<xs:attribute name="value_brease.enum.NoSelectionPolicy" type="types:brease.enum.NoSelectionPolicy"/>
+	<xs:attribute name="value_brease.enum.Orientation" type="types:brease.enum.Orientation"/>
+	<xs:attribute name="value_brease.enum.PlcOpenGroupState" type="types:brease.enum.PlcOpenGroupState"/>
+	<xs:attribute name="value_brease.enum.PointOfOrigin" type="types:brease.enum.PointOfOrigin"/>
+	<xs:attribute name="value_brease.enum.Position" type="types:brease.enum.Position"/>
+	<xs:attribute name="value_brease.enum.PromptType" type="types:brease.enum.PromptType"/>
+	<xs:attribute name="value_brease.enum.RangeMode" type="types:brease.enum.RangeMode"/>
+	<xs:attribute name="value_brease.enum.RenderingPolicy" type="types:brease.enum.RenderingPolicy"/>
+	<xs:attribute name="value_brease.enum.ScrollDirection" type="types:brease.enum.ScrollDirection"/>
+	<xs:attribute name="value_brease.enum.SelectMode" type="types:brease.enum.SelectMode"/>
+	<xs:attribute name="value_brease.enum.ShowData" type="types:brease.enum.ShowData"/>
+	<xs:attribute name="value_brease.enum.SizeMode" type="types:brease.enum.SizeMode"/>
+	<xs:attribute name="value_brease.enum.SortDirection" type="types:brease.enum.SortDirection"/>
+	<xs:attribute name="value_brease.enum.SortFunction" type="types:brease.enum.SortFunction"/>
+	<xs:attribute name="value_brease.enum.TabPosition" type="types:brease.enum.TabPosition"/>
+	<xs:attribute name="value_brease.enum.TextAlign" type="types:brease.enum.TextAlign"/>
+	<xs:attribute name="value_brease.enum.TextAlignmentAll" type="types:brease.enum.TextAlignmentAll"/>
+	<xs:attribute name="value_brease.enum.TickStyle" type="types:brease.enum.TickStyle"/>
+	<xs:attribute name="value_brease.enum.UserListItemType" type="types:brease.enum.UserListItemType"/>
+	<xs:attribute name="value_brease.enum.VerticalAlign" type="types:brease.enum.VerticalAlign"/>
+	<xs:attribute name="value_brease.enum.VerticalPosition" type="types:brease.enum.VerticalPosition"/>
+	<xs:attribute name="value_brease.enum.VideoPlayerPreload" type="types:brease.enum.VideoPlayerPreload"/>
+	<xs:attribute name="value_brease.enum.WidgetState" type="types:brease.enum.WidgetState"/>
+	<xs:attribute name="value_brease.enum.XAxisOrientation" type="types:brease.enum.XAxisOrientation"/>
+	<xs:attribute name="value_brease.enum.YAxisOrientation" type="types:brease.enum.YAxisOrientation"/>
+	</xs:complexType>
+<xs:simpleType name="WidgetId">
+    <xs:annotation>
+      <xs:documentation>
+        Valid Widget ID. Has to start with a letter followed by letters, numbers or _ -
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <!-- we do not use \w for [A-Za-z0-9_], as the implementation of \w is not consistent over different tools -->
+      <xs:pattern value="[A-Za-z]{1}[0-9A-Za-z_-]*"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="String">
+    <xs:annotation>
+      <xs:documentation>
+        String Value
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Boolean">
+    <xs:annotation>
+      <xs:documentation>
+        Boolean value. Possible options are true and false
+      </xs:documentation>
+    </xs:annotation>
+    <!--<xs:restriction base="xs:boolean"></xs:restriction>-->
+    <!-- xs:boolean erlaubt auch 0/1, wir nicht -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Number">
+    <xs:annotation>
+      <xs:documentation>
+        Any number, e.g. floating point value (e.g. 5.4) or integer (e.g. 5)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Integer">
+    <xs:annotation>
+      <xs:documentation>
+        Integer Value e.g. 5
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Percentage">
+    <xs:annotation>
+      <xs:documentation>
+        Floating point value in the range 0..100
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal" >
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DateTime">
+    <xs:annotation>
+      <xs:documentation>
+        Date and Time string according to ECMA-262<br/>
+        Examples:<br/>
+        2017-06-21<br/>
+        2017-06-21T17:59<br/>
+        2017-06-21T17:59:00<br/>
+        2017-06-21T17:59:00Z<br/>
+        2017-06-21T17:59:00.000+03:00<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(19|20)\d\d[-]((0[1-9])|(1[012]))[-]((0[1-9])|([12][0-9])|(3[01]))([T]((24:00(:00(\.000){0,1}){0,1})|(((0[0-9])|(1[0-9])|(2[0-3]))[:]([0-5][0-9])([:][0-5][0-9](\.\d\d\d){0,1}){0,1}))([Z]|([+-]((0[0-9])|(1[0-9])|(2[0-3])):[0-5][0-9])){0,1}){0,1}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Time">
+    <xs:annotation>
+      <xs:documentation>
+        time in ms
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brease.datatype.Notification">
+    <xs:annotation>
+      <xs:documentation>
+        Notification for changes of Big Data. <br/>Notation as object with following poperties:<br/>
+        <br/>
+        •action: String (optional)<br/>
+        <br/>
+        •row: Number (optional)<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brease.datatype.Node">
+    <xs:annotation>
+      <xs:documentation>
+        Value with unit for binding with OPC-UA nodes. <br/>Notation as object with following properties:<br/>
+        <br/>
+        •id: String (optional)<br/>
+        <br/>
+        •maxValue: Number (optional)<br/>
+        <br/>
+        •minValue: Number (optional)<br/>
+        <br/>
+        •unit: String (required) <br/>
+        common code of unit of values.<br/>
+        <br/>
+        •value: Number (required)<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brease.datatype.ArrayNode">
+    <xs:annotation>
+      <xs:documentation>
+        Array of values with one unit. <br/>Notation as object with following properties:<br/>
+        <br/>
+        •id: String (optional)<br/>
+        <br/>
+        •maxValue: Number (optional)<br/>
+        <br/>
+        •minValue: Number (optional)<br/>
+        <br/>
+        •unit: String (required) <br/>
+        common code of unit of values.<br/>
+        <br/>
+        •value: Number[] (required)<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Object">
+    <xs:annotation>
+      <xs:documentation>
+        Value in JSON Annotation e.g. {'key' : 'value'}
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="\{.*\}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Array">
+    <xs:annotation>
+      <xs:documentation>
+        Definition of Arrays in JSON Annotation, e.g. ['Item1', 'Item2'].
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="\[((('[\w ]*', *)|([0-9]*, *))*(|('[\w ]*')|([0-9]*))|)\]"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntegerList">
+    <xs:annotation>
+      <xs:documentation>
+        List of Integer values separated by , e.g. 1,2,3,4,5
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="([0-9]{1,},{1} {0,1})*([0-9]{1,}){1}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StringList">
+    <xs:annotation>
+      <xs:documentation>
+        List of String values separated by , e.g. 'Item1', 'Item2', ...
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <!-- implementation of \w for [A-Za-z0-9_] is not consistent over different tools, therefore _ is included separate -->
+      <xs:pattern value="('[ÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöü¡¿çÇßØøÅåÆæÞþÐð\w\d\s_.,#@:?!()$/-]{1,}',{1} {0,1})*('[ÀÈÌÒÙàèìòùÁÉÍÓÚÝáéíóúýÂÊÎÔÛâêîôûÃÑÕãñõÄËÏÖÜäëïöü¡¿çÇßØøÅåÆæÞþÐð\w\d\s_.,#@:?!()$/-]{1,}'){1}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Color">
+    <xs:annotation>
+      <xs:documentation>
+        Single Color Value<br/>
+        usage (Syntax like CSS):<br/>
+        - HEX Color code: #FFFFFF<br/>
+        - rgba Component syntax: rgba(100,100,100,1)
+        - transparent
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(#[0-9A-Fa-f]{6})|(#[0-9A-Fa-f]{4})|(#[0-9A-Fa-f]{3})|rgba\((((0)*((25[0-5])|(2[0-4][0-9])|(1[0-9][0-9])|([1-9][0-9])|([0-9]))|(0)+),(\s)?){3}((0(\.)?([0-9]){1,2})|0|1(\.0)?)\)|(transparent)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ColorList">
+    <xs:annotation>
+      <xs:documentation>
+        list of colors, e.g. #FF8800,rgba(255,136,0,1)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(((#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|transparent|((rgba\((((25[0-5])|(2[01234][0-9])|([01][0-9][0-9])|([0-9]{1,2})),(\s)?){3}((0\.[0-9]{1,2})|1(\.0)?|0)\)))\s?){1,4}),( ){0,1})*((((#[0-9A-Fa-f]{6})|(#[0-9A-Fa-f]{3})|(rgba\((((25[0-5])|(2[01234][0-9])|([01][0-9][0-9])|([0-9]{1,2})),(\s)?){3}((0\.[0-9]{1,2})|1(\.0)?|0)\)))\s?){1,4}|(transparent))"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ColorCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Color Collection Value<br/>
+        usage (Syntax like CSS):<br/>
+        - One single value applies to all four sides e.g. #FFFFFF<br/>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  #FFFFFF #333333<br/>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  #FFFFFF #333333 #FFFFFF #333333<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(((#[0-9A-Fa-f]{6})|(#[0-9A-Fa-f]{3})|(rgba\((((25[0-5])|(2[01234][0-9])|([01][0-9][0-9])|([0-9]{1,2})),(\s)?){3}((0\.[0-9]{1,2})|1(\.0)?|0)\)))\s?){1,4}|(transparent)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PixelVal">
+    <xs:annotation>
+      <xs:documentation>
+        Single Pixel Value<br/>
+        usage (Syntax like CSS) e.g. 2px<br/>
+        allows additional % values: e.g. 50%<br/>
+        allows additional zero without unit: 0<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="([0-9]{1,5}(%|px))|0"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StrictPixelVal">
+    <xs:annotation>
+      <xs:documentation>
+        Pixel Value<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="\d+px"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StrictSignedPixelVal">
+    <xs:annotation>
+      <xs:documentation>
+        Signed Pixel Value<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[-+]?\d+px"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="HPos">
+      <xs:restriction base="xs:string" >
+        <xs:pattern value="left|center|right|\d+px"></xs:pattern>
+      </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="VPos">
+      <xs:restriction base="xs:string" >
+        <xs:pattern value="top|middle|bottom|\d+px"></xs:pattern>
+      </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PixelValCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Pixel Collection Value<br/>
+        usage (Syntax like CSS):<br/>
+        - One single value applies to all four sides e.g. 2px<br/>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br/>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(([0-9]{1,5}(%|px))|0)( (([0-9]{1,5}(%|px))|0)){0,3}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Size">
+    <xs:annotation>
+      <xs:documentation>
+        Size Value<br/>
+        usage:<br/>
+        - definition as an Integer e.g. 40<br/>
+        - definition percentage value e.g. 40%
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="types:AutoSize" >
+      <xs:pattern value="(([^\-]{0,1})?([0-9]{1,}))|([0-9]{1,4}%)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AutoSize">
+    <xs:annotation>
+      <xs:documentation>
+        Size Value<br/>
+        usage:<br/>
+        - definition as an Integer e.g. 40<br/>
+        - definition percentage value e.g. 40% <br/>
+        - definition as 'auto' value
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="((([^\-]{0,1})?([0-9]{1,}))|([0-9]{1,4}%)|auto)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Margin">
+    <xs:annotation>
+      <xs:documentation>
+        Margin of an Element<br/>
+        usage (Syntax like CSS):<br/>
+        - One single value applies to all four sides e.g. 2px<br/>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br/>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(([0-9]{1,5}(%|px))|0)( (([0-9]{1,5}(%|px))|0)){0,3}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Padding">
+    <xs:annotation>
+      <xs:documentation>
+        Padding of an Element<br/>
+        usage (Syntax like CSS):<br/>
+        - One single value applies to all four sides e.g. 2px<br/>
+        - Two values apply first to top and bottom, the second one to left and right e.g.  1px 2px<br/>
+        - Four values apply to top, right, bottom and left in that order (clockwise) e.g.  1px 2px 3px 4px<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(([0-9]{1,5}(%|px))|0)( (([0-9]{1,5}(%|px))|0)){0,3}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Opacity">
+    <xs:annotation>
+      <xs:documentation>
+        Opacity of an Element<br/>
+        0 = 0% invisible<br/>
+        0.5 = 50% opacity<br/>
+        1 = 100%<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal" >
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Rotation">
+    <xs:annotation>
+      <xs:documentation>
+        Rotation of widget.<br/>
+        Rotates the element clockwise around its origin (center of whole widget).<br/>
+        Unit is degrees, declared by appending the string “deg” at the end of the value.<br/>
+        e.g. rotation="30deg"
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[-+]?[0-9]*\.?[0-9]+(deg|rad|grad|turn)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ImagePath">
+    <xs:annotation>
+      <xs:documentation>
+        Relative URL to an image.<br/>
+        e.g. Media/Arrow.png
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[^\\]*"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FilePath">
+    <xs:annotation>
+      <xs:documentation>
+        path to a file
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[^\\]*"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ImageSize">
+    <xs:annotation>
+      <xs:documentation>
+        Size of an image<br/>
+        usage:<br/>
+        - definition as an Integer e.g. 40<br/>
+        - definition percentage value e.g. 40%
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="(([^\-]{0,1})?([0-9]{1,}))|([0-9]{1,4}%)"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FontName">
+    <xs:annotation>
+      <xs:documentation>
+        Fontname
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Gradient">
+    <xs:annotation>
+      <xs:documentation>
+        Background as a gradient.<br/>
+        For further information see CSS Gradients.<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Shadow">
+    <xs:annotation>
+      <xs:documentation>
+        Shadow of the Widget<br/>
+        usage (Syntax like CSS):<br/>
+        - h-shadow v-shadow [blur] [spread] color e.g. 10px 10px 5px #888888
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BorderStyle">
+    <xs:annotation>
+      <xs:documentation>
+        Style of the Border<br/>
+        Possible Values: none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="none"></xs:enumeration>
+      <xs:enumeration value="hidden"></xs:enumeration>
+      <xs:enumeration value="dotted"></xs:enumeration>
+      <xs:enumeration value="dashed"></xs:enumeration>
+      <xs:enumeration value="solid"></xs:enumeration>
+      <xs:enumeration value="double"></xs:enumeration>
+      <xs:enumeration value="groove"></xs:enumeration>
+      <xs:enumeration value="ridge"></xs:enumeration>
+      <xs:enumeration value="inset"></xs:enumeration>
+      <xs:enumeration value="outset"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LineCap">
+    <xs:annotation>
+      <xs:documentation>
+        Style of the end of a line<br/>
+        Possible Values: butt, round, square
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="butt"></xs:enumeration>
+      <xs:enumeration value="round"></xs:enumeration>
+      <xs:enumeration value="square"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="WritingMode">
+    <xs:annotation>
+      <xs:documentation>
+        Writing direction of a text<br/>
+        Possible Values: horizonal, vertical
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="horizontal"></xs:enumeration>
+      <xs:enumeration value="vertical"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+   <xs:simpleType name="RoleCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Array of Roles, e.g. ['Role1', 'Role2', ...]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+		<xs:pattern value="\[\s*'([^']*)'(\s*,\s*'([^']*)')*\s*\]|\[\s*\]|()"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StepItemStyleReferenceCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Array of objects which have a StepItemGroup and the referenced style to this group
+        e.g.: [{'group':'Basic','style':'StepItem_Blue'},{'group':'Control','style':'StepItem_Pink'}]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="\[({'group':'.*','style':'.*'},)*({'group':'.*','style':'.*'}|)\]"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ImageType">
+    <xs:annotation>
+      <xs:documentation>
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value=".png"></xs:enumeration>
+      <xs:enumeration value=".jpg"></xs:enumeration>
+      <xs:enumeration value=".svg"></xs:enumeration>
+      <xs:enumeration value=".gif"></xs:enumeration>
+      <xs:enumeration value=".bmp"></xs:enumeration>
+      <xs:enumeration value=".tif"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StepItemSource">
+    <xs:annotation>
+      <xs:documentation>
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="New"></xs:enumeration>
+      <xs:enumeration value="Existing"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MappTableConfigurationType">
+    <xs:annotation>
+      <xs:documentation>
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="Filtering"></xs:enumeration>
+      <xs:enumeration value="Sorting"></xs:enumeration>
+      <xs:enumeration value="Styling"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TableConfigurationType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="Filtering"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="RegEx">
+    <xs:annotation>
+      <xs:documentation>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="GraphicCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Array of images, e.g. ['image1.png', 'image2.png', ...]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+		<xs:pattern value="\[\s*'([^']*)'(\s*,\s*'([^']*)')*\s*\]|\[\s*\]"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ItemCollection">
+    <xs:annotation>
+      <xs:documentation>
+        ItemCollection for List Widgets like DropDownBox or ListBox<br/>
+
+        Example of language dependent entries:
+        [{ 'value': 1, 'text': '$brease.demo.dropdown.testoption1' },<br/>
+        { 'value': 2, 'text': '$brease.demo.dropdown.testoption2' },<br/>
+        { 'value': 3, 'text': '$brease.demo.dropdown.testoption3' }]<br/>
+        <br/>
+        Example of language independent entries:<br/>
+        [{ 'value': 'a', 'text': 'Eintrag A' },<br/>
+        { 'value': 'b', 'text': 'Eintrag B' },<br/>
+        { 'value': 'c', 'text': 'Eintrag C' }]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="\[.*\]"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ContentCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Array of content IDs values, e.g. ['content1', 'content2', ...]
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+		  <xs:pattern value="\[('[A-Za-z][-A-Za-z0-9_]*'){1}(, {0,1}'[A-Za-z][-A-Za-z0-9_]*'){0,}\]|\[\s*\]"></xs:pattern> 
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DirectoryPath">
+    <xs:annotation>
+      <xs:documentation>
+        Path to a directory
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[^\\]*"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PageReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Page Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ThemeReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Theme Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DialogReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Dialog Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NavigationReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Navigation Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StyleReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Style Object (more info at <a href="../../ThemesAndStyles/Style_ConnectToWidget.html">Connect style to widget</a> and <a href="../../ThemesAndStyles/Style_ChangeProperties.html">adapt styles</a>)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AreaReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of an Area Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ContentReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Content Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <!-- regular expression corresponds to the definition in the AS (=ContentDefinition.xsd) (exception: empty string is allowed)-->
+      <xs:pattern value="([A-Za-z][-A-Za-z0-9_]*){0,}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LayoutReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Layout Object
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="WidgetReference">
+    <xs:annotation>
+      <xs:documentation>
+        ID of a Widget
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MpComIdentType">
+    <xs:annotation>
+      <xs:documentation>mapp link</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="MpComIdentReference">
+    <xs:annotation>
+      <xs:documentation>mapp link</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PdfPath">
+    <xs:annotation>
+      <xs:documentation>
+        Path to a Pdf File
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="VideoPath">
+    <xs:annotation>
+      <xs:documentation>
+        Path to a Pdf File
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brease.config.MeasurementSystemUnit">
+    <xs:annotation>
+      <xs:documentation>
+        Definition of the unit conversion depending on the MeasurementSystem (metric, imperial, imperial-us).<br/>
+        The format is an object with key value pairs for each MeasurementSystem. The value is the common code for the unit.<br/>
+        Example:<br/>
+        {'metric':'CEL','imperial':'FAH','imperial-us':'KEL'}<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="brease.config.MeasurementSystemFormat">
+    <xs:annotation>
+      <xs:documentation>
+        Definition of the format conversion depending on the MeasurementSystem (metric, imperial, imperial-us).<br/>
+        The format is an object with key value pairs for each MeasurementSystem.<br/>
+        The value is an object with the format description<br/>
+        The format description has the keys:<br/>
+        - decimalPlaces: number of decimal places<br/>
+        - minimumIntegerDigits: minimum number leading integer digits<br/>
+        - maximumIntegerDigits (optional): maximum number of leading integer digits. For higher numbers display mode switches to normalized scientific notation.<br/>
+        Example:<br/>
+        {'metric':{ 'decimalPlaces': 0, 'minimumIntegerDigits':1 }, 'imperial':{ 'decimalPlaces': 0 }, 'imperial-us':{ 'decimalPlaces': 2 }}
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UInteger">
+    <xs:annotation>
+      <xs:documentation>
+        unsigned Integer Value e.g. 5
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" >
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Index">
+    <xs:annotation>
+      <xs:documentation>
+        the Index type represents an Integer Value starting with -1
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer" >
+      <xs:minInclusive value="-1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UNumber">
+    <xs:annotation>
+      <xs:documentation>
+        unsigned decimal Value e.g. 5.2
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal" >
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ZoomType">
+    <xs:annotation>
+      <xs:documentation>
+        Zoom mode for scaling an image.<br/>
+        Possible values:<br/>
+        - original: original size of the image<br/>
+        - contain: Scale the image to the largest size such that both its width and its height can fit inside the content area<br/>
+        - cover: Scale the background image to be as large as possible so that the background area is completely covered by the background image. Some parts of the background image may not be in view within the background positioning area<br/>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="original"></xs:enumeration>
+      <xs:enumeration value="contain"></xs:enumeration>
+      <xs:enumeration value="cover"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Double">
+    <xs:annotation>
+      <xs:documentation>
+        datatype xs:double for expressions in e.g. parameter of methods of actions
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:double" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="XSBoolean">
+    <xs:annotation>
+      <xs:documentation>
+        datatype xs:boolean for expressions in e.g. parameter of methods of actions
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntervalType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="100"/>
+      <xs:maxInclusive value="2147483600"/>
+      <xs:pattern value="[1-9]+[0-9]*00" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Expression">
+    <xs:restriction base="xs:string" >
+      <xs:pattern value="[&gt;&lt; 0-9A-Za-z_.;()*+-/#=\[\]]{1,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+    
+  <xs:simpleType name="PropertyCollectionReference">
+    <xs:annotation>
+      <xs:documentation>
+        Reference to a member of a StructuredProperty
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" >
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Expression" type="types:Expression"/>
+
+  <xs:complexType name="NumberArray1D">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#Number">Number</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Element">
+        <xs:complexType>
+          <xs:attribute name="value" use="required" type="types:Number"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NumberArray1D_Variable">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#Number">Number</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Element">
+          <xs:complexType>
+            <xs:attribute name="value" use="required" type="types:Number"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:element ref="types:Expression" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="BooleanArray1D">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#Boolean">Boolean</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Element">
+        <xs:complexType>
+          <xs:attribute name="value" use="required" type="types:Boolean"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BooleanArray1D_Variable">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#Boolean">Boolean</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Element">
+          <xs:complexType>
+            <xs:attribute name="value" use="required" type="types:Boolean"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:element ref="types:Expression" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="StringArray1D">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#String">String</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Element">
+        <xs:complexType>
+          <xs:attribute name="value" use="required" type="types:String"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StringArray1D_Variable">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#String">String</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Element">
+          <xs:complexType>
+            <xs:attribute name="value" use="required" type="types:String"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:element ref="types:Expression" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="DateTimeArray1D">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#DateTime">DateTime</a>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Element">
+        <xs:complexType>
+          <xs:attribute name="value" use="required" type="types:DateTime"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DateTimeArray1D_Variable">
+    <xs:annotation>
+      <xs:documentation>
+        one-dimensional array with elements of type <a href="#DateTime">DateTime</a>
+      </xs:documentation>
+    </xs:annotation>
+    <!--DateTime not supported in expression so we do not allow it here -->
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Element">
+        <xs:complexType>
+          <xs:attribute name="value" use="required" type="types:DateTime"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StructuredPropertyElement">
+    <xs:attribute name="id" use="required" type="types:WidgetId" />
+  </xs:complexType>
+
+	<xs:simpleType name="brease.enum.AlarmHistoryItemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="additionalInfo1" />
+			<xs:enumeration value="additionalInfo2" />
+			<xs:enumeration value="category" />
+			<xs:enumeration value="code" />
+			<xs:enumeration value="instanceId" />
+			<xs:enumeration value="message" />
+			<xs:enumeration value="name" />
+			<xs:enumeration value="scope" />
+			<xs:enumeration value="severity" />
+			<xs:enumeration value="new state" />
+			<xs:enumeration value="old state" />
+			<xs:enumeration value="timestamp" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.AlarmListItemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="additionalInfo1" />
+			<xs:enumeration value="additionalInfo2" />
+			<xs:enumeration value="category" />
+			<xs:enumeration value="code" />
+			<xs:enumeration value="instanceId" />
+			<xs:enumeration value="message" />
+			<xs:enumeration value="name" />
+			<xs:enumeration value="scope" />
+			<xs:enumeration value="severity" />
+			<xs:enumeration value="state" />
+			<xs:enumeration value="timestamp" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.AuditListItemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="id" />
+			<xs:enumeration value="new" />
+			<xs:enumeration value="old" />
+			<xs:enumeration value="operator name" />
+			<xs:enumeration value="text" />
+			<xs:enumeration value="timestamp" />
+			<xs:enumeration value="type" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.AutoRaise">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="disabled" />
+			<xs:enumeration value="enabled" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.BackgroundPosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center bottom" />
+			<xs:enumeration value="center center" />
+			<xs:enumeration value="center top" />
+			<xs:enumeration value="left bottom" />
+			<xs:enumeration value="left center" />
+			<xs:enumeration value="left top" />
+			<xs:enumeration value="right bottom" />
+			<xs:enumeration value="right center" />
+			<xs:enumeration value="right top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.CachePolicy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cache" />
+			<xs:enumeration value="noCache" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ChartInterpolationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cardinal" />
+			<xs:enumeration value="linear" />
+			<xs:enumeration value="monotone" />
+			<xs:enumeration value="step-after" />
+			<xs:enumeration value="step-before" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ChartType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="barchart" />
+			<xs:enumeration value="linechart" />
+			<xs:enumeration value="piechart" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ChartZoomType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none" />
+			<xs:enumeration value="x" />
+			<xs:enumeration value="xy" />
+			<xs:enumeration value="y" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ChildPositioning">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="absolute" />
+			<xs:enumeration value="relative" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.CropToParent">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="both" />
+			<xs:enumeration value="height" />
+			<xs:enumeration value="none" />
+			<xs:enumeration value="width" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.CrossAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center" />
+			<xs:enumeration value="end" />
+			<xs:enumeration value="start" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Dependency">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.DialogMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="modal" />
+			<xs:enumeration value="modeless" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Direction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="horizontal" />
+			<xs:enumeration value="vertical" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Docking">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.DropDownDisplaySettings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="default" />
+			<xs:enumeration value="image" />
+			<xs:enumeration value="imageAndText" />
+			<xs:enumeration value="text" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ErrorCorrectionLevel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="high" />
+			<xs:enumeration value="low" />
+			<xs:enumeration value="medium" />
+			<xs:enumeration value="quartile" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.EventLoggerCustomer">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.EventLoggerFacility">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.EventLoggerId">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.EventLoggerSeverity">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.EventLoggerVerboseLevel">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Floating">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.GraphType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="line" />
+			<xs:enumeration value="spline" />
+			<xs:enumeration value="stepLine" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.HorizontalAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.HorizontalPosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ImageAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ImagePosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.IMEMode">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.InputType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="password" />
+			<xs:enumeration value="text" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.InterpolationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="linear" />
+			<xs:enumeration value="none" />
+			<xs:enumeration value="step" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.KeyAction">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.LabelPosition">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.LimitViolationPolicy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="noSubmit" />
+			<xs:enumeration value="noSubmitAndClose" />
+			<xs:enumeration value="setToLimit" />
+			<xs:enumeration value="setToLimitAndSubmit" />
+			<xs:enumeration value="submitAll" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.LoadPolicy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="immediate" />
+			<xs:enumeration value="onDemand" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MainAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center" />
+			<xs:enumeration value="end" />
+			<xs:enumeration value="start" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MappTableConfigurationType">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.mcProgramPhase">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="3" />
+			<xs:enumeration value="0" />
+			<xs:enumeration value="5" />
+			<xs:enumeration value="1" />
+			<xs:enumeration value="2" />
+			<xs:enumeration value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MeasurementSystem">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="imperial" />
+			<xs:enumeration value="imperial-us" />
+			<xs:enumeration value="metric" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MessageBoxIcon">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Asterisk" />
+			<xs:enumeration value="Error" />
+			<xs:enumeration value="Exclamation" />
+			<xs:enumeration value="Hand" />
+			<xs:enumeration value="Information" />
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Question" />
+			<xs:enumeration value="Stop" />
+			<xs:enumeration value="Warning" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MessageBoxState">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0x0010" />
+			<xs:enumeration value="0x0008" />
+			<xs:enumeration value="0x0040" />
+			<xs:enumeration value="0x0002" />
+			<xs:enumeration value="0x0004" />
+			<xs:enumeration value="0x0020" />
+			<xs:enumeration value="0x0001" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MessageBoxType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AbortRetryIgnore" />
+			<xs:enumeration value="OK" />
+			<xs:enumeration value="OKCancel" />
+			<xs:enumeration value="RetryCancel" />
+			<xs:enumeration value="YesNo" />
+			<xs:enumeration value="YesNoCancel" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.MpUserXError">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.NoSelectionPolicy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="selectFirst" />
+			<xs:enumeration value="showPrompt" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Orientation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BottomToTop" />
+			<xs:enumeration value="LeftToRight" />
+			<xs:enumeration value="RightToLeft" />
+			<xs:enumeration value="TopToBottom" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.PlcOpenGroupState">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="201" />
+			<xs:enumeration value="250" />
+			<xs:enumeration value="212" />
+			<xs:enumeration value="230" />
+			<xs:enumeration value="220" />
+			<xs:enumeration value="240" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.PointOfOrigin">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="application" />
+			<xs:enumeration value="container" />
+			<xs:enumeration value="window" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.Position">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="center" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="middle" />
+			<xs:enumeration value="right" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.PromptType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="all" />
+			<xs:enumeration value="image" />
+			<xs:enumeration value="text" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.RangeMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="autoscale" />
+			<xs:enumeration value="fromConfiguration" />
+			<xs:enumeration value="fromSource" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.RenderingPolicy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="default" />
+			<xs:enumeration value="performance" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ScrollDirection">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.SelectMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="advanced" />
+			<xs:enumeration value="quick" />
+			<xs:enumeration value="standard" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.ShowData">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none" />
+			<xs:enumeration value="percentage" />
+			<xs:enumeration value="value" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.SizeMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="contain" />
+			<xs:enumeration value="cover" />
+			<xs:enumeration value="fill" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.SortDirection">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ascending" />
+			<xs:enumeration value="descending" />
+			<xs:enumeration value="ascendingBySeverity" />
+			<xs:enumeration value="descendingBySeverity" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.SortFunction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="date" />
+			<xs:enumeration value="int" />
+			<xs:enumeration value="number" />
+			<xs:enumeration value="string" />
+			<xs:enumeration value="string-ins" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.TabPosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.TextAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="right" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.TextAlignmentAll">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="center bottom" />
+			<xs:enumeration value="center" />
+			<xs:enumeration value="center top" />
+			<xs:enumeration value="left bottom" />
+			<xs:enumeration value="left" />
+			<xs:enumeration value="left top" />
+			<xs:enumeration value="right bottom" />
+			<xs:enumeration value="right" />
+			<xs:enumeration value="right top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.TickStyle">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="none" />
+			<xs:enumeration value="top" />
+			<xs:enumeration value="topbottom" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.UserListItemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FullName" />
+			<xs:enumeration value="IsAdmin" />
+			<xs:enumeration value="IsLocked" />
+			<xs:enumeration value="LastLogin" />
+			<xs:enumeration value="Roles" />
+			<xs:enumeration value="UserName" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.VerticalAlign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.VerticalPosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bottom" />
+			<xs:enumeration value="middle" />
+			<xs:enumeration value="top" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.VideoPlayerPreload">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="auto" />
+			<xs:enumeration value="metadata" />
+			<xs:enumeration value="none" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.WidgetState">
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.XAxisOrientation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LeftToRight" />
+			<xs:enumeration value="RightToLeft" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="brease.enum.YAxisOrientation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BottomToTop" />
+			<xs:enumeration value="TopToBottom" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

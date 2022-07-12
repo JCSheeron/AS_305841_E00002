@@ -1,0 +1,168 @@
+@import '../../../../css/libs/variables';
+@import '../../../../css/libs/mixins';
+
+$border-outer-color: #333;
+$text-color: #3E3E47;
+$slider-color: $active-color;
+$btn-active-color: $active-color;
+@mixin styling($lbl-font-size, $btn-font-size, $dtfragment-width, $dtfragment-year-width, $dtfragment-month-width) {
+    .breaseDateTimePicker {
+        header {
+            margin-left: -9px;
+            margin-right: -9px;
+        }
+
+        .dateTimePickerBody {
+
+            background-color: #333333;
+            display: block;
+
+
+            button {
+                @include appearance(none);
+                background-color: #FFF;
+                border: none;
+                display: block;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            label {
+                font-weight: bold;
+                font-size: $lbl-font-size;
+                line-height: 120%;
+                color: $text-color;
+                display: block;
+            }
+
+            .dateTimePickerButtons {
+                display: flex;
+                box-sizing: border-box;
+                height: 200px;
+                background-color: #FFF;
+
+                .dtfragment {
+                    width: $dtfragment-width;
+                    height: 200px;
+                    float: left;
+                    overflow: hidden;
+
+                    &.year {
+                        width: $dtfragment-year-width;
+                    }
+
+                    &.month {
+                        width: $dtfragment-month-width;
+                    }
+
+                    margin-right: 5px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    .fragment {
+                        position: relative;
+                        top: 0px;
+
+                        &.transition {
+                            -webkit-transition: top 0.5s;
+                            transition: top 0.5s;
+                        }
+                    }
+                }
+
+                .marker {
+                    position: relative;
+                    height: 2px;
+                    z-index: 20;
+                    background-color: $active-color;
+
+                    &:nth-child(1) {
+                        top: 82px;
+                    }
+
+                    &:nth-child(2) {
+                        top: 120px;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    height: 40px;
+                    border-bottom: 1px solid #d4d4d4;
+                    float: left;
+                    text-align: center;
+                    line-height: 40px;
+                    font-size: $btn-font-size;
+                }
+            }
+
+            .dateTimePickerHeadings {
+                position: relative;
+
+                .actDate {
+                    display: block;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 38px;
+                    font-size: $btn-font-size;
+                    background-color: #fff;
+                    color: #000000;
+                    margin: 0 0 5px 0;
+                }
+            }
+
+            .dateTimePickerControl {
+                display: flex;
+                margin: 5px 0 0 0;
+                height: 60px;
+                background-color: #FFF;
+                justify-content: space-between;
+
+                .dateTimePickerEnter {
+                    max-width: 120px;
+                    width: 48%;
+                    height: 60px;
+                    float: right;
+                    word-wrap: break-word;
+                    border-left: 1px solid #333;
+                    overflow: hidden;
+
+                    &.active {
+                        background-color: $btn-active-color;
+                        color: #FFF;
+                    }
+                }
+
+                .dateTimePickerReset {
+                    max-width: 120px;
+                    width: 48%;
+                    height: 60px;
+                    float: left;
+                    word-wrap: break-word;
+                    border-right: 1px solid #333;
+                    overflow: hidden;
+
+                    &.active {
+                        background-color: $btn-active-color;
+                        color: #FFF;
+                    }
+                }
+
+                .space {
+                    max-width: 229px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    @include styling($lbl-font-size: 9px, $btn-font-size: 17px, $dtfragment-width: 56px, $dtfragment-year-width: 80px, $dtfragment-month-width:116px);
+}
+@media screen and (min-width: 601px) {
+    @include styling($lbl-font-size: 12px, $btn-font-size: 20px, $dtfragment-width: 60px, $dtfragment-year-width: 84px, $dtfragment-month-width:120px);
+}

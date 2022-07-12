@@ -1,0 +1,177 @@
+@import "mixins.scss";
+@mixin widgets_brease_NumPad_base {
+	@include elemWidth(354);
+	@include elemHeight(411);
+	@include border-radius(0px);
+.numpadHeader {
+	@include border-radius(0px);
+}
+.numpad {
+	background-color: #FFFFFF;
+}
+.numpad {
+	@include backGroundGradient('');
+}
+.numpadHeader {
+	@include backGroundGradient('');
+}
+	border-color: #333333;
+header {
+	background-color: #333333;
+}
+&.arrowLeft .breaseWindowArrow {
+	border-right-color: #333333;
+}
+&.arrowRight .breaseWindowArrow {
+	border-left-color: #333333;
+}
+&.arrowTop .breaseWindowArrow {
+	border-bottom-color: #333333;
+}
+&.arrowBottom .breaseWindowArrow {
+	border-top-color: #333333;
+}
+.breaseNumPadButtons button {
+	color: #000000;
+}
+.maxValueBox .maxValue {
+	color: #000000;
+}
+.maxValueBox label {
+	color: #000000;
+}
+.minValueBox .minValue {
+	color: #000000;
+}
+.minValueBox label {
+	color: #000000;
+}
+.breaseNumPadDeleteIcon {
+	@include svgcolordelete('#000000');
+}
+.breaseNumPadEnterIcon {
+	@include svgcolorenter('#000000');
+}
+.breaseNumPadButtons button.active {
+	background-color: #FFA800;
+}
+.breaseNumPadButtons button.active {
+	color: #000000;
+}
+.breaseNumPadButtons button.active .breaseNumPadDeleteIcon {
+	@include svgcolordelete('#000000');
+}
+.breaseNumPadButtons button.active .breaseNumPadEnterIcon {
+	@include svgcolorenter('#000000');
+}
+.breaseNumPadButtons button:not(.active) {
+	@include backGroundGradient('');
+}
+.breaseNumPadButtons button {
+	@include border-radius(0px);
+}
+.breaseNumPadButtons button.active {
+	@include backGroundGradient('');
+}
+.solidBtnBorder .breaseNumPadButtons button.active {
+	border-color: #333333;
+}
+.breaseNumPadButtons button {
+	background-color: #FFFFFF;
+}
+.breaseNumPadButtons button {
+	margin: 0px 0px 0px 0px;
+}
+.breaseNumPadButtons button {
+	border-color: #555555;
+}
+.solidBtnBorder .breaseNumPadButtons button {
+	border-color: #555555;
+}
+.breaseNumPadButtons button[data-value='0'] {
+	border-right-color: #555555;
+}
+.breaseNumPadButtons button {
+	border-width: 1px 1px 1px 1px;
+}
+.solidBtnBorder .breaseNumPadButtons button {
+	border-width: 1px 1px 1px 1px;
+}
+.breaseNumPadButtons button[data-value='0'] {
+	border-width: 1px 1px 1px 1px;
+}
+	opacity: 1;
+	font-family: Arial;
+	@include box-shadow(none);
+.breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob {
+	background-color: #FFF;
+}
+.breaseNumpadSlider .numpadSlider_thumb .numpadSlider_knob {
+	@include backGroundGradient('');
+}
+.breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output {
+	background-color: transparent;
+}
+.breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output:after {
+	border-top-color: transparent;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	background-color: #FFFFFF;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	@include backGroundGradient('');
+}
+.breaseNumpadNumericValueInnerWrapper {
+	border-color: #333333;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	border-style: none;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	border-width: 1px;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	@include border-radius(0px);
+}
+.numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue {
+	font-family: Arial;
+}
+.numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue {
+	font-size: 18px;
+}
+.numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue {
+	@include text-alignment(left);
+}
+.numpad .breaseNumpadNumericValueOutterWrapper .breaseNumpadNumericValueInnerWrapper .breaseNumpadNumericValue {
+	color: #000000;
+}
+.breaseNumpadSlider .numpadSlider_thumb .numpadSlider_output span {
+	color: #000000;
+}
+.breaseNumpadNumericValueInnerWrapper {
+	@include box-shadow(none);
+}
+.breaseNumpadNumericValueOutterWrapper {
+	@include display(if(true, false, true), 'flex');
+}
+.minValueBox {
+	@include display(true);
+}
+.maxValueBox {
+	@include display(true);
+}
+.breaseNumPadDeleteIcon {
+	@include pureBackgroundImage('../');
+}
+button.breaseNumPadDelete.active .breaseNumPadDeleteIcon {
+	@include pureBackgroundImage('../');
+}
+.breaseNumPadEnterIcon {
+	@include pureBackgroundImage('../');
+}
+button.breaseNumPadEnter.active .breaseNumPadEnterIcon {
+	@include pureBackgroundImage('../');
+}
+
+}
+

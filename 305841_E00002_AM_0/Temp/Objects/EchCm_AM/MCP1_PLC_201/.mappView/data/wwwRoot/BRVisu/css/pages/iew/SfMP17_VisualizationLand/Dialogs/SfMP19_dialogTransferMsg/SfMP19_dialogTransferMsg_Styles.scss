@@ -1,0 +1,16 @@
+﻿@import "mixins.scss";
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] {
+	.breaseDialogWindowHeader .imageDiv{
+@include pureBackgroundImage('../Media/SafedomainMP11_SVG/SafedomainMP11_Wait.svg');
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] {
+	.breaseWindowClose{
+@include display(false);
+	}
+}
+div[data-brease-dialogId='SfMP193_dialogTransferMsgdialog'] {
+	.breaseDialogWindowContentBox > .breaseLayout{
+	background-color: rgba(255, 255, 255, 1);
+	}
+}
