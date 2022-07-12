@@ -111,8 +111,8 @@ operatingMode.isInCycle := FALSE;
 operatingMode.isStopping := FALSE;
 
 // Reset step hold and timeout timers
-tmrStepMin(IN:= FALSE, PT:= T#100ms);
-tmrStepTO(IN:= FALSE, PT:= T#1s);
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Decouple the inner eccentric from the outer eccentric to start with. This is so
 // the inner eccentric can be easily moved back to zero depth position if this is needed.
@@ -124,13 +124,16 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_DECOUPLE_ECC] := tmrStepTO.ET;
+stepIsTO[PCS_DECOUPLE_ECC] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO FROM Stp_DecoupleAxes TO Stp_ProdWaitForStart:=
 (* @LANGUAGE := 'st' *)
@@ -168,8 +171,8 @@ operatingMode.isInCycle := FALSE;
 operatingMode.isStopping := FALSE;
 
 // Reset step hold and timeout timers
-tmrStepMin(IN:= FALSE, PT:= T#100ms);
-tmrStepTO(IN:= FALSE, PT:= T#5s);
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Reset the axes
 axes[AD_SPINDLE].Commands.DriveResetReq := TRUE;
@@ -179,13 +182,16 @@ axes[AD_Z].Commands.DriveResetReq := TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_ENABLE_AXES] := tmrStepTO.ET;
+stepIsTO[PCS_ENABLE_AXES] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO FROM Stp_ResetAxes TO Stp_ProdWaitForStart:=
 (* @LANGUAGE := 'st' *)
@@ -203,12 +209,49 @@ tmrStepMin.Q AND
 (axes[AD_Z].Status.PlcOpenState = mcAXIS_DISABLED OR axes[AD_Z].Status.PlcOpenState = mcAXIS_STANDSTILL)
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_ProdWaitForStart' *)
-TRANSITION Req cycle start FROM Stp_ProdWaitForStart TO Stp_EnableAxes:=
+TRANSITION Req cycle start FROM Stp_ProdWaitForStart TO Stp_IsCamLoadNeeded:=
 (* @LANGUAGE := 'st' *)
 // In production mode and a cycle start is made
 operatingMode.OperatingMode = OM_PRODUCTION_MODE AND
 cyclePermissives.allowCycleStart AND
 operatingMode.ReqCycleStart
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_IsCamLoadNeeded' *)
+STEP Stp_IsCamLoadNeeded:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+TRANSITION cam loaded FROM Stp_IsCamLoadNeeded TO Stp_EnableAxes:=
+(* @LANGUAGE := 'st' *)
+// Use the calc cam table hmi button enabled as 
+// the sign that the table needs to be loaded.
+NOT hmiProcessReqs.calCalcTableEnable
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_EnableAxes' *)
+TRANSITION cam not loaded FROM Stp_IsCamLoadNeeded TO Stp_ReqCamTableLoad:=
+(* @LANGUAGE := 'st' *)
+// Use the calc cam table hmi button enabled as 
+// the sign that the table needs to be loaded.
+hmiProcessReqs.calCalcTableEnable
+END_TRANSITION
+(* @SFCNOJUMP := 'Stp_ReqCamTableLoad' *)
+STEP Stp_ReqCamTableLoad:
+END_STEP
+(* @SFCMAXTIME := '' *)
+(* @SFCMINTIME := '' *)
+(* @SFCCOMMENT := '' *)
+ENTRY_ACTION
+(* @LANGUAGE := 'st' *)
+// Request the cam table be recalculated and loaded using the HMI request.
+hmiProcessReqs.camReqCalcTable := TRUE;
+END_ACTION
+TRANSITION cam loaded FROM Stp_ReqCamTableLoad TO Stp_EnableAxes:=
+(* @LANGUAGE := 'st' *)
+// Use the request being clear and the 
+// calc cam table hmi button enabled as the sign that the cam table has been loaded
+NOT hmiProcessReqs.camReqCalcTable AND
+NOT hmiProcessReqs.calCalcTableEnable
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_EnableAxes' *)
 STEP Stp_EnableAxes:
@@ -238,21 +281,15 @@ ts_cfLockGate := TRUE;
 gr_PartCurrent.cutPassCount := 1;
 
 // Reset step hold and timeout timers
-tmrStepMin(IN:= FALSE, PT:= T#100ms);
-tmrStepTO(IN:= FALSE, PT:= T#2s);
-
-
-// Set the vfd speed, and request start if not already running
-// Request to start now, check for flow in a little bit.
-// TODO:
-// cfVfd.ReqAutoSpeedEU := gr_CfgCurrent.cfVfd.speedPct;
-// cfVfd.ReqAutoStart := cfVfd.State = MTRVFD_REM_AUTO_STOP;
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Enable the axes if they are not already
 axes[AD_SPINDLE].Commands.EnableReq := (axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_DISABLED);
 axes[AD_OUTER_ECCENTRIC].Commands.EnableReq := (axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED);
 axes[AD_INNER_ECCENTRIC].Commands.EnableReq := (axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_DISABLED);
 axes[AD_Z].Commands.EnableReq := (axes[AD_Z].Status.PlcOpenState = mcAXIS_DISABLED);
+axes[AD_CF_VFD].Commands.EnableReq := (axes[AD_CF_VFD].Status.PlcOpenState = mcAXIS_DISABLED);
 
 // Decouple the inner eccentric from the outer eccentric to start with. This is so
 // the inner eccentric can be easily moved back to zero depth position if this is needed.
@@ -264,13 +301,17 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamOutReq:= TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_RESET_AXES] := tmrStepTO.ET;
+stepIsTO[PCS_RESET_AXES] := tmrStepTO.Q;
+
 END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_EnableAxes TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
@@ -286,7 +327,15 @@ tmrStepMin.Q AND
 axes[AD_SPINDLE].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 axes[AD_OUTER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_STANDSTILL AND
-axes[AD_Z].Status.PlcOpenState = mcAXIS_STANDSTILL
+axes[AD_Z].Status.PlcOpenState = mcAXIS_STANDSTILL AND
+(* Common VFD Status 
+0 Auto tuning
+2 Ready (Wait for next command)
+4 Run (Ready for next set point)
+5 Accelerate to new SP
+6 Decelerate to new SP
+*)
+(axes[AD_CF_VFD].Status.PlcOpenState = mcAXIS_STANDSTILL AND cfVfd.DevSpecStatus = 4) // make sure VFD is out of auto-tune and ready for SP
 END_TRANSITION
 (* @SFCNOJUMP := 'Stp_StartCf1' *)
 STEP Stp_StartCf1:
@@ -367,9 +416,10 @@ partMotion.prodCycleStepCurrent := PCS_ZERO_DEPTH;
 calcLReal1 := 0.1; // 100 msec minimum
 calcLReal1 := MAX(calcLReal1, (ABS(axes[AD_INNER_ECCENTRIC].Status.CalculatedPosition1) / gr_CfgCurrent.cuttingHead.retractRate)); // deg / deg/sec = sec 
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
-// tmrStepTO.PT := DINT_TO_TIME(calcDint1);
- tmrStepTO.PT := T#30s;
-tmrStepTO(IN:= FALSE); 
+gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent] := DINT_TO_TIME(calcDint1);
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Run inner eccentric back to zero depth. The "zero" depth spot moves with the outer eccentric,
 // so do a relative move back by the angular difference to the outer eccentric axis.
@@ -385,13 +435,16 @@ axes[AD_INNER_ECCENTRIC].Commands.MoveRelativeReq := TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_ZERO_DEPTH] := tmrStepTO.ET;
+stepIsTO[PCS_ZERO_DEPTH] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_ZeroDepth TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
@@ -489,8 +542,10 @@ tmrStepMin(IN:= FALSE, PT:= T#100ms);
 calcLReal1 := 0.1; // 100 msec minimum
 calcLReal1 := MAX(calcLReal1, ((gr_CfgCurrent.spindle.nomRpm / 60.0) / gr_CfgCurrent.spindle.accel)); // rev/sec / rev/sec^2 = sec
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
-tmrStepTO.PT := DINT_TO_TIME(calcDint1);
-tmrStepTO(IN:= FALSE); 
+gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent] := DINT_TO_TIME(calcDint1);
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Start spindle at the configured speed.
 // Spindle will continue until error, or another req is made, or the vel req is removed.
@@ -502,13 +557,16 @@ axes[AD_SPINDLE].Commands.MoveVelocityReq := TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_START_SPINDLE] := tmrStepTO.ET;
+stepIsTO[PCS_START_SPINDLE] := tmrStepTO.Q;
 END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_StartSpindle TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
@@ -579,19 +637,18 @@ ENTRY_ACTION
 // Update step 
 partMotion.prodCycleStepCurrent := PCS_COUPLE_ECC;
 
-// Reset step minimum timer
-tmrStepMin(IN:= FALSE, PT:= T#100ms);
-// Reset TO tmr
-// No move, so just use a value so we don't get hung up here
-tmrStepTO(IN:= FALSE, PT:= T#1s);
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
 
 // Cam couple the inner eccentric to the outer eccentric
 
-// Use Cam ID 1
+// Use the production cam ID
 // This value comes from the .camlist file in the config view,
+// Or a programatically generated cam,
 // which in turn specifies a cam file (logical view) for the
 // slave to follow, in this case in Logical View >> axInE (the slave axis)
-axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamId := 1;
+axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamId := PROD_CAM_TABLE_ID
 
 // The cam is in units of degrees but the scaling needs to take into account
 // the axis resolution so the physical motion in also in units of degrees.
@@ -610,36 +667,23 @@ axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamBufferMode := mcABORTING; // abor
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamMasterOffset := 0.0;
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamSlaveOffset := 0.0;
 
-// Master position from which the slave moves synchronously is the current master position
-// plus the depth adj angle
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].Status.Position + partMotion.depthAdjAngle, 360.0);
-
-// Slave position from which the slave moves synchronously is the master sync position, plus the pass offset angle
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.SlaveSyncPosition := fctLRMod(axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterSyncPosition + partMotion.passOffsetAngle, 360.0);
-
-// Master start distance during which the slave synchronizes. Use the depth adj dist.
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := partMotion.depthAdjAngle;
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.MasterStartDistance := 5.0;
-
-// For velocity, allow the configured maximum
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftVelocityMax := axes[AD_INNER_ECCENTRIC].MoveParameters.VelocityMax; 
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftAccelerationMax := 0.0; // use slave axis limit
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftDecelerationMax := 0.0; // use slave axis limit
-// axes[AD_OUTER_ECCENTRIC].CouplingParameters.ShiftJerk := 0.0; // Jerk not supported
-
 // Execute the gear in position command once the update parmeters req has at least been seen.
 // Update should not be needed since the axes are not geared yet.
 axes[AD_OUTER_ECCENTRIC].CouplingParameters.CamInReq := TRUE;
 END_ACTION
 EXIT_ACTION
 (* @LANGUAGE := 'st' *)
+// Record the elapsed time and if there was a timeout.
 // The current step holds an ePROD_CYCLE_STEP enum which also 
-// acts as the array index.
+// acts as the array index. In theory we could use this as the 
+// array index, but in practice, sometimes the wrong index is used
+// when exiting a step -- this must be due to a race condition or some
+// order of operation issue when changing steps. Use the enum value
+// directly.
 
-// Record the ET
-stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
-// If this is a timeout, record that also
-stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
+stepETs[PCS_COUPLE_ECC] := tmrStepTO.ET;
+stepIsTO[PCS_COUPLE_ECC] := tmrStepTO.Q;
+
 END_ACTION
 TRANSITION Step TO or Stop Req FROM Stp_CoupleEccs TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
@@ -648,14 +692,14 @@ TRANSITION Step TO or Stop Req FROM Stp_CoupleEccs TO Stp_CycleStop:=
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION Inner Ecc Coupled FROM Stp_CoupleEccs TO Stp_StartPass:=
+TRANSITION Inner Ecc Coupled FROM Stp_CoupleEccs TO Stp_StartCut:=
 (* @LANGUAGE := 'st' *)
 // Inner axis is synbchronized
 axes[AD_INNER_ECCENTRIC].Status.PlcOpenState = mcAXIS_SYNCHRONIZED_MOTION AND
 axes[AD_INNER_ECCENTRIC].Status.IsCamInSync
 END_TRANSITION
-(* @SFCNOJUMP := 'Stp_StartPass' *)
-STEP Stp_StartPass:
+(* @SFCNOJUMP := 'Stp_StartCut' *)
+STEP Stp_StartCut:
 (* @LANGUAGE := 'st' *)
 // Run step hold and timeout timers (PT set in step entry)
 tmrStepMin(IN:= TRUE);
@@ -670,9 +714,6 @@ ENTRY_ACTION
 // Update step 
 partMotion.prodCycleStepCurrent := PCS_START_PASS;
 
-// Reset step minimum timer
-tmrStepMin(IN:= FALSE, PT:= T#100ms);
-// Reset TO tmr.
 // The move is started here, and will traverse thru the adj angle in this step.
 // Set TO time to longer than is necessary to travel the adj angle.
 // Calc PT time based on velocity and travel distance -- which will be a bit low since it doesn't take accel into account
@@ -682,6 +723,22 @@ calcLReal1 := MAX(calcLReal1, (partMotion.depthAdjAngle / partMotion.cutVelocity
 calcDint1 := LREAL_TO_DINT(calcLReal1 * 1000.0 * 1.5); // conversion is expecting msec
 tmrStepTO.PT := DINT_TO_TIME(calcDint1);
 tmrStepTO(IN:= FALSE); 
+// Reset step hold and timeout timers
+tmrStepMin(IN:= FALSE, PT:= gr_ProdModeStepMins[partMotion.prodCycleStepCurrent]);
+tmrStepTO(IN:= FALSE, PT:= gr_ProdModeStepTOs[partMotion.prodCycleStepCurrent]);
+
+// Set TO time to longer than is necessary for the move
+// Use the trapazoidal move time fb to Calc PT time based on distance, velocity, accel, and decel.
+// This should be a good approximate number, but not exact. It will be a bit low if jerk is used.
+// Enforce a minimum time to rule out values <= 0
+calcReal1 := 100.0; // in mSec when using the fb, 100 msec minimum
+fbCalcMoveTimes(
+  _I_Vel0 := 0.0,
+_I_VelMove :=  gr_CfgCurrent.zAxis.indexSpeed,
+_I_Accel := gr_CfgCurrent.zAxis.accel,
+_I_Decel := gr_CfgCurrent.zAxis.decel,
+_I_Dist := gr_CfgCurrent.zAxis.indexDist);
+
 
 // INITIALLY HARD CODE cut overrun angle (due to hardcoaded cam path)
 gr_CfgCurrent.cuttingHead.cutOverrunAngle := 5.0;
@@ -732,14 +789,14 @@ stepETs[partMotion.prodCycleStepCurrent] := tmrStepTO.ET;
 // If this is a timeout, record that also
 stepIsTO[partMotion.prodCycleStepCurrent] := tmrStepTO.Q;
 END_ACTION
-TRANSITION Step TO or Stop Req FROM Stp_StartPass TO Stp_CycleStop:=
+TRANSITION Step TO or Stop Req FROM Stp_StartCut TO Stp_CycleStop:=
 (* @LANGUAGE := 'st' *)
 // Step timeout or cycle stop
 (tmrStepTO.Q AND NOT disableStepTO) OR
 operatingMode.ReqCycleStop
 END_TRANSITION
 (* @SFCISJUMP := 'Stp_CycleStop' *)
-TRANSITION synching FROM Stp_StartPass TO Stp_Synching1:=
+TRANSITION cutting FROM Stp_StartCut TO Stp_Synching1:=
 (* @LANGUAGE := 'st' *)
 // Minimum time elapsed -- allow time for move to start and make sure status is accurate
 tmrStepMin.Q AND

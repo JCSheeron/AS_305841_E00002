@@ -62,7 +62,7 @@ PROGRAM _INIT
   recipeReadAngleLuOS := FALSE;
   recipeReadAngleLuDone := FALSE;
   
-  reqRecipeWriteAngleLu := FALSE; // set high to read recipe after startup
+  reqRecipeWriteAngleLu := FALSE; // set high to write recipe after startup
   recipeWriteAngleLuOS := FALSE;
   recipeWriteAngleLuDone := FALSE;
   
@@ -79,7 +79,8 @@ PROGRAM _CYCLIC
                       ADR(gr_CfgCurrent.cuttingHead.StartOfCutProfile),
                       cutProfileBytes);
   // Enable loading the CAM table if it has not been done yet,
-  // or if a change is detected, or if the last time there was an error.
+  // or if a change is detected, or if the last time there was an error,
+  // but the machine cannot be in cycle while a cam table change in made.
   hmiProcessReqs.calCalcTableEnable := (result <> 0 OR NOT createCamTableDone OR camSeqCtr < -1);
 
   // *****************
@@ -115,7 +116,7 @@ PROGRAM _CYCLIC
 
     IF 1 = camSeqCtr THEN
       // Use cam id 14 for calculated cam table
-      camTableId := 14;
+      camTableId := PROD_CAM_TABLE_ID;
       // Guess the operator will use this cam id
       // TODO: No access to hmiLibraryAxisReqs in OmSaveDev!!
       

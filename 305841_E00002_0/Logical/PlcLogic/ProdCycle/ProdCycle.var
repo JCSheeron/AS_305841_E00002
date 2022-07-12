@@ -26,9 +26,9 @@ VAR
 
   (* production cycle step information *)
   (* indexes correspond to ePROD_CYCLE_STEP values *)
-  stepETs  : ARRAY[0..40] OF TIME; (* step elapsed times *)
-  stepTOs  : ARRAY[0..40] OF TIME; (* step Timeout values *)
-  stepIsTO : ARRAY[0..40] OF BOOL; (* set if the step has a TO *)
+  (* move to global variables so they can be permanent *)
+  (* stepETs  : ARRAY[0..40] OF TIME; step elapsed times *)
+  (* stepIsTO : ARRAY[0..40] OF BOOL; set if the step has a TO *)
   
   prodCycleStep : ePROD_CYCLE_STEP;
 END_VAR

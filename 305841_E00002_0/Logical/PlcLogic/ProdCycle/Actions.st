@@ -137,3 +137,45 @@ ACTION CalcZIndex :
   
 END_ACTION
 
+ACTION SetStepTOs :
+    gr_ProdModestepTOs[PCS_UNKNOWN]           := T#0ms;
+    gr_ProdModestepTOs[PCS_INIT]              := T#0ms;
+    gr_ProdModestepTOs[PCS_MODE_CHECK]        := T#0ms;
+    gr_ProdModestepTOs[PCS_WAIT_FOR_PROD]     := T#0ms;
+    gr_ProdModestepTOs[PCS_WAIT_FOR_START]    := T#0ms;
+    gr_ProdModestepTOs[PCS_DECOUPLE_ECC]      := T#0ms;
+    gr_ProdModestepTOs[PCS_RESET_AXES]        := T#0ms;
+    gr_ProdModestepTOs[PCS_ENABLE_AXES]       := T#0ms;
+    gr_ProdModestepTOs[PCS_START_CF]          := T#0ms;
+    gr_ProdModestepTOs[PCS_ZERO_DEPTH]        := T#0ms;
+    gr_ProdModestepTOs[PCS_Z_TO_SOC]          := T#0ms;
+    gr_ProdModestepTOs[PCS_NEXT_CYCLE]        := T#0ms;
+    gr_ProdModestepTOs[PCS_START_SPINDLE]     := T#0ms;
+    gr_ProdModestepTOs[PCS_COUPLE_ECC]        := T#0ms;
+    gr_ProdModestepTOs[PCS_START_PASS]        := T#0ms;
+    gr_ProdModestepTOs[PCS_SYNCHING1]         := T#0ms;
+    gr_ProdModestepTOs[PCS_SYNCHING2]         := T#0ms;
+    gr_ProdModestepTOs[PCS_SYNCHING3]         := T#0ms;
+    gr_ProdModestepTOs[PCS_AXES_SYNCHED]      := T#0ms;
+    gr_ProdModestepTOs[PCS_SET_NEXT_PASS]     := T#0ms;
+    gr_ProdModestepTOs[PCS_SET_FINISH_PASS]   := T#0ms;
+    gr_ProdModestepTOs[PCS_SET_RETRACT]       := T#0ms;
+    gr_ProdModestepTOs[PCS_STOP_SPINDLE]      := T#0ms;
+    gr_ProdModestepTOs[PCS_INDEX_Z_WAIT]      := T#0ms;
+    gr_ProdModestepTOs[PCS_CF_OFF1]           := T#0ms;
+    gr_ProdModestepTOs[PCS_CF_OFF2]           := T#0ms;
+    gr_ProdModestepTOs[PCS_Z_TO_UNLOAD]       := T#0ms;
+    gr_ProdModestepTOs[PCS_DONE_WAIT]         := T#0ms;
+    gr_ProdModestepTOs[PCS_INDEX_Z]           := T#0ms;
+    gr_ProdModestepTOs[PCS_EOC_WAIT]          := T#0ms;
+    gr_ProdModestepTOs[PCS_CF_TO]             := T#0ms;
+    gr_ProdModestepTOs[PCS_START_CF2]         := T#0ms;
+    gr_ProdModestepTOs[PCS_CYCLE_STOP]        := T#0ms;
+    gr_ProdModestepTOs[PCS_CS_STOP_AXES]      := T#0ms;
+    gr_ProdModestepTOs[PCS_CS_ZERO_DEPTH]     := T#0ms;
+    gr_ProdModestepTOs[PCS_CS_STOP_SPINDLE]   := T#0ms;
+    gr_ProdModestepTOs[PCS_CS_DISABLE_AXES]   := T#0ms;
+    gr_ProdModestepTOs[PCS_CS_STOP_CF]        := T#0ms;
+
+END_ACTION
+

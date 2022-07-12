@@ -125,6 +125,137 @@ FUNCTION_BLOCK fbCalcTrapMoveTime
   _O_MoveTime := DINT_TO_TIME(_O_MoveTimeMsec);
 END_FUNCTION_BLOCK
 
+FUNCTION_BLOCK fbLookUpYValT3
+  // The lookup table needs to be loaded into the MTLookUpTable fb.
+  // We don't want to do this every scan, so use the initTables to 
+  // trigger this, and the isInitialized output to monitor it.
+  // Initialize the tables on a rising edge of initTables input,
+  // OR if they have not been done yet and the enable goes high.
+  
+  IF (LoadTables AND NOT _loadOS) OR (Enable AND NOT IsTablesLoaded) THEN
+    // Load tables if requested or if a lookup is triggered and they are not loaded.
+    // First set the OS so only a rising edge of loadTables is used
+    _loadOS := TRUE;
+    // Now load the table values
+    _fbDepthToAngleLuT1.NumberOfNodes := T1.numberOfVals;
+    _fbDepthToAngleLuT1.NodeVectorX := T1.xVals;
+    _fbDepthToAngleLuT1.FcnValues := T1.yVals;
+    
+    _fbDepthToAngleLuT2.NumberOfNodes := T2.numberOfVals;
+    _fbDepthToAngleLuT2.NodeVectorX := T2.xVals;
+    _fbDepthToAngleLuT2.FcnValues := T2.yVals;
+    
+    _fbDepthToAngleLuT3.NumberOfNodes := T3.numberOfVals;
+    _fbDepthToAngleLuT3.NodeVectorX := T3.xVals;
+    _fbDepthToAngleLuT3.FcnValues := T3.yVals;
+    
+    // set the output status
+    IsTablesLoaded := TRUE;
+  ELSIF NOT LoadTables THEN
+    // keep OS false when init is not set
+    _loadOS := FALSE;
+  END_IF;
+  
+  // clear the done bit on rising edge of enable
+  IF (Enable AND NOT _enableOS) OR (Enable AND XVal <> _xValPrev) THEN
+    // first time thru with enable set, or enable is set and the x value changes
+    
+    // set the OS
+    _enableOS := TRUE;
+    
+    // Clear the done bit and set the active bit
+    Done := FALSE;
+    Active := TRUE;
+    
+    // See what table the x value is in
+    _tableNumber := fctGetTableNumberT3(XVal, ADR(T1), ADR(T2), ADR(T3));
+    
+    // Look up the Y value from the correct table
+    // The fbDepthToAngle will interpolate between table entries
+    // Call with correct lookup fb with enable false to make sure
+    // input changes, including possible table updates above
+    // are processed on rising edge of enable later on.
+    IF 1 = _tableNumber THEN
+      // Set up the lookup fb
+      _fbDepthToAngleLuT1.InX := XVal;
+      _fbDepthToAngleLuT1.Mode := mtLOOKUP_LINEAR_EXTRAPOLATION;
+      _fbDepthToAngleLuT1(Enable := FALSE);
+    ELSIF 2 = _tableNumber THEN
+      // Set up the lookup fb
+      _fbDepthToAngleLuT2.InX := XVal;
+      _fbDepthToAngleLuT2.Mode := mtLOOKUP_LINEAR_EXTRAPOLATION;
+      _fbDepthToAngleLuT2(Enable := FALSE);
+    ELSIF 3 = _tableNumber THEN
+      // Set up the lookup fb
+      _fbDepthToAngleLuT3.InX := XVal;
+      _fbDepthToAngleLuT3.Mode := mtLOOKUP_LINEAR_EXTRAPOLATION;
+      _fbDepthToAngleLuT3(Enable := FALSE);
+    END_IF;
+    
+    // Update the previos X value
+    _xValPrev := XVal;
+    
+  ELSIF Enable AND _enableOS THEN
+    // First time thru completed. Do this while enable is high.
+    // LU FBs were set up on first scan thru, so now get on with 
+    // the lookup.
+    IF 1 = _tableNumber THEN
+      // look up the Y value from table 1
+      _fbDepthToAngleLuT1(Enable := TRUE);
+      IF _fbDepthToAngleLuT1.Enable AND _fbDepthToAngleLuT1.Active AND NOT _fbDepthToAngleLuT1.Error THEN
+        // Lookup worked. Send out the looked up value.
+        YVal := _fbDepthToAngleLuT1.Out;
+        Error := FALSE;
+      ELSIF _fbDepthToAngleLuT1.Enable AND _fbDepthToAngleLuT1.Error THEN
+        // Lookup didn't work. Send out the sentinel value.
+        YVal := INVALID_SENTINEL;
+        Error := TRUE;
+      END_IF;
+      // All done, set the done output
+      Done := TRUE;
+    ELSIF 2 = _tableNumber THEN
+      // look up the Y value from table 2
+      _fbDepthToAngleLuT2(Enable := TRUE);
+      IF _fbDepthToAngleLuT2.Enable AND _fbDepthToAngleLuT2.Active AND NOT _fbDepthToAngleLuT2.Error THEN
+        // Lookup worked. Send out the looked up value.
+        YVal := _fbDepthToAngleLuT2.Out;
+        Error := FALSE;
+      ELSIF _fbDepthToAngleLuT2.Enable AND _fbDepthToAngleLuT2.Error THEN
+        // Lookup didn't work. Send out the sentinel value.
+        YVal := INVALID_SENTINEL;
+        Error := TRUE;
+      END_IF;
+      // All done, set the done output
+      Done := TRUE;
+    ELSIF 3 = _tableNumber THEN
+      // look up the Y value from table 3
+      _fbDepthToAngleLuT3(Enable := TRUE);
+      IF _fbDepthToAngleLuT3.Enable AND _fbDepthToAngleLuT3.Active AND NOT _fbDepthToAngleLuT3.Error THEN
+        // Lookup worked. Send out the looked up value.
+        YVal := _fbDepthToAngleLuT3.Out;
+        Error := FALSE;
+      ELSIF _fbDepthToAngleLuT3.Enable AND _fbDepthToAngleLuT3.Error THEN
+        // Lookup didn't work. Send out the sentinel value.
+        YVal := INVALID_SENTINEL;
+        Error := TRUE;
+      END_IF;
+      // All done, set the done output
+      Done := TRUE;
+    ELSE
+      // some sort of problem with the table number
+      Error := TRUE;
+      Done := TRUE;
+    END_IF;
+  ELSIF NOT Enable THEN
+    // Enable is not high. Clear the OS and manage the output stauts
+    _enableOS := FALSE;
+    Active := FALSE;
+    Done := FALSE;
+    Error := FALSE;
+    // status := ??; TODO: What should status be?
+  END_IF;
+      
+END_FUNCTION_BLOCK
 // Return the angle between pos A and pos B (A-B). Returns +/- 180 deg. +: Pos A ahead of B, -: Pos A behind B
 FUNCTION fctAziDiff
   // Positive value: A is ahead of B,

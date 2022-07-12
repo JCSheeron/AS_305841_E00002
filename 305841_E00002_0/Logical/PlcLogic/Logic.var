@@ -85,9 +85,12 @@ VAR CONSTANT
   SL_SUPERUSER : WORD      := 16#10; (* bit 4 *)
   
   (* process tolerances *)
-  TOL_DEPTH_ZERO_DEG : LREAL := 0.002; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
-  TOL_ZINDEX  : LREAL := 0.1; (* Somewhat arbitrarily of 0.1mm TODO: determine proper value *)
+  TOL_DEPTH_ZERO_DEG : LREAL := 0.1; (* degrees. Values less than this are considered zero. LREAL to be comparable to positions. TODO: Need proper value *)
+  TOL_ZINDEX  : LREAL := 0.2; (* Somewhat arbitrarily TODO: determine proper value *)
   
+  (* production mode cam ID *)  
+  PROD_CAM_TABLE_ID : UINT := 14;
+
 END_VAR
 
 VAR

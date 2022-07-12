@@ -43,6 +43,12 @@ VAR RETAIN
   gr_DI_LSL_CFTank_Params : sDigitalInputParams;
   gr_DI_ZS_CFTankLocator_Params : sDigitalInputParams;
   gr_DI_JI_480VACOk_Params : sDigitalInputParams;
+  
+  (* production step TO and min values *)
+  (* indexes correspond to ePROD_CYCLE_STEP values *)
+  gr_ProdModeStepTOs   : ARRAY[0..40] OF TIME; (* step Timeout time values *)
+  gr_ProdModeStepMins  : ARRAY[0..40] OF TIME; (* step minimum time values *)
+
 
 END_VAR
 
