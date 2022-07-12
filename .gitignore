@@ -1,7 +1,9 @@
 # Ignore zip files
 *.zip
 
-# ignore all Temp folders, even sub folders
+# ignore all Temp folders, even sub directories
 **/Temp/
 
+# ignore other AS project base directories
 305841_E00002_AM_0
+
