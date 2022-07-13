@@ -32,7 +32,9 @@
       <ExpandedNode Row="54" />
       <ExpandedNode Row="56" />
     </ExpandedNodes>
-    <SelectedNodes />
+    <SelectedNodes>
+      <SelectedNode Row="11" />
+    </SelectedNodes>
     <ZoomIndices />
   </TreeView>
 </State>
