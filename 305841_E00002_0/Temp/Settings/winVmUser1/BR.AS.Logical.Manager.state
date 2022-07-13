@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <State Top="0" Left="0" Width="0" Height="0" WindowState="Normal" xmlns="http://br-automation.co.at/AS/State">
-  <TreeView ID="LogicalTree" EditColumn="0" TopRow="173" HorizontalScrollOffset="0" SortedColumn="0">
+  <TreeView ID="LogicalTree" EditColumn="0" TopRow="29" HorizontalScrollOffset="0" SortedColumn="0">
     <Columns>
       <Column Index="0" Width="236" Position="0" />
       <Column Index="1" Width="100" Position="1" />
@@ -9,35 +9,16 @@
     </Columns>
     <ExpandedNodes>
       <ExpandedNode Row="0" />
-      <ExpandedNode Row="1" />
-      <ExpandedNode Row="12" />
-      <ExpandedNode Row="37" />
-      <ExpandedNode Row="38" />
-      <ExpandedNode Row="46" />
+      <ExpandedNode Row="2" />
+      <ExpandedNode Row="27" />
+      <ExpandedNode Row="29" />
+      <ExpandedNode Row="99" />
+      <ExpandedNode Row="103" />
       <ExpandedNode Row="116" />
       <ExpandedNode Row="120" />
-      <ExpandedNode Row="155" />
-      <ExpandedNode Row="156" />
-      <ExpandedNode Row="159" />
-      <ExpandedNode Row="174" />
-      <ExpandedNode Row="176" />
-      <ExpandedNode Row="178" />
-      <ExpandedNode Row="184" />
-      <ExpandedNode Row="190" />
-      <ExpandedNode Row="205" />
-      <ExpandedNode Row="206" />
-      <ExpandedNode Row="209" />
-      <ExpandedNode Row="213" />
-      <ExpandedNode Row="217" />
-      <ExpandedNode Row="222" />
-      <ExpandedNode Row="233" />
-      <ExpandedNode Row="239" />
-      <ExpandedNode Row="242" />
-      <ExpandedNode Row="256" />
+      <ExpandedNode Row="121" />
     </ExpandedNodes>
-    <SelectedNodes>
-      <SelectedNode Row="187" />
-    </SelectedNodes>
+    <SelectedNodes />
     <ZoomIndices />
   </TreeView>
 </State>
