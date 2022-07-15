@@ -161,10 +161,11 @@
     <Parameter ID="ReferenceDistanceIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="0" />
     <Parameter ID="ReferenceDistance" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="1" />
     <Parameter ID="ModeIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller" Value="0" />
-    <Parameter ID="Mode" Location="DriveConfiguration/Channel[1]/RealAxis/Controller" Value="PositionController" />
+    <Parameter ID="Mode" Location="DriveConfiguration/Channel[1]/RealAxis/Controller" Value="PositionControllerWithTorqueFeedForward" />
+    <Parameter ID="ProportionalGainIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="0" />
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="200" />
+    <Parameter ID="IntegrationTimeIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="0" />
     <Parameter ID="IntegrationTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="0.0" />
-    <Parameter ID="PredictionTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="0.0004" />
     <Parameter ID="TotalDelayTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="0.0004" />
     <Parameter ID="ProportionalGainIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0" />
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0.25" />
@@ -172,6 +173,14 @@
     <Parameter ID="IntegrationTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0" />
     <Parameter ID="FilterTimeIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0" />
     <Parameter ID="FilterTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0" />
+    <Parameter ID="FeedForwardIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode" Value="0" />
+    <Parameter ID="FeedForward" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode" Value="Standard" />
+    <Parameter ID="TorqueLoad" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.0" />
+    <Parameter ID="TorquePositive" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.3405" />
+    <Parameter ID="TorqueNegative" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.34050" />
+    <Parameter ID="SpeedTorqueFactor" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.00008983436" />
+    <Parameter ID="Inertia" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.00009823628" />
+    <Parameter ID="AccelerationFilterTime" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/FeedForward" Value="0.0" />
     <Parameter ID="LoopFilterXIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/LoopFilters" Value="0" />
     <Parameter ID="LoopFilter1" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/LoopFilters" Value="NotUsed" />
     <Parameter ID="LoopFilter2" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/LoopFilters" Value="NotUsed" />
@@ -310,17 +319,23 @@
       <Parameter ID="EplHostName" Value="PLC_MCP1_PLK1" />
       <Parameter ID="CycleTime" Value="800" />
     </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="CycleTime" Value="800" />
+    </Connector>
     <Parameter ID="ConfigurationID" Value="305841_E00002_Rev0_PLC_Main" />
     <Parameter ID="ConfigVersion" Value="0.0.0" />
     <Parameter ID="UserPartitionSize" Value="20" />
     <Parameter ID="AutomaticTransferOfUserfiles" Value="on" />
     <Parameter ID="PermanentPvSize" Value="9216" />
     <Parameter ID="VolatileGlobalPvSize" Value="69630" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="MCP1_PLC_201.IF3" />
+    <Parameter ID="TaskClassIdleTime" Value="800" />
     <Parameter ID="CyclicTaskClassCount" Value="6" />
-    <Parameter ID="Cyclic1Duration" Value="2000" />
-    <Parameter ID="Cyclic1Tolerance" Value="2000" />
-    <Parameter ID="Cyclic2Duration" Value="6000" />
-    <Parameter ID="Cyclic2Tolerance" Value="6000" />
+    <Parameter ID="Cyclic1Duration" Value="800" />
+    <Parameter ID="Cyclic1Tolerance" Value="800" />
+    <Parameter ID="Cyclic2Duration" Value="6400" />
+    <Parameter ID="Cyclic2Tolerance" Value="6400" />
     <Parameter ID="Cyclic3Duration" Value="12000" />
     <Parameter ID="Cyclic3Tolerance" Value="12000" />
     <Parameter ID="Cyclic4Duration" Value="48000" />
@@ -329,6 +344,7 @@
     <Parameter ID="Cyclic5Tolerance" Value="9600000" />
     <Parameter ID="Cyclic6Duration" Value="480000" />
     <Parameter ID="Cyclic6Tolerance" Value="480000" />
+    <Parameter ID="Cyclic8Duration" Value="9600" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="UserPartitionRoot" />
     <Parameter ID="FileDevicePath1" Value="F:\" />
@@ -439,6 +455,7 @@
     <Connection Connector="SS" TargetModule="MCP1_PLC_201" TargetConnector="SS1" />
     <Connector Name="IF1">
       <Parameter ID="EplHostName" Value="PLC_MCP1_PLK2" />
+      <Parameter ID="CycleTime" Value="800" />
       <Parameter ID="NodeDefinition" Value="Software" />
       <Parameter ID="EplNatSubnet" Value="192.168.102.0" />
     </Connector>
@@ -532,8 +549,16 @@
     <Connection Connector="SS1" TargetModule="X20TB12r" TargetConnector="SS" />
     <Connection Connector="PS" TargetModule="RIO_JB1_PLK2" TargetConnector="PS1" />
   </Module>
-  <Module Name="RIO_JB1_PLK2" Type="X20BB81" Version="1.1.0.0" />
-  <Module Name="RIO_OWS1_PLK1" Type="X20BB81" Version="1.1.0.0" />
+  <Module Name="RIO_JB1_PLK2" Type="X20BB81" Version="1.1.0.0">
+    <Connector Name="IF1">
+      <Parameter ID="CycleTime" Value="800" />
+    </Connector>
+  </Module>
+  <Module Name="RIO_OWS1_PLK1" Type="X20BB81" Version="1.1.0.0">
+    <Connector Name="IF1">
+      <Parameter ID="CycleTime" Value="800" />
+    </Connector>
+  </Module>
   <Module Name="SafetyController_R01SL06" Type="X20SLX410" Version="2.4.1.1">
     <Connection Connector="SS1" TargetModule="X20TB52" TargetConnector="SS" />
     <Connection Connector="SL" TargetModule="X20BM33" TargetConnector="SL1" />
