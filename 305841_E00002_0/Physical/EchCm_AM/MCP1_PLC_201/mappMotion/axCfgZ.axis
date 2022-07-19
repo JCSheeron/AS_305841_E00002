@@ -16,7 +16,7 @@
         <Property ID="LowerLimitMin" Value="-1.79769313486231E308" />
         <Property ID="UpperLimitMax" Value="1.79769313486231E308" />
         <Property ID="LowerLimit" Value="17" />
-        <Property ID="UpperLimit" Value="3400" />
+        <Property ID="UpperLimit" Value="3354" />
       </Group>
       <Property ID="VelocityIsReadOnly" Value="0" />
       <Selector ID="Velocity">

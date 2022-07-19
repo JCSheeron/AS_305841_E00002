@@ -224,6 +224,18 @@
           <High ValueProvider="Const">50</High>
         </EURange>
       </EURanges>
+      <EURanges Id="57">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">23.3</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="58">
+        <EURange>
+          <Low ValueProvider="Const">0.1</Low>
+          <High ValueProvider="Const">23.3</High>
+        </EURange>
+      </EURanges>
     </EURangesAliases>
     <EngineeringUnitAliases>
       <EngineeringUnit Id="1" UnitId="5394509" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="revolutions per minute" Symbol="rpm" />
@@ -784,9 +796,9 @@
             </Variable>
             <Variable Name="Distance" EngineeringUnitId="11" />
             <Variable Name="Position" EngineeringUnitId="11" />
-            <Variable Name="Velocity" EngineeringUnitId="12" />
-            <Variable Name="Acceleration" EngineeringUnitId="16" />
-            <Variable Name="Deceleration" EngineeringUnitId="16" />
+            <Variable Name="Velocity" EURangesId="57" EngineeringUnitId="12" />
+            <Variable Name="Acceleration" EURangesId="58" EngineeringUnitId="16" />
+            <Variable Name="Deceleration" EURangesId="58" EngineeringUnitId="16" />
             <Variable Name="MaxJerk" EngineeringUnitId="17" />
           </Variable>
         </Variable>
