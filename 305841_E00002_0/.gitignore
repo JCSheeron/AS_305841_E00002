@@ -1,0 +1,14 @@
+# B&R Automation Studio stuff
+
+# ignore *.isopen, which is a flag created by AS when the project is open
+*.isopen
+
+# ignore *.set files IF the project DOES NOT have safety
+# *.set
+
+# ignore binaries, temp, diagnostics and log files
+Binaries
+Temp
+Diagnosis
+*.log
+

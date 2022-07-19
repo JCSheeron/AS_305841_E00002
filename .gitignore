@@ -1,9 +1,13 @@
 # Ignore zip files
 *.zip
 
-# ignore all Temp folders, even sub directories
-**/Temp/
-
 # ignore other AS project base directories
 305841_E00002_AM_0
+
+# Ignore binaries temp diagnosis and log files
+**/Temp/
+**/Binaries/
+**/Diagnosis/
+**/*.log
+
 
