@@ -155,7 +155,7 @@
     <Parameter ID="AxisReference" Location="DriveConfiguration/Channel[1]/RealAxis" Value="gAxSpin" />
     <Parameter ID="MechanicalElementsIsInvisible" Location="DriveConfiguration/Channel[1]/RealAxis" Value="0" />
     <Parameter ID="InputIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="0" />
-    <Parameter ID="Input" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="10" />
+    <Parameter ID="Input" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="OutputIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="0" />
     <Parameter ID="Output" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/Gearbox" Value="1" />
     <Parameter ID="ReferenceDistanceIsReadOnly" Location="DriveConfiguration/Channel[1]/RealAxis/MechanicalElements/RotaryToLinearTransformation" Value="0" />
@@ -576,10 +576,9 @@
     <Connection Connector="MT" TargetModule="AM1_PLK11" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
-  <Module Name="ServoMotor_Spin" Type="8LSA26.D9060S200-3" Version="2.2.0.1">
+  <Module Name="ServoMotor_Spin" Type="8LSA45.D1030D200-0" Version="1.0.5.35">
     <Connection Connector="EC" TargetModule="AM1Enc_Spin_SM11" TargetConnector="EC" />
     <Connection Connector="MT" TargetModule="AM2_PLK12" TargetConnector="MT1" />
-    <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
   <Module Name="ServoMotor_Z" Type="8LSA46.DB030S200-3" Version="2.2.0.1">
     <Connection Connector="EC" TargetModule="AM1Enc_Z_SM12" TargetConnector="EC" />
