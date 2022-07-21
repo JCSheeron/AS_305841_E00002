@@ -19,15 +19,15 @@ VAR CONSTANT
   (* TODO Verify *)
   
   (* motor rated max *)
-  (* AXIS_SPINDLE_MAX_VELOCITY : REAL := (6000.0 / 3.0) / 60.0; motor rated max, scaled into process velocity in rev/sec. 6000 rpm motor, 3:1 gearbox in rps *)
+  AXIS_SPINDLE_MAX_VELOCITY : REAL := 3000.0 / 60.0; (* motor rated max, scaled into process velocity in rev/sec. 3000 rpm motor, no gearbox *)
   (* process max *)
-  AXIS_SPINDLE_MAX_VELOCITY : REAL := (300 / 60.0) * 3.0; (* process velocity in rev/sec. 300 rpm nominal cutting. 3x to allow up to 3x nominal *)
+  (* AXIS_SPINDLE_MAX_VELOCITY : REAL := (300 / 60.0) * 3.0; process velocity in rev/sec. 300 rpm nominal cutting. 3x to allow up to 3x nominal *)
   AXIS_SPINDLE_MAX_ACCEL : REAL := AXIS_SPINDLE_MAX_VELOCITY / 2.0; (* get to max in 2 sec *)
   AXIS_SPINDLE_MAX_DECEL : REAL := AXIS_SPINDLE_MAX_VELOCITY * 4.0; (* allow faster stops *)
   AXIS_SPINDLE_MEAS_RESOLUTION : REAL := 0.01; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
 
   (* motor rated max *)
-  AXIS_OUTE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec *)
+  AXIS_OUTE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec. 6000 RPM motor, 5:1 gearbox, 5:1 stage reduction *)
   (* process max *)
   (* AXIS_OUTE_MAX_VELOCITY : REAL := (((4.7 * 25.4) / (50.0 * 3.14159)) * 360.0 / 60.0) * 4.0; (* process max in deg/sec. 4.7 in/min converted to deg/sec. 4x to allow up to 4x nominal *)
   AXIS_OUTE_MAX_ACCEL : REAL := AXIS_OUTE_MAX_VELOCITY / 1.0; (* get to max in 1 sec *)
@@ -35,7 +35,7 @@ VAR CONSTANT
   AXIS_OUTE_MEAS_RESOLUTION : REAL := 0.001; (* Needs to match axis configuration view >> mappMotion setting for the axis *)
   
   (* motor rated max *)
-  AXIS_INE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec *)
+  AXIS_INE_MAX_VELOCITY : REAL := (6000.0 / 25.0) * 360 / 60.0; (* motor max in deg/sec. 6000 RPM motor, 5:1 gearbox, 5:1 stage reduction *)
   (* AXIS_INE_MAX_VELOCITY : REAL := (((4.7 * 25.4) / (50.0 * 3.14159)) * 360.0 / 60.0) * 4.0;  process max in deg/sec. 4.7 in/min converted to deg/sec. 4x to allow up to 4x nominal *)
   AXIS_INE_MAX_ACCEL : REAL := AXIS_INE_MAX_VELOCITY / 1.0; (* get to max in 1 sec *)
   AXIS_INE_MAX_DECEL : REAL := AXIS_INE_MAX_ACCEL * 4.0; (* allow faster stops *)
@@ -43,7 +43,7 @@ VAR CONSTANT
   
   (* motor rated max *)
   (* AXIS_Z_MAX_VELOCITY : REAL := (3000.0 / 60.0) * 5.0; 3000 rpm motor, 5:1 lead, mm/sec *)
-  (* limit due to need for mech adjustment *)
+  (* limit due to 'whip' of the long lead screw *)
   AXIS_Z_MAX_VELOCITY : REAL := 50.0;
   AXIS_Z_MAX_ACCEL : REAL := AXIS_Z_MAX_VELOCITY / 2.0;
   AXIS_Z_MAX_DECEL : REAL := AXIS_Z_MAX_VELOCITY * 4.0; (* allow faster stops *)
