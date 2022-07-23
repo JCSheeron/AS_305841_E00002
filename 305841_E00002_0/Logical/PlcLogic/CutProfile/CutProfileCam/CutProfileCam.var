@@ -1,0 +1,75 @@
+
+VAR CONSTANT
+  CAM_POINTS : UINT := 250;
+END_VAR
+
+VAR
+ 
+  (* program control *)
+  seqCtr : SINT; (* sequence counter *)
+  idx : UINT; (* index *)
+  
+  (****** Cam related ******)
+  (* program control for cam creation *)
+  reqCreateCamTable : BOOL := FALSE; (* request to start seq *)
+  createCamTableOS : BOOL := FALSE;
+  createCamTableDone : BOOL := FALSE;
+  camTableId : UINT := 14; (* 1-14, but data type compatible with cam prepare fb *)
+  camSeqCtr : SINT; (* sequence counter *)
+  camTable : McCamSectionsType; (* local cam sections table *)
+  camData : McCamDataType; (* cam data calculated from sections *)
+  camPointsMaster : ARRAY[0..CAM_POINTS] OF LREAL;
+  camPointsSlave : ARRAY[0..CAM_POINTS] OF LREAL;
+  fbCreateCamSections : fbCalcCamSections;
+  fbCalcCamFromSections : MC_BR_CalcCamFromSections;
+  fbCalcCamPoints : MC_BR_CalcPointsFromCam;
+  fbCamPrepare : MC_BR_CamPrepare;
+  (* detect changes to cut profile *)
+  cutProfileCamLoadedPrev : sWp_CuttingHead; (* previous cut profile loaded into the cam table. *)
+  (* BR Str mem fct params *)
+  cutProfileBytes : UDINT;
+  result : DINT;
+  nxtAddr : UDINT; 
+  
+  
+  (****** Recipe and file related ******)
+
+  (* Local version of the lookup table *)
+	depthToAngleLu : sXYTableLu150;
+
+  (* program control for directory creation *)
+  reqInitDirs : BOOL := FALSE; (* request to start seq *)
+  initDirsOS : BOOL := FALSE;
+  initDirsDone : BOOL := FALSE;
+  devName : STRING[80]; (* also used for recipe read *)
+  dirName : STRING[255];
+  
+  (* program control for Depth To Angle Lu recipe registration *)
+  pvNameLocalDepthToAngleLu : STRING[100];
+  pvNameGloballDepthToAngleLu : STRING[100];
+  pvCatagoryDepthToAngleLu : STRING[50];
+  
+  (* program control for recipe read/write *)
+  recipeReadOverwiteGlobal : BOOL := FALSE;
+
+  recipeReadFileName : STRING[255];
+  recipeWriteFileName : STRING[255];
+
+  reqRecipeReadAngleLu : BOOL := FALSE;
+  recipeReadAngleLuOS : BOOL := FALSE;
+  recipeReadAngleLuDone : BOOL := FALSE;
+  
+  reqRecipeWriteAngleLu : BOOL := FALSE;
+  recipeWriteAngleLuOS : BOOL := FALSE;
+  recipeWriteAngleLuDone : BOOL := FALSE;
+  csvHeader : MpRecipeCsvHeaderType;
+  
+  (* FileIO fbs *)
+  fbDirCreate : DirCreate;
+  
+  (* recipe fbs *)
+  fbRcpiRegLocalDToALu : MpRecipeRegPar; (* register local Depth To Angle Lu Table to recipe *)
+  fbRcpiRegGlobalDToALu : MpRecipeRegPar; (* register global Depth To Angle Lu Table to recipe *)
+  fbRecipeCsv : MpRecipeCsv; (* recipe to/from file *)
+
+END_VAR

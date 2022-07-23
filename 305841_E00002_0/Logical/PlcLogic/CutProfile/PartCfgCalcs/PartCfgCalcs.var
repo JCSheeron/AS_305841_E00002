@@ -1,0 +1,26 @@
+
+VAR CONSTANT
+
+END_VAR
+
+VAR
+  (* temp values to aid in calculations *)
+  calcReal1 : REAL;  (* temporary value *)
+  calcLReal1 : LREAL; (* temporary value *)
+  calcDint1 : DINT;  (* temporary value *)
+
+  (* detect changes to the machine configuration *)
+  wpCfgPrev : sWp_Configuration; (* previous cut profile loaded into the cam table. *)
+  (* BR Str mem fct params *)
+  wpCfgBytes : UDINT;
+  result : DINT;
+  nxtAddr : UDINT; 
+  
+  (* detect changes to the cutting depth *)
+  offsetPrev : LREAL := INVALID_SENTINEL_LREAL;
+
+
+  (* lookup cutter depth from offset angle fb *)
+  fbLookupDepth : fbLookUpYValT3;
+
+END_VAR
