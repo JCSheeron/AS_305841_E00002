@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio FileVersion="4.9"?>
-<Package xmlns="http://br-automation.co.at/AS/Package">
-  <Objects>
-    <Object Type="File">zAxis.bindinglist</Object>
-    <Object Type="File">zAxis.binding</Object>
-    <Object Type="File">zAxis1.binding_hold</Object>
-  </Objects>
-</Package>

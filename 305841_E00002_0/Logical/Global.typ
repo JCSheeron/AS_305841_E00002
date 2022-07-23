@@ -18,7 +18,7 @@ TYPE
 		yVals : ARRAY[0..49]OF REAL;
 	END_STRUCT;
   
-	sDepthToAngleLu : STRUCT 
+	sXYTableLu150 : STRUCT 
     T1 : sXYTableReal50;
     T2 : sXYTableReal50;
     T3 : sXYTableReal50;
@@ -101,10 +101,12 @@ TYPE
   sWp_Configuration : STRUCT 
     name : STRING[40]; (* Config Name *)
     (* partDfn : sWp_PartDfn;  Part Definition *)
+    startOfCfg : BOOL := FALSE;
     cuttingHead : sWp_CuttingHead;
     spindle : sWp_Spindle;
     zAxis : sWp_ZAxis;
     cfVfd : sWp_CfVfd;
+    endOfCfg : BOOL := FALSE;
   END_STRUCT;
 
   (****************************************)

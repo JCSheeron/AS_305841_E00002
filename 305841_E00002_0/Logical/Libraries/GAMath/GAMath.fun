@@ -39,7 +39,7 @@ FUNCTION_BLOCK fbCalcTrapMoveTime
   END_VAR
 END_FUNCTION_BLOCK
 
-FUNCTION_BLOCK fbLookUpYValT3 (* Given an X, get the possibly interpolated value for Y *)
+FUNCTION_BLOCK fbLookUpYValT3 (* Given an X, get the Y value. Interpolate if needed. *)
 	VAR CONSTANT
 		INVALID_SENTINEL : REAL := -9999.0;
 	END_VAR
@@ -186,4 +186,15 @@ FUNCTION fctLRound3 : LREAL (* Return the source value (LREAL) rounded to 2 deci
   VAR
     dintTemp : DINT; (* temp value *)
   END_VAR
+END_FUNCTION
+
+FUNCTION fctSwapTableT3 : USINT (* Swap X & Y columns *)
+	VAR_INPUT
+		table : REFERENCE TO sXYTableReal50; (* table to swap the X & Y values of *)
+	END_VAR
+	VAR
+		tVals : ARRAY[0..49] OF REAL; (* temporary storage *)
+		length : UDINT; (* mem copy length in bytes *)
+		nextAddr : UDINT; (* return from memcpy *)
+	END_VAR
 END_FUNCTION

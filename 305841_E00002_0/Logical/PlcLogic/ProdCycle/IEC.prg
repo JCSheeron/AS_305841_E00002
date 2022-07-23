@@ -6,8 +6,5 @@
     <File Description="Local variables" Private="true">ProdCycle.var</File>
     <File>Init.st</File>
     <File Description="Cyclic code">ProdCycle.sfc</File>
-    <File Private="true">LocalFunctions.fun</File>
-    <File>LocalFunctions.st</File>
-    <File>Actions.st</File>
   </Files>
 </Program>

@@ -151,7 +151,7 @@ FUNCTION_BLOCK fbProcessHmiAxisReq
     _I_Axis.CouplingParameters.CamId := _I_HmiAxisReq.camId;
     // Allow different cams to have different scaling
     // This allows the cam tables to be in different units (degrees, % of motion, revs, etc) for example
-    IF _I_Axis.CouplingParameters.CamId = 1 THEN
+    IF _I_Axis.CouplingParameters.CamId = 1 THEN // Placeholder to show the concept
       // Cam table in units of degrees, and resolution is 0.001 for both axes
       _I_Axis.CouplingParameters.CamScalingMaster := 1000;
       _I_Axis.CouplingParameters.CamScalingSlave := 1000;

@@ -20,7 +20,8 @@
     <Task Name="AxEnable" Source="PlcLogic.AxEnable.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="CuttingFlu" Source="PlcLogic.CuttingFluidVFD.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="OmSafeDev" Source="PlcLogic.OmSafeDev.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="CrCamTbl" Source="PlcLogic.CutProfile.CreateCamTable.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="CrCamTbl" Source="PlcLogic.CutProfile.CutProfileCam.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="CutProfile" Source="PlcLogic.CutProfile.PartCfgCalcs.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

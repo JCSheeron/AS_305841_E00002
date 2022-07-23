@@ -3,7 +3,6 @@ VAR CONSTANT
 END_VAR
 
 VAR RETAIN
-  partMotion : sPartMotion; (* calculated values for processing part. Retain to preserve dynamic values *)
 
 END_VAR
   
@@ -12,9 +11,6 @@ VAR
   startCycleOS : BOOL := FALSE;
   idx : SINT;
   
-  calcReal1 : REAL;  (* temporary value *)
-  calcLReal1 : LREAL; (* temporary value *)
-  calcDint1 : DINT;  (* temporary value *)
   tmrStepMin : TON; (* hold step for min time *)
   tmrStepTO : TON; (* step timeout timer *)
   tmrCfShutoff : TON; (* shutoff cooling pump after a delay *)

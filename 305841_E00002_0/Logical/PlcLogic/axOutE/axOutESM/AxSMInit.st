@@ -23,7 +23,7 @@ PROGRAM _INIT
   // Set the restore pos check fb
   ax.fbCheckRestorePos.Axis := ADR(ax.AxisObj);
   ax.fbCheckRestorePos.DataAddress := ADR(gr_AxOutERestorePos); // Set this per axis
-    
+
   // Load the min/max velocity and accel/decel from constants
   ax.MoveParameters.AccelMin := 0.001; // TODO: Not sure of a good value, but it should not be zero.
   ax.MoveParameters.AccelMax:= AXIS_OUTE_MAX_ACCEL;

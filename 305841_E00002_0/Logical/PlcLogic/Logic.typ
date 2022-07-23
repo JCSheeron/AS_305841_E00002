@@ -42,6 +42,26 @@ TYPE
     axisDesignation : eAXIS_DESIGNATION := AD_UNKNOWN; (* default to initial so setting a value can be detected *)
   END_STRUCT;
   
+  (* motion params derrived from machine/part config and process point *)
+  sPartMotion : STRUCT
+    camTableLoaded : BOOL := FALSE; (* True if cam table was calculated and loaded after HMI changes were made *)
+    totalZIndexes : USINT; (* number of Z Indexes needed to process a part *)
+    passCountCurrent : USINT; (* pass counter *)
+    prodCycleStepCurrent : ePROD_CYCLE_STEP; (* last completed production cycle step *)
+    nominalPassDepth : REAL; (* mm. cut pass depth *)
+    currentCutterDepth : REAL; (* mm. current cutter depth *)
+    nominalCutVelocity : REAL; (* deg/sec. Inner and Outer Eccentric velocity while cutting. Derived from feed rate. *)
+    totalOperationDistance : LREAL; (* degrees. (number of passes * (360 + over cut angle)) + ((number of passes + 1) * cut in angle) *)
+    totalPassDistance : LREAL; (* degrees. (360 + over cut angle + cut in angle *)
+    startOfOperationDrivePosition : LREAL; (* degrees. Outer Ecc drive position where this operation started. LREAL to be compatible with motion positions *)
+    endOfAdjAzimuth : LREAL; (* degrees. Calculated azimuth position at of adj for current pass. LREAL to be compatible with motion positions *)
+    endOfPassAzimuth : LREAL; (* degrees. Calculated azimuth position at end of the pass. LREAL to be compatible with motion positions *)
+    endOfOperationAzimuth : LREAL; (* degrees. Calculated azimuth position at end of the operation. LREAL to be compatible with motion positions *)
+    passDistanceTraveled : LREAL; (* degrees. How far have we traveled during this pass. LREAL to be compatible with motion positions *)
+    cutDistanceTraveled : LREAL; (* degrees. How far have we traveled during this cut. LREAL to be compatible with motion positions *)
+  END_STRUCT;
+  
+
   (* Machine specific HMI process requests. Intended to have one of these per machine or otherwise as needed, but not per axis. *)
   sHmiProcessReqs : STRUCT
     (* Boolean requests in this section. *)

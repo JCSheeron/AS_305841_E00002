@@ -93,6 +93,10 @@ VAR CONSTANT
 
 END_VAR
 
+VAR RETAIN
+  partMotion : sPartMotion; (* calculated values for processing part. Retain to preserve dynamic values *)
+END_VAR
+
 VAR
   blink025Hz : BOOL; (* 0.25 Hz blink *)
   blink050Hz : BOOL; (* 0.50 Hz blink *)

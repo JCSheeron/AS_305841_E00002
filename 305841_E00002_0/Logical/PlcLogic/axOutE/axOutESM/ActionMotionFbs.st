@@ -145,7 +145,7 @@ ACTION ActionReadDrivePos:
     ax.fbReadDrivePos.Enable := FALSE;
   END_IF;
 
-  // Block should be set up. Call 'er  
+  // Fb should be set up. Call 'er  
   ax.fbReadDrivePos();
 
   // If fb has been enabled and is valid and error , get the drive position. Otherwise

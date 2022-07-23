@@ -2,6 +2,7 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="Program" Language="IEC">CreateCamTable</Object>
+    <Object Type="Program" Language="IEC" Description="Calcs and function calls needed to turn the cut profile into a loaded CAM table.">CutProfileCam</Object>
+    <Object Type="Program" Language="IEC" Description="Calculate Part motion parameters based on HMI entries.">PartCfgCalcs</Object>
   </Objects>
 </Package>

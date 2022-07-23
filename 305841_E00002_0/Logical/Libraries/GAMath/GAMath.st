@@ -350,3 +350,16 @@ FUNCTION fctLRound3
   dintTemp:= LREAL_TO_DINT(_I_src * 1000.0);
   fctLRound3:= DINT_TO_LREAL(dintTemp) / 1000.0;
 END_FUNCTION
+
+// Given a table, swap the X and Y values
+FUNCTION fctSwapTableT3
+  // Make sure number of values does not overrun the array sizes
+  length := MIN(SIZEOF(tVals) / SIZEOF(tVals[0]), SIZEOF(table.xVals) / SIZEOF(table.xVals[0]), SIZEOF(table.yVals) / SIZEOF(table.yVals[0]));
+  // Y -> temp
+  // X -> Y
+  // temp -> X
+  // nextAddr := brsmemcpy(ADR(Dest),ADR(Src),length);
+  nextAddr := brsmemcpy(ADR(tVals), ADR(table.yVals), length);
+  nextAddr := brsmemcpy(ADR(table.yVals), ADR(table.xVals), length);
+  nextAddr := brsmemcpy(ADR(table.xVals), ADR(tVals), length);
+END_FUNCTION

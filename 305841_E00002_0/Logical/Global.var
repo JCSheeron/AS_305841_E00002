@@ -12,9 +12,11 @@ VAR RETAIN
 
   (* Retained and here in global so they can be permanent variables *)
 
-  (* Tables used to lookup inner eccentric offset angles given a depth.
+  (* Tables used to lookup inner eccentric offset angles given a depth,
+  and lookup depth given an angle.
   50 element max, per lookup table, so break the lookup into pieces. *)
-	gr_depthToAngleLu : sDepthToAngleLu;
+	gr_depthToAngleLu : sXYTableLu150;
+	gr_angleToDepthLu : sXYTableLu150;
  
   (* Part and Machine cfg *)
   gr_CfgCurrent : sWp_Configuration;
